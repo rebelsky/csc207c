@@ -1,0 +1,661 @@
+- topic: Getting started
+  abbrev: course-intro
+  summary: |
+    We begin the course by exploring some key ideas.
+  subjects: 
+    - Course goals
+    - Course structure
+    - Academic honesty
+    - ADTs and data structures
+    - Designing a stack ADT (an exercise)
+    - A bit about OOP
+  reading:
+    - page: /syllabus/
+    - page: /schedule/
+    - page: /readings/designing-adts.html
+    - page: /readings/designing-data-structures.html
+    - page: /readings/oop-basics.html
+  notes: ../eboards/eboard01
+
+- topic: Programming in the small with Java
+  abbrev: java-small
+  summary: |
+    We consider some basic issues of Java programming.
+  subjects:
+    - From C to Java
+    - The structure of a Java program
+    - Compiling and running Java programs
+    - Strings in Java
+    - Numeric types in Java
+    - Arrays in Java
+    - Basic output in Java
+    - Basic input in Java
+  reading:
+    - page: /readings/intro-java.html
+    - page: /readings/simple-java-c.html
+    - page: /readings/arrays.html
+    - link: "Osera 1: From C to Java (optional)"
+      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap01.pdf
+  lab:
+    - page: /labs/getting-started.html
+  reminders:
+    - The getting started lab should be the first two of PM's labs.  (Exploring Java and Arrays in Java)
+  notes: ../eboards/eboard02
+
+- topic: Getting started with Java development
+  abbrev: java-development
+  summary: |
+    We consider tools for developing programs in Java, particularly the
+    Eclipse integrated development environment (IDE) and the Git version
+    control system.
+  subjects:
+    - IDEs
+    - Eclipse basics
+    - Version control
+    - Git basics
+  reading:
+    - page: /readings/git.html
+    - page: /readings/eclipse.html
+  lab:
+    - page: /labs/eclipse.html
+    - page: /labs/git.html
+  notes: ../eboards/eboard03
+
+- topic: Objects and classes
+  abbrev: objects
+  summary: |
+    We consider Java's approach to objects, the primary building block
+    of object-oriented programming.  We also explore Java's classes.
+  subjects:
+    - Object basics
+    - Modeling objects with classes
+    - An exercise
+  reading:
+    - link: "Osera 2: Object-oriented modeling"
+      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap02.pdf
+  lab:
+    - page: /labs/intro-classes.html
+  notes: ../eboards/eboard04
+
+- topic: Unit testing and debugging
+  abbrev: unit-testing
+  summary: |
+    We return to concepts of unit testing and habits of debugging that 
+    you first learned in CSC 151.  We also introduce the concept of
+    test-driven development, common among agile developers.
+  subjects:
+    - A few thoughts on testing
+    - An example
+    - Test-driven development
+    - Why use debuggers?
+    - Debugging vs. print statements
+    - Debugging in Eclipse
+  reading:
+    - page: /readings/unit-testing.html
+    - page: /readings/debugging.html
+  lab:
+    - page: /labs/unit-testing.html
+    - page: /labs/debugging.html
+  notes: ../eboards/eboard05
+
+- topic: Object semantics
+  abbrev: object-semantics
+  summary: |
+    We consider some underlying issues in the design and implementation
+    of objects in Java.  We explore some ways to represent objects
+    visually.
+  subjects:
+    - References
+    - The stack and the heap
+    - Representing objects
+  reading:
+    - link: "Osera 3.1: Mental Models of Computation"
+      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap03.pdf
+  lab:
+    - page: /labs/mental-models.html
+  notes: ../eboards/eboard06
+
+- topic: Interfaces and subtype polymorphism
+  abbrev: interfaces
+  summary: |
+    We consider interfaces, which serve as specifications of expected
+    behavior for classes.  We also explore how interfaces support
+    one form of polymorphism, a key aspect of object-oriented programming.
+  subjects:
+    - Interfaces
+    - The building blocks of OOP
+    - Subtype polymorphism
+  reading:
+    - page: /readings/interfaces.html
+    - page: /readings/subtype-polymorphism.html
+  lab:
+    - page: /labs/subtype-polymorphism.html
+  notes: ../eboards/eboard07
+
+- topic: Parametric polymorphism
+  abbrev: generics
+  summary: |
+    We continue our explortation of polymorphism by considering a second
+    type of polymorphism, parametric polymorphism, and its realization in
+    Java's generics.
+  subjects:
+    - Subtype polymorphism, revisited
+    - Parametric polymorphism
+    - Java generics
+    - Generic classes
+    - Generic interfaces
+    - Generic methods
+    - Generics and arrays
+  reading:
+    - page: /readings/generics.html
+    - link: "Osera 7.2: Parametric Polymorphism (optional)"
+      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap07.pdf
+  lab:
+    - page: /labs/generics.html
+  notes: ../eboards/eboard08
+
+- topic: Pause for Breath
+  abbrev: pause01
+  summary: |
+    We pause to consider the topics we have covered to date and to
+    quickly introduce exceptions..
+  subjects:
+    - Object-oriented design
+    - Exceptions
+  reading:
+    - page: /readings/exceptions.html
+  notes: ../eboards/eboard09
+
+- topic: Inheritance
+  abbrev: inheritance
+  summary: |
+    We consider inheritance, the third core aspect of object-oriented
+    design.
+  subjects:
+    - Inheritance basics
+    - Inheritance and polymorphism
+    - Compile time vs. run time
+  reading:
+    - page: /readings/inheritance.html
+  lab:
+    - page: /labs/inheritance.html
+  notes: ../eboards/eboard10
+
+- topic: List ADTs
+  abbrev: list-adts
+  summary: |
+    We consider lists and ways to think about them.  We practice ADT
+    design.
+  subjects:
+    - The design of ADTs, revisited
+    - Scheme lists
+    - Java lists
+    - Quick notes on implementation
+  reminders:
+    - Moved to Monday because diving is Friday.
+  notes: ../eboards/eboard11
+
+- topic: Linear structures
+  abbrev: linked-structures
+  summary: |
+    We consider linear structures, such as queues and stacks.  We
+    explore ways in which arrays and simple linked objects can be used to
+    implement linear structures.
+  subjects:
+    - Linear structures 
+    - Stacks 
+    - Queues 
+    - Other linear structures
+    - Implementing linear structures with arrays
+    - Implementing linear structures as linked structures
+  reading:
+    - page: /readings/linear-structures.html 
+    - page: /readings/stacks.html
+    - page: /readings/queues.html
+  lab:
+    - page: /labs/linear-structures.html
+  notes: ../eboards/eboard12
+
+- topic: Array-based linear structures
+  abbrev: array-based-structures
+  summary: |
+    We explore ways in which arrays can be used to implement linear structures.
+  subjects: 
+    - "Detour: Wrappers"
+    - Implementing linear structures with arrays
+    - Array-based queues
+    - Priority queues and their implementation
+  reading:
+    - page: /readings/priority-queues.html
+    - page: /readings/wrappers.html
+  lab:
+    - page: /labs/array-based-queues.html
+  note:
+    - Cut out iterators
+    - May need to rewrite to deal with priority queues (sorted arrays?, sorted linked structures?)
+  notes: ../eboards/eboard13
+
+- topic: Iterators
+  abbrev: iterators
+  summary: |
+    We consider iterators, a standard mechanism for accessing the
+    elements of a collection.  We explore the use of Java's
+    anonymous inner classes to build iterators.
+  subjects:
+    - Iterators
+    - Iterating array-based structures
+    - Iterating linked linear structures
+    - Named iterators
+    - Anonymous inner classes
+  reading: 
+    - page: /readings/anonymous-inner-classes.html
+    - page: /readings/iterators.html
+  lab:
+    - page: /labs/iterators.html
+  reminders:
+    - Need to rewrite the anonymous inner class reading to focus on iterators
+    - May need to write an iterator reading
+    - For lab, may have them implement iterators
+    - Note that there are some good questions about iterators at the start
+      of the array-based-lists lab.
+
+- topic: Analyzing algorithms
+  abbrev: analysis
+  summary: |
+    We consider ways to analyze the resource use of algorithms, including
+    formal notation for describing that use.
+  subjects:
+    - Comparing algorithms
+    - Empirical analysis
+    - Asymptotic analysis
+    - Counting steps
+    - Big-O, formalized
+    - Implications of Big-O
+  reading:
+    - link: "Osera 4: Complexity"
+      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap04.pdf
+  lab:
+    - page: /labs/empirical-analysis.html
+  reminders:
+    - Copy PM's lab
+
+- topic: Analyzing algorithms, continued
+  abbrev: analysis-continued
+  summary: |
+    We continue our exploration of the analysis of algorithms.
+  subjects:
+    - Practice with Big-O
+    - Comparing Big-O and empirical approaches
+  reading:
+    - link: "Osera 4: Complexity"
+      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap04.pdf
+  lab:
+    - page: /labs/complexity.html
+
+- topic:  Analyzing recursive algorithms
+  abbrev: analysis-recursive
+  summary: |
+    We consider techniques for analyzing recursive algorithms.
+  subjects:
+    - Iterative analysis, revisited
+    - Recurrence relations
+    - Approaches to recurrence relations
+  reading:
+    - link: "Osera 4.6: Recurrence Relations"
+      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap04.pdf
+  lab:
+    - page: /labs/analyze-recursive.html
+  reminders:
+    - Need to write the lab (or find one in PM).
+
+- topic: Anonymous functions
+  abbrev: lambda
+  summary: |
+    We consider Java's support for anonymous functions.
+  subjects:
+    - Anonymous functions reviewed
+    - Anonymous functions in Java
+    - Functional interfaces
+  reading:
+    - link: "The Java Tutorial: Lambda Expressions"
+      url: https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html
+  lab:
+    - page: /labs/anonymous-functions.html
+
+- topic: Searching
+  abbrev: searching
+  summary: |
+    We consider the problem of searching a collection and techniques
+    for searching various kinds of collections.
+  subjects:
+    - Modeling the problem of searching
+    - Sequential search
+    - Predicates
+    - Binary search
+    - Comparators
+    - Testing binary search
+  reading:
+    - page: /readings/search.html
+  lab:
+    - page: /labs/binary-search.html
+
+- topic: Loop invariants
+  abbrev: loop-invariants
+  summary: |
+    We consider loop invariants, an important technique for designing
+    iterative algorithms.
+  subjects:
+    - Reasoning about iterative algorithms
+    - The state of a program
+    - Loop invariants
+    - Loop termination
+    - "An exercise: Binary search"
+  reading:
+    - page: /readings/loop-invariants.html
+    - link: "Osera 3.2 and 3.3"
+      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap03.pdf
+
+- topic: Sorting
+  abbrev: sorting
+  summary: |
+    We return to the problem of sorting a list or array.
+  subjects:
+    - The problem of sorting
+    - Testing sorting algorithms
+    - Insertion sort
+    - Selection sort
+    - Generic sorts
+  reading:
+    - page: /readings/sorting.html
+    - link: "Osera 8.4: Generic Constraints"
+      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap08.pdf
+  reminders:
+    - Some class time talking about tests
+
+- topic: Merge sort
+  abbrev: mergesort
+  summary: |
+    We consider the classic merge sort algorithm.
+  subjects:
+    - Lower bounds on sorting
+    - Divide-and-conquer algorithms
+    - An introduction to merge sort
+    - Analyzing merge sort
+  reading:
+    - page: /readings/mergesort.html
+    - link: "Osera 8.2: Merge sort"
+      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap08.pdf
+  lab:
+    - page: /labs/mergesort.html
+  reminders:
+    - Use PM's lab.
+
+- topic: Quicksort
+  abbrev: quicksort
+  summary: |
+    We consider the classic Quicksort algorithm.
+  subjects:
+    - A quick introduction to Quicksort
+    - Partitioning
+    - Partitioning with invariants
+    - Key ideas from Quicksort
+  reading:
+    - page: /readings/quicksort.html
+    - link: "Osera 8.3: Quicksort"
+      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap08.pdf
+  lab:
+    - page: /labs/quicksort.html
+
+- topic: Pause for breath
+  abbrev: pause02
+  summary: | 
+    We pause to discuss the first examination and to explore current
+    complexities and confusions
+  subjects:
+    - Testing
+    - Linked structures and iterators
+    - Additional issues
+
+- topic: Pause for breath
+  abbrev: pause03
+  summary:
+    We continue to discuss the first examination and to explore
+    current complexities and confusions
+  subjects:
+    - Array-based queues
+    - More testing
+
+- topic: Array-based lists
+  abbrev: array-lists
+  summary: |
+    We return to the list ADT and explore how to implement lists using
+    arrays.
+  subjects:
+    - A simple list interface
+    - The java.util.List interface
+    - The java.util.ListIterator interace
+  reading:
+    - page: /readings/list-adts.html
+    - link: Lists with "current" considered harmful
+      url: http://csis.pace.edu/~bergin/papers/ListsWithCurrent.html
+    - link: java.util.List
+      url: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html
+    - link: java.util.ListIterator
+      url: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ListIterator.html
+  lab:
+    - page: /labs/array-based-lists.html
+
+- topic: Doubly-linked lists
+  abbrev: doubly-linked-lists
+  summary: |
+    We explore more sophisticated versions of the linked-list data structure
+  subjects:
+    - Linked lists, reviewed
+    - Doubly-linked lists
+    - Circularly-linked lists
+    - Other list issues
+  reading:
+    - page: /readings/list-iterators.html
+    - page: /readings/doubly-linked-lists.html
+  lab:
+    - page: /labs/doubly-linked-lists.html
+
+- topic: The Map ADT
+  abbrev: maps
+  summary: |
+    We introduce the Map (a.k.a. Dictionary) abstract data type and some
+    simple implementations.
+  subjects:
+    - Maps and dictionaries
+    - Associative arrays
+    - Association lists
+  reading:
+    - link: "Osera 11.0: Introduction to mapping structures"
+      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap11.pdf
+    - "Osera 11.1: An example"
+    - "Osera 11.2: The Map ADT"
+    - "Osera 11.3: Association lists"
+
+- topic: Trees and tree traversal
+  abbrev: Trees
+  summary: |
+    We introduce the tree structure and mechanisms for iterating trees.
+  subjects:
+    - Representing hierarchical information
+    - Tree terminology
+    - Depth-first and breadth-first traversal
+    - Recursive depth-first traversal
+    - Iterative breadth-first traversal
+    - Iterative depth-first traversal
+    - Pre-order, in-order, and post-order traversals
+  reading:
+    - link: "Osera 10.1: Hierarchial structures"
+      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap10.pdf
+    - "Osera 10.2: The Tree abstract data type"
+    - "Osera 10.3: Tree representation and operations"
+    - page: /readings/tree-traversal.html
+  lab:
+    - page: /labs/tree-traversal.html
+  reminders:
+    - This is likely a new lab.
+
+- topic: Binary search trees I
+  abbrev: bst1
+  summary: | 
+    We consider binary search trees, one of the standard implementations
+    of the Map abstract data type.
+  subjects: 
+    - Organizing binary search trees
+    - Adding elements to BSTs
+  reading:
+    - link: "Osera 10.4: Binary search trees"
+      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap10.pdf
+    - link: "Osera 11.4: Tree maps"
+      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap11.pdf
+  lab:
+    - page: /labs/binary-search-trees.html
+
+- topic: Binary search trees II
+  abbrev: bst2
+  summary: |
+    We continue our exploration of binary search trees.
+  subjects:
+    - Deletion in BSTs
+  lab:
+    - page: /labs/binary-search-trees-continued.html
+
+- topic: Hash tables
+  abbrev: hash-tables
+  summary: |
+    We consider hash tables, one of the most powerful implementations
+    of the Map abstract data type.  We also explore the issue of hash
+    functions.
+  subjects:
+    - Integer maps
+    - From objects to integers
+    - Handling collisions
+    - Rebuilding hash tables
+    - Hash functions
+  reading:
+    - link: "Osera 12: Hashing"
+      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap12.pdf
+
+- topic: Probing in hash tables
+  abbrev: probing
+  summary: |
+    We explore one of the two primary collision-resolution mechansims
+    in hash tables.
+  subjects:
+    - Collisions
+    - Linear probing
+    - Quadratic probing
+  lab:
+    - page: /labs/hash-table-probing.html
+  reminders:
+    - Lots of this lab can be moved to other days.
+    - Have them write a hash function for our good old fraction class.
+
+- topic: Chaining in hash tables
+  abbrev: chaining
+  summary: |
+    We explore the second of two primary collision-resolution mechanisms
+    in hash tables.
+  subjects:
+    - Buckets and chaining
+  lab:
+    - page: /labs/hash-table-chained.html
+
+- topic: Priority queues, heaps, and heap sort
+  abbrev: heaps
+  summary: |
+    We return to the subject of priority queues and consider heaps, one
+    of the more efficient ways to represent priority queues.
+  subjects:
+    - Priority queues, revisited
+    - The heap structure
+    - Adding elements to heaps
+    - Removing elements from heaps
+    - Storing trees in arrays
+  reading: 
+    - page: /readings/priority-queues.html
+  lab:
+    - page: TBD
+  reminders:
+    - Is this worth doing as a discussion or as a lab?  I like the discussion of heaps, but students also learn from practice.  
+    - Maybe we need two days.
+
+- topic: The Graph ADT
+  abbrev: graphs
+  summary: |
+    We consider the graph abstract data type and some common implementations
+    of graphs.
+  subjects:
+    - Modeling problems with graphs
+    - Graph terminology
+    - Weighted graphs
+    - Directed graphs
+    - Implementing graphs with adjacency matrices
+    - Implementing graphs with adjacency lists
+    - Implementing graphs with edge tables
+  reminders:
+    - Readings?  Neither PM nor I seem to have any.  Anya used Skiena.
+    - http://www.cs.grinnell.edu/~rebelsky/Courses/CS152/2006S/EBoards/graphs.txt
+    - Maybe the appropriate section of CLRS?
+    - Anya has a lab on graphs.  http://www.cs.grinnell.edu/~vostinar/csc-207-spring-2018-schedule/csc-207-s18-representing-graphs/
+
+- topic: Traversing graphs
+  abbrev: graph-traversal
+  summary: |
+    We consider the problem of visiting all the nodes in a graph,
+    expanding the approaches we used for trees.
+  subjects:
+    - Review of tree traversal
+    - Breadth-first traversal
+    - Depth-first traversal
+  reading:
+    - page: /readings/tree-traversal.html
+  lab: 
+    - page: /labs/graph-traversal.html
+
+- topic: Minimum spanning trees
+  abbrev: mst
+  summary: |
+    We consider how to build minimum spanning trees in graphs
+  subjects:
+    - Minimum spanning trees
+    - Strategies for building minimum spanning trees
+    - Kruskal's algorithm
+    - Prim's algorithm
+    - Greed as an approach to algorithm design
+  reading:
+    - link: "Wikipedia: Prim's Algorithm"
+      url: https://en.wikipedia.org/wiki/Prim%27s_algorithm
+    - link: "Wikipedia: Kruskal's Algorithm"
+      url: https://en.wikipedia.org/wiki/Kruskal%27s_algorithm
+  lab:
+    - page: /labs/minimum-spanning-trees.html
+
+- topic: Shortest paths in graphs
+  abbrev: shortest-path
+  summary: |
+    We consider the problem of finding the shortest path between two
+    nodes in a graph
+  subjects:
+    - The shortest path problem
+    - Shortest paths in unweighted graphs
+    - Shortest paths in weighted graphs
+    - Dijkstra's algorithm
+  reading:
+    - link: "Wikipedia; Dijkstra's Algorithm"
+      url: https://en.wikipedia.org/wiki/Dijkstra's_algorithm
+  lab:
+    - page: /labs/shortest-paths.html
+
+- topic: Wrapup
+  abbrev: wrap
+  summary: | 
+    We conclude the course.
+  subjects:
+    - The subject matter(s) of the course
+    - Looking ahead
+    - Course evaluation

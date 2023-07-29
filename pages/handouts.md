@@ -1,0 +1,58 @@
+---
+title: Handouts
+permalink: /handouts/
+---
+# {{ page.title }}
+
+You'd think the [syllabus](../syllabus) and [schedule](../schedule)
+would provide all the info you need for a course, wouldn't you?  But
+I've found over the years that it can be helpful to provide additional
+information.  To ensure that you read the information, I even give you
+[an assignment](../assignments/survey).  What else is there?  Let's see.
+
+## Teaching, grading, and such
+
+[On teaching and learning](teaching)
+  : A bit of philosophy (more or less).
+
+[Grading](grading)
+  : More details on grading processes (and a bit on the underlying philosophy).
+
+[Gradescope](gradescope)
+  : A few notes on the grading platform we're using.
+
+## Other important issues
+
+[Accommodations and adjustments](accommodations)
+  : Policies and practices (and why I use two terms)
+
+[Accessibility of Web pages](accessibility)
+  : Why I try to keep pages accessible and who to report to when they're not.
+
+[Academic integrity](academic-integrity)
+  : A long document that attempts to explain key issues of academic integrity in this course and in the discipline.
+
+[AI programming assistants](ai)
+  : Some notes on why I discourage the use of AI programming assistants in my introductory classes.
+
+[Tips on working more productively](working-tips)
+  : Some tips from students, mentors, and instructors.
+
+## Secondary topics
+
+[Some thoughts on electronic mail](email)
+  : This page provides some details about how to best use electronic mail when dealing with me.
+
+## Other versions of the course
+
+These also aren't strictly handouts, but I didn't have another place for them.
+The list is incomplete.
+
+[CSC-151 2023 Fall (Jiménez)](https://jimenezp.cs.grinnell.edu/Courses/CSC207/2023Fa/syllabus/)
+  : The other fall 2023 section of the course.
+
+[CSC-151 2019 Spring (Rebelsky)](https://rebelsky.cs.grinnell.edu/~rebelsky/Courses/CSC207/2019S/01/home/)
+  : The site from the last time I taught the course.
+
+[CSC-151 2014 Spring (Rebelsky)](https://rebelsky.cs.grinnell.edu/Courses/CSC207/2014F/home/)
+  : The site from the prior time I taught the course.

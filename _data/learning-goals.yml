@@ -1,0 +1,41 @@
+- assessment: Learning Assessments, Object-Oriented Programming
+  goals:
+    - "**Data abstraction**: Apply abject-oriented design principles to separate interface from implementation."
+    - "**Encapsulation**: Apply object-oriented design principles to design and build classes."
+    - "**Subtype polymorphism**: Write polymorphic code that works for objects in all classes that implement an interface or subclass a class."
+    - "**Parametric polymorphism**: Write polymorphic code for structures that can work with a variety of uniformly typed objects, such as lists of X."
+    - "**Composition**: Combine objects/classes to build new objects/classes, implementing the _has-a_ relationship."
+    - "**Inheritance**: Build new objects/classes in terms of other objects/classes, impliementing the _is-a_ relationship."
+    - "**Mental Models of Java Objects**: Describe the layout of objects in memory. \*\*"
+
+- assessment: Learning Assessments, Software Design
+  goals:
+    - "**Project design**: Create correct multi-file programs in Java to meet specifications."
+    - "**Collaboration**: Work with one or more other students on the creation of a program."
+    - "**Testing**: Write effective unit tests using a framework such as JUnit and practice test-drive development."
+    - "**Version control**: Employ collaborative cversion control software, such as Git, to maintain multiple versions of software under development."
+    - "**Documentation**: Exercise good practices in documenting code and create documentation for Java programs using Javadoc.**"
+
+- assessment: Learning Assessments, Data Types and Data Structures
+  goals:
+    - "**Array-based structures**: Implement one or more data types using arrays."
+    - "**Linked structures**: Implement one or more data types using linked structures."
+    - "**Iterators**: Design, implement, and use iterators for one or more data types."
+    - "**Lists**: Implement and use array-based and linked lists."
+    - "**Stacks and Queues**: Implement stacks or queues; use both."
+    - "**Dictionaries/maps**: Design a dictionary ADT and implement it in multiple ways, such as with associative arrays, binary search trees, or hash tables."
+    - "**Hash tables**: Implement dictionaries with hash tables using either probing or chaining."
+    - "**Binary Search trees**: Implement dictionaries with binary search trees."
+    - "**Heaps**: Describe heaps and how they are built.  Use heaps for Heapsort."
+    - "**Graphs**: Describe graphs and basic algorithms on them."
+    
+- assessment: Learning Assessments, Algorithms
+  goals:
+    - "**Big-O notation**: Read and interpret the formal definition of Big-O. \*\*"
+    - "**Analysis of iterative algorithms: Conduct informal big-O analysis of iterative algorithms and nested loops."
+    - "**Analysis of recursive algorithms: Conduct informal big-O analysis of recursive algorithms. \*\*" 
+    - "**Merge sort**: Explain, implement, and analyze variants of the merge sort algorithm."
+    - "**Quicksort**: Explain, implement, and analyze the Quicksort algorithm."
+    - "**Heap sort**: Explain, implement, and analyze the heap sort algorithm."
+    - "**Graph and tree traversal**: Explain various graph traversal algorithms."
+    - "**Loop invariants**: Describe the use of loop invariants in algorithm design. \*\*"
