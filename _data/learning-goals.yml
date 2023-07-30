@@ -6,7 +6,7 @@
     - "**Parametric polymorphism**: Write polymorphic code for structures that can work with a variety of uniformly typed objects, such as lists of X."
     - "**Composition**: Combine objects/classes to build new objects/classes, implementing the _has-a_ relationship."
     - "**Inheritance**: Build new objects/classes in terms of other objects/classes, impliementing the _is-a_ relationship."
-    - "**Mental Models of Java Objects**: Describe the layout of objects in memory. \*\*"
+    - "**Mental Models of Java Objects**: Describe the layout of objects in memory."
 
 - assessment: Learning Assessments, Software Design
   goals:
@@ -31,11 +31,11 @@
     
 - assessment: Learning Assessments, Algorithms
   goals:
-    - "**Big-O notation**: Read and interpret the formal definition of Big-O. \*\*"
+    - "**Big-O notation**: Read and interpret the formal definition of Big-O."
     - "**Analysis of iterative algorithms: Conduct informal big-O analysis of iterative algorithms and nested loops."
-    - "**Analysis of recursive algorithms: Conduct informal big-O analysis of recursive algorithms. \*\*" 
+    - "**Analysis of recursive algorithms: Conduct informal big-O analysis of recursive algorithms." 
     - "**Merge sort**: Explain, implement, and analyze variants of the merge sort algorithm."
     - "**Quicksort**: Explain, implement, and analyze the Quicksort algorithm."
     - "**Heap sort**: Explain, implement, and analyze the heap sort algorithm."
     - "**Graph and tree traversal**: Explain various graph traversal algorithms."
-    - "**Loop invariants**: Describe the use of loop invariants in algorithm design. \*\*"
+    - "**Loop invariants**: Describe the use of loop invariants in algorithm design."
