@@ -15,7 +15,6 @@
     - page: /readings/designing-adts.html
     - page: /readings/designing-data-structures.html
     - page: /readings/oop-basics.html
-  notes: ../eboards/eboard01
 
 - topic: Programming in the small with Java
   abbrev: java-small
@@ -40,42 +39,45 @@
     - page: /labs/getting-started.html
   reminders:
     - The getting started lab should be the first two of PM's labs.  (Exploring Java and Arrays in Java)
-  notes: ../eboards/eboard02
+  
 
 - topic: Getting started with Java development
   abbrev: java-development
   summary: |
     We consider tools for developing programs in Java, particularly the
-    Eclipse integrated development environment (IDE) and the Git version
-    control system.
+    Microsoft VSCode integrated development environment (IDE) and the Git 
+    version control system.
   subjects:
     - IDEs
-    - Eclipse basics
+    - VSCode basics
     - Version control
     - Git basics
   reading:
     - page: /readings/git.html
-    - page: /readings/eclipse.html
+    - page: /readings/vscode.html
   lab:
-    - page: /labs/eclipse.html
+    - page: /labs/vscode.html
     - page: /labs/git.html
-  notes: ../eboards/eboard03
+  
 
 - topic: Objects and classes
   abbrev: objects
   summary: |
     We consider Java's approach to objects, the primary building block
-    of object-oriented programming.  We also explore Java's classes.
+    of object-oriented programming.  We also explore Java's classes and
+    how one might model them.
   subjects:
     - Object basics
     - Modeling objects with classes
+    - Stacks and queues
     - An exercise
   reading:
     - link: "Osera 2: Object-oriented modeling"
       url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap02.pdf
   lab:
     - page: /labs/intro-classes.html
-  notes: ../eboards/eboard04
+    - page: /labs/mental-models.html
+  
 
 - topic: Unit testing and debugging
   abbrev: unit-testing
@@ -96,24 +98,7 @@
   lab:
     - page: /labs/unit-testing.html
     - page: /labs/debugging.html
-  notes: ../eboards/eboard05
-
-- topic: Object semantics
-  abbrev: object-semantics
-  summary: |
-    We consider some underlying issues in the design and implementation
-    of objects in Java.  We explore some ways to represent objects
-    visually.
-  subjects:
-    - References
-    - The stack and the heap
-    - Representing objects
-  reading:
-    - link: "Osera 3.1: Mental Models of Computation"
-      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap03.pdf
-  lab:
-    - page: /labs/mental-models.html
-  notes: ../eboards/eboard06
+  
 
 - topic: Interfaces and subtype polymorphism
   abbrev: interfaces
@@ -130,7 +115,7 @@
     - page: /readings/subtype-polymorphism.html
   lab:
     - page: /labs/subtype-polymorphism.html
-  notes: ../eboards/eboard07
+  
 
 - topic: Parametric polymorphism
   abbrev: generics
@@ -152,19 +137,18 @@
       url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap07.pdf
   lab:
     - page: /labs/generics.html
-  notes: ../eboards/eboard08
+  
 
-- topic: Pause for Breath
-  abbrev: pause01
+- topic: Exceptional programming
+  abbrev: exceptions
   summary: |
-    We pause to consider the topics we have covered to date and to
-    quickly introduce exceptions..
+    We introduce exceptions and consider their use.
   subjects:
-    - Object-oriented design
     - Exceptions
+    - Object-oriented design
   reading:
     - page: /readings/exceptions.html
-  notes: ../eboards/eboard09
+  
 
 - topic: Inheritance
   abbrev: inheritance
@@ -179,7 +163,7 @@
     - page: /readings/inheritance.html
   lab:
     - page: /labs/inheritance.html
-  notes: ../eboards/eboard10
+  
 
 - topic: List ADTs
   abbrev: list-adts
@@ -190,10 +174,8 @@
     - The design of ADTs, revisited
     - Scheme lists
     - Java lists
-    - Quick notes on implementation
-  reminders:
-    - Moved to Monday because diving is Friday.
-  notes: ../eboards/eboard11
+    - Quick 
+  
 
 - topic: Linear structures
   abbrev: linked-structures
@@ -214,7 +196,7 @@
     - page: /readings/queues.html
   lab:
     - page: /labs/linear-structures.html
-  notes: ../eboards/eboard12
+  
 
 - topic: Array-based linear structures
   abbrev: array-based-structures
@@ -233,7 +215,7 @@
   note:
     - Cut out iterators
     - May need to rewrite to deal with priority queues (sorted arrays?, sorted linked structures?)
-  notes: ../eboards/eboard13
+  
 
 - topic: Iterators
   abbrev: iterators
@@ -292,7 +274,7 @@
   lab:
     - page: /labs/complexity.html
 
-- topic:  Analyzing recursive algorithms
+- topic: Analyzing recursive algorithms
   abbrev: analysis-recursive
   summary: |
     We consider techniques for analyzing recursive algorithms.
@@ -406,24 +388,14 @@
   lab:
     - page: /labs/quicksort.html
 
-- topic: Pause for breath
-  abbrev: pause02
-  summary: | 
-    We pause to discuss the first examination and to explore current
-    complexities and confusions
+- topic: Ethical considerations
+  abbrev: ethics
+  summary: |
+    As the semester comes to a close, we consider our responsibilities as programming professionals.
   subjects:
-    - Testing
-    - Linked structures and iterators
-    - Additional issues
-
-- topic: Pause for breath
-  abbrev: pause03
-  summary:
-    We continue to discuss the first examination and to explore
-    current complexities and confusions
-  subjects:
-    - Array-based queues
-    - More testing
+    - Professional ethics.
+  reading:
+    - ACM Code of Ethics
 
 - topic: Array-based lists
   abbrev: array-lists
@@ -584,10 +556,10 @@
     - Is this worth doing as a discussion or as a lab?  I like the discussion of heaps, but students also learn from practice.  
     - Maybe we need two days.
 
-- topic: The Graph ADT
+- topic: A graph ADT
   abbrev: graphs
   summary: |
-    We consider the graph abstract data type and some common implementations
+    We consider a graph abstract data type and some common implementations
     of graphs.
   subjects:
     - Modeling problems with graphs
@@ -652,7 +624,7 @@
     - page: /labs/shortest-paths.html
 
 - topic: Wrapup
-  abbrev: wrap
+  abbrev: wrapup
   summary: | 
     We conclude the course.
   subjects:
