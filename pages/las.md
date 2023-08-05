@@ -6,13 +6,12 @@ permalink: /las/
 
 # Learning assessments
 
-To directly assess your mastery of the learning objectives of this course, we will conduct a series of sets of learning assessments (SoLAs) over the course of the semester.
-Each will contain assessments from one or more Learning Assessment Phases (LAPs).
+To directly assess your mastery of the learning objectives of this course, we will conduct a series of learning assessments, both individually and in sets (SoLAs), over the course of the semester.
 The use LAs of this course is inspired by [mastery-based testing](https://mbtmath.wordpress.com/) practices found in mathematics.
 
 SoLAs consist of a set of individual assessment problems---one problem for each learning objective of the course covered so far.  
 
-Some of the LAs will also appear as in-class paper-based ten-minute quizzes, given at the start of class on various days.
+Most of the LAs will also appear as in-class paper-based ten-minute quizzes, given at the start of class on various days.
 
 All of the LAs in a phase (except those marked as in-class-only) will be released as a SoLA on gradescope.  **Do not discuss the problems on the SoLA with anyone until I have returned graded problems.**
 

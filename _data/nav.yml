@@ -1,0 +1,16 @@
+- title: Syllabus
+  path: /syllabus/
+- title: Schedule
+  path: /schedule/
+- title: LOs
+  path: /los/
+- title: MPs
+  path: /mps/
+- title: Handouts
+  path: /handouts/
+- title: Teams
+  url: |
+    https://rebelsky.cs.grinnell.edu
+- title: Gradescope
+  url: |
+    https://rebelsky.cs.grinnell.edu
