@@ -29,20 +29,15 @@ Preliminaries
 
 * Welcome to CSC207!
 * I'm Sam (or SamR)
-* Our class mentors are Anh Thu (section 1) and Shuyi (section 2)
-* You should have received one handout at the start of class
-    * The [CS Department Academic Honesty Policy](http://www.cs.grinnell.edu/academic-honesty-policy)
+* Our class mentor is Pom Dao.
 * Since it's the first day of class, I will take attendance.  (_It will take
   me a few weeks to learn all of your names._)
     * "Hi, my name is FORENAME SURNAME."
     * "You can call me PRIMARY_NAME."
     * "If you must address me by surname, you can call me
       Mr./Ms./Mx./[nothing] SURNAME."
-    * "I'm from ..."
+    * "This semester, I'm excited about TOPIC"
     * Optional: "My pronouns are ...."
-* For some reason, I ended up with copies of 151 handouts in the handouts
-  section of this course.  I've updated [the page on
-  grading](../handouts/grading) and [the page on note-taking](taking-notes)
 * I realize that PUM and LIA (from the readings) are horrid acronyms.  If
   you have better ones, I'd appreciate it.
 * We'll be using two "books" for this course: The readings I write (or
@@ -57,12 +52,11 @@ Preliminaries
     * [An introduction to Java](../readings/intro-java)
     * [Simple Java for C progammers](../readings/simple-java-c)
     * [Arrays in Java](../readings/arrays)
-    * Optional: Osera 1: From C to Java
-* Quiz on Monday (and every Monday).
 
 ### Extra credit (Academic/Artistic)
 
-_None yet._
+* CS Extras, 4:15 p.m., 24 August 2023, Science 3821 (yes, that was yesterday).
+* Scholar's Convocation with President Harris, 11:00 a.m., 31 August 2023, JRC 101.
 
 ### Extra credit (Peer)
 
