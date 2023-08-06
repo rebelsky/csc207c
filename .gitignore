@@ -27,7 +27,3 @@ admin/
 vendor/
 _config.yml
 tasks/deploy
-pages/syllabus.md
-_data/nav.yml
-
-
