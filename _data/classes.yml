@@ -33,8 +33,6 @@
     - page: /readings/intro-java.html
     - page: /readings/simple-java-c.html
     - page: /readings/arrays.html
-    - link: "Osera 1: From C to Java (optional)"
-      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap01.pdf
   lab:
     - page: /labs/getting-started.html
   reminders:
@@ -46,7 +44,7 @@
   summary: |
     We consider tools for developing programs in Java, particularly the
     Microsoft VSCode integrated development environment (IDE) and the Git 
-    version control system.
+    version control system. 
   subjects:
     - IDEs
     - VSCode basics
@@ -59,7 +57,6 @@
     - page: /labs/vscode.html
     - page: /labs/git.html
   
-
 - topic: Objects and classes
   abbrev: objects
   summary: |
@@ -71,13 +68,39 @@
     - Modeling objects with classes
     - Stacks and queues
     - An exercise
-  reading:
-    - link: "Osera 2: Object-oriented modeling"
-      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap02.pdf
   lab:
     - page: /labs/intro-classes.html
-    - page: /labs/mental-models.html
   
+- topic: Object semantics
+  abbrev: object-semeantics
+  summary: |
+    We consider some underlying issues in the design and implementation
+    of objects in Java.  We explore some ways to represent objects
+    visually.
+  subjects:
+    - References
+    - The stack and the heap
+    - Representing objects
+  lab:
+    - page: /labs/mental-models.html
+  reminders:
+    - This may need a new reading to replace PM's.
+
+- topic: Java from the command line
+  abbrev: command-line
+  summary: |
+    We consider how to build larger Java programs, with multiple files
+    and such.
+  subjects:
+    - Multi-file programs
+    - Build systems
+    - Why use the command line?
+    - Maven from the command line
+    - Maven from VSCode
+  readings:
+    - page: /readings/maven.html
+  labs:
+    - page: /labs/command-line.html
 
 - topic: Unit testing and debugging
   abbrev: unit-testing
@@ -91,14 +114,17 @@
     - Test-driven development
     - Why use debuggers?
     - Debugging vs. print statements
-    - Debugging in Eclipse
+    - Debugging in VSCode
   reading:
     - page: /readings/unit-testing.html
     - page: /readings/debugging.html
   lab:
     - page: /labs/unit-testing.html
     - page: /labs/debugging.html
-  
+  reminders:
+    - Needs to be rewriten to incorporate VScode's debugger.
+    - Unit testing has changed, too.
+    - Should this be split?  Probably.
 
 - topic: Interfaces and subtype polymorphism
   abbrev: interfaces
@@ -116,8 +142,7 @@
   lab:
     - page: /labs/subtype-polymorphism.html
   
-
-- topic: Parametric polymorphism
+- topic: Generics and parametric polymorphism
   abbrev: generics
   summary: |
     We continue our explortation of polymorphism by considering a second
@@ -133,11 +158,10 @@
     - Generics and arrays
   reading:
     - page: /readings/generics.html
-    - link: "Osera 7.2: Parametric Polymorphism (optional)"
-      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap07.pdf
   lab:
     - page: /labs/generics.html
-  
+  reminders:
+    - Sam at Tapia
 
 - topic: Exceptional programming
   abbrev: exceptions
@@ -148,7 +172,8 @@
     - Object-oriented design
   reading:
     - page: /readings/exceptions.html
-  
+  reminders:
+    - Sam at Tapia
 
 - topic: Inheritance
   abbrev: inheritance
@@ -174,8 +199,8 @@
     - The design of ADTs, revisited
     - Scheme lists
     - Java lists
-    - Quick 
-  
+  reminders:
+    - I think this is a discussion-based day.
 
 - topic: Linear structures
   abbrev: linked-structures
@@ -187,6 +212,7 @@
     - Linear structures 
     - Stacks 
     - Queues 
+    - Priority queues
     - Other linear structures
     - Implementing linear structures with arrays
     - Implementing linear structures as linked structures
@@ -216,7 +242,6 @@
     - Cut out iterators
     - May need to rewrite to deal with priority queues (sorted arrays?, sorted linked structures?)
   
-
 - topic: Iterators
   abbrev: iterators
   summary: |
@@ -236,10 +261,25 @@
     - page: /labs/iterators.html
   reminders:
     - Need to rewrite the anonymous inner class reading to focus on iterators
-    - May need to write an iterator reading
+    - May need to write an iterator reading (don't I have one)
     - For lab, may have them implement iterators
     - Note that there are some good questions about iterators at the start
       of the array-based-lists lab.
+
+- topic: Design patterns
+  abbrev: patterns
+  summary: |
+    We consider design patterns, common approaches to solving the kinds
+    of issues that we often see in the design of larger object-oriented
+    programs.
+  subjects:
+    - Design patterns
+    - Factories
+    - Singletons
+    - '"Wrapper" classes'
+  reminders:
+    - Need readings
+    - Need lab
 
 - topic: Analyzing algorithms
   abbrev: analysis
@@ -253,13 +293,11 @@
     - Counting steps
     - Big-O, formalized
     - Implications of Big-O
-  reading:
-    - link: "Osera 4: Complexity"
-      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap04.pdf
   lab:
     - page: /labs/empirical-analysis.html
   reminders:
-    - Copy PM's lab
+    - Copy PM's lab (I may have done that)
+    - Find an appropriate reading (CLRS?)
 
 - topic: Analyzing algorithms, continued
   abbrev: analysis-continued
@@ -268,9 +306,6 @@
   subjects:
     - Practice with Big-O
     - Comparing Big-O and empirical approaches
-  reading:
-    - link: "Osera 4: Complexity"
-      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap04.pdf
   lab:
     - page: /labs/complexity.html
 
@@ -282,13 +317,11 @@
     - Iterative analysis, revisited
     - Recurrence relations
     - Approaches to recurrence relations
-  reading:
-    - link: "Osera 4.6: Recurrence Relations"
-      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap04.pdf
   lab:
     - page: /labs/analyze-recursive.html
   reminders:
-    - Need to write the lab (or find one in PM).
+    - Need to write the lab (or find one in PM).  Did I do so?
+    - Find a reading?
 
 - topic: Anonymous functions
   abbrev: lambda
@@ -298,11 +331,17 @@
     - Anonymous functions reviewed
     - Anonymous functions in Java
     - Functional interfaces
+    - Priority queues, revisited
+    - Sorted lists
   reading:
     - link: "The Java Tutorial: Lambda Expressions"
       url: https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html
+    - page: /readings/priority-queues.html
   lab:
     - page: /labs/anonymous-functions.html
+  reminders:
+    - May want to rewrite the lab to use priority queues or sorted lists.
+    - May want to add a reading on sorted lists.  Or should that be an exercise?
 
 - topic: Searching
   abbrev: searching
@@ -334,8 +373,8 @@
     - "An exercise: Binary search"
   reading:
     - page: /readings/loop-invariants.html
-    - link: "Osera 3.2 and 3.3"
-      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap03.pdf
+  reminders:
+    - May need to write a lab.  (I think we did this collaboratively.)
 
 - topic: Sorting
   abbrev: sorting
@@ -349,10 +388,8 @@
     - Generic sorts
   reading:
     - page: /readings/sorting.html
-    - link: "Osera 8.4: Generic Constraints"
-      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap08.pdf
   reminders:
-    - Some class time talking about tests
+    - Some class time talking about unit tests
 
 - topic: Merge sort
   abbrev: mergesort
@@ -365,12 +402,10 @@
     - Analyzing merge sort
   reading:
     - page: /readings/mergesort.html
-    - link: "Osera 8.2: Merge sort"
-      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap08.pdf
   lab:
     - page: /labs/mergesort.html
   reminders:
-    - Use PM's lab.
+    - Use PM's lab.  (Why?)
 
 - topic: Quicksort
   abbrev: quicksort
@@ -383,15 +418,13 @@
     - Key ideas from Quicksort
   reading:
     - page: /readings/quicksort.html
-    - link: "Osera 8.3: Quicksort"
-      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap08.pdf
   lab:
     - page: /labs/quicksort.html
 
 - topic: Ethical considerations
   abbrev: ethics
   summary: |
-    As the semester comes to a close, we consider our responsibilities as programming professionals.
+    We consider our responsibilities as programming professionals.
   subjects:
     - Professional ethics.
   reading:
@@ -432,21 +465,24 @@
   lab:
     - page: /labs/doubly-linked-lists.html
 
-- topic: The Map ADT
+- topic: Sorting competition
+  abbrev: sorting-competition
+  summary: |
+    We compare the sorting algorithms from the latest homework.
+  
+- topic: A Dictionary ADT
   abbrev: maps
   summary: |
-    We introduce the Map (a.k.a. Dictionary) abstract data type and some
+    We introduce the Dictionary (a.k.a. Map) abstract data type and some
     simple implementations.
   subjects:
     - Maps and dictionaries
+    - Designing a Dictionary ADT
     - Associative arrays
     - Association lists
-  reading:
-    - link: "Osera 11.0: Introduction to mapping structures"
-      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap11.pdf
-    - "Osera 11.1: An example"
-    - "Osera 11.2: The Map ADT"
-    - "Osera 11.3: Association lists"
+  reminders:
+    - Needs a new reading
+    - There's an association lists lab from 2014 Fall.
 
 - topic: Trees and tree traversal
   abbrev: Trees
@@ -460,16 +496,11 @@
     - Iterative breadth-first traversal
     - Iterative depth-first traversal
     - Pre-order, in-order, and post-order traversals
-  reading:
-    - link: "Osera 10.1: Hierarchial structures"
-      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap10.pdf
-    - "Osera 10.2: The Tree abstract data type"
-    - "Osera 10.3: Tree representation and operations"
-    - page: /readings/tree-traversal.html
   lab:
     - page: /labs/tree-traversal.html
   reminders:
-    - This is likely a new lab.
+    - This is likely a new lab.  Or I have one from 2014 Fall.
+    - We may need a new reading.
 
 - topic: Binary search trees I
   abbrev: bst1
@@ -477,13 +508,9 @@
     We consider binary search trees, one of the standard implementations
     of the Map abstract data type.
   subjects: 
+    - The structure of binary search trees
     - Organizing binary search trees
     - Adding elements to BSTs
-  reading:
-    - link: "Osera 10.4: Binary search trees"
-      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap10.pdf
-    - link: "Osera 11.4: Tree maps"
-      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap11.pdf
   lab:
     - page: /labs/binary-search-trees.html
 
@@ -631,3 +658,15 @@
     - The subject matter(s) of the course
     - Looking ahead
     - Course evaluation
+
+- topic: Patterns of object and algorithm design
+  abbrev: design
+  summary: |
+    We consider a few more issues of object and algorithm design.
+  subjects:
+    - Algorithm design
+    - ADT design
+    - Data-structure design
+    - Object/class design
+    - Code design
+
