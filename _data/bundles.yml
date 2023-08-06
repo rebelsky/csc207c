@@ -1,24 +1,24 @@
 totals:
-  projects: 8
-  las: 24
+  projects: 12
+  las: 50
 
 tiers:
   - grade: A
     projects: |
-      No Is or Rs<br>At least 6 Es<br>Remainder Ms
-    las:        22xS
+      No Is or Rs<br>At least 8 Es<br>Remainder Ms
+    las:        48xS
   - grade: B
     projects : |
-      No Is or Rs<br>At least 4 Es<br>Remainder Ms
-    las:        20xS
+      No Is or Rs<br>At least 6 Es<br>Remainder Ms
+    las:        45xS
   - grade: C
     projects: |
-      No Is<br>At most 2 Rs<br>At least 2 Es<br>Remainder Ms
-    las:        17xS
+      No Is<br>At most 2 Rs<br>At least 4 Es<br>Remainder Ms
+    las:        42xS
   - grade: D
     projects: |
       At most 2 Is<br>At most 2 Rs<br>At least 1 E<br>Remainder Ms
-    las:        12xS
+    las:        36xS
   - grade: F
     projects: |
       Failure to achieve D level
