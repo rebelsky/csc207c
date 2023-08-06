@@ -8,17 +8,21 @@
     - page: /mps/syllabus.html
     - page: /mps/intro-survey.html
 
-- date: 2023-09-01
+- date: 2023-08-30
   assigned:
     - page: /mps/mp01.html
+
+- date: 2023-09-06
+  assigned:
+    - page: /mps/mp02.html
 
 - date: 2023-09-07
   due:
     - page: /mps/mp01.html
 
-- date: 2023-09-08
+- date: 2023-09-13
   assigned:
-    - page: /mps/mp02.html
+    - page: /mp3/mp03.html
 
 - date: 2023-09-14
   due:
@@ -26,93 +30,82 @@
 
 - date: 2023-09-20
   assigned:
-    - SoLA 1
+    - page: /mps/mp04.html
 
 - date: 2023-09-21
   due:
-    - SoLA 1
+    - page: /mp3/mp03.html
 
-- date: 2023-09-22
+- date: 2023-09-27
   assigned:
-    - page: /mps/mp03.html
+    - page: /mps/mp05.html
 
 - date: 2023-09-28
   due:
-    - page: /mps/mp03.html
-
-- date: 2023-09-29
-  assigned:
     - page: /mps/mp04.html
-  due:
-    - link: Lab writeup from class 14
-      url: https://www.gradescope.com/
+
+- date: 2023-10-04
+  assigned:
+    - page: /mps/mp06.html 
 
 - date: 2023-10-05
   due:
-    - page: /mps/mp04.html
+    - page: /mps/mp05.html
 
 - date: 2023-10-11
   assigned:
-    - SoLA 2
+    - page: /mps/mp07.html
 
 - date: 2023-10-12
   due:
-    - SoLA 2
+    - page: /mps/mp06.html
 
-- date: 2023-10-13
+- date: 2023-10-25
   assigned:
-    - page: /mps/mp05.html
+    - page: /mps/mp08.html
 
 - date: 2023-10-26
   due:
-    - page: /mps/mp05.html
+    - page: /mps/mp07.html
 
-- date: 2023-10-27
-  assigned:
-    - page: /mps/mp06.html
+- date: 2023-11-01
+  due:
+    - page: /mps/mp09.html
 
 - date: 2023-11-02
   due:
-    - page: /mps/mp06.html
+    - page: /mps/mp08.html
 
 - date: 2023-11-08
   assigned:
-    - SoLA 3
+    - page: /mps/mp10.html
 
 - date: 2023-11-09
   due:
-    - SoLA 3
+    - page: /mps/mp09.html
 
-- date: 2023-11-10
+- date: 2023-11-15
   assigned:
-    - page: /mps/mp07.html
+    - page: /mps/mp11.html
 
 - date: 2023-11-16
   due:
-    - page: /mps/mp07.html
+    - page: /mps/mp10.html
 
-- date: 2023-11-17
-  due:
-    - page: /mps/mp08.html
+- date: 2023-11-29
+  assigned:
+    - page: /mps/mp12.html
 
 - date: 2023-11-30
   due:
-    - page: /mps/mp08.html
-
-- date: 2023-12-06
-  assigned:
-    - SoLA 4
+    - page: /mps/mp11.html
 
 - date: 2023-12-07
   due:
-    - SoLA 4
-
-- date: 2023-12-11
-  assigned:
-    - SoLA 5 (_optional_)
+    - page: /mps/mp12.html
 
 - date: 2023-12-15
   due:
-    - SoLA 5 (_optional_, by 5pm)
+    - All remaining LAs
     - All remaining MP redos (_optional_, by 5pm)
 
