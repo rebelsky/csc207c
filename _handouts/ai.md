@@ -21,7 +21,7 @@ Returning to our initial considerations: Many of the problems we give you are pr
 
 The mastery-grading approach that we use in the course is also intended to make it okay for you to try things and not succeed.  If your first solution doesn't work, you'll have a chance to try again (and again and ...).
 
-Finally, College policies about Large Language Models and Academic Honesty also apply in this course.  Please make sure to familiarize yourself with those policies.  [URL to follow.]
+Finally, College policies about Large Language Models and Academic Honesty also apply in this course.  Please make sure to familiarize yourself with [the College's policies on honesty in academic work](https://catalog.grinnell.edu/content.php?catoid=32&navoid=5208#Honesty_in_Academic_Work) and the latest [Academic Honesty Handbook](https://grinco.sharepoint.com/sites/DeansOffice/AcademicProgramsLibrary/Forms/AllItems.aspx?id=%2Fsites%2FDeansOffice%2FAcademicProgramsLibrary%2FAcademic%5FHonesty%5FBooklet%2Epdf&parent=%2Fsites%2FDeansOffice%2FAcademicProgramsLibrary).
 
 FAQ
 ---
