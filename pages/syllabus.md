@@ -131,6 +131,12 @@ Our class is a community.  We should behave as such.  Among other things, that m
 
 Any student who has difficulty affording groceries or accessing sufficient food to eat every day, or who lacks a safe and stable place to live, should know that these difficulties are likely to affect their performance in the course. Such students are urged to contact the [Dean of Students](https://www.grinnell.edu/profiles/student-affairs/staff) or the [CRSSJ](https://www.grinnell.edu/about/offices-services/crssj) for support. You may also notify me, if you feel comfortable doing so, and I will do my best to help you identify and arrange other resources.
 
+### Other accommodations and adustments
+
+There are many other ways in which it may be appropriate to adjust course policies and it is not possible to attempt to address them all in a few policies.  These may include other issues best addressed earlier in the semester (*e.g.*, student-athlete scheduling) or as they arise (*e.g.*, chronic health flare-ups).  I will do my best to be flexible in these cases with the overall goal of facilitating your growth in this course.  Please keep me informed!
+
+In some cases, I will recommend consulting with the Academic Advising staff. They are an excellent resource for developing strategies for academic success and can connect you with other campus resources as well: <http://www.grinnell.edu/about/offices-services/academic-advising>. If I notice that you are encountering difficulty, in addition to communicating with you directly about it, I will also likely submit an academic alert via Academic Advising's SAL portal. This reminds you of my concern, and it notifies the Academic Advising team and your advisor(s) so that they can reach out to you with additional offers of support.
+
 ## Evaluation and grading
 
 This course employs a grading system based on [*mastery grading* and *specifications grading*](https://docs.google.com/document/d/13V1fsPve19IU-tFNt4AeQ78VepuqVakp3xizJrj5KwY/edit) to evaluate your work.
