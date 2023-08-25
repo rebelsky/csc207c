@@ -12,10 +12,8 @@
   reading:
     - page: /syllabus/
     - page: /schedule/
-    - page: /readings/designing-adts.html
-    - page: /readings/designing-data-structures.html
-    - page: /readings/oop-basics.html
-
+  notes: ../eboards/eboard01.html
+    
 - topic: Programming in the small with Java
   abbrev: java-small
   summary: |
@@ -30,6 +28,7 @@
     - Basic output in Java
     - Basic input in Java
   reading:
+    - page: /readings/oop-basics.html
     - page: /readings/intro-java.html
     - page: /readings/simple-java-c.html
     - page: /readings/arrays.html
@@ -68,9 +67,12 @@
     - Modeling objects with classes
     - Stacks and queues
     - An exercise
+  reading:
+    - page: /readings/designing-adts.html
+    - page: /readings/designing-data-structures.html
   lab:
-    - page: /labs/intro-classes.html
-  
+    - TBD
+
 - topic: Object semantics
   abbrev: object-semeantics
   summary: |
@@ -81,6 +83,9 @@
     - References
     - The stack and the heap
     - Representing objects
+  reading:
+    - page: /readings/memory.html
+    - page: /readings/object-semantics.html
   lab:
     - page: /labs/mental-models.html
   reminders:

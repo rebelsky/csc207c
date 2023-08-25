@@ -55,6 +55,8 @@ copyright_message: |
   <http://creativecommons.org/licenses/by-nc/3.0/> or send a letter to Creative
   Commons, 543 Howard Street, 5th Floor, San Francisco, California, 94105, USA.
 
+java_api: https://docs.oracle.com/en/java/javase/17/docs/api/java.base
+
 # Be picky about front-matter
 strict_front_matter: true
 
