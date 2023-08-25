@@ -1,4 +1,5 @@
 #!/bin/bash
 
-bundle exec jekyll serve --host 0.0.0.0 --livereload --port 4207 --livereload_port 35207
+bundle exec jekyll serve --livereload --port 4207 --livereload_port 35207
+# bundle exec jekyll serve --host 0.0.0.0 --livereload --port 4207 --livereload_port 35207
 # bundle exec jekyll s --host 0.0.0.0 -l
