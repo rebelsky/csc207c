@@ -1,5 +1,5 @@
 ---
-title: Note on taking notes in CSC 151
+title: Note on taking notes in CSC 207
 summary: Some recommendations on why and how to take notes
 section: handouts
 ---
@@ -10,7 +10,7 @@ approaches to taking notes.  Some students have clearly developed
 careful note-taking habits, and continue to use them in this course.
 Others see that I write a lot on the eboards, and don't take any notes.
 And some others are somewhere in between.  In this document, I suggest
-some approaches to note-taking in CSC 151.
+some approaches to note-taking in CSC 207
 
 Some general principles
 -----------------------
@@ -36,41 +36,6 @@ access*.  While taking notes will help you remember things, at some point
 you will need to look things up.  How can you organize your material to
 make that easier?
 
-Particular issues for CSC 151
------------------------------
-
-As Stephen Bloch of Adelphi University notes, introductory computer science
-expects that you will need to master a wide variety of levels of knowledge 
-in order to succeed in the class.
-
-* You will need to learn a new language.  (In our case, the language is Scheme.)
-  That means that you have to learn grammar, vocabulary, and even style.
-* You will need to learn the ways to write in the language.  Instead of
-  using a program that you are familiar with, like Microsoft Word, you
-  will learn a new environment (Linux and DrRacket).
-* Neither the language nor the environment are the primary learning goal
-  of the course.  Rather, we want to help you think carefully about how you
-  write algorithms, formalized sets of instructions.  And we also want you
-  to learn some common algorithms.
-* And we want you to follow good practices for writing algorithms.
-
-My maladaption of Bloch's example goes as follows: This course is a bit
-like one in which you have to write a fifteen-page paper on Napoloeon's
-invasion of Russia (new domain knowledge), focusing on the economic
-impacts of that invasion (using a new disciplinary lens), in Icelandic (in
-a language that you don't currently know), in a manner appropriate for
-publication in a literary magazine (incorporating stylistic issues in this
-language that you don't know), using a quill pen (with a technology that
-is not normally one that you use).  
-
-What does that mean for note taking?  It means that you have to pay attention
-to the different levels of what you are learning.  At times, you are learning
-basic technical skills.  At others, you are learning a language and
-some vocabulary in that language.  At others, you are learning how to write
-well in that language.  At others, you are learning a new way of thinking.  
-And so on and so forth.  I'll try to point out some of the particular levels
-of thinking, but I won't always do so.
-
 Multiple modes of note taking
 -----------------------------
 
@@ -80,14 +45,16 @@ should record enough that you can look at your notes to start to recall
 what happened.
 
 I also recommend that you *regularly create summaries*.  A summary
-will draw upon your notes, my notes, your answers to labs or homework
+may draw upon your notes, my notes, your answers to labs or homework
 assignments, and so on and so forth.  At times, I may incentivize summaries,
 such as by allowing you to bring a page of summary notes to a quiz or test.
+I'm told that it's better to write the summary without looking at other
+materials and then go back and update afterwards.
 
 Many students find it useful to *take notes while reading*.  I will admit
 that I have never been good at marking up the texts I read, even though I
 do "read actively".  But I see many very successful students printing out
-readings and taking notes as they go.  In CSC 151, it's also helpful to
+readings and taking notes as they go.  In CSC-207, it may also be helpful to
 *try code while reading*.  Most of our readings introduce new ways of
 expressing ideas in code.  You understand the code much better when you
 try it (and then take notes on what you observe).  Taking notes on readings
