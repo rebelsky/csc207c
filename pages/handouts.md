@@ -21,6 +21,9 @@ information.  To ensure that you read the information, I even give you
 [Gradescope](gradescope)
   : A few notes on the grading platform we're using.
 
+[Tokens](tokens)
+  : A few notes on obtaining and using tokens.
+
 ## Other important issues
 
 [Accommodations and adjustments](accommodations)
@@ -35,8 +38,8 @@ information.  To ensure that you read the information, I even give you
 [AI programming assistants](ai)
   : Some notes on why I discourage the use of AI programming assistants in my introductory classes.
 
-[Tips on working more productively](working-tips)
-  : Some tips from students, mentors, and instructors.
+[Notes on taking notes](taking-notes)
+  : Some notes on why you should take notes, along with some note-taking strategies.
 
 ## Secondary topics
 
