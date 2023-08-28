@@ -215,9 +215,35 @@ With this in mind, try writing a program that solves the following problem:
 **(Fizzbuzz).**  Write a function `public static void fizzbuzz(PrintWriter pen, int n)` that takes an integer `n` and prints the integers from 0 to `n` (inclusive), one integer per line, using the specified `PrintWriter`.
 However:
 
-* When `n` is a multiple of 3, print `fizz`,
-* When `n` is a multiple of 5, print `buzz`, and
-* When `n` is both a multiple of 3 and 5, print `fizzbuzz`.
+* When `n` is a multiple of 3, print `fizz` instead of the integer,
+* When `n` is a multiple of 5, print `buzz` instead of the integer, and
+* When `n` is both a multiple of 3 and 5, print `fizzbuzz` instead of the inter.
+
+For example, if `n` is 20, you would print
+
+```
+0
+1
+2
+fizz
+4
+buzz
+fizz
+7
+8
+fizz
+buzz
+11
+fizz
+13
+14
+fizzbuzz
+16
+17
+fizz
+19
+buzz
+```
 
 You should write this program in a Java file called `Fizzbuzz.java`.
 Your `main` function should create a new `PrintWriter` (also called `pen`) and demonstrate the results of calling `fizzbuzz(pen,100)`.
