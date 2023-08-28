@@ -26,7 +26,7 @@ b. Type `java --version`.
 If you see something like the following (using a 17 as the version),
 skip ahead to Part 1.
 
-```shell
+```
 $ java --version
 openjdk 17.0.7 2023-04-18
 OpenJDK Runtime Environment (build 17.0.7+7-Debian-1deb11u1)
@@ -37,7 +37,7 @@ If not, continue.
 
 c. Type `which java`.  You should see something like the followwing
 
-```shell
+```
 $ which java
 /usr/bin/java
 ```
@@ -55,15 +55,15 @@ eour updated .bashrc file.
 f. In the terminal window, type `which java` again.  This time, you should see something like
 the following.
 
-```shell
-g which java
+```
+$ which java
 /usr/lib/jvm/java-17-openjdk-amd64/bin/java
 ```
 
 f. In the terminal window, type `java --version`.    You should see
 something like the following.
 
-```shell
+```
 $ java --version
 openjdk 17.0.7 2023-04-18
 OpenJDK Runtime Environment (build 17.0.7+7-Debian-1deb11u1)
@@ -133,7 +133,7 @@ The Java virtual machine is located in the `java` program which we can point at 
 
 For example, here is an example workflow for compiling at running the canonical "Hello World!" program:
 
-```{:.shell}
+```
 $> ls
 HelloWorld.java
 $> javac HelloWorld.java
