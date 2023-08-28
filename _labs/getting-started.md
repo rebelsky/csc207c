@@ -70,7 +70,7 @@ OpenJDK Runtime Environment (build 17.0.7+7-Debian-1deb11u1)
 OpenJDK 64-Bit Server VM (build 17.0.7+7-Debian-1deb11u1, mixed mode, sharing)
 ```
 
- ## Part 1: Basic compilation pipeline
+## Part 1: Basic compilation pipeline
 
 When learning a new programming language, our first concern before
 worrying about how the programming language operates, *i.e.*, its
