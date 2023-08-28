@@ -2,7 +2,7 @@
 title: Getting started with Java
 summary: |
   In this lab, you'll explore some basics of Java programming using
-  commands in the shell.  (We'll soon switch to the Eclipse IDE.)
+  commands in the shell.  (We'll soon switch to the VSCode IDE.)
 copyright:  Copyright &copy; Peter-Michael Osera and Samuel A. Rebelsky.
 copyright_message: |
   This work is licensed under a Creative Commons Attribution-NonCommercial
@@ -11,45 +11,53 @@ copyright_message: |
 link: true
 ---
 
-In the spirit of one of the meta-learning goals of the course, we'll
-use these first weeks not just to learn the Java programming language
-but also the refine our skills at *learning new programming languages*.
-The jump from C to Java is no where near as dramatic as the jump
-from Racket to C, so we can use this opportunity to develop some
-best practices for migrating from language to language whether it's
-from Java to C#, Java to Python, or to some more exotic languages.
+In the spirit of one of the meta-learning goals of the course, we'll use these first weeks not just to learn the Java programming language but also the refine our skills at *learning new programming languages*.  The jump from C to Java is no where near as dramatic as the jump from Racket to C, so we can use this opportunity to develop some best practices for migrating from language to language whether it's from Java to C#, Java to Python, or to some more exotic languages.
 
 ## Part 0: Preparation
 
-We'll be using Java 11 in this course.  Java 11 is not the default
-Java, so you will have to update your `.bashrc` to specify the path
+We'll be using Java 17 in this course.  Java 17 may not be the default
+Java, so we will check.
 to Java 11.  
 
 a. Open a terminal window.
 
-b. Type `which java`.  You should see something like the followwing
+b. Type `java --version`.
+
+If you see something like the following (using a 17 as the version),
+skip ahead to Part 1.
+
+```shell
+$ java --version
+openjdk 17.0.7 2023-04-18
+OpenJDK Runtime Environment (build 17.0.7+7-Debian-1deb11u1)
+OpenJDK 64-Bit Server VM (build 17.0.7+7-Debian-1deb11u1, mixed mode, sharing)
+```
+
+If not, continue.
+
+c. Type `which java`.  You should see something like the followwing
 
 ```shell
 $ which java
 /usr/bin/java
 ```
 
-c. Edit the file `~/.bashrc` (aka `/home/username/.bashrc`) and add
+d. Edit the file `~/.bashrc` (aka `/home/username/.bashrc`) and add
 the following line to the end.
 
 ```text
-export PATH=/usr/lib/jvm/jdk-11.0.1/bin:$PATH
+export PATH=/usr/lib/jvm/java-17-openjdk-amd64/bin:$PATH
 ```
 
 d. In the terminal window, type `source ~/.bashrc`.  This reloads
-your updated .bashrc file.
+eour updated .bashrc file.
 
-e. In the terminal window, type `which java` again.  This time, you should see something like
+f. In the terminal window, type `which java` again.  This time, you should see something like
 the following.
 
 ```shell
-$ which java
-/usr/lib/jvm/jdk-11.0.1/bin/java
+g which java
+/usr/lib/jvm/java-17-openjdk-amd64/bin/java
 ```
 
 f. In the terminal window, type `java --version`.    You should see
@@ -57,9 +65,9 @@ something like the following.
 
 ```shell
 $ java --version
-java 11.0.1 2018-10-16 LTS
-Java(TM) SE Runtime Environment 18.9 (build 11.0.1+13-LTS)
-Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.1+13-LTS, mixed mode)
+openjdk 17.0.7 2023-04-18
+OpenJDK Runtime Environment (build 17.0.7+7-Debian-1deb11u1)
+OpenJDK 64-Bit Server VM (build 17.0.7+7-Debian-1deb11u1, mixed mode, sharing)
 ```
 
  ## Part 1: Basic compilation pipeline
@@ -141,7 +149,7 @@ do not specify the extension.  `java` looks for a file called
 
 ---
 
-**(Hello World!)**.  With this in mind, write the "Hello World!" program in Java, compile it, and run it to verify that everything works!
+**(Hello World!)**.  With this in mind, write the "Hello World!" program in Java (taken from the reading), compile it, and run it to verify that everything works!
 
 ---
 
@@ -204,7 +212,7 @@ With this in mind, try writing a program that solves the following problem:
 
 ---
 
-**(Fizzbuzz).**  Write a function `fizzbuzz(PrintWriter pen, int n)` that takes an integer `n` and prints the integers from 0 to `n` (inclusive), one integer per line, using the specified `PrintWriter`.
+**(Fizzbuzz).**  Write a function `public static void fizzbuzz(PrintWriter pen, int n)` that takes an integer `n` and prints the integers from 0 to `n` (inclusive), one integer per line, using the specified `PrintWriter`.
 However:
 
 * When `n` is a multiple of 3, print `fizz`,
@@ -269,7 +277,8 @@ int arr[5];
 
 is how you declare an array with five elements in C.
 Note that there is no array literal or new expression present.
-What happens if you try this with Java? *i.e.*, declare a variable with an array type, do not use an array literal or new expression to initialize it, and then use that array.
+What do you expect to happen if you try this with Java? *i.e.*, declare a variable with an array type, do not use an array literal or new expression to initialize it, and then use that array.
+Try it to check.
 
 2. **(New Expressions).**  Note that the array literal allows you to specify the contents of the array (if you know them at compile time).
 What value(s) does the `new` expression use to initialize each element of an array?
@@ -306,6 +315,10 @@ For example, `memofib(10)` should return an integer array containing the element
 *Use a loop to do this computation instead of recursion.*
 Your `main` function should demonstrate the results of calling `memofib(10)`.
 Why is a loop preferable to a recursive approach to computing `fib`?
+
+---
+
+When you are done, submit `ArrayProblems.java` on GradeScope.
 
 ---
 
