@@ -220,7 +220,7 @@ However:
 * When `n` is both a multiple of 3 and 5, print `fizzbuzz`.
 
 You should write this program in a Java file called `Fizzbuzz.java`.
-Your `main` function should demonstrate the results of calling `fizzbuzz(100)`.
+Your `main` function should create a new `PrintWriter` (also called `pen`) and demonstrate the results of calling `fizzbuzz(pen,100)`.
 
 ---
 
