@@ -212,7 +212,7 @@ With this in mind, try writing a program that solves the following problem:
 
 ---
 
-**(Fizzbuzz).**  Write a function `public static void fizzbuzz(PrintWriter pen, int n)` that takes an integer `n` and prints the integers from 0 to `n` (inclusive), one integer per line, using the specified `PrintWriter`.
+**(Fizzbuzz).**  Write a function `public static void fizzbuzz(java.io.PrintWriter pen, int n)` that takes an integer `n` and prints the integers from 0 to `n` (inclusive), one integer per line, using the specified `PrintWriter`.
 However:
 
 * When `n` is a multiple of 3, print `fizz` instead of the integer,
@@ -246,7 +246,17 @@ buzz
 ```
 
 You should write this program in a Java file called `Fizzbuzz.java`.
-Your `main` function should create a new `PrintWriter` (also called `pen`) and demonstrate the results of calling `fizzbuzz(pen,100)`.
+Your `main` function should demonstrate the results of calling 
+
+```
+fizzbuzz(new java.io.PrintWriter(System.out, true), 100);
+```
+
+You might also want to try calling 
+
+```
+fizzbuzz(new java.io.PrintWriter(new java.io.File("kfuzz.txt"), 1000));
+```
 
 ---
 
