@@ -49,9 +49,6 @@
     - Git basics
   reading:
     - page: /readings/git.html
-  lab:
-    - page: /labs/vscode.html
-    - page: /labs/git.html
   
 - topic: Objects and classes
   abbrev: objects
@@ -68,7 +65,8 @@
     - page: /readings/designing-adts.html
     - page: /readings/designing-data-structures.html
   lab:
-    - TBD
+    - page: /labs/vscode.html
+    - page: /labs/git.html
 
 - topic: Object semantics
   abbrev: object-semeantics
