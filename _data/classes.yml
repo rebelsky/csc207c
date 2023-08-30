@@ -49,7 +49,6 @@
     - Git basics
   reading:
     - page: /readings/git.html
-    - page: /readings/vscode.html
   lab:
     - page: /labs/vscode.html
     - page: /labs/git.html
