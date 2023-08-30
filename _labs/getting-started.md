@@ -26,7 +26,7 @@ b. Type `java --version`.
 If you see something like the following (using a 17 as the version),
 skip ahead to Part 1.
 
-```shell
+```
 $ java --version
 openjdk 17.0.7 2023-04-18
 OpenJDK Runtime Environment (build 17.0.7+7-Debian-1deb11u1)
@@ -37,7 +37,7 @@ If not, continue.
 
 c. Type `which java`.  You should see something like the followwing
 
-```shell
+```
 $ which java
 /usr/bin/java
 ```
@@ -55,15 +55,15 @@ eour updated .bashrc file.
 f. In the terminal window, type `which java` again.  This time, you should see something like
 the following.
 
-```shell
-g which java
+```
+$ which java
 /usr/lib/jvm/java-17-openjdk-amd64/bin/java
 ```
 
 f. In the terminal window, type `java --version`.    You should see
 something like the following.
 
-```shell
+```
 $ java --version
 openjdk 17.0.7 2023-04-18
 OpenJDK Runtime Environment (build 17.0.7+7-Debian-1deb11u1)
@@ -133,7 +133,7 @@ The Java virtual machine is located in the `java` program which we can point at 
 
 For example, here is an example workflow for compiling at running the canonical "Hello World!" program:
 
-```{:.shell}
+```
 $> ls
 HelloWorld.java
 $> javac HelloWorld.java
@@ -212,15 +212,51 @@ With this in mind, try writing a program that solves the following problem:
 
 ---
 
-**(Fizzbuzz).**  Write a function `public static void fizzbuzz(PrintWriter pen, int n)` that takes an integer `n` and prints the integers from 0 to `n` (inclusive), one integer per line, using the specified `PrintWriter`.
+**(Fizzbuzz).**  Write a function `public static void fizzbuzz(java.io.PrintWriter pen, int n)` that takes an integer `n` and prints the integers from 0 to `n` (inclusive), one integer per line, using the specified `PrintWriter`.
 However:
 
-* When `n` is a multiple of 3, print `fizz`,
-* When `n` is a multiple of 5, print `buzz`, and
-* When `n` is both a multiple of 3 and 5, print `fizzbuzz`.
+* When `n` is a multiple of 3, print `fizz` instead of the integer,
+* When `n` is a multiple of 5, print `buzz` instead of the integer, and
+* When `n` is both a multiple of 3 and 5, print `fizzbuzz` instead of the inter.
+
+For example, if `n` is 20, you would print
+
+```
+0
+1
+2
+fizz
+4
+buzz
+fizz
+7
+8
+fizz
+buzz
+11
+fizz
+13
+14
+fizzbuzz
+16
+17
+fizz
+19
+buzz
+```
 
 You should write this program in a Java file called `Fizzbuzz.java`.
-Your `main` function should demonstrate the results of calling `fizzbuzz(100)`.
+Your `main` function should demonstrate the results of calling 
+
+```
+fizzbuzz(new java.io.PrintWriter(System.out, true), 100);
+```
+
+You might also want to try calling 
+
+```
+fizzbuzz(new java.io.PrintWriter(new java.io.File("kfuzz.txt"), 1000));
+```
 
 ---
 
