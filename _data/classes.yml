@@ -36,6 +36,16 @@
     - page: /labs/getting-started.html
   notes: ../eboards/eboard02.html
 
+- topic: Practice with ADT design
+  abbrev: adt-design
+  summary: |
+    We practice designing an ADT and considering its implementation.
+  subjects:
+    - About technical interviews
+    - ADTs and other TLAs
+    - A design exercise
+  notes: ../eboards/eboard03.html
+
 - topic: Getting started with Java development
   abbrev: java-development
   summary: |
@@ -49,6 +59,10 @@
     - Git basics
   reading:
     - page: /readings/git.html
+  lab:
+    - page: /labs/vscode.html
+    - page: /labs/git.html
+  notes: ../eboards/eboard04.html
   
 - topic: Objects and classes
   abbrev: objects
@@ -65,8 +79,7 @@
     - page: /readings/designing-adts.html
     - page: /readings/designing-data-structures.html
   lab:
-    - page: /labs/vscode.html
-    - page: /labs/git.html
+    - page: /labs/intro-classes.html
 
 - topic: Object semantics
   abbrev: object-semeantics
@@ -295,19 +308,10 @@
     - Implications of Big-O
   lab:
     - page: /labs/empirical-analysis.html
+    - page: /labs/complexity.html
   reminders:
     - Copy PM's lab (I may have done that)
     - Find an appropriate reading (CLRS?)
-
-- topic: Analyzing algorithms, continued
-  abbrev: analysis-continued
-  summary: |
-    We continue our exploration of the analysis of algorithms.
-  subjects:
-    - Practice with Big-O
-    - Comparing Big-O and empirical approaches
-  lab:
-    - page: /labs/complexity.html
 
 - topic: Analyzing recursive algorithms
   abbrev: analysis-recursive
@@ -669,4 +673,12 @@
     - Data-structure design
     - Object/class design
     - Code design
+
+- topic: Analyzing algorithms, continued
+  abbrev: analysis-continued
+  summary: |
+    We continue our exploration of the analysis of algorithms.
+  subjects:
+    - Practice with Big-O
+    - Comparing Big-O and empirical approaches
 
