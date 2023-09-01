@@ -27,3 +27,4 @@ admin/
 vendor/
 _config.yml
 tasks/deploy
+*.class
