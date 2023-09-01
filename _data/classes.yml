@@ -46,6 +46,12 @@
     - A design exercise
   notes: ../eboards/eboard03.html
 
+- topic: Pause for breath
+  abbrev: pause
+  summary: |
+    Because of unexpected matters, we pause to work on the first mini-project.
+  notes: ../eboards/eboard04.html
+  
 - topic: Getting started with Java development
   abbrev: java-development
   summary: |
@@ -62,7 +68,6 @@
   lab:
     - page: /labs/vscode.html
     - page: /labs/git.html
-  notes: ../eboards/eboard04.html
   
 - topic: Objects and classes
   abbrev: objects
@@ -73,7 +78,6 @@
   subjects:
     - Object basics
     - Modeling objects with classes
-    - Stacks and queues
     - An exercise
   reading:
     - page: /readings/designing-adts.html
@@ -278,21 +282,6 @@
     - For lab, may have them implement iterators
     - Note that there are some good questions about iterators at the start
       of the array-based-lists lab.
-
-- topic: Design patterns
-  abbrev: patterns
-  summary: |
-    We consider design patterns, common approaches to solving the kinds
-    of issues that we often see in the design of larger object-oriented
-    programs.
-  subjects:
-    - Design patterns
-    - Factories
-    - Singletons
-    - '"Wrapper" classes'
-  reminders:
-    - Need readings
-    - Need lab
 
 - topic: Analyzing algorithms
   abbrev: analysis
@@ -681,4 +670,19 @@
   subjects:
     - Practice with Big-O
     - Comparing Big-O and empirical approaches
+
+- topic: Design patterns
+  abbrev: patterns
+  summary: |
+    We consider design patterns, common approaches to solving the kinds
+    of issues that we often see in the design of larger object-oriented
+    programs.
+  subjects:
+    - Design patterns
+    - Factories
+    - Singletons
+    - '"Wrapper" classes'
+  reminders:
+    - Need readings
+    - Need lab
 
