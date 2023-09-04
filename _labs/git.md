@@ -4,6 +4,10 @@ summary: |
   In this laboratory, you will practice using Git.  You will use the command line to manage your git repositories.  (VSCode has some built-in features that make it easier to interact directly with GitHub.  However, many programmers find it much easier to use Git from the command line, and so we will do so.) In case you've forgotten what you learned in the reading, there is a list of useful commands at the end of this lab.
 ---
 
+_**Note**: This lab is newly revised to work with VSCode rather than Eclipse.  Expect some infelicities._
+
+_**Note**: In this lab, you will be configuring your account.  The partner who is not logged in will likely have to repeat this work.  Ideally, we'll have a bit of time for that at the end of class._
+
 Preparation
 -----------
 
@@ -27,9 +31,7 @@ If you haven't already done so, create a GitHub account at [https://github.com/]
 
 ### Exercise 2: Configure Your MathLAN account
 
-As you may recall, your life is easier if you do a bit of configuration
-before working with Git.  If you haven't already done so, configure
-your account (name, email, editor).
+As you may recall, your life is easier if you do a bit of configuration before working with Git and GitHub.  If you haven't already done so, configure your account (name, email, editor).
 
 * First, open a new terminal window.
 * Next, type these commands
@@ -38,83 +40,71 @@ your account (name, email, editor).
 * Finally, set your editor.  You can use `emacs`, `vim` (or `vim.basic`), or even `gedit` or `geany`.
     * `git config --global core.editor EDITOR`
 
-### Exercise 3: Create a new repository
+### Exercise 3: Create a new repository on GitHub
 
 a. Log in to your GitHub account.
 
-b. Somewhere on the page (along the left-hand column, at the time of this writing, but it changes), there should be a button labeled "CreateRepository" (although that name changes, too).  Click that button.  A dialog should appear.
+b. Somewhere on the page (along the left-hand column, at the time of this writing, but it changes), there should be a button labeled "Create Repository" (although that name changes, too).  Click that button.  A dialog should appear.
 
-c. Name your repository (e.g., `git-exercise`).  Click the buttons to make it public and to initialize the repository with a README file.  Choose the Java `.gitignore` file.  Choose a license you like.  Finally, click "Create repository".
+c. Name your repository (e.g., `csc207-git-exercise`).  
 
-### Exercise 4: Cloning your repository
+d. Click the buttons to make it public.  
 
-The easiest way to clone a repository is by using the HTTPS address of your repository.  Get that address from the GitHub page (either from the address bar or from HTTPS Clone URL widget).
+e. Do not initialize the repository with a README file.  Do not add a `.gitignore` file.  Do not add a license.  We basically want an empty repository.
 
-Open a terminal window and cd to the directory you created in the preliminaries.  For example,
+f. Click "Create repository".
 
-```shell
-$ cd ~/CSC207/Git
+### Exercise 4: Setting up your project in VSCode.
+
+a. In VSCode, open the command prompt with Ctrl-Shift-P.  
+
+b. At the prompt, enter/select "Java: Create Java Project...".  (Have you figured out what the ellipses stand for yet?)
+
+c. When prompted for your build tool, select "No build tools".
+
+d. When prompted for a directory, use the directory you created in the preparation.  It should be something like `~/CSC207/Git`.
+
+e. Enter a name for your project.  You will generally want it to match the name you chose for your respository.  In this case, it should be something like `csc207-git-exercise`.  Hit return after entering the name.
+
+f. In terminal, verify that the new directory was created.
+
+### Exercise 5: Connect the project to the repository
+
+a. In terminal, cd to that new directory.  For example,
+
+```
+$ cd ~/CSC207/Git/csc207-git-exercise
 ```
 
-Once you are in that directory, use `git clone` to copy the repository you created.
+b. Type `git init`.  That command initializes the directory as a Git repository.
 
-Verify that the repository contains the files that you expected.
+c. Type `git status`.  That command will tell you the status of all the files.  Since you haven't added any files, it should say that the current directory is untracked.
 
-### Exercise 5: Importing Into Eclipse
+d. Type `git add README.md`.  That command will add only the `README.md` file to the repository.
 
-In VSCode, start the New Java Project Wizard with "File" > "New"
-> "Java Project".
+e. Type `git status` again.  Now, you should see that you have one file ready to be committed and two untracked directories.
 
-Pick a name for your project.
+f. Type `git add .vscode src` to add those two directories.
 
-Uncheck "Use Default Location"
+g. Type `git status` once more.  You should see that three files are now ready to be committed.
 
-Enter the directory for your Git repository.  It should be something
-like `/home/*username*/CSC207/Git/git-exercise`.
+h. Type `git commit -m "Initial commit"`.  That command commits the three files.
 
-Click "Finish".
+i. Type `git branch -M main`.  That command indicates that we're working on the main branch.  (We'll explore branches later.)
 
-You should now see an Eclipse project that matches your Git repository.
-You may want to open one of the files (e.g., the LICENSE or README.md)
-and check.
+j. Type `git remote add origin https://github.com/USERNAME/REPONAME.git`, substituting your own GitHub username and the name of the repo you chose earlier.  This command links your directory to your repository.
 
-*Warning!*  Eclipse behaves strangely if you put the Git repository
-inside the Eclipse directory.  I'd suggest setting up two directories
-for this class, one for things created in Eclipse, and one for
-things under Git.
+k. Type `git push -u origin main`.  This should send the files to GitHub.
 
-### Exercise 6: Identifying changes
+l. Check on GitHub to see if the files have been added.
 
-a. Return to your terminal window and cd to your Git repository.
+### Exercise 6: Add some Java
 
-```shell
-$ cd ~/CSC207/Git/git-exercise
-```
+In [the VSCode lab](../labs/vscode.html), you created a simple "Hello World" Java program.  Create a similar program in your new repository.  
 
-b. Issue a `git status` command to see what files Eclipse created.
-Git should list them as "Untracked files".  You may also see some
-modified files.
+a. Create a new class, such as `HelloWorld`.
 
-c. Use `git add` to add the files and other changes to the repository.
-
-d. Use `git commit` to commit those additions and updates.
-
-e. Use `git push` to send them back to the GitHub repository.
-
-f. Bring up the repository on GitHub and verify that the files have
-been added.
-
-### Exercise 7: Add some Java
-
-In [the Eclipse lab](../labs/eclipse.html), you created
-a simple "Hello World" Java program.  Create a similar
-program in your new repository.  That is,
-
-a. Create a new package, such as `hello`.
-
-b. Create a new class, such as `HelloWorld`.
-
-c. Add a `main` method to the class that has the following form.
+b. Add a `main` method to the class that has the following form.
 
 ```java
   public static void main (String[] args) {
@@ -124,78 +114,56 @@ c. Add a `main` method to the class that has the following form.
   } // main(String[])
 ```
 
-d. Run your program to make sure that it works as you'd expect.
+c. Run your program to make sure that it works as you'd expect.
 
-e. Save your program.
+d. Save your program.
 
-### Exercise 8: Commit and push your code
+### Exercise 7: Commit and push your code
 
-a. You've updated the repository and so should commit the code to the
-repository.  You should also push it back to the main repository.  
-So do so now.  (That is, use the sequence of status, add, commit,
-and push to get the Java files into the GitHub repository.)
-(Note that we usually don't push immediately immediately after each commit,
-but it's handy to do so now.  Normally, we do a series of small commits
-and only push once we've reached a larger goal.)
+a. You've updated the repository and so should commit the code to the repository.  You should also push it back to the main repository.  So do so now.  (That is, use the sequence of status, add, commit, and push to get the Java files into the GitHub repository.) (Note that we usually don't push immediately immediately after each commit, but it's handy to do so now.  Normally, we do a series of small commits and only push once we've reached a larger goal.)
 
-b. Go to GitHub and see if the changes you have made are visible.  You may
-need to navigate a few layers deep, since Eclipse makes a directory for
+b. Go to GitHub and see if the changes you have made are visible.  You may need to navigate a few layers deep, since VSCode makes a directory for
 each portion of the package.
 
-### Exercise 09: Making Updates on GitHub
+### Exercise 8: Making Updates on GitHub
 
-c. Although we normally update code in our local copy of the repository,
-it is also possible to update code directly on GitHub.  Navigate to
-the Java code you just wrote and click the "Edit"
-button.
+a. Although we normally update code in our local copy of the repository, it is also possible to update code directly on GitHub.  Navigate to the Java code you just wrote and click the "Edit" button.
 
-d. Change the output.  Then scroll to the bottom of the page, enter a
-commit message, and click "Commit".
+b. Change the output.  Then scroll to the bottom of the page, enter a commit message, and click "Commit".
 
-### Exercise 10: Pulling updates from GitHub
+### Exercise 9: Pulling updates from GitHub
 
-a. Our primary repository is now updated.  How about our local repository?
-Let's see.  Switch back to the terminal window.  Look at the file in
-the finder using `less`.  
+a. Our primary repository is now updated.  How about our local repository?  Let's see.  Switch back to the terminal window.  Look at the file in the finder using `less`.  
 
-b. It is unlikely that the Java code changed.  Why?  Because you haven't
-told Git to pull the updated version.  Do so now.
+b. It is unlikely that the Java code changed.  Why?  Because you haven't told Git to pull the updated version.  Do so now.
 
-c. Once you've issued the `git pull` command, verify that the
-file has indeed been updated in your local copy of the repository.
+c. Once you've issued the `git pull` command, verify that the file has indeed been updated in your local copy of the repository.
 
-d. Finally, use `git log` to see a list of changes that
-have been made.
+d. Finally, use `git log` to see a list of changes that have been made.
 
-### Exercise 11: Viewing changes in Eclipse
+### Exercise 10: Viewing changes in VSCode
 
-a. Switch back to Eclipse.  
+a. Switch back to VSCode.
 
 b. Open the Java code you created and edited.  Has it changed?
 
-c. Your are likely to see a message from Eclipse that your code is now
-out of synch, along with instructions for synching.  Follow them.
+c. Your are likely to see a message from VSCode that your code is now out of synch, along with instructions for synching.  Follow them.
 
-### Exercise 12: Making changes in Eclipse
+### Exercise 11: Making changes in VSCode
 
-a. In Eclipse, change the output of your program slightly (i.e., change
-one of the strings).  
+a. In VSCode, change the output of your program slightly (i.e., change one of the strings).  
 
 b. Save the file.
 
-c. In the terminal, type `git status` to determine whether or
-not Git saw the change.  (It should note that your file has been changed.)
+c. In the terminal, type `git status` to determine whether or not Git saw the change.  (It should note that your file has been changed.)
 
-d. Type `git diff` to see what the change was.  You should see your
-new code prefixed by plus signs, old code by minus signs, and a bit
-of context.
+d. Type `git diff` to see what the change was.  You should see your new code prefixed by plus signs, old code by minus signs, and a bit of context.
 
 e. Commit your change, but don't push it.
 
-### Exercise 13: Conficting Changes
+### Exercise 12: Conficting Changes
 
-You have a local change that has not been pushed.  Let's see what
-happens if someone else also makes a change.
+You have a local change that has not been pushed.  Let's see what happens if someone else also makes a change.
 
 a. On GitHub, update the Java file by adding another print statement.
 
@@ -209,8 +177,7 @@ CONFLICT (content): Merge conflict in *FILE*
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-c. Open the file in Eclipse.  You are likely to see lines that look
-something like this
+c. Open the file in VSCode.  You are likely to see lines that look something like this
 
 ```text
 <<<<<<< HEAD
@@ -222,28 +189,26 @@ something like this
 
 d. These lines show the conflict.  Fix the conflict and save the file.
 
-e. Back in the terminal, add and commit the changed file.  Then try
-pulling again.  Git should now be happy.
+e. Back in the terminal, add and commit the changed file.  Then try pulling again.  Git should now be happy.
 
-### Exercise 14: Support your partner
+What to submit
+--------------
 
-If you are working with a partner, your partner should configure
-Git too.  (They should create an account and set appropriate
-characteristics in the terminal.)
+The lab writeup on Gradescope asks a few questions about this lab and the VSCode lab.  Answer those quesitons.
+
+What next?
+----------
+
+If you are working with a partner, your partner should configure VSCode and Git too.  (They should create an account and set appropriate characteristics in the terminal.)
 
 For those with extra time
 -------------------------
 
 ### Extra 1: SSH Connections
 
-You did this lab using HTTPS connections to GitHub.  HTTPS connections
-are easy and straightforward.  However, they also require you to
-type a password each time you push code back to GitHub.
+You did this lab using HTTPS connections to GitHub.  HTTPS connections are easy and straightforward.  However, they also require you to type a password each time you push code back to GitHub.
 
-GitHub also permits you to create a pair of private and public RSA
-keys and to use SSH connections with those keys.  In that case, you
-may have to type the passphrase you associated with your keys, but
-you won't have to enter your GitHub account info.
+GitHub also permits you to create a pair of private and public RSA keys and to use SSH connections with those keys.  In that case, you may have to type the passphrase you associated with your keys, but you won't have to enter your GitHub account info.
 
 Figure out how to set up an SSH connection with GitHub.
 
@@ -251,11 +216,9 @@ Figure out how to set up an SSH connection with GitHub.
 
 You'll need to do this exercise with a partner.
 
-First, figure out how to give someone else administrative access to
-your repository.
+First, figure out how to give someone else administrative access to your repository.
 
-Next, verify that they have administrative access by having them
-make a change and upload it to the repository.
+Next, verify that they have administrative access by having them make a change and upload it to the repository.
 
 Finally, figure out what happens if the two of you make changes.
 
