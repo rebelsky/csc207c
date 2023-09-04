@@ -23,6 +23,21 @@ c. Open VSCode by typing `code` in a terminal window.
 Exercises
 ---------
 
+### Exercise 0: Install the Extension Pack for Java
+
+If you have a prompt that asks you to install the Extension Pack for Java,
+please use it.
+
+If not, try the following.
+
+a. Click on the extensions tool (a grid of four boxes with the upper-right box offset somewhat).
+
+b. At the top of the "Recommended" section, you should see "Extension Pack for Java".  If not, search for it.
+
+c. Click on the "Install" button for the extension 
+
+d. Wait.
+
 ### Exercise 1: Configure VSCode to use the appropriate JDK
 
 VSCode needs to know where to find the core Java tools (compiler, virtual machine, etc.).  You can help it by telling it where things are.
