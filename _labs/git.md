@@ -25,9 +25,17 @@ e. Open VSCode.
 Exercises
 ---------
 
-### Exercise 1: Make an Account
+### Exercise 0: Make an Account
 
 If you haven't already done so, create a GitHub account at [https://github.com/](https://github.com/)
+
+### Exercise 1: Prepare for ssh connections
+
+a. Create an ssh keypair following the instructions at
+   <https://mathlan.sites.grinnell.edu/ssh/fastx/2019/07/22/Public-Private-Key-Pair/>
+
+b. Import the key to GitHub following the instructions at
+   <https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account>
 
 ### Exercise 2: Configure Your MathLAN account
 
@@ -92,9 +100,9 @@ h. Type `git commit -m "Initial commit"`.  That command commits the three files.
 
 i. Type `git branch -M main`.  That command indicates that we're working on the main branch.  (We'll explore branches later.)
 
-j. Type `git remote add origin https://github.com/USERNAME/REPONAME.git`, substituting your own GitHub username and the name of the repo you chose earlier.  This command links your directory to your repository.
+j. Type `git remote add origin git@github.com:USERNAME/REPONAME.git`, substituting your own GitHub username and the name of the repo you chose earlier.  This command links your directory to your repository.
 
-k. Type `git push -u origin main`.  This should send the files to GitHub.
+k. Type `git push -u origin main`.  This should send the files to GitHub.  When things go wrong, grab a mentor.
 
 l. Check on GitHub to see if the files have been added.
 
