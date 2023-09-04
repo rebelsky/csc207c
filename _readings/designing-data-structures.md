@@ -172,7 +172,7 @@ That ADT had four basic methods.
 * `ImmutableList cdr(ImmutableList list)` - Get an immutable
   list with all but the first value in non-empty immutable list 
   `list`
-* `boolean nullp(ImmutableList list)` - Determine if a list
+* `boolean isNull(ImmutableList list)` - Determine if a list
   is empty.
 
 How do we implement these methods?  We have two choices (or at least
@@ -203,7 +203,7 @@ We have the basic layout.  How do we implement each of the methods?
   (after all, we did call these *Immutable* lists.
   Hence, we probably need to build a new array that is one smaller,
   and copy over all but the first element.
-* Fortunately, the `nullp` method is also straightforward,
+* Fortunately, the `isNull` method is also straightforward,
   particularly because we thought about it a bit in advance.  A list
   is empty if the array has size 0, so we need only get the size of
   the array and compare it to 0.
@@ -233,9 +233,9 @@ ImmutableList cdr(ImmutableList list) {
   return result;
 } // cdr
 
-boolean nullp(ImmutableList list) {
+boolean isNull(ImmutableList list) {
   return (list.array.size == 0);
-} // nullp
+} // isNull
 ```
 
 Let's analyze each of these methods in terms of the number of elements
@@ -252,7 +252,7 @@ in the list.
   step.  And once again, we'll need to copy almost all of the elements.
   So `cdr` is also directly proportional to the number of
   values left in the list.
-* `boolean nullp(ImmutableList list)`.  Getting the size
+* `boolean isNull(ImmutableList list)`.  Getting the size
   of an array should be a fast method, whether that size is provided
   by the language or we've stored the size in a field.  So, finding
   out whether an array is empty should be fast, a constant number of
@@ -295,7 +295,7 @@ list: An underlying array and an index into that array.
   same array, but with an index field that is one higher than the index
   field of the parameter.  This method should only take a constant 
   number of steps.
-* The `nullp` method will be more complex, since we are
+* The `isNull` method will be more complex, since we are
   not changing the size of the array.  Instead, we will note that the
   list is empty if the index is greater than the largest possible
   index in the array (in Java and C, that's when the index is greater
@@ -328,9 +328,9 @@ ImmutableList cdr(ImmutableList list) {
   return result;
 } // cdr
 
-boolean nullp(ImmutableList list) {
+boolean isNull(ImmutableList list) {
   return (result.index >= list.array.size);
-} // nullp
+} // isNull
 ```
 
 This implementation is a bit more complex, and probably requires
@@ -364,7 +364,7 @@ For now, let's just make it an alias for the node structure.
   We continue this process until we reach the start of the array.
 * To implement `car`, we take the element portion of the node.
 * To implement `cdr`, we can just return the linked next node.
-* To implement `nullp`, we check whether or not the node is the special 
+* To implement `isNull`, we check whether or not the node is the special 
   value `null`.
 
 This implementation seems about as efficient as the revised array
