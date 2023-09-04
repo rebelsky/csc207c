@@ -44,12 +44,14 @@ Administrivia
     * Book at <https://bit.ly/book-samr>
     * You can also suggest other meeting times using the Outlook scheduling 
       assistant.
+* I expect to get the readings posted this afternoon.  Sorry for the delay.
+  I spent way too much time trying to get the labs ready.
 
 ### Upcoming Token activities
 
 Academic
 
-* CS Table, Tuesday, Noon, Day dining room (in the Marketplace)
+* CS Table, Tuesday, Noon, Day dining room (in the Marketplace).
 * CS Extras, Thursday, 4:15 pm, Science 3821.
 
 Cultural
@@ -62,7 +64,9 @@ Wellness
 
 * Readings for Wednesday.  (Do before class; nothing to turn in.  _Please_ ask
   questions on Teams.)
-* HW 1 due Thursday
+    * Coming out soon.
+* HW 1 due Thursday.
+    * Gradescope submission form coming soon.
 
 ### Leftover questions
 
