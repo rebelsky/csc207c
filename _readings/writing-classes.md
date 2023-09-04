@@ -1,5 +1,5 @@
 ---
-title: Writing classes
+title: Writing your own classes
 link: true
 ---
 *Summary:* We consider how and why to create your own classes that serve as templates for the creation of new objects.
