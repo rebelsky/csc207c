@@ -82,6 +82,8 @@
   reading:
     - page: /readings/designing-adts.html
     - page: /readings/designing-data-structures.html
+    - page: /readings/writing-classes.html
+    - page: /readings/standard-methods.html
   lab:
     - page: /labs/intro-classes.html
 
