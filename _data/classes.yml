@@ -103,22 +103,6 @@
   reminders:
     - This may need a new reading to replace PM's.
 
-- topic: Java from the command line
-  abbrev: command-line
-  summary: |
-    We consider how to build larger Java programs, with multiple files
-    and such.
-  subjects:
-    - Multi-file programs
-    - Build systems
-    - Why use the command line?
-    - Maven from the command line
-    - Maven from VSCode
-  readings:
-    - page: /readings/maven.html
-  labs:
-    - page: /labs/command-line.html
-
 - topic: Unit testing and debugging
   abbrev: unit-testing
   summary: |
@@ -158,6 +142,8 @@
     - page: /readings/subtype-polymorphism.html
   lab:
     - page: /labs/subtype-polymorphism.html
+  reminders:
+    - Sam at Tapia
   
 - topic: Generics and parametric polymorphism
   abbrev: generics
@@ -180,6 +166,22 @@
   reminders:
     - Sam at Tapia
 
+- topic: Java from the command line
+  abbrev: command-line
+  summary: |
+    We consider how to build larger Java programs, with multiple files
+    and such.
+  subjects:
+    - Multi-file programs
+    - Build systems
+    - Why use the command line?
+    - Maven from the command line
+    - Maven from VSCode
+  readings:
+    - page: /readings/maven.html
+  labs:
+    - page: /labs/command-line.html
+
 - topic: Exceptional programming
   abbrev: exceptions
   summary: |
@@ -189,8 +191,6 @@
     - Object-oriented design
   reading:
     - page: /readings/exceptions.html
-  reminders:
-    - Sam at Tapia
 
 - topic: Inheritance
   abbrev: inheritance
