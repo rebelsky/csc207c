@@ -18,10 +18,6 @@ _Getting started_ (this will be our normal start-of-class sequence)
 * If you arrive first, start the lab.
 * When both partners arrive, introduce yourselves.
 
-For the future: I'm happy to reserve a (somewhat random) seat at
-the front of the classroom for those who need a front seat as an
-adjustment or accommodation.  Just let me know.
-
 _Approximate overview_
 
 * Administrivia
@@ -33,6 +29,9 @@ Administrivia
 
 ### Introductory notes
 
+* I'm not sure why the podium computer isn't working.  Apologies.
+* Please fill out the mentor session form: Micah sent it to you.  Micah will
+  also post it in the announcements channel on Teams.
 * Sorry that I could not be here on Friday.  (I'm not recording the reason in
   the eboard.)
     * As I said, this is a personally difficult semester/year.
@@ -52,7 +51,7 @@ Administrivia
 Academic
 
 * CS Table, Tuesday, Noon, Day dining room (in the Marketplace).
-* CS Extras, Thursday, 4:15 pm, Science 3821.
+* CS Extras, Thursday, 4:15 pm, Science 3821.  Graduate school
 
 Cultural
 
@@ -85,7 +84,9 @@ What's the difference between Git and GitHub?
 
 > Git is collaborative version control software.  You can use it to store
   versions of your software in various locations, including your local
-  disk.  GitHub is one of the more popular hosting services for Git
+  disk.  
+
+> GitHub is one of the more popular hosting services for Git
   repositories.  (GitHub also provides software that you can use to
   create your own hosting service.)
 
@@ -99,7 +100,17 @@ VSCode lab
 
 _All new for this semester!  Apologies for bugs._
 
+* Bug one: You need to install the "Extensions Pack for Java" before
+  beginning.
+* Bug two: Misformatting.
+* Issue one: It's a Microsoft Product.  Things will go wrong in confusing ways.
+
 Git lab
 -------
 
 _Revised for this semester!  Apologies for bugs._
+
+* Bug one: https authentication is disallowed.
+    * Create an ssh keypair: https://mathlan.sites.grinnell.edu/ssh/fastx/2019/07/22/Public-Private-Key-Pair/
+    * Follow the instructions at: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
+
