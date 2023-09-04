@@ -33,7 +33,7 @@ b. Type "Preferences: Open User Settings" (but without the quotation marks).
 
 c. At the top of the settings screen, you should see a place to search settings.  Search for "java.configuration.runtimes".  It will then give you the opportunity to change it in the file `settings.json`.  Like many modern applications, VSCode uses JSON (the Javascript Object Notation) to store settings data.  You'll get used to JSON fairly quickly.
 
-d. If you're lucky, you alraedy have this configuration.  But most people don't.  So you'll get to edit it yourself.  Use the following for MathLAN.
+d. If you're lucky, you already have this configuration.  But most people don't.  So you'll get to edit it yourself.  Use the following for MathLAN.
 
 ```
 "java.configuration.runtimes": [
