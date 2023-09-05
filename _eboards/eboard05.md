@@ -1,6 +1,6 @@
 ---
 title: "EBoard 05 (Section 1): Laboratory Equipment"
-number: 3
+number: 5
 section: eboards
 held: 2023-09-04
 link: true
