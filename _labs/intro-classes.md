@@ -14,8 +14,6 @@ todo:
     simple as giving them a procedure.
 ---
 
-_**Note**: Since we haven't trained in the lab equipment (VSCode and Git), you can feel free to use whatever editor you prefer._
-
 Preparation
 -----------
 
