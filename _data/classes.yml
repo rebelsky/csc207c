@@ -168,22 +168,6 @@
   reminders:
     - Sam at Tapia
 
-- topic: Java from the command line
-  abbrev: command-line
-  summary: |
-    We consider how to build larger Java programs, with multiple files
-    and such.
-  subjects:
-    - Multi-file programs
-    - Build systems
-    - Why use the command line?
-    - Maven from the command line
-    - Maven from VSCode
-  readings:
-    - page: /readings/maven.html
-  labs:
-    - page: /labs/command-line.html
-
 - topic: Exceptional programming
   abbrev: exceptions
   summary: |
@@ -193,6 +177,8 @@
     - Object-oriented design
   reading:
     - page: /readings/exceptions.html
+  labs:
+    - page: /labs/command-line.html
 
 - topic: Inheritance
   abbrev: inheritance
@@ -207,7 +193,22 @@
     - page: /readings/inheritance.html
   lab:
     - page: /labs/inheritance.html
-  
+
+- topic: Java from the command line
+  abbrev: command-line
+  summary: |
+    We consider how to build larger Java programs, with multiple files
+    and such.
+  subjects:
+    - Multi-file programs
+    - Build systems
+    - Why use the command line?
+    - Maven from the command line
+    - Maven from VSCode
+  reading:
+    - page: /readings/maven.html
+  labs:
+    - page: /labs/command-line.html
 
 - topic: List ADTs
   abbrev: list-adts
