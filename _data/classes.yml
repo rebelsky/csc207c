@@ -68,6 +68,7 @@
   lab:
     - page: /labs/vscode.html
     - page: /labs/git.html
+  notes: ../eboards/eboard05.html
   
 - topic: Objects and classes
   abbrev: objects
@@ -86,6 +87,7 @@
     - page: /readings/standard-methods.html
   lab:
     - page: /labs/intro-classes.html
+  notes: ../eboards/eboard06.html
 
 - topic: Object semantics
   abbrev: object-semeantics
