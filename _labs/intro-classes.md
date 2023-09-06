@@ -14,6 +14,13 @@ todo:
     simple as giving them a procedure.
 ---
 
+Useful documenation:
+--------------------
+
+* [`java.lang.Integer`]({{ site.java_api }}/java/lang/Integer.html)
+* [`java.lang.String`]({{ site.java_api }}/java/lang/String.html)
+* [`java.math.BigInteger`]({{ site.java_api }}/java/math/BigInteger.html)
+
 Preparation
 -----------
 
