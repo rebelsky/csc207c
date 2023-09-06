@@ -120,7 +120,7 @@ Write and check/test a third constructor for the `Fraction` class.  This constru
   pen.println(f.numerator());   // 11
   pen.println(f.denominator()); // 5
   f = new Fraction("120/3");
-  pen.println(f.toReal());      // Approximately 40
+  pen.println(f.doubleValue()); // Approximately 40
 ```
 
 You can expect that the string will have two positive integers separated by a slash.  You may find it useful to reflect on the `indexOf` method of the `java.lang.String` class and on various static methods of the `java.lang.Integer` class.
