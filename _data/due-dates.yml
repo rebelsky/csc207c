@@ -12,93 +12,93 @@
   assigned:
     - page: /mps/mp01.html
 
-- date: 2023-09-06
-  assigned:
-    - page: /mps/mp02.html
-
 - date: 2023-09-07
   due:
     - page: /mps/mp01.html
 
-- date: 2023-09-13
+- date: 2023-09-08
   assigned:
-    - page: /mps/mp03.html
+    - page: /mps/mp02.html
 
 - date: 2023-09-14
   due:
     - page: /mps/mp02.html
 
-- date: 2023-09-20
+- date: 2023-09-15
   assigned:
-    - page: /mps/mp04.html
+    - page: /mps/mp03.html
 
 - date: 2023-09-21
   due:
     - page: /mps/mp03.html
 
-- date: 2023-09-27
+- date: 2023-09-22
   assigned:
-    - page: /mps/mp05.html
+    - page: /mps/mp04.html
 
 - date: 2023-09-28
   due:
     - page: /mps/mp04.html
 
-- date: 2023-10-04
+- date: 2023-09-29
   assigned:
-    - page: /mps/mp06.html 
+    - page: /mps/mp05.html
 
 - date: 2023-10-05
   due:
     - page: /mps/mp05.html
 
-- date: 2023-10-11
+- date: 2023-10-06
   assigned:
-    - page: /mps/mp07.html
+    - page: /mps/mp06.html 
 
 - date: 2023-10-12
   due:
     - page: /mps/mp06.html
 
-- date: 2023-10-25
+- date: 2023-10-13
   assigned:
-    - page: /mps/mp08.html
+    - page: /mps/mp07.html
 
 - date: 2023-10-26
   due:
     - page: /mps/mp07.html
 
-- date: 2023-11-01
-  due:
-    - page: /mps/mp09.html
+- date: 2023-10-27
+  assigned:
+    - page: /mps/mp08.html
 
 - date: 2023-11-02
   due:
     - page: /mps/mp08.html
 
-- date: 2023-11-08
-  assigned:
-    - page: /mps/mp10.html
+- date: 2023-11-03
+  due:
+    - page: /mps/mp09.html
 
 - date: 2023-11-09
   due:
     - page: /mps/mp09.html
 
-- date: 2023-11-15
+- date: 2023-11-10
   assigned:
-    - page: /mps/mp11.html
+    - page: /mps/mp10.html
 
 - date: 2023-11-16
   due:
     - page: /mps/mp10.html
 
-- date: 2023-11-29
+- date: 2023-11-17
   assigned:
-    - page: /mps/mp12.html
+    - page: /mps/mp11.html
 
 - date: 2023-11-30
   due:
     - page: /mps/mp11.html
+
+- date: 2023-11-31
+  assigned:
+    - page: /mps/mp12.html
 
 - date: 2023-12-07
   due:
