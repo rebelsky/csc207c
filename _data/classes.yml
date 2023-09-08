@@ -106,6 +106,7 @@
     - page: /labs/mental-models.html
   reminders:
     - This may need a new reading to replace PM's.
+  notes: ../eboards/eboard07.html
 
 - topic: Interfaces and subtype polymorphism
   abbrev: interfaces
