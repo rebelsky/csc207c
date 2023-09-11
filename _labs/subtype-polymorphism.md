@@ -7,9 +7,12 @@ summary: |
 Preparation
 -----------
 
-a. Fork and clone the specified repository.
+a. Fork and clone the specified repository:
 
-b. Import that repository into VSCode.
+<https://github.com/Grinnell-CSC207/lab-polymorphism-2019>
+
+b. Import that repository into VSCode.  (Apologies if that does not
+quite work correctly.)
 
 Exercises
 ---------
