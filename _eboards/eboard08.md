@@ -11,6 +11,7 @@ link: true
 
 _Approximate overview_
 
+* Administrivia
 * Expandable arrays, continued
 * Questions
 * Lab
@@ -21,7 +22,8 @@ Administrivia
 ### Introductory notes
 
 * I've added a link to the example code I'm writing as we go.  I'll 
-  leave it up to you to figure out what is what.
+  leave it up to you to figure out what is what.  (If you really need
+  a guide, let me know.)
 
 ### Upcoming Token activities
 
@@ -29,13 +31,20 @@ Academic
 
 * CS Table, Tuesday, Noon, Day PDR.  ???
 * CS Extras, Thursday, 4:15 pm, Science 3821.  ???
-* Sunday, 4-5pm, CS (Un)Commons
+* Thursday 14 Sept 2023, 6pm, "Microsfot Campus Visit" (HSSC Kernel/A1231)
+* Sunday, 4-5pm, CS (Un)Commons, 
 
 Cultural
+
+* Thursday 14 Sept 2023, 8pm, Writers @ Grinnell w/Claire Forrest '13
 
 Peer
 
 Wellness
+
+Misc
+
+* Friday 15 Sept 2023, Noon, Whale Room, Lunch with Young Alums in Tech
 
 ### Upcoming work
 
@@ -43,10 +52,28 @@ Wellness
 * Wednesday (befeore class): Readings
 * Thursday: MP2
 
+Questions
+---------
+
 Back to expandable arrays
 -------------------------
 
 ### PUM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 **Philosophy**: Like an array, but automatically "expands" if we set something
 beyond the assumed "size" of the array.
@@ -82,6 +109,14 @@ One could argue that once you have `size()`, you no longer need `addToEnd()`.
 * `arr.addToEnd(val) = arr.set(arr.size(), val);`
 
 ### LIA
+
+
+
+
+
+
+
+
 
 **Layout**: We're storing the array as a normal array.  We'll have to 
   allocate a bigger underlying array when it expands.
