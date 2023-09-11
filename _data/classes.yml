@@ -108,6 +108,16 @@
     - This may need a new reading to replace PM's.
   notes: ../eboards/eboard07.html
 
+- topic: Expandable arrays, revisited
+  abbrev: expandable-arrays
+  summary: |
+    We continue considering our continued example of expandable arrays.
+  subject: 
+    - PUM and LIA, revisited
+    - Designing expandable arrays
+    - Checking expandable arrays
+  notes: ../eboards/eboard08.html
+
 - topic: Interfaces and subtype polymorphism
   abbrev: interfaces
   summary: |
@@ -192,22 +202,6 @@
     - page: /readings/inheritance.html
   lab:
     - page: /labs/inheritance.html
-
-- topic: Java from the command line
-  abbrev: command-line
-  summary: |
-    We consider how to build larger Java programs, with multiple files
-    and such.
-  subjects:
-    - Multi-file programs
-    - Build systems
-    - Why use the command line?
-    - Maven from the command line
-    - Maven from VSCode
-  reading:
-    - page: /readings/maven.html
-  labs:
-    - page: /labs/command-line.html
 
 - topic: List ADTs
   abbrev: list-adts
@@ -687,4 +681,20 @@
   reminders:
     - Need readings
     - Need lab
+
+- topic: Java from the command line
+  abbrev: command-line
+  summary: |
+    We consider how to build larger Java programs, with multiple files
+    and such.
+  subjects:
+    - Multi-file programs
+    - Build systems
+    - Why use the command line?
+    - Maven from the command line
+    - Maven from VSCode
+  reading:
+    - page: /readings/maven.html
+  labs:
+    - page: /labs/command-line.html
 
