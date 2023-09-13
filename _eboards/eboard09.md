@@ -13,11 +13,18 @@ _Approximate overview_
 
 * Administrivia
 * A few notes on MP1
+* Questions
+* Lab
 
 Administrivia
 -------------
 
 ### Introductory notes
+
+* I lost my fight with VSCode yesterday.  Lab may be "interesting".
+  (Hey, it's a chance to experience: "The code was written to work
+  with a different IDE."  Let's see how many things go wrong.)
+* Beware!  Friday the thirteenth falls on Wednesday this month.
 
 ### Upcoming Token activities
 
@@ -41,205 +48,104 @@ Misc
 
 ### Upcoming work
 
-* Tonight: MP2 pre-assessment
 * Thursday: MP2
+* Friday: More readings
+
+About MP1
+---------
+
+* Rubric added (I think).
+* Graders are in progress.
+* I thought I'd go over a few things that tripped people up (or that
+  will trip people up).
+
+1. File names must match.  If I tell you to create a class named
+`CaesarCipher.java`, it should be named `CaesarCipher.java` and
+not `CeasarCipher.java` or `WickedNeatCipher.java`.
+
+2. Output should match.  If I tell you that the output should just
+be the encrypted word, you should not have extra output.
+
+3. I care about style.  You should match Google Java Style, including
+two-space indents and appropriate capitalization.
+
+4. I care about style.  You should choose good names for variables
+and procedures.
+
+5. If the instructions say to put particular text in a file, you must
+put that text in the file.  (Some of you didn't include your name or
+the one-sentence description in the README file.)
+
+6. To reach M, you need not do extra error checking and such (unless
+I tell you to).  To reach E, you should.  E code is robust code.
+
+```
+$ java CaesarCipher encode
+Please include the string you wish to encode.
+$ java VigenereCipher
+You incompetent user!  Do you not know that this program requires
+(a) the word encode or decode
+(b) a string to encode
+(c) a key
+You have failed to protect the security of your nation.  You will
+now be executed.
+```
+
+7. Please include a comment on your classes.
+
+```
+/**
+ * Encrypt/Decrypt text from the command line using the legendary
+ * Caesar Cipher mechanism.
+ *
+ * @author S Tudent
+ */
+public class CaesarCipher {
+  ...
+} // class CaesarCipher
+```
 
 Questions
 ---------
 
-Back to expandable arrays
--------------------------
+### MP2
 
-Expandable array code: [ExpandableStringArray.java](../examples/expandable-arrays//grinnell/csc207/fa2023/ExpandableStringArray.java)
+When is the rubric being released?
 
-Our experiments: [ESAexpt.java](../examples/expandable-arrays/ESAexpt.java)
+> Tonight.  Sorry for the delay.
 
-### PUM
+Will I have to be as careful on output for MP2 as I was supposed to be
+for MP1?
 
-**Philosophy**: Like an array, but automatically "expands" if we set something
-beyond the assumed "size" of the array.
+> Nope.  We didn't specify output this time.
 
-**Use Cases**: Similar to those for which we use arrays.  
+Do I have to make sure that the input is in the correct form?
 
-* Students indexed by id number.
-* Cities indexed by zip code.
-* Any collection of values that we may want to add to and rearrange (e.g., 
-  to sort)
+> No for an M, yes for an E.
 
-**Methods** (minimalist): An expandable array might provide three primary 
-methods.
+Lab
+---
 
-* `String ExpandableArray(String default)` - Create a new expandable array
-  of the specified size.
-* `void set(int index, String val)` - Set the value at the given index to
-  `val`.
-* `String get(int index)` - If we've set something at the given index using
-  `set`, return that value.  Otherwise, return `default`.
+VSCode may currently be broken in MathLAN.  You may have to use the
+terminal instead, at least for compilation.  I HATE COMPUTERS!
 
-We might also provide a few other basic methods
+### Exercise 1
 
-* `void addToEnd(String val)` - add to the end of the "useful" values
-* `int size()` : 1 + largest index used
+Try `Float.valueOf(f)` to convert a `float` value (primitive type) to
+a `Float` value (object).
 
-_Reminder_: At first, only add the methods that (a) make sense within the
-context of the purpose and (b) cannot be implemented by the other methods
-you've written.
+### Exercise 3
 
-One could argue that once you have `size()`, you no longer need `addToEnd()`.
+For exercise 3a, I want something like
 
-* `arr.addToEnd(val) = arr.set(arr.size(), val);`
+    TextBlock block3 = new BoxedBlock(new TextLine("Testing"));
+    TBUtils.print(pen, block3);
 
-### LIA
+3b: Box a Box
 
-**Layout**: We're storing the array as a normal array.  We'll have to 
-  allocate a bigger underlying array (and copy things over) when it 
-  needs to expand.
+3c: Box something empty.  (Do we have something empty?)
 
-Good alternate idea: A linked list of arrays.
+It's 11:15.  I have a "Sam said you can stop here" policy.
 
-What fields do you want in the class?
-
-```java
-public class ExpandableStringArray {
-  // +--------+------------------------------------------------------
-  // | Fields |
-  // +--------+
-
-  /**
-   * The "size"; the largest index used so far.
-   */
-  int size;
-
-  /**
-   * The underlying array.
-   */
-  String[] values;
-
-  /**
-   * The default value (used for cells that haven't been set).
-   */
-  String default;
-
-} // class ExpandableStringArray
-```
-
-**Implementation**
-
-* How will you implement `get`?
-* How will you implement `set`?
-* How will you implement your constructor?
-* How will you implement `size()`?
-* How will you implement `addToEnd()`? (Done)
-
-**`get`**
-
-* Idea: If i < this.size(), just get values[i].
-* Idea: If i >= this.size(), allocate a larger array and copy things
-  over.  (Seems like overkill.)
-* Idea: If i >= this.size() (or i >= this.values.length), return
-  a special value ... null? (default)
-* Question: What should we do for negative indices?  We don't normally
-  allow those to be set, but for get, we can either crash and burn 
-  (throw an Exception) or return the default.
-
-```
-  public String get(int i) {
-    if ((i < 0) || (i > this.values.length)) {
-      return this.default;
-    } else {
-      return this.values[i]; 
-    } // if ... else
-  } // get(int)
-```
-
-**`set`**
-
-* Note: If i is greater than this.values.length, we need to expand
-  the array.
-* Since we're expanding the array and we rely on `default`
-  being in all the unset locations, we need to put it ther.
-* We also need to update this size.
-
-```
-  public void set(int i, String val) {
-    // If the index is too large
-    if (i > this.values.length) {
-      // Build a new array and copy it over
-      String[] newvalues = new String[i+1];
-      for (int j = 0; j < this.values.length; j++) {
-        newvalues[j] = this.values[j];
-      } // for
-      for (int j = this.values.length; j < i; j++) {
-        newvalues[j] = this.default;
-      } // for 
-      this.values = newvalues;
-    } // if
-    this.values[i] = val;
-    this.size = max(this.size, i+1);
-  } // set(int, String)
-```
-
-**Constructor**
-
-```
-  private static final int INITIAL_ARRAY_SIZE = 16;
-
-  public ExpandableStringArray(String default) {
-    this.values = new String[INITIAL_ARRAY_SIZE];
-    this.default = default;
-    this.size = 0;
-    for (int i = 0; i < this.values.length; i++) {
-      this.values[i] = default;
-    } // for
-  } // ExpandableStringArray
-```
-
-**`size`**
-
-```
-/**
- * Get the size (1 + the largest index used for set).
- */
-public int size() {
-  return this.size;
-}
-```
-
-Note: The code above is not correct.  We made some changes in the example.
-Look [there](../examples/expandable-arrays/grinnell/csc207/fa2023/ExpandableStringArray.java).
-
-**Analysis**
-
-* About how many steps do we do in each of the methods (as a function
-  of the parameters).
-    * Constant: It doesn't depend on the parameters
-    * Linear: One step for each parameter (or for a numeric parameter).
-* Constructor: constant.  Always the same time.
-* Get: constant.
-* Size: constant.
-* Set: Sometimes constant (if i < this.values.length), sometimes
-  linear in i.
-
-We skipped over an important design decision.  When expanding the array,
-how much should we expand it?
-
-* Option 1: new size is `i + 1`
-* Option 2: new size is `this.values.length * 2`
-
-Hint: There are flaws in both options.
-
-* In option 1, you might expand a lot, particularly if you're doing
-  something like 
-    `for (int i = 0; i < 1000; this.addToEnd("" + i);`
-* In option 2, you may be expanding much more than you need, which
-  means a lot of effort setting them to default.
-* In option 2, i might be greater than `this.values.length * 2`.
-
-Our best option is either
-
-* Option 3: `max(i+1, this.values.length*2)`
-* Option 4: the smallest k that ensures that this.values.length*2^k > i
-
-Important moral: Double array sizes if you need to expand them.  There's
-a little extra expense now, but amortized over all the expansions, it's
-much better than a constant size expansion.
+* Fill out the lab writeup together.
+* Do the rest on your own (nothing to turn in).
