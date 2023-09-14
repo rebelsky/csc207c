@@ -9,7 +9,7 @@ Preparation
 
 a. Fork and clone the specified repository:
 
-<https://github.com/Grinnell-CSC207/lab-polymorphism-vscode>
+<https://github.com/Grinnell-CSC207/lab-polymorphism-2019>
 
 b. Import that repository into VSCode.
 

@@ -197,7 +197,7 @@ Why do we have packages?
 > In this class, we will generally restrict ourselves to public and
   package protection.
 
-What is the difference between protected and package?
+What is the difference between `protected` and "package"?
 
 > `protected` means "available to the package and to subclasses, even 
   if they are in other packages"`.

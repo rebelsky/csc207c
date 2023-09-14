@@ -6,6 +6,12 @@ package grinnell.csc207.fa2023;
  * @author CSC-207-01 2023 Fall
  */
 public class ExpandableStringArray {
+  // +---------+-----------------------------------------------------
+  // | Globals |
+  // +---------+
+
+  private static final int INITIAL_ARRAY_SIZE = 16;
+
   // +--------+------------------------------------------------------
   // | Fields |
   // +--------+
@@ -23,13 +29,19 @@ public class ExpandableStringArray {
   /**
    * The default value (used for cells that haven't been set).
    */
-  String default;
+  String defaultValue;
 
   // +--------------+------------------------------------------------
   // | Constructors |
   // +--------------+
 
-  public ExpandableStringArray(String default) {
+  public ExpandableStringArray(String defaultValue) {
+    this.values = new String[INITIAL_ARRAY_SIZE];
+    this.defaultValue = defaultValue;
+    this.size = 0;
+    for (int i = 0; i < this.values.length; i++) {
+      this.values[i] = defaultValue;
+    } // for
   } // ExpandableStringArray(String)
 
   // +-----------------+---------------------------------------------
@@ -44,11 +56,15 @@ public class ExpandableStringArray {
   } // addToEnd(String)
 
   /**
-   * Get the value at position i (or default, if no value has been
+   * Get the value at position i (or defaultValue, if no value has been
    * stored at that position.
    */
   public String get(int i) {
-    return "":  // STUB
+    if ((i < 0) || (i >= this.values.length)) {
+      return this.defaultValue;
+    } else {
+      return this.values[i];
+    } // if ... else
   } // get(int)
 
   /**
@@ -56,13 +72,27 @@ public class ExpandableStringArray {
    * array expands automatically.
    */
   public void set(int i, String val) {
-    // Stub
+    // If the index is too large
+    if (i >= this.values.length) {
+      // Build a new array and copy it over
+      String[] newvalues = new String[i+1];
+      for (int j = 0; j < this.values.length; j++) {
+        newvalues[j] = this.values[j];
+      } // for
+      for (int j = this.values.length; j < i; j++) {
+        newvalues[j] = this.defaultValue;
+      } // for
+      this.values = newvalues;
+    } // if
+    this.values[i] = val;
+    this.size = Math.max(this.size, i+1);
   } // set(int, String)
 
   /**
    * Get the size (1 + the largest index used for set).
    */
   public int size() {
+    return this.size;
   } // size()
 
 } // class ExpandableStringArray
