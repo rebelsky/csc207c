@@ -153,6 +153,7 @@
     - page: /readings/generics.html
   lab:
     - page: /labs/generics.html
+  notes: ../eboards/eboard10.html
 
 - topic: Unit testing and debugging
   abbrev: unit-testing
