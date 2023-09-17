@@ -10,7 +10,7 @@ prereqs: |
 Preparation
 -----------
 
-a. Fork and clone the repository.
+a. Fork and clone the repository
 at <https://github.com/Grinnell-CSC207/lab-generics-2019>
 
 b. Import the repository into VSCode.
