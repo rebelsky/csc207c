@@ -25,6 +25,8 @@ Administrivia
 * It looks like many of you struggled with the fractional calculator
   homework (aka MP3).  I'd like to know a bit about what issues were
   throwing you off.
+* Also: Why did no one attend the mentor session if you were having
+  difficulty?
 * Congrats to football for its victory at Beloit!
 
 ### Upcoming Token activities
