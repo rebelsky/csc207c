@@ -4,39 +4,46 @@ repo: <https://github.com/Grinnell-CSC207/lab-unit-testing-2019>
 summary: |
   In this laboratory, you will explore the JUnit unit testing framework, VSCodes's facilities for using JUnit, and the basics of Unit testing.
 todo: 
-  - Add something on testing for exceptions.
+  - Add something on testing for exceptions (not right now).
 ---
-
-**Note: This lab is in the process of being rewritten.**
 
 Preparation
 -----------
 
 a. Make sure you’ve read [the related reading](../readings/unit-testing).  You may find it helpful to have it open in a separate tab.
 
-b. Fork and clone the repository at <https://github.com/Grinnell-CSC207/lab-unit-testing-2019> (alternately <git@github.com:Grinnell-CSC207/lab-unit-testing-2019.git>).  Then import the project into Eclipse.
+b. Fork and clone the repository at <https://github.com/Grinnell-CSC207/lab-unit-testing-vscode> (alternately <git@github.com:Grinnell-CSC207/lab-unit-testing-vscode.git>).  Then import the project into VScode.
+
+c. Make a copy of the JUnit jar file, [`junit-platform-console-standalone-1.10.0.jar`](https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.10.0/junit-platform-console-standalone-1.10.0.jar).
+
+d. Add the JUnit file to your classpath.
+
+* Type Shift-Ctrl-P to bring up the command palette.
+* Type "Java: Configure ClassPath".
+* Make sure that you are configuring the right project.
+* At the bottom of the window, you should see a section entitled "Referenced Libraries".  Click "Add".
+* Navigate to the `junit-platform-console-standalone-1.10.0.jar` file and click "Select Jar File".
 
 Exercises
 ---------
 
 ### Exercise 1: Getting started
 
-a. Create a JUnit Test Case for the `c2f` method in the `SampleMethods` class.  That is, 
+a. Skim through the file `TestSampleMethods.java` to see what tests we've provided for you.
 
-* Select **New** > **JUnit Test Case**.
-* Make sure that "New JUnit Jupiter test" is selected.
-* Pick a sensible name for your test class, such as **C2FTest**.
-* Make sure that the class being tested is `SampleMethods`.
-* Click the **Next >** button.
-* Tick the box next to `c2f`.
-* Click the **Finish** button.
-* You may see a dialog box that says something like "JUnit 5 is not on the build path.  Do you want to add it?"  Follow the steps to add JUnit to your build path.
+b. You should see a icon on the left side of your VSCode window that looks a bit like a beaker.  Click on it.
 
-b. Click the "Run" button and observe what happens.
+c. You should see a "Play" button (a right facing triangle) within `lab-unit-testing-vscode`.  Click it.  Observe what happens.
 
-c. Replace the body of the `testC2F` (or just `test`) method with `assertEquals(0,0)`.  Then click the **Run** button and observe what happens.
+d. You may have noted that the successful test succeeded and nothing happened with the failing test.  That's because there was no `@Test` annotation before the failing test.  Add it.
 
-d. Create a second method that looks like the following:
+e. Try clicking the "Play" button again.  Observe what happens.
+
+f. Remove the `@Test` annotation.
+
+### Exercise 2: More experiments
+
+a. Create a new method that looks like the following:
 
 ```java
   public void test2() {
@@ -44,13 +51,13 @@ d. Create a second method that looks like the following:
   } // test2()
 ```
 
-e. What do you expect to happen when you run your test?
+b. What do you expect to happen when you run your test?
 
-f. Check your answer experimentally.
+c. Check your answer experimentally.
 
-g. Insert the annotation `@Test` before the declaration of `test2`.  Then determine what happens when you run your test code.
+d. Insert the annotation `@Test` before the declaration of `test2`.  Then determine what happens when you run your test code.
 
-h. Change the body of `test2` to the following.  Then observe what happens when you run your test code.
+e. Change the body of `test2` to the following.  Then observe what happens when you run your test code.
 
 ```java
     assertEquals(10, 3*5, "stupid test");
@@ -58,9 +65,9 @@ h. Change the body of `test2` to the following.  Then observe what happens when 
 
 This test is supposed to fail.  It's there to demonstrate that (a) you can add a message to `assertEquals`, (b) you can include computations in the body of `assertEquals`, and (c) `assertEquals` treats the first non-message value as the expected value and the second value as the received value.
 
-### Exercise 2: Temperature conversion
+### Exercise 3: Temperature conversion
 
-You've seen how Eclipse lets you create and run tests.  Now it's time to write a few of your own.
+You've seen how VSCode lets you create and run tests.  Now it's time to write a few of your own.
 
 a. We know that 0 degrees Celsius is 32 degrees Fahrenheit.  Write a test that verifies that `SampleMethods.c2f` computes the expected value.
 
@@ -72,7 +79,7 @@ d. If your tests reveal errors in `c2f`, correct the code.  Then run the tests a
 
 e. Write any other tests you think are relevant.  If the tests reveal errors, correct the code and then run the tests again.
 
-### Exercise 3: Testing simple sums
+### Exercise 4: Testing simple sums
 
 a. Read the documentation for `sum`
 
@@ -98,7 +105,7 @@ e. Consider the following test.  Does it meet the preconditions of `sum`?  Do yo
 
 f.  If your code does not pass the test (or if you believe that your code should not pass the test because integer overflows are supposed to break things), you have multiple options.  One option is to fix your code to handle situations like this.  Another is to rewrite the preconditions (e.g., "For every subset of ints, the sum of that subset is greater than `Integer.MIN_VALUE` and less than `Integer.MAX_VALUE`).  Another is to say that the test is so stupid that it shouldn't matter.  _Which approach do you prefer and why?_
 
-### Exercise 4: Writing multiple test cases
+### Exercise 5: Writing multiple test cases
 
 Read the documentation for the `expt` method.
 
