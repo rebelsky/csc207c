@@ -5,16 +5,10 @@ summary: |
   We begin to explore the ways in which we can use a debugger to better understand flaws in our code.
 ---
 
-**This lab is in the process of being rewritten.**
-
 Preparation
 -----------
 
-In [the laboratory on unit testing](../labs/unit-testing), you
-forked and cloned the repository
-<https://github.com/Grinnell-CSC207/lab-unit-testing-vscode>.  You'll
-work with that same repository.  (So return to the directory if you
-have it, and make a new copy if you don't.)
+In [the laboratory on unit testing](../labs/unit-testing), you forked and cloned the repository <https://github.com/Grinnell-CSC207/lab-unit-testing-vscode>.  You'll work with that same repository.  (So return to the directory if you have it, and make a new copy if you don't.)
 
 Exercises
 ---------
@@ -57,38 +51,28 @@ If you haven't yet written your test cases, here's one.
 
 You may be able to tell by inspection why the method fails.  But let's assume that you don't.
 
-Open the code for `removeAs` and right click in the grey bar to the left of the code to set a breakpoint at the start of the failing method.
+Open the code for `removeAsExperiment` and click to the left of the line number to set a breakpoint.
 
 As you'll see, the `SampleMethodsExperiments` main class duplicates the failed calls to `removeAs` from your unit tests.
 
-Select **Run** > **Debug As** > **Java Application**.
-
-A dialog box should pop up asking you to confirm switching to the
-Java perspective.
+Select the "Debug" option from above the main method.
 
 If all goes well, VSCode should stop at the point that you inserted
 a breakpoint.
 
-a. What do you expect to happen if you click the "Resume" button - the button that looks like a green triangle.  
+Click on the Debug view (the right triangle with a bug on it, in the left panel).
+
+a. What do you expect to happen if you click the "Continue" button (the button that looks like a triangle with a bar to the left)?
 
 b. Check your answer experimentally.
 
-As you may have noted, Eclipse resumed computation and ran until
-the completion of this program.  (Presumably, with incorrect output.)
-To see the results, you may need to switch back to the Java perspective.
-You can get that perspective by clicking on the downward arrow in the
-upper-right-corner of the screen.
+You will likely discover that the program runs to completion, giving us erroneous output in some (most) cases.
 
-c. Start the program again.  This time, let's single step through
-the procedure, using the "Step Over" button (also
-<kbd>F6</kbd>).  See if you can identify where the code goes wrong.
+c. Start the program again.  This time, let's single step through the procedure, using the "Step Into" and "Step Over" buttons.  See if you can identify where the code goes wrong.
 
-d. Correct the code to the best of your ability, remove the
-breakpoint, run the unit tests again, and see if your code
-passes all of the tests.
+d. Correct the code to the best of your ability, remove the breakpoint, run the unit tests again, and see if your code passes all of the tests.
 
-If so, go on to the next exercise.  If not, repeat the debugging
-steps until you find the next bug.
+If so, go on to the next exercise.  If not, repeat the debugging steps until you find the next bug.
 
 ### Exercise 2: Removing B's
 
@@ -149,7 +133,7 @@ c. Set a breakpoint at the start of the `expt` method.  (Make sure that you choo
 
 d. Start the debugger.  It should bring you to the first line of `expt`.
 
-e. What do you expect to happen if you click the "Resume" button?  (The button that looks like a green triangle.)
+e. What do you expect to happen if you click the "Continue" button?  (The button that looks like a triangle with a bar to the left.)
 
 f. You may have discovered that instead of returning to the call in the unit test, the debugger continued executing the code until the next call to `expt`, which is a recursive call.  Hit the "Resume" button another time.
 
@@ -172,3 +156,7 @@ One issue we *may* hit in unit testing is that doubles are approximate.  Hence, 
 
 Write appropriate unit tests for this alternate version.  Then determine if your corrections from the exercise above suffice.  If not, use the debugger to figure out why.
 
+Acknowledgements
+----------------
+
+The original version of this lab was written by Samuel A. Rebelsky and some student researchers many years ago.  It was updated for VSCode in Fall 2023.  Sam also added the `SampleMethodsTests` and `SampleMethodsExperiments` classes at that time.
