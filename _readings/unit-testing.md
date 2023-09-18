@@ -44,7 +44,7 @@ One of the first unit testing frameworks was SUnit, designed for the SmallTalk l
 Using JUnit in VSCode
 ---------------------
 
-**Forthcoming**.
+**This is written for Eclipse.  It _may_ be updated for VSCode.**
 
 We also use JUnit because it is integrated into Eclipse.
 
