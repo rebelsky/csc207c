@@ -28,6 +28,8 @@ Administrivia
 * Also: Why did no one attend the mentor session if you were having
   difficulty?
 * Congrats to football for its victory at Beloit!
+* Today's lab is somewhat rewritten.  Fingers crossed that everything works
+  okay.
 
 ### Upcoming Token activities
 
