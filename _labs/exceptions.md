@@ -53,9 +53,9 @@ d. Verify that VSCode is no longer concerned about errors in your code.
 
 e. Determine what happens when the user enters an invalid value (such as `Hello`) in response to a request for an integer.
 
-### Exercise 2: Computing A Quadratic Root
+### Exercise 2: Computing a quadratic root
 
-Add a static `smallQuadraticRoot(double a, double b, double c)` method to the `MathUtils` class.  The method should compute the smaller of the two roots of a quadratic expression.
+Implement the `smallerRoot()` method in the `Quadratic` class.  The method should compute the smaller of the two roots of a quadratic expression.
 
 Note that you can use the following formula to compute that root: $$(-b - \sqrt{b^2 - 4ac})/2a$$
 
@@ -89,10 +89,10 @@ c. Determine what happens if the user enters values for which the function has o
 
 ### Exercise 5: Indicating potential errors
 
-a. Extend `smallerQuadraticRoot` to indicate that it may throw an exception.  Note that you'll need to change the method signature for `smallerQuadraticRoot` to something like the following.
+a. Extend `smallerRoot` to indicate that it may throw an exception.  Note that you'll need to change the method signature for `smallerRoot` to something like the following.
 
 ```
-  public static double smallerQuadraticRoot(double a, double b, double c) throws Exception {
+  public double smallerRoot() throws Exception {
 ```
 
 b. Can you successfully compile your modified code?  If not, make any changes necessary to permit you to compile it.
@@ -104,7 +104,7 @@ d. What now happens if you enter the "erroneous" input described
 
 ### Exercise 6: Throwing exceptions
 
-a. Extend `smallerQuadraticRoot` so that it throws an exception if `a` is 0.  For example,
+a. Extend `smallerRoot` so that it throws an exception if `a` is 0.  For example,
 
 ```
     if (a == 0) {
@@ -113,7 +113,7 @@ a. Extend `smallerQuadraticRoot` so that it throws an exception if `a` is 0.  Fo
 ```
 
 
-b. Extend `smallerQuadraticRoot` so that it throws an exception if the root is not real (i.e., if it has an imaginary component).  Note that the root is not real if the expression that you're taking a square root of is negative.
+b. Extend `smallerRoot` so that it throws an exception if the root is not real (i.e., if it has an imaginary component).  Note that the root is not real if the expression that you're taking a square root of is negative.
 
 c. What now happens if you enter the "erroneous" input described above?
 
@@ -125,26 +125,24 @@ a. What effect do you expect removing that line will have?
 
 b. Check your answer experimentally.  Ask one of the class staff if don't understand the results of your experiment.
 
-c. Enclose your call to `smallerQuadraticRoot` in a try/catch block.  For example, 
+c. Enclose your call to `smallerRoot` in a try/catch block.  For example, 
 
 ```
     try {
-      double root = f.smallerQuadraticRoot(a,b,c);
+      double root = qpoly.smallerRoot();
       pen.println("The smaller root of the polynomial is: " + root);
-      pen.println("Experimentally, " + a + "*" + root + "*" + root
-          + "+" + b + "*" + root + "+" + c + " = " 
-          + (a*root*root + b*root + c));
+      pen.println("Experimentally: " + qpoly.toString(root) + " = " +
+        qpoly.evaluate(root));
     } catch (Exception e) {
       pen.println("Sorry, I could not compute a root.");
     } // catch (Exception)
 ```
 
-
 d. Determine what happens with the problematic inputs described above.
 
 ### Exercise 8: Catching specific exceptions
 
-a. Update `smallerQuadraticRoot` so that it tries to throw a `DivideByZeroException` if the coefficient of the quadratic term is 0.  You can still throw a generic exception if the result includes an imaginary component.
+a. Update `smallerRoot` so that it tries to throw a `DivideByZeroException` if the coefficient of the quadratic term is 0.  You can still throw a generic exception if the result includes an imaginary component.
 
 b. What do you expect to happen when you try to compile the revised program?
 
@@ -171,7 +169,6 @@ b. Verify that the previously-modified code now works.
       ...
     } // catch (Exception)
 ```
-
 
 b. Determine what happens in each of the problematic cases.
 
