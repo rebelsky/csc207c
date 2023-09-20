@@ -25,7 +25,11 @@ Administrivia
   okay.
     * Make sure that you are using the repo named something like
       `lab-exceptions-vscode`.
-      
+* Note that you can usually get VSCode to format your code to meet my
+  expectations using the command "Format Document".
+* Your graders ask that you not clog your repositories with cruft.
+    * Just the README and the .java files *for the specific project*.
+
 ### Upcoming Token activities
 
 Academic
