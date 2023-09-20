@@ -174,10 +174,7 @@
   lab:
     - page: /labs/unit-testing.html
     - page: /labs/debugging.html
-  reminders:
-    - Needs to be rewriten to incorporate VScode's debugger.
-    - Unit testing has changed, too.
-    - Should this be split?  Probably.
+  notes: ../eboards/eboard11.html
 
 - topic: Exceptional programming
   abbrev: exceptions
@@ -189,7 +186,8 @@
   reading:
     - page: /readings/exceptions.html
   labs:
-    - page: /labs/command-line.html
+    - page: /labs/exceptions.html
+  notes: ../eboards/eboard11.html
 
 - topic: Inheritance
   abbrev: inheritance
