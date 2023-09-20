@@ -185,9 +185,9 @@
     - Object-oriented design
   reading:
     - page: /readings/exceptions.html
-  labs:
+  lab:
     - page: /labs/exceptions.html
-  notes: ../eboards/eboard11.html
+  notes: ../eboards/eboard12.html
 
 - topic: Inheritance
   abbrev: inheritance
