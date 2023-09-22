@@ -21,24 +21,18 @@ Administrivia
 ### Introductory notes
 
 * Warning!  Today is Friday the 13th (class).
-* Today's lab is somewhat rewritten.  Fingers crossed that everything works
-  okay.
-    * Make sure that you are using the repo named something like
-      `lab-exceptions-vscode`.
+* Congratulations to our Grinnellian of the week!
 * If it looks like VSCode is spending forever Java stuff, click on the
   "see more" link (something like that) and then close the box that
   appears.
-* "It sucks that there are people who know much more than me here."
 * Today is (almost) our last day on Java.  Starting next week, we'll be
   using Java to build ADTs, Data Structures, and Algorithms.
+* MP4 released.
 
 ### Upcoming Token activities
 
 Academic
 
-* CS Extras, Thursday 21 Sept 2023, 4:15 pm, Science 3821.  Study Abroad in CS.
-* GrinTech talk w Karla Erickson and Elizabeth Cave, Thursday, 21 Sept 2023, 
-  HSSC N1112.
 * Mentor session Sunday.
 
 Cultural
@@ -53,6 +47,13 @@ Misc
 
 * Monday: More readings, today's lab
 
+### Friday PSA
+
+MP4
+---
+
+See [the assignment](../mps/mp04).
+
 Questions
 ---------
 
@@ -63,7 +64,19 @@ says that you **should** ask those questions._
 
 ### Administrative stuff
 
-### MP4
+In CSC-161, we got detailed instructions for each assignment, laying
+out each thing we were supposed to do.  Here, we get vague generalities.
+That's hard!
+
+> It's at least partially intentional.  I want you to get used to
+  (a) dealing with incomplete specifications and (b) asking questions.
+  As I hope class on Wednesday suggested, I'm happy to spend time in
+  class answering questions.
+
+It sucks that there are people who know much more than me here.
+
+> It does.  I hope that things balance out as the semester progresses.
+  We move on to algorithms and data structures next week.
 
 ### Exceptions
 
