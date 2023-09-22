@@ -7,6 +7,15 @@
  * @author Samuel A. Rebelsky
  */
 public class AssociativeArray<K,V> {
+  // +-----------+---------------------------------------------------
+  // | Constants |
+  // +-----------+
+
+  /**
+   * The default capacity of the initial array.
+   */
+  static final int DEFAULT_CAPACITY = 16;
+
   // +--------+------------------------------------------------------
   // | Fields |
   // +--------+
@@ -19,7 +28,7 @@ public class AssociativeArray<K,V> {
   /**
    * The array of key/value pairs.
    */
-  KVPair<K,V> pairs;
+  KVPair<K,V> pairs[];
 
   // +--------------+------------------------------------------------
   // | Constructors |
@@ -28,8 +37,11 @@ public class AssociativeArray<K,V> {
   /**
    * Create a new, empty associative array.
    */
+  @SuppressWarnings({"unchecked"})
   public AssociativeArray() {
-    // STUB
+    // Creating new arrays is sometimes a PITN.
+    this.pairs = (KVPair<K,V>[]) new Object[DEFAULT_CAPACITY];
+    this.size = 0;
   } // AssociativeArray()
 
   // +------------------+--------------------------------------------
