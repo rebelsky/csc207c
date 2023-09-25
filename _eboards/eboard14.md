@@ -13,18 +13,25 @@ _Approximate overview_
 
 * Administrivia
 * Questions
-* Discussion
+* The design of ADTs, revisited
+* Scheme lists
+* Broader concepts of lists
+* Java lists
+* Implementing lists
 
 Administrivia
 -------------
 
 ### Introductory notes
 
+* Today is a talk day rather than a lab day.
+
 ### Upcoming Token activities
 
 Academic
 
-* Mentor session Sunday at 4pm.
+* CS Table Tuesday
+* CS Extras Thursday
 
 Cultural
 
@@ -55,3 +62,29 @@ What should I do for an MP redo?
 ### Exceptions
 
 ### Inheritance
+
+The design of ADTs, revisited
+-----------------------------
+
+* It's time for some PUMishment
+* What does PUM stand for?
+* Why do we use PUM?
+
+Scheme lists
+------------
+
+* These aren't quite an ADT, but we can try to pretend they are.
+
+Broader concepts of lists
+-------------------------
+
+Java lists
+----------
+
+* I think Sun got it wrong.
+
+Implementing lists
+------------------
+
+* Two basic implementations: Linked lists and array-based lists.
+* How well they work depends 
