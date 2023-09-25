@@ -1,3 +1,5 @@
+package structures;
+
 /**
  * A basic implementation of Associative Arrays with keys of type K
  * and values of type V.  Associative Arrays store key/value pairs
