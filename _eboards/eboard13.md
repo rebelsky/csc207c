@@ -12,6 +12,7 @@ link: true
 _Approximate overview_
 
 * Administrivia
+* About MP4
 * Questions
 * Lab
 
@@ -33,9 +34,11 @@ Administrivia
 
 Academic
 
-* Mentor session Sunday.
+* Mentor session Sunday at 4pm.
 
 Cultural
+
+* Book talk Thursday W@G
 
 Peer
 
@@ -45,7 +48,7 @@ Misc
 
 ### Upcoming work
 
-* Monday: More readings, today's lab
+* Monday: No reading, today's lab
 
 ### Friday PSA
 
@@ -53,6 +56,8 @@ MP4
 ---
 
 See [the assignment](../mps/mp04).
+
+Yay!  Fun!
 
 Questions
 ---------
@@ -78,6 +83,8 @@ It sucks that there are people who know much more than me here.
 > It does.  I hope that things balance out as the semester progresses.
   We move on to algorithms and data structures next week.
 
+> We'll talk more about the power dynamics of this later.
+
 ### Exceptions
 
 ### Inheritance
@@ -85,3 +92,31 @@ It sucks that there are people who know much more than me here.
 Lab
 ---
 
+
+```
+  // Assume DecrementableCounter extends BasicCounter and
+  // BasicCounter implements Counter.  Is this legal?
+  Counter gamma = new DecrementableCounter(10);
+  // However, we cannot treat gamma as a DecrementableCounter
+  // (we can't access the method).
+```
+
+Inheritance basics you might have learned ...
+
+* When you call a method on an object in a subclass, and the subclass
+  does *not* implement the method, we get the method from the superclass.
+* When you call a method on an object in a subclass, and the subclass
+  *does* implement the method, we get the method from the subclass.
+* (Similar with fields.)
+* You can use a member of a subclass anywhere you can use a member of
+  its superclass.  (That's subtype polymorphism in action.)
+
+Things you might have learned that often trip up students ...
+
+* In deciding what methods you *can* call, Java relies on the declared
+  type of an object.
+* In deciding what version of the method you *do* call, Java relies on
+  the actual type of the object.
+* Java insists that we call the constructor of the superclass implicitly
+  (zero-parameter) or explicitly.
+* That call must be the first thing in the constructor.
