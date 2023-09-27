@@ -54,6 +54,24 @@ If the stack is not empty, there are unmatched open or closed parens.
 
 Implement this algorithm.  (You might also add support for braces and angle brackets.)  That is, write and experiment with a static method, `checkMatching(String str)`, that checks whether the parens, square brackets, and potentially, other characters, match correctly.
 
+You should put your static method in a new class, `StringUtils.java`.
+
+```
+/**
+ * Assorted utilities for working with strings.
+ *
+ * @author Your Name Here
+ */
+public class StringUtils {
+  /**
+   * Determine whether the parens match in string.
+   */
+  public static boolean checkMatching(String str) {
+    return false;       // STUB
+  } // checkMatching
+} // class StringUtils
+```
+
 ### Exercise 5: Exploring linked stacks
 
 The strategy for implementing a linked stack is relatively straightforward.
@@ -88,7 +106,7 @@ For those with extra time
 
 _If you find that you finish the lab early, you might consider undertaking one or more of the following problems.  You will likely want to consider them in order._
 
-### Extra 1: Matching
+### Extra 1: Matching, revisited
 
 Revise your answer from the earlier parenthesis matching exercise to store the indices of matching symbols.  That is, you will need to push both symbol and index.  Use the indices to provide better error messages (e.g., you can say where the mismatch occurs in the string).
 
