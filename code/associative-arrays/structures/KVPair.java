@@ -4,7 +4,7 @@ package structures;
  * An easy way to store key/value pairs.  We assume that other
  * classes will access fields directly.
  */
-public class KVPair<K,V> {
+class KVPair<K,V> {
   // +--------+------------------------------------------------------
   // | Fields |
   // +--------+
@@ -26,16 +26,28 @@ public class KVPair<K,V> {
   /**
    * Create an empty key/value pair.
    */
-  public KVPair() {
+  KVPair() {
     this(null, null);
   } // KVPair()
 
   /**
    * Create a new key/value pair.
    */
-  public KVPair(K key, V value) {
+  KVPair(K key, V value) {
     this.key = key;
     this.value = value;
   } // KVPair(K,V)
+
+  // +------------------+--------------------------------------------
+  // | Standard methods |
+  // +------------------+
+
+  public KVPair<K,V> clone() {
+    return new KVPair<K,V>(this.key, this.value);
+  } // clone()
+
+  public String toString() {
+    return "{ " + this.key.toString() + " : " + this.value.toString() + " }";
+  } // toString()
 } // class KVPair
-  
+
