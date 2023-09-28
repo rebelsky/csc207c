@@ -1,14 +1,16 @@
 package structures;
 
+import static java.lang.reflect.Array.newInstance;
+
 /**
  * A basic implementation of Associative Arrays with keys of type K
- * and values of type V.  Associative Arrays store key/value pairs
+ * and values of type V. Associative Arrays store key/value pairs
  * and permit you to look up values by key.
  *
  * @author Your Name Here
  * @author Samuel A. Rebelsky
  */
-public class AssociativeArray<K,V> {
+public class AssociativeArray<K, V> {
   // +-----------+---------------------------------------------------
   // | Constants |
   // +-----------+
@@ -30,7 +32,7 @@ public class AssociativeArray<K,V> {
   /**
    * The array of key/value pairs.
    */
-  KVPair<K,V> pairs[];
+  KVPair<K, V> pairs[];
 
   // +--------------+------------------------------------------------
   // | Constructors |
@@ -39,10 +41,11 @@ public class AssociativeArray<K,V> {
   /**
    * Create a new, empty associative array.
    */
-  @SuppressWarnings({"unchecked"})
+  @SuppressWarnings({ "unchecked" })
   public AssociativeArray() {
     // Creating new arrays is sometimes a PITN.
-    this.pairs = (KVPair<K,V>[]) new Object[DEFAULT_CAPACITY];
+    this.pairs = (KVPair<K, V>[]) newInstance((new KVPair<K, V>()).getClass(),
+        DEFAULT_CAPACITY);
     this.size = 0;
   } // AssociativeArray()
 
@@ -53,15 +56,15 @@ public class AssociativeArray<K,V> {
   /**
    * Create a copy of this AssociativeArray.
    */
-  public AssociativeArray<K,V> clone() {
-    return null;        // STUB
+  public AssociativeArray<K, V> clone() {
+    return null; // STUB
   } // clone()
 
   /**
    * Convert the array to a string.
    */
   public String toString() {
-    return "{}";        // STUB
+    return "{}"; // STUB
   } // toString()
 
   // +----------------+----------------------------------------------
@@ -69,7 +72,7 @@ public class AssociativeArray<K,V> {
   // +----------------+
 
   /**
-   * Set the value associated with key to value.  Future calls to
+   * Set the value associated with key to value. Future calls to
    * get(key) will return value.
    */
   public void set(K key, V value) {
@@ -80,22 +83,23 @@ public class AssociativeArray<K,V> {
    * Get the value associated with key.
    *
    * @throws KeyNotFoundException
-   *   when the key does not appear in the associative array.
+   *                              when the key does not appear in the associative
+   *                              array.
    */
   public V get(K key) throws KeyNotFoundException {
-    return null;        // STUB
+    return null; // STUB
   } // get(K)
 
   /**
    * Determine if key appears in the associative array.
    */
   public boolean hasKey(K key) {
-    return false;       // STUB
+    return false; // STUB
   } // hasKey(K)
 
   /**
-   * Remove the key/value pair associated with a key.  Future calls
-   * to get(key) will throw an exception.  If the key does not appear
+   * Remove the key/value pair associated with a key. Future calls
+   * to get(key) will throw an exception. If the key does not appear
    * in the associative array, does nothing.
    */
   public void remove(K key) {
@@ -122,35 +126,3 @@ public class AssociativeArray<K,V> {
   } // find(K)
 
 } // class AssociativeArray
-
-/**
- * An easy way to store key/value pairs.  We assume that other
- * classes will access fields directly.
- */
-class KVPair<K,V> {
-  // +--------+------------------------------------------------------
-  // | Fields |
-  // +--------+
-
-  /**
-   * The key.
-   */
-  K key;
-
-  /**
-   * The value.
-   */
-  V value;
-
-  // +--------------+------------------------------------------------
-  // | Constructors |
-  // +--------------+
-
-  /**
-   * Create a new key/value pair.
-   */
-  public KVPair(K key, V value) {
-    this.key = key;
-    this.value = value;
-  } // KVPair(K,V)
-} // class KVPair
