@@ -18,26 +18,33 @@ _Approximate overview_
 Administrivia
 -------------
 
-### Introductory notes
-
-* Still on lab das
+* Welcome to any parents who are here.
+* I believe I've added everyone to the testing repo.  If you did not
+  get an invitation, please let me know.
+* Don't forget that we have evening tutors here most nights.  Not all
+  of them can help you, but many can.
+* Tests that identify errors in my code will earn you tokens.
 
 ### Upcoming Token activities
 
 Academic
 
 * Mentor session Sunday
+* CS Table, Tuesday, Noon, Reports from Tapia and GHC.
 
 Cultural
 
-* Jazz band concert Friday night
-* SOL heritage event Friday in location tbd.
+* Jazz Ensemble, Friday, 7:30 p.m. Sebring-Lewis
+* SOL Heritage Event, Friday, ???, ???
+* Grinnell Symphony, Saturday, 2:00 p.m. Sebring-Lewis
+* Pieta Brown, Saturday, 7:00 p.m. Central Campus
 
 Peer
 
 * Football vs Lawrence Saturday at 1 pm
 * Soccer vs Ripon Saturday at 1:30 pm
-* Smash Bros tournament
+* Smash @ Grinnell Monthly Tournament #1, 1:00-5:00 p.m. Saturday, 
+  HSSC N3170 - Inquiry Learning Lab
 
 Wellness
 
@@ -73,34 +80,12 @@ How do we achieve those pictures?
 Questions
 ---------
 
-What happens if I don't turn in a pre-assessment or a post-assessment?
-
-> From the syllabus,
-
-> > You are allowed to miss up to four total lab assignments and metacognitive reflections in the semester without penalty. If you miss more labs or reflections, your overall letter grade will be lowered by one-third of a letter grade for each two additional labs or reflections you miss. Excesses of one also result in a loss. 
-
-What happens if I turn in something late?
-
-> You lose a token.
-
-Lab
----
-
 Why do we fork and then clone?
 
 > So that you have your own copy of the code.  You can push your changes
   and then share them your partner (or yourself on another computer)
   using the GitHub repo.
 
-Are we paying attention to Sam?
+How do I know how I'm doing on tokens?
 
-> Probably not.  That means that there's a significant possibility that
-  he will make fun of us on the eboard.
-
-What should we call the class for exercise 4?
-
-> `StringUtils.java`
-
-Where can we find the code Sam is writing?
-
-> Reload the lab page.
+> I hope to get that updated next weekend.
