@@ -141,7 +141,7 @@ public class SampleGreetable2 implements Greetable {
       } // greet(PrintWriter)
     }; // new Greeter
   } // greeter()
-} // interface SampleGreetable2
+} // class SampleGreetable2
 ```
 
 What's going on here?  It looks like we're calling a constructor for
@@ -149,7 +149,7 @@ an interface, and we know that interfaces don't have constructors.
 There's also an open brace after the `new Greeter()`, rather than
 a semicolon.
 
-Welcome to the world of anonymous inner classes.  If you use `new` with
+Welcome to the world of _anonymous inner classes_.  If you use `new` with
 an interface (and, in some cases, with classes) and then follow it with
 a code block, Java treats that as "I'm simultaneously describing a class
 and building an object in the class."
@@ -298,16 +298,16 @@ SampleGreetable5.java:19: error: local variable n is accessed from within inner 
 1 error
 ```
 
-What's going on here?  The Java compiler is worried that `n`
-gets referenced in a method that may be called when that method is no
-longer in scope.  (And we can be pretty sure that it won't be in scope
-when `greet` gets called.)  Some languages like Scheme have
-a clever way of dealing with these issues.  Java, on the other hand,
-doesn't want to have to deal with it.  So, Java is only willing to let
-you reference the parameter if it knows that the parameter won't change,
-in which case it can just grab the current value.  The `final`
-modifier is how you tell Java that it won't change.  With this update,
-we can write the following:
+What's going on here?  The Java compiler is worried that `n` gets
+referenced in a method that may be called when that method is no
+longer in scope.  (And we can be pretty sure that it won't be in
+scope when `greet` gets called.)  Some languages like Scheme have
+a clever way of dealing with these issues.  The designers of Java,
+on the other hand, didn't want to have to deal with those complexities.
+Hence, Java is only willing to let you reference the parameter if
+it knows that the parameter won't change, in which case it can just
+grab the current value.  The `final` modifier is how you tell Java
+that it won't change.  With this update, we can write the following:
 
 ```java
 import java.io.PrintWriter;
@@ -335,7 +335,7 @@ public class SampleGreetable5 implements Greetable {
 } // interface SampleGreetable5
 ```
 
-You'll have a chance to explore this particular issue in lab.
+You may have a chance to explore this particular issue in lab.
 
 What does "`this`" mean?
 ------------------------------------------------
@@ -362,12 +362,11 @@ SampleGreetable6.java:17: error: cannot find symbol
 1 error
 ```
 
-We've learned a lot from that message.  The compiler didn't complain about
-`this.num`, so it seems that `this` refers to the
-inner class.  It did, however, complain about `this.i`, and 
-so `this` does not refer to the enclosing class.  It turns
-out that to refer to the enclosing class, you prefix `this`
-with the class name.  
+We've learned a lot from that message.  The compiler didn't complain
+about `this.num`, so it seems that `this` refers to the inner class.
+It did, however, complain about `this.i`, and so `this` does not
+refer to the enclosing class.  It turns out that to refer to the
+enclosing class, you prefix `this` with the class name.
 
 ```java
 import java.io.PrintWriter;
@@ -461,3 +460,5 @@ Acknowledgements
 Most of this reading is closely based on
 [a similar reading from fall 2014](https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/2a014F/readings/anonymous-inner-classes.html).  I've reformatted
 the code and rewritten some text.
+
+I did a bit more cleanup in Fall 2023.

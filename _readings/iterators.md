@@ -241,7 +241,8 @@ Iterators, complexified
 If your iterators need only provide `next` and `hasNext` methods, they
 can be fairly straightforward.  However, in practice, Java's iterators
 often provide a variety of other methods, some of which may "complexify"
-your implementation.
+your implementation.  (Those who care about the English language
+might say "complicate" rather than "complexify".)
 
 One *optional* method in `java.util.Iterator` is `remove`.  This
 method is supposed to remove the value that was *just* returned by
