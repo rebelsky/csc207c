@@ -17,7 +17,7 @@ Preparation
 a. Open the [reading on linear structures](../readings/linear-structures), the
 [reading on queues](../readings/queues), the [reading on priority
 queues](../readings/linear), and the [reading on wrapper
-classes](../readings/wrapper) in new tabs.
+classes](../readings/wrappers) in new tabs.
 
 b. If you haven't already done so, fork and clone the repo at <https://github.com/Grinnell-CSC207/linear-structures>.
 
@@ -41,7 +41,7 @@ Read through `ArrayBasedQueue.java`.  You will note that the iterator
 is not yet implemented.  That's okay; we'll talk about iterators
 in the near future.  More importantly, you may also note a few
 subtle (or not so subtle) bugs.  If you do, write them down.  If
-not, that's okay, we'll work them out in the lab.
+not, that's okay, too; we'll work them out in the lab.
 
 ### Exercise 2: Some basic experiments
 
@@ -146,7 +146,7 @@ class StringComparator implements Comparator<String> {
   } // compare(String, STring)
 } // StringComparator
 
-class IntComparator implement Comparator<Integer> {
+class IntComparator implements Comparator<Integer> {
   public int compare(Integer i, Integer j) {
     // While this method sometimes gets implemented as i-j, that
     // implementation presents overflow risks, so we choose a
@@ -189,7 +189,7 @@ the iterator is not yet implemented and that prioritization is not
 yet implemented.
 
 b. Make some notes to yourself as to how you might finish implementing
-the put and get methods.
+the `put` and `get` methods.
 
 c. As [the reading](../readings/priority-queues) noted, there are
 two basic strategies for implementing priority queues in arrays.
@@ -212,6 +212,6 @@ Exercise 7 and Extra 2 are taken primarily from [a lab on priority
 queues from CSC 207
 2014F](https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/2014F/labs/priority-queues)
 
-The remaining exercises are new to this lab.
+The remaining exercises are new to this lab, which I think came from the spring 2019 section of 207.
 
 All of these materials were written by Samuel A. Rebelsky.
