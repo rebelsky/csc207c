@@ -11,10 +11,18 @@ javadoc:
   - "[`java.util.Iteratable`]({{ site.java_api }}/java/util/Iteratable.html)"
 ---
 
+Useful documentation
+--------------------
+
+* [`java.util.Comparator`]({{ site.java_api }}/java/util/Comparator.html)
+* [`java.util.PriorityQueue`]({{ site.java_api }}/java/util/PriorityQueue.html)
+* [`java.util.Iterator`]({{ site.java_api }}/java/util/Iterator.html)
+* [`java.util.Iteratable`]({{ site.java_api }}/java/util/Iteratable.html)
+
 Preparation
 -----------
 
-If you have not done so already, fork and clone the repo.
+If you have not done so already, fork and clone the repo at <https://github.com/Grinnell-CSC207/linear-structures>.
 
 Exercises
 ---------
@@ -23,7 +31,7 @@ Exercises
 
 Write a new class with a `main` method that creates a priority queue
 of strings that is ordered by string length, adds a few strings,
-and then remove sthe strings.  
+and then removes the strings.  
 
 You may use either `java.util.PriorityQueue` or `BuiltinPriorityQueue`
 for your priority queue.
@@ -79,7 +87,7 @@ public ArrayBasedQueueIterator<T> implements Iterator<T> {
   }
 
   // ... this.abq.values[this.pos] ...
-}
+} // ArrayBasedQueueIterator<T>
 ```
 
 ### Exercise 5: Implementing `remove` in array-based queues
@@ -87,19 +95,25 @@ public ArrayBasedQueueIterator<T> implements Iterator<T> {
 You may have noted that `java.util.Iterator` provides a `remove` method.
 Implement that method for your iterator for `ArrayBasedQueue`.
 
-### Exercise 6: Anonymous iterators
+For those with extra time
+-------------------------
+
+If you find that you have extra time, you should attempt the following.
+
+### Extra 1: Anonymous iterators
 
 Convert your iterator for array-based queues to an anonymous inner
 class.  You should now be able to do without the field that refers
 back to the associated array-based queue.
 
-For those with extra time
--------------------------
+### Extra 2: Implementing `remove` in linked queues
 
-It seems unlikely that you will have extra time.  If you do, you
-may leave early.
+Implement the `remove` method for the iterator for `LinkedQueue`.  
+
+_Note_: This is a pain in the neck and may involve special cases.
 
 Acknowledgements
 ----------------
 
-This lab was newly written in spring 2019.  (Can you tell?)
+This lab was newly written in spring 2019.  It was revised somewhat in 
+Fall 2023.
