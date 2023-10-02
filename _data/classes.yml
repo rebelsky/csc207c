@@ -278,12 +278,7 @@
     - page: /readings/iterators.html
   lab:
     - page: /labs/iterators.html
-  reminders:
-    - Need to rewrite the anonymous inner class reading to focus on iterators
-    - May need to write an iterator reading (don't I have one)
-    - For lab, may have them implement iterators
-    - Note that there are some good questions about iterators at the start
-      of the array-based-lists lab.
+  notes: ../eboards/eboard17.html
 
 - topic: Analyzing algorithms
   abbrev: analysis
@@ -297,11 +292,13 @@
     - Counting steps
     - Big-O, formalized
     - Implications of Big-O
+  reading:
+    - CLRS 2.1
+    - CLRS 2.2
   lab:
     - page: /labs/empirical-analysis.html
     - page: /labs/complexity.html
   reminders:
-    - Copy PM's lab (I may have done that)
     - Find an appropriate reading (CLRS?)
 
 - topic: Analyzing recursive algorithms
@@ -314,6 +311,9 @@
     - Approaches to recurrence relations
   lab:
     - page: /labs/analyze-recursive.html
+  reading:
+    - CLRS 2.3
+    - CLRS 3.1
   reminders:
     - Need to write the lab (or find one in PM).  Did I do so?
     - Find a reading?
