@@ -38,6 +38,8 @@ Wellness
 
 Misc
 
+* Second-year spotlight event, today, 4:00-6:30 p.m. in the Kernel or Husk Atrium.  Stop by and visit OCS and tell them Sam sent you.
+
 ### Other good things (no tokens)
 
 ### Upcoming work
