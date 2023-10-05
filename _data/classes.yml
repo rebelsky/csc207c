@@ -300,6 +300,7 @@
     - page: /labs/complexity.html
   reminders:
     - Find an appropriate reading (CLRS?)
+  notes: ../eboards/eboard18.html
 
 - topic: Analyzing recursive algorithms
   abbrev: analysis-recursive
