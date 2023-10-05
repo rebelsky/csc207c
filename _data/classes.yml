@@ -295,11 +295,12 @@
   reading:
     - CLRS 2.1
     - CLRS 2.2
-  lab:
+  notlab:
     - page: /labs/empirical-analysis.html
     - page: /labs/complexity.html
   reminders:
     - Find an appropriate reading (CLRS?)
+  notes: ../eboards/eboard18.html
 
 - topic: Analyzing recursive algorithms
   abbrev: analysis-recursive
@@ -309,14 +310,15 @@
     - Iterative analysis, revisited
     - Recurrence relations
     - Approaches to recurrence relations
-  lab:
+  nolab:
     - page: /labs/analyze-recursive.html
   reading:
     - CLRS 2.3
-    - CLRS 3.1
+    - CLRS 3
   reminders:
     - Need to write the lab (or find one in PM).  Did I do so?
     - Find a reading?
+  notes: ../eboards/eboard19.html
 
 - topic: Anonymous functions
   abbrev: lambda
