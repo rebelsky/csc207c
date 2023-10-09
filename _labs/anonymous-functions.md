@@ -44,6 +44,8 @@ You will likely need to
 *Note*: If you are adding interfaces and classes, you should do so outside
 the body of `JTLambdaExperiments`.
 
+*Note*: I apologize for the gender binary in the `Person` class.
+
 ### Exercise 2: Selecting values
 
 a. In `ListUtils`, write a static generic method, `select(List<T>
