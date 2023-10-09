@@ -16,57 +16,43 @@ at <{{ site.java_api }}/java/util/Comparator.html>.
 
 d. Open [the _Java Tutorials_ page on lambda expressions](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html).
 
+e. Fork and clone the repository at <https://github.com/Grinnell-CSC207/lab-anonymous-procedures>.
+
+f. Review the code in the repository.
+
 e. Create a new class, `ListUtils`, that you will use for some of the
-exercises.
-
-f. Create a new class, `LambdaExperiments`, that you will use for
-some of the exercises.  Your class should include a `main` method
-that begins as follows.
-
-```java
-    String[] tmp = 
-        new String[] { "alpha", "bravo", "charlie", "delta", "echo",
-                       "foxtrot", "golf", "hotel", "india",
-                       "juliett", "kilo", "lima", "mike", 
-                       "november", "oscar", "papa", "quebec",
-                       "romeo", "sierra", "tango", "uniform",
-                       "victor", "whiskey", "xray", "yankee", "zulu" };
-    ArrayList<String> strings = new ArrayList<String>(Arrays.asList(tmp));
-```
 
 ## Exercises
 
 ### Exercise 1: Reviewing the reading
 
-In the section entitled "Ideal Use Case for Lambda Expressions" in the
-reading, the authors present nine different approaches to filtering a
-list.  Write a program that experimentally verifies that each of the
-nine approaches works as described.  
+In the section entitled "Ideal Use Case for Lambda Expressions" in
+the reading, the authors present nine different approaches to
+filtering a list.  Write a program that experimentally verifies
+that each of the nine approaches works as described.  You will do
+this in `JTLambdaExperiments`.
 
 You will likely need to 
 
 * Make a copy of the [`Person`](https://docs.oracle.com/javase/tutorial/java/javaOO/examples/Person.java) class associated with the reading, which is available at <https://docs.oracle.com/javase/tutorial/java/javaOO/examples/Person.java>.
-* Create a new class, `JTLambdaExperiment`, in which you will write
-  the various experiments.
-* Add a `main` method to `JTLambdaExpermiment`.
-* In the `main` method of `JTLambdaExperiment`, create a list of `Person` objects.  (We'd recommend an `ArrayList`.)
+* In the `main` method of `JTLambdaExperiments`, create a list of `Person` objects.  (We'd recommend an `ArrayList`.)
   You can see the `createRoster` method in `Person` for an example.
 * For each static method in the reading, add the method to
   `JTLambdaExperiment` and then add a call to that method to `main` to see 
   that the method behaves as expected.
 
 *Note*: If you are adding interfaces and classes, you should do so outside
-the body of `JTExperiment`.
+the body of `JTLambdaExperiments`.
 
 ### Exercise 2: Selecting values
 
 a. In `ListUtils`, write a static generic method, `select(List<T>
-vals, Predicate<T> pred)`, that creates a new `ArrayList` that contains
+vals, Predicate<T> pred)`, that creates a new `ArrayList<T>` that contains
 only the elements of `vals` for which the predicate holds.
 
 b. In the `main` method of `LambdaExperiments`, select and print
-the values in `strings` (from the preparation) whose length is at
-least five.  Make sure to define your predicate anonymously.
+the values in `strings` whose length is at least five.  Make sure
+to define your predicate using a lambda.
 
 c. In the `main` method of `LambdaExperiments`, select the values
 in `strings` which contain two vowels in a row.  Once again, make
@@ -111,10 +97,15 @@ ASCII values is the smallest.
 e. Extend your program to find the string in `strings` whose sum of
 ASCII values is the largest.
 
-### Exercise 5: Mapping
+## For those with extra time
+
+_In the unexpected situation that you find that you have extra time, you
+might attempt one or more of the following exercises._
+
+### Extra 1: Mapping
 
 a. Implement a static generic method, `map(Function<T,R> fun, List<T>
-list)` that builds a new `ArrayList<R>` by applying `fun` to each element
+vals)` that builds a new `ArrayList<R>` by applying `fun` to each element
 of `list`.
 
 b. Using `map`, build a new version of `strings` in which every string is converted to uppercase.
@@ -124,12 +115,7 @@ c. Using `map`, build a new version of `strings` in which the first letter in ea
 d. Using `map`, build a new list that contains the lengths of all of the
 strings in `strings`.
 
-## For those with extra time
-
-_In the unexpected situation that you find that you have extra time, you
-might attempt one or more of the following exercises._
-
-### Extra 1: Updates to lambda
+### Extra 2: Updates to lambda
 
 The _Java Tutorials_ page for lambdas notes that 
 
@@ -137,12 +123,12 @@ The _Java Tutorials_ page for lambdas notes that
 
 Determine what improvements have been added in later releases.
 
-### Extra 2: Other functional interfaces
+### Extra 3: Other functional interfaces
 
 Find at least two other functional interfaces and describe use cases
 for those interfaces.
 
-### Extra 3: Iterators
+### Extra 4: Iterators
 
 Lambda provide a nice alternative to anonymous inner classes, with
 a bit less syntax.  Can we use lambda to implement iterators?  Why
