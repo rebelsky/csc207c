@@ -12,7 +12,8 @@ link: true
 _Approximate overview_
 
 * Administrivia
-* One more attempt to analyze
+* One more attempt to analyze merge sort
+* Lab
 
 Administrivia
 -------------
@@ -26,10 +27,13 @@ Administrivia
 
 Academic
 
-* CS Table Tuesday.  ???
 * CS Extras Thursday.  ???
 
 Cultural
+
+* Intertribal Pow-Wow, Today, 1:30-4:30, Kington Plaza (30 min suffices)
+* "Growing Up Native in Iowa" by Stephanie BadSoldier Snow, Drake Library,
+  5:30-6:30 pm.
 
 Peer
 
@@ -42,7 +46,7 @@ Misc
 ### Upcoming work
 
 * Tonight: MP4 post-assessment
-* Wednesday: Readings on ...
+* Wednesday: Readings on searching
 * Thursday: MP5
 * Friday night: MP5 post-assessment
 
@@ -54,6 +58,8 @@ Questions
 What Java style do you want?
 
 > I want you to follow the [Google Style Guide](https://google.github.io/styleguide/javaguide.html).
+
+> You need not be perfect.
 
 Will I be charged a token for redoing an MP?
 

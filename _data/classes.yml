@@ -339,6 +339,7 @@
   reminders:
     - May want to rewrite the lab to use priority queues or sorted lists.
     - May want to add a reading on sorted lists.  Or should that be an exercise?
+  notes: ../eboards/eboard20.html
 
 - topic: Searching
   abbrev: searching
