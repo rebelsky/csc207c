@@ -357,6 +357,7 @@
     - page: /readings/search.html
   lab:
     - page: /labs/binary-search.html
+  notes: ../eboards/eboard21.html
 
 - topic: Loop invariants
   abbrev: loop-invariants
