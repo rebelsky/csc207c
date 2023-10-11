@@ -13,7 +13,7 @@ a. You are likely to find it useful to have <ulink
 url='../readings/search.html'>the corresponding reading</ulink>
 open in another window.
 
-b. Create a new Eclipse project and Java package for this lab.
+b. Create a new VSCode project and Java package for this lab.
 (I'd recommend that you also create a Git repository, but it's up
 to you.)
 
@@ -55,15 +55,15 @@ for which a predicate holds.
 /**
  * Search values for the first value for which pred holds.
  */
-public static <T> T search(Predicate<? super T> pred, Iterable<T> values) throws Exception {
+public static <T> T search(Iterable<T> values, Predicate<? super T> pred) throws Exception {
   // ...
-}
+} // search(Iterable<T>, Predicate<? super T>)
 ```
 
-b. What do you think the following expression expression does?
+b. What string do you think the following expression will find?
 
 ```java
-    String ex1b = Utils.search((s) -> s.length() == 6, strings);
+    String ex1b = Utils.search(strings, (s) -> s.length() == 6);
 ```
 
 c. Confirm your answer experimentally.
@@ -89,10 +89,10 @@ Implement the following procedure.
 /**
  * Search for val in values, return the index of an instance of val.
  *
- * @param val
- *   An integer we're searching for
  * @param values
  *   A sorted array of integers
+ * @param val
+ *   An integer we're searching for
  * @result
  *   index, an integer
  * @throws Exception
@@ -103,7 +103,7 @@ Implement the following procedure.
  * @post
  *   values[index] == val
  */
-public static int binarySearch (int i, int[] vals) throws Exception {
+public static int binarySearch (int[] vals, int i) throws Exception {
   return 0;   // STUB
 } // binarySearch
 ```
@@ -126,8 +126,12 @@ For each s from 1 to 32
   assertException(-1, array)
 ```
 
-Implement this test.  Then repair any bugs you find in your implementation
-of binary search.
+Implement this test.  Note that you need not use JUnit for the testing;
+you can just write code that prints error messages if any of the assertions
+fail.
+
+If the test finds any bugs in your implementation of binary search, repair 
+those bugs.
 
 Note that I've found this test very useful.  A surprising number of
 pieces of code fail just one or two of the many assertions in this test.
@@ -139,8 +143,8 @@ by Jon Bentley in a _Programming Pearls_ column.
 
 As binary search is phrased in the reading, when we note that the
 middle element is not equal to the target value, we either set `ub`
-to `mid-1` or `lb` to `mid+1`.  But programmers often get confused
-by the need for the `+1` and `-1`.
+to `mid-1` or `lb` to `mid+1` (perhaps both).  But programmers often
+get confused by the need for the `+1` and `-1`.
 
 Determine experimentally what happens if you leave out the `+1` and
 `-1`.  Explain why that result happens.
@@ -153,12 +157,12 @@ that uses the other approach.
 
 ### Exercise 6: "Timing" search
 
-In theory, binary search should take O(log<subscript>2</subscript>n)
-steps.  Does it really?  Augment each of your methods so that it
-counts the number of repetitions (loop) or calls (recursive procedure).
-It's probably easiest to create global variables that you set to
-0, and then increment at the top of the loop body or at the start
-of the procedure.
+In theory, binary search should take $$O(log_2n)$$ steps.  Does it
+really?  Augment each of your methods so that it counts the number
+of repetitions (loop) or calls (recursive procedure).  It's probably
+easiest to create global variables that you set to 0, and then
+increment at the top of the loop body or at the start of the
+procedure.
 
 Build some moderately large arrays (at least 1000 elements) to verify
 that you get the expected running times.
@@ -200,7 +204,7 @@ we've found (or should throw an exception if no such character
 exists).
 
 ```java
-public static <T> int binarySearch(T value, T[] values, Comparator<T> compare) throws Exception {
+public static <T> int binarySearch(T[] values, T value, Comparator<T> compare) throws Exception {
   // ...
 } // binarySearch
 ```
@@ -220,5 +224,5 @@ Citations
 ---------
 
 This lab is closely based on [a similar lab from the Fall 2014 section
-of 207](https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/2014F/labs/search.html).
+of 207](https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/2014F/labs/search.html).  
 
