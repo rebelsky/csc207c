@@ -66,7 +66,7 @@ Rather than building a new list by selecting values, as in the
 previous problem, we could also write a method that mutates an
 existing list by removing values.
 
-a. In `ListUtils, write a static generic method, `remove(List<T>
+a. In `ListUtils`, write a static generic method, `remove(List<T>
 vals, Predicate<T>)`, that removes from vals any values for which
 the predicate holds.  You may not use any existing methods in the
 `List` class other than `iterator`.  You can assume that the `remove`
