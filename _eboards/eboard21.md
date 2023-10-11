@@ -19,13 +19,25 @@ Administrivia
 -------------
 
 * Happy halfway mark!
+* I've added a rubric to MP5.
+* Unfortunately, I have not found time to get tokens in order.
+* If you are struggling because of the conflict (or the world's varied 
+  reactions to the conflict), let me know how I can help.  I'm certainly
+  willing to push deadlines.
+* It appears that my office hours today and tomorrow are nearly completely
+  booked (completely booked today, just a little time tomorrow).  If you'd
+  like to meet with me, drop me a note and we'll see what we can work out.
+  (Preferred times: noon-1pm and 3:00-3:30pm today; 10:00am-noon tomorrow.
+* The Beginner's Creed:
+  <http://denninginstitute.com/pjd/PUBS/CACMcols/cacmJul17.pdf>
 
 ### Upcoming Token activities
 
 Academic
 
 * CS Extras Thursday.  Thinking ahead to summer plans.
-* Friday: Talk and movie on security
+* Friday: Talk and movie on security (1pm, Strand 3).
+  <https://forms.office.com/r/u34bDgj8w2>
 
 Cultural
 
@@ -113,11 +125,11 @@ Why do we use iterators?
 
 What's an `enum`?
 
-> 
+>
 
 ### MP5
 
-_There are some questions and answers at the end of the miniproject.
+_There are some new questions and answers at the end of the miniproject.
 
 AACCategory seems a whole lot like our AssociativeArray.  What's different?
 
