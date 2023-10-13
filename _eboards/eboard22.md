@@ -20,12 +20,13 @@ Administrivia
 
 * Beware!  Friday the 13th falls on Friday this month.
 * Friendly reminder: Treat your partners with respect.
+* Unfortunately, our mentors will not be here today.
 
 ### Upcoming Token activities
 
 Academic
 
-* Friday: Talk and movie on security (1pm, Strand 3).
+* Today: Talk and movie on security (1pm, Strand 3).
   <https://forms.office.com/r/u34bDgj8w2>
 
 Cultural
