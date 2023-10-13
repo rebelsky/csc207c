@@ -1,5 +1,5 @@
 ---
-title: "EBoard 21: Searching"
+title: "EBoard 21: Pause for breath"
 number: 21
 section: eboards
 held: 2023-10-11

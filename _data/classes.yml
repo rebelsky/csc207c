@@ -341,6 +341,12 @@
     - May want to add a reading on sorted lists.  Or should that be an exercise?
   notes: ../eboards/eboard20.html
 
+- topic: Pause for breah
+  abbrev: pause
+  summary: |
+    We take a day to review various topics.
+  notes: ../eboards/eboard21.html
+  
 - topic: Searching
   abbrev: searching
   summary: |
@@ -357,23 +363,7 @@
     - page: /readings/search.html
   lab:
     - page: /labs/binary-search.html
-  notes: ../eboards/eboard21.html
-
-- topic: Loop invariants
-  abbrev: loop-invariants
-  summary: |
-    We consider loop invariants, an important technique for designing
-    iterative algorithms.
-  subjects:
-    - Reasoning about iterative algorithms
-    - The state of a program
-    - Loop invariants
-    - Loop termination
-    - "An exercise: Binary search"
-  reading:
-    - page: /readings/loop-invariants.html
-  reminders:
-    - May need to write a lab.  (I think we did this collaboratively.)
+  notes: ../eboards/eboard22.html
 
 - topic: Sorting
   abbrev: sorting
@@ -707,4 +697,20 @@
     - page: /readings/maven.html
   labs:
     - page: /labs/command-line.html
+
+- topic: Loop invariants
+  abbrev: loop-invariants
+  summary: |
+    We consider loop invariants, an important technique for designing
+    iterative algorithms.
+  subjects:
+    - Reasoning about iterative algorithms
+    - The state of a program
+    - Loop invariants
+    - Loop termination
+    - "An exercise: Binary search"
+  reading:
+    - page: /readings/loop-invariants.html
+  reminders:
+    - May need to write a lab.  (I think we did this collaboratively.)
 
