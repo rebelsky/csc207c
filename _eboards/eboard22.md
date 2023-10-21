@@ -8,10 +8,12 @@ link: true
 # {{ page.title }}
 
 **Warning** This class is being recorded.  At least I think it is.
+It's probably also being transcribed.
 
 _Approximate overview_
 
 * Administrivia
+* The Beginner's Creed
 * Questions
 * Lab
 
@@ -40,6 +42,8 @@ Wellness
 * Be well during fall break.
 
 Misc
+
+* Watch the eclipse (but don't stare directly at it)
 
 ### Other good things (no tokens)
 
@@ -100,3 +104,20 @@ Questions
 
 Lab
 ---
+
+Sam's reflections:
+
+* The looped test is good at catching errors.  I've seen student code
+  fail exactly one of the 1024-or-so tests.
+    * Rather than writing individual tests, it's nice to write procedures
+      that generate lots of tests.
+    * The output from your test can help you analyze your code.
+* Detour: Famous error: Find the midpoint with `(lb + ub)/2`;
+    * Solution: `lb + (ub-lb)/2`;
+    * Mathy explanation
+        * (lb + ub)/2 = lb/2 + ub/2
+        * lb + (ub-lb)/2 = lb + ub/2 - lb/2 = lb - lb/2 + ub/2 = lb/2 + ub/2
+* Debugging is your friend.
+* Although, intuitively, we want "half the array" in binary search,
+  we cannot use `arrayCopy` to get half.  That turns our efficient
+  O(logn) algorithm into an O(n) algorithm.
