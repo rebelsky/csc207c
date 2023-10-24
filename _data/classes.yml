@@ -419,7 +419,8 @@
   subjects:
     - Professional ethics.
   reading:
-    - ACM Code of Ethics
+    - title: ACM Code of Ethics and Professional Conduct
+    - resource: https://www.acm.org/code-of-ethics
 
 - topic: Array-based lists
   abbrev: array-lists
