@@ -9,6 +9,7 @@ copyright_message: |
   This work is licensed under a Creative Commons Attribution-NonCommercial
   4.0 International License.  To view a copy of this license, visit
   <http://creativecommons.org/licenses/by-nc/4.0/>.
+repository: https://github.com/Grinnell-CSC207/lab-merge-sort
 link: true
 ---
 ## Preparation
@@ -115,7 +116,13 @@ static <T> void merge(T[] vals, int lo, int mid, int hi, Comparator<? super T> c
 } // merge
 ```
 
-You are likely to need a temporary array to merge into.
+You are likely to need a temporary array to merge into.  There are a
+variety of static methods in `java.util.Arrays` that might be helpful
+to create that temporary array.  Here's one.
+
+```
+static <T> T[] copyOfRange(T[] original, int from, int to)
+```
 
 ## Implementing merge sort
 
@@ -130,7 +137,7 @@ public static <T> void sort(T[] vals, Comparator<? super T> comparator) {
 } // sort
 ```
 
-Because of the need to track bounds explicitly, you'll need a helper version of `mergeSort` that takes this bounds as arguments.
+Because of the need to track bounds explicitly, you'll need a helper version of `mergeSort` that takes these bounds as arguments.
 Initially you should pass `0` and `vals.size()` to this helper method to kick off the merge sort process.
 
 Verify that your algorithm works on a number of examples.
@@ -154,4 +161,5 @@ Acknowledgements
 
 The original version of this laboratory was written by Peter-Michael
 Osera.  Samuel A. Rebelsky made some revisions in spring 2019 and
-some more revisions in spring 2023.
+some more revisions in spring 2023.  The code repository was added
+in spring 2023.
