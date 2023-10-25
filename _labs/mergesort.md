@@ -121,7 +121,7 @@ variety of static methods in `java.util.Arrays` that might be helpful
 to create that temporary array.  Here's one.
 
 ```
-static <T> T[] copyOfRange(T[] original, int from, int to)
+static <T> T[] Arrays.copyOfRange(T[] original, int from, int to)
 ```
 
 ## Implementing merge sort
