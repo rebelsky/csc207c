@@ -140,6 +140,8 @@ public static <T> void sort(T[] vals, Comparator<? super T> comparator) {
 Because of the need to track bounds explicitly, you'll need a helper version of `mergeSort` that takes these bounds as arguments.
 Initially you should pass `0` and `vals.size()` to this helper method to kick off the merge sort process.
 
+Note that you can compute the midpoint with `(lo + hi)/2`.  If you've paid attention in class, you might prefer to compute it with `lo + (hi-lo)/2`.
+
 Verify that your algorithm works on a number of examples.
 Make sure to check corner cases, *e.g.*, zero-length lists, length-one lists, already-sorted lists, *etc.*
 
@@ -161,5 +163,5 @@ Acknowledgements
 
 The original version of this laboratory was written by Peter-Michael
 Osera.  Samuel A. Rebelsky made some revisions in spring 2019 and
-some more revisions in spring 2023.  The code repository was added
+some more revisions in spring 2023.  SamR added the code repository 
 in spring 2023.
