@@ -11,6 +11,10 @@ copyright_message: |
   <http://creativecommons.org/licenses/by-nc/4.0/>.
 link: true
 ---
+## Preparation
+
+Fork and clone the repository at <https://github.com/Grinnell-CSC207/lab-merge-sort>.
+
 ## Overview of the algorithm
 
 Merge sort over an input list can be pithily described as follows:
@@ -77,9 +81,7 @@ We can finally copy the elements of the scratch list back into the original list
 
 ## Invariants, revisited
 
-Draw a picture of the invariants.  It should look something like
-the following (with variable names instead of the X's, and notes
-about the content of the different sections of the arrays).
+Sketch a picture of the invariants.  It should look something like the following (with variable names instead of the X's, and notes about the content of the different sections of the arrays).
 
 ```text
 +---   ---+---------+---------+---------+---------+---   ---+
@@ -95,6 +97,7 @@ about the content of the different sections of the arrays).
 0             X                         X
 ```
 
+Show your picture to your instructor when you are finished.
 
 ## Implementing merge
 
@@ -107,7 +110,9 @@ With this algorithm in mind, implement a `merge` operation with the following fu
  *
  * Preconditions: Each subarray is sorted accorting to comparator.
  */
-static <T> void merge(ArrayList<T> vals, int lo, int mid, int hi, Comparator<? super T> comparator);
+static <T> void merge(T[] vals, int lo, int mid, int hi, Comparator<? super T> comparator) {
+  // ...
+} // merge
 ```
 
 You are likely to need a temporary array to merge into.
@@ -117,14 +122,19 @@ You are likely to need a temporary array to merge into.
 With `merge` implemented, implement `mergesort`:
 
 ```java
-public static <T> void mergeSort(ArrayList<T> vals, Comparator<? super T> comparator);
+/**
+ * Sort an array using the merge sort algorithm.
+ */
+public static <T> void sort(T[] vals, Comparator<? super T> comparator) {
+  // ...
+} // sort
 ```
 
 Because of the need to track bounds explicitly, you'll need a helper version of `mergeSort` that takes this bounds as arguments.
 Initially you should pass `0` and `vals.size()` to this helper method to kick off the merge sort process.
 
 Verify that your algorithm works on a number of examples.
-Make sure to check corner cases, *e.g.*, zero-length lists, one-length lists, already-sorted lists, *etc.*
+Make sure to check corner cases, *e.g.*, zero-length lists, length-one lists, already-sorted lists, *etc.*
 
 ## Analyzing merge sort
 
@@ -137,11 +147,11 @@ Remember to factor in both the amount of space dedicated to recursive function c
 
 ## Merge sort, revisited
 
-You should have found the space complexity of merge sort to be unsatisfactory.
-It seems like you should be able to limit the creation of the scratch lists so that you only use O(_n_) space.  Do so.
+If you build a new array each time you merge, you should have found the space complexity of merge sort to be unsatisfactory.  It seems like you should be able to limit the creation of the scratch lists so that you only use O(_n_) space.  Do so.
 
 Acknowledgements
 ----------------
 
 The original version of this laboratory was written by Peter-Michael
-Osera.  Samuel A. Rebelsky made some revisions in spring 2019.
+Osera.  Samuel A. Rebelsky made some revisions in spring 2019 and
+some more revisions in spring 2023.
