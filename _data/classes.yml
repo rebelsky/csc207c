@@ -397,6 +397,7 @@
     - page: /labs/mergesort.html
   reminders:
     - Use PM's lab.  (Why?)
+  notes: ../eboards/eboard24.html
 
 - topic: Quicksort
   abbrev: quicksort
@@ -411,6 +412,7 @@
     - page: /readings/quicksort.html
   lab:
     - page: /labs/quicksort.html
+  notes: ../eboards/eboard25.html
 
 - topic: Ethical considerations
   abbrev: ethics
