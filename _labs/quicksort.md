@@ -212,9 +212,9 @@ private static <T> void quickSort(T[] values, Comparator<? super T> compare, int
   if (lb >= ub-1) {
     return;
   } else {
-    int mid = lb + (ub-lb)/2;
-    quickSort(T, compare, lb, mid);
-    quickSort(T, compare, mid, ub);
+    int mid = partition(values, compare, lb, ub);
+    quickSort(values, compare, lb, mid);
+    quickSort(values, compare, mid+1, ub);
   } // if/else
 } // quickSort(T[], Comparator, int, int)
 ```
