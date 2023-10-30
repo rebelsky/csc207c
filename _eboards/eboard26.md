@@ -79,8 +79,10 @@ Some notes from last lab
   a different `large` than I do), make sure that you also modify the state 
   drawings.
 
-Testing Quicksort
------------------
+Experimenting with Quicksort
+----------------------------
+
+See [examples/quicksort/Quicksort.java](../examples/quicksort/Quicksort.java).
 
 Writing Quicksort
 -----------------
@@ -97,9 +99,18 @@ Questions
 
 ### Registration
 
-Will we have enough courses to cover interest?
+Will we have enough courses to cover demand?
 
-> I think so.
+> I think so.  Let's do a back-of-the-envelope calculation.
+
+> 80 majors in the class of 2025, 60 majors in the class of 2024, 
+  50 students in the two CSC-207's = demand for 190 seats.  (This ignores
+  the students going abroad and the seniors who need two courses;
+  as I said, it's a "back of the envelope" calculation.)
+
+> 1 section of 211 (24) + 2 sections of 301 (20 each) + 2 sections
+  of 324 (20 each) + 2 sections of 341 (20 each) + 2 sections of
+  395 (20 each) = 184 seats.
 
 ### Quicksort
 
