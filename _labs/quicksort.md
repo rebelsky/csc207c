@@ -23,23 +23,23 @@ Let us first review the main steps in Quicksort:
 We will start this lab by first implementing the partition operation. For this part of the lab, we will fill in the following definition of the partition operation:
 
 ```java
-/**
- * Select a pivot and partition the subarray from [lb .. ub) into 
- * the following form.
- *
- * <pre>
- * ---+-----------------+-+----------------+---
- *    | values <= pivot |p| values > pivot |
- * ---+-----------------+-+----------------+---
- *    |                 |                  |
- *    lb                pivotLoc           ub
- * </pre>
- *
- * @return pivotLoc.
- */
-private static <T> int partition(T[] arr, Comparator<? super T> compare, int lb, int ub) {
-  ...
-} // partition
+  /**
+   * Select a pivot and partition the subarray from [lb .. ub) into 
+   * the following form.
+   *
+   * <pre>
+   * ---+-----------------+-+----------------+---
+   *    | values <= pivot |p| values > pivot |
+   * ---+-----------------+-+----------------+---
+   *    |                 |                  |
+   *    lb                pivotLoc           ub
+   * </pre>
+   *
+   * @return pivotLoc.
+   */
+  private static <T> int partition(T[] arr, Comparator<? super T> order, int lb, int ub) {
+    ...
+  } // partition
 ```
 
 The partition operation takes a sub-array (like merge sort, denoted by a lower bound, `lb`, and an upper bound, `ub`).
@@ -194,42 +194,72 @@ lb                      |           ub
 
 ### Step 6 Test: cases
 
-And now to experiment with our code! Experiment your code with common-case as well as edge-case scenarios. Does your code return the correct partitioning if the pivot is set to the smallest or the largest element in the list?
+And now to check our code! Experiment your code with common-case as well as edge-case scenarios. Does your code return the correct partitioning if the pivot is set to the smallest or the largest element in the list?
 
-## Writing `quickSort`
+Here's one example to get you started.
+
+```
+  /**
+   * Run some experiments.
+   */
+  public static void main(String[] args) {
+    Integer[] vals0 = new Integer[] { 3, 9, 2, 8, 6, 4, 1, 7, 5 };
+    Comparator<Integer> compareInts = (x,y) -> x.compareTo(y);
+
+    partitionExperiment(vals0, compareInts);
+  } // main(String[])
+
+  /**
+   * A partition experiment.
+   */
+  public static <T> void partitionExperiment(T[] vals, Comparator<? super T> order) {
+    System.err.println("Original:    " + Arrays.toString(vals));
+    int pivotLoc = Quicksort.partition(vals, order, 0, vals.length);
+    System.err.println("Partitioned: " + Arrays.toStrings(vals));
+    System.err.println("Pivot is " + vals[pivotLoc] + " at position " + pivotLoc);
+  } // partitionExperiment
+```
+
+## Writing `quicksort`
 
 Now that we have implemented the partition operation, all that remains is to recursively apply the partition operation on our input array! Write an implementation of Quicksort that has the following definition:
 
 ```java
-private static <T> void quickSort(T[] values, Comparator<? super T> compare) 
+  /**
+   * Sort the values in values using order to compare values.
+   */
+  public static <T> void quicksort(T[] values, Comparator<? super T> order) 
 ```
 
-Note that we will also need to write a helper quickSort implementation which would take in the array bounds to recursively sort through the left and right sub-arrays.
+Note that we will also need to write a helper quicksort implementation which would take in the array bounds to recursively sort through the left and right sub-arrays.
 
 ```java
-private static <T> void quickSort(T[] values, Comparator<? super T> compare, int lb, int ub) {
-  // Subarrays of one element or fewer are sorted.
-  if (lb >= ub-1) {
-    return;
-  } else {
-    int mid = partition(values, compare, lb, ub);
-    quickSort(values, compare, lb, mid);
-    quickSort(values, compare, mid+1, ub);
-  } // if/else
-} // quickSort(T[], Comparator, int, int)
+  /**
+   * Sort the values in indices [lb..ub) of values using order to compare values.
+   */
+  private static <T> void quicksort(T[] values, Comparator<? super T> order, int lb, int ub) {
+    // Subarrays of one element or fewer are sorted.
+    if (lb >= ub-1) {
+      return;
+    } else {
+      int mid = partition(values, order, lb, ub);
+      quicksort(values, order, lb, mid);
+      quicksort(values, order, mid+1, ub);
+    } // if/else
+  } // quicksort(T[], Comparator, int, int)
 ```
 
-That makes it easy to write the primary `quickSort`.
+That makes it easy to write the primary `quicksort`.
 
 ```java
-private static <T> void quickSort(T[] values, Comparator<? super T> compare) {
-  quickSort(values, compare, 0, values.length);
-} // quickSort
+  public static <T> void quicksort(T[] values, Comparator<? super T> order) {
+    quicksort(values, order, 0, values.length);
+  } // quicksort
 ```
 
 ### Testing
 
-Test your code once again across both common-case and edge-case scenarios to make sure your sorting algorithm works.
+Check your code once again across both common-case and edge-case scenarios to make sure your sorting algorithm works.
 
 ## Choosing a pivot
 
