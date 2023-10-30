@@ -423,6 +423,7 @@
   reading:
     - link: ACM Code of Ethics and Professional Conduct
       url: https://www.acm.org/code-of-ethics
+  notes: ../eboards/eboard26.html
 
 - topic: Array-based lists
   abbrev: array-lists
