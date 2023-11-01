@@ -444,6 +444,7 @@
       url: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ListIterator.html
   lab:
     - page: /labs/array-based-lists.html
+  notes: ../eboards/eboard27.html
 
 - topic: Doubly-linked lists
   abbrev: doubly-linked-lists
