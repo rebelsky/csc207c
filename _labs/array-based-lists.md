@@ -1,6 +1,6 @@
 ---
 title: Implementing Lists with Arrays
-repo: <https://github.com/Grinnell-CSC207/lab-array-based-lists-2019>.
+repo: <https://github.com/Grinnell-CSC207/lab-array-based-lists-c>.
 summary: |
   We extend our understanding of a list ADT by considering an
   implementation of lists in which the values are stored in an
@@ -20,8 +20,8 @@ Preparation
 a. Fork and clone the repository at {{ page.repo }}.
 
 b. In separate windows or tabs, open the documentation for
-[`Iterator`]({{ site.java_api }}/java/util/Iterator.html) and
-[`ListIterator`]({{ site.java_api }}/java/util/ListIterator.html).
+[`java.util.Iterator`]({{ site.java_api }}/java/util/Iterator.html) and
+[`java.util.ListIterator`]({{ site.java_api }}/java/util/ListIterator.html).
 
 Exercises
 ---------
@@ -52,7 +52,7 @@ happen?
 
 e. Suppose we have a list iterator, `lit`, between the b and c in
 the list [a,b,c] and that it reached the current position through
-a call to `next`.  What should happen if we call `set(x)` and then
+a call to `next`.  What should happen if we call `lit.set(x)` and then
 `set(y)`?
 
 f. Suppose we have a list iterator, `lit`, between the b and c in
@@ -118,11 +118,11 @@ a. Sketch how you would implement the `next` method.
 
 b. Compare your answer to that in the code.  
 
-c. Sketch how you would implement the ``hasNext`()` method.
+c. Sketch how you would implement the `hasNext()` method.
 
 d. Compare your answer to the answer in the code.
 
-e. Sketch how you would implement the ``add`(T val)` method.
+e. Sketch how you would implement the `add(T val)` method.
 
 f. Compare your answer to the answer in the code.
 
@@ -236,6 +236,4 @@ shift elements left.  Write those helper methods.
 Acknowledgements
 ----------------
 
-This lab is closely based on one from CSC 207 2014F.  The extra problems
-are all new.  There are some new questions about list iterators in
-problem 1.  A section on failing fast was removed.
+This lab is closely based on one from CSC 207 2019S.  
