@@ -460,6 +460,7 @@
     - page: /readings/doubly-linked-lists.html
   lab:
     - page: /labs/doubly-linked-lists.html
+  notes: ../eboards/eboard28.html
 
 - topic: Sorting competition
   abbrev: sorting-competition
