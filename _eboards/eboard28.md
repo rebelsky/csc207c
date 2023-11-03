@@ -13,6 +13,7 @@ It's probably also being transcribed.
 _Approximate overview_
 
 * Administrivia
+* MP7
 * Questions
 * Lab
 * Time for MP7
@@ -67,6 +68,12 @@ Questions
 ### Lists
 
 ### Administrative
+
+What should Sam's advisee take?
+
+> Humanities (e.g., English, Philosophy)
+
+> Something to diversify their schedule
 
 Lab
 ---

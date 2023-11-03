@@ -17,7 +17,7 @@ javadoc:
 Preparation
 -----------
 
-a. Fork the repository, remove the `.class` and `.project` files, clone the updated repository, then load it into VScode.
+a. Fork the repository at {{ page.repo }}, remove the `.class` and `.project` files, clone the updated repository, then load it into VScode.
 
 b. In a separate window or tab, open the documentation for `Iterator`
    and `ListIterator`.
@@ -62,7 +62,7 @@ f. Compare your answer to the answer in the code.
 Here's a simple experiment to test the set method while iterating forward through a list.
 
 ```
-    SimpleLinkedList&lt;String&gt; vm = new SimpleLinkedList&lt;String&gt;();
+    SimpleLinkedList<String> vm = new SimpleLinkedList<String>();
     SimpleListExpt.add(pen, vm, 
             new String[] { "Hey", "Where", "Did", "We", "Go?" });
     SimpleListExpt.setForwardExpt(pen, vm);
@@ -89,7 +89,7 @@ You'll note that the `previous` method and the `hasPrevious` method are not impl
 a. Add the following line to your experiments.
 
 ```
-    SimpleListExpt.prevExpt(pen, new SimpleLinkedList&lt;String&gt;());
+    SimpleListExpt.prevExpt(pen, new SimpleLinkedList<String>());
 ```
 
 b. Read through `SimpleListExpt.java` to see how `prevExpt` exercises the `previous` and `hasPrevious`.

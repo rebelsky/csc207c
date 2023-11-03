@@ -459,7 +459,7 @@
     - page: /readings/list-iterators.html
     - page: /readings/doubly-linked-lists.html
   lab:
-    - page: /labs/doubly-linked-lists.html
+    - page: /labs/linked-lists.html
   notes: ../eboards/eboard28.html
 
 - topic: Sorting competition
