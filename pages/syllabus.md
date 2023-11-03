@@ -408,3 +408,7 @@ I need a mental health day.  What should I do?
 
 > More importantly, please take care of yourself.
 
+How do I book your office hours?
+
+> <https://bit.ly/book-samr>
+
