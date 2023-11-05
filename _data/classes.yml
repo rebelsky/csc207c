@@ -465,22 +465,8 @@
 - topic: Sorting competition
   abbrev: sorting-competition
   summary: |
-    We compare the sorting algorithms from the latest homework.
+    We compare the sorting algorithms from the latest mini-projects.
   
-- topic: A Dictionary ADT
-  abbrev: maps
-  summary: |
-    We introduce the Dictionary (a.k.a. Map) abstract data type and some
-    simple implementations.
-  subjects:
-    - Maps and dictionaries
-    - Designing a Dictionary ADT
-    - Associative arrays
-    - Association lists
-  reminders:
-    - Needs a new reading
-    - There's an association lists lab from 2014 Fall.
-
 - topic: Trees and tree traversal
   abbrev: Trees
   summary: |
@@ -493,11 +479,10 @@
     - Iterative breadth-first traversal
     - Iterative depth-first traversal
     - Pre-order, in-order, and post-order traversals
+  reading:
+    - page: /readings/tree-traversal.html
   lab:
     - page: /labs/tree-traversal.html
-  reminders:
-    - This is likely a new lab.  Or I have one from 2014 Fall.
-    - We may need a new reading.
 
 - topic: Binary search trees I
   abbrev: bst1
@@ -647,15 +632,6 @@
   lab:
     - page: /labs/shortest-paths.html
 
-- topic: Wrapup
-  abbrev: wrapup
-  summary: | 
-    We conclude the course.
-  subjects:
-    - The subject matter(s) of the course
-    - Looking ahead
-    - Course evaluation
-
 - topic: Patterns of object and algorithm design
   abbrev: design
   summary: |
@@ -666,6 +642,15 @@
     - Data-structure design
     - Object/class design
     - Code design
+
+- topic: Wrapup
+  abbrev: wrapup
+  summary: | 
+    We conclude the course.
+  subjects:
+    - The subject matter(s) of the course
+    - Looking ahead
+    - Course evaluation
 
 - topic: Analyzing algorithms, continued
   abbrev: analysis-continued
@@ -721,4 +706,18 @@
     - page: /readings/loop-invariants.html
   reminders:
     - May need to write a lab.  (I think we did this collaboratively.)
+
+- topic: A Dictionary ADT
+  abbrev: maps
+  summary: |
+    We introduce the Dictionary (a.k.a. Map) abstract data type and some
+    simple implementations.
+  subjects:
+    - Maps and dictionaries
+    - Designing a Dictionary ADT
+    - Associative arrays
+    - Association lists
+  reminders:
+    - Needs a new reading
+    - There's an association lists lab from 2014 Fall.
 
