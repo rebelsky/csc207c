@@ -466,6 +466,7 @@
   abbrev: sorting-competition
   summary: |
     We compare the sorting algorithms from the latest mini-projects.
+  notes: ../eboards/eboard29.html
   
 - topic: Trees and tree traversal
   abbrev: Trees
