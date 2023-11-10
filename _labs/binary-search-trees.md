@@ -8,7 +8,7 @@ summary: |
 Preparation
 -----------
 
-a. Fork and clone the respository at {{ repo }}.
+a. Fork and clone the respository at {{ page.repo }}.
 
 b. Import the repository into VSCode.
 
