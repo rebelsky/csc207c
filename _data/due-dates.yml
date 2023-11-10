@@ -80,14 +80,6 @@
   due:
     - page: /mps/mp09.html
 
-- date: 2023-11-31
-  assigned:
-    - page: /mps/mp10.html
-
-- date: 2023-12-07
-  due:
-    - page: /mps/mp10.html
-
 - date: 2023-12-15
   due:
     - All remaining LAs

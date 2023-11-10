@@ -496,6 +496,7 @@
     - Adding elements to BSTs
   lab:
     - page: /labs/binary-search-trees.html
+  notes: ../eboards/eboard31.html
 
 - topic: Binary search trees II
   abbrev: bst2
