@@ -29,19 +29,27 @@ Administrivia
 
 Academic
 
-* Tuesday, 2023-11-14, Noon, Day PDE: 
-* Thursday, 2023-11-09, 4:15pm, JRC 101:  _CS Poster Session_.
+* Tuesday, 2023-11-14, Noon, Day PDR: 
+* Wednesday, 2023-11-15, 4pm, HSSC Kernel: _Madison Van Oort ’08 speaks
+  Frictions in the Future of Work_.
+* Thursday, 2023-11-16, 4:15pm, JRC 101:  _CS Poster Session_.
 
 Cultural
 
-* Saturday, 2023-11-11, Noon, Football vs. Cornell
 * Saturday, 2023-11-11, Drag.
 
 Peer
 
+* Saturday, 2023-11-11, Noon, Football vs. Cornell
+* Sunday, 2023-11-12, 2-5pm, HSSC N3170 - Inquiry Learning Lab: 
+  _Smash@Grinnell Friendlies_.
+
 Wellness
 
 Misc
+
+* Sunday, 2023-11-12, 2-3:30 pm, Sebring-Lewis: _Grinnell Singers_.
+* Monday, 2023-11-13, 4-5:30pm, HSSC N1112: _Politics of AI Info Session_.
 
 ### Other good things (no tokens)
 
@@ -51,6 +59,8 @@ Misc
 * MP7 pre-assessment due Sunday
 * MP8 due next Thursday.  
 * MP8 post-assessment due next Friday
+
+### Friday PSA
 
 About MP8
 ---------
