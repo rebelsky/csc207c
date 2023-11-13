@@ -506,6 +506,7 @@
     - Deletion in BSTs
   lab:
     - page: /labs/binary-search-trees-continued.html
+  notes: ../eboards/eboard32.html
 
 - topic: Hash tables
   abbrev: hash-tables
