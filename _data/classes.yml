@@ -508,6 +508,22 @@
     - page: /labs/binary-search-trees-continued.html
   notes: ../eboards/eboard32.html
 
+- topic: Probing in hash tables
+  abbrev: probing
+  summary: |
+    We explore one of the two primary collision-resolution mechansims
+    in hash tables.
+  subjects:
+    - Collisions
+    - Linear probing
+    - Quadratic probing
+  lab:
+    - page: /labs/hash-table-probing.html
+  reminders:
+    - Lots of this lab can be moved to other days.
+    - Have them write a hash function for our good old fraction class.
+  notes: ../eboards/eboard33.html
+
 - topic: Hash tables
   abbrev: hash-tables
   summary: |
@@ -523,21 +539,7 @@
   reading:
     - link: "Osera 12: Hashing"
       url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap12.pdf
-
-- topic: Probing in hash tables
-  abbrev: probing
-  summary: |
-    We explore one of the two primary collision-resolution mechansims
-    in hash tables.
-  subjects:
-    - Collisions
-    - Linear probing
-    - Quadratic probing
-  lab:
-    - page: /labs/hash-table-probing.html
-  reminders:
-    - Lots of this lab can be moved to other days.
-    - Have them write a hash function for our good old fraction class.
+  notes: ../eboards/eboard34.html
 
 - topic: Chaining in hash tables
   abbrev: chaining
