@@ -517,11 +517,11 @@
     - Collisions
     - Linear probing
     - Quadratic probing
+  reading:
+    - link: "Osera 12: Hashing"
+      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap12.pdf
   lab:
     - page: /labs/hash-table-probing.html
-  reminders:
-    - Lots of this lab can be moved to other days.
-    - Have them write a hash function for our good old fraction class.
   notes: ../eboards/eboard33.html
 
 - topic: Hash tables
@@ -536,9 +536,6 @@
     - Handling collisions
     - Rebuilding hash tables
     - Hash functions
-  reading:
-    - link: "Osera 12: Hashing"
-      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap12.pdf
   notes: ../eboards/eboard34.html
 
 - topic: Chaining in hash tables
