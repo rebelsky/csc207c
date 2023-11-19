@@ -547,6 +547,7 @@
     - Buckets and chaining
   lab:
     - page: /labs/hash-table-chained.html
+  notes: ../eboards/eboard35.html
 
 - topic: Priority queues, heaps, and heap sort
   abbrev: heaps
@@ -561,7 +562,7 @@
     - Storing trees in arrays
   reading: 
     - page: /readings/priority-queues.html
-  lab:
+  nolab:
     - page: TBD
   reminders:
     - Is this worth doing as a discussion or as a lab?  I like the discussion of heaps, but students also learn from practice.  
