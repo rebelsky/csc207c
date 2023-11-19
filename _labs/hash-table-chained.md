@@ -1,22 +1,20 @@
 ---
 title: Chaining in hash tables
-repo: <https://github.com/Grinnell-CSC207/lab-hashtables-2019>.
+repo: <https://github.com/Grinnell-CSC207/lab-hashtables-c>.
 summary: |
   We consider the implications of chaining in hash tables.
 ---
 Preparation
 -----------
 
-Fork and clone the repository.  Import it into eclipse.
+If you have not already done so, fork and clone the repository at {{ page.repo }}.  Import it into VSCode.
 
 Exercises
 ---------
 
 ### Exercise 0: Code Reading
 
-Scan through the code so that you understand what methods are
-available and what approaches are used.  Make notes on areas
-that are likely to be problematic.
+Scan through the code for chained hash tables so that you understand what methods are available and what approaches are used.  Make notes on areas that are likely to be problematic.
 
 a. What methods are not yet implemented?
 
@@ -24,35 +22,23 @@ b. What parts of the code are likely to have problems?  Why?
 
 ### Exercise 1: Verifying that keys match
 
-As you may have noted, the code assumes that `find` returns a cell that
-has a pair with a matching key.
+As you may have noted, the code assumes that `find` returns a cell that has a pair with a matching key.
 
 a. Is that the case?  Why or why not?
 
-b. In `ChainedHashTableExperiments`, uncomment the call to
-`matchingKeysExpt` to see what happens when two keys hash to the
-same location.
+b. In `ChainedHashTableExperiments`, uncomment the call to `matchingKeysExpt` to see what happens when two keys hash to the same location.
 
-c. Squash that bug by updating `get` to check whether the key in
-the given cell matches the expected key.
+c. Eliminate that bug by updating `get` to check whether the key in the given cell matches the expected key.
 
 ### Exercise 2: Duplicate keys
 
-As you may have noted, the code for `set` does not check to see if
-the key is already being used.  (In fact, it essentially assumes
-that there is no more than one thing in a bucket.)  The introductory
-notes therefore observe that this is a potential bug that should
-be fixed.
+As you may have noted, the code for `set` does not check to see if the key is already being used.  (In fact, it essentially assumes that there is no more than one thing in a bucket.)  The introductory notes therefore observe that this is a potential bug that should be fixed.
 
-a. Why is the failure to check whether the key is already used a 
-potential bug?  What effect might that failure to check have on the
-behavior of the program?
+a. Why is the failure to check whether the key is already used a potential bug?  What effect might that failure to check have on the behavior of the program?
 
-b. Fill in the body of `repeatedSetExpt` in `HashTableExperiments`
-with some experiments that might help you see this effect.
+b. Fill in the body of `repeatedSetExpt` in `HashTableExperiments` with some experiments that might help you see this effect.
 
-c. If you'd like, you can start with the following simple set of 
-experiments.
+c. If you'd like, you can start with the following simple set of experiments.
 
 ```java
     htab.reportBasicCalls(true);
@@ -73,39 +59,28 @@ d. Correct the bug.
 
 ### Exercise 3: Handling collisions, phase 1
 
-As you may have noted, the code very little no attempt to deal with
-collisions.  Hey, it's even in the "bugs to squash" section.  (Some
-of you may have already decided to fix the bug in a previous
-exercise.)
+As you may have noted, the code very little no attempt to deal with collisions.  Hey, it's even in the "bugs to squash" section.  (Some of you may have already decided to fix the bug in a previous exercise.)
 
-a. Uncomment the call to `matchingSetExpt` in `ChainedHashTableExperiments`
-so that you can see one potential effect of the unimplemented
-collision detection.
+a. Uncomment the call to `matchingSetExpt` in `ChainedHashTableExperiments` so that you can see one potential effect of the unimplemented collision detection.
 
-b. If you have not done so already, update the code in `set` and
-`get` to handle this issue.
+b. If you have not done so already, update the code in `set` and `get` to handle this issue.
 
 ### Exercise 4: Handling collisions, phase 2
 
-One collision does not a solution make.  We are much better off looking
-at a fairly large collection of values.
+One collision does not a solution make.  We are much better off looking at a fairly large collection of values.
 
 a. Read through `multipleSetExperiment` and describe what issues it is
 trying to explore.
 
 b. Uncomment the call to `multipleSetExperiment` in `ChainedHashTableExperiments`
 
-c. Verify that the experiment succeeds.  (You no see any messages, other
-than the table, if the experiment succeeds.)
+c. Verify that the experiment succeeds.  (You no see any messages, other than the table, if the experiment succeeds.)
 
 d. If the experiment does not succeed, fix your `set` and `get` methods.
 
 ### Exercise 5: Expanding Hash Tables
 
-As the previous exercise reminded us, at some point we have to figure out
-how to expand the table.  Most frequently, we expand the table when it
-reaches a certain percentage full. (That percentage is by 
-`LOAD_FACTOR` in the current implementation.)
+As the previous exercise reminded us, at some point we have to figure out how to expand the table.  Most frequently, we expand the table when it reaches a certain percentage full. (That percentage is by `LOAD_FACTOR` in the current implementation.)
 
 Here's a sketch of a technique some students use to expand the table.
 
@@ -128,26 +103,17 @@ Here's a sketch of a technique some students use to expand the table.
   } // expand()
 ```
 
-a. What do you think about this approach?  (Don't critique the failure
-to use `Arrays.copyElts`, or whatever it's called.)
+a. What do you think about this approach?  (Don't critique the failure to use `Arrays.copyElts`, or whatever it's called.)
 
-b. Try adding these lines to `expand`.  Shrink the initial capacity
-of the array a bit so that we know `expand` gets called.  Run the
-`multipleSetExpt` method to see whether this technique for expansion
-works successfully.
+b. Try adding these lines to `expand`.  Shrink the initial capacity of the array a bit so that we know `expand` gets called.  Run the `multipleSetExpt` method to see whether this technique for expansion works successfully.
 
 c. Correct any errors that you've identified.
 
 ### Exercise 6: Removing elements
 
-We're making good progress in our implementation of hash tables.  What's
-next?  We should add support for removing elements.  Unfortunately,
-as we've learned, removing elements is often the most difficult aspect
-of implementing data structures.  So let's think a bit about how we
-might approach the problem.
+We're making good progress in our implementation of hash tables.  What's next?  We should add support for removing elements.  Unfortunately, as we've learned, removing elements is often the most difficult aspect of implementing data structures.  So let's think a bit about how we might approach the problem.
 
-a. Write some experiments that allow us to see what happens when
-we remove elements.
+a. Write some experiments that allow us to see what happens when we remove elements.
 
 b. Sketch a strategy for removing elements.
 
@@ -217,13 +183,11 @@ a. Explain what this experiment appears to be doing.
 
 b. Run the experiment.
 
-c. If the experiment identifies any issues with your `remove` method,
-correct them.
+c. If the experiment identifies any issues with your `remove` method, correct them.
 
 ### Exercise 9: Testing
 
-Run the tests and correct any errors they identify (other than those
-having to do with the lack of an iterator).
+Run the tests and correct any errors they identify (other than those having to do with the lack of an iterator).
 
 For those with extra time
 -------------------------
