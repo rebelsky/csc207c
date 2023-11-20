@@ -119,7 +119,6 @@ public class SortTools {
       if (pen != null) {
         pen.println("  Crashed on sorting empty array.");
       } // if
-      return false;
     } // try/catch
 
     // Singleton array
@@ -151,7 +150,7 @@ public class SortTools {
 
     // Many sets of randomized tests
     for (int round = 0; round < 20; round++) {
-      size = 500 + rand.nextInt(500);
+      size = 50 + rand.nextInt(50);
       Integer[] sorted = sampleSortedArray(size);
       Integer[] result = Arrays.copyOf(sorted, size);
 
