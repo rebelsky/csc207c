@@ -34,7 +34,7 @@ Administrivia
 
 Academic
 
-* Tuesday, 2023-11-21, Noon, Day PDR, _CS Table_.
+* Tuesday, 2023-11-21, Noon, Day PDR, _CS Table: Cell phone addiction_.
 
 Cultural
 
@@ -44,6 +44,7 @@ Peer
 
 Wellness
 
+* Be thankful.
 * We need more of these!
 
 Misc
@@ -62,11 +63,16 @@ Misc
 * Please follow style guidelines and/or reformat.
     * Space after `if`, `while`, etc.
     * Space before open braces.
+    * Ugh: `if(x==1){...}`
+    * Better : `if (x==1) {...}`
     * Two-space indent.
 * I have no idea why so many of you think that it's a good idea to
   put comments on the side.  DON'T.  Comments generally belong above 
   the code they describe.
+        x = 2;                          // Assign 2 to x
 * Sam likes you to comment right braces.
+          } // if
+        } // for
 * Please use the starter code.
 * I was surprised that so few of you used an explicit `insert`
   in `InsertionSort.sort`.
@@ -74,7 +80,7 @@ Misc
 * Please commit more regularly.
 * Many of you worked with other people on labs related to the MP, but
   did not seem to cite them.
-* Please try to limit your lines to less than 80 characters.
+* Please try to limit your lines to fewer than 80 characters.
 
 Questions
 ---------
@@ -84,6 +90,27 @@ Questions
 ### MP9
 
 ### Administrative
+
+How much time for redos?
+
+> As much as you need, I think.
+
+> I'm going to try to get graders to grade things as they arrive.
+
+Will there be second rounds of redos?
+
+> Yes.
+
+Will there be third rounds of redos?
+
+> Sure.
+
+Wow, you're harsh.  You gave me an I because I didn't put my name on
+the assignment.
+
+> Welcome to the real world.  
+
+> At least you get freedos.
 
 Lab
 ---
