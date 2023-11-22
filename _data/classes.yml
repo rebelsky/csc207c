@@ -567,6 +567,7 @@
   reminders:
     - Is this worth doing as a discussion or as a lab?  I like the discussion of heaps, but students also learn from practice.  
     - Maybe we need two days.
+  notes: ../eboards/eboard36.html
 
 - topic: A graph ADT
   abbrev: graphs
