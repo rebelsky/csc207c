@@ -28,6 +28,8 @@ Administrivia
 * I'll keep trying to update due dates. Email me if you need one fixed.
 * I'll be working on the real whiteboard for the second half of class.  I'll try to
   remember to have the camera on. Perhaps I should ask someone to take photos.
+* I asked President Harris what I should say to you about not getting into CS classes.
+* On a more positive note, the person teaching CSC-301 makes me feel old.
 
 ### Upcoming Token activities
 
