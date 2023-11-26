@@ -562,12 +562,22 @@
     - Storing trees in arrays
   reading: 
     - page: /readings/priority-queues.html
-  nolab:
-    - page: TBD
   reminders:
-    - Is this worth doing as a discussion or as a lab?  I like the discussion of heaps, but students also learn from practice.  
-    - Maybe we need two days.
+    - I ended up making this a two-day project. I think that works well.
   notes: ../eboards/eboard36.html
+
+- topic: Priority queues, heaps, and heap sort, continiued
+  abbrev: heaps
+  summary: |
+    We explore the implementation of heaps.
+  subjects:
+    - Heaps
+    - Heapsort
+  reading:
+    - CLRS Chapter 6 (Heapsort)
+  lab:
+    - page: /labs/heaps.html
+  notes: ../eboards/eboard37.html
 
 - topic: A graph ADT
   abbrev: graphs
@@ -582,6 +592,8 @@
     - Implementing graphs with adjacency matrices
     - Implementing graphs with adjacency lists
     - Implementing graphs with edge tables
+  reading:
+    - CLRS B.4
   reminders:
     - Readings?  Neither PM nor I seem to have any.  Anya used Skiena.
     - http://www.cs.grinnell.edu/~rebelsky/Courses/CS152/2006S/EBoards/graphs.txt
@@ -636,6 +648,15 @@
   lab:
     - page: /labs/shortest-paths.html
 
+- topic: Wrapup
+  abbrev: wrapup
+  summary: | 
+    We conclude the course.
+  subjects:
+    - The subject matter(s) of the course
+    - Looking ahead
+    - Course evaluation
+
 - topic: Patterns of object and algorithm design
   abbrev: design
   summary: |
@@ -646,15 +667,6 @@
     - Data-structure design
     - Object/class design
     - Code design
-
-- topic: Wrapup
-  abbrev: wrapup
-  summary: | 
-    We conclude the course.
-  subjects:
-    - The subject matter(s) of the course
-    - Looking ahead
-    - Course evaluation
 
 - topic: Analyzing algorithms, continued
   abbrev: analysis-continued
