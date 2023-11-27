@@ -22,7 +22,7 @@ What methods are not yet implemented?
 
 Review the various `dump` methods in `Heaps.java`. Review the `HeapExperiment.java` class.
 
-a. When we dump a heap, is the left subtree below the line for the root or above?
+a. When we dump a heap, is the left subtree below the line for the root or above? Why do you think we made that choice?
 
 b. Given that we haven't implemented `heapUp` or `heapDown`, what should our heap look like after each step as we add the strings `"d"`, `"e"` `"b"` `"f"` `"a"` `"h"`, `"i"`, `"c"`, and `"g"`, in that order?
 
@@ -34,7 +34,7 @@ java HeapExperiment d e b f a h i c g
 
 ### Exercise 2: Swapping up
 
-As you may recall, we add an element to the heap by adding at the end of the last row of the heap and then "swapping up", repeatedly swapping a value and its parent if they are out of order. In our code, we call this operation `heapUp`.
+As you may recall, we add an element to the heap by adding at the end of the last row of the heap and then "swapping up", repeatedly swapping a value and its parent if they are out of order. In our code, we call this operation `heapUp`. Others might refer to it as `bubbleUp` or `swapUp`.
 
 a. Implement `heapUp`.
 
@@ -48,7 +48,7 @@ java HeapExperiment d e b f a h i c g
 
 ### Exercise 3: Swapping down
 
-As you may recall, we remove the highest-priority element in the heap by grabbing the root, swapping the last element on the last level to the top of the heap, and then "swapping down", repeatedly swapping a value and its larger cuild as long as they are out of order. In our code, we call this operation `heapDown`.
+As you may recall, we remove the highest-priority element in the heap by grabbing the root, swapping the last element on the last level to the top of the heap, and then "swapping down", repeatedly swapping a value and its larger cuild as long as they are out of order. In our code, we call this operation `heapDown`. Others might refer to it as `bubbleDown` or `swapDown`.
 
 a. Implement `heapDown`.
 
@@ -83,6 +83,12 @@ b. We might also want to order them by level (printing the A's, then the AA's, t
 As you've just seen, we can use a heap for sorting. Rather than printing in sorted order, we might put values back into the array in sorted order. (CLRS tell us how to do that
 
 Finish the implementation of `HeapSorter.java`.
+
+You may want to test it with 
+
+```
+java SortTools test HeapSorter
+```
 
 ### Exercise 6: Heapifying
 
