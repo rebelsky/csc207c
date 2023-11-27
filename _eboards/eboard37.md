@@ -18,6 +18,11 @@ _Approximate overview_
 Administrivia
 -------------
 
+* I hope you had a great Turkey break.
+* I missed many of you last Wednesday. Very few of you who missed class
+  notified me that you were going to miss class, in spite of the policy
+  that you are supposed to do so.
+
 ### Upcoming Token activities
 
 Academic
@@ -56,6 +61,12 @@ Questions
 ### MP9
 
 ### Administrative
+
+I forgot to fill in the pre-assessment for mini-project 9 even though I 
+knew that I had to do so to make up for the prior missing pre-assessments
+and you reminded us to do so. Could I please turn it in today?
+
+> Sure.
 
 Lab
 ---
