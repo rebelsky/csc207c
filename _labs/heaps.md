@@ -36,7 +36,7 @@ java HeapExperiment d e b f a h i c g
 
 As you may recall, we add an element to the heap by adding at the end of the last row of the heap and then "swapping up", repeatedly swapping a value and its parent if they are out of order. In our code, we call this operation `heapUp`. Others might refer to it as `bubbleUp` or `swapUp`.
 
-a. Implement `heapUp`.
+a. Implement `heapUp`. Note that we are building a _Min Heap_, one with the smallest value at the top.
 
 b. Now that we've implemented `heapUp`, what should our heap look like after each step as we add the strings `"d"`, `"e"` `"b"` `"f"` `"a"` `"h"`, `"i"`, `"c"`, and `"g"`, in that order?
 

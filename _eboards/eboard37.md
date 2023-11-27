@@ -1,6 +1,6 @@
 ---
 title: "EBoard 37: Heaps and heapsort, continued"
-number: 36
+number: 37
 section: eboards
 held: 2023-11-27
 link: true
@@ -22,6 +22,7 @@ Administrivia
 * I missed many of you last Wednesday. Very few of you who missed class
   notified me that you were going to miss class, in spite of the policy
   that you are supposed to do so.
+* Prof. Jimenez and I bought you presents. The official class pen.
 
 ### Upcoming Token activities
 
@@ -30,6 +31,8 @@ Academic
 * Tuesday, 2023-11-28, Noon, Day PDR, _CS Table: TBD._
 
 Cultural
+
+* Thursday, 2023-11-30, 11am, JRC 101: _Let's talk institutional memory_.
 
 Peer
 
@@ -70,3 +73,31 @@ and you reminded us to do so. Could I please turn it in today?
 
 Lab
 ---
+
+Should we create a min-heap or a max-heap?
+
+> Please create a min-heap.
+
+Does it matter if I write `heapUp` iteratively or recursively?
+
+> Nope. I think it's easier to write recursively, but I ended up writing
+  it iteratively when I did the lab.
+
+Does it matter if I write `heapDown` iteratively or recursively?
+
+> Nope. I think it's easier to write recursively, and I ended up writing
+  it recursively when I did the lab.
+
+Do you have hints on `heapDown`?
+
+> Strategy one: Write a helper procedure that returns the index of the
+  smaller child.  You can then compare `i` to that index.  (Make sure
+  that you check whether there is a right child.)
+
+> Strategy two: Keep track of the index of the smallest element seen
+  so far. Initially, that's `i`. If you have a left child and the left
+  child is smaller, you can update that index. If you have a right child
+  and the right child is smaller, you can update that index. Once you're
+  done, you can compare that index to `i`. If they are different, swap
+  and recurse (recur).  (I think CLRS use this strtegy.)
+
