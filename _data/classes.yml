@@ -594,11 +594,7 @@
     - Implementing graphs with edge tables
   reading:
     - CLRS B.4
-  reminders:
-    - Readings?  Neither PM nor I seem to have any.  Anya used Skiena.
-    - http://www.cs.grinnell.edu/~rebelsky/Courses/CS152/2006S/EBoards/graphs.txt
-    - Maybe the appropriate section of CLRS?
-    - Anya has a lab on graphs.  http://www.cs.grinnell.edu/~vostinar/csc-207-spring-2018-schedule/csc-207-s18-representing-graphs/
+  notes: ../eboards/eboard37.html
 
 - topic: Traversing graphs
   abbrev: graph-traversal
