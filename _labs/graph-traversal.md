@@ -38,11 +38,7 @@ c. Add a few experiments of your own to explore the trouble spots you identified
 
 You will note that there is a `dump` procedure in the `Graph` class.  That procedure prints out vertices and edges using vertex numbers.  Write a new version of `dump` that prints out vertices and edges using vertex names.
 
-### Exercise 3: Reading graphs
-
-Write a procedure, `readGraph(String fName)`, that reads in a graph from a file.  You can assume that the each row of the file is a pair of vertex names that represent an edge from the first to the second.
-
-### Exercise 4: What can I reach?
+### Exercise 3: What can I reach?
 
 Write a procedure, `reachableFrom(PrintWriter pen, int vertex)`, that prints out a list of all the vertices reachable from a starting point.  A vertex, `v`, is reachable from a vertex, `u`, if there is a path from `u` to `v`.  
 
@@ -50,9 +46,9 @@ Conduct a few experiments to see if your procedure works correctly.
 
 You can use depth-first search or breadth-first search.
 
-*Note*: You will likely need to find a way to mark vertices to indicate that you've printed them out (or otherwise processed them) so that you don't process them a second time.
+*Note*: You will likely need to find a way to mark vertices to indicate that you've printed them out (or otherwise processed them) so that you don't process them a second time. You can use the `mark` operations provided, you can use a hash table, you can use an array or arraylist, or you can use something else of your choosing.
 
-### Exercise 5: What can I reach? revisited
+### Exercise 4: What can I reach? revisited
 
 Write a procedure, `Iterable<Integer> reachable(int vertex)`, that returns an iterable that returns an iterator of all the vertices reachable from a vertex.
 
@@ -76,4 +72,4 @@ Write a variant of `pathsFrom` that uses whichever searching strategy you did no
 For those with extra time
 -------------------------
 
-If you find that you have extra time, write a program that uses breadth-first-search to build word trees.
+If you find that you have extra time, consider other ways we might represent graphs.
