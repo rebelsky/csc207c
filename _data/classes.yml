@@ -594,7 +594,7 @@
     - Implementing graphs with edge tables
   reading:
     - CLRS B.4
-  notes: ../eboards/eboard37.html
+  notes: ../eboards/eboard38.html
 
 - topic: Traversing graphs
   abbrev: graph-traversal
@@ -609,6 +609,7 @@
     - page: /readings/tree-traversal.html
   lab: 
     - page: /labs/graph-traversal.html
+  notes: ../eboards/eboard39.html
 
 - topic: Minimum spanning trees
   abbrev: mst
