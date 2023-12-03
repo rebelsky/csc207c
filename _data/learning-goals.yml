@@ -2,7 +2,7 @@
   goals:
     - "**Data abstraction**: Apply abject-oriented design principles to separate interface from implementation."
     - "**Encapsulation**: Apply object-oriented design principles to design and build classes."
-    - "**Subtype polymorphism**: Write polymorphic code that works for objects in all classes that implement an interface or subclass a class."
+    - "**Subtype polymorphism**: Write polymorphic code that works for objects in all classes that implement an interface or subclass another class."
     - "**Parametric polymorphism**: Write polymorphic code for structures that can work with a variety of uniformly typed objects, such as lists of X."
     - "**Composition**: Combine objects/classes to build new objects/classes, implementing the _has-a_ relationship."
     - "**Inheritance**: Build new objects/classes in terms of other objects/classes, impliementing the _is-a_ relationship."
@@ -12,8 +12,8 @@
   goals:
     - "**Project design**: Create correct multi-file programs in Java to meet specifications."
     - "**Collaboration**: Work with one or more other students on the creation of a program."
-    - "**Testing**: Write effective unit tests using a framework such as JUnit and practice test-drive development."
-    - "**Version control**: Employ collaborative cversion control software, such as Git, to maintain multiple versions of software under development."
+    - "**Testing**: Write effective unit tests using a framework such as JUnit and practice test-driven development."
+    - "**Version control**: Employ collaborative version-control software, such as Git, to maintain multiple versions of software under development."
     - "**Documentation**: Exercise good practices in documenting code and create documentation for Java programs using Javadoc.**"
     - "**Professional ethics**: Understand and explain the responsibilties of a software designer."
 
@@ -38,5 +38,5 @@
     - "**Merge sort**: Explain, implement, and analyze variants of the merge sort algorithm."
     - "**Quicksort**: Explain, implement, and analyze the Quicksort algorithm."
     - "**Heap sort**: Explain, implement, and analyze the heap sort algorithm. (_skipped_)"
-    - "**Graph and tree traversal**: Explain various graph traversal algorithms."
+    - "**Graph and tree traversal**: Explain various graph and tree traversal algorithms."
     - "**Loop invariants**: Describe the use of loop invariants in algorithm design. (_skipped_)"
