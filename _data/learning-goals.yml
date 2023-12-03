@@ -23,11 +23,11 @@
     - "**Linked structures**: Implement one or more data types using linked structures."
     - "**Iterators**: Design, implement, and use iterators for one or more data types."
     - "**Lists**: Implement and use array-based and linked lists."
-    - "**Stacks and Queues**: Implement stacks or queues; use both."
+    - "**Stacks and queues**: Implement stacks or queues; use both."
     - "**Dictionaries/maps**: Design a dictionary ADT and implement it in multiple ways, such as with associative arrays, binary search trees, or hash tables."
     - "**Hash tables**: Implement dictionaries with hash tables using either probing or chaining."
-    - "**Binary Search trees**: Implement dictionaries with binary search trees."
-    - "**Heaps**: Describe heaps and how they are built.  Use heaps for Heapsort."
+    - "**Binary search trees**: Implement dictionaries with binary search trees."
+    - "**Heaps**: Describe heaps and how they are built.  Optionally use heaps for Heapsort."
     - "**Graphs**: Describe graphs and basic algorithms on them."
     
 - assessment: Learning Assessments, Algorithms
@@ -37,6 +37,6 @@
     - "**Analysis of recursive algorithms: Conduct informal big-O analysis of recursive algorithms." 
     - "**Merge sort**: Explain, implement, and analyze variants of the merge sort algorithm."
     - "**Quicksort**: Explain, implement, and analyze the Quicksort algorithm."
-    - "**Heap sort**: Explain, implement, and analyze the heap sort algorithm."
+    - "**Heap sort**: Explain, implement, and analyze the heap sort algorithm. (_skipped_)"
     - "**Graph and tree traversal**: Explain various graph traversal algorithms."
-    - "**Loop invariants**: Describe the use of loop invariants in algorithm design."
+    - "**Loop invariants**: Describe the use of loop invariants in algorithm design. (_skipped_)"
