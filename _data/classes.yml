@@ -645,6 +645,7 @@
       url: https://en.wikipedia.org/wiki/Dijkstra's_algorithm
   lab:
     - page: /labs/shortest-paths.html
+  notes: ../eboards/eboard41.html
 
 - topic: Wrapup
   abbrev: wrapup
