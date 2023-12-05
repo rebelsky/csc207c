@@ -8,7 +8,7 @@ current: true
 Preparation
 -----------
 
-If you haven't done so already, fork and clone the repository and then import it into your IDE.
+If you haven't done so already, fork and clone the repository at {{ page.repo }} and then import it into your IDE.
 
 Exercises
 ---------
