@@ -7,7 +7,7 @@ summary: |
 Preparation
 -----------
 
-If you have not done so already, fork and clone the repository at {{ page.repo }}.  Import it into VSCode.
+If you have not done so already, fork and clone the repository at {{ page.repo }}.  Import it into your IDE.
 
 Exercises
 ---------
@@ -59,6 +59,8 @@ e. Print out the MST.
 
 Implement Prim's algorithm.  If you are unsure about any of the steps suggested above, you can discuss them with your instructor or mentor, review our suggestions at the end of this lab, or both.
 
+You'll note that we've left it explicitly unstated as to where you implement Prim's algorithm and what parameters it should take. You are at the stage of your career where you should be able to consider reasonable alternatives.
+
 For those with extra time
 -------------------------
 
@@ -96,3 +98,18 @@ If you are implementing Prim's algorithm within the `Graph` class (or one of its
 
 Since `ArrayList` objects have a `toString` method, you don't need to do anything special to print out the MST.
 
+### Where to put Prim's
+
+There are two basic options to where you should put your implementation of Prim's
+
+You could create a new class (e.g., `GraphAlgorithms`) and put it there. 
+
+You could put it within the `Graph` class.
+
+I suppose you could put it within the `Edge` class, but that seems the least sensible option.
+
+Personally, I prefer creating a new class.
+
+### Parameters
+
+What parameters should Prim's have? It could take a graph as a parameter. It could take a list of edges as a parameter. It could take the name of a file that contains a list of edges as a parameter.
