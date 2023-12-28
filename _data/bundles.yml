@@ -6,15 +6,15 @@ tiers:
   - grade: A
     projects: |
       No Is or Rs<br>At least 5 Es<br>Remainder Ms
-    las:        26xS
+    las:        25xS
   - grade: B
     projects : |
       No Is or Rs<br>At least 3 Es<br>Remainder Ms
-    las:        24xS
+    las:        22xS
   - grade: C
     projects: |
       No Is<br>At most 2 Rs<br>At least 1 E<br>Remainder Ms
-    las:        21xS
+    las:        19xS
   - grade: D
     projects: |
       At most 2 Is<br>At most 2 Rs<br>At least 1 E<br>Remainder Ms
