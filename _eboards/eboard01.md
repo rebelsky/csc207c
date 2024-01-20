@@ -1,14 +1,13 @@
 ---
-title: Eboard 01: Getting started
+title: "Eboard 01: Getting started"
 number: 1
 section: eboards
 held: 2024-01-24
 link: true
 ---
-CSC 207 2019S, Class 01:  Getting started
-=========================================
+# {{ page.title }}
 
-_Overview_
+_Approximate overview_
 
 * Preliminaries
     * Notes and news
@@ -24,6 +23,9 @@ _Overview_
 
 Preliminaries
 -------------
+
+* Sit where you'd like, within reason.
+* If you don't know the people next to you, please introduce yourselves.
 
 ### News / Etc.
 
