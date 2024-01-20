@@ -390,22 +390,22 @@ You may feel a bit overwhelmed by this point.  I know that I do after re-reading
 
 I'm confused about the grading scheme.  Could you explain more?
 
-> Still working on it.
+> In short: The grading scheme is designed to assess you on what you've learned, not when in the semester you've learned it.  There's also a strong incentive built in for you to keep up with the work.  Doing regular work, even if it's not perfect, and receiving feedback on that work, is one of the best ways to learn.
 
-I plan to leave early for Fall break and won't be in class on Friday, 13 October 2023.  I'm also a bit worried that it's October 13th.  What are the penalties for missing that class?
+> Broad overview: To succeed in the class, you must do the learning assessments (LAs) and projects (MPs and the final project).  Since not everyone learns at the same rate, you will have the opportunity to make additional attempts at  LAs (although with new problems) and projects.  In addition, you must keep up with regular work for the class: readings (and reading responses), labs (and lab writeups), and reflections.  If you keep up with the work and achieve appropriate results on the LAs and projects by the end of the semester, you are likely to do well in the course.  Additional details are found above and in [the page on grading](../handouts/grading).
 
-> As long as you let me know in advance, there is no penalty for your absence.
+> If that's not enough information, feel free to ask questions about particular points.
 
-> If there happens to be an in-class LA that day, you will not be able to take it and will have to make it up on another day.  In addition, you are responsible for making up the work from class on your own, and you are still responsible for turning in that lab by 10:00 p.m. in Sunday, 22 October 2023.
-
-I plan to leave early for Thanksgiving and won't be in class on Wednesday, 22 November 22.  What are the penalties for missing that class?
+I plan to leave early for Spring break and won't be in class on Friday, 15 March 2024. What are the penalties for missing that class?
 
 > As long as you let me know in advance, there is no penalty for your absence.
+
+>  However, you will not be able to take the quiz that day, which means that you will have to complate that learning assessment in one of the following SoLAs.  In addition, you are responsible for making up the work from class on your own, and you are still responsible for turning in that labs.
 
 I need a mental health day.  What should I do?
 
-> Send me an email message telling me that you need a mental health day.  Plan to make up the lab on your own.  If you need extra time for the lab, you'll need to use a [token](../handouts/tokens).
-
+> Send me an email message telling me that you need a mental health day. Plan to make up the lab on your own and submit it before the next class. If you need extra time for the lab, you'll need to use a [token](../handouts/tokens).
+  
 > More importantly, please take care of yourself.
 
 How do I book your office hours?
