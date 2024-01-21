@@ -12,6 +12,9 @@
   reading:
     - page: /syllabus/
     - page: /schedule/
+    - page: /readings/oop-basics.html
+    - page: /readings/designing-adts.html
+    - page: /readings/designing-data-structures.html
   notes: ../eboards/eboard01.html
     
 - topic: Programming in the small with Java
@@ -28,30 +31,12 @@
     - Basic output in Java
     - Basic input in Java
   reading:
-    - page: /readings/oop-basics.html
     - page: /readings/intro-java.html
     - page: /readings/simple-java-c.html
     - page: /readings/arrays.html
   lab:
     - page: /labs/getting-started.html
-  notes: ../eboards/eboard02.html
 
-- topic: Practice with ADT design
-  abbrev: adt-design
-  summary: |
-    We practice designing an ADT and considering its implementation.
-  subjects:
-    - About technical interviews
-    - ADTs and other TLAs
-    - A design exercise
-  notes: ../eboards/eboard03.html
-
-- topic: Pause for breath
-  abbrev: pause
-  summary: |
-    Because of unexpected matters, we pause to work on the first mini-project.
-  notes: ../eboards/eboard04.html
-  
 - topic: Getting started with Java development
   abbrev: java-development
   summary: |
@@ -65,10 +50,10 @@
     - Git basics
   reading:
     - page: /readings/git.html
+    - page: /readings/vscode.html
   lab:
     - page: /labs/vscode.html
     - page: /labs/git.html
-  notes: ../eboards/eboard05.html
   
 - topic: Objects and classes
   abbrev: objects
@@ -79,15 +64,11 @@
   subjects:
     - Object basics
     - Modeling objects with classes
+    - Stacks and queues
     - An exercise
   reading:
-    - page: /readings/designing-adts.html
-    - page: /readings/designing-data-structures.html
-    - page: /readings/writing-classes.html
-    - page: /readings/standard-methods.html
   lab:
-    - page: /labs/intro-classes.html
-  notes: ../eboards/eboard06.html
+    - TBD
 
 - topic: Object semantics
   abbrev: object-semeantics
@@ -106,54 +87,22 @@
     - page: /labs/mental-models.html
   reminders:
     - This may need a new reading to replace PM's.
-  notes: ../eboards/eboard07.html
 
-- topic: Expandable arrays, revisited
-  abbrev: expandable-arrays
+- topic: Java from the command line
+  abbrev: command-line
   summary: |
-    We continue considering our continued example of expandable arrays.
-  subject: 
-    - PUM and LIA, revisited
-    - Designing expandable arrays
-    - Checking expandable arrays
-  notes: ../eboards/eboard08.html
-
-- topic: Interfaces and subtype polymorphism
-  abbrev: interfaces
-  summary: |
-    We consider interfaces, which serve as specifications of expected
-    behavior for classes.  We also explore how interfaces support
-    one form of polymorphism, a key aspect of object-oriented programming.
+    We consider how to build larger Java programs, with multiple files
+    and such.
   subjects:
-    - Interfaces
-    - The building blocks of OOP
-    - Subtype polymorphism
-  reading:
-    - page: /readings/interfaces.html
-    - page: /readings/subtype-polymorphism.html
-  lab:
-    - page: /labs/subtype-polymorphism.html
-  notes: ../eboards/eboard09.html
-  
-- topic: Generics and parametric polymorphism
-  abbrev: generics
-  summary: |
-    We continue our explortation of polymorphism by considering a second
-    type of polymorphism, parametric polymorphism, and its realization in
-    Java's generics.
-  subjects:
-    - Subtype polymorphism, revisited
-    - Parametric polymorphism
-    - Java generics
-    - Generic classes
-    - Generic interfaces
-    - Generic methods
-    - Generics and arrays
-  reading:
-    - page: /readings/generics.html
-  lab:
-    - page: /labs/generics.html
-  notes: ../eboards/eboard10.html
+    - Multi-file programs
+    - Build systems
+    - Why use the command line?
+    - Maven from the command line
+    - Maven from VSCode
+  readings:
+    - page: /readings/maven.html
+  labs:
+    - page: /labs/command-line.html
 
 - topic: Unit testing and debugging
   abbrev: unit-testing
@@ -174,7 +123,47 @@
   lab:
     - page: /labs/unit-testing.html
     - page: /labs/debugging.html
-  notes: ../eboards/eboard11.html
+  reminders:
+    - Needs to be rewriten to incorporate VScode's debugger.
+    - Unit testing has changed, too.
+    - Should this be split?  Probably.
+
+- topic: Interfaces and subtype polymorphism
+  abbrev: interfaces
+  summary: |
+    We consider interfaces, which serve as specifications of expected
+    behavior for classes.  We also explore how interfaces support
+    one form of polymorphism, a key aspect of object-oriented programming.
+  subjects:
+    - Interfaces
+    - The building blocks of OOP
+    - Subtype polymorphism
+  reading:
+    - page: /readings/interfaces.html
+    - page: /readings/subtype-polymorphism.html
+  lab:
+    - page: /labs/subtype-polymorphism.html
+  
+- topic: Generics and parametric polymorphism
+  abbrev: generics
+  summary: |
+    We continue our explortation of polymorphism by considering a second
+    type of polymorphism, parametric polymorphism, and its realization in
+    Java's generics.
+  subjects:
+    - Subtype polymorphism, revisited
+    - Parametric polymorphism
+    - Java generics
+    - Generic classes
+    - Generic interfaces
+    - Generic methods
+    - Generics and arrays
+  reading:
+    - page: /readings/generics.html
+  lab:
+    - page: /labs/generics.html
+  reminders:
+    - Sam at Tapia
 
 - topic: Exceptional programming
   abbrev: exceptions
@@ -185,9 +174,8 @@
     - Object-oriented design
   reading:
     - page: /readings/exceptions.html
-  lab:
-    - page: /labs/exceptions.html
-  notes: ../eboards/eboard12.html
+  reminders:
+    - Sam at Tapia
 
 - topic: Inheritance
   abbrev: inheritance
@@ -202,7 +190,7 @@
     - page: /readings/inheritance.html
   lab:
     - page: /labs/inheritance.html
-  notes: ../eboards/eboard13.html
+  
 
 - topic: List ADTs
   abbrev: list-adts
@@ -212,12 +200,9 @@
   subjects:
     - The design of ADTs, revisited
     - Scheme lists
-    - Broader concepts of lists
     - Java lists
-    - Implementing lists
   reminders:
     - I think this is a discussion-based day.
-  notes: ../eboards/eboard14.html
 
 - topic: Linear structures
   abbrev: linked-structures
@@ -239,7 +224,6 @@
     - page: /readings/queues.html
   lab:
     - page: /labs/linear-structures.html
-  notes: ../eboards/eboard15.html
   
 
 - topic: Array-based linear structures
@@ -259,7 +243,6 @@
   note:
     - Cut out iterators
     - May need to rewrite to deal with priority queues (sorted arrays?, sorted linked structures?)
-  notes: ../eboards/eboard16.html
   
 - topic: Iterators
   abbrev: iterators
@@ -278,7 +261,27 @@
     - page: /readings/iterators.html
   lab:
     - page: /labs/iterators.html
-  notes: ../eboards/eboard17.html
+  reminders:
+    - Need to rewrite the anonymous inner class reading to focus on iterators
+    - May need to write an iterator reading (don't I have one)
+    - For lab, may have them implement iterators
+    - Note that there are some good questions about iterators at the start
+      of the array-based-lists lab.
+
+- topic: Design patterns
+  abbrev: patterns
+  summary: |
+    We consider design patterns, common approaches to solving the kinds
+    of issues that we often see in the design of larger object-oriented
+    programs.
+  subjects:
+    - Design patterns
+    - Factories
+    - Singletons
+    - '"Wrapper" classes'
+  reminders:
+    - Need readings
+    - Need lab
 
 - topic: Analyzing algorithms
   abbrev: analysis
@@ -292,15 +295,21 @@
     - Counting steps
     - Big-O, formalized
     - Implications of Big-O
-  reading:
-    - CLRS 2.1
-    - CLRS 2.2
-  notlab:
+  lab:
     - page: /labs/empirical-analysis.html
-    - page: /labs/complexity.html
   reminders:
+    - Copy PM's lab (I may have done that)
     - Find an appropriate reading (CLRS?)
-  notes: ../eboards/eboard18.html
+
+- topic: Analyzing algorithms, continued
+  abbrev: analysis-continued
+  summary: |
+    We continue our exploration of the analysis of algorithms.
+  subjects:
+    - Practice with Big-O
+    - Comparing Big-O and empirical approaches
+  lab:
+    - page: /labs/complexity.html
 
 - topic: Analyzing recursive algorithms
   abbrev: analysis-recursive
@@ -310,15 +319,11 @@
     - Iterative analysis, revisited
     - Recurrence relations
     - Approaches to recurrence relations
-  nolab:
+  lab:
     - page: /labs/analyze-recursive.html
-  reading:
-    - CLRS 2.3
-    - CLRS 3
   reminders:
     - Need to write the lab (or find one in PM).  Did I do so?
     - Find a reading?
-  notes: ../eboards/eboard19.html
 
 - topic: Anonymous functions
   abbrev: lambda
@@ -339,14 +344,7 @@
   reminders:
     - May want to rewrite the lab to use priority queues or sorted lists.
     - May want to add a reading on sorted lists.  Or should that be an exercise?
-  notes: ../eboards/eboard20.html
 
-- topic: Pause for breah
-  abbrev: pause
-  summary: |
-    We take a day to review various topics.
-  notes: ../eboards/eboard21.html
-  
 - topic: Searching
   abbrev: searching
   summary: |
@@ -363,7 +361,22 @@
     - page: /readings/search.html
   lab:
     - page: /labs/binary-search.html
-  notes: ../eboards/eboard22.html
+
+- topic: Loop invariants
+  abbrev: loop-invariants
+  summary: |
+    We consider loop invariants, an important technique for designing
+    iterative algorithms.
+  subjects:
+    - Reasoning about iterative algorithms
+    - The state of a program
+    - Loop invariants
+    - Loop termination
+    - "An exercise: Binary search"
+  reading:
+    - page: /readings/loop-invariants.html
+  reminders:
+    - May need to write a lab.  (I think we did this collaboratively.)
 
 - topic: Sorting
   abbrev: sorting
@@ -376,11 +389,9 @@
     - Selection sort
     - Generic sorts
   reading:
-    - page: /readings/loop-invariants.html
     - page: /readings/sorting.html
   reminders:
     - Some class time talking about unit tests
-  notes: ../eboards/eboard23.html
 
 - topic: Merge sort
   abbrev: mergesort
@@ -397,7 +408,6 @@
     - page: /labs/mergesort.html
   reminders:
     - Use PM's lab.  (Why?)
-  notes: ../eboards/eboard24.html
 
 - topic: Quicksort
   abbrev: quicksort
@@ -412,7 +422,6 @@
     - page: /readings/quicksort.html
   lab:
     - page: /labs/quicksort.html
-  notes: ../eboards/eboard25.html
 
 - topic: Ethical considerations
   abbrev: ethics
@@ -421,9 +430,7 @@
   subjects:
     - Professional ethics.
   reading:
-    - link: ACM Code of Ethics and Professional Conduct
-      url: https://www.acm.org/code-of-ethics
-  notes: ../eboards/eboard26.html
+    - ACM Code of Ethics
 
 - topic: Array-based lists
   abbrev: array-lists
@@ -444,7 +451,6 @@
       url: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ListIterator.html
   lab:
     - page: /labs/array-based-lists.html
-  notes: ../eboards/eboard27.html
 
 - topic: Doubly-linked lists
   abbrev: doubly-linked-lists
@@ -459,15 +465,27 @@
     - page: /readings/list-iterators.html
     - page: /readings/doubly-linked-lists.html
   lab:
-    - page: /labs/linked-lists.html
-  notes: ../eboards/eboard28.html
+    - page: /labs/doubly-linked-lists.html
 
 - topic: Sorting competition
   abbrev: sorting-competition
   summary: |
-    We compare the sorting algorithms from the latest mini-projects.
-  notes: ../eboards/eboard29.html
+    We compare the sorting algorithms from the latest homework.
   
+- topic: A Dictionary ADT
+  abbrev: maps
+  summary: |
+    We introduce the Dictionary (a.k.a. Map) abstract data type and some
+    simple implementations.
+  subjects:
+    - Maps and dictionaries
+    - Designing a Dictionary ADT
+    - Associative arrays
+    - Association lists
+  reminders:
+    - Needs a new reading
+    - There's an association lists lab from 2014 Fall.
+
 - topic: Trees and tree traversal
   abbrev: Trees
   summary: |
@@ -480,10 +498,11 @@
     - Iterative breadth-first traversal
     - Iterative depth-first traversal
     - Pre-order, in-order, and post-order traversals
-  reading:
-    - page: /readings/tree-traversal.html
   lab:
     - page: /labs/tree-traversal.html
+  reminders:
+    - This is likely a new lab.  Or I have one from 2014 Fall.
+    - We may need a new reading.
 
 - topic: Binary search trees I
   abbrev: bst1
@@ -496,7 +515,6 @@
     - Adding elements to BSTs
   lab:
     - page: /labs/binary-search-trees.html
-  notes: ../eboards/eboard31.html
 
 - topic: Binary search trees II
   abbrev: bst2
@@ -506,23 +524,6 @@
     - Deletion in BSTs
   lab:
     - page: /labs/binary-search-trees-continued.html
-  notes: ../eboards/eboard32.html
-
-- topic: Probing in hash tables
-  abbrev: probing
-  summary: |
-    We explore one of the two primary collision-resolution mechansims
-    in hash tables.
-  subjects:
-    - Collisions
-    - Linear probing
-    - Quadratic probing
-  reading:
-    - link: "Osera 12: Hashing"
-      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap12.pdf
-  lab:
-    - page: /labs/hash-table-probing.html
-  notes: ../eboards/eboard33.html
 
 - topic: Hash tables
   abbrev: hash-tables
@@ -536,7 +537,24 @@
     - Handling collisions
     - Rebuilding hash tables
     - Hash functions
-  notes: ../eboards/eboard34.html
+  reading:
+    - link: "Osera 12: Hashing"
+      url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap12.pdf
+
+- topic: Probing in hash tables
+  abbrev: probing
+  summary: |
+    We explore one of the two primary collision-resolution mechansims
+    in hash tables.
+  subjects:
+    - Collisions
+    - Linear probing
+    - Quadratic probing
+  lab:
+    - page: /labs/hash-table-probing.html
+  reminders:
+    - Lots of this lab can be moved to other days.
+    - Have them write a hash function for our good old fraction class.
 
 - topic: Chaining in hash tables
   abbrev: chaining
@@ -547,7 +565,6 @@
     - Buckets and chaining
   lab:
     - page: /labs/hash-table-chained.html
-  notes: ../eboards/eboard35.html
 
 - topic: Priority queues, heaps, and heap sort
   abbrev: heaps
@@ -562,22 +579,11 @@
     - Storing trees in arrays
   reading: 
     - page: /readings/priority-queues.html
-  reminders:
-    - I ended up making this a two-day project. I think that works well.
-  notes: ../eboards/eboard36.html
-
-- topic: Priority queues, heaps, and heap sort, continiued
-  abbrev: heaps
-  summary: |
-    We explore the implementation of heaps.
-  subjects:
-    - Heaps
-    - Heapsort
-  reading:
-    - CLRS Chapter 6 (Heapsort)
   lab:
-    - page: /labs/heaps.html
-  notes: ../eboards/eboard37.html
+    - page: TBD
+  reminders:
+    - Is this worth doing as a discussion or as a lab?  I like the discussion of heaps, but students also learn from practice.  
+    - Maybe we need two days.
 
 - topic: A graph ADT
   abbrev: graphs
@@ -592,9 +598,11 @@
     - Implementing graphs with adjacency matrices
     - Implementing graphs with adjacency lists
     - Implementing graphs with edge tables
-  reading:
-    - CLRS B.4
-  notes: ../eboards/eboard38.html
+  reminders:
+    - Readings?  Neither PM nor I seem to have any.  Anya used Skiena.
+    - http://www.cs.grinnell.edu/~rebelsky/Courses/CS152/2006S/EBoards/graphs.txt
+    - Maybe the appropriate section of CLRS?
+    - Anya has a lab on graphs.  http://www.cs.grinnell.edu/~vostinar/csc-207-spring-2018-schedule/csc-207-s18-representing-graphs/
 
 - topic: Traversing graphs
   abbrev: graph-traversal
@@ -609,7 +617,6 @@
     - page: /readings/tree-traversal.html
   lab: 
     - page: /labs/graph-traversal.html
-  notes: ../eboards/eboard39.html
 
 - topic: Minimum spanning trees
   abbrev: mst
@@ -628,7 +635,6 @@
       url: https://en.wikipedia.org/wiki/Kruskal%27s_algorithm
   lab:
     - page: /labs/minimum-spanning-trees.html
-  notes: ../eboards/eboard40.html
 
 - topic: Shortest paths in graphs
   abbrev: shortest-path
@@ -645,7 +651,6 @@
       url: https://en.wikipedia.org/wiki/Dijkstra's_algorithm
   lab:
     - page: /labs/shortest-paths.html
-  notes: ../eboards/eboard41.html
 
 - topic: Wrapup
   abbrev: wrapup
@@ -666,73 +671,4 @@
     - Data-structure design
     - Object/class design
     - Code design
-
-- topic: Analyzing algorithms, continued
-  abbrev: analysis-continued
-  summary: |
-    We continue our exploration of the analysis of algorithms.
-  subjects:
-    - Practice with Big-O
-    - Comparing Big-O and empirical approaches
-
-- topic: Design patterns
-  abbrev: patterns
-  summary: |
-    We consider design patterns, common approaches to solving the kinds
-    of issues that we often see in the design of larger object-oriented
-    programs.
-  subjects:
-    - Design patterns
-    - Factories
-    - Singletons
-    - '"Wrapper" classes'
-  reminders:
-    - Need readings
-    - Need lab
-
-- topic: Java from the command line
-  abbrev: command-line
-  summary: |
-    We consider how to build larger Java programs, with multiple files
-    and such.
-  subjects:
-    - Multi-file programs
-    - Build systems
-    - Why use the command line?
-    - Maven from the command line
-    - Maven from VSCode
-  reading:
-    - page: /readings/maven.html
-  labs:
-    - page: /labs/command-line.html
-
-- topic: Loop invariants
-  abbrev: loop-invariants
-  summary: |
-    We consider loop invariants, an important technique for designing
-    iterative algorithms.
-  subjects:
-    - Reasoning about iterative algorithms
-    - The state of a program
-    - Loop invariants
-    - Loop termination
-    - "An exercise: Binary search"
-  reading:
-    - page: /readings/loop-invariants.html
-  reminders:
-    - May need to write a lab.  (I think we did this collaboratively.)
-
-- topic: A Dictionary ADT
-  abbrev: maps
-  summary: |
-    We introduce the Dictionary (a.k.a. Map) abstract data type and some
-    simple implementations.
-  subjects:
-    - Maps and dictionaries
-    - Designing a Dictionary ADT
-    - Associative arrays
-    - Association lists
-  reminders:
-    - Needs a new reading
-    - There's an association lists lab from 2014 Fall.
 
