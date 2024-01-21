@@ -37,12 +37,12 @@
 - date: 2024-02-07
   due:
     - MP 2 Post-Assessment
+  assigned:
+    - page: /mps/mp03.html
 
 - date: 2024-02-09
   due:
     - MP 3 Pre-Assessment
-  assigned:
-    - page: /mps/mp03.html
 
 - date: 2024-02-13
   due:
@@ -125,61 +125,56 @@
 - date: 2024-04-05
   due:
     - MP 8 Post-Assessment
-    - SoLA 3 Pre-Assessment
-
-- date: 2024-04-08
-  assigned:
-    - SoLA 3
 
 - date: 2024-04-09
   due:
-    - SoLA 3
+    - page: /mps/mp09.html
 
 - date: 2024-04-10
   due:
-    - SoLA 3 Post-Assessment
+    - MP 9 Post-Assessment
   assigned:
-    - page: /mps/mp07.html
+    - page: /mps/mp10.html
     
 - date: 2024-04-12
   due:
-    - MP 7 Pre-Assessment
+    - MP 10 Pre-Assessment
 
 - date: 2024-04-16
   due:
-    - page: /mps/mp07.html
+    - page: /mps/mp10.html
 
 - date: 2024-04-17
   due:
-    - MP 7 Post-Assessment
+    - MP 10 Post-Assessment
   assigned:
-    - page: /mps/mp08.html
+    - page: /mps/mp11.html
 
 - date: 2024-04-19
   due:
-    - MP 8 Pre-Assessment
+    - MP 11 Pre-Assessment
 
 - date: 2024-04-23
   due:
-    - page: /mps/mp08.html
+    - page: /mps/mp11.html
 
 - date: 2024-04-24
   due:
-    - MP 8 Post-Assessment
+    - MP 11 Post-Assessment
   assigned:
-    - page: /mps/mp09.html
+    - page: /mps/mp12.html
 
 - date: 2024-04-26
   due:
-    - MP 9 Pre-Assessment
+    - MP 12 Pre-Assessment
 
-- date: 2024-05-03
+- date: 2024-04-30
   due:
-    - SoLA 4 Pre-Assessment
+    - page: /mps/mp12.html
 
-- date: 2024-05-05
-  due: 
-    - page: /mps/mp09.html
+- date: 2024-05-01
+  due:
+    - MP 12 Post-Assessment
 
 - date: 2024-05-10
   due:
