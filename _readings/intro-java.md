@@ -150,3 +150,17 @@ public class First {
 } // class First
 ```
 
+Self checks
+-----------
+
+### Check 1: Similarities to C
+
+List three or so ways in which Java seems similar to C.
+
+### Check 2: Differences from C
+
+List three or so ways in which Java seems different than C.
+
+### Check 3: Formatting Java code
+
+I expect you to follow common practices for formatting Java code. Summarize a few practices you observe for formatting the code above.
