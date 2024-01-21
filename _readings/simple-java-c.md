@@ -244,6 +244,6 @@ Self checks
 
 In your own words, explain the difference between `import` (in Java) and `#include` (in C).
 
-### Check 2: Java style, revisited (‡)
+### Check 2: Java style, revisited
 
 Give at least three aspects of Java code style you've observed in the code above (beyond those mentioned explicitly in the reading). For example, you might note how big the standard indent is, where we place braces, and where we do and do not put spaces.
