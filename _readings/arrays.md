@@ -113,6 +113,14 @@ for (int i = 0; i < ratings.length; i++) {
 } // for 
 ```
 
+In contrast to C, which generally forces us to iterate arrays using indices, Java also provides a "for-each" loop for arrays.
+
+```java
+    for (String name : names) {
+      pen.println("Hello, " + name);
+    } // for
+```
+
 The design of arrays
 --------------------
 
@@ -121,4 +129,23 @@ Let's return to the original philosophy of arrays: *an array is an indexed colle
 Do arrays have to have a fixed size?  No.  One can design and implement arrays that expand dynamically when necessary.  Instead of asking about the length of such arrays, you would probably ask about the current capacity of the array or what the largest indexed used is (or something similar).  You might also need to consider when the array expands.  Does it expand automatically when a client requests a value outside of the bounds, or is there an explicit command to expand the array?
 
 In Java, the standard arrays have a fixed size.  However, there are a variety of container types (e.g., [`java.util.Vector`]({{ site.java_api }}/java/util/Vector.html) and [`java.util.ArrayList`]({{ site.java_api }}/java/util/ArrayList.html) that provide dynamic arrays.  Feel free to read the Javadoc for those classes to learn more about them.  (You may find that you're not quite ready to understand all of the aspects of Java documentation right now.)
+
+Self checks
+-----------
+
+### Check 1: Creating simple arrays (‡)
+
+Write two sets of instructions for creating an array with the values 1, 2, 3, ..., 10. 
+
+In the first set of instructions, you should build the array with an initializer.
+
+In the second set of instructions, you should fill in the array with a for loop.
+
+### Check 2: Designing expandable arrays (‡)
+
+Let's suppose that Java lacked a special syntax for arrays and we were designing our own expandable arrays of strings. What basic set of methods would you provide? Please include parameter types and short (one-sentence) descriptions. For example,
+
+```java
+void set(int index, String str); // Set the value at the given index to `str`.
+```
 
