@@ -38,27 +38,26 @@ information.  To ensure that you read the information, I even give you
 [AI programming assistants](ai)
   : Some notes on why I discourage the use of AI programming assistants in my introductory classes.
 
+[Metacognitive reflections (Pre-reflections and Post-reflection](prepost)
+  : Advance warning of the questions we will ask before and after each
+    mini-project and SoLA.
+
 [Notes on taking notes](taking-notes)
   : Some notes on why you should take notes, along with some note-taking strategies.
-
-## Secondary topics
-
-[Some thoughts on electronic mail](email)
-  : This page provides some details about how to best use electronic mail when dealing with me.
 
 ## Other versions of the course
 
 These also aren't strictly handouts, but I didn't have another place for them.
 The list is incomplete.
 
-[CSC-151 2023 Fall (Rebelsky)](https://rebelsky.cs.grinnell.edu/~rebelsky/Courses/CSC207/2023Fa/01/home/)
+[CSC-207 2023 Fall (Rebelsky)](https://rebelsky.cs.grinnell.edu/~rebelsky/Courses/CSC207/2023Fa/01/home/)
   : The site from the last time I taught the course.
 
-[CSC-151 2023 Fall (Jiménez)](https://jimenezp.cs.grinnell.edu/Courses/CSC207/2023Fa/syllabus/)
+[CSC-207 2023 Fall (Jiménez)](https://jimenezp.cs.grinnell.edu/Courses/CSC207/2023Fa/syllabus/)
   : The other fall 2023 section of the course.
 
-[CSC-151 2019 Spring (Rebelsky)](https://rebelsky.cs.grinnell.edu/~rebelsky/Courses/CSC207/2019S/01/home/)
+[CSC-207 2019 Spring (Rebelsky)](https://rebelsky.cs.grinnell.edu/~rebelsky/Courses/CSC207/2019S/01/home/)
   : The site from the prior time I taught the course.
 
-[CSC-151 2014 Spring (Rebelsky)](https://rebelsky.cs.grinnell.edu/Courses/CSC207/2014F/home/)
+[CSC-207 2014 Spring (Rebelsky)](https://rebelsky.cs.grinnell.edu/Courses/CSC207/2014F/home/)
   : The site from the prior time I taught the course. I'm not sure why I teach the course every four or five years.
