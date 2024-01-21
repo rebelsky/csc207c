@@ -214,9 +214,9 @@ If you want more sophisticated input, you can use `java.util.Scanner`.  Scanners
 import java.util.Scanner;
 // ...
 
-   Scanner in = new Scanner(System.in);
-   boolean done = false;
-   int i = 0;
+    Scanner in = new Scanner(System.in);
+    boolean done = false;
+    int i = 0;
     while (!done) {
       pen.print("Please enter an integer: ");
       pen.flush();
@@ -237,3 +237,13 @@ Arrays
 
 We'll consider arrays in [a subsequent reading](../readings/arrays).
 
+Self checks
+-----------
+
+### Check 1: `import` vs `#include`
+
+In your own words, explain the difference between `import` (in Java) and `#include` (in C).
+
+### Check 2: Java style, revisited (‡)
+
+Give at least three aspects of Java code style you've observed in the code above (beyond those mentioned explicitly in the reading). For example, you might note how big the standard indent is, where we place braces, and where we do and do not put spaces.
