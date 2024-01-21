@@ -15,12 +15,7 @@ link: true
 ---
 # {{ page.title }}
 
-As you might have been able to tell from the first day of class,
-I have a wide variety of opinions about learning and teaching in CS
-which are reflected in how I run the class.  You can (and should)
-learn more about these perspectives from the course web.  In this
-portion of the assignment, you will review the course web and answer
-some basic questions.
+As you might have been able to tell from the first day of class, I have a wide variety of opinions about learning and teaching in CS which are reflected in how I run the class.  You can (and should) learn more about these perspectives from the course web.  In this portion of the assignment, you will review the course web and answer some basic questions.
 
 First, read the following items.
 
