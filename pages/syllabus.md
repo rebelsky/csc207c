@@ -153,10 +153,11 @@ See the notes below and in the [handouts](../handouts) for more details.
 
 ### Deliverables
 
-I rely on five kinds of work to assess your mastery of the material.
+I rely on six kinds of work to assess your mastery of the material.
 
++ **Reading problems**: quick assessments of the concepts found in the daily reading in preparation for in-class activities.  _**Reading problems are generally due at {{ site.evening_due_time }} the night before class**_ (e.g., the problems associated with a reading for Wednesday's class are due Tuesday at {{ site.evening_due_time }})
 + **Lab exercises**: practice problems worked on during class, frequently collaboratively, with a partner.  _**Lab exercises are generally due immediately before the next class**_ (e.g., the problems associated with the lab from Wednesday's class are due Friday at 8:30 a.m. and the problems associated with the lab from Friday's class are due Monday at 8:30 a.m.).
-+ **Mini-Projects**: individually completed, small-scale programming projects that apply the weekly concepts to the themes of the course.  (We may, on occasion, refer to "mini-projects" as "demos", using the terminology from the prior term.)  To earn an A, one must do an excellent job on most of the mini-projects and the group project.  (You will be able to re-do any project that earns less than excellent.)  _**Mini-Projects are generally due on Tuesdays at 10:30 p.m.**_
++ **Mini-Projects**: individual and group, small-scale programming projects that apply the weekly concepts to the themes of the course.  (We may, on occasion, refer to "mini-projects" as "demos", using the terminology from the prior term.)  To earn an A, one must do an excellent job on most of the mini-projects and the group project.  (You will be able to re-do any project that earns less than excellent.)  _**Mini-Projects are generally due on Tuesdays at 10:30 p.m.**_
 + **Learning assessments**: individually completed problems that directly assess your mastery of the learning goals of the course.  To earn an A, one must pass learning assessments for N of the M learning objectives.  (You will have the opportunity to retake any of the learning assessments you do not pass.)  I'm going to try a new approach to LAs this semester. In most cases, I will simply ask you to provide evidence that you've mastered the topic, rather than having you solve a new problem. In a few cases,  I will ask you to solve a new problem.
 + **Metacognitive reflections**: Short reflective pieces given before and after most assignments and exams.  _**Pre-task reflections are generally due a day or two after a task is assigned.  Post-task reflections are generally due a day or two after the task is due.**_
 
@@ -207,21 +208,23 @@ Your grade may also be affected by reading problems, labs, metacognitive reflect
 
 Note that Grinnell does not permit grades of C-, D+, or D-.  A grade below C and at least D will be recorded as a D.  A grade below a D will be recorded as an F.
 
-### Laboratory assignments and metacognitive reflections
+### Reading problems, laboratory assignments, and metacognitive reflections
 
-You are allowed to miss up to four total lab assignments and metacognitive reflections in the semester without penalty.  If you miss more labs or reflections, your overall letter grade will be lowered by one-third of a letter grade for each two additional labs or reflections you miss. Excesses of one also result in a loss.  For example,
+You are allowed to miss up to **six total** reading problems, lab assignments, and metacognitive reflections in the semester without penalty.  If you miss more than six reading problems, labs, or reflections, your overall letter grade will be lowered by one-third of a letter grade for each two additional problems, labs, or reflections you miss. Excesses of one also result in a loss.  For example,
 
-* If you miss three lab writeups and one reflection, you've missed *four* total things and there is *no penalty*.
-* If you miss three labs and three reflections, you've missed *six* total things, which is two more than you are permitted.  *Your overall letter grade drops by one-third*, such as from a B to a B- or from an A- to a B+.
-* If you miss one lab writeup and four reflections, you've missed *five* total things, which is one more than you are permitted.  Once again, *your total letter grade drops by one-third*.
-* If you miss four labs and three reflections, you've missed *seven* total things, which is three more than you are permitted.  *Your overall letter grade drops by two-thirds*, such as from a B to a C+ or from an A- to a B.
-* If you miss eight labs and zero reflections, yo've missed *eight* total things, which is four more than you are permitted.  *Your overall letter grade drops by a full letter*, such as from a B to a C, from an A- to a B-, or from a B- to a D (there is no C-).
+* If you miss four reading problems, one lab, and one reflection, you've missed *six* total things and there is *no penalty*.
+* If you miss three reading problems, three labs, and two reflections, you've missed *eight* total things, which is two more than you are permitted.  *Your overall letter grade drops by one-third*, such as from a B to a B- or from an A- to a B+.
+* If you miss three reading problems, two labs, and two reflections, you've missed *seven* total things, which is one more than you are permitted.  Once again, *your total letter grade drops by one-third*.
+* If you miss three reading problems, four labs, and two reflections, you've missed *nine* total things, which is three more than you are permitted.  *Your overall letter grade drops by two-thirds*, such as from a B to a C+ or from an A- to a B.
+* If you miss ten reading problems, zero labs, and zero reflections, yo've missed *ten* total things, which is four more than you are permitted.  *Your overall letter grade drops by a full letter*, such as from a B to a C, from an A- to a B-, or from a B- to a C.
 
-I hope that you will do your best to miss as few labs and reflections as possible.
+I hope that you will do your best to miss as few reading problems, labs, and reflections as possible.
+
+Note: If your LAs and MPs indicate that you should receive a passing grade (C or above), missing tokens, readings, labs, or metacognitive reflections cannot drop your grade below a C.
 
 ### Redos
 
-Because I care more that you learn the material than that you learn it by a particular deadline, I permit redos for the major work in this course.  Redos on learning assessments are automatically available. In general, you may try them again on the next set of learning assessments (SoLA).  Redos on lab writeups and metacognitive reflections are rarely permitted.  Please speak with me if you would like to redo a reading response or lab writeup.
+Because I care more that you learn the material than that you learn it by a particular deadline, I permit redos for the major work in this course.  Redos on learning assessments are automatically available. In general, you may try them again soon after I grade them.  Redos on readings, lab writeups, and metacognitive reflections are rarely permitted.  Please speak with me if you would like to redo a reading response or lab writeup.
 
 Your first redo on a mini-project is generally free.  Subsequent redos on mini-projects may require tokens; see [the handout on tokens](../handouts/tokens) for details.  When you receive a graded mini-project, it will generally include a checklist of issues that you must address to get a higher grade.  Please reproduce the checklist in your re-done project.  Where appropriate, you should indicate how you addressed the issues we have described.
 
@@ -294,6 +297,14 @@ Google (n.d.).  [_Google Java Style Guide_](https://google.github.io/styleguide/
 
 > The style guide you should use for your code in this course.
 
+## Practice for technical interviews
+
+It turns out that both the topics we cover (e.g., ADTs and algorithms) and the approaches we use in this course (e.g., testing and design) are often emphasized in technical interviews.  Hence, we'll spend some time on interview-like activities in the course.  Stay tuned for further details.
+
+## Accessibility
+
+I hope to incorporate a variety of assignments exploring accessibility in computers as part of the course.  Programmers don't pay enough attention to accessibility issues, and I hope that some assignments that explore these issues may help you consider people with different capabilities.
+
 ## Help, collaboration, academic honesty, and academic integrity
 
 To help expedite your learning, you can rely on me, our class mentor, and your peers as outlets in this course.
@@ -341,14 +352,6 @@ ITS has released and then temporarily withdrawn policies that may limit your abi
 ### AI programming assistants
 
 Please avoid the use of AI-based programming assistants, such as ChatGPT or GitHub Copilot in this course.  You should also review [my policy on AI programming assistants](../handouts/ai).
-
-## Practice for technical interviews
-
-It turns out that both the topics we cover (e.g., ADTs and algorithms) and the approaches we use in this course (e.g., testing and design) are often emphasized in technical interviews.  Hence, we'll spend some time on interview-like activities in the course.  Stay tuned for further details.
-
-## Accessibility
-
-I hope to incorporate a variety of assignments exploring accessibility in computers as part of the course.  Programmers don't pay enough attention to accessibility issues, and I hope that some assignments that explore these issues may help you consider people with different capabilities.
 
 ## Other issues
 
