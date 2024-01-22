@@ -45,6 +45,11 @@ information.  To ensure that you read the information, I even give you
 [Notes on taking notes](taking-notes)
   : Some notes on why you should take notes, along with some note-taking strategies.
 
+## Miscellaneous
+
+[Spam from Sam](spamr)
+  : An attempt to log all the email I sent this semester.
+
 ## Other versions of the course
 
 These also aren't strictly handouts, but I didn't have another place for them.
