@@ -7,11 +7,13 @@ link: true
 ---
 # {{ page.title }}
 
+**You are probably being recorded, perhaps even transcribed.**
+
 _Getting started_ (this will be our normal start-of-class sequence)
 
 * Grab a card.  The card will have a computer name and a location.
 * Remember the name and location.
-* Drop the card back in the jar.
+* Drop the card back in the jar.  <-------
 * Navigate to the computer.
 * Whoever arrives first, log in.
 * When both partners arrive, introduce yourselves.
@@ -19,8 +21,6 @@ _Getting started_ (this will be our normal start-of-class sequence)
 For the future: I'm happy to reserve a (somewhat random) seat at
 the front of the classroom for those who need a front seat as an
 adjustment or accommodation.  Just let me know.
-
-**You are probably being recorded, perhaps even transcribed.**
 
 _Approximate overview_
 
@@ -50,6 +50,7 @@ Preliminaries
 * Thursday at 11pm: Readings
     * [Git and GitHub](../readings/git)
     * [VSCode](../readings/vscode)
+        * Not yet complete.
     * Nothing to submit.
 * Friday at 1pm: [Today's lab](../labs/getting-started) on [Gradescope](https://www.gradescope.com/courses/690101/assignments/3995041/).
 * Friday at 11pm: [Pre-reflection for MP1](https://www.gradescope.com/courses/690101/assignments/3974719/)
@@ -58,7 +59,6 @@ Preliminaries
 ### Tokens
 
 Academic/Scholarly
-
 
 * Friday, 2024-01-26, 6:00--7:30 p.m., JRC 101. 
   _Celebration of MLK day with Alan Page_.
@@ -77,12 +77,18 @@ Wellness
 
 Misc
 
+Mini-Project 1
+--------------
+
+* Should mostly require C-like knowledge.
+* Start early, give yourself breaks.
+
 Reading responses
 -----------------
 
 ### Expandable array methods
 
-Here's a sample list of expandable array methods.
+Here's a sample list of methods for simple expandable arrays of strings.
 
 ```
 void set(int index, String str); // Set the value at the given index to `str`.
@@ -91,27 +97,144 @@ int getLength();                 // Returns the length of the array.
 void add(String str);            // Adds `str` to the end of the array.
 boolean isFull();                // Determines if the array is full.
 void remove(int index);          // Removes the value at the given index.
-roid eplace(int index, String str);  // Replace the value at the given index.
+void replace(int index, String str);  // Replace the value at the given index.
 ```
 
-Some of Sam's questions:
+Note: The object that's doing the work (and storing the data) is
+implicit. We'll write something like
 
-* How do we create an expandable array?
-* When does the array expand?
-* What happens if we call `get` without first having `set` a value at
-  the given location?
-* What is the "length" of an array / the "end" of the array? Is that
-  where the value with greatest index is stored?
-* When will an expandable array be full?
-* What does it mean to remove a value from an array?
+```
+myArray.set(5, "hello");
+```
+
+### Some of Sam's questions:
+
+What method do we use to create a new expandable array of strings?
+
+> In Java, these will always be named the same thing as our class
+  and implicitly return a value in the class.
+
+> When we call them, we write the word `new` before them.
+
+> `new ExpandableStringArray(int initialCapacity)` - Create a new
+  expandable array that is guaranteed to hold at least `initialCapacity`
+  values.
+
+> `new ExpandableStringArray()` - Create a new expandable array. The client
+  shouldn't worry about trivia like how big it initially is.
+
+When does the array expand?
+
+> We expand the expandable array as soon as it fills. (We'll know that
+  it's filled because we've kept track of the capacity.)
+
+> We expand the expandable array as soon as we discover it needs more space. **
+
+In what procedures might we discover that we need more space?
+
+> `addToEnd` (only if the length is equal to the capacity)
+
+> `set`. If we discover that the index is beyond the capacity, we
+  will have to expand.
+
+What is the "length" of an array / the "end" of the array? Is that
+where the value with greatest index is stored?
+
+> The `length` is 1 + the last index we've used.
+
+> The `capacity` is the amount of storage we have.
+
+> The `end` is similar to the length.
+
+How much should we expand when it comes time to expand? (Welcome to a
+stupid question that you should know for interviews.)
+
+> For `set`, it must be at least enough that `capacity > index`.
+
+> One option `max(index+1, capacity+1)`
+
+> * We worry about what happens if we call `addToEnd` again and again
+    and again.  We'll need to copy all of the data over again and
+    again and again.
+
+> * If we add n+1 things, we will copy 1 + 2 + 3 + 4 + ... n = 
+    $n(n+1)/2$. That's a lot of data to copy.
+    
+> Another option. Whenever we need more space, we double the capacity.
+
+> Suppose we add n+1 things again and start with room for 1.
+  1 + 2 + 4 + 8 + 16 + 32 + ... + n
+
+> Suppose n = 2^k.  Can we express that sum in terms of 2^k or k or n.
+
+> Let's try some math.
+
+> 1 + 2 = 3 = 2^2 - 1
+
+> 1 + 2 + 4 = 7 = 2^3 - 1
+
+> 1 + 2 + 4 + 8 = 15 = 2^4 - 1
+
+> 1 + 2 + 4 + 8 + 16 = 31 = 2^5 - 1
+
+> 1 + 2 + 4 + 8 + 16 + 32 = 63 = 2^6 - 1
+
+> Oooh! There's a pattern.
+
+> That sum is 2^(k+1) - 1 is approximately 2*n to add n things. So it's
+  only about 2 copies per things we add. ("amortized")
+
+What happens if we call `get` without first having `set` a value at
+the given location?
+
+> Return `null` to indicate that there's nothing there.
+
+> Issue some other kind of error.
+
+> DO NOT PRINT ERROR MESSAGES!
+
+Are there restrictions on what values we can use as indices for `set`
+or `get`?
+
+> `get` between 0 and `length`-1 OR the same value as set; in those
+  cases, we return null.
+
+> `set` between 0 and whateverthemaxcapacityofarraysisinourlanguage
+
+When will an expandable array be full?
+
+What does it mean to remove a value from an array?
+
+> It's the same as setting the index to null. (Fast)
+
+> It requires shifting everything in the array. (Slow)
 
 ### Implementing expandable arrays in C
+
+_Yes, it's time for LIA_
+
+* Layout: How are we organizing the structure?
+* Implementation: How do we implement the individual methods?
+* Analysis: How fast are they? (Constant time, Amortized constant time,
+  Linear, Amortized linear, other)
 
 An important student question (more coming later).
 
 _I'm confused that it says that arrays are a fixed size in Java,
 but then it says we can still expand the array. If the array is a
 fixed size, then how do we expand it?_
+
+```C
+typedef struct expandableArrayOfStrings {
+  char **contents;      // Pointer to an array
+  int capacity;         // The number of values we can store in contents.
+} Strings;
+
+// Expanding the array
+char **oldContents = contents;
+contents = (char **) malloc (newsize * sizeof(char *));
+// Copy stuff
+```
 
 Questions
 ---------
@@ -120,7 +243,35 @@ Questions
 
 Where are the double-dagger problems?
 
-> They were at the end of the arrays reading?
+> They were at the end of the arrays reading.
+
+### Conceptual
+
+Why are you making us do this?
+
+> We are progressing toward being the people who implement data structures
+  rather than just use them.
+
+> But we are also better users if we understand the likely implementations
+  and their effects on running time.
+
+Do the people who implement these kinds of things do so in Java, C, or Scheme, or ...?
+
+> We might implement expandable arrays in any language that lacks them
+  by default and has fixed-length arrays.
+
+> Throughout the semester, we'll be considering whether we want to implement
+  ADTs (data structures) using arrays ("chunks of memory") or as linked
+  nodes.
+
+What's "linear" vs. "constant time"?
+
+> Constant time: The number of steps to complete the operation is independent
+  of the size of the structure.
+
+> Linear time: The number of  steps to complete the operation varies
+  directly with the number of things in the structure (the size of the
+  structure).
 
 ### Readings
 
