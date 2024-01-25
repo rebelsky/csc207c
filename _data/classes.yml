@@ -27,6 +27,10 @@
     - Layout
     - Implementation
     - Analysis
+  reading:
+    - page: /readings/intro-java.html
+    - page: /readings/simple-java-c.html
+    - page: /readings/arrays.html
   notes: ../eboards/eboard02.html
 
 - topic: Programming in the small with Java
@@ -48,6 +52,7 @@
     - page: /readings/arrays.html
   lab:
     - page: /labs/getting-started.html
+  notes: ../eboards/eboard03.html
 
 - topic: Getting started with Java development
   abbrev: java-development

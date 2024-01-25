@@ -1,5 +1,5 @@
 ---
-title: "Eboard 02: A bit of Java"
+title: "Eboard 02: Designing expandable arrays"
 number: 2
 section: eboards
 held: 2024-01-24
