@@ -16,7 +16,19 @@
     - page: /readings/designing-adts.html
     - page: /readings/designing-data-structures.html
   notes: ../eboards/eboard01.html
-    
+
+- topic: Designing expandable arrays
+  abbrev: expandable-arrays
+  summary:
+    We practice ADT and data structure design.
+  subjects:
+    - Philosophy
+    - Methods
+    - Layout
+    - Implementation
+    - Analysis
+  notes: ../eboards/eboard02.html
+
 - topic: Programming in the small with Java
   abbrev: java-small
   summary: |
@@ -162,8 +174,6 @@
     - page: /readings/generics.html
   lab:
     - page: /labs/generics.html
-  reminders:
-    - Sam at Tapia
 
 - topic: Exceptional programming
   abbrev: exceptions
@@ -174,8 +184,6 @@
     - Object-oriented design
   reading:
     - page: /readings/exceptions.html
-  reminders:
-    - Sam at Tapia
 
 - topic: Inheritance
   abbrev: inheritance
@@ -191,7 +199,6 @@
   lab:
     - page: /labs/inheritance.html
   
-
 - topic: List ADTs
   abbrev: list-adts
   summary: |
@@ -225,7 +232,6 @@
   lab:
     - page: /labs/linear-structures.html
   
-
 - topic: Array-based linear structures
   abbrev: array-based-structures
   summary: |
@@ -267,21 +273,6 @@
     - For lab, may have them implement iterators
     - Note that there are some good questions about iterators at the start
       of the array-based-lists lab.
-
-- topic: Design patterns
-  abbrev: patterns
-  summary: |
-    We consider design patterns, common approaches to solving the kinds
-    of issues that we often see in the design of larger object-oriented
-    programs.
-  subjects:
-    - Design patterns
-    - Factories
-    - Singletons
-    - '"Wrapper" classes'
-  reminders:
-    - Need readings
-    - Need lab
 
 - topic: Analyzing algorithms
   abbrev: analysis
@@ -671,4 +662,19 @@
     - Data-structure design
     - Object/class design
     - Code design
+
+- topic: Design patterns
+  abbrev: patterns
+  summary: |
+    We consider design patterns, common approaches to solving the kinds
+    of issues that we often see in the design of larger object-oriented
+    programs.
+  subjects:
+    - Design patterns
+    - Factories
+    - Singletons
+    - '"Wrapper" classes'
+  reminders:
+    - Need readings
+    - Need lab
 
