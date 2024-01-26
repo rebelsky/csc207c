@@ -56,6 +56,8 @@ Preliminaries
 
 ### Tokens
 
+_Not yet available to submit._
+
 Academic/Scholarly
 
 * Friday, 2024-01-26, 6:00--7:30 p.m., JRC 101. 
@@ -73,9 +75,20 @@ Peer
 
 Wellness
 
+* Monday, Therapy dogs (we think). Details forthcoming.
+
 Misc
 
 ### Friday PSA
+
+* You are awesome.
+* You have peole who care about.
+* Please take care of yourself as you relax over the weekend.
+* If you choose to consume substances that affect your brain,
+  please do so in moderation.
+* Know what's right for you. Don't make your choices based on those
+  around you.
+* Consent is essential.
 
 Questions
 ---------
@@ -137,7 +150,8 @@ public class Sample {
    * Do all the work.
    */
   public static void main(String[] args) {
-    PrintWriter pen = new PrintWriter(System.out, true);
+    // PrintWriter pen = new PrintWriter(System.out, true);
+    PrintWriter pen = new PrintWriter(new FileWriter("foo.txt"));
 
     pen.println(greeting());
 
@@ -151,14 +165,14 @@ public class Sample {
   /**
    * Generate a greeting.
    */
-  public String greeting() {
+  public static String greeting() {
     return "Hello";
   } // greeting()
 } // class Sample
 
-If one wanted CearsarCipher and VigenereCipher to share code, would
+If one wanted CeasarCipher and VigenereCipher to share code, would
 this require packages? (i.e., putting shared methods in a package
-imported to bothCearsarCipher and VigenereCipher...)
+imported to both CeasarCipher and VigenereCipher...)
 
 > Nope. Just put the shared code in static methods in another class.
 
@@ -192,7 +206,7 @@ How do I share helper methods between classes?
      */
     public class CaesarCipher {
       public static void main(String[] args) {
-        int result = letterToNumber('q');
+        int result = EncryptionHelpers.letterToNumber('q');
       } // main(String[])
     } // class CaesarCipher
 
@@ -201,9 +215,32 @@ How do I share helper methods between classes?
      */
     public class VigenereCipher {
       public static void main(String[] args) {
-        int result = letterToNumber('q');
+        int result = EncryptionHelpers.letterToNumber('q');
       } // main(String[])
     } // class ViginereCipher
+
+Should each class be in its own file.
+
+> Yes. (It's not always necessary, but I ask that you do so for this
+  assignment.)
+
+Where should we write the Java code?
+
+> Using the editor of your choice. `vim`, emacs, VSCode.
+
+Do we really have to do meaningful commits on GitHub?
+
+> Nah. I'll move that to another assignment.
+
+Why are we creating `PrintWriter` objects that we seem to call `pen`?
+
+> It makes our code a bit more general/modifiable. If we change
+  where we want output to go, we need only change one line in
+  our code.
+
+Is it okay to use `System.out`?
+
+> Maybe for the first assignment. I'd prefer that you use PrintWriters.
 
 In class, we said that it was bad practice to print error messages,
 but I am not sure if how to tell the user their input was invalid
@@ -246,5 +283,20 @@ This may be a stupid question, or something I forgot but what is a
 
 > Use whatever editor you like to create it.
 
+Do we have to use GitHub for the first assignment?
+
+> Nope. But you will need to use it for future assignments.
+
 Lab
 ---
+
+Do we have to write up the answers to the questions?
+
+> No. You'll only be turning in the code for part 2.
+
+Surprise! Even though the lab says to turn in the array problems, you
+need only turn in `FizzBuzz.java`
+
+> If you've finished it already, turn it in now.
+
+> If not, finish it on your own.
