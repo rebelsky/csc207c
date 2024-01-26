@@ -1,0 +1,13 @@
+
+Tech Interviews
+---------------
+
+Remember that "exams mostly test your ability to deal with stress" comment?
+Here's some more stress!
+
+The partner closest to the board will interview the other partner about
+implementing stacks for about fifteen minutes.
+
+The partner furthest from the board will interview the first partner
+about implementing stacks for about fifteen minutes.
+
