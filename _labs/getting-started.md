@@ -162,7 +162,9 @@ Because you are starting from a good pipeline, you can diagnose the error immedi
 
 ---
 
-Answer this following set of questions by playing around with your working `Hello World!` program:
+Answer this following set of questions by playing around with your working `Hello World!` program.
+
+_Note that you will not be turning in these answers. The questions are there to help you consider some of the things that go wrong when you try to build programs._
 
 1. **(File extensions).**
    Is it necessary to use .java extension for a source file?
@@ -301,7 +303,9 @@ Finally, one nice convenience is that Java arrays, unlike C arrays, know their o
     pen.println(arr2.length);    // Prints 5
 ```
 
-With all this in mind, try writing some code to answer the following questions:
+With all this in mind, try writing some code to answer the following questions.
+
+_Once again, you will not be turning in this code. Instead, you are doing these problems to explore what does and does not typically work in a Java program._
 
 ---
 

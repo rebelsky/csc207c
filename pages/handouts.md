@@ -50,6 +50,9 @@ information.  To ensure that you read the information, I even give you
 [Spam from Sam](spamr)
   : An attempt to log all the email I sent this semester.
 
+[A drop of Java style](style)
+  : A few important Java style tips.
+
 ## Other versions of the course
 
 These also aren't strictly handouts, but I didn't have another place for them.
