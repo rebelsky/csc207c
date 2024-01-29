@@ -44,7 +44,7 @@ _Now available on Gradescope._
 
 Academic/Scholarly
 
-* Tuesday, 2024-01-30, noon, some PDR,
+* Tuesday, 2024-01-30, noon, JRC 224A:
   _CS Table_.
 * Thursday, 2024-02-01, 11am, HSSC 2231 (Auditorium),
   _Scholars' Convocation, Being a Pandemic Citizen._
@@ -70,9 +70,9 @@ Wellness
 Misc
 
 * Tuesday, 2024-01-30, 4pm, HSSC S2377:
-  _SPARK Information Session_
+  _SPARK Information Session_.
 * Friday, 2024-02-02, 8pm, Harris Concert Hall:
-  _Weekend Murder Mystery_
+  _Weekend Murder Mystery_.
 
 Questions
 ---------
