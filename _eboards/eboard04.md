@@ -44,12 +44,19 @@ _Now available on Gradescope._
 
 Academic/Scholarly
 
+* Tuesday, 2024-01-30, noon, some PDR,
+  _CS Table_.
 * Thursday, 2024-02-01, 11am, HSSC 2231 (Auditorium),
   _Scholars' Convocation, Being a Pandemic Citizen._
+* Thursday, 2024-02-01, 4:15pm, Science 3821,
+  _CS Extras: Summer research_
 
 Cultural
 
 Peer
+
+* Tennis, Sunday, 9 and 4pm, Field house,
+  _Matches against Augustana_
 
 Wellness
 
@@ -75,6 +82,10 @@ Questions
 What should I enter as the academic honesty boilerplate on labs?
 
 > I just want you to cite those who gave you help.
+
+When will your office hours be available?
+
+> Soon.
 
 ### MP1
 
@@ -107,3 +118,13 @@ Lab
 One of you will do this. The other of you will have to do so on your
 own. For today (and today only), it's okay to spread out to more
 computers or to use your laptop.
+
+### Questions
+
+Do we do the same setup on our own computers?
+
+> No. You'll need to configure VSCode slightly differently.  In
+  particular, the location of Java may be different.
+
+> You may also need to copy your ssh key from MathLAN.
+
