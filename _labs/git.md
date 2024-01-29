@@ -1,5 +1,5 @@
 ---
-title: Getting started with Git on the command line
+title: Getting started with Git and GitHub on the command line
 summary: |
   In this laboratory, you will practice using Git.  You will use the command line to manage your git repositories.  (VSCode has some built-in features that make it easier to interact directly with GitHub.  However, many programmers find it much easier to use Git from the command line, and so we will do so.) In case you've forgotten what you learned in the reading, there is a list of useful commands at the end of this lab.
 ---
@@ -18,7 +18,7 @@ b. Make sure that you've done [the Introduction to VSCode lab](../labs/vscode.ht
 c. Log in and open a terminal window.
 
 d. Create a directory to use for this lab.  I'd suggest something like
-`~/CSC207/Git`.
+`~/CSC207/Labs/Git`.
 
 e. Open VSCode.
 
@@ -45,7 +45,7 @@ As you may recall, your life is easier if you do a bit of configuration before w
 * Next, type these commands
     * `git config --global user.name YOUR_NAME`
     * `git config --global user.email USERNAME@grinnell.edu`
-* Finally, set your editor.  You can use `emacs`, `vim` (or `vim.basic`), or even `gedit` or `geany`.
+* Finally, set your editor.  You can use `emacs`, `vim` (or `vim.basic`), or even `gedit` or `geany`. At least I think you can.
     * `git config --global core.editor EDITOR`
 
 ### Exercise 3: Create a new repository on GitHub
@@ -70,7 +70,7 @@ b. At the prompt, enter/select "Java: Create Java Project...".  (Have you figure
 
 c. When prompted for your build tool, select "No build tools".
 
-d. When prompted for a directory, use the directory you created in the preparation.  It should be something like `~/CSC207/Git`.
+d. When prompted for a directory, use the directory you created in the preparation.  It should be something like `~/CSC207/Labs/Git`.
 
 e. Enter a name for your project.  You will generally want it to match the name you chose for your respository.  In this case, it should be something like `csc207-git-exercise`.  Hit return after entering the name.
 
@@ -81,7 +81,7 @@ f. In terminal, verify that the new directory was created.
 a. In terminal, cd to that new directory.  For example,
 
 ```
-$ cd ~/CSC207/Git/csc207-git-exercise
+$ cd ~/CSC207/Labs/Git/csc207-git-exercise
 ```
 
 b. Type `git init`.  That command initializes the directory as a Git repository.
@@ -167,7 +167,7 @@ c. In the terminal, type `git status` to determine whether or not Git saw the ch
 
 d. Type `git diff` to see what the change was.  You should see your new code prefixed by plus signs, old code by minus signs, and a bit of context.
 
-e. Commit your change, but don't push it.
+e. Commit your change, but **don't push it**.
 
 ### Exercise 12: Conficting Changes
 
@@ -212,15 +212,7 @@ If you are working with a partner, your partner should configure VSCode and Git 
 For those with extra time
 -------------------------
 
-### Extra 1: SSH Connections
-
-You did this lab using HTTPS connections to GitHub.  HTTPS connections are easy and straightforward.  However, they also require you to type a password each time you push code back to GitHub.
-
-GitHub also permits you to create a pair of private and public RSA keys and to use SSH connections with those keys.  In that case, you may have to type the passphrase you associated with your keys, but you won't have to enter your GitHub account info.
-
-Figure out how to set up an SSH connection with GitHub.
-
-### Extra 2: Shared Repositories
+### Extra 1: Shared Repositories
 
 You'll need to do this exercise with a partner.
 
