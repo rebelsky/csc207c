@@ -58,7 +58,7 @@ information.  To ensure that you read the information, I even give you
 These also aren't strictly handouts, but I didn't have another place for them.
 The list is incomplete.
 
-[CSC-207 2023 Fall (Rebelsky)](https://rebelsky.cs.grinnell.edu/~rebelsky/Courses/CSC207/2023Fa/home/)
+[CSC-207 2023 Fall (Rebelsky)](https://rebelsky.cs.grinnell.edu/~rebelsky/Courses/CSC207/2023Fa)
   : The site from the last time I taught the course.
 
 [CSC-207 2023 Fall (Jiménez)](https://jimenezp.cs.grinnell.edu/Courses/CSC207/2023Fa/syllabus/)
