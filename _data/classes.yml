@@ -84,8 +84,10 @@
     - Stacks and queues
     - An exercise
   reading:
+    - page: /readings/writing-classes.html
+    - page: /readings/standard-methods.html
   lab:
-    - TBD
+    - page: /labs/intro-classes.html
 
 - topic: Object semantics
   abbrev: object-semeantics
