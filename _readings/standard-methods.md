@@ -2,7 +2,7 @@
 title: Standard object methods
 link: true
 ---
-_Summarye: We consider the standard methods that all (or most) objects provide.
+_Summary: We consider the standard methods that all (or most) objects provide.
 
 _Prerequisites_: [Basics of Java](intro-java), [Classes and objects](writing-classes).
 
@@ -197,7 +197,7 @@ At times, you have one copy of an object and you need another copy. For example,
 
 The signature of this method is `public Object clone()`. You may find it strange that `clone` returns an `Object` rather than explicitly returning a member of the specified class. This form of return was all that was supported in an early version of Java (that is, there was no way to have multiple methods with the same name and parameter types, but different return types), and it seems to have been retained.
 
-### Example: Cloning fractions
+### An example: Cloning fractions
 
 Here's a simple `clone` method for our `Fraction` class.
 
@@ -246,7 +246,7 @@ Do you have to write the `hashCode` method? It's not a bad idea. The Java standa
 
 What is the default behavior of `hashCode`? By default `hashCode` returns some value computed from the memory location of the object. Hence, two equal values are unlikely to have the same hash code unless you write the method.
 
-And yes, it's okay if your method is relatively naive, provided you make some attempt to provide different numbers when values are different. For example, the following would be acceptable for the Fraction class, assuming that you either decided that (a) fractions are stored in simplified form or (b) fractions with different numerators are different. (And yes, this method does create lots of duplicate hash codes.)
+And yes, it's okay if your method is relatively naive, provided you make some attempt to provide different numbers when values are different. For example, the following would be acceptable for the `Fraction` class, assuming that you either decided that (a) fractions are stored in simplified form or (b) fractions with different numerators are different. (And yes, this method does create lots of duplicate hash codes.)
 
 ```java
 public int hashCode() {
@@ -265,3 +265,14 @@ Important methods
 * `boolean equals(Object other)`
 * `int compareTo(Type other)`
 * `int hashCode()`
+
+Self checks
+-----------
+
+### Check 1: Converting to strings
+
+Write a `toString` method for the `Vec2D` class we designed in [a prior reading](../readings/writing-classes).
+
+### Check 2: Comparing vectors
+
+Write a `compareTo` method for the `Vec2D` class we designed in [a prior reading](../readings/writing-classes). We'll use the principle that one vector is less than another if its length is less.
