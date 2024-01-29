@@ -136,7 +136,7 @@ or
 Vec2D alpha = new Vec2D(Math.PI/2, 1.0);
 ```
 
-### Example: Constructing vectors
+### An example: Constructing vectors
 
 For the case of vectors in two-space, we might want an angle and a radius to build a vector. Here's the definition of such a constructor, assuming that we've called the class Vec2D.
 
@@ -315,4 +315,29 @@ public Vec2D add(Vec2D addend)
 } // add(Vec2D)
 ```
 
-You may have noted that we didn't write any mutators. While mutators are useful and necessary in many situations, for elements like vectors we often find it more useful to build immutable values that retain their values.
+You may have noted that we didn't write any mutators. While mutators are useful and necessary in many situations, for types like vectors we often find it more useful to build immutable values that retain their values.
+
+Self checks
+-----------
+
+### Self check 1: Static vs object methods (‡)
+
+a. Write a *static* method, `Vec2D double(Vec2D v)`, the builds and returns a new `Vec2D` that is twice as long as `v`. (You should not use the `double()` method we described above.)
+
+b. Suppose `vee` is a 2D vector created as follows.
+
+```
+  Vec2D vee = new Vec2D(Math.pi/3, 1);
+```
+
+i. How do we create something twice as long as `vee` using the static `double` method?
+
+ii. How do we create something twice as long as `vee` using the object method from the text?
+
+c. What do you see as the advantages of each approach to writing `double`? Why might we decide to make it an object method? Why might we decide to make it a static method?
+
+### Self check 2: Close reading
+
+a. There's an error in `vectorTo` that will cause it to crash in certain situations. In what situations might it crash?
+
+b. Rewrite `vectorTo` to resolve that issue.
