@@ -16,7 +16,7 @@ Preparation
 a. Log in to MathLAN.
 
 b. Create a directory to use for this lab.  I'd suggest something like
-`~/CSC207/VSCode` (aka `/home/USERNAME/CSC207/VSCode`).
+`~/CSC207/Labs/VSCode` (aka `/home/USERNAME/CSC207/Labs/VSCode`).
 
 c. Open VSCode by typing `code` in a terminal window.
 
@@ -42,7 +42,7 @@ d. Wait.
 
 VSCode needs to know where to find the core Java tools (compiler, virtual machine, etc.).  You can help it by telling it where things are.
 
-a. Type Shift-Ctrl-P to open the Command Palette.  (You'll do that a lot in VSCode.)
+a. Type <kbd>Shift</kbd>-<kbd>Ctrl</kbd>-<kbd>P</kbd> to open the Command Palette.  (You'll do that a lot in VSCode.)
 
 b. Type "Preferences: Open User Settings" (but without the quotation marks).
 
@@ -66,7 +66,7 @@ e. Quit and restart VSCode.  (For major settings, this seems safer.)
 
 For some reason, the designers of VSCode seem to think that four spaces of indentation for nested code is the way to go.  However, most programmers prefer two spaces so as to avoid overly indented code.  The Google specifications for Java formatting also specify two spaces.  So our next task will be to set the indentation and the formatter.
 
-a. Type Shift-Ctrl-P to open the Command Palette.
+a. Type <kbd>Shift</kbd>-<kbd>Ctrl</kbd>-<kbd>P</kbd> to open the Command Palette.
 
 b. Type "Preferencees: Open User Settings (JSON)" (without the quotation marks).  You'll note that this command is slightly different than the one we used before.  This time, we're going directly to the JSON.
 
@@ -86,11 +86,11 @@ d. Quit and restart VSCode.  (I promise; you won't have to do that many more tim
 
 We should now be ready to write your first program in VSCode.
 
-a. Open the Explorer (click on the overlapping "sheet of paper" icons in the top left or type Ctrl-Shift-E).
+a. Open the Explorer (click on the overlapping "sheet of paper" icons in the top left or type <kbd>Ctrl</kbd>-<kbd>Shift</kbd>-<kbd>E</kbd>).
 
 b. Click on "Open Folder ...".  (Do you know what the ellipses represent?)
 
-c. Select the folder you created for this lab (e.g., `/home/USERNAME/CSC207/vscode`) and click "Open".
+c. Select the folder you created for this lab (e.g., `/home/USERNAME/CSC207/Labs/VSCode`) and click "Open".
 
 d. If VSCode asks whether you trust the authors of the folder, indicate that you trust those authors.
 
@@ -119,7 +119,7 @@ public class Sample {
 } // class Sample
 ```
 
-j. Click the Run button (above your main method) or the Run arrow (in the upper-right-hand-corner).  If you don't see either, ask one of the class staff for help.
+j. Click the **Run** button (above your `main` method) or the **Run arrow** (in the upper-right-hand-corner).  If you don't see either, ask one of the class staff for help.
 
 k. If all has gone well, you'll see some terminal output in the terminal pane of the window.  VSCode will issue a somewhat complex command and then you should see the output of your program.  Here's what it looks like for me.
 
@@ -167,7 +167,7 @@ Java encourages you to group related classes into _packages_.  For example, the 
 
 Let's do a quick check on how VSCode helps us handle packages.
 
-a. If you have any Java extensions installed, disable them and restart VSCode.  If you don't know how to disable extensions,
+a. If you have any Java extensions installed, disable them and restart VSCode.  If you don't know how to disable extensions, try the following.
 
 i. Click on the extensions tool (a grid of four boxes with the upper-right box offset somewhat).
 
@@ -314,7 +314,7 @@ g. Determine whether the changes worked.
 
 ## Submitting your work
 
-You will submit your work as part of the next lab.
+You will submit your work as part of the next lab (on Git/GitHub).
 
 ## Up next ...
 
