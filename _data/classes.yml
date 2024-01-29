@@ -71,6 +71,7 @@
   lab:
     - page: /labs/vscode.html
     - page: /labs/git.html
+  notes: ../eboards/eboard04.html
   
 - topic: Objects and classes
   abbrev: objects
