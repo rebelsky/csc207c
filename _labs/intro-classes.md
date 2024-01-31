@@ -24,13 +24,9 @@ Useful documenation:
 Preparation
 -----------
 
-a. Create a directory for this lab, such as `~/CSC207/Labs/intro-classes/` (aka `/home/USERNAME/CSC207/Labs/intro-classes).
+a. Use VSCode to create a Java project and directory for this lab, such as `~/CSC207/Labs/intro-classes/` (aka `/home/USERNAME/CSC207/Labs/intro-classes).
 
-```
-mkdir -p ~/CSC207/Labs/intro-classes
-```
-
-b. Make copies of three files
+b. Copies this files into your project.
 
 * [`Fraction.java`](../code/labs/intro-classes/Fraction.java)
 * [`FractionExpt.java`](../code/labs/intro-classes/FractionExpt.java)
@@ -160,6 +156,11 @@ b. Update your `Counter` class to include a `reset` method that reset the counte
 
 c. Test (or experiment with) both updates to ensure that they work appropriately.
 
+Submitting your work
+--------------------
+
+Please upload your updated and new `.java` files to GradeScope.
+
 For those with extra time
 -------------------------
 
@@ -175,7 +176,3 @@ Identify other methods that would be useful to include in the `Counter` class an
 
 Identify other methods that would be useful to include in the `Fraction` class and add them.
 
-Submitting your work
---------------------
-
-Upload your updated and new `.java` files to GradeScope.
