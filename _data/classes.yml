@@ -82,13 +82,12 @@
   subjects:
     - Object basics
     - Modeling objects with classes
-    - Stacks and queues
-    - An exercise
   reading:
     - page: /readings/writing-classes.html
     - page: /readings/standard-methods.html
   lab:
     - page: /labs/intro-classes.html
+  notes: ../eboards/eboard05.html
 
 - topic: Object semantics
   abbrev: object-semeantics
