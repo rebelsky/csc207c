@@ -308,8 +308,7 @@ We can even use these techniques to write a method that uses the current informa
 /**
  * Add another vector to this vector.
  */
-public Vec2D add(Vec2D addend)
-{
+public Vec2D add(Vec2D addend) {
   return Vec2D.vectorTo((this.getX() + addend.getX()),
                         (this.getY() + addend.getY()));
 } // add(Vec2D)
