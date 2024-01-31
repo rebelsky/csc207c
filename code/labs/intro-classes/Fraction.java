@@ -5,19 +5,19 @@ import java.math.BigInteger;
  * 
  * @author Samuel A. Rebelsky
  * @author YOUR NAME HERE
- * @version 1.2 of August 2023
  */
 public class Fraction {
   // +------------------+---------------------------------------------
   // | Design Decisions |
   // +------------------+
   /*
-   * (1) Denominators are always positive. Therefore, negative fractions are represented 
-   * with a negative numerator. Similarly, if a fraction has a negative numerator, it 
-   * is negative.
+   * (1) Denominators are always positive. Therefore, negative fractions 
+   * are represented with a negative numerator. Similarly, if a fraction 
+   * has a negative numerator, it is negative.
    * 
-   * (2) Fractions are not necessarily stored in simplified form. To obtain a fraction 
-   * in simplified form, one must call the `simplify` method.
+   * (2) Fractions are not necessarily stored in simplified form. To 
+   * obtain a fraction in simplified form, one must call the `simplify` 
+   * method.
    */
 
   // +--------+-------------------------------------------------------
@@ -82,16 +82,16 @@ public class Fraction {
     BigInteger resultNumerator;
     BigInteger resultDenominator;
 
-    // The denominator of the result is the
-    // product of this object's denominator
-    // and addMe's denominator
+    // The denominator of the result is the product of this object's 
+    // denominator and addMe's denominator
     resultDenominator = this.denom.multiply(addMe.denom);
     // The numerator is more complicated
-    resultNumerator = (this.num.multiply(addMe.denom)).add(addMe.num.multiply(this.denom));
+    resultNumerator = 
+      (this.num.multiply(addMe.denom)).add(addMe.num.multiply(this.denom));
 
     // Return the computed value
     return new Fraction(resultNumerator, resultDenominator);
-  }// add(Fraction)
+  } // add(Fraction)
 
   /**
    * Get the denominator of this fraction.
