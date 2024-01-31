@@ -284,9 +284,9 @@ We can even write methods that build new objects.
 /**
  * Create a new vector that is twice as long as this vector.
  */
-public Vec2D double() {
+public Vec2D dubble() {
   return new Vec2D(this.getTheta(), this.getRadius()*2);
-} // double
+} // dubble()
 ```
 
 Given that we can build new objects, we might even write static methods that act very much like constructors. (As mentioned above, this approach is one of the ways we can deal with wanting multiple constructors that have the same parameter types.)
@@ -316,12 +316,130 @@ public Vec2D add(Vec2D addend) {
 
 You may have noted that we didn't write any mutators. While mutators are useful and necessary in many situations, for types like vectors we often find it more useful to build immutable values that retain their values.
 
+### Code
+
+Here's the (nearly-)complete `Vec2D.java` file.
+
+```
+/**
+ * Vectors in two-space.
+ */
+public class Vec2D
+{
+  // +----------------+----------------------------------------------
+  // | Static methods |
+  // +----------------+
+
+  /**
+   * Build a vector to the point (x,y)
+   * @pre
+   *   x != 0
+   */
+  public static Vec2D vectorTo(double x, double y) {
+    return new Vec2D(Math.atan(y/x), Math.sqrt(x*x + y*y));
+  } // vectorTo(double,double)
+
+
+  // +--------+---------------------------------------------------------
+  // | Fields |
+  // +--------+
+
+  /**
+   * The angle.
+   */
+  double theta;
+
+  /**
+   * The radius.
+   */
+  double radius;
+
+  // +--------------+---------------------------------------------------
+  // | Constructors |
+  // +--------------+
+
+  /**
+   * Create a new vector with angle _theta and radius _radius.
+   */
+  public Vec2D(double _theta, double _radius) {
+    this.theta = _theta;
+    this.radius = _radius;
+  } // Vec2D(double, double)
+
+  /**
+   * Create a unit vector with angle _theta.
+   */
+  public Vec2D(double _theta)
+  {
+    this.theta = _theta;
+    this.radius = 1.0;
+  } // Vec2D(double)
+
+  /**
+   * Create a new vector from (0,0) to (x,y).
+   */
+  public Vec2D(int x, int y)
+  {
+    this.theta = Math.atan(((double) y)/((double) x));
+    this.radius = Math.sqrt(x*x + y*y);
+  } // Vec2D(int, int)
+
+  // +---------+--------------------------------------------------------
+  // | Methods |
+  // +---------+
+
+  /**
+   * Determine the radius of this vector.
+   */
+  public double getRadius() {
+    return this.radius;
+  } // getRadius()
+
+  /**
+   * Determine the angle of this vector from the positive x axis.
+   */
+  public double getTheta() {
+    return this.theta;
+  } // getTheta()
+
+  /**
+   * Compute the x position of the head of this vector.
+   */
+  public double getX() {
+    return this.radius * Math.cos(this.theta);
+  } // getX()
+
+  /**
+   * Compute the y position of the head of this vector.
+   */
+  public double getY() {
+    return this.radius * Math.sin(this.theta);
+  } // getX()
+
+  /**
+   * Create a new vector that is twice as long as this vector.
+   */
+  public Vec2D dubble() {
+    return new Vec2D(this.getTheta(), this.getRadius()*2);
+  } // dubble
+
+  /**
+   * Add another vector to this vector.
+   */
+  public Vec2D add(Vec2D addend) {
+    return Vec2D.vectorTo((this.getX() + addend.getX()),
+                          (this.getY() + addend.getY()));
+  } // add(Vec2D)
+
+} // class Vec2D
+```
+
 Self checks
 -----------
 
 ### Self check 1: Static vs object methods (‡)
 
-a. Write a *static* method, `Vec2D double(Vec2D v)`, the builds and returns a new `Vec2D` that is twice as long as `v`. (You should not use the `double()` method we described above.)
+a. Write a *static* method, `Vec2D dubble(Vec2D v)`, the builds and returns a new `Vec2D` that is twice as long as `v`. (You should not use the `dubble()` method we described above.)
 
 b. Suppose `vee` is a 2D vector created as follows.
 
@@ -329,11 +447,11 @@ b. Suppose `vee` is a 2D vector created as follows.
   Vec2D vee = new Vec2D(Math.pi/3, 1);
 ```
 
-i. How do we create something twice as long as `vee` using the static `double` method?
+i. How do we create something twice as long as `vee` using the static `dubble` method?
 
 ii. How do we create something twice as long as `vee` using the object method from the text?
 
-c. What do you see as the advantages of each approach to writing `double`? Why might we decide to make it an object method? Why might we decide to make it a static method?
+c. What do you see as the advantages of each approach to writing `dubble`? Why might we decide to make it an object method? Why might we decide to make it a static method?
 
 ### Self check 2: Close reading
 
