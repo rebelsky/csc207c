@@ -5,6 +5,18 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester._
 
+## [CSC-207-02 2024Sp] Finding SamR today (Thursday) (2024-02-01)
+
+Dear Encryptors and Decryptors,
+
+I was able to solve two "connect to GitHub" problems yesterday. Yay!
+
+I'll be hanging out in our classroom (Science 3813) from 8:00-10:30 and from 2:00-3:30 today (Thursday) to answer questions from students. Perhaps I can help with your GitHub or VSCode problems, at least in MathLAN. I have one student who booked time at 10:00 a.m., but other than that, it will be more-or-less first come, first served.
+
+Starting next week, my regular office hours will be Tuesday 10:00-11:30 and Thursday 2:00-3:30. I should have those up on bookings soon.
+
+-- SamR
+
 ## [CSC-207-01 2024Sp] Welcome to the course / Work for day one (2024-01-20)
 
 Dear CSC-207-01 Students,
