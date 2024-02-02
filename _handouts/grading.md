@@ -32,7 +32,7 @@ We grade mini-projects in more depth, along two dimensions:
 Rather than using a point-based system which obscures these two dimensions, we codify these requirements with the *EMRI rubric* (an adaption of the ["EMRF" rubric](http://miss-serwy.weebly.com/uploads/1/2/1/6/12161802/emrf_rubric_1.pdf) designed by Stutzman and Race).
 Mini-projects are graded on a four-point scale:
 
-+   **Excellent/Exemblary (E)**
++   **Excellent/Exemplary (E)**
     -   Complete understanding of the material is evident.
     -   Exhibits no errors and can serve as an exemplar solution for the course.
 +   **Meets Expectations (M)**
