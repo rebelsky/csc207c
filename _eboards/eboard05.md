@@ -243,5 +243,3 @@ Lab
 ---
 
 We will continue doing this lab on Friday!
-
-You will still have readings to do.
