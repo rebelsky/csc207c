@@ -62,12 +62,27 @@ Misc
 
 ### Good things to do (no tokens)
 
+### About pre-assessments
+
+When considering the purpose of mini-projects, try to think more
+generally. Not "building a Fraction class" but "learning to build
+classes". Not "creating a calculator" but "learning to use the
+classes we've built" or "separate UI from backend".
+
+When filling out pre-assessments, please do a brain dump of code/algorithms.
+_Don't just list topics you need to look up!_
+
+#### Sample brain dump for MP2
+  
 Questions
 ---------
 
 ### Administrative
 
 ### MP2
+
+_We'll quickly go through the ones I've received and then see if you 
+have others._
 
 Mental models
 -------------
