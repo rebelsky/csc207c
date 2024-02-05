@@ -208,4 +208,28 @@ Wrapping up
   annotations serve?
 * What unit test would you write for binary search?  How about for
   a sorting algorithm?  (Just consider the tests that you would
-  write; you don't actually have to write them.)</orderedlist>
+  write; you don't actually have to write them.)
+
+
+Self checks
+-----------
+
+### Check 1: Testing a fractional `add` (‡)
+
+Suppose we are designing a class for fractions. Write a test suite
+for the `Fraction add(Fraction other)` method.
+
+Make sure to consider edge cases.
+
+Your code need not be exact. Just give input and expected output.
+
+### Check 2: Testing a sorting method
+
+Later this semester, we will be writing methods to sort arrays of
+strings in place. What tests would you write for those methods?
+
+### Check 3: Automaticing test generation
+
+Suppose we want to stress an algorithm, such as binary search. Describe
+how you might automatically generate a large number of tests for different
+arrays and different values (in and not in the array).
