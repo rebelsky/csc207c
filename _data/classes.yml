@@ -112,10 +112,9 @@
   reading:
     - page: /readings/memory.html
     - page: /readings/object-semantics.html
-  lab:
-    - page: /labs/mental-models.html
   reminders:
     - This may need a new reading to replace PM's.
+  notes: ../eboards/eboard07.html
 
 - topic: Unit testing and debugging
   abbrev: unit-testing
