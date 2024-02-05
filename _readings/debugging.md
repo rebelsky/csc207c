@@ -4,8 +4,6 @@ summary: |
   We consider strategies for debugging code and begin our exploration of VSCode's basic Java debugger.
 ---
 
-_This reading is still being updated for a new semester._
-
 The wonder of program bugs
 --------------------------
 
@@ -31,7 +29,7 @@ Debuggers are tools for tracing code to find if there is something wrong and wha
 What capabilities can you expect to find in most debuggers?
 
 * You can *determine the value of variables and parameters*.  In some cases, you will need to explicitly click on a variable (or type a command in a textual debugger).  In others, the debugger will print them out automatically.
-* You can *set breakpoints* - locations in the code in which you want to start exploring behavior and values.  Once breakpoints are set, you can simply run your program until it hits a breakpoint. In VSCode you set breakpoints by **instructions forthcoming**.
+* You can *set breakpoints* - locations in the code in which you want to start exploring behavior and values.  Once breakpoints are set, you can simply run your program until it hits a breakpoint. In VSCode you set breakpoints by clicking to the left of a line number.
 * You can *single step through a method or function*.  Once you've reached a breakpoint, you may want to follow control flow by executing one line at a time and checking the state of the system after each step.  Single stepping can be useful for some loops.
 * You can *trace the stack*  Sometimes, it's difficult to know how you got into the current place in the current procedure.  A stack trace gives you the full history of calls (often with parameter values).
 * You can *watch variables*.  You can set certain variables whose values are always displayed.  In the upper right window you can see all the variables you have declared in a method and check what is happening to them every time the method is called
@@ -56,9 +54,7 @@ Why not use a debugger instead?
 Using the VSCode debugger
 -------------------------
 
-It's much easier to understand the VSCode debugger in practice than by reading about it, so we will leave most of our discussion of the debugger to [the corresponding lab](../labs/debugging).
-
-**More information forthcoming**
+It's much easier to understand the VSCode debugger in practice than by reading about it, so we will leave our discussion of the debugger to [the corresponding lab](../labs/debugging).
 
 Some final thoughts
 -------------------
@@ -89,11 +85,26 @@ Wrapping up
 * Breakpoint
 * Stack trace
 
-### Review Questions
+Self checks
+-----------
 
-* List a few times you've had errors in your programs and how you identified the errors.  Would a debugger have been useful?
-* What are some techniques you use to write less buggy code?
-* When your program doesn't work, how can you determine where in the program things are going wrong?
-* What's wrong with the `average` procedure at the end of the reading?
-* How would you address that problem in Java?
-* How would you address a similar problem in C?
+### Check 1: Reporting on experience
+
+List a few times you've had errors in your programs and how you identified the errors.  Would a debugger have been useful?
+
+### Check 2: Avoiding buggy code (‡)
+
+What are some techniques you already use to write less buggy code?
+
+### Check 3: Finding bugs
+
+When your program doesn't work, how can you determine where in the program things are going wrong?
+
+### Check 4: An incorrect `average`
+
+a. What's wrong with the `average` procedure at the end of the reading?
+
+b. How would you address that problem in Java?
+
+c. How would you address a similar problem in C?
+
