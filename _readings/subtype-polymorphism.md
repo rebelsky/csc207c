@@ -125,13 +125,10 @@ What methods should these blocks of text provide?  As the example suggests, we s
 Putting it all together, we get the following interface:
 
 ```
-package groupname.layout;
-
 /**
  * Blocks of text.
  *
  * @author Samuel A. Rebelsky
- * @version 1.2 of September 2023
  */
 public interface TextBlock {
   // +---------+-----------------------------------------------------------
@@ -182,13 +179,10 @@ public static void print(PrintWriter pen, TextBlock block) {
 The simplest kind of TextBlock is a single line of text.  We'll use these single lines as the building block of more complex blocks.
 
 ```java
-package groupname.layout;
-
 /**
  * One line of text.
  *
  * @author Samuel A. Rebelsky
- * @version 1.4 of September 2023
  */
 public class TextLine implements TextBlock {
   // +--------+------------------------------------------------------------
@@ -254,13 +248,10 @@ The hardest of the three methods to write is `row`.  If the height of the underl
 Putting it all together, we get the following.
 
 ```java
-package groupname.layout;
-
 /**
  * A text block surrounded by a box.
  *
  * @author Samuel A. Rebelsky
- * @version 1.3 of September 2023
  */
 public class BoxedBlock implements TextBlock {
   // +--------------+------------------------------------------------------
@@ -272,7 +263,6 @@ public class BoxedBlock implements TextBlock {
    * the program operates.
    */
   String lotsOfDashes = "--";
-
 
   // +--------+------------------------------------------------------------
   // | Fields |
@@ -356,7 +346,7 @@ public class BoxedBlock implements TextBlock {
 } // class BoxedBlock
 ```
 
-Because `BoxedBlock` objects can be created from any `TextBlock` objectss, we can create them from lines of text or even from other text blocks.  For example, consider the following instruction.
+Because `BoxedBlock` objects can be created from any `TextBlock` objects, we can create them from lines of text or even from other text blocks.  For example, consider the following instruction.
 
 ```java
 TextBlock tb = new BoxedBlock(new BoxedBlock(new TextLine("Hello")));
@@ -373,4 +363,8 @@ If we print out `tb`, we get something like the following:
 ```
 
 Once we add in horizontal and vertical composition (which we will do in [the lab](../labs/subtype-polymorphism)), we can build a wide variety of layouts.
+
+Self Checks
+-----------
+
 
