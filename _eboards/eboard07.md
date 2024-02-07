@@ -25,13 +25,13 @@ Preliminaries
 
 ### Upcoming work
 
-* 11pm Tuesday, 2024-02-04: Reading Reflections
+* 11pm Tuesday, 2024-02-06: Reading Reflections
     * [Unit testing](../readings/unit-testing)
     * [Debugging](../readings/debugging)
     * [_Submit on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4055828/)
-* 11pm Wednesday, 2024-02-05: [Mini Project 2](../mps/mp02)
+* 11pm Wednesday, 2024-02-07: [Mini Project 2](../mps/mp02)
     * [_Submit on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4055758/)
-* 11pm Friday, 2024-02-07: Mini-Project 2 post-reflections
+* 11pm Friday, 2024-02-09: Mini-Project 2 post-reflections
     * [_Submit on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4055738)
 
 ### Tokens
