@@ -287,10 +287,52 @@ As suggested above, we can use *either* of these implementations and expect that
  *    0 if the two are the same distance from the origin, and 
  *    a positive number if p1 is further from the origin.
  */
-public int compare(Point2D p1, Point2D p2) {
+public static int compare(Point2D p1, Point2D p2) {
   return Double.compare(p1.distanceFromOrigin(), p2.distanceFromOrigin());
 } // compare(Point2D, Point2D)
 ```
 
 It is now perfectly acceptable to call this `compare` method with two `Point2DPair` objects, with two `Point2DPolar` objects, or even with one object of each class.  We return to this idea in the reading on [subtype polymorphism](../readings/subtype-polymorphism).
 
+Another sample interface: Indexed collections
+---------------------------------------------
+
+As you start designing different classes and structures, you'll regularly discover that your programming will benefit from interfaces. Interfaces are also useful as we work to separate *what* a class can do from *how* the class achieves those goals.
+
+Let's consider one of our favorite data structures, the array. Arrays let you access values by index. We typically implement arrays as a chunk of memory, and use the index to determine an offset into that chunk of memory. But there are other kinds of structures that might permit us to access values by index. Some designers even consider that an appropriate feature of lists. (I dislike this decision, but I accept that some people make it.)
+
+Since there's unlikely to be any common code between a "chunk of memory" indexed structure and a "linked" indexed structure, we could treat indexed structures are a type of interface.
+
+```
+/**
+ * Indexed collections of strings.
+ */
+public interface IndexedCollectionOfStrings {
+  /**
+   * Get the ith element of the collection.
+   *
+   * @pre 0 <= i < this.length()
+   */
+  public String get(int i) throws IndexOutOfBoundsException;
+
+  /**
+   * Set the ith element of the collection to str.
+   */
+  public void set(int i, String str) throws IndexOutOfBoundsException;
+
+  /**
+   * Determine the number of elements in the collection (1 + the
+   * last valid index).
+   */
+  public int length();
+} // interface IndexedCollectionOfStrings
+```
+
+Implementing such collections is left as an exercise for the reader.
+
+Self checks
+-----------
+
+### Check 1: Other interfaces
+
+Suggest another interface that might be useful to develop.
