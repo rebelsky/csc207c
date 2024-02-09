@@ -1,6 +1,6 @@
 ---
 title: Subtype polymorphism in Java
-repo: <https://github.com/Grinnell-CSC207/lab-polymorphism-2019>
+repo: <https://github.com/Grinnell-CSC207/lab-polymorphism>
 summary: |
   We explore issues of polymorphism in Java.
 ---
@@ -9,7 +9,7 @@ Preparation
 
 a. Fork and clone the specified repository:
 
-<https://github.com/Grinnell-CSC207/lab-polymorphism-2019>
+<https://github.com/Grinnell-CSC207/lab-polymorphism>
 
 b. Import that repository into VSCode.
 
@@ -42,7 +42,7 @@ As a first step in understanding the layout methods, extend the `main` method of
 
 ### Exercise 3: Boxed text
 
-The [reading](../readings/subtype-polymorphism), claims that it is possible to combine text blocks together by using one as a parameter to the constructor of another.  (In fact, that seems to be the only way to create a `BoxedBlock`.  Try creating and printing out each of the following:
+The [reading](../readings/subtype-polymorphism), claims that it is possible to combine text blocks together by using one as a parameter to the constructor of another.  (In fact, that seems to be the only way to create a `BoxedBlock`).  Try creating and printing out each of the following:
 
 * a boxed line (of your choice);
 * a boxed boxed line (of your choice); and
@@ -134,6 +134,13 @@ a. `Truncated`, which, given a text block and a maximum width, builds a new bloc
 b. `Centered`, which, given a text block and a width, builds a new block that centers the block within that width.
 
 c. `RightJustified`, which, given a text block and a width, builds a new block that right-justifies the input block within that width.
+
+Submitting
+----------
+
+a. Upload all of your .java files to Gradescope.
+
+b. Make sure to share the with your partner, too.
 
 For those with extra time
 -------------------------
