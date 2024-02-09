@@ -25,10 +25,6 @@ public class NewExpt {
     // Print out the block
     TBUtils.print(pen, box);
 
-    // Change the original block
-    block.set("a");
-    TBUtils.print(pen, box);
-
     // Clean up after ourselves.
     pen.close();
   } // main(String[])
