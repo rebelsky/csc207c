@@ -25,21 +25,21 @@ Preliminaries
   I'll answer them quickly. If not, I'll try to answer them the next day.
 * If you are unable to visit class in person, it's fine to attempt to
   visit on Teams. (Please try to make it to class if you can.)
+* Our evening tutors are likely to be busy on nights when HW is due (Wednesday)
+  and the night before (Tuesday), so starting earlier can help.
+* Don't forget to say your name when you ask a question.
 
 ### Upcoming work
 
 * 11pm Friday, 2024-02-09: Mini-Project 2 post-reflections
     * [_Submit on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4055738)
 * 11pm Friday, 2024-02-09: Mini-Project 3 pre-reflections
-    * This is a continuation of Friday's lab. I'll take questions at the
-      end of class on Friday. (Remind me if I forget.)
 * 11pm Sunday, 2024-02-11: Reading Reflections
     * [Java generics](../readings/generics)
     * [_Submit on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4080444/)
-* 11pm Monday, 2024-02-12: Lab writeup from today's class (class 9)
-    * [_Submit on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4080411/)
 * 11pm Wednesday, 2024-02-14: [Mini Project 3](../mps/mp03)
     * [_Submit on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4080604/)
+* **No lab writeup from today's class**
 
 ### Tokens
 
@@ -52,13 +52,23 @@ Academic/Scholarly
 
 Cultural
 
+* Master class 4pm
+* Friday, 2024-02-09, 5:30pm, Sebring-Lewis 
+  _Concert_
+
 Peer
 
+* Friday, 2024-09-09, 4-5pm,  HSSC N1170 - Global Living Room.
+  _Middle of Everywhere_.
+* Friday, 2024-02-09, 7-9pm, Harris Center.
+  _Celebration of New Year_.
 * Saturday, 2024-02-10, 10am--1pm, Field House.
   _Darren Young Classic_.
-* Womens Tennis Scrimmage, Thursday 6pm. Field House.
 
 Wellness
+
+* Saturday, 2024-02-10, 7-10 pm, HSSC.
+  _Buzzer Dating Experience_.
 
 Misc
 
@@ -72,6 +82,11 @@ Misc
 
 ### Friday PSA
 
+* Roller skating while drunk is dangerous.
+* Please take care of yourselves.
+* Be moderation.
+* Consent is essential.
+
 Questions
 ---------
 
@@ -79,29 +94,13 @@ Questions
 
 When will we get mini-projects back?
 
-> I set a goal of two weeks.
+> Soon. 
 
-### MP2
+### Subtype polymorphism and interfaces
 
-### Testing and Debugging
+How does typecasting work in Java?
 
-How do I start a debugging session on VSCode?
-
-> Add a breakpoint.
-
-> In the upper right hand corner, click on the down arrow and then "Debug
-  Java".
-
-Why is there an `&lt;` in the reading?
-
-> It's HTML for a less-than sign. These documents have been converted
-  too many times and I missed that.
-
-Why couldn't I use Junit in VScode?
-
-> Computers are sentient and malicious.
-
-> Or maybe you needed to set up a path to the junit.jar file.
+> That's a topic for another day.
 
 Lab
 ---
@@ -111,5 +110,17 @@ Reminders
 * Not everyone likes to work at separate computers. Make sure your
   partner is okay with it.
 
+Notes
+
+* `double` vs `Double`
+    * `double` is a primitive type. Four bytes, IEEE representation.
+    * `Double` is an object that wraps up a `double` and provides the
+      various operations we'd expect for an object, such as `toString`
+      and `hashCode`.
+
+Do not submit.
+
 Discussion of MP3
-------------------
+-----------------
+
+An extension of today's lab.
