@@ -244,3 +244,17 @@ You may recall that we have recently discuss *subtype polymorphism*.  In that ki
 
 To distinguish the two types of polymorphsm, we use *subtype polymorphism* to describe the idea that we can use an element of one type in place of another, and we use *parametric polymorphism* to describe the kind of polymorphism that we get from type parameters.
 
+Self checks
+-----------
+
+### Check 1: A generic stack inteface (‡)
+
+Write a generic/parameterized interface for the stack data type.
+
+### Check 2: Comparators
+
+Read [the documentation for `java.util.Comparator`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Comparator.html) and, to the best of your ability, explain this generic interface. (You don't have to worry about all those `? super T` and such, at least for the time being.)
+
+### Check 3: Functions (‡)
+
+Read [the documentation for `java.util.function.Function`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html) and, to the best of your ability, explain this generic interface.
