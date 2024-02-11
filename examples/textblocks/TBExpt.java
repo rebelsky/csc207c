@@ -16,10 +16,19 @@ public class TBExpt {
     PrintWriter pen = new PrintWriter(System.out, true);
 
     // Create a block to use
-    TextBlock block = new TextLine("Hello");
+    MutableLine block = new MutableLine("Hello");
+
+    TextBlock boxed = new BoxedBlock(block);
+    TextBlock doublyboxed = new BoxedBlock(boxed);
+
+    TextBlock result = new VComposition(boxed, doublyboxed);
 
     // Print out the block
-    TBUtils.print(pen, block);
+    TBUtils.print(pen, result);
+
+    // Change the value of block.
+    block.set("goodbye");
+    TBUtils.print(pen, result);
 
     // Clean up after ourselves.
     pen.close();
