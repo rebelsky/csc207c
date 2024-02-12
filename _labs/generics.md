@@ -1,6 +1,6 @@
 ---
 title: Java Generics
-repo: <https://github.com/Grinnell-CSC207/lab-generics-2019>
+repo: <https://github.com/Grinnell-CSC207/lab-generics>
 summary: |
   We explore some basic use of generic values in Java.
 prereqs: |
@@ -11,7 +11,7 @@ Preparation
 -----------
 
 a. Fork and clone the repository
-at <https://github.com/Grinnell-CSC207/lab-generics-2019>
+at <https://github.com/Grinnell-CSC207/lab-generics>
 
 b. Import the repository into VSCode.
 
@@ -22,9 +22,9 @@ Exercises
 
 The [reading on generics](../readings/generics.html) shows how we build a generic "expandable array" class.  You'll find that generic class in the repository for this lab.
 
-a. Read through `SEAExpt.java` and predict what the output will be.
+a. Read through `SEAExperiment.java` and predict what the output will be.
 
-b. Compile and run `SEAExpt.java` to see what the output is.
+b. Compile and run `SEAExperiment.java` to see what the output is.
 
 c. `SimpleExpandableArray` is supposed to expand the array when you set a value larger than the size.  Do you expect it to do so for this example?
 
@@ -74,9 +74,9 @@ n. Summarize what you've learned in these exercises.
 
 The [reading on generics](../readings/generics.html) shows how we build a generic search method.  You'll find that code in the repository.
 
-a. Read through `SearchExpt.java` and predict what the output will be.
+a. Read through `SearchExperiment.java` and predict what the output will be.
 
-b. Compile and run `SearchExpt.java` to see what the output is.
+b. Compile and run `SearchExperiment.java` to see what the output is.
 
 d. What do you expect to happen if you try to search `strings` with `OddInteger.PRED` or `numbers` with `SmallString.PRED`?
 
@@ -148,11 +148,16 @@ Implement `Box` using generics.  You should include
 * a mutator, `set`, that changes the value; and 
 * an observer, `get`, that extracts the value.
 
+Submitting your work
+--------------------
+
+Please submit all of your .java files on Gradescope.
+
 For those with extra time
 -------------------------
 
 Finish the following alternate implementation of
-`ExpandableArray`
+`ExpandableArray`. You'll need to look up Java vectors.
 
 ```java
 public class VectorBasedExpandableArray {
