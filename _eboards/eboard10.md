@@ -18,11 +18,15 @@ _Approximate overview_
 Preliminaries
 -------------
 
-* If you see a repo with a `-2019` suffix, it's probably the wrong version.
+* If you see a repo with a `-2019` suffix, it's probably the wrong version
+  of the lab and the wrong version of the repo..  Try reloading. 
+* If you don't see self checks, I've probably forgotten to push the 
+  latest version of a page. Let me know.
 
 ### Upcoming work
 
 * 1pm Wednesday, 2024-02-14: Today's lab writeup.
+    * [_Submit on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4090750/submissions)
 * 11pm Wednesday, 2024-02-14: [Mini Project 3](../mps/mp03)
     * [_Submit on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4080604/)
 
@@ -87,15 +91,136 @@ Questions
 
 ### Administrative
 
-When will we get mini-projects back?
+### Generics
 
-> Soon. 
+What is the difference between `ExpandableArray<String>` and `Predicate<T>`? 
+Why is it `Predicate<T>` and not `Predicate<*type*>`?
 
-### Subtype polymorphism and interfaces
+> It all depends on context. When we're declaring objects, we need to include
+  a type. When we're defining new generic classes or methods, we use the
+  type variable.
 
-How does typecasting work in Java?
+How can we concretize the way the the `Function` interface is used in Java?
 
-> That's a topic for another day.
+> There are three mechanisms, only one of which fits within your current
+  knowledge: (a) We can build a new class that implements the `Function`
+  interface; (b) We can build an _anonymous class_ that implements
+  the `Function` interface, (c) we can build a _lambda expression_
+  that implements the `Function` interface.
+
+> We'll consider the situation in which we want a function to
+  parenthesize a string and store it in a variable, `parenthesize`..
+
+```
+public class Parenthesize implements Function<String,String> {
+  public String apply(String str) {
+    return "(" + str + ")";
+  } // apply(String)
+} // class Parenthesize
+
+...
+
+  Function<String,String> parenthesize = new Parenthesize();
+```
+
+> Since all the `Parenthesize` objects will be the same, we might
+  want to use a pattern called _Singleton_ in which we ensure that
+  only one copy is ever created.
+
+```
+public class Parenthesize implements Function<String,String> {
+
+  /**
+   * The constructor is private to prevent others from using it.
+   */
+  private Parenthesize() {
+  }
+
+  /**
+   * A function that parenthesizes strings.
+   */
+  public static final FUN = new Parenthesize();
+
+  public String apply(String str) {
+    return "(" + str + ")";
+  } // apply(String)
+
+} // class Parenthesize
+
+...
+
+  Function<String,String> parenthesize = Parenthesize.FUN;
+```
+
+> Of course, creating a class that we might only use once is overkill.
+  Hence, Java provides _anonymous inner classes_. We'll look at these
+  in more detail in a few weeks. For now, here's an example.
+
+```
+  Function<String,String> parenthesize = new Function<String,String>() {
+    public String apply(String str) {
+      return "(" + str + ")";
+    } // apply(String)
+  };
+```
+
+> At some point, the designers of Java added some syntactic sugar
+  to make it easier to build objects for interfaces that have only
+  one method. Such interfaces are called "functional interfaces"
+  and the syntactic sugar is called a _lambda_. We'll also look at
+  these in a few weeks.
+
+```
+  Function<String,String> parenthesize = (str) -> "(" + str + ")";
+```
+
+> Isn't that pretty?
+
+What is the difference between `<T>` and `T` (like when do you use each)?
+
+> We generally use `<T>` in the signature for a generic class or a generic
+  method. We use `T` when we're declaring a variable (or a function, 
+  within a generic class).
+
+Why did we declare a variable like this:
+`ExpandableArray<String> strings = new SimpleExpandableArray<String>();
+Instead of:
+`SimpleExpandableArray<String> strings = new SimpleExpandableArray<String>();
+
+> It makes it easier to change our mind about the implementation (only
+  one thing to change, rather than two or more).
+
+What does it mean for a cast to be unsafe?
+
+> It means that Java can't guarantee that you won't break something by 
+  making the cast (e.g., if you accidentally cast a string to an integer).
+
+```
+  Object o = "Hello";
+  ...
+  Integer i = (Integer) o;
+```
+
+Why do we have `<T> T` instead of `<T> in the following?
+
+```
+public static <T> T search(T[] vals, Predicate<T> pred) {
+```
+
+> The `<T>` says "this is parameterized by the type variable `T`. The `T` says "this returns a `T`.  This permits us to write something like
+
+```
+public static <T> int indexOf(T[] vals, T val) {
+```
+
+> or
+
+```
+/**
+ * Make a list of num copies of val.
+ */
+public static <T> List<T> makeList(int num, T val)
+```
 
 Lab
 ---
@@ -105,17 +230,4 @@ Reminders
 * Not everyone likes to work at separate computers. Make sure your
   partner is okay with it.
 
-Notes
-
-* `double` vs `Double`
-    * `double` is a primitive type. Four bytes, IEEE representation.
-    * `Double` is an object that wraps up a `double` and provides the
-      various operations we'd expect for an object, such as `toString`
-      and `hashCode`.
-
-Do not submit.
-
-Discussion of MP3
------------------
-
-An extension of today's lab.
+Notes 
