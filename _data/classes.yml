@@ -172,6 +172,7 @@
     - page: /readings/generics.html
   lab:
     - page: /labs/generics.html
+  notes: ../eboards/eboard10.html
 
 - topic: Exceptional programming
   abbrev: exceptions
