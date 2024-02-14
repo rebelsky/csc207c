@@ -55,4 +55,10 @@ public class TextLine implements TextBlock {
     return this.line.length();
   } // width()
 
+  /**
+   * Determine if we are equivalent to another textblock.
+   */
+  public boolean eqv(TextBlock other) {
+    return other instanceof TextLine;        // STUB
+  } // eqv()
 } // class TextLine

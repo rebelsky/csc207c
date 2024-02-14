@@ -7,28 +7,31 @@ link: true
 ---
 # {{ page.title }}
 
-**You are probably being recorded, perhaps even transcribed. Of course, the technology failed in my earlier class, so perhaps not.**
+**You are probably being recorded, perhaps even transcribed.**
 
 _Approximate overview_
 
 * Administrivia
 * Questions
 * Lab
-* Discussion of MP3
+
 Preliminaries
 -------------
 
+* Sam broke his hearing aids and hears even less well than normal.
 * If you see a repo with a `-2019` suffix, it's probably the wrong version
-  of the lab and the wrong version of the repo..  Try reloading. 
+  of the lab and the wrong version of the repo.  Try reloading. 
 * If you don't see self checks, I've probably forgotten to push the 
   latest version of a page. Let me know.
 
 ### Upcoming work
 
-* 1pm Wednesday, 2024-02-14: Today's lab writeup.
-    * [_Submit on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4090750/submissions)
 * 11pm Wednesday, 2024-02-14: [Mini Project 3](../mps/mp03)
     * [_Submit on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4080604/)
+* 11pm Thursday, 2024-02-15: Reading on Exceptions
+    * [_Submit on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4090750)
+* 1pm Friday, 2024-02-16: Wednesdays's lab writeup.
+    * [_Submit on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4080411/)
 
 ### Token
 
@@ -41,6 +44,7 @@ Academic/Scholarly
 * Thursday, 2024-02-15, 11:00--noon, JRC 101.
   _Scholars' Convocation: Gaile Pohlhaus on "An Epistemology of 
    the Oppressed: Resisting and Flourishing under Epistemic Oppression"._
+     * You can also talk to the speaker.
 * Thursday, 2024-02-15, 4:00pm, Science 3821.
   _CS Extras: PM Osera_.
 
@@ -90,6 +94,203 @@ Questions
 ---------
 
 ### Administrative
+
+### MP3
+
+For #4, if the appearance is the same, but the process to build them
+was different, are they `equal`, `eqv`, or `eq`?
+
+For example, 
+
+```
+  TextBlock tb1 = new HFlip(new HFlip(new HFlip(new HFlip(new TextLine("a")))));
+  TextBlock tb2 = new HFlip(new HFlip(new TextLine("a")))));
+  TextBlock tb3 = new TextLine("a");
+```
+
+> These three things are `equal` in that they appear the same.
+
+> No two of these things are `eqv`; they were all built differently.
+
+> No two of these things are `eq`; they all occupy different areas of
+  memory.
+
+Suppose we have `BlockInBox` that does exactly the same as `BoxedBlock`.
+Tell me about the following.
+
+```
+  TextBlock box1 = new BoxedBlock(new TextLine("eh"));
+  TextBlock box2 = new BlockInBox(new TextLine("eh"));
+```
+
+> The two things appear the same, so they are `equal`.
+
+> The two things were built using different classes, so they are not `eqv`.
+
+> And they probably occupy different things in memory.
+
+Can we use the `getClass` method to determine the class of an object?
+
+> Yes, something like that.
+
+Can we compare classes with `==`?
+
+> Yes.
+
+If we horizontally compose X with the empty string, is it `eqv` to
+horizontally composing the empty string with X?
+
+> No.
+
+What does it mean to give 'too much space' in truncated?
+
+> Um ... I'd say > txt.width().
+
+The Q&A is inconsistent with the text when dealing with `Trunacted` and
+company`
+.
+
+> **You can do whatever you'd like for truncated, centered, and right
+  justified blocks that have an inauspicious numeric parameter.**
+
+How do you compare memory locations in Java.
+
+> `==`
+
+So `eq` is relatively trivial?
+
+> Yes.
+
+How are we testing things like `Truncated` and centered?
+
+```
+   @Test
+   void testTruncated1() {
+     assertEqual("+--", (new Truncated(3, new BoxedBlock(new TextLine("hello")))).row(0));
+     assertEqual("|he", (new Truncated(3, new BoxedBlock(new TextLine("hello")))).row(1));
+   } // testTruncated1()
+```
+
+Do we have to do testing for the math stuff from the lab?
+
+> No.
+
+How do we figure out how something has been created?
+
+```
+TextBlock tb = ...;
+
+if (tb instanceof BoxedBlock) {
+  ...
+}
+```
+
+Could you explain the "require an `eqv` method in each class"?
+
+> For example,
+
+```
+public interface TextBlock {
+  ...
+  /**
+   * Determine if `other` is structurally equivalent
+   * to this block.
+   */
+  public boolean eqv(TextBlock other);
+} // interface TextBlock
+
+public class BoxedBlock implements TextBlock {
+  TextBlock block;
+  ...
+  public boolean eqv(TextBlock other) {
+    return ((other instanceof BoxedBlock) &&
+            this.block.eqv(((BoxedBlock) other).block));
+  } // eqv(TextBlock other)
+} // BoxedBlock
+
+public class HFlip implements TextBlock {
+  TextBlock flipme;
+  ...
+  public boolean eqv(TextBlock other) {
+    return ((other instanceof HFlip) &&
+            this.flipme.eqv(((HFlip) other).flipme));
+  } // eqv(TextBlock)
+```
+
+```
+  TextBlock tb1 = new HFlip(new HFlip(new HFlip(new HFlip(new TextLine("a")))));
+  TextBlock tb2 = new HFlip(new HFlip(new TextLine("a")))));
+  TextBlock tb3 = new TextLine("a");
+  TextBlock tb4 = new HFlip(new HFlip(new HFlip(new HFlip(new TextLine("a")))));
+```
+
+```
+    tb1.eqv(tb3)
+--> FALSE (because tb3 is not an hflip)
+
+    tb1.eqv(tb2)
+; We ask whether this.flipMe.eqv(other.flipMe)
+;   this.flipMe = new HFlip(new HFlip(new HFlip(new TextLine("a"))));
+;   other.flipMe = new HFlip(new TextLine("a")));
+; Now we have to compare this.flipMe.flipMe.eqv(other.flipMe.flipMe)
+```
+
+> Sam shouldn't write code on the fly. He makes too many mistakes.
+  He used to be better at it.
+
+Do we need an `eqv` method in `TextLine`?
+
+> Yup. You have to write it. 
+
+Why did you cast `other` in the following?
+
+```
+            this.flipme.eqv(((HFlip) other).flipme));
+```
+
+> Java is dumb. Even though we've just established that `other` is an
+  `HFlip`, it won't remember that. All it knows is that `other` is a
+  `TextBlock`.  Since not all `TextBlock` objects have a `flipme`
+  field, it won't allow you to grab that field.
+
+> Note: If `other` is not an `HFlip` and you try to cast it as one, you'll
+  get a runtime exception. (`ClassCastException`).
+
+Why do we write
+
+```
+  public boolean eqv(TextBlock other) {
+```
+
+rather than
+
+```
+  public boolean eqv(HFlip other) {
+```
+
+> Because we want to compare to any textblock as part of our goal
+  of implementing the static method `eqv(TextBlock foo, TextBlock bar)`.
+
+Wouldn't it just return false by default?
+
+> No. It would say "There's no method applicable to this parameter and
+  refuse to compile.
+
+### Interfaces and Subtype polymorphism
+
+Are interfaces like header files in C?
+
+> Sort of. Like header files they tell the client what capabilities
+  (methods/procedures/functions) are there without explaining how they
+  are implemented.
+
+> Unlike header files, we often make more than one class that implements
+  an interface.
+
+> E.g., we might implement a `List` interface with a linked list and
+  an array-based list, and a balanced-tree-based list, and ....  At
+  different points in our program, we may choose to use different
+  implementatoins.
 
 ### Generics
 
@@ -220,6 +421,13 @@ public static <T> int indexOf(T[] vals, T val) {
  * Make a list of num copies of val.
  */
 public static <T> List<T> makeList(int num, T val)
+```
+
+How do I call all of those?
+
+```
+  String[] strs = ...
+  String shortString = search(str, new ShortString());
 ```
 
 Lab
