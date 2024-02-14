@@ -153,7 +153,14 @@
   lab:
     - page: /labs/subtype-polymorphism.html
   notes: ../eboards/eboard09.html
-  
+ 
+- topic: Pause for breath
+  summary: |
+    We pause to consider various issues that have come up in
+    the class.
+  abbrev: pause10
+  notes: ../eboards/eboard10.html
+
 - topic: Generics and parametric polymorphism
   abbrev: generics
   summary: |
@@ -172,7 +179,6 @@
     - page: /readings/generics.html
   lab:
     - page: /labs/generics.html
-  notes: ../eboards/eboard10.html
 
 - topic: Exceptional programming
   abbrev: exceptions
@@ -339,7 +345,9 @@
   abbrev: searching
   summary: |
     We consider the problem of searching a collection and techniques
-    for searching various kinds of collections.
+    for searching various kinds of collections. We also consider
+    loop invariants, a technique for helping ensure the correctness
+    of programs.
   subjects:
     - Modeling the problem of searching
     - Sequential search
@@ -347,26 +355,14 @@
     - Binary search
     - Comparators
     - Testing binary search
-  reading:
-    - page: /readings/search.html
-  lab:
-    - page: /labs/binary-search.html
-
-- topic: Loop invariants
-  abbrev: loop-invariants
-  summary: |
-    We consider loop invariants, an important technique for designing
-    iterative algorithms.
-  subjects:
     - Reasoning about iterative algorithms
     - The state of a program
     - Loop invariants
-    - Loop termination
-    - "An exercise: Binary search"
   reading:
+    - page: /readings/search.html
     - page: /readings/loop-invariants.html
-  reminders:
-    - May need to write a lab.  (I think we did this collaboratively.)
+  lab:
+    - page: /labs/binary-search.html
 
 - topic: Sorting
   abbrev: sorting
@@ -382,6 +378,11 @@
     - page: /readings/sorting.html
   reminders:
     - Some class time talking about unit tests
+
+- topic: Class cancelled
+  abbrev: cancelled
+  summary: |
+    Class is cancelled for an early start to spring break.
 
 - topic: Merge sort
   abbrev: mergesort
@@ -494,7 +495,7 @@
     - This is likely a new lab.  Or I have one from 2014 Fall.
     - We may need a new reading.
 
-- topic: Binary search trees I
+- topic: Binary search trees
   abbrev: bst1
   summary: | 
     We consider binary search trees, one of the standard implementations
@@ -505,14 +506,6 @@
     - Adding elements to BSTs
   lab:
     - page: /labs/binary-search-trees.html
-
-- topic: Binary search trees II
-  abbrev: bst2
-  summary: |
-    We continue our exploration of binary search trees.
-  subjects:
-    - Deletion in BSTs
-  lab:
     - page: /labs/binary-search-trees-continued.html
 
 - topic: Hash tables
