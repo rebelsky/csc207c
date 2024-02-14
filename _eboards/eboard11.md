@@ -12,13 +12,16 @@ link: true
 _Approximate overview_
 
 * Administrivia
+* An design exercise
 * Questions
 * Lab
 
 Preliminaries
 -------------
 
+* Happy Valentine's Day (or happy Ash Wednesday). I brought you stickers.
 * Sam broke his hearing aids and hears even less well than normal.
+* Please DM me your GitHub username.
 
 ### Upcoming work
 
@@ -28,6 +31,10 @@ Preliminaries
     * [_Submit on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4090750)
 * 1pm Friday, 2024-02-16: Wednesdays's lab writeup.
     * [_Submit on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4080411/)
+* 11pm Friday, 2024-02-16: MP3 Post-Reflections
+    * [_Submit on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4102633/submissions)
+* 11pm Friday, 2024-02-16: MP4 Pre-Reflections
+    * [_Submit on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4102636)
 
 ### Tokens
 
@@ -80,6 +87,9 @@ Misc
 * Saturday, 2024-02-17, 3:00--5:00pm, Darby.
   _Women's Basketball vs. Monmouth_.
 
+A design exercise
+-----------------
+
 Questions
 ---------
 
@@ -100,4 +110,6 @@ What is the difference between `andThen` and `compose`? (from Java documentation
 > For example, if `dub` is a function that doubles its parameter and `inc` is a function that adds one, `dub.andThen(inc).apply(5)` would double 5, giving 10, and then add 1, giving 111.
 
 > In contrast, `dub.compose(inc).apply(5)` would increment 5 first, giving 6, and then double it, giving 12.
-  
+ 
+Lab
+---
