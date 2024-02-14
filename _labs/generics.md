@@ -15,10 +15,14 @@ at <https://github.com/Grinnell-CSC207/lab-generics>
 
 b. Import the repository into VSCode.
 
+c. The partner closest to the board is **A**. The partner furthest from the board is **B**.
+
 Exercises
 ---------
 
 ### Exercise 1: Simple expandable arrays
+
+_Driver: **A**_
 
 The [reading on generics](../readings/generics.html) shows how we build a generic "expandable array" class.  You'll find that generic class in the repository for this lab.
 
@@ -72,6 +76,8 @@ n. Summarize what you've learned in these exercises.
 
 ### Exercise 2: Searching
 
+_Driver: **B**_
+
 The [reading on generics](../readings/generics.html) shows how we build a generic search method.  You'll find that code in the repository.
 
 a. Read through `SearchExperiment.java` and predict what the output will be.
@@ -98,6 +104,8 @@ j. Summarize what you've learned in these exercises.
 
 ### Exercise 3: Predicates
 
+_Driver: **A**_
+
 a. What do you expect to happen if we restore the original declaration of `strings` and use the new comparator we just developed?
 
 ```java
@@ -118,6 +126,8 @@ d. Check your answer experimentally.
 e. Summarize what you've learned in this exercise.
 
 ### Exercise 4: Boxes
+
+_Driver: **B**_
 
 As you've noted, when two variables refer to the same mutable object, we can change the object through one variable and see the effect through the other variable.  At times, that effect is undesirable, but at others it is desirable.
 
