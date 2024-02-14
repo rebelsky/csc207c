@@ -12,7 +12,7 @@ link: true
 _Approximate overview_
 
 * Administrivia
-* An design exercise
+* A design exercise
 * Questions
 * Lab
 
@@ -89,6 +89,243 @@ Misc
 
 A design exercise
 -----------------
+
+PUM
+
+* P: Philosophy (the underlying principle)
+* U: Use Cases (why we have this thing / what situations would we
+     use it)
+* M: Methods (what operations ground the structure)
+
+LIA
+
+* L: Layout (do we use a pointer structure or an array/chunk 'o memory)
+* I: Given that layout, how do we implement the methods
+* A: Analysis (how fast are these methods likely to be in terms of
+  some size or sizes)
+
+A data structure we know: The array
+
+* Philosophy: A structure that lets us map integers in the range [0 .. n)
+  to values of a particular type.
+* Use cases: Implementing other data types. Mapping student IDs to student
+  records. Storing the pixels in an image.
+
+A similar data structure: The Associative Array
+
+* Philosophy: A structure that lets us map values of one type (keys) to values
+  in another type (values).
+    * Also called "Map", "Table", "FunctionWithAVeryLimitedDomain", ...
+* Use cases
+    * Store data that we would not normally be indexed.
+    * Implementating a data type: The initial type is the names of the
+      "fields", the result type is the contents.  The field names in
+      an object are keys, the contents of those fields are values.
+    * Convert student names to lists of grades (or tables of grades).
+      (Whoo! Recursion!)
+    * Associate first names with last names (crossing our fingers that
+      we have no duplicate last names).
+        * `faculty.set("Rebelsky", "Samuel")`
+        * `faculty.set("Weinman", "Jerod")`
+        * `faculty.set("Rebelsky", "Fred")`
+* Methods
+
+```
+/**
+ * Things that let us associate values of type V with values of type K,
+ * where we look them up with the K values.
+ */
+public class AssociativeArray<K,V> {
+   /**
+    * Get the value associated with a key.
+    *
+    * @exception KeyNotFoundException
+    *   When the key is not in the AA.
+    */
+   public V get(K key) throws KeyNotFoundException {
+     return null;       // STUB
+   } // get(K)
+
+   /**
+    * Associate a value with a key.
+    *
+    * @exception OutOfRoomException
+    *   If there is not space to add another value.
+    * @exception NullKeyException
+    *   If there is not space to add another value.
+    */
+   public void set(K key, V value) throw OutOfRoomException, NullKeyException {
+     // STUB
+   } // set(K,V)
+
+   /**
+    * Remove a key/value pair.
+    *
+    * @exception KeyNotFoundException
+    *   If the key is null or not already in the associative array.
+    */
+   public void remove(K key) throws KeyNotFoundException {
+     // STUB
+   } // remove(K)
+
+   public boolean containsKey(K key) {
+     return false;
+   } // containsKey(K)
+
+  public boolean isEmpty() {
+    return false;       // STUB
+  }
+
+  public boolean isFull() {
+    return false;       // STUB
+  } isFull()
+
+  public int size() {
+    return 0;           // STUB
+  }
+
+  // +-------------------------+-------------------------------------
+  // | Standard object methods |
+  // +-------------------------+
+
+  /**
+   * Convert to a string (e.g., for printing).
+   */
+  public String toString() {
+    return "{ }";       // STUB
+  } // toString()
+
+  /**
+   * Compare for equality.
+   */
+  public boolean equals(Object other) {
+    return false;       // STUB
+  } // equals(Object)
+
+} // class AssociativeArray
+```
+
+Some design questions
+
+* Should we cap the number of values we can store?
+    * Decision: We should permit it.
+* Does `set` require that the key already be in the association list?
+    * Yes: We need a procedure to add a key.
+    * No: Followup: Can you replace something already set using `set`
+      or do we need a separate `replace` operator?
+    * Decision: `set` does everything. Adds, replaces, mixes, 
+
+LIA
+
+Layout: Store them in an expandable array of key/value pairs.
+
+```
+  // +--------+------------------------------------------------------
+  // | Fields |
+  // +--------+
+
+  /**
+   * All of the k/v pairs.  Added to the end of the array as we go.
+   * The array magically expands when needed.
+   */
+  KVPair<K,V> pairs[] = ...;
+
+  /**
+   * How many values are stored.
+   */
+  int size;
+```
+
+Implementation: How would you implement `get` and `set`? 
+
+```
+  public V get(K key) throws KeyNotFoundException {
+  } // get(K)
+
+  public void set(K key, V value) throws NullKeyException {
+  } // set(K, V)
+```
+
+Get (Conceptually)
+
+* Search through all of the K/V pairs in the array, stopping
+  when the key of the pair matches the sought key or when we
+  get to the end.
+    * In the former case, return the corresponding value
+    * In the latter case, throw a KeyNotFoundException
+
+Set (Conceptually)
+
+* Search through all the K/V pairs in the array, stopping when
+  we find a matching key or when we run out of pairs. 
+    * In the former case, set the value
+    * In the latter case, append to the end of the array (expanding
+      the array if necessary)
+        `this.pairs[this.size++] = new KVPair<K,V>(key,value);`
+
+Remove (Conceptually)
+
+* Note: Drawing pictures might help
+
+```
++---+---+---+---+---+
+| * | * | * | / | / |
++-|-+-|-+-|-+---+---+
+      |   v
+      | +-------------+
+      | | Last: Smith |
+      | | First: Jane |
+      | +-------------+
+      v
+```
+
+Strategy one:
+
+* Search through all the key/value pairs until we find the pair or
+  run out of pairs.
+    * In the former case, shift everything left by one until we hit the end.
+      Then put a null at the end.
+    * In the latter case, throw an exception
+* Running time depends on the number of values stored in the associative array.
+
+Strategy two:
+
+* Build a new array, copying each thing that doesn't have a matching key
+  over.
+* If the size of the new array is the same as the old array, throw an
+  exception.
+* Running time depends on the number of values stored in the associative array.
+
+Strategy three:
+
+* Like strategy one, except that you just put a null there rather than
+  shifting.
+* May affect how we write `get` or `set`.  E.g., `size` has a different
+  meaning; may require a separate `last-element`.
+* Or the semantics of `remove` could be "doesn't necessarily change
+  the size". People who believe this write programs that run out of
+  memory.
+* May make `toString` a bit harder.
+* Running time is constant.
+
+Strategy four:
+
+* Like strategy one, but only shove elements once in a while.  (E.g.,
+  flip a coin to decide whether or not to move.)
+* Running time is confusing.
+
+Strategy five:
+
+* Like strategy three, but we move the last element into the place
+  we just freed. (We do have to clear out the last element.)
+* Running time is constant.
+
+Question: What is an ADT? I didn't quite understand?
+
+* An ADT is the PUM part of a structure. It's a way of thinking about
+  how we organize a collection of data.  
+    * It's abstract in that the implementatoin is not part of our
+      initiail analyis.
 
 Questions
 ---------
