@@ -269,7 +269,7 @@ public class Student extends Person {
 
 In this example, `Student` and `Professor` have `age` and `gender`
 fields and `answer` and `askQuestionOf` methods, even though neither
-declares one.
+explicitly declares them.
 
 As importantly, you can use a `Professor` or a `Student` wherever
 a `Person` is required, so it is easy to write polymorphic code.
@@ -414,3 +414,12 @@ public class Professor extends Person {
 Unfortunately, if you reverse the two lines of that constructor,
 Java will complain.
 
+## Self checks
+
+### Check 1: Another type of person (double-dagger)
+
+Create a class, `StaffMember`, that extends `Person`, adding a `Department` field.
+
+### Check 2: Yet another type of person (double-dagger)
+
+Create a class, `Administrator`, that extends `StaffMember` but adds no additional fields or capabilities.
