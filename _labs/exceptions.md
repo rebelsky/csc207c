@@ -16,10 +16,14 @@ b. Import the repository into VSCode.
 
 c. Quickly skim the code to determine the purpose of the various portions.
 
+d. Identify the person closer to the board. They are partner A.  The person further from the board is partner B.
+
 Exercises
 ---------
 
 ### Exercise 1: Exception basics
+
+_Driver: **A**_
 
 a. Remove the `throws Exception` from the `main` method and determine what, if any, error messages you get.  If VSCode permits you to do so, try running the program. 
 
@@ -55,6 +59,8 @@ e. Determine what happens when the user enters an invalid value (such as `Hello`
 
 ### Exercise 2: Computing a quadratic root
 
+_Driver: **B**_
+
 Implement the `smallerRoot()` method in the `Quadratic` class.  The method should compute the smaller of the two roots of a quadratic expression.
 
 Note that you can use the following formula to compute that root: $$(-b - \sqrt{b^2 - 4ac})/2a$$
@@ -70,6 +76,8 @@ b. Write a few simple unit tests for that procedure.  Note that you are likely t
 
 ### Exercise 3: Adding user input
 
+_Driver: **B**_
+
 a. Write a new main class, `QR`, which
 
 * prompts the user for coefficients of a quadratic function,
@@ -81,6 +89,8 @@ b. Use your class to compute the smaller root of $$x^2 - x - 2$$.  (The roots of
 
 ### Exercise 4: Erroneous input
 
+_Driver: **A**_
+
 a. Determine what happens if the user enters 0 for the coefficient of $$x^2$$.
 
 b. Determine what happens if user enters coefficients for which there is no real root.
@@ -88,6 +98,8 @@ b. Determine what happens if user enters coefficients for which there is no real
 c. Determine what happens if the user enters values for which the function has only one root (e.g., $$x^2 - 2x + 1$$ has only one root).
 
 ### Exercise 5: Indicating potential errors
+
+_Driver: **A**_
 
 a. Extend `smallerRoot` to indicate that it may throw an exception.  Note that you'll need to change the method signature for `smallerRoot` to something like the following.
 
@@ -104,6 +116,8 @@ d. What now happens if you enter the "erroneous" input described
 
 ### Exercise 6: Throwing exceptions
 
+_Driver: **B**_
+
 a. Extend `smallerRoot` so that it throws an exception if `a` is 0.  For example,
 
 ```
@@ -118,6 +132,8 @@ b. Extend `smallerRoot` so that it throws an exception if the root is not real (
 c. What now happens if you enter the "erroneous" input described above?
 
 ### Exercise 7: Catching exceptions
+
+_Driver: **B**_
 
 If you've written your `main` method using the recommended template, you have a `throws Exception` clause.  Remove that clause.
 
@@ -142,6 +158,8 @@ d. Determine what happens with the problematic inputs described above.
 
 ### Exercise 8: Catching specific exceptions
 
+_Driver: **A**_
+
 a. Update `smallerRoot` so that it tries to throw a `DivideByZeroException` if the coefficient of the quadratic term is 0.  You can still throw a generic exception if the result includes an imaginary component.
 
 b. What do you expect to happen when you try to compile the revised program?
@@ -150,6 +168,8 @@ c. Check your answer experimentally.
 
 ### Exercise 9: Your own exceptions
 
+_Driver: **A**_
+
 As you should have determined in the previous exercise, Java does not know by default what a `DivideByZeroException` is.  Hence, you'll need to create your own Exception.  You do so using the strategy described in the [corresponding reading](../readings/exceptions.html).
 
 a. Create and compile a Java file for `DivideByZeroException`.
@@ -157,6 +177,8 @@ a. Create and compile a Java file for `DivideByZeroException`.
 b. Verify that the previously-modified code now works.
 
 ### Exercise 10: Catching specific exceptions
+
+_Driver: **B**_
 
 . Extend `QR` so that it has a catch clause for your new `DivideByZeroException` _before_ the catch clause for the generic `Exception`.  For example,
 
