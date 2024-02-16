@@ -190,6 +190,7 @@
     - Object-oriented design
   reading:
     - page: /readings/exceptions.html
+  notes: ../eboards/eboard12.html
 
 - topic: Inheritance
   abbrev: inheritance
