@@ -85,7 +85,7 @@ a. Write a new main class, `QR`, which
 * prints that root, and
 * prints the value of the quadratic at that root.
 
-b. Use your class to compute the smaller root of $$x^2 - x - 2$$.  (The roots of that quadratic are $$2 and $$-1$$.
+b. Use your class to compute the smaller root of $$x^2 - x - 2$$.  (The roots of that quadratic are $$2$$ and $$-1$$.
 
 ### Exercise 4: Erroneous input
 
