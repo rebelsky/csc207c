@@ -28,8 +28,9 @@ Preliminaries
     * [_Submit on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4102633/submissions)
 * 11pm Friday, 2024-02-16: MP4 Pre-Reflections
     * [_Submit on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4102636)
-* 11pm Sunday, 2024-02-18: Reading on Inheritance 
-    * [_Submit on Gradescope_](...)
+* 11pm Sunday, 2024-02-18: Readings
+    * [Inheritance](../readings/inheritance)
+    * [_Submit on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4118708/grade)
 
 ### Tokens
 
