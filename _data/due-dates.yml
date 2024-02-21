@@ -62,119 +62,96 @@
   due: 
     - page: /mps/mp04.html
 
-- date: 2024-02-21
-  due:
-    - MP 4 Post-reflection
-  assigned:
-    - page: /mps/mp05.html
-
-- date: 2024-02-23
-  due:
-    - MP 5 Pre-reflection
-
-- date: 2024-02-27
-  due:
-    - page: /mps/mp05.html
-
 - date: 2024-02-28
   due:
-    - MP 5 Post-reflection
+    - page: /mps/mp04.html
   assigned:
-    - page: /mps/mp06.html
+    - page: /mps/mp05.html
 
 - date: 2024-03-01
   due:
-    - MP 6 Pre-reflection
-
-- date: 2024-03-05
-  due:
-    - page: /mps/mp06.html
+    - MP 4 Post-reflection
+    - MP 5 Pre-reflection
 
 - date: 2024-03-06
   due:
-    - MP 6 Post-reflection
+    - page: /mps/mp05.html
   assigned:
-    - page: /mps/mp07.html
+    - page: /mps/mp06.html
 
 - date: 2024-03-08
   due:
-    - MP 7 Pre-reflection
+    - MP 5 Post-reflection
+    - MP 6 Pre-reflection
 
-- date: 2024-03-12
-  due:
-    - page: /mps/mp07.html
 
 - date: 2024-03-13
-  due:
-    - MP 7 Post-reflection
   assigned:
-    - page: /mps/mp08.html
+    - page: /mps/mp06.html
+    - page: /mps/mp07.html
+
+- date: 2024-03-15
+  due:
+    - MP 6 Post-reflection
 
 - date: 2024-04-01
   due:
-    - MP 8 Pre-reflection
+    - MP 7 Pre-reflection
 
-- date: 2024-04-03
   assigned:
-    - page: /mps/mp09.html
+    - page: /mps/mp08.html
 
 - date: 2024-04-04
   due:
-    - page: /mps/mp08.html
+    - page: /mps/mp07.html
 
 - date: 2024-04-05
   due:
-    - MP 8 Post-reflection
-
-- date: 2024-04-09
-  due:
-    - page: /mps/mp09.html
+    - MP 7 Post-reflection
+    - MP 8 Pre-Reflection
 
 - date: 2024-04-10
   due:
-    - MP 9 Post-reflection
+    - page: /mps/mp08.html
   assigned:
-    - page: /mps/mp10.html
+    - page: /mps/mp09.html
     
 - date: 2024-04-12
   due:
-    - MP 10 Pre-reflection
+    - MP 8 Post-reflection
+    - MP 9 Pre-reflection
 
 - date: 2024-04-16
   due:
-    - page: /mps/mp10.html
 
 - date: 2024-04-17
   due:
-    - MP 10 Post-reflection
+    - page: /mps/mp09.html
   assigned:
-    - page: /mps/mp11.html
+    - page: /mps/mp10.html
 
 - date: 2024-04-19
   due:
-    - MP 11 Pre-reflection
-
-- date: 2024-04-23
-  due:
-    - page: /mps/mp11.html
+    - MP 9 Post-reflection
+    - MP 10 Pre-reflection
 
 - date: 2024-04-24
   due:
-    - MP 11 Post-reflection
+    - page: /mps/mp10.html
   assigned:
-    - page: /mps/mp12.html
+    - page: /mps/mp11.html
 
 - date: 2024-04-26
   due:
-    - MP 12 Pre-reflection
-
-- date: 2024-04-30
-  due:
-    - page: /mps/mp12.html
+    - MP 10 Post-reflection
+    - MP 11 Pre-reflection
 
 - date: 2024-05-01
   due:
-    - MP 12 Post-reflection
+    - page: /mps/mp11.html
+
+- date: 2024-05-03
+    - MP 11 Post-reflection
 
 - date: 2024-05-10
   due:

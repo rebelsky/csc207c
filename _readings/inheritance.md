@@ -418,7 +418,7 @@ Java will complain.
 
 ### Check 1: Another type of person (double-dagger)
 
-Create a class, `StaffMember`, that extends `Person`, adding a `Department` field.
+Create a class, `StaffMember`, that extends `Person`, adding a field of type `Department`.
 
 ### Check 2: Yet another type of person (double-dagger)
 
