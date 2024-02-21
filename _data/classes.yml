@@ -218,6 +218,7 @@
     - Java lists
   reminders:
     - I think this is a discussion-based day.
+  notes: ../eboards/eboard14.html
 
 - topic: Linear structures
   abbrev: linked-structures
