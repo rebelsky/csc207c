@@ -25,6 +25,8 @@ Preliminaries
   moving on to more on ADTs/Data Structures and Algorithms.
     * Don't worry, we'll still learn more Java.
 * Today is a (planned) talk day.
+* I've updated the schedule for the change in MP4. Note that you need one
+  fewer E for A/B/C.
 
 ### Upcoming work
 

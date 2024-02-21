@@ -66,6 +66,8 @@ Wellness
 
 Misc
 
+* GrinTech Alumni Meetup 4:00-5:00 pm in HSSC N2116.
+
 ### Other good things to do (no tokens)
 
 * Monday, 2024-02-20, 9-11pm, Bob's Underground.
@@ -83,6 +85,34 @@ Questions
 ---------
 
 ### Inheritance
+
+Do superclasses include info about their subclasses?
+
+> No
+
+Can you cast from a subclass to a superclass?
+
+> Yes, but there's rarely a reason to so.
+
+Can you explain protection for fields?
+
+> Sure. Remember that we use protection to achieve one of the goals of
+  encapsulation: We are free to make changes to our code without
+  significantly affecting our clients. Different situations require
+  different choices.
+
+> There are four levels: `private`, "package" (write nothing), `protected`
+  and `public`.
+
+> `private` means that the field or method is only available to the
+  class or other objects in the class.
+
+> "package" expands that availability to other classes in the same
+  package as well as objects in those classes.
+
+> `protected` further expands it to subclasses in other packages.
+
+> `public` expands it to everyone.
 
 Can you explain how we use `super` in methods?
 
