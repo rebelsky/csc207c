@@ -115,7 +115,7 @@ One aspect of this code you may find of interest is that we have
 said that `Stack extends LinearStructure`.  As we just suggested,
 this extension is similar to the extension you've seen for classes,
 although it is used primarily for polymorphism.  It means that you
-can use a `Stack` whereever code expects a `LinearStructure`
+can use a `Stack` whereever code expects a `LinearStructure`.
 
 Applications of stacks
 ----------------------
@@ -310,8 +310,15 @@ for the basic stack operations are not `put` and `get`, but rather
 To make our code more general, we will stick with the linear structure
 terms.
 
-Citation
---------
+Self Checks
+-----------
+
+### Check 1: Redudancy
+
+We've explicitly declared `put` and `get` in our `Stack` interface. However, they are also declared in the `LinearStructure` interface we've learned with classes that it's not necessary to duplicate things in the superclass. Determine experimentally whether you can do without declaring `put` and `get` in stacks. Then indicate what you discovered.
+
+Citations
+---------
 
 This reading is closely based on a similar reading I wrote for
 _The TAO of Java_, which last appeared in [the course web for

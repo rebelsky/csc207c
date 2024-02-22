@@ -57,9 +57,7 @@ import java.util.Iterator;
  *
  * @author Samuel A. Rebelsky
  */
-public interface PriorityQueue<T>
-    extends LinearStructure<T>
-{
+public interface PriorityQueue<T> extends LinearStructure<T> {
   /**
    * Add an element to the queue.
    *
@@ -159,10 +157,10 @@ will need to search the array for the smallest element.  For `get`,
 you will then want to swap the smallest element to the end of the
 array and return and remove it.
 
-Which method is better?  In the first case, we spend O(n) work
-putting the new element at the next place and O(1) work getting
-that element.  In the second case, we spend O(n) work finding the
-smallest element and O(1) work adding elements.  If we find that
+Which method is better?  In the first case, we spend $O(n)$ work
+putting the new element at the next place and $O(1)$ work getting
+that element.  In the second case, we spend $O(n)$ work finding the
+smallest element and $O(1)$ work adding elements.  If we find that
 our program is dominated by adding elements (e.g., because we add
 more tasks than we can ever hope to accomplish), we'll find the
 second is better.  However, if we expect to get every element and
@@ -202,8 +200,10 @@ Sorting with priority queues
 If you have a priority queue, sorting is pretty easy: Add all of the
 elements, then read them back out of the queue in order.
 
-What's the running time?  Either put or get is O(n).  And we call
-both operation O(n) times, so it's O(n<sup>2</sup>).  Hmmm ...
-can we implement priority queues in a new way that allows us to put
-and get faster?  That's a topic for the future.
+What's the running time?  Either `put` or `get` is $$O(n)$$.  And we call
+both operations $$O(n)$$ times, so it's $$O(n^2)$$.  Hmmm ...
+can we implement priority queues in a new way that allows us to `put`
+and `get` faster?  That's a topic for the future.
 
+Self Checks
+-----------

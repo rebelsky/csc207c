@@ -179,7 +179,7 @@ If we were to add the value `D` to the queue, we would get the following:
   A             B             C             D
 ```
 
-If we remove the A from the beginning of the list, we then delete that node.
+If we remove the A from the beginning of the dequeue, we then delete that node.
 
 ```text
               +---+---+     +---+---+     +---+---+
@@ -209,7 +209,7 @@ this.front = this.front.next;
 return tmp;
 ```
 
-When the queue is empty, front is null (or vice versa).
+When the queue is empty, `this.front` is null (or vice versa).
 
 There are, of course, some special situations we need to worry about.
 You'll consider some of these special situations in the lab.
@@ -227,6 +227,22 @@ a "Dequeue" (for "doubly-ended queue").
 To make our code more usable, we will generally stick with the 
 linear structure terms, although you'll note that we added the
 other terms for convenience.
+
+Self checks
+-----------
+
+### Check 1: Compare and contrast linked implementations (‡)
+
+How does the approach we chose for linked queues relate to the one we chose for linked stacks? That is, how are they similar and how are they different?
+
+### Check 2: Compare and contrast array-based implementations (‡)
+
+How does the approach we chose for array-based queues relate to the one we chose for array-based stacks? That is, how are they similar and how are they different?
+
+### Check 3: Special cases (‡)
+
+In our discussion of linked queues, we noted that "there are, of course, some 
+special situations we need to worry about." What situations might require us to write special code?
 
 Citation
 --------
