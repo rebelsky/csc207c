@@ -22,7 +22,7 @@ public interface Counter {
   public int get();
   public void increment();
   public void reset();
-} // Counter
+} // class Counter
 
 public class ReportingCounter implements Counter {
   PrintWriter pen;
@@ -60,12 +60,7 @@ public class ReportingCounter implements Counter {
 } // ReportingCounter
 ```
 
-What's the "big picture" idea here?  We can add functionality (in
-this case, the ability to log all of the calls to an object) by
-"wrapping" the object inside another object that adds some functionality
-to each call.  Many programmers, software designers, and computer
-scientists refer to this technique as "wrapping" an object.  The
-steps are usually as follows.
+What's the "big picture" idea here?  We can add functionality (in this case, the ability to log all of the calls to an object) by "wrapping" the object inside another object that adds some functionality to each call.  Many programmers, software designers, and computer scientists refer to this technique as "wrapping" an object.  The steps are usually as follows.
 
 * We represent a set of capabilities through an interface.
 * Our wrapper class implements the interface.
@@ -76,9 +71,7 @@ steps are usually as follows.
   provides some additional functionality and then calls the  
   wrapped object's `fun` method.
 
-Some think about wrapping with a picture something like the following.
-(This is not the normal stack/heap representation; just a broader
-conceptualization.)
+Some think about wrapping with a picture something like the following.  (This is not the normal stack/heap representation; just a broader conceptualization.)
 
 ```text
           Wrapper
@@ -101,16 +94,7 @@ here, as well as some related issues.
 Another application: Tallying
 -----------------------------
 
-Our `ReportingCounter` is useful for seeing the pattern of behaviors
-of our object.  Is it better than a debugger?  It depends on the
-situation.  Sometimes we just want a log of operations to gain some
-understanding of how a class is used.  Sometimes such a log lets us
-identify busy times in a continuously-running application.  But the
-`ReportingCounter` generates a *lot* of information.  For some analyses,
-it may be just as useful to get a count of the number of times each
-operation is called.  (If you've read about priority queues, you may
-know that the implementation choice for a priority queue can be
-affected by the pattern of calls.)
+Our `ReportingCounter` is useful for seeing the pattern of behaviors of our object. Is it better than a debugger? It depends on the situation. Sometimes we just want a log of operations to gain some understanding of how a class is used. Sometimes such a log lets us identify busy times in a continuously-running application. But the `ReportingCounter` generates a *lot* of information. For some analyses, it may be just as useful to get a count of the number of times each operation is called. (If you've read about priority queues, you may know that the implementation choice for a priority queue can be affected by the pattern of calls.)
 
 Here's a wrapper class that provides that functionality.  
 
@@ -154,30 +138,14 @@ public class TalliedCounter implements Counter {
 } // TalliedCounter
 ```
 
-There are, of course, other features we might add to our `TalliedCounter`
-class.  For example, we might want to turn our counter off temporarily
-for some portions of the code.  We might want to reset our tally of
-procedure calls.  I suppose we could even use a `Counter` object for
-each of the tallies, but that is likely to become confusing.
+There are, of course, other features we might add to our `TalliedCounter` class.  For example, we might want to turn our counter off temporarily for some portions of the code.  We might want to reset our tally of procedure calls.  I suppose we could even use a `Counter` object for each of the tallies, but that is likely to become confusing.
 
 Using wrappers to adapt classes
 -------------------------------
 
-At times, you will find that you have a set of requirements for an object,
-most frequently specified by an interface, and a class that conceptually
-provides methods that meet those requirements, but don't have quite the
-right form.  For example, you may recall that our `LinearStructure`
-interface indicates that linear structures should provide `put`, `peek`,
-and `get` methods.
+At times, you will find that you have a set of requirements for an object, most frequently specified by an interface, and a class that conceptually provides methods that meet those requirements, but don't have quite the right form.  For example, you may recall that our `LinearStructure` interface indicates that linear structures should provide `put`, `peek`, and `get` methods.
 
-As you might expect, the Java library provides a variety of classes
-that have similar functionality to that we expect in our `LinearStructure`
-interface.  For example, [java.util.PriorityQueue]({{ site.java_api }}/java/util/PriotityQueue.html) is a linear structure that supports a "first in,
-highest-priority-out" policy.  Unfortunately, the designers of the Java
-API did not bow to our wishes and failed to provide `put` and `get` methods.
-However, they do provide very similar methods called `add` and `poll`.
-Hence, we can *adapt* one of those objects to meet our interface, writing
-methods that just call the corresponding method of a `java.util.PriorityQueue`.
+As you might expect, the Java library provides a variety of classes that have similar functionality to that we expect in our `LinearStructure` interface.  For example, [java.util.PriorityQueue]({{ site.java_api }}/java/util/PriotityQueue.html) is a linear structure that supports a "first in, highest-priority-out" policy.  Unfortunately, the designers of the Java API did not bow to our wishes and failed to provide `put` and `get` methods.  However, they do provide very similar methods called `add` and `poll`.  Hence, we can *adapt* one of those objects to meet our interface, writing methods that just call the corresponding method of a `java.util.PriorityQueue`.
 
 Here's a sketch.
 
@@ -221,18 +189,9 @@ public class JUPQadapter<T> implements LinearStructure<T> {
 Additional reflections on the `ReportingCounter` class
 ------------------------------------------------------
 
-Let us return to the `ReportingCounter` class that began the reading.
-You may wonder why we've provided a `PrintWriter` field in the
-`ReportingCounter` class.  Why not just use `System.err.print` or
-something equivalent?  Because not every client will want the
-output logged to the same place.  Some might want it on a screen.
-Others might want it in a file with a particular name.  (And, perhaps,
-we want logs from different objects in different files.)  By
-including that field, we give the client that control.
+Let us return to the `ReportingCounter` class that began the reading.  You may wonder why we've provided a `PrintWriter` field in the `ReportingCounter` class.  Why not just use `System.err.print` or something equivalent?  Because not every client will want the output logged to the same place.  Some might want it on a screen.  Others might want it in a file with a particular name.  (And, perhaps, we want logs from different objects in different files.)  By including that field, we give the client that control.
 
-But what if the client just wants to say "report about this object to
-the normal report output stream".  We can set up a second constructor that 
-takes only the class to be wrapped.
+But what if the client just wants to say "report about this object to the normal report output stream".  We can set up a second constructor that takes only the class to be wrapped.
 
 ```java
   /**
@@ -248,10 +207,7 @@ takes only the class to be wrapped.
 Wrappers and subclassing
 ------------------------
 
-Our original description of wrapper classes relied on interfaces.  What
-do we do if we want to wrap an existing class, rather than an interface?
-We can still achieve the same goals, although through a slightly different
-mechanism.
+Our original description of wrapper classes relied on interfaces.  What do we do if we want to wrap an existing class, rather than an interface?  We can still achieve the same goals, although through a slightly different mechanism.
 
 Suppose we have a `Box` class, as follows.
 
@@ -314,16 +270,9 @@ public class ReportingBox<T> extends Box<T> {
 Meta-programming and wrappers
 -----------------------------
 
-As you learn new object-oriented languages, you will also discover
-some that provide more direct support for this kind of behavior,
-most often through approaches that require us to write a bit less
-code.
+As you learn new object-oriented languages, you will also discover some that provide more direct support for this kind of behavior, most often through approaches that require us to write a bit less code.
 
-But even when you don't have such language features directly available,
-you can probably find a way to make it easier to generate some kinds
-of wrapper classes.  For example, suppose we find that we regularly
-want to generate reporting versions of structures.  By now, you've
-probably figured out that the code is relatively straightforward.
+But even when you don't have such language features directly available, you can probably find a way to make it easier to generate some kinds of wrapper classes.  For example, suppose we find that we regularly want to generate reporting versions of structures.  By now, you've probably figured out that the code is relatively straightforward.
 
 * We create a constructor that takes a `PrintWriter` for saving
   output, a string for the name, and the object we wrap.
@@ -331,43 +280,18 @@ probably figured out that the code is relatively straightforward.
   out the method name and the parameters.  If the method returns
   a value, we also store and print that value.
 
-That seems to be an *algorithmic* transformation of the underlying
-code.  Hence, we can probably write a program that does the work
-for us.  That is, we could write a program `MakeReporter` that takes
-as input the code for an interface and generates the code for a
-reporter for that interface.  Some work parsing the Java code would
-be required, but it should be within our capabilities.
+That seems to be an *algorithmic* transformation of the underlying code.  Hence, we can probably write a program that does the work for us.  That is, we could write a program `MakeReporter` that takes as input the code for an interface and generates the code for a reporter for that interface.  Some work parsing the Java code would be required, but it should be within our capabilities.
 
-Alternately, we can take advantage of Java's *reflection* capabilities
-to programmatically query the interface.  That is, we can call
-`object.getClass()` to get an object of type [java.lang.Class]({{
-site.java_api }}/java/lang/Object.html) and then use methods like
-`class.getDeclaredMethods()` to find out all of the methods.  We'll
-leave the details of that approach to another day.
+Alternately, we can take advantage of Java's *reflection* capabilities to programmatically query the interface.  That is, we can call `object.getClass()` to get an object of type [java.lang.Class]({{ site.java_api }}/java/lang/Object.html) and then use methods like `class.getDeclaredMethods()` to find out all of the methods.  We'll leave the details of that approach to another day.
 
 Terminology
 -----------
 
-Although we use the term `Wrapper` for this approach, there are a few
-other common terms.  Some call this approach an `Adapter`, in that
-we are adapting the behavior of another object.  Others call it 
-`Delegate` or `Delegator`, in that the wrapper class delegates most
-of the work to another class.  There are also some subtle differences
-that some associate with the different terms; we will leave those as
-an issue for you to explore on your own.
+Although we use the term `Wrapper` for this approach, there are a few other common terms.  Some call this approach an `Adapter`, in that we are adapting the behavior of another object.  Others call it `Delegate` or `Delegator`, in that the wrapper class delegates most of the work to another class.  There are also some subtle differences that some associate with the different terms; we will leave those as an issue for you to explore on your own.
 
 Acknowledgements
 ----------------
 
-This reading appeared in Spring 2019 as a new addition to Samuel
-A.  Rebelsky's material for CSC 207.  Some parts are based on [a
-presentation Rebelsky gave to students about these issues in fall
-2014](https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/2014F/outlines/outline.39.html).
-For example, the diagram of a wrapped class is derived from a diagram
-in that presentation.
+This reading appeared in Spring 2019 as a new addition to Samuel A.  Rebelsky's material for CSC 207.  Some parts are based on [a presentation Rebelsky gave to students about these issues in fall 2014](https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/2014F/outlines/outline.39.html).  For example, the diagram of a wrapped class is derived from a diagram in that presentation.
 
-I found the details of how to implement the "default name" code for
-`ReportingCounter` and `ReportingBox` in answer by [Andrew Logvinov](https://stackoverflow.com/users/966590/andrew-logvinov) to [a similar question on 
-StackOverflow](https://stackoverflow.com/questions/18396927/how-to-print-the-address-of-an-object-if-you-have-redefined-tostring-method).  (I knew that
-it was possible to do this; I had just forgotten how and was too lazy
-to look in the Java documentation.)
+I found the details of how to implement the "default name" code for `ReportingCounter` and `ReportingBox` in answer by [Andrew Logvinov](https://stackoverflow.com/users/966590/andrew-logvinov) to [a similar question on StackOverflow](https://stackoverflow.com/questions/18396927/how-to-print-the-address-of-an-object-if-you-have-redefined-tostring-method).  (I knew that it was possible to do this; I had just forgotten how and was too lazy to look in the Java documentation.)
