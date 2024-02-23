@@ -24,19 +24,29 @@ Exercises
 
 ### Exercise 1: Basic experiments
 
+_Driver: **A**_
+
 Read through `LinearStructureExpt.java` and `LinkedStackExpt.java`.  Summarize what the stack should look like at each step.  (A piece of paper might help.)  Note that the `info` method will print information on the stack (is it empty? is it full? what elements are in the structure?) and the `clear` method will repeatedly call `get` until the structure is empty.
 
 Run `LinkedStackExpt` and see if you get the output that you expect.
 
 ### Exercise 2: A wrapper class
 
+_Driver: **B**_
+
 Skim through `ReportingLinearStructure.java`.  Summarize the main approach of the class.  What ideas from the class might you apply in other situations?  (Pick at least one or two.)
+
+Note that you need not record anything for this problem, other than notes to yourself for future programs.
 
 ### Exercise 3: A faulty implementation
 
-The file `ArrayBasedStack.java` has at least one significant bug.  Identify and correct any bugs you identify.
+_Driver: **A**_
+
+The file `ArrayBasedStack.java` has at least one significant bug. Identify and correct any bugs you identify.
 
 ### Exercise 4: Matching parens
+
+_Driver: **B**_
 
 One useful application of stacks is matching things.  For example, we can match the parens in a Scheme expression as follows:
 
@@ -132,6 +142,8 @@ public class StringUtils {
 
 ### Exercise 5: Exploring linked stacks
 
+_Driver: **A**_
+
 The strategy for implementing a linked stack is relatively straightforward.
 
 * We keep a reference to a node at the top of the stack.  
@@ -149,6 +161,8 @@ b. The file `LinkedStack.java` provides an implementation of linked stacks.  Com
 
 ### Exercise 6: Getting started with linked queues
 
+_Driver: **B**_
+
 The strategy for implementing a linked queue is also relatively straightforward.
 
 * We keep two references: One to the front of the queue and one to the back of the queue.  
@@ -158,6 +172,11 @@ The strategy for implementing a linked queue is also relatively straightforward.
 a. Sketch (that is, write down approximate code on paper, rather than writing code on the computer) implementations of the five basic linear-structure methods: `put`, `get`, `peek`, `isEmpty`, and `isFull`.
 
 b. The file `LinkedQueue` has a partial implementation of this approach.  Finish that implementation.
+
+Submitting
+----------
+
+Please submit your updated code on Gradescope.
 
 For those with extra time
 -------------------------
