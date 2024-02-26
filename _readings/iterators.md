@@ -93,7 +93,7 @@ the client can use the same code no matter which kind of collection they
 are using.
 
 To make things even easier, the designers of Java added a special syntax
-for this type of situation, the for-each loop.
+for this type of situation, the for-each loop. 
 
 ```java
   for String val : stuff {
@@ -104,6 +104,9 @@ for this type of situation, the for-each loop.
 Behind the scenes, the for-each loop behaves the same way that the
 `next`/`hasNext` loop we wrote  earlier works.  It's just a bit easier
 for most of us to read.
+
+As you might expect, this only works if `stuff` implements `Iterable`.
+
 
 Implementing iterators
 ----------------------
@@ -329,6 +332,57 @@ using `next` and `hasNext` or for-each loops.  Their complexities occur
 mostly in terms of how we implement those two operations and other
 optional operations.
 
+In Java, iterables are objects that have/return iterators.
+
+Self Checks
+-----------
+
+### Check 1: Iterating array-based queues (‡)
+
+Sketch or write an iterator for the array-based queue class we recently studied in lab.
+
+### Check 2: List iterators
+
+List iterators are fancier versions of iterators. In addition to allowing us to visit elements in the list, they also permit us to modify the list.
+
+Skim through the documentation for "[`java.util.Iterator`]({{ site.java_api }}/java/util/Iterator.html)" and "[`java.util.ListIterator`]({{ site.java_api }}/java/util/ListIterator.html)".  You should identify the primary methods, their meanings, and any other subtleties.  Make sure that you can answer the following questions.
+
+a. Where, conceptually, is a list iterator relative to the elements of a list?
+
+b. What element does `remove` remove?
+
+c. Suppose we have a list iterator, `lit`, and call `lit.add(x)` and then immediately after call `lit.add(y)`.  In what order will `x` and `y` appear in the list?
+
+d. Suppose we have a list iterator, `lit`, between the b and c in the list [a,b,c] and that it reached the current position through a call to `next`.  Suppose we then call `lit.remove()` and then immediately after call `lit.remove()` again.  What can or should happen?
+
+e. Suppose we have a list iterator, `lit`, between the b and c in the list [a,b,c] and that it reached the current position through a call to `next`.  What should happen if we call `lit.set(x)` and then `set(y)`?
+
+f. Suppose we have a list iterator, `lit`, between the b and c in the list [a,b,c] and that it reached the current position through a call to `next`.  What should happen if we call `lit.set(x)` and then `lit.remove()`?
+
+g. Suppose we have a list iterator, `lit`, between the b and c in the list [a,b,c] and that it reached the current position through a call to `next`.  What should happen if we call `lit.remove()` and then `lit.set(y)`?
+
+h. Can we add an element immediately after creating a new list iterator?
+
+i. Can we remove an element immediately after creating a new list iterator?
+
+j. Can we set an element immediately after creating a new list iterator?
+
+k. Can we add an element when `hasNext` is false?  If so, where is the element added?  If not, why not?
+
+l. Can we set an element when `hasNext` is false?  If so, which element is set?
+
+m. Can we remove an element when `hasNext` is false?  Never?  Sometimes?  Always?
+
+n. Suppose we've created two list iterators, `lit1` and `lit2` for the list [a,b,c], and both are between the a and the b in the list.  If we call `lit1.add(d)`, what should `lit2.next()` return?
+
+o. Suppose we've created two list iterators, `lit1` and `lit2` for the list [a,b,c], and both are between the a and the b in the list.  If we call `lit1.remove()`, what should `lit2.next()` return?
+
+p. Are there any other subtleties that you noticed about these two kinds of iterators?
+
+### Check 3: List iterators, revisited
+
+Check our answers to the previous problems by writing a small program.
+
 Acknowledgements
 ----------------
 
@@ -336,3 +390,5 @@ Most of this reading was newly written in spring 2019.  The section
 on anonymous iterators is closely based on a section in [the reading
 on anonymous inner classes from the fall 2014 version of CSC
 207](https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/2014F/readings/anonymous-inner-classes.html).
+
+The self checks were added in Spring 2024.
