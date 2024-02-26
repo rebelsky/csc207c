@@ -261,6 +261,7 @@
   note:
     - Cut out iterators
     - May need to rewrite to deal with priority queues (sorted arrays?, sorted linked structures?)
+  notes: ../eboards/eboard16.html
   
 - topic: Iterators
   abbrev: iterators
