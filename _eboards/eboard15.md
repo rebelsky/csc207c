@@ -39,7 +39,7 @@ Academic/Scholarly
   _CS Table: ???.
 * Tuesday, 2024-02-27, 8:00--9:00pm, Science 3821.
   _CSC-207 Mentor Session_.
-* Thursday, 2024-02-22, 11:00am, Science JRC 101.
+* Thursday, 2024-02-29, 11:00am, Science JRC 101.
   _PM Osera Convocation_.
 
 Cultural
@@ -68,10 +68,21 @@ Misc
 
 ### Friday PSA
 
+* Take care of yourselves.
+    * Moderation
+    * Individuality
+    * Continue to be great
+* Consent is essential
+
 Setting up Java projects for VSCode
 ----------------------------------
 
 We're going to watch Sam try again. Maybe it will work better this time.
+
+It did!
+
+Note: If Sam updates the main repo, you can pull from into your fork
+using the GUI and then pull from your fork into your clone using `git pull`.
 
 Questions
 ---------
@@ -80,7 +91,27 @@ Questions
 
 ### MP4
 
+Should we be testing private methods?
+
+> Not directly.
+
+> Whoops. Sam sometimes makes bad design decisions. Fixing them
+  can cause problems.
+
+Can we look at the `find` method?
+
+> Done.
+
 ### LAs
+
+I don't feel like getting the LAs done by tonight. Can I have an extension?
+
+> No.
+
+> But you'll be able to submit exactly the same LAs next Friday (as
+  well as others).
+
+### Linear structures
 
 ### Other topics
 
