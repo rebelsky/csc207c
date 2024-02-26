@@ -37,6 +37,8 @@ Exercises
 
 ### Exercise 1: Code reading
 
+_Driver: **A**_
+
 Read through `ArrayBasedQueue.java`.  You will note that the iterator
 is not yet implemented.  That's okay; we'll talk about iterators
 in the near future.  More importantly, you may also note a few
@@ -44,6 +46,8 @@ subtle (or not so subtle) bugs.  If you do, write them down.  If
 not, that's okay, too; we'll work them out in the lab.
 
 ### Exercise 2: Some basic experiments
+
+_Driver: **A**_
 
 Look at `ArrayBasedQueueExpt.java`.  Take notes as to what the queue
 should look like at each step of the first series of procedure
@@ -54,6 +58,8 @@ Run `ArrayBasedQueueExpt` and see if you get the output that you
 expect.
 
 ### Exercise 3: Squashing bugs
+
+_Driver: **A**_
 
 You've probably determined that there seem to be some significant
 bugs in the queue implementation.  Can you tell where they are?
@@ -66,6 +72,8 @@ to return the correct value after some point.  If you need a hint
 as to where to look, ask your instructor or mentor.
 
 ### Exercise 4: Wrap-around in arrays
+
+_Driver: **B**_
 
 If you uncomment the second section of code and reduce the size of
 the queue to, say, 4, you may find that the queue fills before it
@@ -85,6 +93,8 @@ need to change `back`.  You may also need to change the code for
 
 ### Exercise 5: Extending the reporter
 
+_Driver: **B**_
+
 The [reading on wrapper classes](../readings/wrappers) suggested that
 we could make a one-parameter constructor for something liked
 `ReportingLinkedStructure` that (a) sets `pen` to a `PrintWriter`
@@ -95,6 +105,8 @@ Add that code and verify that it works as advertised.  If not, figure
 out how to correct it.
 
 ### Exercise 6: Testing
+
+_Driver: **B**_
 
 Up to now, we've been exploring our linear structures by manually
 comparing actual output to expected output.  As we've learned,
@@ -159,6 +171,8 @@ class IntComparator implements Comparator<Integer> {
 ```
 
 ### Exercise 7: Adapting classes
+
+_Driver: **B**_
 
 a. Remind yourself of the methods specified by our `LinearStructure`
 interface.
