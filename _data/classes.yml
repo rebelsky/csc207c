@@ -286,6 +286,7 @@
     - For lab, may have them implement iterators
     - Note that there are some good questions about iterators at the start
       of the array-based-lists lab.
+  notes: ../eboards/eboard17.html
 
 - topic: Analyzing algorithms
   abbrev: analysis
@@ -299,8 +300,6 @@
     - Counting steps
     - Big-O, formalized
     - Implications of Big-O
-  lab:
-    - page: /labs/empirical-analysis.html
   reminders:
     - Copy PM's lab (I may have done that)
     - Find an appropriate reading (CLRS?)
