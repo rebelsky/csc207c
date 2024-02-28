@@ -18,7 +18,7 @@ _Approximate overview_
 Preliminaries
 -------------
 
-* I've revised my target for returning the first set of LAs.
+* I've revised my target for returning the first set of LAs. 
 * There is no reading for Friday.
 * Those of you planning to declare CS majors should make sure to fill
   out the form by 5pm today. 
@@ -26,6 +26,90 @@ Preliminaries
     * If you don't get an advisor, you won't be able to declare a CS major.
     * If you don't declare a CS major, you probably won't be able to take
       any more CS classes.
+
+### Some comments from LAs
+
+* Please try to use realistic examples rather than contrived ones.
+* Please cite carefully. I saw code from labs, which suggests that it
+  was done with someone else, that was not cited.
+* Make sure to include code. I will not follow links when grading.
+* Don't grab code from random places on the Interweb.
+* If you can't click the academic honesty statement, we should chat. You
+  can find another example to use.
+* Please don't include your name in LA answers.
+
+Code concerns
+
+* **Do not use double values for values that should be exact.**
+* Do not print error messages from utility functions. We strive to
+  be better than 
+* Please follow Java standards. For example, capitalize class names.
+* Please don't double-space your code.
+
+Encapsulation
+
+* Two key concepts, which are ... TPS.
+* Why doesn't Sam like the following? (More TPS)
+
+```
+public class Monkey {
+  /**
+   * The monkey's name.
+   */
+  String name;
+
+  /**
+   * The monkey's age.
+   */
+  int age;
+
+  /**
+   * Build a new monkey.
+   */
+  public Monkey(String name, int age) {
+    if (this.age < 0) {
+      System.err.println("Invalid age!");
+    }
+    if (null == this.name ) {
+      System.err.println("Invalid name!");
+    }
+    this.name = name;
+    this.age = age;
+  } // Monkey(String, int)
+
+  /**
+   * Get the name.
+   */
+  public String getName() {
+    return this.name;
+  } // getName()
+
+  /**
+   * Set the name.
+   */
+  public void setName(String newName) {
+    this.name = newName;
+  } // setName(String)
+
+  /**
+   * Get the age.
+   */
+  public int getAge() {
+    return this.age;
+  } // setAge()
+
+  /**
+   * Set the age.
+   */
+  public void setAge(int newAge) {
+    this.age = newAge;
+  } // setAge(int)
+} // class Monkey
+```
+
+Subtype polymorphism
+
+* Is not the same as inheritance.
 
 ### New LAs
 
@@ -39,7 +123,7 @@ Preliminaries
 ### New MP
 
 * Borrowed from elsewhere and then updated.
-* We'll look at it.
+* We'll look at it together.
 
 ### Upcoming work
 
