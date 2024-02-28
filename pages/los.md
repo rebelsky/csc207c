@@ -23,7 +23,7 @@ I expect that by the end of the semester, you will have mastered the basics of o
 * describe and use four pillars of object-oriented design: 
     * encapsulation (_OOP LO #01: Encapsulation_),  
     * inheritance, representing a form of the **is-a** relationship (_OOP LO #02: Inheritance_), 
-    * composition, representation a form of the **has-a** relationship (_OOP LO #03: Composition_), and
+    * composition, representing a form of the **has-a** relationship (_OOP LO #03: Composition_), and
     * polymorphism, including both 
          * parametric polymorphism (_OOP LO #04: Parametric Polymorphism_) and
          * subtype polymorphism (_OOP LO #05: Subtype Polymorphism_);
@@ -78,7 +78,7 @@ I expect that by the end of the semester, you will have significantly extended y
 
 I expect that by the end of the semester, you will be a competent beginning software developer.  In particular, in addition to having the skills described above, I expect that you will be able to
 
-* work with one or more other students on the creation of a program (_Development LO #02: Collaboration_);
+* work with one or more other students on the creation of a program (_Development LO #01: Collaboration_);
 * manage development of multi-file programs in Java using a build tool (in our case, Maven) (_Development LO #02: Build Tools_);
 * design, implement, and run unit tests (_Development LO #03: Unit Testing_);
 * develop software using an integrated development environment (in our case, Visual Studio Code) (_Development LO #04: IDE_);
@@ -90,5 +90,4 @@ I expect that by the end of the semester, you will be a competent beginning soft
 * signal and recover from errors using exceptions (_Development LO #10: Exceptions_);
 * responsibly incorporate code that you did not write into your own program (_Development LO #11: Ethical Reuse_); and
 * understand and explain the responsibilities of a software designer (_Development LO #12: Professional Ethics_).
-
 
