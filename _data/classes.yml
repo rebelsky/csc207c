@@ -303,6 +303,7 @@
   reminders:
     - Copy PM's lab (I may have done that)
     - Find an appropriate reading (CLRS?)
+  notes: ../eboards/eboard18.html
 
 - topic: Analyzing algorithms, continued
   abbrev: analysis-continued
