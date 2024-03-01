@@ -18,7 +18,7 @@ _Approximate overview_
 Preliminaries
 -------------
 
-* I've revised my target for returning the first set of LAs. 
+* I've revised my target for returning the first set of LAs. (Tonight.)
 * There is no reading for Friday.
 * Those of you planning to declare CS majors should make sure to fill
   out the form by 5pm today. 
@@ -41,27 +41,44 @@ Preliminaries
 Code concerns
 
 * **Do not use double values for values that should be exact.**
-* Do not print error messages from utility functions. We strive to
-  be better than 
+    * `int` or `long` values are exact. `double` values are not.
+* Do not print error messages from utility functions. 
+    * Return a special value.
+    * Use exceptions.
 * Please follow Java standards. For example, capitalize class names.
-* Please don't double-space your code.
+* Please don't double-space your code. (Yes, it happens when you copy
+  and paste from some applications. You are prospective computer science 
+  majors; you should be able to figure out how to deal with the issue.)
 
 Encapsulation
 
 * Two key concepts, which are ... TPS.
-* Why doesn't Sam like the following? (More TPS)
+    * Limit access to the internal structure of the object (i.e., the
+      fields) so that client codes doesn't change things unexpectedly.
+        * We may have expectations about the state of the fields; this can
+          lead to crashes.
+        * We can change the implementation without affecting the client
+          code.
+    * All the code and fields that go together are in one thing (class).
+* Also
+    * This also helps us separate our code.
+    * As designers, we can abstract away a bit.  (Abstraction means that
+      client coders can see *what* we do without knowing *how*.)
+        * Protect patent rights.
+        * Protect ourselves from being made fun of.
+* Why doesn't Sam like the following/why won't he give it credit? (More TPS)
 
 ```
 public class Monkey {
   /**
    * The monkey's name.
    */
-  String name;
+  private String name;
 
   /**
    * The monkey's age.
    */
-  int age;
+  private int age;
 
   /**
    * Build a new monkey.
@@ -107,6 +124,12 @@ public class Monkey {
 } // class Monkey
 ```
 
+* The object doesn't really have any purpose other than storing two
+  values. (Encapsulation doesn't serve the programmer here.)
+* We could get rid of the `setAge` function.
+* Printing error messages is awful. And we still return an object from
+  the constructor.
+
 Subtype polymorphism
 
 * Is not the same as inheritance.
@@ -117,8 +140,10 @@ Subtype polymorphism
   redos of the prior LAs. (I realize you may not get the originals
   in time to redo. However, not all of you submitted them in the
   first go-round.)
-* One LA is not like the others. This one asks you to do something new.
-  But you have from now until Friday to do it.
+* One LA is not like the others (ADT design/PUMishment). This one asks 
+  you to do something new.  But you have from now until Friday to do it.
+* If there's ever an LO for which you want me to release an LA, let me
+  know.
 
 ### New MP
 
@@ -130,10 +155,11 @@ Subtype polymorphism
 * Wednesday, 2024-02-28, 11pm, [MP4](../mps/mp04)
     * [_Submit MP4 on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4137145/)
 * Friday, 2024-03-01, 1pm: Submit Today's Lab
-    * [_Submit iterators lab on Gradescope_](...)
+    * [_Submit iterators lab on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4170708/)
 * Friday, 2024-03-01, 11pm, Submit the second set of LAs.
-    * _Sorry, no Gradescope links_
-* Friday, 2024-03-01, 11pm, MP4 post-reflection
+    * _Sorry, no Gradescope links; there are too many_
+* Friday, 2024-03-01, 11pm, MP4 post-reflection 
+    * [_Submit MP4 pre-reflection on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4136968/)
 * Friday, 2024-03-01, 11pm, MP5 pre-preflection
 
 ### Tokens
@@ -149,8 +175,6 @@ Academic/Scholarly
 
 Cultural
 
-* Saturday, 2024-03-02, 2pm, in Sebring Lewis.
-  _Orchestra_, Bartok. Vegetables. More!
 * Monday, 2024-03-04, Sebring Lewis.
   _Des Moines Metropolitan Opera: Beauty and the Beast_
 * Thursday, 2024-03-07, JRC 101, 8:00-9:30 pm.
@@ -161,6 +185,12 @@ Cultural
   _Met Opera: Verdi's La Forza del Destino_.
 
 Peer
+
+* Saturday, 2024-03-02, ???, either at the Tennis Courts are in the Field
+  House.
+  _Tennis (men's and women's)
+* Saturday, 2024-03-02, 2pm, in Sebring Lewis.
+  _Orchestra_, Bartok. Vegetables. More!
 
 Wellness
 
@@ -180,13 +210,30 @@ Misc
 Questions
 ---------
 
-### Administrative
-
 ### MP4
+
+The specifications said that we should return false when `remove` is
+called with a key not in the array, but one of the unit tests tests to
+see if `remove` throws an exception in that case. What should I do?
+
+> Ignore the failed test.  Maybe Self-Gov the failed test.
+
+The specifications said that we should not test the `toString` method.
+However, I see some tests of the toString method, including one by my
+instructor. What should I do?
+
+> Praise your instructor for writing such an amazing test.
+
+### Administrative
 
 ### LAs
 
 ### Iterators
+
+In the ArrayBasedStack example, if the underlying array is private, what
+do we do? Can we still have a link to the Stack or need we link to the array?
+
+> I'll chat with you about it after class.
 
 ### Other topics
 
