@@ -312,8 +312,7 @@
   subjects:
     - Practice with Big-O
     - Comparing Big-O and empirical approaches
-  lab:
-    - page: /labs/complexity.html
+  notes: ../eboards/eboard19.html
 
 - topic: Analyzing recursive algorithms
   abbrev: analysis-recursive
