@@ -5,6 +5,18 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester._
 
+## [CSC-207-02 2024Sp] Pre-reflections for MP5
+
+Dear Array Associators,
+
+I've "graded" all of your pre-reflections for MP5. We'll discuss some key issues in class tomorrow. Feel free to bring new questions.
+
+I've answered all of the questions I received and put them at the bottom of [the mini-project page](../mps/mp05).
+
+See you Monday!
+
+-- SamR
+
 ## [CSC-207-02 2024Sp] Finding SamR today (Thursday) (2024-02-01)
 
 Dear Encryptors and Decryptors,
