@@ -322,6 +322,10 @@
     - Iterative analysis, revisited
     - Recurrence relations
     - Approaches to recurrence relations
+  reading:
+    - CLRS 3 (Characterizing Running Times)
+    - CLRS 4 (intro)
+    - CLRS 4.3 -- I-4.5 (Methods for solving recurrences)
   lab:
     - page: /labs/analyze-recursive.html
   reminders:

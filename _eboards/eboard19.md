@@ -7,22 +7,34 @@ link: true
 ---
 # {{ page.title }}
 
-**You are probably being recorded, perhaps even transcribed.**
+**You are being recorded and transcribed.**
 
 _Approximate overview_
 
 * Administrivia
 * Some notes on MP5
 * Questions
-* Alumni visit
+* Algorithm analysis
+    * Introduction
+    * Terminology and informal notions
+    * Some common bounds
+    * Analyzing iterative algorithms
+    * Analyzing nested loops
+    * A more formal definition
 
 Preliminaries
 -------------
 
-* I hope you enjoyed the sunny weekend.
+* I hope you enjoyed the sunny (and windy) weekend.
+* The new tokens assignment is posted. I'm working on copying things
+  over from the old tokens assignment.
 
 ### Upcoming work
 
+* Wednesday, 2024-03-06, 1pm, Readings
+    * CLRS 3 (Characterizing Running Times)
+    * CLRS 4 (intro)
+    * CLRS 4.3 -- I-4.5 (Methods for solving recurrences)
 * Wednesday, 2024-03-06, 11pm, [MP5](../mps/mp05)
     * [_Submit MP5 on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4180584/)
 * Friday, 2024-03-08, 11pm, Third set of LAs.
@@ -43,6 +55,9 @@ Academic/Scholarly
   _CS Table_.
 * Tuesday, 2024-02-27, 8:00--9:00pm, Science 3821.
   _CSC-207 Mentor Session_.
+* Thursday, 2024-03-07, 11:00 a.m.,JRC 101.
+  _Scholars' Convocation: An American Genocide: The United States and 
+   the California Indian Catastrophe, 1846-1873_
 
 Cultural
 
@@ -56,8 +71,13 @@ Cultural
   _Middle of Everywhere_.
 * Saturday, 2024-03-09, Harris Cinema, ??:??
   _Met Opera: Verdi's La Forza del Destino_.
+* Saturday, 2024-03-09, 2:00 pm, Sebring-Lewis.
+  _ZAWA!_ (Flute concert).
 
 Peer
+
+* Saturday, 2024-03-09, Field House.
+  _Men's Tennis vs. Central._
 
 Wellness
 
@@ -67,6 +87,10 @@ Wellness
   _Yoga in the Museum._
 * Tuesday, 2024-03-05, 4pm, BRAC P103 (Multipurpose Dance Studio):
   _Yoga_.
+* Wednesday, 2024-03-06, 4pm, JRC 101.
+  _Intimacy Stages_.
+* Friday, 2024-03-08, noon, JRC 101.
+  _Wellness Bingo_.
 
 Misc
 
@@ -86,20 +110,26 @@ Some notes on MP5
 * Reflection on your responsibilities as a software developer.
 * Some consideration of APIs (Is the one you were given good? How could
   it be improved?)
+* Give you the start of something that could become a bigger personal
+  project.
+
+### Other comments
+
+Once again, a reminder that _Without looking at any resources (e.g.,
+readings, labs, your notes), write down everything you know that
+might be useful for this assignment_ exists to encourage you to
+start dumping your brain. You can also use it as an opportunity to
+do "free writing" on some of the key methods or classes.
+
+Also: I ask you do to the pre-reflection to encourage you to read
+the assignment carefully a few days before it is due. Responses
+that say "I haven't really read it" should not suffice.
+
+A lot of you seem to be reluctant to get started. What would help you? Should I reserve time on Fridays for demoing how to get started?
+
+Also: This assignment is less scary than it looks!
 
 ### Questions
-
-In the `AACCategory` class methods do we have to use `getCategory` to check if the image is in the category in the `getImages`, `getText`, and `hasImage` function or are we making an assumption that everything that we call in this class is part of the same category?
-
-> You do not need to use it to check if an image is in a particular category.
-  Rather, we use it primarily in case the client code needs to identify
-  the category (e.g., to speak it aloud).
-
-> We wil use it primarily to support the `getCurrentCategory` method in
-  `AACMappings`.
-
-> In a hidden design issue, the UI looks for a category of `""` to decide
-  whether it's working with the top level.
 
 Questions
 ---------
@@ -110,6 +140,28 @@ Questions
 
 ### Other topics
 
-Big-O Notation
---------------
+Analyzing algorithms
+--------------------
+
+Our goal as programmers / computer scientists is to build algorithms
+that (help us) solve problems.  We also build data structures to help
+with that.
+
+We want to know things about our algorithms, so that we can, for
+example, decide which algorithm is best for our particular problem.
+
+Terminology/Informal notions
+----------------------------
+
+Common classes of functions
+---------------------------
+
+Analyzing iterative algorithms
+------------------------------
+
+Analyzing loops
+---------------
+
+A more formal definition
+------------------------
 
