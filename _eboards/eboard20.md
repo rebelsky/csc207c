@@ -24,6 +24,7 @@ Preliminaries
 * The new tokens assignment is posted. I'm working on copying things
   over from the old tokens assignment.
 * Sorry that grading is so slow. I'm trying!
+* MP6 will be coming out tomorrow. Sorry for the delay.
 
 ### Upcoming work
 
@@ -115,7 +116,7 @@ for (int i = 1; i <= n; i *= 2) {
 
 Is this O(2.5^n) O(n^2), O(nlogn), O(n), O(logn), O(1) or ...?
 
-It's definitely O(n^100). We want a closer bound.
+It's definitely O(n^100). We want a tighter bound.
 
 A more formal definition
 ------------------------
