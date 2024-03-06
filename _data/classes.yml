@@ -326,11 +326,10 @@
     - CLRS 3 (Characterizing Running Times)
     - CLRS 4 (intro)
     - CLRS 4.3 -- I-4.5 (Methods for solving recurrences)
-  lab:
-    - page: /labs/analyze-recursive.html
   reminders:
     - Need to write the lab (or find one in PM).  Did I do so?
     - Find a reading?
+  notes: ../eboards/eboard20.html
 
 - topic: Anonymous functions
   abbrev: lambda
