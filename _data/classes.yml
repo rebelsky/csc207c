@@ -350,6 +350,7 @@
   reminders:
     - May want to rewrite the lab to use priority queues or sorted lists.
     - May want to add a reading on sorted lists.  Or should that be an exercise?
+  notes: ../eboards/eboard21.html
 
 - topic: Searching
   abbrev: searching
@@ -374,26 +375,6 @@
   lab:
     - page: /labs/binary-search.html
 
-- topic: Sorting
-  abbrev: sorting
-  summary: |
-    We return to the problem of sorting a list or array.
-  subjects:
-    - The problem of sorting
-    - Testing sorting algorithms
-    - Insertion sort
-    - Selection sort
-    - Generic sorts
-  reading:
-    - page: /readings/sorting.html
-  reminders:
-    - Some class time talking about unit tests
-
-- topic: Class cancelled
-  abbrev: cancelled
-  summary: |
-    Class is cancelled for an early start to spring break.
-
 - topic: Merge sort
   abbrev: mergesort
   summary: |
@@ -410,6 +391,21 @@
   reminders:
     - Use PM's lab.  (Why?)
 
+- topic: Sorting
+  abbrev: sorting
+  summary: |
+    We return to the problem of sorting a list or array.
+  subjects:
+    - The problem of sorting
+    - Testing sorting algorithms
+    - Insertion sort
+    - Selection sort
+    - Generic sorts
+  reading:
+    - page: /readings/sorting.html
+  reminders:
+    - Some class time talking about unit tests
+
 - topic: Quicksort
   abbrev: quicksort
   summary: |
@@ -423,6 +419,11 @@
     - page: /readings/quicksort.html
   lab:
     - page: /labs/quicksort.html
+
+- topic: Pause for breath
+  abbrev: pause
+  summary: |
+    We pause
 
 - topic: Ethical considerations
   abbrev: ethics
