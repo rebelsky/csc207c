@@ -26,7 +26,7 @@ e. Create a new class, `ListUtils`, that you will use for some of the exercises.
 
 ### Exercise 1: Reviewing the reading
 
-_Driver: **Alternating**
+_Driver: **Alternating**_
 
 In the section entitled "Ideal Use Case for Lambda Expressions" in
 the reading, the authors present nine different approaches to
