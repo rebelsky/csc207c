@@ -5,6 +5,22 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester._
 
+## [CSC-207-02 2024Sp] Pop Quiz! (2024-03-08)
+
+Dear Recurrence Relators (not Recurrence Realtors),
+
+Happy Friday! I look forward to seeing you this afternoon.
+
+Yes, there will be a pop quiz today on recurrence relations. It will take place from 1:00 to 1:20.
+
+If you want extra time on the quiz (either because you have an accommodation or because you just want extra time), you may show up at 12:45.
+
+If you aren't able to make it to class today, there will be a makeup available in the near future.
+
+Regards,
+
+-- SamR
+
 ## [CSC-207-02 2024Sp] Pre-reflections for MP5
 
 Dear Array Associators,
