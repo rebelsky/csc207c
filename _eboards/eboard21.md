@@ -11,10 +11,10 @@ link: true
 
 _Approximate overview_
 
-* Pop Quiz
-* Administrivia
-* Questions
-* Lab
+* Pop Quiz [20 min]
+* Administrivia [??]
+* Questions [??]
+* Lab [Whatever's left]
 
 Preliminaries
 -------------
@@ -24,6 +24,8 @@ Preliminaries
 * The next set of LAs will be due next Friday. Sorry about the confusion.
 * If you have questions for me on a homework assignment, the best thing
   to do is to give me a link to your GitHub repo along with your question.
+* Your pop quiz is intended to serve as your "analyze recursive functions
+  LA". If you didn't get it today, you'll have another chance.
 * I tried to print today's quiz. Unfortunately, I'd given my keys to
   someone else and couldn't get to the printer. Sorry.
 
@@ -66,7 +68,7 @@ Peer
 * Friday--Saturday, 2024-03-08 to 2024-03-09, 7:30 p.m.
   _Songs of the Scarlet and Wayback_ (play).
 * Friday, 2024-03-08, 4:00--6:00 p.m. Art Museum
-  _Women's Day Presentations_.
+  International _Women's Day Presentations_.
 * Saturday, 2024-03-09, Field House.
   _Men's and Women's Tennis vs. Central._
 
@@ -85,6 +87,10 @@ Misc
 
 ### Friday PSA
 
+* Please take of yourselves; others care about you.
+* Please be moderate in all that you do.
+* Obtain consent. Go beyond consent.
+
 Questions
 ---------
 
@@ -92,9 +98,29 @@ Questions
 
 ### MP5
 
-### Lambdas 
+### Lambdas
+
+What's an abstract method?
+
+> An abstract method is one that is not implemented; it's provided as
+  a signature only.
+
+> Like what we've seen in what I've told you about interfaces.
+
+> Java also permits you to put methods with code in interfaces and allows
+  you to skip implementations in clsases, so there's a distinction between
+  methods with code and methods without code. The latter are abstract.
 
 ### Other topics
 
 Lab
 ---
+
+To create the list of `Person` objects, can I just write
+`List<Person> people = Person.createRoster()`?
+
+> Sure. However, you get a relatively boring set of people.
+
+> Be careful not to use `Person.createRooster()`. The last time I checked,
+  roosters weren't people.
+
