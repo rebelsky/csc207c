@@ -26,7 +26,7 @@ e. Create a new class, `ListUtils`, that you will use for some of the exercises.
 
 ### Exercise 1: Reviewing the reading
 
-_Driver: **A**_
+_Driver: **Alternating**
 
 In the section entitled "Ideal Use Case for Lambda Expressions" in
 the reading, the authors present nine different approaches to
@@ -36,17 +36,15 @@ this in `JTLambdaExperiments`.
 
 You will likely need to 
 
-* Make a copy of the [`Person`](https://docs.oracle.com/javase/tutorial/java/javaOO/examples/Person.java) class associated with the reading, which is available at <https://docs.oracle.com/javase/tutorial/java/javaOO/examples/Person.java>. (I apologize for the use of a sex binary in the sample code.)
+* _Driver **A**_ Make a copy of the [`Person`](https://docs.oracle.com/javase/tutorial/java/javaOO/examples/Person.java) class associated with the reading, which is available at <https://docs.oracle.com/javase/tutorial/java/javaOO/examples/Person.java>. 
 * In the `main` method of `JTLambdaExperiments`, create a list of `Person` objects.  (We'd recommend an `ArrayList`.)
   You can see the `createRoster` method in `Person` for an example.
-* For each static method in the reading, add the method to
-  `JTLambdaExperiment` and then add a call to that method to `main` to see 
-  that the method behaves as expected.
+* _Driver **A** (1, 3, 5, 7, 9) and **B** (2, 4, 6, 8).) For each static method in the reading, add the method to `JTLambdaExperiment` and then add a call to that method to `main` to see that the method behaves as expected.
 
 *Note*: If you are adding interfaces and classes, you should do so outside
 the body of `JTLambdaExperiments`.
 
-*Note*: I apologize for the gender binary in the `Person` class.
+*Note*: I apologize for the sex binary in the `Person` class.
 
 ### Exercise 2: Selecting values
 
