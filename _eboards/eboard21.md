@@ -1,8 +1,8 @@
 ---
-title: "Eboard 20: Analyzing recursive procedures"
-number: 20
+title: "Eboard 21: Anonymous classes (functions?)"
+number: 21
 section: eboards
-held: 2024-03-06
+held: 2024-03-08
 link: true
 ---
 # {{ page.title }}
@@ -11,20 +11,18 @@ link: true
 
 _Approximate overview_
 
+* Pop Quiz
 * Administrivia
 * Questions
-* Review of our loop problem from last class
-* A more formal definition of Big-O
-* Analyzing recursive procedures
+* Lab
 
 Preliminaries
 -------------
 
 * Looking ahead: You will be getting your sleep disrupted this weekend.
-* The new tokens assignment is posted. I'm working on copying things
-  over from the old tokens assignment.
-* Sorry that grading is so slow. I'm trying!
-* MP6 will be coming out tomorrow. Sorry for the delay.
+* The next set of LAs will be due next Friday. Sorry about the confusion.
+* If you have questions for me on a homework assignment, the best thing
+  to do is to give me a link to your GitHub repo along with your question.
 
 ### Upcoming work
 
@@ -33,6 +31,7 @@ Preliminaries
 * Friday, 2024-03-08, 1pm, Readings
     * [The Java Tutorial: Lambda expressions](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions)
     * Review [Priority Queues](../readings/priority-queues).
+* Friday, 2024-03-08, 11pm, Third set of LAs.
 * Friday, 2024-03-08, 11pm, MP5 post-reflection
 * Friday, 2024-03-08, 11pm, MP6 pre-reflection
 * Sunday, 2024-03-10, 11pm, [MP1](../mp1) redo
@@ -41,7 +40,6 @@ Preliminaries
 * Sunday, 2024-03-10, 11pm, [MP2](../mp2) redo
     * [_Submit MP2 redo on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4180615/)
     * Please ask if you're confused about something.
-* Friday, 2024-03-15, 11pm, Third set of LAs.
 
 ### Tokens
 

@@ -41,7 +41,6 @@ Preliminaries
       the important stuff is happening.
 * Wednesday, 2024-03-06, 11pm, [MP5](../mps/mp05)
     * [_Submit MP5 on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4180584/)
-* Friday, 2024-03-08, 11pm, Third set of LAs.
 * Friday, 2024-03-08, 11pm, MP5 post-reflection
 * Friday, 2024-03-08, 11pm, MP6 pre-reflection
 * Sunday, 2024-03-10, 11pm, [MP1](../mp1) redo
@@ -50,6 +49,7 @@ Preliminaries
 * Sunday, 2024-03-10, 11pm, [MP2](../mp2) redo
     * [_Submit MP2 redo on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4180615/)
     * Please ask if you're confused about something.
+* Friday, 2024-03-15, 11pm, Third set of LAs.
 
 ### Tokens
 
