@@ -1,7 +1,7 @@
 ---
 title: Anonymous functions
 summary: |
-  We explore the use of anonymous functions in Java.
+  We explore the use of anonymous functions (or at least anonymous functional classes) in Java.
 ---
 ## Preparation
 
@@ -20,11 +20,13 @@ e. Fork and clone the repository at <https://github.com/Grinnell-CSC207/lab-anon
 
 f. Review the code in the repository.
 
-e. Create a new class, `ListUtils`, that you will use for some of the
+e. Create a new class, `ListUtils`, that you will use for some of the exercises.
 
 ## Exercises
 
 ### Exercise 1: Reviewing the reading
+
+_Driver: **A**_
 
 In the section entitled "Ideal Use Case for Lambda Expressions" in
 the reading, the authors present nine different approaches to
@@ -34,7 +36,7 @@ this in `JTLambdaExperiments`.
 
 You will likely need to 
 
-* Make a copy of the [`Person`](https://docs.oracle.com/javase/tutorial/java/javaOO/examples/Person.java) class associated with the reading, which is available at <https://docs.oracle.com/javase/tutorial/java/javaOO/examples/Person.java>.
+* Make a copy of the [`Person`](https://docs.oracle.com/javase/tutorial/java/javaOO/examples/Person.java) class associated with the reading, which is available at <https://docs.oracle.com/javase/tutorial/java/javaOO/examples/Person.java>. (I apologize for the use of a sex binary in the sample code.)
 * In the `main` method of `JTLambdaExperiments`, create a list of `Person` objects.  (We'd recommend an `ArrayList`.)
   You can see the `createRoster` method in `Person` for an example.
 * For each static method in the reading, add the method to
@@ -47,6 +49,8 @@ the body of `JTLambdaExperiments`.
 *Note*: I apologize for the gender binary in the `Person` class.
 
 ### Exercise 2: Selecting values
+
+_Driver: **B**_
 
 a. In `ListUtils`, write a static generic method, `select(List<T>
 vals, Predicate<T> pred)`, that creates a new `ArrayList<T>` that contains
@@ -61,6 +65,8 @@ in `strings` which contain two vowels in a row.  Once again, make
 sure to define your predicate anonymously.
 
 ### Exercise 3: Removing values
+
+_Driver: **A**_
 
 Rather than building a new list by selecting values, as in the
 previous problem, we could also write a method that mutates an
@@ -79,6 +85,8 @@ c. Extend your program to instead remove the values in strings which
 contain two vowels in a row.
 
 ### Exercise 4: Extrema
+
+_Driver: **B**_
 
 Another common generic task is to find the largest (or smallest)
 value in a list.
