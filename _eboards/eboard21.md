@@ -24,6 +24,8 @@ Preliminaries
 * The next set of LAs will be due next Friday. Sorry about the confusion.
 * If you have questions for me on a homework assignment, the best thing
   to do is to give me a link to your GitHub repo along with your question.
+* I tried to print today's quiz. Unfortunately, I'd given my keys to
+  someone else and couldn't get to the printer. Sorry.
 
 ### Upcoming work
 
@@ -35,7 +37,9 @@ Preliminaries
     * Please ask if you're confused about something.
 * Sunday, 2024-03-10, 11pm, [MP5](../mps/mp05)
     * [_Submit MP5 on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4180584/)
-* Sunday, 2024-03-10, 11pm, Readings
+* Sunday, 2024-03-10, 11pm, Readings (no reflections)
+    * [Searching](../readings/search)
+    * [Loop Invariants](../readings/loop-invariants)
 * Tuesday, 2024-03-12, 11pm, MP5 post reflection
 * Friday, 2024-03-15, 11pm, Third set of LAs.
 
@@ -59,7 +63,7 @@ Cultural
 
 Peer
 
-* Friday--Saturday, 2024-03-07 to 2024-03-09, 7:30 p.m.
+* Friday--Saturday, 2024-03-08 to 2024-03-09, 7:30 p.m.
   _Songs of the Scarlet and Wayback_ (play).
 * Friday, 2024-03-08, 4:00--6:00 p.m. Art Museum
   _Women's Day Presentations_.
@@ -68,8 +72,6 @@ Peer
 
 Wellness
 
-* Friday, 2024-03-08, noon, JRC 101.
-  _Wellness Bingo_.
 * Tuesday, 2024-03-12, noon-1pm, BRAC P103.
   _HIIT and Strength Fitness Class._
 * Tuesday, 2024-03-12, 12:15--12:50, Bucksbaum 131.
@@ -80,6 +82,8 @@ Wellness
 Misc
 
 ### Other good things to do (no tokens)
+
+### Friday PSA
 
 Questions
 ---------
