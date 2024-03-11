@@ -131,12 +131,40 @@ For each s from 1 to 32
       assert(binarySearch(2*i, array) == i)
       // Make sure that odd values are not in the array
       assertException(binarySearch(2*i+1, array))
-  assertException(-1, array)
+  assertException(binarySearch(-1, array))
 ```
 
 Implement this test.  Note that you need not use JUnit for the testing;
 you can just write code that prints error messages if any of the assertions
-fail.
+fail. 
+
+Note also that `assert` and `assertException` are not intended to be real 
+procedures. Rather, they indicate what you should be checking. 
+
+For example, `assert(binarySearch(2*i, array) == i)` could be rendered
+as
+
+```
+try {
+  int result = binarySearch(2*i, array);
+  if (result != i) {
+    System.err.println("binarySearch(" + 2*i + ") returned " + result);
+  } // if
+} catch (Exception e) {
+  System.err.println("binarySearch(" + 2*i + ") threw an unexpected exception");
+} // try/catch
+```
+
+Similarly, `assertException(binarySearch(2*i+1, array))` could be rendered as
+
+try {
+  int result = binarySearch(2*i + 1, array);
+  System.err.println("binarySearch(" + (2*i+1) + ") failed to throw an exception");
+} catch (Exception e) {
+} // try/catch
+
+```
+```
 
 If the test finds any bugs in your implementation of binary search, repair 
 those bugs.
