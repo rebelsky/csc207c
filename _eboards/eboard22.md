@@ -54,6 +54,10 @@ Cultural
 
 Peer
 
+* Friday at 7pm, Nepali students association celebrating Shivaratri
+    * RSVP required.
+    * Contract your classmate for the link.
+
 Wellness
 
 * Tuesday, 2024-03-12, noon-1pm, BRAC P103.
@@ -78,4 +82,56 @@ Questions
 
 Lab
 ---
+
+### for-each loops
+
+How to do a for-each loop in Java.
+
+```
+for (T val : values) {
+} // for
+```
+
+That's right! There are no indices! (Or indexes!)
+
+### Iterating arrays
+
+Note: Although you can iterate arrays with for-each, they are not
+`Iterable` objects.
+
+### Assertions in exercise 3
+
+`assert` and `assertThrows` are not intended to be real procedures.
+Rather, they are an indication that you should check that.
+
+For example, `assert(binarySearch(2*i, array) == i)` could be rendered
+as
+
+        try {
+          int result = binarySearch(2*i, array);
+          if (result != i) {
+            System.err.println("binarySearch(" + 2*i + ", " + 
+              Arrays.toString(array) + ") returned " + result);
+          }
+        } catch (Exception e) {
+          System.err.println("binarySearch(" + 2*i + ", " +
+            Arrays.toString(array) + ") threw an unexpected exception");
+        } // try/catch
+
+Similarly, `assertThrows(binarySearch(2*i+1, array))` could be rendered as
+
+        try {
+          int result = binarySearch(2*i + 1, array);
+          System.err.println("binarySearch(" + (2*i+1) + ", " +
+              Arrays.toString(array) + ") failed to throw an exception");
+        } catch (Exception e) {
+        }
+
+### Related LOs
+
+* Algorithm LO#1: Sequential search
+* Algorithm LO#2: Binary search
+
+How should I write the code to build all the arrays?
+
 
