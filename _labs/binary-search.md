@@ -9,6 +9,8 @@ summary: |
 Preparation
 -----------
 
+_Driver for preparation: **A**_
+
 a. You are likely to find it useful to have <ulink
 url='../readings/search.html'>the corresponding reading</ulink>
 open in another window.
@@ -42,6 +44,8 @@ Exercises
 ---------
 
 ### Exercise 1: Generalized linear search, revisited 
+
+_Driver: **B**_
 
 You may recall from the reading that we often search arrays for
 values (or just the first value) that meets some predicate.  At
@@ -79,6 +83,8 @@ f. Check your answer experimentally.
 
 ### Exercise 2: Binary Search in arrays of integers
 
+_Driver: **A**_
+
 Although the reading introduced a variety of techniques for designing
 generalized search algorithms, it's probably easiest to start by
 focusing on a single type.
@@ -109,6 +115,8 @@ public static int binarySearch (int[] vals, int i) throws Exception {
 ```
 
 ### Exercise 3: Testing our algorithm
+
+_Driver: **B**_
 
 Evidence suggests that (a) many programmers have difficulty implementing
 binary search coorectly and (b) many programmers do only casual testing
@@ -141,6 +149,8 @@ by Jon Bentley in a _Programming Pearls_ column.
 
 ### Exercise 4: Care In checking midpoints
 
+_Driver: **A**
+
 As binary search is phrased in the reading, when we note that the
 middle element is not equal to the target value, we either set `ub`
 to `mid-1` or `lb` to `mid+1` (perhaps both).  But programmers often
@@ -151,11 +161,15 @@ Determine experimentally what happens if you leave out the `+1` and
 
 ### Exercise 5: An alternate approach
 
+_Driver: **B**_
+
 In implementing binary search, you either wrote a loop or a
 recursive procedure.  Write a second version of binary search
 that uses the other approach.
 
 ### Exercise 6: "Timing" search
+
+_Driver: **B**_
 
 In theory, binary search should take $$O(log_2n)$$ steps.  Does it
 really?  Augment each of your methods so that it counts the number
@@ -168,6 +182,8 @@ Build some moderately large arrays (at least 1000 elements) to verify
 that you get the expected running times.
 
 ### Exercise 7: Searching for the smallest value
+
+_Driver: **A**_
 
 a. Implement the following procedure:
 
