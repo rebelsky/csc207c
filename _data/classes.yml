@@ -374,6 +374,7 @@
     - page: /readings/loop-invariants.html
   lab:
     - page: /labs/binary-search.html
+  notes: ../eboards/eboard22.html
 
 - topic: Merge sort
   abbrev: mergesort
@@ -385,6 +386,7 @@
     - An introduction to merge sort
     - Analyzing merge sort
   reading:
+    - page: /readings/sorting.html
     - page: /readings/mergesort.html
   lab:
     - page: /labs/mergesort.html
@@ -405,6 +407,7 @@
     - page: /readings/sorting.html
   reminders:
     - Some class time talking about unit tests
+    - Some class time talking about invariants
 
 - topic: Quicksort
   abbrev: quicksort
