@@ -408,6 +408,7 @@
   reminders:
     - Some class time talking about unit tests
     - Some class time talking about invariants
+  notes: ../eboards/eboard24.html
 
 - topic: Quicksort
   abbrev: quicksort
