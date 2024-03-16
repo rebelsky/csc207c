@@ -5,7 +5,31 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester._
 
-## [CSC-207-02 2024Sp] Pop Quiz! (2024-03-08)
+## [CSC-207-02 2024Sp] A few notes (Saturday, 2024-03-16)
+
+Dear Breakers of Spring,
+
+a. For those of you who were in class
+
+* Prof. Curtsinger says that he's only made one change to the schedule I shared, and that one shouldn't affect you.
+* The Registrar tells me that they plan to release the schedule of courses on about March 22nd.
+
+b. For those of you who were not in class
+
+* We missed you.
+* Class policies say that you are responsible for notifying me that you will be missing class. Very few of you did so.
+
+c. For everyone
+
+* Have a great break!
+* Take care of yourselves.
+* I'll be on Teams intermittently if you have questions.
+
+Regards,
+
+-- SamR
+
+## [CSC-207-02 2024Sp] Pop Quiz! (Friday, 2024-03-08)
 
 Dear Recurrence Relators (not Recurrence Realtors),
 
