@@ -334,7 +334,9 @@ Check your code once again across both common-case and edge-case scenarios to ma
 
 ## Submit your work!
 
-Yes, it's time to submit your work. You'll also have a chance to submit this as part of an upcoming mini-project.
+Just kidding.
+
+Make sure that both you and your partner have copies of your work; you'll need it for an upcoming mini-project.
 
 ## Things to think about: Choosing a pivot
 
@@ -366,7 +368,7 @@ We will now proceed to implement Quickselect which has a slight variation on Qui
 
 ```text
     [< pivot][pivot][> pivot]
-     —— L —-
+    ----L---- 
 ```
 
 3\. Selection: In this operation, we want to use the results of the partition, to select the sub-array where we will find the kth smallest value. a. If L is equal to k-1 then the pivot is the kth smallest value! b. If L is greater than k-1 then recursively call select on the left sub-array. c. If L is less than k-1 then recursively call select on the right sub-array.
