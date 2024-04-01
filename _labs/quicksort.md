@@ -20,6 +20,8 @@ Let us first review the main steps in Quicksort:
 
 ## The partition operation
 
+**A and B should read this and discuss it together.**
+
 We will start this lab by first implementing the partition operation. For this part of the lab, we will fill in the following definition of the partition operation:
 
 ```java
@@ -37,7 +39,7 @@ We will start this lab by first implementing the partition operation. For this p
    *
    * @return pivotLoc.
    */
-  private static <T> int partition(T[] arr, Comparator<? super T> order, int lb, int ub) {
+  public static <T> int partition(T[] arr, Comparator<? super T> order, int lb, int ub) {
     ...
   } // partition
 ```
@@ -171,10 +173,11 @@ lb                      |           ub
 
 What next?
 
-
 ### Step 4: Termination
 
 What would be an appropriate condition to terminate the loop body?  (The picture above should give you a clue.
+
+_You need not record your answer, but you should discuss it._
 
 ### Step 5: Wrapping up
 
@@ -192,13 +195,91 @@ lb                      |           ub
                         small
 ```
 
-### Step 6 Test: cases
+## Exercise 1: Implementing partition
 
-And now to check our code! Experiment your code with common-case as well as edge-case scenarios. Does your code return the correct partitioning if the pivot is set to the smallest or the largest element in the list?
+_Driver: **A**_
+
+Implement Quicksort.
+
+```
+public class Quicksorter {
+  // +----------------+----------------------------------------------
+  // | Public methods |
+  // +----------------+
+
+  /**
+   * Sort an array in place.
+   *
+   * @param vals, an array to sort.
+   * @param order, the order by which to sort the values.
+   * @return
+   *    The same array, now sorted.
+   * @pre
+   *    order can be applied to any two values in vals.
+   * @pre
+   *    VALS = vals.
+   * @post
+   *    vals is a permutation of VALS.
+   * @post
+   *    For all i, 0 < i < vals.length,
+   *      order.compare(vals[i-1], vals[i]) <= 0
+   */
+  public <T> void sort(T[] values, Comparator<? super T> order) {
+    // STUB
+  } //  sort(T[], Comparator<? super T>)
+
+  /**
+   * Partition an array.
+   */
+  public <T> void partition(T[] values, Comparator<? super T> order) {
+    partition(values, order, 0, values.length);
+  } // partition(T[], Comparator<? super T>)
+
+  // +----------------------+----------------------------------------
+  // | Semi-private methods |
+  // +----------------------+
+
+  /**
+   * Sort the subarray of T given by [lb..ub) in place using
+   * the Quicksort algorithm.
+   */
+  <T> void quicksort(T[] values, Comparator<? super T> order,
+      int lb, int ub) {
+    // STUB
+  } // quicksort(T[], Comparator<? super T>, lb, ub)
+
+  /**
+   * Select a pivot and partition the subarray from [lb .. ub) into 
+   * the following form.
+   *
+   * <pre>
+   * ---+-----------------+-+----------------+---
+   *    | values <= pivot |p| values > pivot |
+   * ---+-----------------+-+----------------+---
+   *    |                 |                  |
+   *    lb                pivotLoc           ub
+   * </pre>
+   *
+   * @return pivotLoc.
+   */
+  public static <T> int partition(T[] arr, Comparator<? super T> order, int lb, int ub) {
+  <T> void partition(T[] values, Comparator<? super T> order,
+      int lb, int ub) {
+    // STUB
+  } // partition(T[], Comparator<? super T>, lb, ub)
+} // class Quicksorter
+```
+
+## Exercise 2: Experiments
+
+_Driver: **B**_
+
+Now it's time to check our code! Experiment your code with common-case as well as edge-case scenarios. For example, does your code return the correct partitioning if the pivot is set to the smallest or the largest element in the array?
 
 Here's one example to get you started.
 
 ```
+public class PartitionExperiments {
   /**
    * Run some experiments.
    */
@@ -218,9 +299,12 @@ Here's one example to get you started.
     System.err.println("Partitioned: " + Arrays.toStrings(vals));
     System.err.println("Pivot is " + vals[pivotLoc] + " at position " + pivotLoc);
   } // partitionExperiment
+} // class PartitionExperiments
 ```
 
-## Writing `quicksort`
+## Exercise 3: Writing Quicksort
+
+_Driver: **B**_
 
 Now that we have implemented the partition operation, all that remains is to recursively apply the partition operation on our input array! Write an implementation of Quicksort that has the following definition:
 
@@ -228,58 +312,51 @@ Now that we have implemented the partition operation, all that remains is to rec
   /**
    * Sort the values in values using order to compare values.
    */
-  public static <T> void quicksort(T[] values, Comparator<? super T> order) 
+  public static <T> void sort(T[] values, Comparator<? super T> order) 
 ```
 
-Note that we will also need to write a helper quicksort implementation which would take in the array bounds to recursively sort through the left and right sub-arrays.
+Note that you should write a helper Quicksort implementation which would take in the array bounds to recursively sort through the left and right sub-arrays.
 
 ```java
   /**
    * Sort the values in indices [lb..ub) of values using order to compare values.
    */
   private static <T> void quicksort(T[] values, Comparator<? super T> order, int lb, int ub) {
-    // Subarrays of one element or fewer are sorted.
-    if (lb >= ub-1) {
-      return;
-    } else {
-      int mid = partition(values, order, lb, ub);
-      quicksort(values, order, lb, mid);
-      quicksort(values, order, mid+1, ub);
-    } // if/else
+    // ...
   } // quicksort(T[], Comparator, int, int)
 ```
 
-That makes it easy to write the primary `quicksort`.
+## Exercise 4: Testing
 
-```java
-  public static <T> void quicksort(T[] values, Comparator<? super T> order) {
-    quicksort(values, order, 0, values.length);
-  } // quicksort
-```
-
-### Testing
+_Driver: **A**_
 
 Check your code once again across both common-case and edge-case scenarios to make sure your sorting algorithm works.
 
-## Choosing a pivot
+## Submit your work!
 
-Finally, we consider our choice of pivot. We have seen from the readings, that a poor choice of pivot can affect the run time of our Quicksort implementation and that a good choice of pivot would be the median of the list. A computationally efficient implementation is to use Median of three to select our pivot using the first, the middle, and the last elements of the array. Consider the following questions before proceeding to implement Median of three:
+Yes, it's time to submit your work. You'll also have a chance to submit this as part of an upcoming mini-project.
 
-* What is the order complexity of Quicksort assuming the pivot is the largest element of the list?
+## Things to think about: Choosing a pivot
+
+Finally, we consider our choice of pivot. We have seen from the readings, that a poor choice of pivot can affect the run time of our Quicksort implementation and that a good choice of pivot would be the median of the array. A computationally efficient implementation is to use Median of three to select our pivot using the first, the middle, and the last elements of the array. Consider the following questions before proceeding to implement Median of three:
+
+* What is the order complexity of Quicksort assuming the pivot is the largest element of the array?
 * Is the median a better choice of the pivot than the mean? If so why?
 * Is median of three always better than the worst-case scenario?
+
+## For those with extra time
+
+## Extra 1: Choosing a better pivot
 
 Write an implementation of median-of-three that has the following signature:
 
 ```java
-private static int medianOfThree(int[] arr, int left, int right)
+private <T> static T medianOfThree(T[] arr, Comparator<? super T> order, int lb, int ub)
 ```
 
-## Extension: Quickselect
+## Extra 2: Quickselect
 
-_For the few of you who have extra time._
-
-Let's say we wanted to select the kth smallest element in an unsorted list. How would we go about finding this element? Given a set of *n* distinct numbers and the number *k*, 1 <= *k* <= *n*, the selection problem computes the **kth order statistic**, or kth smallest number in the set of numbers.
+Let's say we wanted to select the kth smallest element in an unsorted array. (That is, the element that would appear in the kth position if the array were sorted.) How would we go about finding this element? Given a set of *n* distinct numbers and the number *k*, 1 <= *k* <= *n*, the selection problem computes the **kth order statistic**, or kth smallest number in the set of numbers.
 
 We will now proceed to implement Quickselect which has a slight variation on Quicksort. The intuition in Quickselect is that we prune the sub-arrays where we know that the `k`th value will not be found.
 
@@ -288,8 +365,8 @@ We will now proceed to implement Quickselect which has a slight variation on Qui
 2\. Partition the array into sub-arrays as before and count the number of elements, L, in the left sub-array.
 
 ```text
-    [< pivot][ ][> pivot]
-     —— L— pivot
+    [< pivot][pivot][> pivot]
+     —— L —-
 ```
 
 3\. Selection: In this operation, we want to use the results of the partition, to select the sub-array where we will find the kth smallest value. a. If L is equal to k-1 then the pivot is the kth smallest value! b. If L is greater than k-1 then recursively call select on the left sub-array. c. If L is less than k-1 then recursively call select on the right sub-array.
@@ -297,10 +374,20 @@ We will now proceed to implement Quickselect which has a slight variation on Qui
 Write the `select` operation of Quickselect:
 
 ```java
-private static int select(int[] arr, int k)
+/**
+ * Find the "kth smallest value" in T. The kth smallest value is a value
+ * that would appear at position k in a sorted version of T.
+ */
+public <T> static T select(T[] arr, Comparator<? super t> order, int k)
 ```
 
 ## Acknowledgements
 
-This lab is copied nearly verbatim from a similar lab by Anya Vostinar
-and Peter-Michael Osera.
+This lab was originally copied nearly verbatim from a similar lab
+by Anya Vostinar and Peter-Michael Osera. I'm not sure whether that
+lab continues to live anywhere on the Web.
+
+Samuel A. Rebelsky likely made some changes at some point.
+
+Samuel A. Rebelsky revised it in Spring 2024 to number problems, add
+drivers, and add some more sample code.
