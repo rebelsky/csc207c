@@ -423,11 +423,7 @@
     - page: /readings/quicksort.html
   lab:
     - page: /labs/quicksort.html
-
-- topic: Pause for breath
-  abbrev: pause
-  summary: |
-    We pause
+  notes: ../eboards/eboard25.html
 
 - topic: Ethical considerations
   abbrev: ethics
@@ -437,6 +433,11 @@
     - Professional ethics.
   reading:
     - ACM Code of Ethics
+
+- topic: Sorting competition
+  abbrev: sorting-competition
+  summary: |
+    We compare your sorting algorithms.
 
 - topic: Array-based lists
   abbrev: array-lists
