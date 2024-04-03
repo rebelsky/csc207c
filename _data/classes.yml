@@ -425,20 +425,6 @@
     - page: /labs/quicksort.html
   notes: ../eboards/eboard25.html
 
-- topic: Ethical considerations
-  abbrev: ethics
-  summary: |
-    We consider our responsibilities as programming professionals.
-  subjects:
-    - Professional ethics.
-  reading:
-    - ACM Code of Ethics
-
-- topic: Sorting competition
-  abbrev: sorting-competition
-  summary: |
-    We compare your sorting algorithms.
-
 - topic: Array-based lists
   abbrev: array-lists
   summary: |
@@ -479,6 +465,20 @@
   summary: |
     We compare the sorting algorithms from the latest homework.
   
+- topic: Ethical considerations
+  abbrev: ethics
+  summary: |
+    We consider our responsibilities as programming professionals.
+  subjects:
+    - Professional ethics.
+  reading:
+    - ACM Code of Ethics
+
+- topic: Pause for breath
+  abbrev: pause
+  summary: |
+    We compare your sorting algorithms.
+
 - topic: A Dictionary ADT
   abbrev: maps
   summary: |
