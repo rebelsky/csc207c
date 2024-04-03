@@ -28,6 +28,8 @@ Exercises
 
 ### Exercise 1: Understanding Iterators
 
+_We'll do this as a class._
+
 Skim through the documentation for "[`java.util.Iterator`]({{
 site.java_api }}/java/util/Iterator.html)" and "[`java.util.ListIterator`]({{
 site.java_api }}/java/util/ListIterator.html)".  You should identify
@@ -95,6 +97,8 @@ two kinds of iterators?
 
 ### Exercise 2: A simple experiment
 
+_Driver: **A**_
+
 Read through the code of `SimpleListExpt.java` and
 `SALExpt.java`.
 
@@ -103,6 +107,8 @@ a. Sketch the output you expect to see from `SALExpt`.
 b. Check your sketch experimentally.
 
 ### Exercise 3: Implementation details
+
+_Driver: **B**_
 
 How are array-based-lists implemented?  It's time to look.  In the
 file `SimpleArrayList.java`, you'll see that we have a field,
@@ -127,6 +133,8 @@ e. Sketch how you would implement the `add(T val)` method.
 f. Compare your answer to the answer in the code.
 
 ### Exercise 4: Implement `set`
+
+_Driver: **B**_
 
 You'll note that the `set` method is not yet implemented.  
 
@@ -200,9 +208,13 @@ how it achieves the "fail-fast" policy.
 
 ### Exercise 5: Moving backwards
 
+_Driver: **A**_
+
 You'll note that the `previous` method is not implemented.  Implement it.
 
 ### Exercise 6: Revisiting `set`
+
+_Driver: **A**_
 
 Once we implement `previous`, we are likely to break the `set`
 method we defined earlier.  
@@ -236,4 +248,5 @@ shift elements left.  Write those helper methods.
 Acknowledgements
 ----------------
 
-This lab is closely based on one from CSC 207 2019S.  
+This lab is closely based on one from CSC 207 2019Sp.   Drivers were added
+in 2024Sp.
