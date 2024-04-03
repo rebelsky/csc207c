@@ -263,8 +263,6 @@ public class Quicksorter {
    * @return pivotLoc.
    */
   public static <T> int partition(T[] arr, Comparator<? super T> order, int lb, int ub) {
-  <T> void partition(T[] values, Comparator<? super T> order,
-      int lb, int ub) {
     // STUB
   } // partition(T[], Comparator<? super T>, lb, ub)
 } // class Quicksorter
@@ -295,7 +293,7 @@ public class PartitionExperiments {
    */
   public static <T> void partitionExperiment(T[] vals, Comparator<? super T> order) {
     System.err.println("Original:    " + Arrays.toString(vals));
-    int pivotLoc = Quicksort.partition(vals, order, 0, vals.length);
+    int pivotLoc = Quicksorter.partition(vals, order, 0, vals.length);
     System.err.println("Partitioned: " + Arrays.toStrings(vals));
     System.err.println("Pivot is " + vals[pivotLoc] + " at position " + pivotLoc);
   } // partitionExperiment
