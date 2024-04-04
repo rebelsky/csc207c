@@ -5,6 +5,43 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester._
 
+## [CSC-207-02 2024Sp] Upcoming classes (Thurday, 2024-04-04)
+
+Dear CSC-207 Students,
+
+I hope you are well.
+
+I wanted to report on plans for upcoming classes.
+
+Friday: Doubly Linked Lists
+
+* We will spend class time doing lab. I will limit my start-of-class comments to give you time to get work done.
+* You should plan to work with your MP7 partner(s).
+* In praparation, you should do the reading on Doubly Linked Lists.  <https://rebelsky.cs.grinnell.edu/Courses/CSC207/2024Sp/readings/doubly-linked-lists.html>
+* You may want to review the reading on list iterators, which summarizes what we discussed on Wednesday. <https://rebelsky.cs.grinnell.edu/Courses/CSC207/2024Sp/readings/list-iterators.html>
+* You may want to read "Lists with Current Considered Harmful", which provides some explanation of why we use iterators rather than some alternatives. <http://csis.pace.edu/~bergin/papers/ListsWithCurrent.html>
+
+Monday: Array-Based Lists
+
+* Our class coincides with the eclipse. Hence, class will be "Do the lab on your own." I will determine a place that's easy to find me outside and you can come ask me questions.
+* Our lab will be on array-based lists.
+
+Wednesday: Sorting competition
+
+* Just what it says. We'll do a "March Madness" with your sorting algorithms.
+* Everyone should encourage Elene to write one, too.
+* You have nothing to do in preparation for this class.
+
+Friday next, Ethics
+
+* We will read and discuss the ACM code of ethics.
+
+As always, let me know if you have questions.
+
+Regards,
+
+-- SamR
+
 ## [CSC-207-02 2024Sp] A few notes (Saturday, 2024-03-16)
 
 Dear Breakers of Spring,
