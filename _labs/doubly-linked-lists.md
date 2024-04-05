@@ -2,7 +2,7 @@
 title: Doubly-linked lists and circularly-linked lists
 summary: |
   We explore the implications of doubly- and circularly-linked lists.
-repo: <https://github.com/Grinnell-CSC207/lab-linked-lists-2019>.
+repo: <https://github.com/Grinnell-CSC207/lab-linked-lists>.
 prereqs: |
   [Interfaces](../readings/interfaces).
   [Generics](../readings/generics).
@@ -12,14 +12,16 @@ prereqs: |
 Preparation
 -----------
 
-a. Fork and clone the repository.
+a. Fork and clone the repository at {{ page.repo }}.
 
-b. Load it into Eclipse.
+b. Load it into VSCode.
 
 Exercises
 ---------
 
 ### Exercise 1: Exploring doubly linked nodes
+
+_Driver: **A**_
 
 As you may recall, `Node2` is our class for doubly-linked nodes.
 Each `Node2` has three fields:
@@ -42,7 +44,7 @@ Each `Node2` has three fields:
 ```
 
 a. Suppose we decided to add a `remove()` method to `Node2`, which is
-supposed to remove the current node from its enclosing list.  Sketch
+supposed to remove the node (i.e., `this`) from its enclosing list.  Sketch
 how you would implement that method.  (I'd suggest sketching both the
 list and the code.)
 
@@ -61,6 +63,8 @@ e. Compare your answers to a-c to the implementation in `Node2.java`.
 What differences, if any, did you see?
 
 ### Exercise 2: Iterating doubly-linked lists
+
+_Driver: **B**_
 
 As you may recall, we've decided that our lists should provide
 two methods, `iterator()`, which returns a normal `Iterator`, and
@@ -98,11 +102,15 @@ to change `update`?
 
 ### Exercise 3: Advancing the cursor
 
+_Driver: **A**_
+
 a. Sketch (picture and code) how you would implement the `next` method.
 
 b. Compare your answer to that in `SimpleDLL.java`
 
 ### Exercise 4: Adding elements
+
+_Driver: **B**_
 
 Note that the "heavy lifting" of adding elements can be handled
 by `Node2.insertBefore()` and `Node2.insertAfter()`.  However,
@@ -133,6 +141,8 @@ them?
 h. Compare your design to that of `add`.
 
 ### Exercise 5: Removing elements
+
+_Driver: **A**_
 
 Note that the "heavy lifting" of removing elements can be handled
 by `Node2.remove()`.  However, that does not mean that the `remove`
@@ -165,19 +175,23 @@ h. Compare your design to that of `remove`.
 
 ### Exercise 6: Experiments
 
+_Driver: **B**_
+
 The files `SDLLExpt.java` and `SimpleListExpt.java` contain a collection
 of tests for simple doubly-linked lists (or doubly-linked simple lists,
 depending on how you think of them).
 
 a. Skim through the two files to identify what the primary tests are.
 
-b. Sketch the output from `SDLLExpt`.  (Note that it is not completely
-predictable.)
+b. Sketch the expected output from `SDLLExpt`.  (Note that it is not 
+completely predictable.)
 
 c. Run the experiments and compare to your output.  Where did things
 work differently than you expected?
 
 ### Exercise 7: Implementing `previous`
+
+_Driver: **A**_
 
 As you may have noted, we have some isues with the random walk 
 experiment.  That's because `previous` is not imlemented.
@@ -191,6 +205,8 @@ b. Implement the `previous` method.
 c. Run the newly extended tests and correct any errors you discover.
 
 ### Exercise 8: Additional testing
+
+_Driver: **B**_
 
 We've seen that iterators sometimes have difficulty when we remove
 sequences of values.  While `expt3` is intended to capture some
