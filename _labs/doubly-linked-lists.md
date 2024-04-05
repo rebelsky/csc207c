@@ -193,8 +193,8 @@ work differently than you expected?
 
 _Driver: **A**_
 
-As you may have noted, we have some isues with the random walk 
-experiment.  That's because `previous` is not imlemented.
+As you may have noted, we have some issues with the random walk 
+experiment.  That's because `previous` is not implemented.
 
 a. Write experiments, comparable to `expt2` and `expt3`, that experiment
 with removing elements using `previous`.  You can take advantage of
@@ -202,9 +202,9 @@ with removing elements using `previous`.  You can take advantage of
 
 b. Implement the `previous` method.
 
-c. Run the newly extended tests and correct any errors you discover.
+c. Run the newly extended experiments and correct any errors you discover.
 
-### Exercise 8: Additional testing
+### Exercise 8: Additional testing and experimentation
 
 _Driver: **B**_
 
@@ -222,7 +222,7 @@ For those with extra time
 -------------------------
 
 _If you find that you have extra time, consider how you would change
-the `SimplDLL` class if we decided to use a dummy node for the front
+the `SimpleDLL` class if we decided to use a dummy node for the front
 of the list, and make the list circular.  (Once we have that dummy node,
 we should be able to have the cursor point to a node in the list,
 rather than a specially created node.)_
@@ -230,4 +230,4 @@ rather than a specially created node.)_
 Acknowledgements
 ----------------
 
-This lab is all new for spring 2019.
+This lab was all new in spring 2019 and then revised somewhat in spring 2024.
