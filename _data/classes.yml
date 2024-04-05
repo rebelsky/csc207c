@@ -425,11 +425,11 @@
     - page: /labs/quicksort.html
   notes: ../eboards/eboard25.html
 
-- topic: Array-based lists
-  abbrev: array-lists
+- topic: List Iterators
+  abbrev: list-iterators
   summary: |
-    We return to the list ADT and explore how to implement lists using
-    arrays.
+    We return to list ADTs, this time conceiving of lists only in
+    terms of the iterators we build for them.
   subjects:
     - A simple list interface
     - The java.util.List interface
@@ -442,8 +442,6 @@
       url: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html
     - link: java.util.ListIterator
       url: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ListIterator.html
-  lab:
-    - page: /labs/array-based-lists.html
   notes: ../eboards/eboard26.html
 
 - topic: Doubly-linked lists
@@ -461,6 +459,14 @@
   lab:
     - page: /labs/doubly-linked-lists.html
 
+- topic: Array-based lists
+  abbrev: array-lists
+  summary: |
+    We return to the list ADT and explore how to implement lists using
+    arrays.
+  lab:
+    - page: /labs/array-based-lists.html
+
 - topic: Sorting competition
   abbrev: sorting-competition
   summary: |
@@ -474,11 +480,6 @@
     - Professional ethics.
   reading:
     - ACM Code of Ethics
-
-- topic: Pause for breath
-  abbrev: pause
-  summary: |
-    We compare your sorting algorithms.
 
 - topic: A Dictionary ADT
   abbrev: maps
