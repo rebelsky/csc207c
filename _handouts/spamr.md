@@ -5,6 +5,20 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester._
 
+## [CSC-207-02 2024Sp] Update on sorting competition (Wednesday, 2024-04-10)
+
+Dear Sort Specifiers,
+
+Thanks for participating in today's competition. A few notes.
+
+* Those who did not have working code can send me a new copy by 8am Friday morning and we'll run a quick sub-competition for those folks.
+* The top four folks in the competition will get to choose snack food for class next Wednesday. (Why not Monday? Some folks won't be here on Monday.)
+* A few of you called a different constructor in specifying your sorter. Make sure that you construct an object in your own class.
+
+Regards,
+
+-- SamR
+
 ## [CSC-207-02 2024Sp] Upcoming classes (Thurday, 2024-04-04)
 
 Dear CSC-207 Students,
