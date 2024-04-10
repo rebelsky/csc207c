@@ -17,11 +17,19 @@ _Approximate overview_
 Preliminaries
 -------------
 
-* Friday's class will be a consideration of ethics. 
+* It's "April Absurdity" (following "March" Madness)
+* Friday's class will be a consideration of ethics.  Make sure to do the
+  reading in advance.
 * Our graders ask that you
     * Ensure that all files are uploaded to Gradescope.
     * Include a link to your GitHub repo in your README.md file.
     * Include that README.md file.
+* We'll look at some of the submissions for MP6
+
+### About MP8
+
+* Still under development.
+* Intended to be straightforward.
 
 ### Upcoming work
 
@@ -76,6 +84,9 @@ Wellness
 
 Misc
 
+* Saturday, 2024-04-13, 8:30--11:00pm, Harris.
+  _Drag_.
+
 ### Other good things to do (no tokens)
 
 Questions
@@ -89,9 +100,40 @@ Questions
 
 ### MP7
 
+### MP8
+
 ### Other
+
+Preparation for the sorting competition
+---------------------------------------
+
+### The process
+
+* We pair off people.
+* We ask them (their code) to sort N arrays.
+    * The size is big enough that the slowest takes more than 200 milliseconds.
+    * The arrays can be already sorted, reverse sorted, completely
+      randomized, slightly randomized from sorted, or slightly
+      randomized from reverse sorted.
+* In the first phase, each person describes their algorithm, how
+  they wrote it, and what they learned.
+* The top four or so each earn a token.
+
+### What are N and the probabilities?
+
+* We'll talk about N and the probabilities.
+* Please read the code in [examples/sorting/SortTools.java](../examples/sorting/SortTools.java)
+    * 5 minutes of reading
+    * 3 minutes of pairing
+    * 5 minutes of discussin
+
+Discussion
+
 
 Competition
 -----------
 
-We don't quite have 32 competitors, so we'll do the best we can.
+We don't quite have 32 competitors (and certainly not 68), so we'll
+do the best we can.
+
+No, it doesn't get logged here.
