@@ -7,11 +7,12 @@ link: true
 ---
 # {{ page.title }}
 
-**You are NOT being recorded and transcribed.**
+**You are being recorded and transcribed.**
 
 _Approximate overview_
 
 * Administrivia 
+* Rules for the sorting competition
 * Sorting competition
 
 Preliminaries
@@ -30,6 +31,78 @@ Preliminaries
 
 * Still under development.
 * Intended to be straightforward.
+
+Key ideas
+
+* Extended DLLs to add a dummy node and circular linking. DO NOT DELETE
+  THE DUMMY NODE!
+* Reflect on how that made the code easier/harder.
+
+Implement "fail fast" iterators
+
+* Issue: If we have multiple "live" iterators on the same list, and one
+  changes the list, the others are now in a somewhat "unknown" state.
+* At present, we only notice when something goes wrong.
+* We should make sure that an iterator breaks _immediately_ if any other
+  iterator has changed the list (when any of the methods are called). 
+  Throw an "InvalidStateException".
+* The iterator that changed the list does NOT break.
+* How can one iterator tell when another iterator changed the list?
+    * Idea: Have a shared field that keeps track of when the list was
+      last changed. If an iterator is older than that, it dies.
+    * Should this be a static field?
+
+```
+public class SimpleCDLL<T> implements SimpleList<T> {
+  // +--------+------------------------------------------------------
+  // | Fields |
+  // +--------+
+
+  Node2<T> dummy;
+  int numChanges = 0;
+
+  ...
+
+  public ListIterator<T> listIterator() {
+    return new ListIterator<T>() {
+      // +--------+------------------------------------------------------
+      // | Fields |
+      // +--------+
+
+      Node2<T> prev;
+      Node2<T> next;
+      int numChanges = SimpleCDLL.this.numChanges;
+
+      // +---------+-----------------------------------------------------
+      // | Methods |
+      // +---------+
+
+      public T add(T val) {
+        if (this.numChanges != SimpleCDLL.this.numChanges) {
+          throw new InvalidStateException("Iowa");
+        }
+        ++this.numChanges;
+        ++SimpleCLL.this.numChanges;
+        this.prev.addNext(val);
+        this.position++;
+        ; ...
+      } 
+
+      public T next() {
+      } // next()
+    }; // new ListIterator<T>()
+  }
+} // class SimpleCDLL
+```
+
+Observation:
+
+* We don't want the List `numChanges` to be static because it should
+  be independent in each list. (Changes to one list don't affect the
+  other.)
+* We will probably need a field in the anonymous inner iterator class
+  to keep track of the number of changes at the time they were created
+  and initialize it.
 
 ### Upcoming work
 
@@ -60,14 +133,21 @@ Academic/Scholarly
 
 Cultural
 
+* Today, 2024-04-10, 7:00-9:00pm, Younker Lounge.
+  _Eid Celebration_. Food! Sponsored by PSO.
 * Thursday, 2024-04-11, 4:15-5:30pm, HSSC S1325
   _Writers@Grinnell_.
 * Thursday, 2024-04-11, 8:00-9:30pm, JRC 101
   _Writers@Grinnell_.
 * Friday, 2024-04-12, 4:00-5:00pm, HSSC N1170
   _Middle of Everywhere_.
-* Saturday, 2024-04-13, ???  (@nepali_grinnellians on instagram for
-  more info)
+* Saturday, 2024-04-13, 7:00--??:??, Main Quad  (@nepali_grinnellians on instagram for more info)
+  _Celebration of Nepali New Year_. Henna, Food, Photo booth.
+* Saturday, 2024-04-13, 1:00--5:00, Cleveland Beach.
+  _Holi_. Wear white clothes that you want to become more colorful.
+  Food. Dye (colors). Dyed cake. Water pistols.
+* Saturday, 2024-04-13, 5:00--8:00, JRC 101.
+  Desert with VSA.
 
 Peer
 
@@ -83,9 +163,6 @@ Wellness
   _Yoga_.
 
 Misc
-
-* Saturday, 2024-04-13, 8:30--11:00pm, Harris.
-  _Drag_.
 
 ### Other good things to do (no tokens)
 
@@ -137,3 +214,5 @@ We don't quite have 32 competitors (and certainly not 68), so we'll
 do the best we can.
 
 No, it doesn't get logged here.
+
+We're down to the elite eight.
