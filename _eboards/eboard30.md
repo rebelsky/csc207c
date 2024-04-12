@@ -20,6 +20,9 @@ Preliminaries
 -------------
 
 * Welcome to any prospective students who are visiting!
+    * Will I get into a CS class? Yes, unless you are from Brazil.
+    * How hard are CS classes? Easy, then insanely hard, then easy again.
+      The faculty are supportive. Fortunately, we have tutors.
 * Sam hopes to catch up a bit on grading over the weekend.
 
 ### Upcoming work
@@ -49,14 +52,15 @@ Academic/Scholarly
 Cultural
 
 * Friday, 2024-04-12, 4:00--5:00pm, HSSC N1170
-  _Middle of Everywhere_.
+  _Middle of Everywhere_ (west Bengal).
 * Saturday, 2024-04-13, 7:00--9:00pm, Main Quad  (@nepali_grinnellians on instagram for more info)
   _Celebration of Nepali New Year_. Henna, Food, Photo booth.
+    * Please RSVP.
 * Saturday, 2024-04-13, 1:00--5:00, Cleveland Beach.
   _Holi_. Wear white clothes that you want to become more colorful.
   Food. Dye (colors). Dyed cake. Water pistols.
 * Saturday, 2024-04-13, 5:00--8:00, JRC 101.
-  Desert with VSA.
+  Dessert with VSA.
 
 Peer
 
@@ -80,7 +84,15 @@ Misc
 
 ### Other good things to do (no tokens)
 
+* Consider voting for your classmates. So vote for that awesome first-year
+  and a few of the folks here. Make sure to vote for at least one Brazilian,
+  since they won't be getting courses.
+* Complain about the insecurity of our voting platform.
+
 ### Friday PSA
+
+* If you choose to engage in substances, please do so in moderatoin.
+* Consent is essential, but insufficent.
 
 Questions
 ---------
@@ -102,14 +114,46 @@ What happens when you click "Do not click THIS button"?
   classes, fails (since they are all waitliested) and tells you
   that.
 
+How many credits can I preregister for?
+
+> As many as you want. But it could be dangerous.
+
 How do I tell what classes I've waitlisted?
 
 > I have a "List View" in addition to the "Calendar View"; the list view
   makes it easier to check things.
 
+Will I get into a CS class?
+
+> That's what we've been told. Everyone who is a declared CS major will
+  get into a CS class.
+
+> Sam's math: We have 80 majors in the class of 2025 and 70 in the class
+  of 2026.  That's 150.  We have 188 slots in course above 208. So there
+  should be at least one slot for everyone. If those were the only factors,
+  38 students would get two CS classes. Assume 15 CS majors are studying
+  abrod in the fall. That means we 188 slots for 135 people, so 53 will
+  get two courses.
+
+> And maybe there will be slots for rising second years.
+
+> We have been encouraging CS major to preregister/waitlist for *every*
+  section they might be able to take, so numbers are wickedly inflated.
+
 ### Administrative
 
 ### Lists
+
+### MP4
+
+I was looking at the rubric/checkmarks and it said that I had to pass
+E and M tests.
+
+> Hah! They are top-secret tests. Which may not exist. I'll try to look
+  and see if I gave the graders a tester and then send it to you.
+
+> Remind me if you haven't heard by Saturday night. Remind me again if
+  you haven't heard by Sunday night.
 
 ### MP8
 
@@ -117,6 +161,11 @@ How do I tell what classes I've waitlisted?
 
 The Sorting Competition, Continued!
 -----------------------------------
+
+Success: Merge sort with big partitions and Quicksort with "smaller"
+partitions.
+
+Success: Blow off class.
 
 Ethics
 ------
@@ -159,9 +208,50 @@ _TPS questions!_
 
 ### Which principles did you find surprising (or most surprising)?  Why?
 
+* In the discussion of these principles, there was consideration of the insanely large environmental impact of computing.
+    * And it's gotten worse.
+    * Undestand the implicit harm you do as well as the explicit harm.
+* 2.1 Strive to achieve high quality in both the processes and products of professional work.
+    * vs. "Build fast and break things." (you can break important things)
+* 2.6 Perform work only in areas of competence.
+    * There's an implicit assumption that we can all learn new things
+      (relatively quickly) and sometimes we have to learn new things
+      to get the job done.
+* 2.8 Access computing and communication resources only when authorized or when compelled by the public good.
+    * As computing professionals, we can often find other ways to access informatoin; we should consider whether that is appropriate.
+    * Just because people are incompetent at keeping their information secure, you should not access it.
+* 1.1 Contribute to society and to human well-being, acknowledging that all people are stakeholders in computing.
+    * Your stakeholders include more than your customers!
+
 ### Which are your "favorite" principles?
 
+* 1.6 Respect privacy and 1.7 Honor confidentiality
+    * 1.7 is more about trade secrets and such
+    * 1.6 is more about not invading others' privacy.
+* 1.5 Respect the work required to produce new ideas, inventions, creative works, and computing artifacts.
+* 2.9 Design and implement systems that are robustly and usably secure.
+    * You should be able to trust that the systems you use (as a user
+      or developer) are secure.
+
 ### Which principles do you expect to be hardest to follow?
+
+* See classroom discussion of "It's so cool that they don't realize that I can download this."
+* 2.6 Perform work only in areas of competence.
+    * Don't we have to learn at some point?
+* 1.6 Respect privacy and 1.7 Honor confidentiality
+    * You may want to do that but companies don't.
+
+### What other issues came up?
+
+"Duh, this is obvious. Why would you bother to write it in a code?"
+
+> Unfortunately, some things you consider obvious aren't obvious to
+  everyone. (Explanation can also help.)
+
+Sam, why are you asking us to do this?
+
+> Because I think you have an obligation to act ethically as professionals
+  and I therefore have an obligation to get you to consider what that means.
 
 A case study
 ------------
@@ -172,7 +262,19 @@ The change request Stewart received was simple enough: replace the web site’s 
 
 Shortly after the updates were released into their production system, Stewart’s team was invited to a celebration. As a result of these changes, revenues at their client had increased significantly over the previous quarter. At the celebration, Stewart overheard some of the client’s managers discussing the small increase for refunds by users who claimed that they didn’t want the protection plan, but there weren’t many. One manager noted several complaints from visually impaired users, who noted that the mixture of red and green text obscured important disclaimers about the product. “So what you’re saying, then, is that the changes worked as planned,” quipped one of the managers.
 
-_TPS: What should Stewart do (or have done)?_
+_TPS: What should Stewart do (or have done)? What ACM principles are relevant?_
+
+1. Resign from the ACM. Stewart has clearly violated the ACM code of ethics.
+
+2. Quit. Stewart's employer has violated the ACM code of ethics.
+
+3. Blow whistles (and be fired). "4.2 Treat violations of the Code as inconsistent with membership in the ACM." You're going to be fired, you probably won't be hired again. Agh!
+
+4. Raise my concern to my manager. (Stewart did that.)
+
+5. Start looking for other jobs. "2.7 Foster public awareness and understanding of computing, related technologies, and their consequences."
+
+6. More thoughtful whistleblowing. Gather evidence. Talk to lawyers.
 
 Another case study
 ------------------
