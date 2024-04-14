@@ -1,0 +1,16 @@
+Please write me a TimSort in Java that accepts an array of any type, limits array allocation, and uses Javadoc.
+
+TimSort.java
+
+Please write me an efficient TimSort in Java that uses a Comparator object to compare values and that is documented in Javadoc.
+
+TimSort2.java
+
+Can you document all of the methods?
+
+TimSort3.java
+
+This seems to allocate new scratch arrays each time merge is called.  Can you allocate the scratch arrays only once for the whole program?
+
+TimSort4.java
+
