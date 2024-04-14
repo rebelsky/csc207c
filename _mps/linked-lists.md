@@ -128,7 +128,7 @@ Although the "safety first" approach may seem safer, it can also create some con
 
 Hence, the most common design approach to this kind of situation is to use a "fail fast" approach.
 
-**For this part of the assignment, you should implement the "fail fast" policy**. That is, if one iterator changes a list by adding or removing an element, it should invalidate all other iterators. Each method in the iterator should check if the iterator is valid and, if not, throw an `InvalidStateException`.
+**For this part of the assignment, you should implement the "fail fast" policy**. That is, if one iterator changes a list by adding or removing an element, it should invalidate all other iterators. Each method in the iterator should check if the iterator is valid and, if not, throw an `IllegalStateException`.
 
 How do we invalidate an iterator? There are two common strategies. 
 
@@ -165,6 +165,8 @@ previous requirements will receive an R.
 [ ] Passes the **M** tests.
 [ ] Appears to follow Google Java style guidelines for indentation and such.
 [ ] There is no cruft in the repo (e.g., temp files, `.DS_Store`, etc).
+[ ] Includes a summary of the benefits of using a dummy node and a 
+    circularly linked list.
 ```
 
 ### Exceeds expectations
