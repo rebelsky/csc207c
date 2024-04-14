@@ -126,9 +126,12 @@ Note that the "fail fast" approach is much like the "fingers crossed" approach, 
 
 Although the "safety first" approach may seem safer, it can also create some conceptual confusions. For example, if you've checked the position of an iterator and then check it again without moving the iterator, it seems like the position should be the same. But "safety first" means that it could change based on another iterator. That makes it almost impossible to prove things about the code.
 
-Hence, the most common design approach to this kind of situation is to use a "fail fast" approach.
+Hence, the most common design approach to this kind of situation is to use a "fail fast" approach. For example, here's what the designers of Java say in [the documentation for the ArrayList class]({{ site.java_api }}/java/util/ArrayList.html ):
 
-**For this part of the assignment, you should implement the "fail fast" policy**. That is, if one iterator changes a list by adding or removing an element, it should invalidate all other iterators. Each method in the iterator should check if the iterator is valid and, if not, throw an `IllegalStateException`.
+> The iterators returned by this class's `iterator` and `listIterator` methods are _fail-fast_: if the list is structurally modified at any time after the iterator is created, in any way except through the iterator's own `remove` or `add` methods, the iterator will throw a [ConcurrentModificationException]({{ site.java_api }}/java/util/ConcurrentModificationException.html). Thus, in the face of concurrent modification, the iterator fails quickly and cleanly, rather than risking arbitrary, non-deterministic behavior at an undetermined time in the future.
+
+
+**For this part of the assignment, you should implement the "fail fast" policy**. That is, if one iterator changes a list by adding or removing an element, it should invalidate all other iterators. Each method in the iterator should check if the iterator is valid and, if not, throw an `ConcurrentModificationException`.
 
 How do we invalidate an iterator? There are two common strategies. 
 
@@ -165,8 +168,11 @@ previous requirements will receive an R.
 [ ] Passes the **M** tests.
 [ ] Appears to follow Google Java style guidelines for indentation and such.
 [ ] There is no cruft in the repo (e.g., temp files, `.DS_Store`, etc).
+[ ] Uses a dummy node.
+[ ] Uses a circularly linked list.
 [ ] Includes a summary of the benefits of using a dummy node and a 
     circularly linked list.
+[ ] All the methods in the `ListIterator` object throw a `ConcurrentModificationException` when appropriate (should be checked by the tests).
 ```
 
 ### Exceeds expectations
@@ -183,3 +189,6 @@ previous requirements will receive an R.
 _A place for Sam to log the questions he gets about this assignment and
 the answers he develops._
 
+Does the `set` method "structurally modify" the list and therefore invalidate all the iterators?
+
+> No. Iterators should continue to work after a call to `set`. (At least that's what the design documents for `ArrayList` seem to suggest.)
