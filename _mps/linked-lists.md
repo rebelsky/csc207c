@@ -5,6 +5,8 @@ summary: |
   In this assignment, you will revisit our implementation of doubly-linked
   lists, considering the effects of a well-known variant.
 link: true
+nextyear: |
+  Make students update all iterators (instead of failing fast).
 ---
 *Collaboration*: You must work alone on this project. You may, however, consult with anyone you wish.
 
@@ -51,12 +53,89 @@ The title says it all. Implement this strategy. Call your class `SimpleCDLL` and
 
 In your `README.md` file, write a paragraph or two on how using a dummy node (and circular linking) simplified the code.
 
-I would recommend that you start with the code in the lab repo, but you can also start from scratch.
+I would recommend that you start with the code in [the lab repo](https://github.com/Grinnell-CSC207/lab-linked-lists), but you can also start from scratch.
 
 Part two: Add a "fail fast" strategy
 ------------------------------------
 
-_Instructions forthcoming._
+As you might expect, when there are multiple iterators in a list, a change to the list by one iterator might invalidate the state of other iterators. For example, consider the following list. (You may assume we've only been moving iterators forward.)
+
+
+```  
+ "A"  "B"  "C"  "D"  "E"
+         i1   i3
+         i2
+```
+
+As the illustration suggests, both `i1` and `i2` are between `B` and `C` in the list and `i3` is between `C` and `D`. If there have been no other changes to the list, we may assume that they got there through two or three calls to `next` (two for `i1` and `i2`, three for `i3`).
+
+Now, let's consider some potential modifications to the list.
+
+Suppose we call `i1.add("X")`. The normal policy for adding elements is that you add immediately before the iterator (and after the prior element). So our list will now look like this (at least conceptually).
+
+```  
+ "A"  "B" "X"  "C"  "D"  "E"
+             i1   i3
+             i2
+```
+
+Let's check out the code we were using for `add`. (Ideally, you've made this better by adding a dummy node.)
+
+```
+      public void add(T val) throws UnsupportedOperationException {
+        // Special case: The list is empty)
+        if (SimpleDLL.this.front == null) {
+          SimpleDLL.this.front = new Node2<T>(val);
+          this.prev = SimpleDLL.this.front;
+        } // empty list
+        // Special case: At the front of a list
+        else if (prev == null) {
+          this.prev = this.next.insertBefore(val);
+          SimpleDLL.this.front = this.prev;
+        } // front of list
+        // Normal case
+        else {
+          this.prev = this.prev.insertAfter(val);
+        } // normal case
+
+        // Note that we cannot update
+        this.update = null;
+
+        // Increase the size
+        ++SimpleDLL.this.size;
+
+        // Update the position.  (See SimpleArrayList.java for more of
+        // an explanation.)
+        ++this.pos;
+      } // add(T)
+```
+
+Adding the `"X"` changes `i1.pos`. But it doesn't change `i2.pos`. Hence, even thought `i1` and `i2` are conceptually at the same location, calls to `i1.previousIndex()` and `i2.previousIndex()` will return different values, as will calls to `i1.nextIndex()` and `i2.nextIndex()`.
+
+Perhaps more importantly, adding the "X" changes `i1.prev` but not `i2.prev`. Hence, `i1.prev` and `i2.prev` will have different values. That can create all sorts of confusion, such as if we call `i2.remove()`.
+
+We will see similar issues if, instead of adding before `i1` or `i2`, we remove before `i3`. In this case, `i1.next` and `i2.next` will still refer to the node that contains `"C"`, even though that node is no longer in the list.
+
+If we continue using all three iterators, chaos may soon ensue. What should we do as designers/implementers. There are at least three basic choices.
+
+* The "fingers crossed" approach: Things "as is" and expect the client programmer(s) to handle the potential dangers, waiting until something goes wrong to report an error.
+* The "safety first" approach: Require each change from one iterator to update *all* iterators.
+* The "fail fast" approach: Require that each iterator that has been "invalidated" by a change to report an error if the client attempts to use that iterator.
+
+Note that the "fail fast" approach is much like the "fingers crossed" approach, except that we get earlier notice when something has gone wrong, which _should_ make it easier to debug our code.
+
+Although the "safety first" approach may seem safer, it can also create some conceptual confusions. For example, if you've checked the position of an iterator and then check it again without moving the iterator, it seems like the position should be the same. But "safety first" means that it could change based on another iterator. That makes it almost impossible to prove things about the code.
+
+Hence, the most common design approach to this kind of situation is to use a "fail fast" approach.
+
+**For this part of the assignment, you should implement the "fail fast" policy**. That is, if one iterator changes a list by adding or removing an element, it should invalidate all other iterators. Each method in the iterator should check if the iterator is valid and, if not, throw an `InvalidStateException`.
+
+How do we invalidate an iterator? There are two common strategies. 
+
+* You can use a counter to keep track of the number of changes to the list. When you create an iterator, you save that number. When you call a method, it should compare the saved number to the list's; if they differ, you should fail fast.
+* You can keep a list of all the iterators for a list and mark them as invalid. Of course, that assumes that you have a structure to list values. And we're building such a structure. So this solution is a bit weird.
+
+I'd recommend that you use the counter strategy. But if you want to use an array (or even an `ArrayList` to keep track of all the iterators), that's okay, too.
 
 ---
 
@@ -70,7 +149,8 @@ Submissions that fail to meet any of these requirements will get an I.
 [ ] Each class has an introductory Javadoc comment that indicates
     the author and purpose. 
 [ ] Includes a `README.md` file that contains the appropriate information 
-    (authors, purpose, acknowledgements if appropriate, link to GitHub).
+    (authors, purpose, acknowledgements if appropriate, link to GitHub,
+    instructions for running).
 [ ] All files compile correctly.
 [ ] The files have the correct structure (e.g., all the `.java` files are
     in a `src` directory or somewhere below it).
@@ -82,17 +162,18 @@ Submissions that fail to meet any of these requirements but meet all
 previous requirements will receive an R.
 
 ```
+[ ] Passes the **M** tests.
 [ ] Appears to follow Google Java style guidelines for indentation and such.
 [ ] There is no cruft in the repo (e.g., temp files, `.DS_Store`, etc).
-[ ] _More to follow._
 ```
 
 ### Exceeds expectations
 
 ```
+[ ] Passes the **E** tests.
 [ ] All (or most) repeated code has been factored out into individual methods.
+    In particular, the "fail fast" code should be in a single method.
 [ ] All or most variable names are appropriate.
-[ ] More forthcoming.
 ```
 
 ## Questions and answers
