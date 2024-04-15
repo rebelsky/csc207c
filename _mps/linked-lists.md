@@ -4,6 +4,10 @@ subtitle: Linked lists, revisited
 summary: |
   In this assignment, you will revisit our implementation of doubly-linked
   lists, considering the effects of a well-known variant.
+collaboration: |
+  Each student should submit their own responses to this project. You may
+  consult other students in the class as you develop your solution.  If you
+  receive help from anyone, make sure to cite them in your responses. 
 link: true
 nextyear: |
   Make students update all iterators (instead of failing fast).
@@ -172,7 +176,9 @@ previous requirements will receive an R.
 [ ] Uses a circularly linked list.
 [ ] Includes a summary of the benefits of using a dummy node and a 
     circularly linked list.
-[ ] All the methods in the `ListIterator` object throw a `ConcurrentModificationException` when appropriate (should be checked by the tests).
+[ ] All the methods in the `ListIterator` object throw a 
+    `ConcurrentModificationException` when appropriate (this issue should 
+    be checked by the tests).
 ```
 
 ### Exceeds expectations
@@ -189,6 +195,57 @@ previous requirements will receive an R.
 _A place for Sam to log the questions he gets about this assignment and
 the answers he develops._
 
+Does the dummy node represent the front of the list or the back of the list?
+
+> Yes. That is, it falls immediately before the first element of the list (presuming there are elements in the list) and immediately after the last element in the list (presuming there are elements in the list).
+
+Do you have any tips?
+
+> Draw pictures!
+
+What is the purpose of `SimpleList`?
+
+> I think it's important to separate interface from implementation. `SimpleList` gives one of the simpler models of what a list is. We can then implement them as singly-linked lists, array-based lits, doubly-linked lists, or other ways.
+
+Why is there both an `iterator` method and ` listIterator` method?
+
+> We want an `iterator` method so that clients can iterate our structure (e.g., use it in a for-each loop).
+
+> We want a `listIterator` method so that clients can treat it like a "list".
+
+Why would using a dummy node simplify the code?
+
+> Try it and you'll see. Mostly, we can avoid most of the special cases.
+
+Can I talk to other students about this assignment?
+
+> Yes. For some reason, the default collaboration text ended up being "No talking to anyone other than course staff" rather than something more in keeping with Sam's normal policies.
+
 Does the `set` method "structurally modify" the list and therefore invalidate all the iterators?
 
-> No. Iterators should continue to work after a call to `set`. (At least that's what the design documents for `ArrayList` seem to suggest.)
+> No. All iterators should continue to work after a call to `set`. (At least that's what the implementation of and design documents for `ArrayList` seem to suggest.)
+
+In what situations are doubly-circularly-linked lists better than singly-linked lists?
+
+> Almost all. Removing is much easier. Going backwards is much easier. The primary downside is that you're using extra space.
+
+How should I be setting up my GitHub repo?
+
+> Please meet with me. I'll also talk about it in class.
+
+Are there any scenarios where using a circularly linked list with a dummy node might not be suitable or efficient, and what alternatives exist in such cases?
+
+> It all depends on your goals. If you don't intend to mutate the list, an array-based list might be better. If you never move backwards in the list, a singly-linked list might be better. Doubly-linked lists require that extra "previous" pointer, which gives you time and space overhead.
+
+How does the dummy node affect the complexity analysis of the linked list operations, such as time complexity for insertion, deletion, and search?
+
+> It shouldn't. It only adds constant time to look at one more node.
+
+Would keeping track of system time work as a way to know when the linked list was last modified?
+
+> Keeping track of system time may not work because operations are fast enough that you could do multiple things within one "clock cycle".
+
+What are the advantages of making the linked list circular and having one dummy compared to having two dummies at the front and end of the linked list while keeping it linear?
+
+> Perhaps not all that many. Maybe just that you save a node.
+
