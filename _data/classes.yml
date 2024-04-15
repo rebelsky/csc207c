@@ -484,6 +484,7 @@
   reading:
     - link: ACM Code of Ethics and Professional Conduct
       url: https://www.acm.org/code-of-ethics
+  notes: ../eboards/eboard30.html
 
 - topic: A Dictionary ADT
   abbrev: maps
@@ -498,6 +499,7 @@
   reminders:
     - Needs a new reading
     - There's an association lists lab from 2014 Fall.
+  notes: ../eboards/eboard31.html
 
 - topic: Trees and tree traversal
   abbrev: Trees
