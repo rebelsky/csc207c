@@ -26,8 +26,10 @@ Preliminaries
 * Note: Provided you continue to submit most of the pre-reflections,
   post-reflections, and reading responses, I will not penalize you for
   missing them, even if you've already missed more than I'd like.
-* Please try to attend tomorrow's convocation.
-* Please fill in the mentor/tutor evaluation.
+* Note that late submissions + tokens were supposed to eliminate the
+  need for you to ask for extensions.
+* **Please try to attend tomorrow's convocation.**
+* **Please fill in the mentor/tutor evaluation.**
 * Food!
 
 ### Upcoming work
