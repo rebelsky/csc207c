@@ -1,6 +1,6 @@
 ---
 title: Tree traversal
-repo: <https://github.com/Grinnell-CSC207/lab-tree-traversal-c>
+repo: <https://github.com/Grinnell-CSC207/lab-tree-traversal>
 summary: |
   In this laboratory, you will explore the traversal of trees.
   Although tree traversal can be used for all sorts of trees, you
@@ -8,6 +8,8 @@ summary: |
 ---
 Preparation
 -----------
+
+_Driver: **B**_
 
 a. Fork and clone the respository at {{ page.repo }}.
 
@@ -20,6 +22,8 @@ Exercises
 ---------
 
 ### Exercise 1: Building a tree
+
+_Driver: **A**_
 
 Consider the following set of instructions.  
 
@@ -40,6 +44,8 @@ d. Check your answer experimentally.
 
 ### Exercise 2: Alternate output
 
+_Driver: **B**_
+
 Suppose instead of printing the tree in the deeply nested form, we
 want to print the elements of the tree on a single (very long) line,
 but in more or less the same order that we get from `dump`.
@@ -50,7 +56,7 @@ gnu dingo billygoat aardvark chinchilla frog emu jackalope iguana hippo llama ko
 
 a. Write a procedure, `elements01(PrintWriter pen)`, that creates that output.
 
-b. In what order does that method traverse the tree?
+b. In what order does that method traverse the tree? (breadth first or depth first; in-order or pre-order or post-order; left-to-right or right-to-left)
 
 c. Suppose we traversed the tree using a depth-first, left-to-right, 
 in-order traversal.  What output would you expect?
@@ -59,6 +65,8 @@ d. Write a new procedure, `elements02(PrintWriter pen)`, that prints
 the tree using a depth-first, left-to-right, in-order traversal.
 
 ### Exercise 3: Avoiding recursion
+
+_Driver: **A**_
 
 You have likely written recursive procedures to generate that output.
 What if we can't use recursion?  For example, if we're implementing
@@ -76,6 +84,8 @@ this lab.
 Spend no more than five minutes on this problem!
 
 ### Exercise 4: Printing elements
+
+_Driver: **B**_
 
 Consider the following potential solution to the previous exercise.
 
@@ -126,6 +136,9 @@ does not, fix it.
 
 ### Exercise 5: Other orderings
 
+
+_Driver: **A**_
+
 The `print` method prints the tree using a depth-first, left-to-right,
 pre-order strategy.
 
@@ -149,12 +162,16 @@ f. Check your answer experimentally.
 
 ### Exercise 6: Iterating trees
 
+_Driver: **B**_
+
 Using the ideas from the `print` method, implement the `iterator`
 method.  (You should not implement `remove`.)
 
 You may iterate the tree in any order you consider reasonable.
 
 ### Exercise 7: Breadth-first traversal
+
+_Driver: **A**_
 
 So far, we've only explored depth-first traversal.  But what if we
 want to do *breadth-first* traveral, wherein we visit/print all of
