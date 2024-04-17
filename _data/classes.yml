@@ -513,11 +513,11 @@
     - Iterative breadth-first traversal
     - Iterative depth-first traversal
     - Pre-order, in-order, and post-order traversals
+  reading:
+    - page: /readings/tree-traversal.html
   lab:
     - page: /labs/tree-traversal.html
-  reminders:
-    - This is likely a new lab.  Or I have one from 2014 Fall.
-    - We may need a new reading.
+  notes: ../eboards/eboard32.html
 
 - topic: Binary search trees
   abbrev: bst1

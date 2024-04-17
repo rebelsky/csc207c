@@ -1,5 +1,5 @@
 ---
-title: Mini-Project 8
+title: Mini-Project 9
 xsubtitle: Bit trees and Braille
 summary: |
   We explore mechanisms for representing binary information and the
@@ -9,10 +9,8 @@ collaboration: |
   Each student should submit their own responses to this project. You may
   consult other students in the class as you develop your solution.  If you
   receive help from anyone, make sure to cite them in your responses. 
-link: false
+link: true
 ---
-# {{ page.title }} : {{ page.subtitle }}
-
 _This assignment is adapted from the Including A11y in CS project
 entitled "[Braille Binary Tree](https://accessibilityeducation.github.io/braillebinarytree.html)"._
 
