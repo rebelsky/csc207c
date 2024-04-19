@@ -1,6 +1,6 @@
 ---
 title: Binary search trees
-repo: <https://github.com/Grinnell-CSC207/lab-bsts-c>
+repo: <https://github.com/Grinnell-CSC207/lab-bsts>
 summary: |
   We explore binary search trees and their use in implementing the
   Map ADT.
@@ -21,6 +21,8 @@ Exercises
 
 ### Exercise 1: Getting elements
 
+_Driver: **A**_
+
 As you likely noted, a `BSTNode` has four fields: a key, a value, a pointer
 to the left subtree, and a pointer to the right subtree.
 
@@ -36,12 +38,16 @@ c. Compare your answer to the extant `get` method in `SimpleBST.java`.
 
 ### Exercise 2: Our experiment
 
+_Driver: **B**_
+
 a. Review `BSTExperiment.java` and note to yourself what the experiment
 checks and what output you would expect.
 
 b. Run the code to see if you get the expected output.
 
 ### Exercise 3: Setting elements
+
+_Driver: **B**_
 
 Unfortunately, we have not yet implemented the `set(K key, V value)`
 method.  There are two typical approaches  for `set`, one iterative
@@ -81,11 +87,15 @@ to be operating correctly.
 
 ### Exercise 4: Applying a procedure to each entry
 
+_Driver: **A**_
+
 a. Review the documentation for `forEach`.
 
 b. Implement `forEach`.
 
 ### Excercise 5: Iteration
+
+_Driver: **B**_
 
 Finish implementing `nodes()`.
 
