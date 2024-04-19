@@ -14,18 +14,28 @@ _Approximate overview_
 * Administrivia 
 * About BSTs
 * Questions
-* Lab
+* Labs
 
 Preliminaries
 -------------
 
 * Welcome to any prospective students!
+    * Our weather is much more varied than California's, it's definitely 
+      a reason to come to Grinnell.
+    * Our faculty are nice and never ever threaten to fail students
+      for what they say in class.
+    * UM: Do you use math in your CS class? Yes!
+    * Do folks double major in CS? Yes! Math, Psych, Philosophy,
+      Art, Art Again, English, Music
+    * How hard is it to double major in Grinnell? It's not too bad as long
+      as you plan well. Triple majoring is harder. (But we may eliminate
+      that possibilities.)
 * **Please fill in the mentor/tutor evaluation.**
 * Mentor/Tutor/Grader applications are due soon. If you have classmates
   who (a) seemed to understand the material well and (b) were appropriately
   supportive when working in pairs, you might want to encourage them to
   apply.
-* We may have prospective students tonight. Please treat them kindly.
+* We may have prospective students today. Please treat them kindly.
 * There are two labs for today. I don't think you'll get to the second
   one, but let's hope you'll have time to look it over.
 
@@ -53,8 +63,9 @@ Cultural
 
 * Friday, 2024-04-19, 4:00--5:00pm, HSSC N1170.
   _Middle of Everywhere_. (Ghana?)
-* Saturday, 2024-04-20, 1:00--4:00pm, Park Street to the Bear.
-  _Carnivale_ (or _Carnival_). 
+* Saturday, 2024-04-20, 2:00--5:00pm, 8th Avenue.
+  _Carnivale_ (or _Carnaval_) (or _Carne Val_)
+    * Now on 8th Avenue
 * Saturday, 2024-04-20, 2:00--5:00pm, Quad Dining Room.
   _Japanese Spring Festival_.
 * Saturday, 2024-04-20, 7:00--9:00pm, Herrick.
@@ -80,7 +91,8 @@ Misc
 
 ### Other good things to do (no tokens)
 
-* Consider voting for your classmates for SEPC. 
+* Consider voting for your classmates for SEPC. Or at least for one
+  of them.
 * Saturday, 2024-04-20, 1:00--3:00pm, .
   _Softball vs. Ripon._
 * Saturday, 2024-04-20, 3:00--5:00pm, .
@@ -88,12 +100,35 @@ Misc
 
 ### Friday PSA
 
+* Please be moderate.
+* People care about you.
+* Consent is essential. It is also necessary. But not sufficient.
+
 Questions
 ---------
 
 ### Administrative
 
 ### MP9
+
+Will it be posted?
+
+> During class.
+
+### Binary Search Trees
+
+What are we doing with them?
+
+> Making sure that we understand them (how they work, how to implement,
+  how to write iterators, how to traverse them in one eight or so ways)
+
+How do we handle breadth-first traversal vs depth-first traversal in
+an iterator?
+
+> We normally use a queue for breadth-first traversal and a stack for
+  depth-first traversal. Clever manipulation of either lets you keep
+  track of where you are in the traverdal and the order of traversal
+  (preorder, postorder, inorder).
 
 BST Review
 ----------
@@ -116,9 +151,26 @@ BST Review
 
 ### Exercise
 
-Draw a BST for the following strings.
+Draw a BST for the following strings. Assume we add them one at a time,
+in the order given.
 
 koala, llama, gnu, hippo, aardvark, monkey, baboon, chinchilla, dingo
 
 Lab
 ---
+
+### `set`
+
+* **Do not use the iterator to ipmlement `set`!**
+    * You need to follow the path through the tree to implement `set`.
+    * Sam forgot to distribute the cards, so you can choose whether to
+      use recursion or iteration.
+* Sam recommends that you write it recursively, using a recursive helper
+  that keeps track of the current node.
+* Sam recommends that your recursive helper return the modified tree.
+* Sam writes about Samself in the third person.
+
+Let's write `set` together.
+
+
+###
