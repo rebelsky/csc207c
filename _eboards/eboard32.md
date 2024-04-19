@@ -20,6 +20,8 @@ _Approximate overview_
 Preliminaries
 -------------
 
+* We will likely have more prospective students on Friday. Please don't
+  scare them again.
 * Only two more MPs left! (three, including tonight's)
 * For some reason, the reading for today didn't show up on the class
   Web site. I'll try to go over the high points.
@@ -37,7 +39,7 @@ Preliminaries
 * Wednesday, 2024-04-17, 11:00pm, [Mini-Project 8](../mps/mp08)
     * [_Submit Mini-Project 8 on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4363157)
 * Thursday, 2024-04-18, 11:00pm, Read about trees and BSTs
-    * _Nothing to submit)
+    * _Nothing to submit_
 * Friday, 2024-04-18, 11:00pm, Post-reflection for [MP8](../mps/mp08)
     * [_Submit post-reflection on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4340799)
 * Friday, 2024-04-18, 11:00pm, Pre-reflection for [MP9](../mps/mp09)
@@ -85,8 +87,8 @@ Wellness
 
 Misc
 
-* Tuesday, 2024-04-16, 4:00--5:30pm, HSSC N1112.
-  _Printmaking Workshop with Digital Studies_. "Drinks and supplies included."
+* Thursday, 2024-04-18, 4:30pm, Track and Field Complex.
+  _Small humans run and jump and throw things._
 * Saturday, 2024-04-20, 8:00am--5:00pm, JRC 209.
   _Mental Health First Aid Training_. 
 * Saturday, 2024-04-20, 11:00am--6:00pm, Mac Field.
@@ -111,8 +113,11 @@ A tree is a data structure (or perhaps an ADT) (or perhaps just
 a way to think about information) that organizes information
 hierarchically.
 
+In contrast with lists (and stacks and queueus and arrays and ...), which
+we think of as one-dimensional, lists are somewhat two-dimensional.
+
 A _node_ in a tree contains a value (or, at times, a key/value pair),
-and zero or more subtrees.
+and zero or more subtrees. (Subtrees are also referred to as "children".)
 
 In a binary tree, each node has zero, one, or two subtrees. The
 subtrees are usually identified as _left_ and _right_.  (We will
@@ -139,10 +144,16 @@ strategy.
 
 We'll explore these choices while writing iterators and similar things.
 
+* Breadth-first vs depth-first
+* Left-to-right vs right-to-left
+* Preorder (do the node before children) vs inorder (do the node between children) vs postorder (do the node after children)
+
 MP9
 ---
 
 Explorations with a particular kind of binary tree.
+
+Sam rambled about this for a bit.
 
 Questions
 ---------
@@ -160,5 +171,76 @@ What should the list look like when it's empty?
 > One dummy node. Its `next` field should refer to the dummy node.
   Its `prev` field should also refer to the dummy node.
 
+Do I ever have to skip the fail fast check if I'm using the natural
+solution of having a "changes" field in both iterators and the list?
+
+> You should *always* do the fail fast check in any function in the
+  iterator.
+
+Should my `failFast` method change the count?
+
+> No. It's not changing the list.
+
+When do I increment the counter for the iterator in the list?
+
+> In `add` and `remove` (but not `set`, at least as I understand it).
+
+Do I have to check whether the list has changed before incrementing?
+
+> Yes, you should have. If you create a separate method, you can make
+  that a precondition.
+
+```
+public void add(T val) throws SomeSortOfStateException {
+  failFast();
+  ...
+  noteUpdate();
+} // add(T)
+```
+
+Some strange things are happening in the experiments.
+
+> Check where you are starting your iterator. Is its prev field the dummy
+  node and is its next field `prev.next`?
+
+Can we have some unit tests?
+
+> Already posted to Gradescope.
+
+Any suggestions?
+
+> Draw pictures!
+
+How long did it take Sam to do this assignment?
+
+> You don't want to know.
+
+Yes I do.
+
+> 15 minutes to update DLL to CDLL.
+
+> 2+ hours to write all the unit tests.
+
+> 5 minutes to fix the errors in CDLL (which Sam should have noticed
+  because it didn't compile).
+
+> But Sam has been implementing doubly linked lists for longer than any
+  of you have been alive.
+
 Lab
 ---
+
+Would have have been better off dumping the tree using in-order traversal?
+
+pre-order, left->right, depth-first
+
+* visit (print) node
+* recurse on left subtree
+* recurse on right subtree
+
+in-order, left->right, depth-first
+
+* recurse on left subtree
+* visit (print) node
+* recurse on right subtree
+
