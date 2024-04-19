@@ -1,6 +1,6 @@
 ---
 title: Mini-Project 9
-xsubtitle: Bit trees and Braille
+subtitle: Bit trees and Braille
 summary: |
   We explore mechanisms for representing binary information and the
   use of such mechanisms for converting to and from Braille and
