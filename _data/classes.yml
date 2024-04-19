@@ -531,6 +531,7 @@
   lab:
     - page: /labs/binary-search-trees.html
     - page: /labs/binary-search-trees-continued.html
+  notes: ../eboards/eboard33.html
 
 - topic: Hash tables
   abbrev: hash-tables

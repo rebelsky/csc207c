@@ -1,6 +1,6 @@
 ---
 title: Binary search trees, continued
-repo: <https://github.com/Grinnell-CSC207/lab-bsts-c>
+repo: <https://github.com/Grinnell-CSC207/lab-bsts>
 summary: |
   We continue to explore binary search trees and their use in 
   implementing the Map ADT.
@@ -14,24 +14,17 @@ fork and clone the specified respository and input it into VSCode.
 Exercises
 ---------
 
-### Exercise 1: Setting values, revisited
+### Exercise 1: Removing elements
 
-In [the previous lab](../labs/binary-search-trees), you implemented
-the `set` method either recursively or iteratively.  
-
-a. Implement it in whichever way you did not implement it previously.
-If you need a hint, there is pseudocode at the end of [the previous
-lab](../labs/binary-search-trees).
-
-b. Which implementation do you prefer?  Why?
-
-### Exercise 2: Removing elements
+_Driver: **B**_
 
 Sketch how you might implement the `remove` method.  Spend no more than
 five minutes on your sketch.  Be prepared to discuss it with your instructor
 or class mentor.
 
-### Exercise 3: Removing elements, revisited
+### Exercise 2: Removing elements, revisited
+
+_Driver: **B**_
 
 Experience suggests that removing elements from the tree is most easily
 accomplished recursively, using a strategy something like that used
@@ -80,7 +73,9 @@ the node to be removed has both a left and right subtree.  (Again,
 spend no more than five minutes and be prepared to discuss it with
 your instructor or class mentor.)
 
-### Exercise 4: Removing elements, concluded
+### Exercise 3: Removing elements, concluded
+
+_Driver: **A**_
 
 One inefficient approach that some people take is to reinsert all of
 the values in the left and right subtrees into the tree.  But we should
@@ -103,7 +98,9 @@ subtree is the right subtree.
 
 Implement and check one of those strategies.
 
-### Exercise 5: More systematic experimentation
+### Exercise 4: More systematic experimentation
+
+_Driver: **A**_
 
 The following array of strings should allow you to build a balanced tree 
 of fifteen elements.  (If it doesn't, reorganize it to do so.)
@@ -130,7 +127,24 @@ f. Check your answer with an experiment.
 
 g. Determine what happens if you remove values in random order.
 
-### Exercise 6: Iteration
+For those with extra time
+-------------------------
+
+_If you find that you have extra time, try any of the following
+problems._
+
+### Extra 1: Setting values, revisited
+
+In [the previous lab](../labs/binary-search-trees), you implemented
+the `set` method either recursively or iteratively.  
+
+a. Implement it in whichever way you did not implement it previously.
+If you need a hint, there is pseudocode at the end of [the previous
+lab](../labs/binary-search-trees).
+
+b. Which implementation do you prefer?  Why?
+
+### Extra 2: Iteration
 
 As you may recall, the `nodes` method provides an iterator for the nodes
 in a binary search tree.  We've chosen to have that iterator visit nodes
@@ -151,13 +165,7 @@ b. Be ready to explain why this works.
 c. This visits the nodes using a preorder, left-to-right, depth-first
    strategy.  Sketch how you might do inorder or postorder.
 
-For those with extra time
--------------------------
-
-_If you find that you have extra time, try any of the following
-problems._
-
-### Extra 1: Breadth-first iteration
+### Extra 3: Breadth-first iteration
 
 Revise `nodes` so that it iterates values in a breadth-first
 rather than depth-first order.  
@@ -165,8 +173,10 @@ rather than depth-first order.
 You may find it helpful to incorporate [our simple implementation
 of queues](../files/SimpleQueue.java).
 
-### Extra 2: Rebalancing trees
+### Extra 4: Rebalancing trees
 
 As you may have discovered, we can sometimes end up with quite
 imbalanced binary search trees.  Sketch a mechanism for 
-rebalancing the trees.
+rebalancing the trees. (It's fine if you have difficulty coming
+up with one; rebalancing is difficult. You'll learn more about
+it in CSC-207.)

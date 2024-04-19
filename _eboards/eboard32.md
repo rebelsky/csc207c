@@ -40,9 +40,9 @@ Preliminaries
     * [_Submit Mini-Project 8 on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4363157)
 * Thursday, 2024-04-18, 11:00pm, Read about trees and BSTs
     * _Nothing to submit_
-* Friday, 2024-04-18, 11:00pm, Post-reflection for [MP8](../mps/mp08)
+* Friday, 2024-04-19, 11:00pm, Post-reflection for [MP8](../mps/mp08)
     * [_Submit post-reflection on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4340799)
-* Friday, 2024-04-18, 11:00pm, Pre-reflection for [MP9](../mps/mp09)
+* Friday, 2024-04-19, 11:00pm, Pre-reflection for [MP9](../mps/mp09)
     * [_Submit post-reflection on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4373433)
 
 ### Tokens

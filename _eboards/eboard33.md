@@ -19,9 +19,26 @@ _Approximate overview_
 Preliminaries
 -------------
 
-* Only two more MPs left!
+* Welcome to any prospective students!
+* **Please fill in the mentor/tutor evaluation.**
+* Mentor/Tutor/Grader applications are due soon. If you have classmates
+  who (a) seemed to understand the material well and (b) were appropriately
+  supportive when working in pairs, you might want to encourage them to
+  apply.
+* We may have prospective students tonight. Please treat them kindly.
+* There are two labs for today. I don't think you'll get to the second
+  one, but let's hope you'll have time to look it over.
 
 ### Upcoming work
+
+* Friday, 2024-04-19, 11:00pm, Post-reflection for [MP8](../mps/mp08)
+    * [_Submit post-reflection on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4340799)
+* Friday, 2024-04-19, 11:00pm, Pre-reflection for [MP9](../mps/mp09)
+    * [_Submit post-reflection on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4373433)
+* Sunday, 2024-04-21, 11:00pm, Reading.
+    * [PMO on Hash Tables](https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap12.pdf)
+* Wednesday, 2024-04-24, 11:00pm, MP9
+    * _Probably not posted yet._
 
 ### Tokens
 
@@ -30,15 +47,14 @@ Academic/Scholarly
 * Tuesday, 2024-04-23, noon, Some PDR.
   _CS Table_.
 * Tuesday, 2024-04-23, 8:00pm, Science 3819.
-  _Mentor Session_. Make Elene happy. Show up to mentor sessions!
+  _Mentor Session_. Make Elene and Sam happy. Show up to mentor sessions!
 
 Cultural
 
 * Friday, 2024-04-19, 4:00--5:00pm, HSSC N1170.
   _Middle of Everywhere_. (Ghana?)
 * Saturday, 2024-04-20, 1:00--4:00pm, Park Street to the Bear.
-  _Carnivale_. 
-  Lots of organizations! Get food early, it may run out.
+  _Carnivale_ (or _Carnival_). 
 * Saturday, 2024-04-20, 2:00--5:00pm, Quad Dining Room.
   _Japanese Spring Festival_.
 * Saturday, 2024-04-20, 7:00--9:00pm, Herrick.
@@ -70,7 +86,7 @@ Misc
 * Saturday, 2024-04-20, 3:00--5:00pm, .
   _Softball vs. Ripon, revisited._
 
-NO! You do not get tokens for Wonderland Harris.
+### Friday PSA
 
 Questions
 ---------
