@@ -321,7 +321,7 @@ Why are the ASCII-to-Braille trees deeper than the braille to ASCII trees?
 
 How should I convert the unicode numbers to characters?
 
-> Take a look at the `Character` class in Java.
+> Take a look at the `Character` class in Java. (We might do that together.)
 
 Should I handle both lowercase and uppercase letters in converting from ASCII to braille?
 
@@ -330,6 +330,18 @@ Should I handle both lowercase and uppercase letters in converting from ASCII to
 When using braille as input for traversing the tree, I'm using the bit string.  What should I do with ASCII?
 
 > You could convert it to a bit string.  You could use bitwise operations.
+
+Do I have to write an `Iterator` for my bit tree?
+
+> Nope.
+
+Why did you suggest that we have separate classes for interior nodes and leaves?
+
+> Sometimes having separate classes simplifies things. Your interior nodes will need to store links to the subtrees below them. Your leaves will store only the value.
+
+What will `load` look like?
+
+> Presumably, you'll read each line, split at the comma, and then call `set`.
 
 Acknowledgements
 ----------------
