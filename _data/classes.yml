@@ -536,7 +536,7 @@
 - topic: Hash tables
   abbrev: hash-tables
   summary: |
-    We consider hash tables, one of the most powerful implementations
+    We consider hash tables, one of the most efficient implementations
     of the Map abstract data type.  We also explore the issue of hash
     functions.
   subjects:
@@ -548,6 +548,9 @@
   reading:
     - link: "Osera 12: Hashing"
       url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap12.pdf
+  lab:
+    - page: /labs/hash-table-probing.html
+  notes: ../eboards/eboard34.html
 
 - topic: Probing in hash tables
   abbrev: probing
