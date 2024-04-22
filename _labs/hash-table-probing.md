@@ -1,6 +1,6 @@
 ---
 title: Probing in hash tables
-repo: <https://github.com/Grinnell-CSC207/lab-hashtables-c>.
+repo: <https://github.com/Grinnell-CSC207/lab-hashtables>.
 summary: |
   We explore the consequences of probing in hash tables.
 ---
@@ -14,13 +14,17 @@ Exercises
 
 ### Exercise 0: Code Reading
 
-Scan through the code so that you understand what methods are available and what approaches are used.  Make notes on areas that are likely to be problematic.
+_Driver: **A**_
+
+Scan through the code for probed hash tables so that you understand what methods are available and what approaches are used.  Make notes on areas that are likely to be problematic.
 
 a. What methods are not yet implemented?
 
 b. What parts of the code are likely to have problems?  Why?
 
 ### Exercise 1: Duplicate keys
+
+_Driver: **A**_
 
 As you may have noted, the code for `set` does not check to see if the key is already being used.  The introductory notes therefore observe that this is a potential bug that should be fixed.
 
@@ -49,6 +53,8 @@ d. Correct the bug.
 
 ### Exercise 2: Verifying that keys match
 
+_Driver: **B**_
+
 As you may have noted, the code assumes that `find` returns a cell that has a pair with a matching key.
 
 a. Is that the case?  Why or why not?
@@ -59,6 +65,8 @@ c. Squash that second bug by updating `get` to check whether the key in the give
 
 ### Exercise 3: Handling collisions
 
+_Driver: **B**_
+
 As you may have noted, the code makes no attempt to deal with collisions.  Hey, it's even in the "bugs to squash" section.  (Some of you may have been tempted to fix the bug in a previous exercise.)
 
 a. Uncomment the call to `setExpt` so that you can see other potential effects of the unimplemented collision detection.
@@ -66,6 +74,8 @@ a. Uncomment the call to `setExpt` so that you can see other potential effects o
 b. Update `find` to use linear probing.  If the current cell is full, and the keys don't match, try the cell that is `PROBE_OFFSET` away from the current cells (modulo the capacity of the table).  For example, if the table capacity is 20, the hash code gives us position 3, and the offset is 6, you should look in positions 3, 9 (3 + 6), 15, 1 (21 mod 20), 7, ....
 
 ### Exercise 4: Improving collision handling
+
+_Driver: **B**_
 
 Here's a subtle bug that many programmers miss: For some combinations of table capacity and offset, we may cycle back before we've looked at every cell in the table.  For example, if the table capacity is 20, the hash code gives us position 3, and the offset is 5, we would look in positions 3, 8, 13, 18, 3 (23 mod 20), 8, 13, 18, ....  So, even if the table is only 20% full, we might miss the empty cells.
 
@@ -81,6 +91,8 @@ Which do you prefer?  Be prepared to explain your decision.
 We'll come back and implement one of these choices later.
 
 ### Exercise 5: Expanding Hash Tables
+
+_Driver: **A**_
 
 As the previous exercise reminded us, at some point we have to figure out how to expand the table.  Most frequently, we expand the table when it reaches a certain percentage full. (That percentage is given by `LOAD_FACTOR` in the current implementation.)
 
@@ -109,6 +121,8 @@ In case you've forgotten: The cycle problem is that we might cycle back to the s
 
 ### Exercise 6: Removing elements
 
+_Driver: **B**_
+
 We're making good progress in our implementation of hash tables.  What's next?  We should add support for removing elements.  Unfortunately, as we've learned, removing elements is often the most difficult aspect of implementing data structures.  So let's think a bit about how we might approach the problem.
 
 a. Write some experiments that allow us to see what happens when we remove elements.
@@ -123,6 +137,8 @@ d. Hopefully, you've found that this is a dangerous approach, since it breaks im
 
 ### Exercise 7: Checking for keys
 
+_Driver: **A**_
+
 Let's take a short break from thinking about how to remove elements and consider another issue.  The `containsKey` method is implemented a bit strangely.
 
 a. Read the code for `containsKey`.
@@ -134,6 +150,8 @@ c. Conduct a few experiments to check your conclusion.
 d. Rewrite `containsKey` to use a more sensible approach.
 
 ### Exercise 8: Removing elements
+
+_Driver: **A**_
 
 Here's a potentially better mechanism for removing elements: Find the index of the key/value pair.  Set the key to null.   Decrement the size field.
 
