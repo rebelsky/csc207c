@@ -99,8 +99,11 @@ Create a class, `BitTree`, intended to store mappings from bits to values.
 * A method, `void load(InputStream source)`, that reads a series of
   lines of the form `bits,value` and stores them in the tree.
 
-You will likely find it useful to create a `BitTreeNode` class and,
-perhaps, a `BitTreeLeaf` class (a subclass of `BitTreeNode`?).
+You will likely find it useful to create a `BitTreeNode` interface,
+a `BitTreeInteriorNode` class, and a `BitTreeLeaf` class. You might
+also make do with a `BitTreeNode` class that has both a value (for
+when it's a leaf) and two children (for when it's an interior node),
+but the subclassing is a bit cleaner.
 
 Braille trees
 -------------
@@ -342,6 +345,22 @@ Why did you suggest that we have separate classes for interior nodes and leaves?
 What will `load` look like?
 
 > Presumably, you'll read each line, split at the comma, and then call `set`.
+
+Can we put the translation tables you gave us into files and then load them in our `main` method?
+
+> Yes. I was assuming you'd do so.
+
+Can we use the generic `TreeNode` class from the labs?
+
+> Sure, although I would not recommend it. You're better off creating your own specialized node classes. 
+
+If I include a `value` field in my nodes, what value should I use for the interior nodes?
+
+> `null` seems like a good strategy.
+
+Will you provide tests?
+
+> Forthcoming.
 
 Acknowledgements
 ----------------
