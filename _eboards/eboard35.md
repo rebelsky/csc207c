@@ -1,5 +1,5 @@
 ---
-title: "Eboard 34: Probed hash tables"
+title: "Eboard 35: Probed hash tables"
 number: 35
 section: eboards
 held: 2024-04-24
@@ -39,10 +39,19 @@ Preliminaries
 * Friday, 2024-04-26, 11:00pm, Post-reflection for [MP9](../mps/mp09)
     * [_Submit MP9 post-reflection on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4373433)
     * [_Submit MP10 pre-reflection on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4405174)
+* Friday, 2024-04-26, 11:00pm, New set of LAs
+* Sunday, 2024-04-28, MP1 second redo
+* Sunday, 2024-04-28, MP2 second redo
 * Wednesday, 2024-05-01, 11:00pm, MP10
     * [_Submit MP10 on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4405216/)
+* Friday, 2024-05-03, 11:00pm, New set of LAs, repeated + old LAs (I hope)
 
 ### Tokens
+
+How many tokens do I have? 
+
+> 10,000 each, plus or minus, as long as at least 63% of the class turned
+  in the mentor evaluation.
 
 Academic/Scholarly
 
@@ -75,6 +84,7 @@ Peer
 
 * Saturday, 2024-04-27, 12:00--4:00pm, Kington Plaza.
   _Spring Fest_.
+  There might be catered food.
 
 Wellness
 
@@ -96,6 +106,19 @@ _Our last mini-project!_
 
 Your goal: Parse JSON, the JavaScript Object Notation, a common form for sharing data between programs.
 
+JSON lets you have:
+
+* "Objects" (hash tables with strings as keys). Start with `{`, end with
+  `}` and have key/value pairs separated by commas in between.
+  'STRING' : value.
+* Strings: start with double quote `"`, end with double quote `"`, normal
+  rules about backslashing in between.
+* Arrays : Start with `[`, end with `]`, values separated by commas.
+* Numbers (Integers, Reals) : As you might expect.
+
+For fun, you get to design the hash table; you may not use Java's
+`HashMap` or anything similar.
+
 You should work in groups of two or three. You may self-select your groups.
 
 Questions
@@ -103,11 +126,49 @@ Questions
 
 ### Administrative
 
+Will you please give detentions to the SEPC member who keeps showing up
+late? I find it distracting?
+
+> What's a detention?
+
 ### MP9
 
 Could you explain more about `dump`?
 
 > See whiteboard.
+
+How do I change the unicode data into unicode characters?
+
+```
+public class UnicodeExample {
+  public static void main(String[] args) {
+    for (String str : args) {
+      int i = Integer.decode("0x" + str);
+      System.err.println(i);
+    } // for
+  } // main(String[])
+} // class UnicodeExample
+```
+
+That gives us numbers.  We could also use `Integer.parseInt(str, 16)`.
+
+We convert to unicode with `Character.toChars`.
+
+```
+public class UnicodeExample {
+  public static void main(String[] args) {
+    for (String str : args) {
+      int i = Integer.decode("0x" + str);
+      System.err.println(Character.toChars(i));
+    } // for
+  } // main(String[])
+} // class UnicodeExample
+```
+
+Why didn't you just tell us that to start with?
+
+> Because exploring the Javadoc documentation is one of the learning goals
+  of the course.
 
 ### Hash tables
 
