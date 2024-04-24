@@ -42,14 +42,17 @@ c. If you'd like, you can start with the following simple set of experiments.
     htab.dump(pen);
     htab.set("bravo", "bravo");
     htab.dump(pen);
-    htab.set("beta", "bravo");
+    htab.set("beta", "max");
     htab.dump(pen);
     htab.reportBasicCalls(false);
-    getExpt(pen, htab, "beta");
+    checkGet(pen, htab, "bravo");
     pen.println();
 ```
 
-d. Correct the bug.
+d. Check the end of the lab for a description of the potential bug that
+we hope you observed.
+
+e. Correct the bug.
 
 ### Exercise 2: Verifying that keys match
 
@@ -163,3 +166,11 @@ For those with extra time
 -------------------------
 
 If you find that you have extra time, implement the iterator.
+
+### Notes on Exercise 1
+
+The bug that you should have observed is that when we use `set` to
+update the value associated with a key, the size of the table still
+increases. It should not.
+
+For this exercise, you need not deal with the other conflicts.
