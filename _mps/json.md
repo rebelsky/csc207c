@@ -1,19 +1,17 @@
 ---
-title: Mini-Project 9
+title: Mini-Project 10
 xsubtitle: Parsing and producing JSON
 summary: |
   In this project, you will develop a JSON library for Java. JSON
   is "JavaScript Object Notation" and serves as a common format for
   passing information between programs.
 collaboration: |
-  Students should work in assigned pairs. Students may consult other
-  students in the class (or anyone) as they develop your solutions.
-  If you receive help from anyone, make sure to cite them in your
-  responses.
-link: false
+  Students should work in assigned pairs or triplets. Students may
+  consult other students in the class (or anyone) as they develop
+  your solutions.  If you receive help from anyone, make sure to
+  cite them in your responses.
+link: true
 ---
-# {{ page.title }} : {{ page.subtitle }}
-
 Often, we find that we need to transfer information from one program to another. For example, when designing Web applications, we may find that we want to query another Web application. For example, someone building a meal-planning app for students might want to be able to find out what food is available each day from the dining services app. To ease transfer, developers have considered a variety of standard notations for representing data. XML is one of the most general notations. However, XML is somewhat verbose, and most programmers tend to prioritize simpler approaches.
 
 These days, JSON, the JavaScript Object Notation, is one of the most common mechanisms for sharing information between programs. Among other things, JSON permits you to build deeply nested structures of objects containing objects containing objects. As the [ECMA JSON standard](https://ecma-international.org/publications-and-standards/standards/ecma-404/) suggests,
@@ -65,13 +63,13 @@ Here's what you'll need to do for this assignment.
 
 ### Implement hash tables
 
-The basic classes are all implemented as "wrappers".  In contrast, I'd like you to build the `JSONHash` table as a hash table you implement yourself.  That is, no using Java's `HashMap` or anything similar; you should work with an array of `KVPair` values intead.
+The basic classes are all implemented as "wrappers".  In contrast, I'd like you to build the `JSONHash` table as a hash table you implement yourself.  That is, you may not use Java's `HashMap` or anything similar; you should work with an array of `KVPair` values intead.
 
 ### Write the parser
 
 Finally, you'll write the parser.
 
-As you might expect, as you parse a string (or part of a string), you'll need to build JSON values on the fly.  For example, if you see a double quotation mark, you should keep looking forward until you find the closing quotation mark, gather all the characters, and then call the `JSONString` constructor.  In contrast, if you see an open bracket, you should create a new `JSONArray` and then recursively parse the next values you see, stopping when you hit an end brace.
+As you might expect, as you parse a string (or part of a string), you'll need to build JSON values on the fly.  For example, if you see a double quotation mark, you should keep looking forward until you find the closing quotation mark, gather all the characters (possibly in a `StringBuilder`), and then call the `JSONString` constructor.  In contrast, if you see an open bracket, you should create a new `JSONArray` and then recursively parse the next values you see, stopping when you hit an end brace.
 
 ### Ask questions
 
@@ -92,13 +90,9 @@ What's the difference between `toString` and `writeJSON`?
   return the underlying string for `JSONString`, but should add the
   quotation marks and the backslashes when printing the JSON.
 
-Shouldn't all of the `JSONx` classes implement `JSONValue`?
-
-> Whoops. Yes. That's fixed in the main repo.
-
 Should we do probed hash tables or chained hash tables?
 
-> It's up to you.
+> It's up to you. 
 
 Would you recommend that we do chaining or probing?
 
@@ -106,7 +100,7 @@ Would you recommend that we do chaining or probing?
 
 How should we implement the lists for chained hash tables?
 
-> I'd recommend `ArrayList`s.
+> I'd recommend usin `ArrayList` objects.
 
 How should we implement `hashCode`?
 
@@ -118,3 +112,7 @@ What goes in our Main class?
 > There is no Main class. You are writing utility methods; while you should
   test them (e.g., by reading a JSON file and then writing it again), you
   aren't making a program that is supposed to do something.
+
+Will you provide us with tests or experiments?
+
+> Stay tuned.
