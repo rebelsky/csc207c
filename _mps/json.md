@@ -1,6 +1,6 @@
 ---
 title: Mini-Project 10
-xsubtitle: Parsing and producing JSON
+subtitle: Parsing and producing JSON
 summary: |
   In this project, you will develop a JSON library for Java. JSON
   is "JavaScript Object Notation" and serves as a common format for
