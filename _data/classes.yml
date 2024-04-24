@@ -548,8 +548,8 @@
   reading:
     - link: "Osera 12: Hashing"
       url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap12.pdf
-  lab:
-    - page: /labs/hash-table-probing.html
+  reminders:
+    - Have them write a hash function for our good old fraction class.
   notes: ../eboards/eboard34.html
 
 - topic: Probing in hash tables
@@ -565,7 +565,7 @@
     - page: /labs/hash-table-probing.html
   reminders:
     - Lots of this lab can be moved to other days.
-    - Have them write a hash function for our good old fraction class.
+  notes: ../eboards/eboard35.html
 
 - topic: Chaining in hash tables
   abbrev: chaining
