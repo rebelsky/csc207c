@@ -576,6 +576,7 @@
     - Buckets and chaining
   lab:
     - page: /labs/hash-table-chained.html
+  notes: ../eboards/eboard36.html
 
 - topic: Priority queues, heaps, and heap sort
   abbrev: heaps
