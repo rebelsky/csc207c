@@ -1,8 +1,8 @@
 ---
-title: "Eboard 35: Probed hash tables"
-number: 35
+title: "Eboard 36: Chained hash tables"
+number: 36
 section: eboards
-held: 2024-04-24
+held: 2024-04-26
 link: true
 ---
 # {{ page.title }}
@@ -21,7 +21,7 @@ Preliminaries
 * Does anyone not have a partner for MP10?
 * I apologize if I'm even more disorganized than normal. I spent three
   hours dealing with registration between last night and this morning
-  and another hour dealing with academic honety issues.
+  and another hour dealing with academic honesty issues.
 * On the first topic: It appears that the Registrar held out an absurdly
   large number of seats in CS courses. So fingers crossed on positive
   changes moving ahead.
@@ -64,12 +64,13 @@ Academic/Scholarly
 
 Cultural
 
+* Dance Ensemble. Tonight. Tomorrow night. I think.
 * Friday, 2024-04-26, 4:00--5:00pm, HSSC N1170.
-  _Middle of Everywhere_. 
+  _Middle of Everywhere_ (St. Lucia). 
 * Friday, 2024-04-26, 4:30--6:00pm, HSSC A2231 (Auditorium).
   _Conversation with Humanity. Climate Change._
 * Saturday, 2024-04-27, Harris.
-  _ISO Cultural Event._ Please don't destroy the bathroom ceilings.
+  _ISO Cultural Event._ 
 
 Peer
 
@@ -83,8 +84,11 @@ Misc
 
 * Friday, 2024-04-26, 8:30--11:00pm, Harris Concert Hall.
   _Drag_.
-* Saturday, 2024-04-27, 6:00--11:30pm, Gardner.
+* Saturday, 2024-04-27, 9:00--11:30pm, Gardner. Don't destroy the
+  bathroom tiles again.
   _Mary B. James_.
+* Sunday, 2024-04-28, 7:00pm HSSC S1325.
+  _Learn about Hack-a-thons._
 
 ### Other good things to do (no tokens)
 
@@ -93,6 +97,34 @@ Questions
 
 ### Administrative
 
+Will you post all the LAs for next Friday?
+
+> Yes.
+
+### MP10
+
+Do we have to implement hash tables in JSONHash?
+
+> You can either make a separate `MyAwesomeHashTable` class or just 
+  implement it directly.
+
+### LAs
+
+What does it mean to create a library?
+
+> Create a class or set of classes that someone else can use in
+  their larger program.
+
+What does it mean to use a library?
+
+> Use a class or classes provided to you as part of the Java libraries.
+
+> Preferably one in which you had to understand the documentation.
+
+Can I use the same piece of code for multiple LAs?
+
+> Certainly.
+
 ### Hash tables
 
 ### Misc
@@ -100,3 +132,8 @@ Questions
 Lab
 ---
 
+Detour: Please parse the eleven-buffalo sentence (or write a similar one with the same framework).
+
+> Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo Buffalo buffalo buffalo.
+
+> Grinnell students College professors teach amuse Macalester students Carleton students bully.
