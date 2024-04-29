@@ -591,11 +591,10 @@
     - Storing trees in arrays
   reading: 
     - page: /readings/priority-queues.html
-  lab:
-    - page: TBD
   reminders:
     - Is this worth doing as a discussion or as a lab?  I like the discussion of heaps, but students also learn from practice.  
-    - Maybe we need two days.
+    - Maybe we need two days. Unfortunately, we don't have them.
+  notes: ../eboards/eboard37.html
 
 - topic: A graph ADT
   abbrev: graphs
@@ -610,10 +609,10 @@
     - Implementing graphs with adjacency matrices
     - Implementing graphs with adjacency lists
     - Implementing graphs with edge tables
+  reading:
+    - link: "CLRS B.4: Graphs"
+      url: https://ebookcentral-proquest-com.grinnell.idm.oclc.org/lib/grinnell-ebooks/reader.action?docID=6925615&ppg=907
   reminders:
-    - Readings?  Neither PM nor I seem to have any.  Anya used Skiena.
-    - http://www.cs.grinnell.edu/~rebelsky/Courses/CS152/2006S/EBoards/graphs.txt
-    - Maybe the appropriate section of CLRS?
     - Anya has a lab on graphs.  http://www.cs.grinnell.edu/~vostinar/csc-207-spring-2018-schedule/csc-207-s18-representing-graphs/
 
 - topic: Traversing graphs
