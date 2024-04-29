@@ -29,6 +29,8 @@ Preliminaries
 * I've updated the grading policies for the course. We'll go over them
   quickly. I think they appropriately accommodate grading (or lack
   thereof).
+* Congratulations to Men's Tennis, particularly to your classmate
+  for No. 2 Singles/No. 1 Doubles.
 
 ### Upcoming work
 
