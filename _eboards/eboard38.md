@@ -14,24 +14,30 @@ _Approximate overview_
 * Administrivia 
 * Some LAs
 * Questions
+* A bit more on heaps (plus practice)
+* Modeling problems with graphs
+* Some graph terminology
+* Designing a graph ADT
+* Implementing that ADT (if time)
 
 Preliminaries
 -------------
 
-* I spent all day yesterday grading LAs. So you now have some of them
-  back. Yay!  We'll go over some notes to help everyone.
+* I spent all day yesterday grading LAs. So you will get many back after
+  class.  We'll go over some notes to help everyone. (I prefer to go
+  over notes before returning things for obvious reasons.)
+* I will set up all the LAs for May 10 on Saturday.
+* If I can get those graded promptly, I'll set up a set for Tuesday, May 14.
 
 ### Upcoming work
 
-* Tuesday, 2024-05-30, 11:00pm, Reading on Graphs. 
-    * [CLRS B.4](https://ebookcentral-proquest-com.grinnell.idm.oclc.org/lib/grinnell-ebooks/reader.action?docID=6925615&ppg=907)
-    * _If you're taking graph theory, you can skip this reading._
 * Wednesday, 2024-05-01, 11:00pm, MP10
     * [_Submit MP10 on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4405216/)
+* Thursday, 2024-05-02, 11:00pm, More Reading on Graphs. 
 * Friday, 2024-05-03, 11:00pm, MP10 post-reflection.
     * [_Submit MP10 post-reflection on Gradescope_](https://www.gradescope.com/courses/690101/assignments/4405177)
-* Friday, 2024-05-03, 11:00pm, New set of LAs, repeated + old LAs (I hope)
-* Friday, 2024-05-10, 11:00pm, New set of LAs, repeated + old LAs (I hope)
+* Friday, 2024-05-03, 11:00pm, New set of LAs, repeated + old LAs
+* Friday, 2024-05-10, 11:00pm, New set of LAs, repeated + old LAs
 
 ### Tokens
 
@@ -228,6 +234,17 @@ _Signal and recover from errors using exceptions._
 * Here and in other ADTs/DSs, start with the PUM, or at least something
   like the PUM. At least the PM.
 
+### ADTs/DSs #7: Binary Search Trees
+
+* Bit trees are not BSTs. Neither are heaps.
+* Please include code for `get` and `set`.
+
+### ADTs/DSs #10: Array-Based Structures
+
+* Make sure to explain why we use arrays in implementations.
+* Make sure to explain how you are using an array in the implementation.
+* Make sure to include code that explicitly works with an array.
+
 Questions
 ---------
 
@@ -242,4 +259,94 @@ When will my MPs be graded?
 ### LAs
 
 ### Misc
+
+Heaps
+-----
+
+_TPS: Where were we?_
+
+Modeling problems with graphs
+-----------------------------
+
+* A core issue of CS (or at least computer programming): Take real-world
+  problems and solve them computationally.
+* We like to build "models" that let us represent the problem in the
+  computer, often stripping away extraneous details.
+* A lot of problems, particularly geographic problems, lead to
+  structures we call "graphs".
+
+### Sample problems
+
+* You are a 911 dispatcher and need to send an ambulance to an
+  address, from which ambulance depot do you send it?
+* It has snowed.  A lot.  All of the streets are impassible.
+  What's the minimal set of streets we should clear so that the
+  fire department can reach every corner in town?
+* You work for the census.  You need to visit every house in
+  Powesheik county.  What's the most efficient path to visit all
+  of those houses?
+    * _Can_ you visit all of those houses?
+
+### Abstraction
+
+* What do these problems have in common?
+
+Graph terminology
+-----------------
+
+A _graph_ is a collection of _vertices_ and _edges_ that connect them.
+CLRS write this as $(V,E)$.  $E$ is a subset of $V$x$V$.
+
+* We typically say that a graph has $n$ vertices and $m$ edges.
+    * We might say that a graph has $v$ vertices and $e$ edges.
+* We typically permit only one edge from one vertex to another.
+* We don't typically permit edges from a vertex to itself.
+
+_Please do not use "vertice" as the singular of "vertices"._
+
+We often label the vertices of the graph.
+
+### Weighted graphs
+
+In a _weighted graph_ every edge has an associated numeric "weight",
+representing some cost associated with the edge.
+
+* For our geographic examples, that might be the distance between two 
+  locations or the time it takes to get between the two locations.
+* We may sometimes associate more than one value with an edge, such as
+  both a cost and a cpacity.
+* In most situations, we require that weights be non-negative.
+* Weights can be integers or reals. Surprisingly, using (conceptual)
+  reals can make some problems more difficult.
+
+### Directed graphs
+
+In a _directed graph_, edges have a direction. That is, just because 
+we can get directly from A to B, we can't necessarily get from B to A.
+
+* You can think of these as one-way streets.
+
+Designing a graph ADT
+---------------------
+
+_TPS: PUM_ (yay TLAs)
+
+### Philosophy
+
+### Use cases
+
+### Methods
+
+#### Constructors
+
+#### Accessors
+
+#### Mutators
+
+#### Additional
+
+Implementing graphs
+-------------------
+
+_TPS: LIA_ (yay TLAs)
 
