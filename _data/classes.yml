@@ -614,6 +614,7 @@
       url: https://ebookcentral-proquest-com.grinnell.idm.oclc.org/lib/grinnell-ebooks/reader.action?docID=6925615&ppg=907
   reminders:
     - Anya has a lab on graphs.  http://www.cs.grinnell.edu/~vostinar/csc-207-spring-2018-schedule/csc-207-s18-representing-graphs/
+  notes: ../eboards/eboard38.html
 
 - topic: Traversing graphs
   abbrev: graph-traversal
