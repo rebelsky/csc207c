@@ -19,6 +19,7 @@ _Approximate overview_
 * Some graph terminology
 * Designing a graph ADT
 * Implementing that ADT (if time)
+* Quick group time (if time)
 
 Preliminaries
 -------------
@@ -54,7 +55,7 @@ Cultural
   Grinnell College Museum of Art.
   _BAX 2024_. Shouldn't it be BAE?
 * Friday, 2024-05-03, 4:00--5:00pm, HSSC N1170.
-  _Middle of Everywhere_
+  _Middle of Everywhere_ (maybe Lebanon)
 
 Peer
 
@@ -69,6 +70,8 @@ Misc
 
 * Thursday, 2024-05-02, 4:15--5:30pm, Burling 1st.
   _Conversation with Kathryn Mohrman '67._
+* Thursday, 2024-05-02, 8:00--??:??pm, HSSC Atrium (?).
+  _Dessert with trustees._
 * Saturday, 2024-05-04 (aka "Star Wars Day"), 10:00am--11:00pm, Central Campus.
   _The Grinnellian._
 
@@ -89,8 +92,8 @@ Misc
 LAs
 ---
 
-I got through all of the algorithms LAs and most of the development
-LAs. 
+I got through all of the algorithms LAs, all the development LAs, and
+some of the ADT/DS LAs. 
 
 Most of the 0's I saw were very close to 1's. They just needed a bit of
 correction or extension to show me that you'd mastered the LO.  Here
@@ -101,12 +104,15 @@ are things that will help you do better.
 * Please take the time to anonymize your code.
 * It would be nice if you followed coding conventions. (I don't think anyone
   got a 0 for this, but you should follow coding conventions.)
-* Please be reasonable specific in your citations. Not "labs" but
-  "the lab on binary search" or URL.
+* Please be reasonably specific in your citations. Not "labs" but
+  "the lab on binary search" or URL. Not "I found it with Google" but
+  a URL.
 * I worry that many of you seem to have forgotten everything you learned
   about decomposition in CSC-151. Details follow below.
 * Please follow custom and write ranges as lower-bound inclusive,
   upper-bound exclusive. [I'll repeat this a few times.]
+    * `(substring str lb ub)`
+    * Applies to binary search, merge sort, Quicksort
 * Some of you need to work on the clarity of your high-level explanations.
   I don't need a description of every step. Your goal is a few sentences
   that give someone a high-level understanding of the algorithm.
@@ -172,6 +178,7 @@ are things that will help you do better.
 
 * Too few of you include comments in your unit tests. But it's nice
   for someone to see what you are testing.
+     * `checkEquals(X,Y)` vs `checkEquals(X,Y,"Comment")`
 * In some cases, I was hoping for more of a mix of tests and 
   text (either you had tests but almost no text, or text but
   almost no tests).
@@ -189,7 +196,8 @@ are things that will help you do better.
   the design decisions embedded in the code and the relation of the class
   to a larger ecosystem. (Why did someone create this class?)
 * The specification says "_Read, understand, **and modify** code that you 
-  did not write._" I'd like to see appropriate modifications.
+  did not write._" I'd like to see appropriate modifications and a 
+  description of that modification.
 
 ### Development #7: Documentation
 
@@ -256,14 +264,125 @@ When will my MPs be graded?
 
 ### MP10
 
+Do we have to deal with nested structures?
+
+> Yes.
+
+Do we really have to deal with unicode?
+
+> No.
+
+Should we enforce the form of real numbers?
+
+> Yes.
+
+Will Java handle the scientific notation?
+
+> Probably.
+
 ### LAs
 
+How many chances will we have?
+
+> This Friday (almost everything). Next Friday (everything), 
+  Friday the 17th (everything). Maybe some time between the 10th and the
+  17th.
+
 ### Misc
+
+Could you post a second redo for MP4?
+
+> If you ask me on Teams and then ask again in twelve hours if I haven't
+  done so.
 
 Heaps
 -----
 
 _TPS: Where were we?_
+
+### Learned
+
+* A heap is a binary-tree data structure used to store comparable values.
+* It implements the Priority Queue ADT.
+* Heaps are organized according to two properties:
+    * Each value is higher-priority than its descendants.
+    * The tree is nearly complete; all levels are full, except the last,
+      which is aligned to the left.
+* To add to a heap, we put an element at the end of the last level and
+  then "heap up", swapping with smaller parents.
+* To remove from a heap, we remove the top element, put the last element
+  at the root, and then "swap down", swapping with the larger of the
+  children.
+* We store heaps in arrays. That makes it easier to find the parents
+  and children.
+* Like all priority queue implementations, heaps can be used for
+  sorting.
+
+What's left
+
+* Not lab.
+* In-place heap sort. With an example.
+    * Two versions.
+
+In-place heap sort.
+
+* Turn the array into a heap.
+* Repeatedly shift the largest value in the heap to the "end"
+
+How do I turn an array into a heap?
+
+* Option: Put the largest value at the root O(n). Put the second
+  largest after it O(n) ... whoops. building the heap will be O(n^2)
+* `For (int i = 1; i < n; i++) { heapUp(i); }`  THe loop runs n times.
+  heapUp is O(logn). Hence, it's `O(nlogn)`.
+
+How long did it take to pull things out of the heap and put them into
+the back end of the array?
+
+* O(nlogn): We have to do every elements (n times). For each element,
+  we swap O(1) and then call swapdown O(logn). 
+
+Heap sort: Guaranteed O(nlogn) in-place sorting algorithm
+
+Is it stable? No. Sam said it wasn't. Sam never lies. Better yet, swapping
+down is unlikely to preserve order.
+
+What would happen if we gave it an array in ascending order?
+
+* 1|2,3,4,5,6
+* 2,1|3,4,5,6
+* 3,1,2|4,5,6
+* 4,3,2,1|5,6
+* 4,5,2,1,3|6
+* 5,4,2,1,3|6
+* 6,4,5,1,3,2
+
+```
+     6
+   /   \
+  4     5
+ / \   /   
+1  3  2
+```
+
+* 6,4,5,1,3,2
+* 5,4,2,1,3|6
+* 4,3,2,1|5,6
+* 3,1,2|4,5,6
+
+Hmmm ... It's not very good with already-ordered lists.
+
+### One other thing
+
+In practice, people build the heap in a very different way.
+
+```
+for (int i = n/2; i >= 0; i--) {
+  heapDown(i)
+}
+```
+
+Think about why that would still build a heap.
 
 Modeling problems with graphs
 -----------------------------
