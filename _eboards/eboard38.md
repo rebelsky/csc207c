@@ -1,5 +1,5 @@
 ---
-title: "Eboard 38: Graphs"
+title: "Eboard 38: More about heaps"
 number: 38
 section: eboards
 held: 2024-05-01
@@ -15,11 +15,7 @@ _Approximate overview_
 * Some LAs
 * Questions
 * A bit more on heaps (plus practice)
-* Modeling problems with graphs
-* Some graph terminology
-* Designing a graph ADT
-* Implementing that ADT (if time)
-* Quick group time (if time)
+* Group work time
 
 Preliminaries
 -------------
@@ -174,84 +170,98 @@ are things that will help you do better.
   your process and why it was successful (or how you made it
   successful).
 
-### Development #3: Unit Testing
+### Development #3: Unit testing
 
-* Too few of you include comments in your unit tests. But it's nice
-  for someone to see what you are testing.
-     * `checkEquals(X,Y)` vs `checkEquals(X,Y,"Comment")`
-* In some cases, I was hoping for more of a mix of tests and 
-  text (either you had tests but almost no text, or text but
-  almost no tests).
+Too few of you include comments in your unit tests. In my experience, you will
+forget why you wrote your tests. The comments help us remember.
 
-### Development #5: Version Control
+* Bad: `assertEquals(Expected, Expression);`
+* Good: `assertEquals("Message", Expected, Expression)`
 
-* Please include a git log from a project.
-* And remember that it's supposed to show collaboration. That means
-  there should be more than one committer (or an explanation as to
-  why there's only one committer).
+I expect to see a mix of tests and explanatory text. The text should explain
+what unit testing is and why we use it. It might also describe the tests. The
+tests should be sensible, real tests. 
 
-### Develpoment #6: Code Reading
+### Development #5: Version control
 
-* Code reading is more than "there's a for loop here". You should describe
-  the design decisions embedded in the code and the relation of the class
-  to a larger ecosystem. (Why did someone create this class?)
-* The specification says "_Read, understand, **and modify** code that you 
-  did not write._" I'd like to see appropriate modifications and a 
-  description of that modification.
+Please include a git log from a project.
+
+Remember that the log is supposed to show collaboration. That means
+there should be more than one committer (or an explanation as to
+why there's only one committer).
+
+### Develpoment #6: Code reading
+
+Code reading is more than "there's a for loop here". You should describe
+the design decisions embedded in the code and the relation of the class
+to a larger ecosystem. (Why did someone create this class?)
+
+The specification says "_Read, understand, **and modify** code that you 
+did not write._" I'd like to see appropriate modifications and a 
+description of that modification.
 
 ### Development #7: Documentation
 
-* I'm a bit surprised at what people submitted, so I'm going to give
-  some tips.
+Central tips:
+
 * Make sure to use Javadoc comments.
 * Make sure to use correct spelling.
 * Make sure to comment methods, constructors, and fields.
 * Make sure that your comments say more than "Helper method".
-* Ideally: Document parameters and such. (I don't regularly do so,
-  so I won't force you to do so.)
-* Ideally: Put in section separators.
-* Ideally: Include internal comments to explain more confusing parts
-  of code.
-* Ideally: Do not include internal comments that simply restate what
-  the code does. `// Add one to x` above `x++;` does not help the
-  reader.
 
-### Development #9: Use Libraries
+The following things would be nice, but are not strictly necessary.
 
-* Please focus on libraries in which you don't know the internals.
-  (That is, don't say "I used Sam's X class.") You've demonstrated
-  knowledge of using such libraries in the Code Reading LO.
+* Document parameters and such. (I don't regularly do so, so I won't force 
+  you to do so.)
+* Put in section separators.
+* Include internal comments to explain more confusing parts of code.
+* Do not include internal comments that simply restate what the code does. 
+  `// Add one to x` above `x++;` does not help the reader and therefore
+  just clogs your code.
+
+### Development #9: Use libraries
+
+Please focus on libraries in which you don't know the internals.
+(That is, don't say "I used Sam's X class.") You've demonstrated
+knowledge of using such libraries in the Code Reading LO.
+
+Most of the libraries you've used are from the Java API.
 
 ### Development #10: Exceptions
 
 _Signal and recover from errors using exceptions._
 
-* Make sure you include an example of throwing an exception.
-* Make sure you include an example of catching an exception (or
-  being ready to catch an exception).
-* Make sure that your recovery is reasonable.
-* Narrate both.
+Make sure you include an example of throwing an exception.
+
+Make sure you include an example of catching an exception (or
+being ready to catch an exception).
+
+Make sure that your recovery is reasonable.
+
+Narrate both.
 
 ### ADTs/DSs #1: Lists
 
-* Even though Java includes it, `get(int i)` is **not** a core
-  list operation.
+Even though Java includes it, `get(int i)` is **not** a core list operation.
 
 ### ADTs/DSs #2: Stacks
 
-* Here and in other ADTs/DSs, start with the PUM, or at least something
-  like the PUM. At least the PM.
+Here and in other ADTs/DSs, start with the PUM, or at least something
+like the PUM. At least the PM. At least the P.
 
-### ADTs/DSs #7: Binary Search Trees
+### ADTs/DSs #7: Binary search trees
 
-* Bit trees are not BSTs. Neither are heaps.
-* Please include code for `get` and `set`.
+Bit trees are not BSTs. Neither are heaps.
 
-### ADTs/DSs #10: Array-Based Structures
+Please include code for `get` and `set`.
 
-* Make sure to explain why we use arrays in implementations.
-* Make sure to explain how you are using an array in the implementation.
-* Make sure to include code that explicitly works with an array.
+### ADTs/DSs #10: Array-based structures
+
+Make sure to explain why we use arrays in implementations.
+
+Make sure to explain how you are using an array in the implementation.
+
+Make sure to include code that explicitly works with an array.
 
 Questions
 ---------
@@ -383,89 +393,4 @@ for (int i = n/2; i >= 0; i--) {
 ```
 
 Think about why that would still build a heap.
-
-Modeling problems with graphs
------------------------------
-
-* A core issue of CS (or at least computer programming): Take real-world
-  problems and solve them computationally.
-* We like to build "models" that let us represent the problem in the
-  computer, often stripping away extraneous details.
-* A lot of problems, particularly geographic problems, lead to
-  structures we call "graphs".
-
-### Sample problems
-
-* You are a 911 dispatcher and need to send an ambulance to an
-  address, from which ambulance depot do you send it?
-* It has snowed.  A lot.  All of the streets are impassible.
-  What's the minimal set of streets we should clear so that the
-  fire department can reach every corner in town?
-* You work for the census.  You need to visit every house in
-  Powesheik county.  What's the most efficient path to visit all
-  of those houses?
-    * _Can_ you visit all of those houses?
-
-### Abstraction
-
-* What do these problems have in common?
-
-Graph terminology
------------------
-
-A _graph_ is a collection of _vertices_ and _edges_ that connect them.
-CLRS write this as $(V,E)$.  $E$ is a subset of $V$x$V$.
-
-* We typically say that a graph has $n$ vertices and $m$ edges.
-    * We might say that a graph has $v$ vertices and $e$ edges.
-* We typically permit only one edge from one vertex to another.
-* We don't typically permit edges from a vertex to itself.
-
-_Please do not use "vertice" as the singular of "vertices"._
-
-We often label the vertices of the graph.
-
-### Weighted graphs
-
-In a _weighted graph_ every edge has an associated numeric "weight",
-representing some cost associated with the edge.
-
-* For our geographic examples, that might be the distance between two 
-  locations or the time it takes to get between the two locations.
-* We may sometimes associate more than one value with an edge, such as
-  both a cost and a cpacity.
-* In most situations, we require that weights be non-negative.
-* Weights can be integers or reals. Surprisingly, using (conceptual)
-  reals can make some problems more difficult.
-
-### Directed graphs
-
-In a _directed graph_, edges have a direction. That is, just because 
-we can get directly from A to B, we can't necessarily get from B to A.
-
-* You can think of these as one-way streets.
-
-Designing a graph ADT
----------------------
-
-_TPS: PUM_ (yay TLAs)
-
-### Philosophy
-
-### Use cases
-
-### Methods
-
-#### Constructors
-
-#### Accessors
-
-#### Mutators
-
-#### Additional
-
-Implementing graphs
--------------------
-
-_TPS: LIA_ (yay TLAs)
 
