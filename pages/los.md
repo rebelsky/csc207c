@@ -91,3 +91,145 @@ I expect that by the end of the semester, you will be a competent beginning soft
 * responsibly incorporate code that you did not write into your own program (_Development LO #11: Ethical Reuse_); and
 * understand and explain the responsibilities of a software designer (_Development LO #12: Professional Ethics_).
 
+## Typical LA structure
+
+The vast majority of LAs look something like the following
+
+> Please provide evidence that you have mastered this learning objective.  Your evidence will often consist of a combination of program code and narrative text to explain the code and its relationship to the objective.
+
+> \[a field for your answer\]
+
+> Please include citations, as appropriate.
+
+> \[a field for your answer\]
+
+> \[ \] I certify that the answers above represent my own work, except as indicated in the citations.
+
+## Some notes for successful LAs
+
+_These notes were developed in response to some student answers to LAs._
+
+### General issues
+
+Many of the LAs have two fields, one for your answer and one for any
+citations you might have. Use the top field for *both* commentary and
+code. Use the citations field only for citations.
+
+Please take the time to anonymize your code.
+
+Please make sure to include reasonable citations.
+
+* Not "Labs" but the particular labs you used (either "Lab on X" or
+  the URL).
+* Not "Google" but the particular sites you found using Google
+  that contributed to your answer.
+
+Please follow coding conventions. (You'll get credit even if you don't,
+but it's good practice to follow coding conventions.)
+
+Please follow good coding practices.
+
+* Decompose.
+* When representing ranges, use "lower-bound inclusive,
+  upper-bound exclusive". There's a reason that so many standard
+   procedures follow that model.
+
+When describing code, start with a high-level explanation. Often,
+that's all you need.
+
+Do not ask me to follow links. Everything you want me to look at
+belongs in your answer field.
+
+### Algorithms 
+
+#### Algorithms 1: Binary search
+
+Make sure your algorithm is correct.
+
+Make sure you explain the inputs and outputs.
+
+Please follow custom and write ranges as "lower-bound inclusive,
+upper-bound exclusive".
+
+#### Algorithms 2: Sequential search
+
+Searching algorithms traditionally search for (a) a matching value,
+(b) a key, or (c) an element that meets some criteria.
+
+Hence, "find the smallest value" is not an example of sequential search.
+
+#### Algorithms 3: Insertion sort
+
+Please make the "insert" in insertion sort explicit in both your
+code (i.e., by writing a separate `insert` procedure) and your
+narrative.
+
+#### Algorithms 4: Selection sort
+
+Very few people seem to have written an `indexOfSmallest` or
+`indexOfLargest` procedure. Decompose!
+
+#### Algorithms 5: Merge sort
+
+Please follow custom and write ranges as "lower-bound inclusive,
+upper-bound exclusive".
+
+#### Algorithms 6: Quicksort
+
+Please follow custom and write ranges as "lower-bound inclusive,
+upper-bound exclusive".
+
+#### Algorithms 11: Divide and conquer
+
+Make sure that you clearly explain the principle of "divide and
+conquer" before you go on to your example of you employing that
+principle.
+
+### Object-oriented Programming
+
+### OOP 4: Parametric polymorphism (generics)
+
+Make sure that your description of parametric polymorphism does not
+also apply to subtype polymorphism. They are both kinds of polymorphism,
+but they achieve their goals in different ways.
+
+Make sure to include code that demonstrates that you understand and can
+use parametric polymorphism.
+
+### OOP 5: Subtype polymorphism
+
+Make sure that your description of subtype polymorphism does not
+also apply to parametric polymorphism. They are both kinds of
+polymorphism, but they achieve their goals in different ways.
+
+Make sure to include code that demonstrates that you understand and can
+use parametric polymorphism.
+
+### OOP 6: Data abstraction
+
+For data abstraction, think about how we've designed ADTs and their
+corresponding implementations all semester.
+
+Make sure that you explain *why* we want to use data abstraction (why
+we want to separate interface from implementation). 
+
+Our textblocks are not a very good example of data abstraction,
+since the interface there is intentionally open-ended. Look for an
+interface where there is a clear expectation of what each method
+does; one in which all implementations should do the same thing on
+the same series of procedure calls.
+
+Your goal here is to think at the internal design level; not separating
+user interface from implementation, but separating the interface to
+a library from the underlying implementation of that library.
+
+### OOP 8: Object design
+
+_Identify objects and classes that will contribute to a program or solution, design those objects and classes, and implement those objects and classes._
+
+Note that this asks you to give a problem, describe what objects and classes will help you solve that problem,, and give the implementation of those classes. A single class, without context, is unlikely to suffice.
+
+### OOP 9: Mental models
+
+There was some confusion on the questions I was asking. I've clarified
+them on the latest version.
