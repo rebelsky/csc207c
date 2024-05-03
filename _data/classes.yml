@@ -596,6 +596,12 @@
     - Maybe we need two days. Unfortunately, we don't have them.
   notes: ../eboards/eboard37.html
 
+- topic: Pause
+  abbrev: pause-13
+  summary: | 
+    We pause to continue our exploration of heaps, to discuss LAs, and more.
+  notes: ../eboards/eboard38.html
+
 - topic: A graph ADT
   abbrev: graphs
   summary: |
@@ -614,7 +620,7 @@
       url: https://ebookcentral-proquest-com.grinnell.idm.oclc.org/lib/grinnell-ebooks/reader.action?docID=6925615&ppg=907
   reminders:
     - Anya has a lab on graphs.  http://www.cs.grinnell.edu/~vostinar/csc-207-spring-2018-schedule/csc-207-s18-representing-graphs/
-  notes: ../eboards/eboard38.html
+  notes: ../eboards/eboard39.html
 
 - topic: Traversing graphs
   abbrev: graph-traversal
@@ -625,10 +631,15 @@
     - Review of tree traversal
     - Breadth-first traversal
     - Depth-first traversal
+    - The shortest-path problem
+    - Dijkstra's algorithm
   reading:
+    - link: "Wikipedia; Dijkstra's Algorithm"
+      url: https://en.wikipedia.org/wiki/Dijkstra's_algorithm
     - page: /readings/tree-traversal.html
   lab: 
     - page: /labs/graph-traversal.html
+    - page: /labs/shortest-paths.html
 
 - topic: Minimum spanning trees
   abbrev: mst
@@ -647,22 +658,6 @@
       url: https://en.wikipedia.org/wiki/Kruskal%27s_algorithm
   lab:
     - page: /labs/minimum-spanning-trees.html
-
-- topic: Shortest paths in graphs
-  abbrev: shortest-path
-  summary: |
-    We consider the problem of finding the shortest path between two
-    nodes in a graph
-  subjects:
-    - The shortest path problem
-    - Shortest paths in unweighted graphs
-    - Shortest paths in weighted graphs
-    - Dijkstra's algorithm
-  reading:
-    - link: "Wikipedia; Dijkstra's Algorithm"
-      url: https://en.wikipedia.org/wiki/Dijkstra's_algorithm
-  lab:
-    - page: /labs/shortest-paths.html
 
 - topic: Wrapup
   abbrev: wrapup
