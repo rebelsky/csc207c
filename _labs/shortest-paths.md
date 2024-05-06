@@ -3,7 +3,6 @@ title: Shortest paths
 repo: <https://github.com/Grinnell-CSC207/graphs>
 summary: |
   We explore techniques for finding the shortest path in a graph.
-current: true
 ---
 Preparation
 -----------
@@ -13,11 +12,9 @@ If you haven't done so already, fork and clone the repository at {{ page.repo }}
 Exercises
 ---------
 
-### Exercise 1: Prim's algorithm
+### Exercise 1: Planning for Dijkstra's algorithm
 
-If you have not done so already, implement Prim's algorithm.  See [the prior lab](../labs/minimum-spanning-trees) for details.
-
-### Exercise 2: Planning for Dijkstra's algorithm
+_Driver: **B**_
 
 As you may recall, Dijsktra's algorithm works something like the following:
 
@@ -25,7 +22,7 @@ As you may recall, Dijsktra's algorithm works something like the following:
 To find the shortest path from SOURCE to SINK,
   Indicate that all vertices have infinite distance from SOURCE
   Indicate that SOURCE has a distance of 0 from itself
-  While unmarked(SINK) and there exists an unmarked node with finite distance
+  While unmarked(SINK) and there exists an unmarked node with finite distance from SOURCE
     Find the nearest unmarked vertex, U
     Mark U
     For each unmarked neighbor, V, of U
@@ -33,7 +30,7 @@ To find the shortest path from SOURCE to SINK,
         Note that the best known path to V is the path to U plus the
           edge from U to V.
         Update the distance to V
-  Report the path to sink, if there is one
+  Report the path to SINK, if there is one
 ```
 
 a. How will you represent the path to each vertex?
@@ -46,20 +43,24 @@ given that the distance of vertices can change?
 
 d. How will you mark vertices?
 
-### Exercise 3: Implementing Dijkstra's algorithm
+### Exercise 2: Implementing Dijkstra's algorithm
+
+_Driver: **A**_
 
 Implement a method, `shortestPath(int source, int sink)`, that finds the shortest path from `source` to `sink` in the current graph.
 
 If you're unsure about how to deal with various aspects of the algorithm, you can find some notes at the end of this lab.
 
-### Exercise 4: Experiments
+### Exercise 3: Experiments
+
+_Driver: **B**_
 
 Write a few experiments or tests to ensure that your implementation does, indeed, find the shortest path.  You can likely find some good graphs by doing a Web search for "shortest path example".  (Make sure to cite!)
 
 For those with extra time
 -------------------------
 
-If you find that you have extra time, implement Kruskal's MST algorithm.
+If you have extra time, go back to the tree traversal lab.
 
 Some notes on implementing Dijkstra's algorithm
 -----------------------------------------------
@@ -80,6 +81,6 @@ You will likely find it easiest to represent the paths with an array of incoming
 
 ### Other data structures
 
-You will likely find it easiest to represent the distance as an array of integers.
+You will likely find it easiest to represent the distance as an array of integers indexed by the vertex number. Use `Integer.MAX_VALUE` for "infinity".
 
 To determine whether a vertex is known or unknown, you can either use the `mark` method or check whether there is an incoming edge to the vertex (using the array just mentioned).
