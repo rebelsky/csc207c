@@ -634,9 +634,11 @@
     - The shortest-path problem
     - Dijkstra's algorithm
   reading:
-    - link: "Wikipedia; Dijkstra's Algorithm"
-      url: https://en.wikipedia.org/wiki/Dijkstra's_algorithm
     - page: /readings/tree-traversal.html
+    - link: "Wikipedia: Dijkstra's Algorithm"
+      url: https://en.wikipedia.org/wiki/Dijkstra's_algorithm
+    - link: "Graph.java: A Java graph implementation"
+      url: https://raw.githubusercontent.com/Grinnell-CSC207/graphs/main/src/Graph.java
   lab: 
     - page: /labs/graph-traversal.html
     - page: /labs/shortest-paths.html
