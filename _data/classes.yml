@@ -640,6 +640,7 @@
   lab: 
     - page: /labs/graph-traversal.html
     - page: /labs/shortest-paths.html
+  notes: ../eboards/eboard40.html
 
 - topic: Minimum spanning trees
   abbrev: mst
