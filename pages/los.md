@@ -52,7 +52,7 @@ I expect that by the end of the semester, you will have significantly extended y
 * read and interpret the formal definition of Big-O (_Algorithms LO #12: Big-O Notation_);
 * informally analyze the running time of iterative algorithms and the number of steps in complex nested loops (_Algorithms LO #13: Analysis of Iterative Algorithms_);
 * informally analyze the running time of recursive algorithms (_Algorithms LO #14: Analysis of Recursive Algorithms_);
-* describe or use loop invariants to better design and verify iterative algorithms (_Algorithms LO #15: Loop Invariants_).
+* describe use loop invariants and use loop invariants to better design and verify iterative algorithms (_Algorithms LO #15: Loop Invariants_).
 
 ## Design and Analysis of Abstract Data Types and Data Structures
 
