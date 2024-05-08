@@ -45,7 +45,7 @@ I expect that by the end of the semester, you will have significantly extended y
     * Quicksort (_Algorithms LO #06: Quicksort_), 
     * merge sort (_Algorithms LO #07: Merge Sort_),
     * graph and tree traversal (_Algorithms LO #08: Traversal_), and
-    * shortest path (_Algorithms LO #09: Shortest path_);
+    * <strike>shortest path (_Algorithms LO #09: Shortest path_)</strike>;
 * design new algorithms using a variety of approaches including 
     * greed (_Algorithms LO #10: Greed_) and
     * divide and conquer (_Algorithms LO #11: Divide and Conquer_);
@@ -67,7 +67,7 @@ I expect that by the end of the semester, you will have significantly extended y
     * hash tables (_ADT/DS LO #06: Hash Tables_), 
     * binary search trees (_ADT/DS LO #07: BSTs_), 
     * heaps (_ADT/DS LO #08: Heaps_), and
-    * graphs (_ADT/DS LO #09: Graphs_);
+    * <strike>graphs (_ADT/DS LO #09: Graphs_)</strike> [covered, not assessed];
 * implement one or more data types using arrays (_ADT/DS LO #10: Array-based Structures_);
 * implement one or more data types using linked structures (_ADT/DS LO #11: Linked Structures_);
 * design new ADTs using the PUM (philosophy, uses, methods) approach (_ADT/DS LO #12: Design ADTs_); 
