@@ -661,6 +661,7 @@
       url: https://en.wikipedia.org/wiki/Kruskal%27s_algorithm
   lab:
     - page: /labs/minimum-spanning-trees.html
+  notes: ../eboards/eboard41.html
 
 - topic: Wrapup
   abbrev: wrapup
@@ -668,7 +669,7 @@
     We conclude the course.
   subjects:
     - The subject matter(s) of the course
-    - Looking ahead
+    - Debrief
     - Course evaluation
 
 - topic: Patterns of object and algorithm design
