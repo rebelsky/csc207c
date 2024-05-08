@@ -14,6 +14,8 @@ Exercises
 
 ### Exercise 1: Priority queues
 
+_Driver: **A**_
+
 As you may recall, all of the MST algorithms rely on some sort of priority queue that allows you to find the smallest edge in a set of edges (the whole set of edges or the edges in Kruskal's; those adjacent to the partial MST in Prim's).
 
 a. Identify an appropriate implementation of priority queues in Java.
@@ -22,11 +24,15 @@ b. Sketch how you will use that implementation to order edges by weight.
 
 ### Exercise 2: From directed to undirected
 
+_Driver: **B**_
+
 As you may recall, Prim's algorithm is intended to work with undirected graphs, rather than directed graphs.  
 
 How will you accommodate that issue in your code?
 
 ### Exercise 3: Parts of Prim's algorithm
+
+_Driver: **A**_
 
 As you may recall, Prim's algorithm relies on two structures (beyond the graph): a priority queue of edges left to process and a collection of the edges already determined to be in the MST.  We'll call the first thing `REMAINING` and the second `mst`.
 
@@ -57,9 +63,17 @@ e. Print out the MST.
 
 ### Exercise 4: Implementing Prim's algorithm
 
+_Driver: **B**_
+
 Implement Prim's algorithm.  If you are unsure about any of the steps suggested above, you can discuss them with your instructor or mentor, review our suggestions at the end of this lab, or both.
 
 You'll note that we've left it explicitly unstated as to where you implement Prim's algorithm and what parameters it should take. You are at the stage of your career where you should be able to consider reasonable alternatives.
+
+### Exercise 5: Testing your implementation
+
+_Driver: **A**_
+
+Write some experiments or tests to see how well your implementation works.
 
 For those with extra time
 -------------------------
@@ -73,12 +87,16 @@ Suggested strategies
 
 To deal with non-directional edges, we can just make sure that we always add pairs of edges (both directions).  Once an edge is in the MST, it doesn't matter what it's direction is.
 
-* Option 1: Add an `addUndirectedEdge` method.
-* Option 2: Subclass the Graph class and override `addEdge`.
+* Option 1: Add an `addUndirectedEdge` method to the `Graph` classwhich
+  adds directed edges in both directions.
+* Option 2: Subclass the `Graph` class and override `addEdge` to add
+  directed edges in both directions..
+* Option 3: Use the `UndirectedGraph` class, which does the same thing
+  as option 2 for you.
 
 ### Remaining edges
 
-You can use a `[PriorityQueue](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/PriorityQueue.html)` of `Edge` objects to keep track of which edges remain.  You'll need to supply a `Comparator` for `Edge` objects, which will look something like the following:
+You can use a `[java.util.PriorityQueue](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/PriorityQueue.html)` of `Edge` objects to keep track of which edges remain.  You'll need to supply a `Comparator` for `Edge` objects, which will look something like the following:
 
     (e1,e2) -> e1.weight().compareTo(e2.weight())
 
