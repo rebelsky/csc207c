@@ -15,7 +15,7 @@ _Approximate overview_
 * Detour: Greed
 * Detour: LAs
 * Questions
-* Lab
+* Labs
 
 Preliminaries
 -------------
@@ -78,6 +78,59 @@ number of stamps needed to make that price.
 For example, if stamps are 17 cents, 10 cents, and 1 cent, the best
 way to make 35 cents is 2x17 + 1x1, which is three stamps.
 
+Find a case (using stamp values of 17, 10, 1) in which the obvious
+greedy algorithm fails.
+
+* 20 cents: 
+    * Greedy algorithm: 17 cent stamp + 3 1 cent stamps (4 stamps)
+    * Optimal algorithms: 2x10 stamps (2 stamps)
+
+For the LA, you should find an example of a greedy algorithm.
+
+Dijkstra's Shortest-Path Algorithm
+
+* Goal: Given a (weighted directed graph), a designated vertex in the
+  graph that we will call "source", and a designated vertex in the
+  graph that we will call "sink", find the shortest path from "source"
+  to "sink".
+* Idea: Instead of just finding the shortest path from "source" to "sink",
+  find the shortest path from "source" to _every vertex_.
+* Idea: Keep track of the shortest paths we've found so far.
+
+The algorithm:
+
+* Initialize
+    * Unmark all of the vertexs (suggestion: Use a set to keep track of
+      the marked vertexs)
+    * Set the distance from source to source to be 0.
+    * Set the distance to all of the other vertexs to infinity (or `Integer.MAX_VALUE`).
+* While (there are unmarked vertexs with finite distances)
+    * Pick the unmarked vertex with the shortest known distance
+    * We know its distance, so mark it
+    * For each of its unmarked neighbors
+        * Update the distance
+
+Why does this algorithm terminate?
+
+* There are only finitely many vertexs, each time through the loop we
+  mark one of them. Eventually we run out of vertexs.
+
+Why is the algorithm correct?
+
+* That is, why when you mark a vertex can you be sure that there won't be
+  a shorter path that we find later?
+* Because: If there is a shorter path, we should have seen it earlier.
+  [Start of a proof by contradiction.]
+* Because: Any other path to the vertex will have to through one of the
+  other vertices, and they all have larger paths. [Note: Requires non-negative
+  edge weights.]
+* [A proof by induction or contradiction will be required in higher-level 
+  classes. We're okay with a sketch.]
+
+Is this a greedy algorithm?
+
+* Yes: Because we are always grabbing the "best" vertex to process next.
+
 LA Notes
 --------
 
@@ -91,10 +144,34 @@ _Some things that went wrong, and a few that went right._
 * Use of `//`-style comments to document methods. Use `/** ... */` comments
   for methods (and constructors and fields).
 
+```
+// My cool class NO
+public class Cool {
+  // Fix object orientation NO
+  public void foo() {
+    // Don't forget the flobinator YES
+    ..
+  } // foo() YES
+} // class Cool YES
+```
+
+```
+/**
+ * My cool class. YES
+ */
+public class Cool {
+  /** Fix object-orientation YES */
+  public void foo() {
+    // Don't forget the flobinator YES
+    ..
+  } // foo() YES
+} // class Cool YES
+```
+
 ### ADTs
 
 Please phrase ADTs as interfaces. In most cases, you should also
-implement the interface.
+implement the interface. (Distinguish interfaces from implementations.)
 
 ### Sets
 
@@ -111,6 +188,10 @@ should not be indexed. Arrays are the primary indexed data structure.
 
 Hash tables are **not** associative arrays. They have a similar set of
 methods, but that's because both implement the Dictionary (or MAP) ADT.
+
+Yes, in the Dictionary LA you can give an associative array or a hash
+table or a BST (or an association list) (or a sorted array of K/V pairs)
+as an implementation.  Make sure to specify a Dictionary interface first.
 
 ### Incorrect descriptions of BSTs
 
@@ -160,6 +241,10 @@ class Tournament {
   } // record(String)
 } // class Tournament
 ```
+
+This is a bad design because the client now has the array that we're
+storing in the `Record` class, which means that the client can now
+change that record.
 
 ### Interesting design: Data structures
 
@@ -296,6 +381,13 @@ public class Shelter {
 
 Issues:
 
+* You probably can't change the breed of a dog.
+* `bark` is not a useful method.
+* `Cat` and `Dog` should have a superclass that encapsulates the common
+  code.
+* Think about separating out the UI.
+* `System.out.println(void)` is not a good strategy.
+
 ### Ethical reuse
 
 Ethical reuse involves many things:
@@ -323,7 +415,19 @@ Can you move the LA due date to Saturday night?
 
 > Sure. 
 
+Can you talk about the mental model LA?
+
+> Yes, on Friday.
+
+What do you want me to do about README files in my ethical use LA?
+
+> "Here's the line from my README where I provided appropriate citations."
+
 ### Misc
 
 Labs
 ----
+
+Sam left. Do we have to stay?
+
+> Yes, please.
