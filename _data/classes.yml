@@ -671,6 +671,7 @@
     - The subject matter(s) of the course
     - Debrief
     - Course evaluation
+  notes: ../eboards/eboard42.html
 
 - topic: Patterns of object and algorithm design
   abbrev: design
