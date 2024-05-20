@@ -40,7 +40,7 @@ I expect that by the end of the semester, you will have significantly extended y
     * binary search (_Algorithms LO #01: Binary Search_), 
     * sequential search (_Algorithms LO #02: Sequential Search_), 
     * insertion sort (_Algorithms LO #03: Insertion Sort_), 
-    * selection sort (_Algorithms LO #04: Selection Sort_), 
+    * selection sort (_Algorithms LO #04: Selection Sort_) [Optional/Bonus], 
     * heap sort (_Algorithms LO #05: Heap Sort_), 
     * Quicksort (_Algorithms LO #06: Quicksort_), 
     * merge sort (_Algorithms LO #07: Merge Sort_),
