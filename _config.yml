@@ -1,12 +1,12 @@
 # Jekyll Site settings
 
 # Course title
-title: CSC 207-01 (Spring 2024)
+title: CSC 207 (Fall 2024)
 
 # baseurl is used for redirects on the same server.
 # url is the full path name
-baseurl: /Courses/CSC207/2024Sp
-url: https://rebelsky.cs.grinnell.edu/Courses/CSC207/2024Sp/
+baseurl: /Courses/CSC207/2024Fa
+url: https://rebelsky.cs.grinnell.edu/Courses/CSC207/2024Fa/
 
 # Are we online?  If not, we're in person.  (Some of the lab instructions are
 # affected by this choice.)
@@ -27,22 +27,25 @@ instructor_homepage: https://rebelsky.cs.grinnell.edu
 instructor_email: rebelsky@grinnell.edu
 
 meeting_times: |
-  MWF 1:00&ndash;2:20 PM CT in Science 3815
+  - TuTh 8:00&ndash;9:50 AM CT in Science 3813 (Section 1)
+  - TuTh 2:00&ndash;3:50 PM CT in Science 3813 (Section 2)
 
-office_hours:
-  - - Tuesdays 10:00-11:30 AM.  Thursdays 2:00-3:30 PM.  [Book office hours](https://outlook.office365.com/owa/calendar/SamuelARebelsky@grinco.onmicrosoft.com/bookings/)
+office_hours: |
+  - TBD
+  - [Book office hours](https://outlook.office365.com/owa/calendar/SamuelARebelsky@grinco.onmicrosoft.com/bookings/)
 
 mentors: 
-  - Elene Sturua
+  - Maria Rodriguez (Section 1)
+  - Garikai Gijima (Section 2)
 
 mentor_sessions:
   - TBD
 
 tutors:
-  - Sundays, 3&ndash;5 PM; Sundays through Thursdays, 7&ndash;10 PM in Science 3813 and 3815
+  - Sundays, 3:00&ndash;5:00 PM CT; Sundays through Thursdays, 7&ndash;10 PM in Science 3813 and 3815
   - Not all evening tutors are prepared to support CSC 207 students.
 
-all_work_deadline:  5:00 PM on Friday, 17 May 2024
+all_work_deadline:  5:00 PM on Friday, 20 December 2024
 # final_exam_time: TBD
 
 copyright: |
