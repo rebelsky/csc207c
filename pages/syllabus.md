@@ -347,11 +347,23 @@ Furthermore, while you retain [copyright](https://www.plagiarism.org/blog/2017/0
 
 I recognize that there are times where you want to do this, *e.g.*, uploading projects to Github for your resume or to show to friendds and family, and so I encourage you come talk to me in advance, so that we can ensure that you upload a meaningful project that does not run afoul of this policy.
 
-ITS has released and then temporarily withdrawn policies that may limit your ability to share your work with others.  I consider those policies inappropriate for many reasons.  The CS department managed to convince the College to revisit them, but we are not sure what the new policies will look like.  Stay tuned.
+### Academic honesty FAQ
+
+Can I help a colleague by giving them my program code? I assume that reading my code will help them better understand how they might approach problems.
+
+> No. Unfortunately, too many students have trouble avoiding the temptation to copy code.
+
+Can I copy a colleague's code I find on the Interweb (e.g., on GitHub)?
+
+> No. Please do not copy code written by another student for a Grinnell course.
 
 ### AI programming assistants
 
-Please avoid the use of AI-based programming assistants, such as ChatGPT or GitHub Copilot in this course.  You should also review [my policy on AI programming assistants](../handouts/ai).
+Please avoid the use of AI-based programming assistants, such as ChatGPT or GitHub Copilot in this course.  You should also review [my policy on AI programming assistants](../handouts/ai). 
+
+### AI writing assistants
+
+If you use AI-based writing assistants---such as Grammarly, Google translate, or ChatGPT---please cite them.
 
 ## Other issues
 
@@ -375,7 +387,7 @@ If my office hours do not work for you, I am happy to meet with you at other tim
 
 I tend to respond to questions submitted on Teams (preferably on the Questions and Answers channel, but also sent via direct message) outside of office hours, including in the evening.
 
-I have some complex personal circumtances that may require that I hold office hours remotely or cancel office hours. I will do my best to keep you posted about such issues.
+I have some complex personal circumstances that may require that I hold office hours remotely or cancel office hours. I will do my best to keep you posted about such issues.
 
 ### Technology
 
@@ -383,11 +395,11 @@ This may be your first semester learning with Teams.  Things will likely mess up
 
 This may be your first semester using Gradescope.  Gradescope does some things well and some things less wengll.  Things will likely mess up from time to time.  That's okay; it's part of the process.  I'll make adjustments when you have difficulty.  I hope you'll accept my apologies when I do something wrong (or at least fail to adjust my processes to the way Gradescope thinks they should be done).
 
-This may be your first semester using VSCode and a modern build tool.  It's certainly my first semester using VSCode with Java and Gradle.  That's okay; we'll learn together.
+This may be your first semester using VSCode and a modern build tool.  It's certainly my first semester using VSCode with Maven.  That's okay; we'll learn together.
 
 ### Multiple sections
 
-There are multiple sections of this course.  The primary learning goals for both sections should be the same (although we may phrase them differently).  The ways in which we measure your success at achieving those will differ.  There are also section-specific learning goals that reflect the individual perspectives of the instructors.
+There are multiple sections of this course. Since I'm teaching both of them, you should find them mostly the same. I will do my best to keep the two synchronized.
 
 ### Names
 
@@ -416,12 +428,6 @@ I'm confused about the grading scheme.  Could you explain more?
 > Broad overview: To succeed in the class, you must do the learning assessments (LAs) and projects (MPs and the final project).  Since not everyone learns at the same rate, you will have the opportunity to make additional attempts at  LAs (although with new problems) and projects.  In addition, you must keep up with regular work for the class: readings (and reading responses), labs (and lab writeups), and reflections.  If you keep up with the work and achieve appropriate results on the LAs and projects by the end of the semester, you are likely to do well in the course.  Additional details are found above and in [the page on grading](../handouts/grading).
 
 > If that's not enough information, feel free to ask questions about particular points.
-
-I plan to leave early for Spring break and won't be in class on Friday, 15 March 2024. What are the penalties for missing that class?
-
-> As long as you let me know in advance, there is no penalty for your absence.
-
->  However, you will not be able to take the quiz that day, which means that you will have to complate that learning assessment in one of the following SoLAs.  In addition, you are responsible for making up the work from class on your own, and you are still responsible for turning in that labs.
 
 I need a mental health day.  What should I do?
 
