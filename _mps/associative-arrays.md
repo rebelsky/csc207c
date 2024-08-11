@@ -1,0 +1,134 @@
+---
+title: Mini-Project 4
+subtitle: Associative arrays
+summary: |
+  We build our first data structure.  Along the way, we practice with
+  generics/parametric polymorphism.
+collaboration: |
+  Each student should submit their own responses to this project. You may
+  consult other students in the class as you develop your solution.  If you
+  receive help from anyone, make sure to cite them in your responses. 
+link: true
+---
+# {{ page.title }} : {{ page.subtitle }}
+
+## Introduction
+
+An _associative array_ is a common data structure, similar to the association lists that you may have learned about in CSC-151.  Since it's a data structure, we'll start by considering the layout of the associative array in memory.
+
+In essence, an associative array is an (expandable) array of key/value pairs, intended to support looking up values by key.  I think of them something like the following:
+
+```
+        +---+
+  size: | 3 |
+        +---+
+   
+  pairs:
+  +---+                                                +---+---+
+  | *-------------------------------------------------> | * | * |
+  +---+                                +---+---+        +-|-+-|-+
+  | *--------------------------------> | * | * |          |   v 
+  +---+              +---+---+         +-|-+-|-+          | +----------+
+  | *--------------> | * | * |           |   v            | | V value0 |
+  +---+              +-|-+-|-+           | +----------+   | +----------+
+  | / |                |   v             | | V value1 |   v            
+  +---+                | +----------+    | +----------+ +--------+  
+  | / |                | | V value2 |    |              | K key0 |   
+  +---+                | +----------+    v              +--------+      
+  | / |                |               +--------+                   
+  +---+                |               | K key1 |                   
+  |   |                v               +--------+                   
+    .                +--------+
+    .                | K key2 |
+    .                +--------+
+```
+
+That is, we have an array of Key/Value pairs along with an accompanying `size` field to keep track of how many pairs are in the array.  The array may have some empty space, which we fill with `null` values.  In the diagram, we've put all the nulls at the end.  However, you might decide that it's more natural to leave some nulls in the middle.
+
+Associative arrays are most frequently used to implement the `Dictionary` or `Map` abstract data types.  Both are names for structures that allow you to store associate values with corresponding keys.  (Each key has only one value; multiple valeus may have the same key.)
+
+The central for such types include the following:
+
+`void set(K key, V value)`
+  : Set the value associated with a given key.  If there is already another value associated with the given key, this new value replaces that value. 
+
+`V get(K key)`
+  : Get the value associated with a given key.  If there is no such key, throws an exception.
+
+`boolean hasKey(K key)`
+  : Determines if the given key appears in the associative array.
+
+`void remove(K key)`
+  : Remove the key/value pair associated with the given key.  If the key does not appear in the associative array, does nothing.
+
+`int size()`
+  : Determine how many key/value pairs are currently stored in the associative array.
+
+`String toString()`
+  : Return a string of the form `"{ key0: value0, key1: value1, ... keyn: valuen }"`  If the array is empty, you should return `"{}"`.
+
+As you might expect, the first four procedures will need to iterate the array of key/value pairs, stopping when they find a matching key or run out of pairs.  We normally use the `equals` method to determine matching keys.
+
+## Getting ready
+
+Fork and clone the repository at <https://github.com/Grinnell-CSC207/mp4-associative-arrays>.
+
+Make sure to accept the invitation to our testing repo. If you don't receive one, contact SamR.
+
+## The assignment
+
+1. Add at least three tests, including one edge case, to the shared `AssociativeArrayTests.java` repository.  Please name them with a form like `yourNameTest1()`, `yourNameTest2()`, and `yourNameEdge1()`.  For example, mine would be `samuelRebelskyTest1()`, `samuelRebelskyTest2()`, and `samuelRebelskyEdge1()`.
+
+    _Make sure that your tests do not break the test suite!_
+
+    Do not test the `toString` method; there are too many potential
+    orders for the K/v pairs.
+
+2. Implement an `AssociativeArray<K,V>` class in Java.  You may _not_ use any other Java classes that provide similar features; you must rely on an underlying plain Java array of `KVPair<K,V>` objects.
+
+## Rubric
+
+_I plan to revisit this rubric._
+
+### Redo or above
+
+Submissions that fail to meet any of these requirements will get an I.
+
+```
+[ ] Includes the specified `.java` files, correctly named.  (They should
+    be in the appropriate package.)
+[ ] Each class has an introductory Javadoc comment that indicates
+    the author and purpose. 
+[ ] Includes a `README.md` file that contains the appropriate information 
+    (authors, purpose, acknowledgements if appropriate)
+[ ] All files compile correctly.
+```
+
+### Meets expectations or above
+
+Submissions that fail to meet any of these requirements but meet all
+previous requirements will receive an R.
+
+```
+[ ] Appears to follow Google Java style guidelines for indentation and such.
+[ ] Passes all of the M tests.
+[ ] Added three tests to the `AssociativeArrayTests.java` file, including
+    at least one edge case (preferably named as such).
+[ ] The `toString()` method appears to behave correctly.
+```
+
+### Exemplary / Exceeds expectations
+
+Submissions that fail to meet any of these requirements but meet all
+previous requirements will receive an M.
+
+```
+[ ] All (or most) repeated code has been factored out into individual 
+    methods.  
+[ ] Passes all of the E tests.
+[ ] All or most variable names are appropriate.
+[ ] Handles `null` keys in `set`, `get`, and `hasKey`.  
+```
+
+## Q&A
+
