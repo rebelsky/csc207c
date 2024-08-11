@@ -1,152 +1,235 @@
-- date: 2024-01-22
+- date: 2024-08-29
   assigned:
     - page: /mps/syllabus.html
     - page: /mps/intro-survey.html
 
-- date: 2024-01-23
+- date: 2024-09-02
   due:
     - page: /mps/syllabus.html
     - page: /mps/intro-survey.html
 
-- date: 2024-01-24
+- date: 2024-09-05
   assigned:
     - page: /mps/mp01.html
 
-- date: 2024-01-26
+- date: 2024-09-08
   due:
     - MP 1 Pre-reflection
 
-- date: 2024-01-30
+- date: 2024-09-12
   due:
     - page: /mps/mp01.html
-
-- date: 2024-01-31
-  due:
-    - MP 1 Post-reflection
   assigned:
     - page: /mps/mp02.html
 
-- date: 2024-02-02
+- date: 2024-09-13
+  due:
+    - MP 1 Post-reflection
+
+- date: 2024-09-15
   due:
     - MP 2 Pre-reflection
 
-- date: 2024-02-06
+- date: 2024-09-16
+  due:
+    - SoLA 1
+
+- date: 2024-09-19
   due:
     - page: /mps/mp02.html
-
-- date: 2024-02-07
-  due:
-    - MP 2 Post-reflection
   assigned:
     - page: /mps/mp03.html
 
-- date: 2024-02-09
+- date: 2024-09-20
+  due:
+    - MP 2 Post-reflection
+
+- date: 2024-09-22
   due:
     - MP 3 Pre-reflection
 
-- date: 2024-02-13
+- date: 2024-09-23
+  due:
+    - SoLA 2
+
+- date: 2024-09-26
   due:
     - page: /mps/mp03.html
-
-- date: 2024-02-14
-  due:
-    - MP 3 Post-reflection
   assigned:
     - page: /mps/mp04.html
 
-- date: 2024-02-16
+- date: 2024-09-27
+  due:
+    - MP 3 Post-reflection
+
+- date: 2024-09-29
   due:
     - MP 4 Pre-reflection
 
-- date: 2024-02-20
+- date: 2024-09-30
   due: 
-    - page: /mps/mp04.html
+    - SoLA 3
 
-- date: 2024-02-28
+- date: 2024-10-03
   due:
     - page: /mps/mp04.html
   assigned:
     - page: /mps/mp05.html
 
-- date: 2024-03-01
+- date: 2024-10-04
   due:
     - MP 4 Post-reflection
+
+- date: 2024-10-06
+  due:
     - MP 5 Pre-reflection
 
-- date: 2024-03-06
+- date: 2024-10-07
+  due:
+    - SoLA 4
+
+- date: 2024-10-10
   due:
     - page: /mps/mp05.html
+  assigned:
+    - page: /mps/mp06.html
 
-- date: 2024-03-08
+- date: 2024-10-11
   due:
     - MP 5 Post-reflection
 
-- date: 2024-03-13
-  assigned:
-    - page: /mps/mp06.html
-
-- date: 2024-04-01
+- date: 2024-10-13
   due:
     - MP 6 Pre-reflection
 
-- date: 2024-04-03
-  assigned:
-    - page: /mps/mp07.html
+- date: 2024-10-14
+  due:
+    - SoLA 5
 
-- date: 2024-04-04
+- date: 2024-10-17
   due:
     - page: /mps/mp06.html
+  assigned:
+    - page: /mps/mp07.html
 
-- date: 2024-04-05
+- date: 2024-10-18
   due:
     - MP 6 Post-reflection
-    - MP 7 Pre-reflection
 
-- date: 2024-04-10
+- date: 2024-10-27
+  due:
+    - MP 7 Pre-Reflection
+
+- date: 2024-10-28
+  due:
+    - SoLA 5 (optional) 
+
+- date: 2024-10-31
   due:
     - page: /mps/mp07.html
   assigned:
     - page: /mps/mp08.html
-    
-- date: 2024-04-12
+
+- date: 2024-11-01
   due:
     - MP 7 Post-reflection
+
+- date: 2024-11-03
+  due:
     - MP 8 Pre-reflection
 
-- date: 2024-04-17
+- date: 2024-11-04
+  due:
+    - SoLA 6
+
+- date: 2024-11-07
   due:
     - page: /mps/mp08.html
   assigned:
     - page: /mps/mp09.html
 
-- date: 2024-04-19
+- date: 2024-11-08
   due:
     - MP 8 Post-reflection
+
+- date: 2024-11-10
+  due:
     - MP 9 Pre-reflection
 
-- date: 2024-04-24
+- date: 2024-11-11
+  due:
+    - SoLA 7
+
+- date: 2024-11-14
   due:
     - page: /mps/mp09.html
   assigned:
     - page: /mps/mp10.html
 
-- date: 2024-04-26
+- date: 2024-11-15
   due:
-    - MP  9 Post-reflection
+    - MP 9 Post-reflection
+
+- date: 2024-11-17
+  due:
     - MP 10 Pre-reflection
 
-- date: 2024-05-01
+- date: 2024-11-18
+  due:
+    - SoLA 8
+
+- date: 2024-11-21
   due:
     - page: /mps/mp10.html
+  assigned:
+    - page: /mps/mp11.html
 
-- date: 2024-05-03
+- date: 2024-11-22
+  due:
     - MP 10 Post-reflection
 
-- date: 2024-05-10
+- date: 2024-11-25
   due:
-    - End-of-course evaluation
+    - SoLA 9
 
-- date: 2024-05-17
+- date: 2024-12-01
   due:
-    - All work
+    - MP 11 Pre-reflection
 
+- date: 2024-12-02
+  due:
+    - SoLA 10 (optional)
+
+- date: 2024-12-05
+  due:
+    - page: /mps/mp11.html
+  assigned:
+    - page: /mps/mp12.html
+
+- date: 2024-12-06
+  due:
+    - MP 11 Post-reflection
+
+- date: 2024-12-08
+  due:
+    - MP 12 Pre-reflection
+
+- date: 2024-12-09
+  due:
+    SoLA 11
+
+- date: 2024-12-12
+  due:
+    - page: /mps/mp12.html
+
+- date: 2024-12-13
+  due:
+    - MP 12 Post-reflection
+
+- date: 2024-12-16
+  due:
+    - SoLA 12
+
+- date: 2024-12-20
+  due:
+    - SoLA 13
