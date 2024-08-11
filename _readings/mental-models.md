@@ -181,7 +181,7 @@ Now, what happens if we "copy" `a` and `x`?
 
 ```
 b = a;
-y = ;
+y = x;
 ```
 
 ```
@@ -194,7 +194,7 @@ b : 5       |
 y : *-------/
 ```
 
-That's right, both `x` and `y` point to the same object. Remember: One of the reasons Java uses references is to save time and space for copying.
+That's right, **both `x` and `y` point to the same object**. Remember: One of the reasons Java uses references is to save time and space for copying.
 
 But that leads to some potentially unexpected behavior.  Suppose we increment both `b` and `y`.
 
