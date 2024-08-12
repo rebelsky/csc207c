@@ -28,7 +28,7 @@ I expect that by the end of the semester, you will have mastered the basics of o
          * parametric polymorphism (_OOP LO #04: Parametric Polymorphism_) and
          * subtype polymorphism (_OOP LO #05: Subtype Polymorphism_);
 * apply object-oriented design principles to separate interface from implentation (_OOP LO #06: Data Abstraction_)
-* <strike>identify and use a variety of basic design patterns (_OOP LO: 07: Design Patterns_), such as Model-View-Controller, Factory, Singleton, Adapter, and Decorator;</strike>
+* identify and use a variety of basic design patterns (_OOP LO: 07: Design Patterns_), such as Model-View-Controller, Factory, Singleton, Adapter, and Decorator;
 * identify objects and classes that will contribute to a program or solution, design those objects and classes, and implement those objects and classes (_OOP LO #08: Object Design_); and
 * describe a common layout of objects in memory (_OOP LO #09: Mental Models_).
 
@@ -45,7 +45,7 @@ I expect that by the end of the semester, you will have significantly extended y
     * Quicksort (_Algorithms LO #06: Quicksort_), 
     * merge sort (_Algorithms LO #07: Merge Sort_),
     * graph and tree traversal (_Algorithms LO #08: Traversal_), and
-    * <strike>shortest path (_Algorithms LO #09: Shortest path_)</strike>;
+    * shortest path (_Algorithms LO #09: Shortest path_)
 * design new algorithms using a variety of approaches including 
     * greed (_Algorithms LO #10: Greed_) and
     * divide and conquer (_Algorithms LO #11: Divide and Conquer_);
@@ -67,7 +67,7 @@ I expect that by the end of the semester, you will have significantly extended y
     * hash tables (_ADT/DS LO #06: Hash Tables_), 
     * binary search trees (_ADT/DS LO #07: BSTs_), 
     * heaps (_ADT/DS LO #08: Heaps_), and
-    * <strike>graphs (_ADT/DS LO #09: Graphs_)</strike> [covered, not assessed];
+    * graphs (_ADT/DS LO #09: Graphs_)
 * implement one or more data types using arrays (_ADT/DS LO #10: Array-based Structures_);
 * implement one or more data types using linked structures (_ADT/DS LO #11: Linked Structures_);
 * design new ADTs using the PUM (philosophy, uses, methods) approach (_ADT/DS LO #12: Design ADTs_); 
@@ -79,7 +79,7 @@ I expect that by the end of the semester, you will have significantly extended y
 I expect that by the end of the semester, you will be a competent beginning software developer.  In particular, in addition to having the skills described above, I expect that you will be able to
 
 * work with one or more other students on the creation of a program (_Development LO #01: Collaboration_);
-* <strike>manage development of multi-file programs in Java using a build tool (in our case, Maven) (_Development LO #02: Build Tools_);</strike>
+* manage development of multi-file programs in Java using a build tool (in our case, Maven) (_Development LO #02: Build Tools_);
 * design, implement, and run unit tests (_Development LO #03: Unit Testing_);
 * develop software using an integrated development environment (in our case, Visual Studio Code) (_Development LO #04: IDE_);
 * collaborate on and keep track of the development history of code using a version control system* (in our case, Git) (_Development LO #05: Version Control_);
