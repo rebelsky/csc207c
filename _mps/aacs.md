@@ -9,7 +9,7 @@ collaboration: |
   Each student should submit their own responses to this project. You may
   consult other students in the class as you develop your solution.  If you
   receive help from anyone, make sure to cite them in your responses. 
-link: true
+link: false
 ---
 
 In this mini-project, you will explore (a) the use of associative arrays and other kinds of maps, (b) programming to specifications in support of a larger project, (c) dealing with conflicting approaches to Java programming, and (d) considering some of the issues at play in designing software for people with disabilities (and using software as a disabled person).
