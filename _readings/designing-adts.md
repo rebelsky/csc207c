@@ -47,7 +47,7 @@ let's go ahead and consider some details in the design of ADTs.  In
 a future reading, we'll consider some details in the design of data
 structures.
 
-The PUM approach to ADT design
+The SAM approach to ADT design
 ------------------------------
 
 Where do you get started in designing an ADT?  Usually, there are a 
@@ -60,7 +60,7 @@ ADT and want to think more about the details.
 
 In my experience, it's helpful to think about three issues as you
 design an abstract data type.  First, you consider an underlying
-*philosophy*.  That is, you describe the key factors that organize
+*strategy*.  That is, you describe the key factors that organize
 your thinking on how you plan to work with the data.  For example,
 you might decide that it will be convenient to access data by numeric
 indices (e.g., an array or vector) or you might decide that you want
@@ -68,16 +68,16 @@ a data structure in which you collect values in some order and can
 easily remove values or insert new values "in between" other values
 (e.g., a list).
 
-Second, you develop a list of *use cases*.  That is, you think about
+Second, you develop a list of *applications*.  That is, you think about
 problems in which it would be helpful to be able to access data in
 those ways.  Sometimes the use cases come first.  That is, you think
 about how you want to access data and then you come up with a general
 organizing principal.
 
 Third, you describe a collection of *methods* (procedures) that bridge
-the philosophy and the use cases.  Your choice of methods is typically
+the strategy and the applications.  Your choice of methods is typically
 influenced by two questions: What operations will you need to achieve
-the requirements of the use cases?  How does the philosophy of the
+the requirements of the use cases?  How does the strategy of the
 data type guide the design of those methods?
 
 An example: Simple lists
@@ -104,19 +104,19 @@ the predecessor of a.  A list may also be empty.  A list may contain
 multiple copies of each value, in which case they are considered
 separate values for the predecessor and successor relationships.
 
-We've now described an organization of data.  But how might we
-use data organized in this way?  It's time to move on to use
-cases.  One obvious case is my class list.  I start each class
-with a list of students.  When I take attendance, I check off
-each student in turn.  Here's another: For many assignments, I know
-that there are common steps that every student should do.  For
-example, in writing an essay, a student should pick a topic, gather
-sources, read those sources, develop a thesis, make an outline,
-write each section, have a peer read the essay, revise, and so on and
-so forth.  Once again, we have the notion of building a list with
-a fixed set of values and checking off each value in turn.
+We've now described an organization of data.  But how might we use
+data organized in this way?  It's time to move on to _applications_.
+One obvious case is my class list.  I start each class with a list
+of students.  When I take attendance, I check off each student in
+turn.  Here's another: For many assignments, I know that there are
+common steps that every student should do.  For example, in writing
+an essay, a student should pick a topic, gather sources, read those
+sources, develop a thesis, make an outline, write each section,
+have a peer read the essay, revise, and so on and so forth.  Once
+again, we have the notion of building a list with a fixed set of
+values and checking off each value in turn.
 
-Are there any other characteristics hidden in these two use cases?
+Are there any other characteristics hidden in these two applications?
 Well, in each case I expect that each time I use the same list,
 it is unaffected by my previous actions or by other people's actions.
 For my class list, each day I expect to start with a fresh copy of the
@@ -154,8 +154,9 @@ value.  Are there any immutable lists which might cause it to fail?
 You can't check off any elements in the empty list, so we require
 that the input be a non-empty immutable list.  What should we call
 the method?  Let's call it `cdr`, for "check-off data reference".
-In Java, we might phrase this as follows.  (C programmers can ignore
-the `public` and `static` for now.)
+In Java, we might phrase this as follows. (C programmers can ignore
+the `public` and `static` for now.) (Real Java programmers probably
+wouldn't use static methods, but we'll allow them for now.)
 
 <pre>
 /**
@@ -324,24 +325,20 @@ A recap and a look forward
 --------------------------
 
 What might you have learned in this reading?  I hope that you've started
-to understand the PUM (Philosophy, Use cases, Methods) approach to ADT
+to understand the SAM (Strategy, Applications, Methods) approach to ADT
 design.  As we look at each new ADT, whether it's one you've probably
 seen before or one we are designing anew, I'll ask you for the main steps
 and then ask you to go through each of the steps.  In the end, I hope 
 that such practice will give you skill thinking not just about ADTs,
 but about object design in general.
 
-But the PUM approach is not the only key idea in this reading.  As
+But the SAM approach is not the only key idea in this reading.  As
 the reading notes, there is not one single correct design for an 
 ADT.  Your design is influenced by your choice of use cases, by how
 you approach ideas revealed in your use cases, by your experience in
 thinking about such issues, and much much more.
 
-Where do we go next?  We have to *implement* these
-ADTs.  I tend to treat the concept of "data structures"
-as the basic way in which we implement ADTs, although I admit that I
-misuse the term a bit.  So let's move on to look at
-[how we design data structures](../readings/designing-data-structures).
+Where do we go next?  We have to *implement* these ADTs.  I tend to treat the concept of "data structures" as the basic way in which we implement ADTs, although I admit that I misuse the term a bit.  So let's move on to look at [how we design data structures](../readings/designing-data-structures).
 
 A disclaimer
 ------------

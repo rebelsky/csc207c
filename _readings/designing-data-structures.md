@@ -104,18 +104,18 @@ attention to the design and implementation of data structures.
 The LIA Approach to data structure design
 -----------------------------------------
 
-When we've completed our ADT analysis using the PUM approach, we should 
+When we've completed our ADT analysis using the SAM approach, we should 
 know three things about the ADT:
 
-* The primary *philosophy* of the ADT.  That is,
+* The primary *strategy* of the ADT.  That is,
   what are the primary organizing principles?  We might say that we
   have an organization in which we refer to values by numeric index,
   that we have an organization in which it is easy to add or
   remove values, that there is a known order in which we will visit
   values (perhaps specified by the client programmer, perhaps an
   implicit order), and so on and so forth.
-* Some *use cases* that show how the ADT might
-  be used.  One important aspect of use cases is that they also
+* Some *applications* that show how the ADT might
+  be used.  One important aspect of applications is that they also
   tell you how often certain methods are likely to be used.  
   Such information is quite valuable when we start to implement
   the ADT, as we will want to make sure that the implementations of
@@ -130,9 +130,9 @@ How do we decide how to implement an ADT (build a data structure)?  As
 in the case of ADT's, you'll find that you may have to consider
 different approaches and explore the benefits and drawbacks of each.
 In doing so, I find it useful to employ an approach that I call
-LIA, for "layout, implement, analyze".
+AAA, for "arrangement, algorithms, analysis".
 
-First, you need to choose a way to *lay out* the data in memory.
+First, you need to choose the *arrangement* of the data in memory.
 There are two basic approaches, with some variants in each.  You
 might reserve a large area of memory to hold lots of values, and
 have some policy that says where in memory each value goes.  I will
@@ -143,8 +143,8 @@ values), and add information about the relationships between these
 different pieces of memory.  I will usually refer to this as a
 "*linked*" approach, since we make links between different pieces.
 
-Your choice of a basic approach should then guide how you 
-*implement* each of the methods from the ADT.  If you have chosen
+Your choice of a basic approach should then guide the *algorithms*
+you use as you implement each of the methods from the ADT.  If you have chosen
 the array-based approach, you will need to consider how to achieve
 each method by indexing into the array and perhaps moving elements
 around in the array.  If you have chosen the linked approach,
@@ -152,61 +152,38 @@ you will need to consider how to implement each method in by
 implementing small pieces or making or changing links between
 pieces.
 
-Finally, you need to *analyze* each of the implementations you
-decided on.  Is it likely to be slow or fast?  (We'll look at more
-precise meanings of "slow" and "fast" later in the semester; one
-simple one is to think about how many values you need to look at
-in order to achieve the method's goal.)
+Finally, you will conduct an *analysis* each of the implementations
+you decided on.  Is it likely to be slow or fast?  (We'll look at
+more precise meanings of "slow" and "fast" later in the semester;
+one simple one is to think about how many values you need to look
+at in order to achieve the method's goal.)
 
 An example: Immutable lists
 ---------------------------
 
-You may recall the "Immutable List" ADT we designed in 
-the [reading on ADT design](../readings/designing-adts).
-That ADT had four basic methods.
+You may recall the "Immutable List" ADT we designed in the [reading on ADT design](../readings/designing-adts).  That ADT had four basic methods.
 
-* `ImmutableList list(Object[] values)` - Create an immutable list
-  from an array of values.
-* `Object car(ImmutableList list)` - Get the first value in a
-  non-empty immutable list.
-* `ImmutableList cdr(ImmutableList list)` - Get an immutable
-  list with all but the first value in non-empty immutable list 
-  `list`
-* `boolean isNull(ImmutableList list)` - Determine if a list
-  is empty.
+* `ImmutableList list(Object[] values)` - Create an immutable list from an array of values.
+* `Object car(ImmutableList list)` - Get the first value in a non-empty immutable list.
+* `ImmutableList cdr(ImmutableList list)` - Get an immutable list with all but the first value in non-empty immutable list `list`
+* `boolean isNull(ImmutableList list)` - Determine if a list is empty.
 
-How do we implement these methods?  We have two choices (or at least
-two normal starting points): We could use arrays or we could use
-linked structures.  Let's try each.
+(Once again, you'll find that we will organize this ADT a bit differently once we've embraced the principles of object-oriented-design.)
+
+How do we implement these methods?  We have two choices (or at least two normal starting points): We could use arrays or we could use linked structures.  Let's try each.
 
 ### Implementing immutable lists with arrays
 
-We'll start with arrays.  It turns out that there are a variety of ways
-we can think about arranging the elements of a list in an array.  The
-most straightforward is that the size of array is exactly the size of
-the list, and the elements are in the array are in the order of the
-elements in the list.
+We'll start with arrays.  It turns out that there are a variety of ways we can think about arranging the elements of a list in an array.  The most straightforward is that the size of array is exactly the size of the list, and the elements are in the array are in the order of the elements in the list.
 
-We're likely to need to know the size of the array (at least in order
-to decide if it contains no elements).  Some languages, like Java,
-will store the size of the array for us.  Other languages, like C,
-will require we store the size of the array ourselves.
+We're likely to need to know the size of the array (at least in order to decide if it contains no elements).  Some languages, like Java, will store the size of the array for us.  Other languages, like C, will require we store the size of the array ourselves.
 
-We have the basic layout.  How do we implement each of the methods?
+We have the basic layout.  What are the _algorithms_ that describe how we will implement each of the methods?
 
-* The `list` method should be straightforward.  We simply
-  make a copy of the array (noting the size of the array if necessary).
-* The `car` method is also straightforward.  We grab the first
-  element in the array (in most languages, the element at index 0).
-* The `cdr` method may require a bit more thought.  We don't
-  want to affect the original array, since we may need to use it later
-  (after all, we did call these *Immutable* lists.
-  Hence, we probably need to build a new array that is one smaller,
-  and copy over all but the first element.
-* Fortunately, the `isNull` method is also straightforward,
-  particularly because we thought about it a bit in advance.  A list
-  is empty if the array has size 0, so we need only get the size of
-  the array and compare it to 0.
+* The `list` method should be straightforward.  We simply make a copy of the array (noting the size of the array if necessary).
+* The `car` method is also straightforward.  We grab the first element in the array (in most languages, the element at index 0).
+* The `cdr` method may require a bit more thought.  We don't want to affect the original array, since we may need to use it later (after all, we did call these *Immutable* lists. Hence, we probably need to build a new array that is one smaller, and copy over all but the first element.
+* Fortunately, the `isNull` method is also straightforward, particularly because we thought about it a bit in advance.  A list is empty if the array has size 0, so we need only get the size of the array and compare it to 0.
 
 In pseudocode,
 
@@ -241,70 +218,28 @@ boolean isNull(ImmutableList list) {
 Let's analyze each of these methods in terms of the number of elements
 in the list.
 
-* `list`.  Allocating memory is (usually) a single step.
-  If there are N values in the list, copying them from one the input
-  array to the new array will require N copies.  The cost of this
-  method is directly proportional the number of values in the list.
-* `car`.  Referencing an element in an array is fast.
-  So this method is fast, a constant number of steps that
-  is independent of the size of the array.
-* `cdr`.  Once again, allocating memory is usually a single
-  step.  And once again, we'll need to copy almost all of the elements.
-  So `cdr` is also directly proportional to the number of
-  values left in the list.
-* `boolean isNull(ImmutableList list)`.  Getting the size
-  of an array should be a fast method, whether that size is provided
-  by the language or we've stored the size in a field.  So, finding
-  out whether an array is empty should be fast, a constant number of
-  steps that is independent of the size of the array.
+* `list`.  Allocating memory is (usually) a single step.  If there are N values in the list, copying them from one the input array to the new array will require N copies.  The cost of this method is directly proportional the number of values in the list.
+* `car`.  Referencing an element in an array is fast.  So this method is fast, a constant number of steps that is independent of the size of the array.
+* `cdr`.  Once again, allocating memory is usually a single step.  And once again, we'll need to copy almost all of the elements.  So `cdr` is also directly proportional to the number of values left in the list.
+* `boolean isNull(ImmutableList list)`.  Getting the size of an array should be a fast method, whether that size is provided by the language or we've stored the size in a field.  So, finding out whether an array is empty should be fast, a constant number of steps that is independent of the size of the array.
 
-That's not too bad.  Two of the methods are really fast.  Two methods
-are slow, but at least one probably has to be.  That is, we expect
-that since creating a list may require looking at each element of
-the list, the number of steps to create a list will always be
-directly proportional to the number of values in the list.
+That's not too bad.  Two of the methods are really fast.  Two methods are slow, but at least one probably has to be.  That is, we expect that since creating a list may require looking at each element of the list, the number of steps to create a list will always be directly proportional to the number of values in the list.
 
-Can we do better?  We might be able to if we focus on ways to
-improve `cdr`.
+Can we do better?  We might be able to if we focus on ways to improve `cdr`.
 
 ### Another implementation of immutable lists with arrays
 
-The decision to use an array does not have to be the end of our design
-of the layout of a data structure.  One issue we discovered in our first
-approach was that using a separate array for each immutable list in
-turn required a lot of effort (and, presumably, a lot of memory).  What
-if instead of making a copy each time, we used the same array?
+The decision to use an array does not have to be the end of our design of the layout of a data structure.  One issue we discovered in our first approach was that using a separate array for each immutable list in turn required a lot of effort (and, presumably, a lot of memory).  What if instead of making a copy each time, we used the same array?
 
-Since the list is supposed to be immutable, we probably shouldn't
-rearrange the values in the array.  However, we could store an additional
-piece of information.  In particular, we might note which element in
-the array is the start of the current list.  Let's consider that
-approach.  Recall that we need to store two values for each immutable
-list: An underlying array and an index into that array.
+Since the list is supposed to be immutable, we probably shouldn't rearrange the values in the array.  However, we could store an additional piece of information.  In particular, we might note which element in the array is the start of the current list.  Let's consider that approach.  Recall that we need to store two values for each immutable list: An underlying array and an index into that array.
 
-* For `list`, we will once again have to build a new array
-  and copy the values from the parameter array.  We'll also need to
-  initialize the index to 0.  This method will take a number of
-  steps proportional to the number of elements in the array.
-* For `car`, instead of always looking at the first position
-  in the list, we will instead look at the position given by the index.
-  This method should only take a constant number of steps, independent
-  of the number of elements in the array.
-* For `cdr`, we won't copy the array.  Instead, we will increment
-  the index.  More precisely, we will make a new structure that holds the
-  same array, but with an index field that is one higher than the index
-  field of the parameter.  This method should only take a constant 
-  number of steps.
-* The `isNull` method will be more complex, since we are
-  not changing the size of the array.  Instead, we will note that the
-  list is empty if the index is greater than the largest possible
-  index in the array (in Java and C, that's when the index is greater
-  than or equal to the size of the array).  Even though this implementation
-  is more complex, it should still be a constant number of steps that
-  is independent of the number of elements in the array or list.
+* For `list`, we will once again have to build a new array and copy the values from the parameter array.  We'll also need to initialize the index to 0.  This method will take a number of steps proportional to the number of elements in the array.
+* For `car`, instead of always looking at the first position in the list, we will instead look at the position given by the index.
+  This method should only take a constant number of steps, independent of the number of elements in the array.
+* For `cdr`, we won't copy the array.  Instead, we will increment the index.  More precisely, we will make a new structure that holds the same array, but with an index field that is one higher than the index field of the parameter.  This method should only take a constant number of steps.
+* The `isNull` method will be more complex, since we are not changing the size of the array.  Instead, we will note that the list is empty if the index is greater than the largest possible index in the array (in Java and C, that's when the index is greater than or equal to the size of the array).  Even though this implementation is more complex, it should still be a constant number of steps that is independent of the number of elements in the array or list.
 
-For those who prefer to think about these steps in code, some
-pseudocode follows.
+For those who prefer to think about these steps in code, some pseudocode follows.
 
 ```java
 ImmutableList list(Object[] values) {
@@ -313,85 +248,47 @@ ImmutableList list(Object[] values) {
   for (i = 0; i < values.size; i++) {
     result.array[i] = values[i];
   } // for
-  result.index = 0;
+  result.startingIndex = 0;
   return result;
 } // list
 
 Object car(ImmutableList list) {
-  return list.array[list.index];
+  return list.array[list.startingIndex];
 } // car
 
 ImmutableList cdr(ImmutableList list) {
   ImmutableList result = allocate(ImmutableList);
   result.array = list.array;
-  result.index = list.index + 1;
+  result.startingIndex = list.startingIndex + 1;
   return result;
 } // cdr
 
 boolean isNull(ImmutableList list) {
-  return (result.index >= list.array.size);
+  return (result.startingIndex >= list.array.size);
 } // isNull
 ```
 
-This implementation is a bit more complex, and probably requires
-more documentation for the programmers who may have to maintain or
-extend it.  However, the improved speed of `cdr` (and the implicit
-reduction in memory usage) probably makes it worth it.
+This implementation is a bit more complex, and probably requires more documentation for the programmers who may have to maintain or extend it.  However, the improved speed of `cdr` (and the implicit reduction in memory usage) probably makes it worth it.
 
 ### Implementing immutable lists as linked structures
 
-We have what seems to be a successful implementation of immutable
-lists using arrays.  Is it still worth looking at a linked
-implementation?  Yes, primarily because we should consider what a
-linked implementation looks like.
+We have what seems to be a successful implementation of immutable lists using arrays.  Is it still worth looking at a linked implementation?  Yes, primarily because we should consider what a linked implementation looks like.
 
-For each element in the list, we will store two values: The element,
-and a link to the next element in the list.  We'll use a special
-value, `null` to represent no remaining elements.  We typically use
-"node" to name the combination of element and link in a linked
-structure.
+For each element in the list, we will store two values: The element, and a link to the next element in the list.  We'll use a special value, `null` to represent no remaining elements.  We typically use "node" to name the combination of element and link in a linked structure.
 
-Our `LinkedList` structure can be an alias for the
-node structure, or it can combine a node and some other information.
-For now, let's just make it an alias for the node structure.
+Our `LinkedList` structure can be an alias for the node structure, or it can combine a node and some other information.  For now, let's just make it an alias for the node structure.
 
-* To implement `list`, we'll need to build and link a lot
-  of nodes.  First, we build a node for the last element of the array
-  and set its next link to `null`.  After that, we build a node for
-  the all-but-last element of the array, and set its next link to the node
-  we just created.  After that, we build a node for the all-but-all-but-last
-  element of the array, and set its next link to the node we just created.
-  We continue this process until we reach the start of the array.
+* To implement `list`, we'll need to build and link a lot of nodes.  First, we build a node for the last element of the array and set its next link to `null`.  After that, we build a node for the all-but-last element of the array, and set its next link to the node we just created.  After that, we build a node for the all-but-all-but-last element of the array, and set its next link to the node we just created.  We continue this process until we reach the start of the array.
 * To implement `car`, we take the element portion of the node.
 * To implement `cdr`, we can just return the linked next node.
-* To implement `isNull`, we check whether or not the node is the special 
-  value `null`.
+* To implement `isNull`, we check whether or not the node is the special value `null`.
 
-This implementation seems about as efficient as the revised array
-implementation.  The `list` method does work directly proportional
-to the number of elements in the list, and everything else should
-take a constant number of steps.  However, the linked approach may
-also require more memory, since we store not only the values, but
-also the links.  (Of course, the revised array implementation
-required an index for each list, so the size is likely similar.)
-For those who worry about other details of memory usage, the array
-implementation also keeps values closer together in memory.
+This implementation seems about as efficient as the revised array implementation.  The `list` method does work directly proportional to the number of elements in the list, and everything else should take a constant number of steps.  However, the linked approach may also require more memory, since we store not only the values, but also the links.  (Of course, the revised array implementation required an index for each list, so the size is likely similar.) For those who worry about other details of memory usage, the array implementation also keeps values closer together in memory.
 
-Which should you use?  For many programmers, the array-based
-implementations are simpler and less error prone, particularly in
-languages like C that require you to be very careful in keeping
-track of the memory you have allocated.  However, if you are
-comfortable building linked structures (and that's a skill set
-you should develop), the linked approach is quite straightforward.
+Which should you use?  For many programmers, the array-based implementations are simpler and less error prone, particularly in languages like C that require you to be very careful in keeping track of the memory you have allocated.  However, if you are comfortable building linked structures (and that's a skill set you should develop), the linked approach is quite straightforward.
 
 Wrapping up
 -----------
 
-What might you have learned in this reading?  I hope that you've
-started to understand the LIA (Layout, Implement, Analyze) approach
-to implementing ADTs.  As we look at each new ADT, I'll ask you for
-these steps and we'll think about each in turn.  Once again, I also
-hope you've learned that there are often multiple approaches to
-solving problems, and that it's worth the effort to think about your
-alternatives.
+What might you have learned in this reading?  I hope that you've started to understand the LIA (Layout, Implement, Analyze) approach to implementing ADTs.  As we look at each new ADT, I'll ask you for these steps and we'll think about each in turn.  Once again, I also hope you've learned that there are often multiple approaches to solving problems, and that it's worth the effort to think about your alternatives.
 
