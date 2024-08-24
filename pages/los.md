@@ -8,13 +8,15 @@ permalink: /los/
 To directly assess your mastery of the learning objectives of this course, we will conduct a series of learning assessments over the course of the semester.
 The use LAs of this course is inspired by [mastery-based testing](https://mbtmath.wordpress.com/) practices found in mathematics.
 
-Most of the LAs will also appear as in-class paper-based ten-minute quizzes, given in class on various days.
+LAs will be given as take-home problems. 
 
 Each LA will correspond to one of the learning objectives described below.
 
 If you do not complete the learning assessment for a learning objective the first time, you will have multiple chances to retry. 
 
 The objectives may change slightly during the semester as the schedule shifts.
+
+In solving those problems, you should only rely on (a) the course Web site, (b) the standard Java reference pages, (c) your notes, and (d) the code you've written. You _may not_ search the Web for answers, you may not use LLMs, and you definitely may not use StackOverflow or Geeks4Geeks or any such sites.
 
 ## Object-Oriented Design
 
