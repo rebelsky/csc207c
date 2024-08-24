@@ -21,7 +21,7 @@ The objectives may change slightly during the semester as the schedule shifts.
 I expect that by the end of the semester, you will have mastered the basics of object-oriented design.  In particular, I expect that you will be able to
 
 * describe and use four pillars of object-oriented design: 
-    * encapsulation (_OOP LO #01: Encapsulation_),  
+    * encapsulation (_OOP LO #01: Encapsulation_)
     * inheritance, representing a form of the **is-a** relationship (_OOP LO #02: Inheritance_), 
     * composition, representing a form of the **has-a** relationship (_OOP LO #03: Composition_), and
     * polymorphism, including both 
@@ -119,64 +119,43 @@ Please take the time to anonymize your code.
 
 Please make sure to include reasonable citations.
 
-* Not "Labs" but the particular labs you used (either "Lab on X" or
-  the URL).
-* Not "Google" but the particular sites you found using Google
-  that contributed to your answer.
+* Not "Labs" but the particular labs you used (either "Lab on X" or the URL).
+* Not "Google" but the particular sites you found using Google that contributed to your answer.
 
-Please follow coding conventions. (You'll get credit even if you don't,
-but it's good practice to follow coding conventions.)
+Please follow coding conventions. (You'll get credit even if you don't, but it's good practice to follow coding conventions.)
 
 Please follow good coding practices.
 
 * Decompose.
-* When representing ranges, use "lower-bound inclusive,
-  upper-bound exclusive". There's a reason that so many standard
-   procedures follow that model.
+* When representing ranges, use "lower-bound inclusive, upper-bound exclusive". There's a reason that so many standard procedures follow that model.
 
-When describing code, start with a high-level explanation. Often,
-that's all you need.
+When describing code, start with a high-level explanation. Often, that's all you need.
 
-Do not ask me to follow links. Everything you want me to look at
-belongs in your answer field.
+Do not ask me to follow links. Everything you want me to look at belongs in your answer field.
 
 ### Object-oriented Programming
 
 #### OOP 4: Parametric polymorphism (generics)
 
-Make sure that your description of parametric polymorphism does not
-also apply to subtype polymorphism. They are both kinds of polymorphism,
-but they achieve their goals in different ways.
+Make sure that your description of parametric polymorphism does not also apply to subtype polymorphism. They are both kinds of polymorphism, but they achieve their goals in different ways.
 
-Make sure to include code that demonstrates that you understand and can
-use parametric polymorphism.
+Make sure to include code that demonstrates that you understand and can use parametric polymorphism.
 
 #### OOP 5: Subtype polymorphism
 
-Make sure that your description of subtype polymorphism does not
-also apply to parametric polymorphism. They are both kinds of
-polymorphism, but they achieve their goals in different ways.
+Make sure that your description of subtype polymorphism does not also apply to parametric polymorphism. They are both kinds of polymorphism, but they achieve their goals in different ways.
 
-Make sure to include code that demonstrates that you understand and can
-use parametric polymorphism.
+Make sure to include code that demonstrates that you understand and can use parametric polymorphism.
 
 #### OOP 6: Data abstraction
 
-For data abstraction, think about how we've designed ADTs and their
-corresponding implementations all semester.
+For data abstraction, think about how we've designed ADTs and their corresponding implementations all semester.
 
-Make sure that you explain *why* we want to use data abstraction (why
-we want to separate interface from implementation). 
+Make sure that you explain *why* we want to use data abstraction (why we want to separate interface from implementation). 
 
-Our textblocks are not a very good example of data abstraction,
-since the interface there is intentionally open-ended. Look for an
-interface where there is a clear expectation of what each method
-does; one in which all implementations should do the same thing on
-the same series of procedure calls.
+Our textblocks are not a very good example of data abstraction, since the interface there is intentionally open-ended. Look for an interface where there is a clear expectation of what each method does; one in which all implementations should do the same thing on the same series of procedure calls.
 
-Your goal here is to think at the internal design level; not separating
-user interface from implementation, but separating the interface to
-a library from the underlying implementation of that library.
+Your goal here is to think at the internal design level; not separating user interface from implementation, but separating the interface to a library from the underlying implementation of that library.
 
 #### OOP 8: Object design
 
@@ -184,10 +163,6 @@ _Identify objects and classes that will contribute to a program or solution, des
 
 Note that this asks you to give a problem, describe what objects and classes will help you solve that problem,, and give the implementation of those classes. A single class, without context, is unlikely to suffice.
 
-#### OOP 9: Mental models
-
-There was some confusion on the questions I was asking. I've clarified
-them on the latest version.
 ### Algorithms 
 
 #### Algorithms 1: Binary search
@@ -196,42 +171,27 @@ Make sure your algorithm is correct.
 
 Make sure you explain the inputs and outputs.
 
-Please follow custom and write ranges as "lower-bound inclusive,
-upper-bound exclusive".
-
-#### Algorithms 2: Sequential search
-
-Searching algorithms traditionally search for (a) a matching value,
-(b) a key, or (c) an element that meets some criteria.
-
-Hence, "find the smallest value" is not an example of sequential search.
+Please follow custom and write ranges as "lower-bound inclusive, upper-bound exclusive".
 
 #### Algorithms 3: Insertion sort
 
-Please make the "insert" in insertion sort explicit in both your
-code (i.e., by writing a separate `insert` procedure) and your
-narrative.
+Please make the "insert" in insertion sort explicit in both your code (i.e., by writing a separate `insert` procedure) and your narrative.
 
 #### Algorithms 4: Selection sort
 
-Very few people seem to have written an `indexOfSmallest` or
-`indexOfLargest` procedure. Decompose!
+Decompose! You should write an `indexOfSmallest` or `indexOfLargest` procedure.
 
 #### Algorithms 5: Merge sort
 
-Please follow custom and write ranges as "lower-bound inclusive,
-upper-bound exclusive".
+Please follow custom and write ranges as "lower-bound inclusive, upper-bound exclusive".
 
 #### Algorithms 6: Quicksort
 
-Please follow custom and write ranges as "lower-bound inclusive,
-upper-bound exclusive".
+Please follow custom and write ranges as "lower-bound inclusive, upper-bound exclusive".
 
 #### Algorithms 11: Divide and conquer
 
-Make sure that you clearly explain the principle of "divide and
-conquer" before you go on to your example of you employing that
-principle.
+Make sure that you clearly explain the principle of "divide and conquer" before you go on to your example of you employing that principle.
 
 #### Algorithms 12: Big-O
 
@@ -245,8 +205,7 @@ Even though Java includes it, `get(int i)` is **not** a core list operation.
 
 #### ADTs/DSs #2: Stacks
 
-Here and in other ADTs/DSs, start with the PUM, or at least something
-like the PUM. At least the PM. At least the P.
+Here and in other ADTs/DSs, start with the SAM, or at least something like the SAM. At least the SM. At least the S.
 
 #### ADTs/DSs #7: Binary search trees
 
@@ -266,36 +225,27 @@ Make sure to include code that explicitly works with an array.
 
 Make sure to explain why we use linked structures.
 
-Make sure to explain what the linked objects are in your structure.
-(The "nodes" or equivalent.)
+Make sure to explain what the linked objects are in your structure.  (The "nodes" or equivalent.)
 
 Make sure to include code that uses your linked objects.
 
 #### ADTs/DSs #12: Design ADTs
 
-This LA is a bit less open-ended. I will give you a particular ADT
-to design. You are responsible for all the parts.
+This LA is a bit less open-ended. I will give you a particular ADT to design. You are responsible for all the parts.
 
-When I say to give me a Java interface, please give a complete interface
-that I can compile.
+When I say to give me a Java interface, please give a complete interface that I can compile.
 
 #### ADTs/DSs #13: Design data structures
 
-This LA is also less open-ended. I will give you a particular ADT (or
-at least interface) to implement. You need not write working Java code.
-However, you should explain how you will lay out the data (L) and how
-you will implement the the operations (I).
+This LA is also less open-ended. I will give you a particular ADT (or at least interface) to implement. You need not write working Java code.  However, you should explain how you will lay out the data (L) and how you will implement the the operations (I).
 
-The analysis part of data structure design means that you analyze the
-running time of your methods using bit-O notation (A).
+The analysis part of data structure design means that you analyze the running time of your methods using bit-O notation (A).
 
 ### Software design and development
 
 #### Development #1: Collaboration
 
-I need more than "I wrote code with someone else". Please describe
-your process and why it was successful (or how you made it
-successful).
+I need more than "I wrote code with someone else". Please describe your process and why it was successful (or how you made it successful).
 
 #### Development #3: Unit testing
   
@@ -305,27 +255,19 @@ forget why you wrote your tests. The comments help us remember.
 * Bad: `assertEquals(Expected, Expression);`
 * Good: `assertEquals("Message", Expected, Expression)`
   
-I expect to see a mix of tests and explanatory text. The text should explain
-what unit testing is and why we use it. It might also describe the tests. The
-tests should be sensible, real tests.  
+I expect to see a mix of tests and explanatory text. The text should explain what unit testing is and why we use it. It might also describe the tests. The tests should be sensible, real tests.  
   
 #### Development #5: Version control
   
 Please include a git log from a project.
 
-Remember that the log is supposed to show collaboration. That means
-there should be more than one committer (or an explanation as to
-why there's only one committer).
+Remember that the log is supposed to show collaboration. That means there should be more than one committer (or an explanation as to why there's only one committer).
 
 #### Development #6: Code reading
 
-ode reading is more than "there's a for loop here". You should describe
-the design decisions embedded in the code and the relation of the class
-to a larger ecosystem. (Why did someone create this class?)
+ode reading is more than "there's a for loop here". You should describe the design decisions embedded in the code and the relation of the class to a larger ecosystem. (Why did someone create this class?)
 
-The specification says "_Read, understand, **and modify** code that you 
-did not write._" I'd like to see appropriate modifications and a
-description of that modification.
+The specification says "_Read, understand, **and modify** code that you did not write._" I'd like to see appropriate modifications and a description of that modification.
 
 #### Development #7: Documentation
 
@@ -338,19 +280,14 @@ Central tips:
 
 The following things would be nice, but are not strictly necessary.
 
-* Document parameters and such. (I don't regularly do so, so I won't force
-  you to do so.)
+* Document parameters and such. (I don't regularly do so, so I won't force you to do so.)
 * Put in section separators.
 * Include internal comments to explain more confusing parts of code.
-* Do not include internal comments that simply restate what the code does.
-  `// Add one to x` above `x++;` does not help the reader and therefore
-  just clogs your code.
+* Do not include internal comments that simply restate what the code does.  `// Add one to x` above `x++;` does not help the reader and therefore just clogs your code.
 
 #### Development #9: Use libraries
 
-Please focus on libraries in which you don't know the internals.
-(That is, don't say "I used Sam's X class.") You've demonstrated
-knowledge of using such libraries in the Code Reading LO.
+Please focus on libraries in which you don't know the internals.  (That is, don't say "I used Sam's X class.") You've demonstrated knowledge of using such libraries in the Code Reading LO.
 
 Most of the libraries you've used are from the Java API.
 
@@ -360,8 +297,7 @@ _Signal and recover from errors using exceptions._
 
 Make sure you include an example of throwing an exception.
 
-Make sure you include an example of catching an exception (or
-being ready to catch an exception).
+Make sure you include an example of catching an exception (or being ready to catch an exception).
 
 Make sure that your recovery is reasonable.
 
