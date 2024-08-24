@@ -4,9 +4,9 @@ link: true
 ---
 *Summary:* We consider, at a high level, the basic issues involved in object-oriented problem solving and object-oriented programming languages.
 
-*Prerequisites:* None.
+*Prerequisites:* Basic programming knowledge.
 
-Background: Problem-Solving Paradigms
+Background: Problem-solving paradigms
 -------------------------------------
 
 As you may have heard, Computer Science is the study of *algorithms* (formalized instructions for solving problems) and data.  One key aspect of this study involves the ways in which we represent algorithms.  Early algorithms (by early, I mean long before computers) were often written as examples.  For example, in describing how to compute the volume of a rectangular hole, one might say "Suppose the hole is 3 feet deep, 4 feet wide, and 6 feet long.  We multiply 4 and 6 to get the area of a cross section, and then by 3 to get the volume of the hole."
@@ -24,7 +24,7 @@ In *declarative* languages, we express algorithms by specifying a set of facts o
 Why object-oriented?
 --------------------
 
-Object-oriented languages currently dominate, although most of these languages also have a strong imperative aspect.  (The past few years have also seen strong growth in the use of functional approaches in languages; most new languages are now multi-paradigm languages.) Why do programmers like object-oriented languages?  There are a variety of reasons to like these languages.
+Object-oriented languages have strong popularity, although most of these languages also have a strong imperative aspect.  (The past few years have also seen strong growth in the use of functional approaches in languages; most new languages are now multi-paradigm languages.) Why do programmers like object-oriented languages?  There are a variety of reasons to like these languages.
 
 First, object-oriented languages are appropriate for programs that model the real world.  In writing such models, we can have one object in the program for each object in the world.  If your task is to, say, figure out optimal cashier placement at Wal-Mart, such modeling is completely appropriate.
 
@@ -50,7 +50,7 @@ In a well-designed object-oriented program, the clients of an object (that is, t
 
 In fact, there are also other reasons to limit access to the internals of an object (not just the fields, but also the details of how each method works).  By limiting such access, you absolve the client from having to know how each method works.  Clients need only know *what* your methods do.  Consider a rational number (fraction) object.  It is likely that you will represent rational numbers as a pair of integers, one for the numerator and one for the denominator.  A client that uses your numerator and denominator will need to know not only what names you have chosen for the numerator and denominator, but also particular other details of your representation, such as how you deal with negative numbers and whether you always store rational numbers in simplified form.  Rather than forcing the client to know such details, we use methods to separate what one might do with an object (e.g., negate a number) from how we implement those methods.
 
-Traditionally, we call such the separation of the interface (what an object does) from the implementation (how it achieves) its goals *information hiding*.  
+Traditionally, we call such the separation of the interface (what an object does) from the implementation (how it achieves its goals) *information hiding*. We might also call it *abstraction*.
 
 Because objects combine methods and data and protect the data from the outside world, we often say that objects *encapsulate* their contents.
 
@@ -72,10 +72,19 @@ At times, when we inherit from another class, we also want to *override* (change
 
 Although some aspects of inheritance could be implemented by the legendary technique of copying and pasting code, real inheritance permits one to make changes to the original class and have those changes automatically propagate to the inheriting class.  The automatic reuse and update capabilities associate with inheritance are one of the reasons programmers so prefer object-oriented programming.
 
+Composition: Combining classes to make new classes (or objects to make new objects)
+-----------------------------------------------------------------------------------
+
+Inheritance is one way we build classes based on other classes. Composition is another, one that is perhaps more common. As we noted in our description of encapsulation, objects can contain other objects. That's the basic idea of encapsulation. For example, if we are defining a class for rational numbers, we would have a field for the numerator (an integer) and the denominator (a positive integer). If we were defining a class for representing students, we'd likely have a field for a name (a class containing, say, first, middle, and last names) as well as a transcript (a list of classes the student has taken).
+
+While composition seems straightforward, the consideration of whether you build new classes via inheritance or composition can involve some careful considerations, considerations we will explore throughout the course.
+
+Composition often requires us to _delegate_ work to the contained objects. For example, if we ask a rational number to multiply itself by another rational number, it will need to ask its numerator to multiply itself by the numerator of the other rational number and the denominator to multiply itself by the demoninator of the other rational number.
+
 Polymorphism: Writing general code
 ----------------------------------
 
-The final key aspect of most object-oriented languages is called *polymorphism*.  While inheritance lets you reuse field and method definitions by building new classes from old, polymorphism lets you write a common piece of code that can be used in multiple contexts.  
+Another key aspect of most object-oriented languages is called *polymorphism*.  While inheritance lets you reuse field and method definitions by building new classes from old, polymorphism lets you write a common piece of code that can be used in multiple contexts.  
 
 In *subtype polymorphism*, you can reuse methods by applying them to new objects.  In particular, subtype polymorphism is the notion that you once you write methods that make particular assumptions about the objects they take as parameters (most typically, the methods those objects provide), those methods can then work with *any* objects that meet those assumptions.
 
@@ -90,11 +99,11 @@ In this short reading, we've considered some key aspects of object-oriented prog
 
 * how to define a class (and the methods and fields in that class);
 * how, given a class, to build objects that belong to that class;
-* how to indicate that one class inherits from another,;
+* how to indicate that one class inherits from another;
 * how to write a polymorphic method (one that works with multiple kinds of related objects); and
 * how to write a polymorphic class or type (one that can be specialized to hold particular types).
 
-We will cover each of these ideas in our explorations of Java.  You'll also find that other languages take somewhat different approaches.  For example, in some languages, we achieve subtype polymorphism through "duck typing". 
+We will cover each of these ideas in our explorations of Java.  You'll also find that other languages take somewhat different approaches.  For example, in some languages, we achieve subtype polymorphism through what is called "duck typing". 
 
 Wrapping up
 -----------
@@ -106,6 +115,8 @@ Wrapping up
 * Field
 * Method
 * Encapsulation
+* Composition
+* Delegation
 * Inherit/Inheritance
 * Polymorphism
 * Override
