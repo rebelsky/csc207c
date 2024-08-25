@@ -45,13 +45,21 @@ information.  To ensure that you read the information, I even give you
 [Notes on taking notes](taking-notes)
   : Some notes on why you should take notes, along with some note-taking strategies.
 
+## Java stuff
+
+[Project setup](project-setup)
+  : Instructions for setting up a new project for VSCode and Maven.
+
+[A drop of Java style](style)
+  : A few important Java style tips.
+
+[Messages from checkstyle](checkstyle)
+  : Attempts to decode the messages checkstyle gives.
+
 ## Miscellaneous
 
 [Spam from Sam](spamr)
   : An attempt to log all the email I sent this semester.
-
-[A drop of Java style](style)
-  : A few important Java style tips.
 
 ## Other versions of the course
 
