@@ -15,9 +15,9 @@ This semester, we will be using Maven as our build manager. Hence, these instruc
 
 You will need to work in at least three environments to set up a new project. 
 
-* Within VSCode, you'll create the project and associated files. That includes adding and removing some files as well as configuring the project.
-* On GitHub, you'll set up a repository for the project. 
-* On the command line, you'll prepare to use GitHub, add the files, and the connect the local repository to the GitHub repository.
+* Within **VSCode**, you'll create the project and associated files. That includes adding and removing some files as well as configuring the project.
+* On **GitHub**, you'll set up a repository for the project. 
+* On **the command line** (aka **the terminal**), you'll prepare to use GitHub, add the files, and the connect the local repository to the GitHub repository.
 
 ## 1\. Initial Maven setup in VSCode
 
@@ -130,9 +130,7 @@ A menu will appear at the top. Select "Indent Using Spaces".
 
 ![A menu. At the top is "Indent Using Spaces". Next is "Indent Using Tabs".](../images/project-setup/select-action-indent.png)
 
-Another menu will appear at the top. Select 2.
-
-![A menu. The elements of the menu are numbers 1 through 8.](../images/project-setup/select-tab-size.png)
+Another menu will appear at the top. Select the number 2.
 
 ### 3\.2\. Add a source encoding
 
@@ -188,7 +186,7 @@ We'll be using JUnit for testing programs. You need to tell Maven about JUnit. A
   </build>
 ```
 
-### 3\.\.5\. A sample `pom.xml`
+### 3\.5\. A sample `pom.xml`
 
 Here's what `pom.xml` might look like after you've done all that.
 
@@ -268,7 +266,7 @@ git add pom.xml
 git add src
 ```
 
-Please don't use `git add .`, even though you may see those instructions on the Interweb. It's always safer to add files one at a time.
+Please don't use `git add .`, even though you may often see those instructions on the Interweb. It's always safer to add files one at a time.
 
 ### 4\.3\. Check what you've added.
 
@@ -311,27 +309,27 @@ nothing to commit, working tree clean
 
 ## 5\. Create a GitHub repository
 
-Before e can upload our repository to GitHub, you must create an empty GitHub repository for the rpoject.
+Before we can upload our repository to GitHub, you must create an empty GitHub repository for the rpoject.
 
-First, navigate to <https://github.com> and log in.
+a\. Navigate to <https://github.com> and log in.
 
-At the left, you should see a list of repositories. Click the **New** button.
+b\. At the left, you should see a list of repositories. Click the **New** button.
 
-Fill in the name of the repository. I'd suggest something short and sweet, like "mp32".
+c\. Fill in the name of the repository. I'd suggest something short and sweet, like "mp32".
 
-Fill in a short description. I'd suggest something like "Mini-project 32 for CSC-207 2024Fa".
+d\. Fill in a short description. I'd suggest something like "Mini-project 32 for CSC-207 2024Fa".
 
-Make it public.
+e\. Make it public.
 
-Do not add a README.
+f\. Do not add a README.
 
-Do not add a .gitignore.
+g\. Do not add a .gitignore.
 
-Do not add a license. (You might want to add one later.)
+h\. Do not add a license. (You might want to add one later.)
 
-Click "Create Repository".
+i\. Click "Create Repository".
 
-You should see a screen giving some setup instructions. You're done on GitHub for the time being.
+j\. You should see a screen giving some setup instructions. You're done on GitHub for the time being.
 
 ## 6\. Connect the local and remote repositories
 
@@ -353,6 +351,6 @@ Wasn't that fun?
 
 ## Some final notes
 
-You may be asking yourself, "Why don't we just have a template that we copy and change?" And that's definitely a good question. When you feel ready to set up a template, you can do so. But as you're learning, it's good to do all the steps and reflect on the rationale for each step.
+You may be asking yourself, "Why don't we just have a template that we copy and change?" And that's definitely a good question. When you feel ready to set up a template, you can (and should) do so. But as you're learning, it's good to do all the steps and reflect on the rationale for each step.
 
 Good luck! And have fun!
