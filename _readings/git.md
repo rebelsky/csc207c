@@ -1,21 +1,20 @@
 ---
-title: Getting started with Git and GitHub
+title: Getting started with Git
 summary: |
   We explore the motivation for source code management systems, grounding
-  our understanding in the Git source code management system and the
-  GitHub repository.
+  our understanding in the Git source code management system.
 ---
 A short introduction to source code management
 ----------------------------------------------
 
-Large projects involve lots of files, people, and updates. Source code management (SCM) systems, or version control systems (VCS), were created to tame the chaos that usually ensues.  SCM's let you keep track of old versions of files, share files them with others, create *branches* where you can do experimental development, keep track of issues to be dealt with, and much much more.
+Large projects involve lots of files, people, and updates. Source code management (SCM) systems, or version control systems (VCS), were created to tame the chaos that usually ensues.  SCMs let you keep track of old versions of files, share files them with others, create *branches* where you can do experimental development, keep track of issues to be dealt with, and much much more.
 
 There are many source code management systems.  Their capabilities and approaches have varied over the years.  For example, RCS (Revision Control System), the first version control system that I used, assumed that only one person would work on a file at a time.  CVS (Concurrent Versioning System) added capabilities for multiple people to work simultaneously on the same file.  But CVS wasn't great for Web-based collaboration, so Subversion (sometimes abbreviated as SVN) came along.  Git (no acronym, at least as far as I know), like Subversion, supports simultaneous edits by people spread around the Web, but also distributes the repository to multiple machines.  These days, there are lots of other options too, such as Mercurial (which I will admit to not knowing).  In my experience, the "hot" or "preferred" version control system changes every five years or so.
 
 A quick introduction to Git
 ---------------------------
 
-For this course, we will be using Git because it is one of the most common source code management systems. It is also the preferred SCMSs in our department. I use it as part of my daily practice, as do most of the faculty in the department.
+For this course, we will be using Git because it is one of the most common source code management systems. It is also the preferred SCM in our department. I use it as part of my daily practice, as do most of the faculty in the department.
 
 Git is powerful, popular, and provides some interesting perspectives on source code management.  Git is also relatively easy to use, although it may take awhile to understand some of its approaches.  One complexity of Git is that there at least three different ways to copy a repository.
 
@@ -44,213 +43,45 @@ Of course, professional programmers have a much deeper process.  Most work with 
 You may have noticed that we used a lot of terms here.  You may find it helpful to review some of them.
 
 * *clone*: Copy a repository from Git to your computer.
-* *add*: Add a file to your local repository.  For a file already in 
-  your local repository, `add` adds the file to the list of things to commit.
-* *commit*: Save and describe changes.  (These
-  changes are only saved in your local copy.)
-* *pull*: Grab the latest version of files from the repository.
-  (In some SCM's, this is called "update".)
-* *merge*: Combine the changes made in another branch to your branch.
-    Afterwards, you will usually need to add the updated file
-    back to the list of things to be committed.
-* *push*: Send all of your recent commits back to
-  a repository that you administer.
-* Send a *pull request*: Request that the administrator
-  accept your recent commits into the main repository.
-  
-Setting up a GitHub account
----------------------------
+* *add*: Add a file to your local repository.  For a file already in your local repository, `git add FILENAME` adds the file to the list of things to commit.
+* *commit*: Save and describe changes.  (These changes are only saved in your local copy.)
 
-We will be working with Git through GitHub.  Hence, you will need your own account on GitHub.  I would prefer that you do these steps in advance of class.  However, if you have difficulty, you can do them at the start of class.  
+The remaining terms are for when you're working with a remote server, such as GitHub.
 
-Go to <https://GitHub.com/>.  Sign up for an account on the right hand side. Pick a username, email, and password then click the green “Sign up for free” button. Now you have an account on GitHub! GitHub hosts Git projects and gives you a chance to look at other people’s projects. You can collaborate with them or participate in challenges, or simply just put your own projects up on display.
+* *pull*: Grab the latest version of files from the repository.  (In some SCMs, this is called "update".)
+* *merge*: Combine the changes made in another branch to your branch.  Afterwards, you will usually need to add the updated file back to the list of things to be committed.
+* *push*: Send all of your recent commits back to a repository that you administer.
+* Send a *pull request*: Request that the administrator accept your recent commits into the main repository.
 
-**Important!**: You post much of the work you do in this class as public repositories on GitHub. If you choose a GitHub username that is clearly associated with your identity (as mine is), the work you do in class will be public. In my experience, (a) potential employers understand that you'll have some cruft in your GitHub account and (b) those employers like to be able to see what you do on GitHub. However, Grinnell College notes that you may want to keep your work pseudonomized. Hence, you may want to choose an account for this course that is less easy associated with you.
+Configuring your Linux account
+------------------------------
 
-Configuring your *nix account
------------------------------
+You will find it helpful to configure your Linux account for GitHub. Some configuration steps are useful whether you work locally or communicate with a server. Others are particularly useful when you work with a server.
 
-In addition to setting up a GitHub account, it's useful to configure
-your *nix account so that you can easily access Git We are going
-to set up your name and email in Git (accessible via terminal).
-You will only need to do this once. Once again, you will have the
-the opportunity to do this in the upcoming lab.
+You will only need to do this once. You can do this now, or you you will have the the opportunity to do this in the upcoming lab.
 
-1. Open a terminal window.
-2. Type the following command to configure the name used when you commit
-   code.  (Don't type the prompt; substitute your name.)  
-   `$ `git config --global user.name YOUR_NAME`  
-   This command will set up the name that accompanies your commits.
-3. Type the following command to set up your email.  Use the one you
-   used to sign up for GitHub. 
-   `$ git config --global user.email *username@grinnell.edu*`
-4. Each time you commit a change, Git will ask you to enter a commit
-   message.  By default, Git uses the editor Vim.   While I like Vim,
-   I admit that I'm in the minority.  If you want to change the editor
-   you use (e.g., to Emacs), type  
-   `git config --global core.editor PATH_TO_EDITOR`
+1\. Open a terminal window.
 
-Setting up keypairs
--------------------
+2\. Type the following command to configure the name used when you commit code.  (Don't type the prompt; substitute your name.)  
 
-For improved authentication, GitHub now requires that you set up a keypair, such as the one you'd use for ssh. You should make sure to set up such a keypair on MathLAN, but you may also want to set one up on your laptop. The instructions below are for MathLAN. You can use similar instructions for Linux, macOS, and PuTTY on Windows.
+    git config --global user.name YOUR_NAME
 
-1\. Log in to your terminal application.
+Of courwse, you should use your name rather than YOUR_NAME.
 
-2\. Determine whether you already have a `.ssh` directory.
+This command will set up the name that accompanies your commits.
 
-    ls -ld ~/.ssh
+4\. Type the following command to set up your email. Ideally, you'll use the same email address when you sign up for GitHub.
 
-If you lack that directory, you'll see a message like "No such file or directory". Otherwise, you likely have the directory.
+   git config --global user.email USERNAME@grinnell.edu
 
-3\. If you don't have a `.ssh` directory, create one.
+5\. tach time you commit a change, Git will ask you to enter a commit message.  By default, Git uses the editor Vim.   While I like Vim, I admit that many people find it puzzling.  If you want to change the editor you use (e.g., to Emacs), type the following.
 
-    mkdir ~/.ssh
+   git config --global core.editor PATH_TO_EDITOR
 
-4\. Make sure that your `.ssh` directory is private.
+Using Git: A walkthrough
+------------------------
 
-    chmod 700 ~/.ssh
-
-5\. Switch to that directory to do the remaining work.
-
-    cd ~/.ssh
-
-6\. Create a keypair with the `ssh-keygen` command.
-
-    ssh-keygen -t rsa
-
-7\. You should get a prompt for a file in which to save the key. The default is `id_rsa`. If you already have such a key, you shouldn't overwrite it. You might want to consider using something like `github`.
-
-    Enter file in which to save the key (/home/USERNAME/.ssh/id_rsa): github
-
-8\. You should then get a prompt for a passphrase. The passphrase provides an additional level of security. You can also use hit return for "no passphrase".
-
-Note that you will not see anything you type when entering a passphrase, not even asterisks.
-
-9\. You'll then get a second prompt. Enter the same passphrase.
-
-10\. Finally, you'll get messages like the following
-
-    Your identification has been saved in github
-    Your public key has been saved in github.pub
-    The key fingerprint is:
-    SHA256:bJOMi6qSWAZclkiNQOqxfQR8rF+j7FtxZ3RsEXNblmw USERNAME@MACHINE.cs.grinnell.edu
-    The key's randomart image is:
-    +---[RSA 3072]----+
-    |=o=.o        +o.+|
-    |.o *.o      . +Eo|
-    |o.o o.     . +.. |
-    |o.+..  * .. o    |
-    | + .o.+.S. o     |
-    |  o .= oo.o      |
-    |.+  o ..         |
-    |+  . ..          |
-    |o..  ..          |
-    +----[SHA256]-----+
-
-You can choose to save the fingerprint and randomart or to ignore them. In most cases, you'll never need them. (I've never used mine in spite of decades using keypairs.)
-
-11\. You should now have files called `github` (your private key) and `github.pub` (your public key). You can check using `ls`.
-
-    $ ls
-    github	github.pub
-
-12\. If you named your key anything other than `id_rsa`, you'll need to update the `config` file. Add the following lines. (You may not have a `config` file, in which case these will be the only lines in the file.)
-
-    Host github.com
-        HostName github.com
-        identityfile ~/.ssh/github
-
-13\. Make sure that your `config` file is private.
-
-    chmod 600 config
-
-14\. You are now ready to connect your keypair to GitHub. Isn't configuration fun?
-
-Connecting your keypair to GitHub
----------------------------------
-
-1\. Log in to GitHub.
-
-2\. Click on your avatar in the upper-right-hand corner and then select **Settings**
-
-3\. Click on **SSH and GPG keys** on the left.
-
-4\. Click on **New SSH key**.
-
-5\. Under the "Title" field, enter something like "MathLAN". 
-
-6\. Leave the key type as "Authentication Key"
-
-7\. Copy the contents of your `github.pub` file. (You will likely want to `cat` the file or open it with a text editor and then use the normal copy/paste techniques.)
-
-We'll check whether this has worked in some of the subsequent sections.
-
-Using Git and GitHub: A walkthrough
------------------------------------
-
-There are multiple approaches to setting up a repository on GitHub. You can _fork_ an existing repository, making a copy of that repository in your account. You can set up an empty repository on GitHub and connect a local repository to that repository. Or you can create a basic repository on GitHub. In the first (fork) and last (basic repo) cases, you'll then copy the repository to your local machine. In the middle case, you'll often start with a repository on your local machine.
-
-In this class, I will often ask you to fork a repository I've already created, particularly when we're working on labs. For mini-projects, I'll ask you to set up a local repository and then connect it to an empty GitHub repository.
-
-### Forking a repository
-
-If you want to be able to share changes to a repository that is not your own, you should often begin by creating a "fork" of the repository. (Also known as "forking" a repository.) When we fork a repository, we make a copy of the repository that we have control over. We can ask the original creator to accept changes in our forked version via a "pull request", and it’s up to their discretion whether or not to accept it. Therefore, the fork is a copy of the repository you want to work with/on.
-
-1\. Find a project you would like to contribute to on GitHub.  (Alternately, find a project we've told you to fork.) If you want to try things out, you can use <https://github.com/Grinnell-CSC207/sample.)
-
-2\. Click the button in the upper right-hand corner that says **Fork**.
-
-3\. GitHub will fork the repository for you.
-
-4\. Now, you have a copy of the repository that will show up under your repositories on GitHub.  You can follow the steps in the section below and clone the forked repository into your machine so that you can work on it.
-
-5\. If you intend to interact with the main repository, you will need to create a "remote" connected to the main repository.  The remote will let you pull updates from that repository and will also allow you to send pull requests back to that repository. Note that you won't execute this command until you've cloned the repo (see below).
-
-    git remote add *name* *uri*
-
-You can name the remote whatever makes sense to you, but it is convention to call it "upstream".  Use the HTTP uri of the repository that you forked.
-
-    git remote add upstream https://github.com/Grinnell-CSC207
-
-Now the main repository will be referred to as upstream, and you can pull
-updates from it to your local repository.
-
-### Cloning a repository
-
-*Quick notes!*
-
-Typing `git help` into the terminal will bring up a list of the most common Git commands and a brief description of what they do.  You can also get help on a particular command with `git help *command*`.  Also, remember that you need to precede every Git command with `git`.  So, for example, to add something to a repository, you use `git add`, not just `add`.
-
-1\. Navigate to the repository you will be cloning. It may be one you've forked. It may be one I've asked you to use. It may be one you've created. It may be one you've found on your own.
-
-2\. Click on the **Code** button.
-
-3\. Click on the **SSH** button. You should see something like "git@github.com:USERNAME/sample.git".
-
-4\. Copy that string. It's easiest to use the "Copy to Clipboard" button which appears immediately to the right of that string.
-
-5\. In your terminal, type in 
-
-    git clone URI
-
-substituting the text you just copied.  For example, to clone the fork you may have made, you would type
-
-    git clone git@github.com:USERNAME/sample.git
-
-6\. You will now have a directory on your computer whose name matches that of the repository.  Inside the directory will be all of the files in the original repository that you cloned. You can now edit, add, and/or remove files.
-
-Note that you do not have to have your directory name match the name of the repository.  You can rename the directory.  Alternately, when you clone the repository, you can add a directory name.  
-
-    git clone URI DIRECTORY
-
-When you clone a repository, you can only contribute to it if you are the creator or have been declared as one of the contributors. Otherwise, the code is just there for you to play around with and not upload.
-
-### Creating a GitHub repository from a local folder/directory
-
-Frequently, you'll want to set up a project locally and then copy it to GitHub. Let's consider how to do so.
-
-First, you'll need to convert your local folder into a Git (not GitHub) repository.
+You can convert any folder into a Git (not GitHub) repository.
 
 1\. cd to the folder (often the top-level directory of your project).
 
@@ -284,48 +115,38 @@ This command tells Git that you are adding the README file to the list of files 
 
 This command tells Git that you are committed to including the files you just added. (You can undo an `add` before the commit if you mistakenly add a file you didn't mean to.)
 
-7\. At this point, you'll need to switch over to GitHub.
-
-8\. After you log into GitHub, you should see a green button labelled **New** or **New Repository** toward the lower right-hand side of the page.  Click that button.  
-
-9\. Give your repository a name and a brief description. For this class, you will generally make your repositories public, but you may choose to make some personal repositories private. **Do not** initialize the repository with a REAMDE. Do not add a `.gitignore` file. Do not add a license. We are creating a blank repository.
-
-10\. Click on **Create Repository**.
-
-11\. Ideally, you'll see a message like "Quick setup — if you’ve done this kind of thing before". Near that message, click the *SSH* button.
-
-12\. Near the bottom of the page, you'll see an area that says **…or push an existing repository from the command line**. Copy the three lines that look something like the following and execute them in the terminal.
-
-    git remote add origin git@github.com:Grinnell-CSC207/sample.git
-    git branch -M main
-    git push -u origin main
-
-13\. Reload the page on GitHub and you should see all of your files.
-
 ### Adding files and making changes
 
-Now that you have either created your own project or joined one,
+Now that you have either created your own project.
 let's begin editing.
 
 In case that wasn't clear, step away from the reading and start editing files.
 
-Are you done yet?  Good.  Now we're ready to look at getting your changes into both the local and Web repositories.
+Are you done yet?  Good.  Now we're ready to look at getting your changes into both the local repository.
 
 If you're like most programmers, you may have forgotten what files you've created or changed and what changes you've made.  Fortunately, Git provides tools to help you figure this out.
 
-To check if there are any changes/additions to your local repository, type in `git status`.
+To check if there are any changes/additions to your local repository, type in 
+
+    git status
 
 Git will then tell you a variety of things.  It will tell you how many commits are in your local repository that haven't been pushed back to GitHub.  It will tell you what files are staged for commit.  It will tell you which files that are already in the repository have been modified but not committed.  And it will tell you which new files have been created but not yet added to the repository.
 
 Once in a while, it will tell you that no changes whatsoever have been made.
 
-So far, so good.  You have a list of general changes.  But what if you want to know precisely what happened to an individual file?  Git provides a way of finding that out, too.  `git diff FILENAME`.
+So far, so good.  You have a list of general changes.  But what if you want to know precisely what happened to an individual file?  Git provides a way of finding that out, too.  
+
+    git diff FILENAME
 
 The `git diff` command will show you the portions of a file that are changed.  Usually added lines are prefixed with a plus sign, deleted lines a prefixed with a minus sign, and a few surrounding lines appear for context.
 
 ### Adding files
 
-To add files into the local repository they must first exist in your working directory (the folder you made and initialized).   Once they exist, you simply use the `git add` command.  `git add FILENAME`.  Some online tutorials tell you to use `git add .`.  **Do not use that command.**  It adds everything in the current directory, which is often more than you want to add.
+To add files into the local repository they must first exist in your working directory (the folder you made and initialized).   Once they exist, you simply use the `git add` command.  
+
+    git add FILENAME
+
+Some online tutorials tell you to use `git add .`.  **Do not use that command.**  It adds everything in the current directory, which is often more than you want to add.
 
 ### Editing files
 
@@ -350,44 +171,6 @@ At this point, you are ready to incorporate some or all of your changes into the
 Git will open the editor you specified above and you can enter information about the change.  Custom is to use present tense in a somewhat imperative mode: "Fix bug 23a" or "Add capability to print".  Enter something that will be useful to you and to others who may see your code, then save and exit the editor.   Congratulations, you have successfully committed changes to your local repository!
 
 Note: To avoid having any text editor pop up, use the -m flag to enter a message directly in the terminal.  For example, `git commit -m "Fix bug 32b"`.  Notice the quotation marks that surround the message.
-
-## Interacting with the GitHub server (or other Git server)
-
-### Pushing
-
-At this point, you have changes in your local repository and you want to upload them to the primary repository.  We'll start with a repository you own.  The most basic command is `git push`.
-
-Git will then prompt you for your username and password and upload the files.
-
-As you become more advanced, you may want to specify the repository and branch you are using.  In that case, you write `git push repository branch`.  By default, the repository is `origin` and the branch is your current working branch.  (If you don't use branches, it's called `master`.)
-
-*Warning!* If you are working in a repository that you share with others, they may have pushed to the repository too.  So make sure to "pull" from the repository before pushing.   (Git will probably warn you if your push will create problems, but it's better to be safe.)
-
-### Pull requests
-
-Pushing works fine if you own the repository.  But what if you forked a repository and want to send a request to have your changes be a part of the main code?  Recall that you are dealing with (at least) three copies of the code: the original repository (out of your control), your fork of the repository (which you control), and your clone of your fork (where you do your editing).
-
-To inform the owners of the primary repository that you have made changes that you think they would like to include, you send what is called a "pull request".  It is difficult (and perhaps impossible) to send a pull request from the terminal; traditionally one does it through GitHub (at least for code stored on GitHub.
-
-Since pull requests will be rare in this class, we'll leave it to you to figure out how to send one.
-
-Once you've sent a pull request, it will be up to the owner of the main repository whether or not to accept the request.
-
-*Note:* Just as you pulled from your repository before pushing, so should you pull from the main repository before sending a pull request.  In this case, you need to name the main repository as described above (traditionally, you name it "upstream") and then issue the following command: 
-
-    git pull upstream master
-
-Keeping your local repository up to date
-----------------------------------------
-
-*We've described this step a few times, but it's useful to hear it again.*
-
-You are going to want the latest version of the main repository in your local repository, so to do this you will need to pull. If your repository was not empty to begin with, you would have had to pull from it before pushing.  Type in the following to pull your the repository you cloned.  `git pull`.
-
-If you forked your repository before cloning and want to grab updates from the original repository, you need to name that original repository and then pull from that repository.
-
-    git remote add upstream URI
-    git pull upstream master
 
 Wrapping up
 -----------
