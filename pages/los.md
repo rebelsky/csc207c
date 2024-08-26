@@ -16,7 +16,7 @@ If you do not complete the learning assessment for a learning objective the firs
 
 The objectives may change slightly during the semester as the schedule shifts.
 
-In solving those problems, you should only rely on (a) the course Web site, (b) the standard Java reference pages, (c) your notes, and (d) the code you've written. You _may not_ search the Web for answers, you may not use LLMs, and you definitely may not use StackOverflow or Geeks4Geeks or any such sites.
+In solving those problems, you should only rely on (a) the course Web site, (b) the standard Java reference pages, (c) your notes, and (d) the code you've written. You _may not_ search the Web for answers, you may not use LLMs, and you definitely may not use StackOverflow or Geeks4Geeks or any such sites. When a problem asks you to provide sample code, you should use code you've already written for the class (or updated version of that code).
 
 ## Object-Oriented Design
 
@@ -97,7 +97,7 @@ I expect that by the end of the semester, you will be a competent beginning soft
 
 The vast majority of LAs look something like the following
 
-> Please provide evidence that you have mastered this learning objective.  Your evidence will often consist of a combination of program code and narrative text to explain the code and its relationship to the objective.
+> Please provide evidence that you have mastered this learning objective.  Your evidence will often consist of a combination of program code that you've written for the class (or an updated version of that code) and narrative text to explain the code and its relationship to the objective.
 
 > \[a field for your answer\]
 
