@@ -186,7 +186,16 @@ We'll be using JUnit for testing programs. You need to tell Maven about JUnit. A
   </build>
 ```
 
-### 3\.5\. A sample `pom.xml`
+### 3\.5\. Add information about your main class
+
+If you have classes that provide a `main` method, Maven permits you to specify which of those classes is run when someone types `mvn exec:java`. Do so by adding the following lines to the "plugins" section of `pom.xml`, substituting the name of your main class for `Main`.
+
+```
+```
+
+### 3\.6\. Add more information about your main class
+
+### 3\.7\. A sample `pom.xml`
 
 Here's what `pom.xml` might look like after you've done all that.
 
