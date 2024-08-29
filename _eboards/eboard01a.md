@@ -12,9 +12,11 @@ link: true
 _Start of class instructions_
 
 * Optional: Grab a mask
+* Optional: Grab a somewhat grainy with over-sweetened fruit bar
 * Grab one of the business cards that have computer names and locations.
 * Identify where the corresponding computer is.
 * Return the card to the jar.
+* Navigate to the computer.
 * When both partners arrive, introduce yourselves.
 
 _Approximate overview_
@@ -45,9 +47,10 @@ Preliminaries
 * I'm Sam (or SamR).
 * Our class mentor is Maria Rodriguez.
 * We'll be using two "books" for this course: The readings I write (or
-  wrote) and CLRS.
+  wrote) and CLRS4.
 * I type class notes in markdown and post to the Web site.
     * It's like magic (I hope).
+    * See!
 * You will find that I call on students randomly using a set of cards
   with your names on them.
     * I use this process to give you practice "thinking on your feet",
@@ -120,6 +123,14 @@ our class does not meet on Fridays, so I will pretend that we're a
 state school, and give you a Thursday PSA. If you find these
 annoying, let your class mentor know and they'll tell me to stop._
 
+* You are awesome!
+* People care about you.
+* So please take care of yourselves.
+* If you consume substances, please do so in moderation.
+* Don't feel peer pressure to consume or ...
+* If you cohabit, be responsible to your partner. 
+  Consent is essential (but not really sufficient).
+
 ### Attendance
 
 * Since it's the first day of class, I will take attendance.  
@@ -139,7 +150,90 @@ annoying, let your class mentor know and they'll tell me to stop._
 
 ### Excited about
 
+* This class. [+4]
+* Other classes. [+1]
+* Helping students learn. [+1]
+* Cooking.
+* Hanging out with friends.
+* Making stuff (all kinds of stuff)
+* Sewing.
+* Getting intimidated by Sam.
+* Checking out the hustle and bustle of downtown Grinnell.
+* Meeting new people (and then hanging out with them) (see above) [+1]
+* Reading books ("anything")
+* AC
+* Living in a single
+* Getting more involved on campus.
+* Exploring nature
+* Passing classes / not failing
+* Living in hammocks
+* Volunteer at animal shelter
+* Living off campus
+
 ### Questions
+
+Why don't the students have questions?
+
+> They are too nervous to ask questions. Sam is too intimidating.
+
+What IDE will we be using?
+
+> Visual Studio Code from Microsoft
+
+What compiler will we be using?
+
+> In MathLAN, we use OpenJDK 17 or so.
+
+> You can use newer versions if you'd like.
+
+Can we run it on our personal computers?
+
+> If you trust Microsoft products.
+
+> VSCode is a PITA to configure, so it may take some work. Sam can help
+  you with Linux and macOS, but refuses to try to figure out Windows.
+
+Why is Sam intimidating?
+
+> Have you gotten your reading response graded yet? "Wow, this is crap."
+
+> Large white-presenting male syndrome
+
+> Sarcastic
+
+> Makes JJ act as model for the class
+
+What's your least favorite color?
+
+> The dark green that I can't distinguish from black.
+
+How do you set up JUnit 5?
+
+> Stay tuned. We'll talk about it when we do unit testing. (Or use Maven,
+  and it should get installed automatically.)
+
+Why is teams transcription working well? Isn't it a Microsoft product?
+
+> I have no idea.
+
+How do I get as good with the terminal as you are?
+
+> Practice. Not the 10,000 hour crap, but practice. 
+
+How do I get an A in the class?
+
+> Take notes. Do the work. Ask questions when you get stuck. Take advantage 
+  of redos. Go to mentor sessions. Don't cheat.
+
+What's your favorite part of teaching at Grinnell?
+
+> Awesome students (especially those who I maintain connections with
+  over the years).
+
+What's Maven?
+
+> A build tool (like Make, except specific to Java and somewhat on
+  steroids)
 
 Questions from the reading responses
 ------------------------------------
@@ -169,11 +263,14 @@ differences until I start writing the methods.
   only once we look at implementations that we start thinking about
   costs.
 
-How does the Layout of LIA affect the outcome? Is there anything
+How does the Layout of LIA (AAA) affect the outcome? Is there anything
 specific to look out for when choosing the layout for ADT?
 
 > Different layouts will lead to different costs. We should see
   that when we explore different implementations of stacks.
+
+> You may remember this from getting, say, the 100th element of a vector
+  (quick) vs the 100th element of a stack (slow).
 
 I felt sloppy answering these questions. I mostly used what I knew
 from C, and I had trouble envisioning how this would work in an OO
@@ -227,22 +324,57 @@ If possible just re-explain how ADT and data structures work together
 
 > The ADT is the **what**. That is, what you want to do with your data. The data structure is the **how**. That is, how we achieve those goals.
 
+> In reality, the border can be a bit fuzzy.
+
 > Alternately, the ADT is the `.h` file and the data structure is the 
   `.c` file. At least that holds if we're thinking about collections
   of values.
+
+How many tokens do we start with?
+
+> Three.
+
+Is there a limit to how many tokens we can earn?
+
+> Time. Sanity.
 
 Course goals
 ------------
 
 _Get started learning how to be a computer scientist / software developer._
 
+* Larger projects.
+* Working with "professional" tools. IDE, Build tools, weird language
+  features, version control systems (Git).
+* Working in teams.
+* More need to look/think on your own.
+* Learning many more of the "core ideas" of algorithms and data stuctures
+* A bit more math!
+
 Course structure
 ----------------
+
+* Many days will be working in randomly assigned pairs on a set of problems.
+* Some days will be collaborative design. (TPS)
+* Weekly homework assignments (mini-projects)
+    * Ideally, you will be inspired to extend some of these.
+* Way too many learning objectives and learning assessments.
+    * Most are "Provide me with evidence that you've learned this."
+    * In spite of this sounding comparatively easy, evidence suggests that
+      most students need at least one redo.
 
 ADTs and data structures
 ------------------------
 
 _Don't forget to ask me when I use a TLA that you don't understand._
+
+ADTs: Abstract data types. In effect, a set of operations that you want
+to do on a collection of data. (E.g., push, pop, peek). 
+
+Data structures: How we organize those data in memory to achieve the
+operations.
+
+ADTs are more abstract, data structures are more concrete.
 
 Designing a stack ADT (an exercise)
 -----------------------------------
@@ -259,6 +391,7 @@ ADT: Use the SAM approach for ADTs.
 * M: Methods
 
 _Note: This used to be the PUM approach. I thought SAM was easier to remember._
+(Philosophy Uses Methods)
 
 ### Strategy
 
@@ -269,9 +402,14 @@ _Note: This used to be the PUM approach. I thought SAM was easier to remember._
 
 ### Applications
 
-* This
-* That
-* Something else
+* Back button on browser.
+    * Forward button seems to depend on various things.
+    * Often, a forward button requires a second
+    * [There were hand gestures. Imagine them.]
+* Atoms in a water heater
+* The sequence of operations we use to set up a factory or other thing.
+* Edit operations in an editor
+    * To do redo, you have two stacks
 
 ### Methods
 
@@ -283,13 +421,85 @@ potential questions the client of your stack might have, etc._
 
 _I'll divide your answers into "core methods" (the ones we probably
 can't do without) and "optional methods" (the ones we could implement
-with the core methods if we wanted to).
+with the core methods if we wanted to)._
 
 #### Core methods
 
+* `void push(struct Stack *stack, char *elt)` - adds an element to the stack
+     * We pass a pointer so that we can modify the stack.
+     * If we are using null to indicate that stacks are empty (see below),
+       we probably can't push null.
+     * Implicitly: The stack has been allocated and initialized.
+     * The stack can't be full (whatever that means).
+     * Note: We could also have this return a boolean or integer, with
+       0 meaning success and any other number meaning failure.
+     * Question: Do we simply copy the char *pointer, or do we allocate
+       new space and copy the string? (Decision: Just the pointer.)
+* `char *pop(struct Stack *stack)` - returns and removes the top value in
+   the stack. Requires that the stack is nonempty.
+     * Alternate: Could return a special value (null) to indicate that it is
+       empty.
+* `int is_empty(struct Stack *stack)` - determines whether the stack is empty.
+  Returns 1 if it is and 0 otherwise.
+* `int is_full(struct Stack *stack)` - determines whether it is safe to push.
+  Returns 0 if it is and 1 otherwise.
+* `struct Stack *new_stack();` - allocate and initialize a new stack.
+  Returns `null` if it is unable to do so.
+* `void delete(struct Stack *stack)` - remove everthing from the stack
+  and deallocate memory associated with the stack.
+
+Why we need to know about what we're copying.
+
+    char *str = (char *) malloc(10*sizeof(char));
+    strcpy(str, "hello");
+    struct Stack *stack = new_stack();
+    push(stack, str);
+    strcpy(str, "agh!");
+    printf("%s\n", pop(stack)); // This should print "hello"
+
+Observations
+
+* If we copy only the pointer, we'll make sure we have the same string.
+* If we copy only the pointer, we'll use less memory.
+* If we copy only the pointer, we won't have to worry about freeing the
+  string after we pop.
+* If we copy only the pointer, changes to the underlying string get
+  propagated to the stack, leading to some odd behavior.
+* If we copy only the pointer, and the pointer is from the middle of a
+  procedure, and we pop outside the procedure, who knows what will happen.
+
+Either decision is fine. But you should know what you're doing. (Note:
+In Java, we won't have to worry, because strings are immutable.)
+
+#### Side notes
+
+* Remember that the strutures we are building are intended to support other
+  code; they should not communicate with the user.
+
 #### Almost-core methods
 
+* `char *peek(struct Stack *stack)` - returns but does not remove the top value
+  in the stack. Requires that the stack is nonempty. (Could be implemented
+  with `pop` and `push`.)
+* `int size(struct Stack *stack)` - probably can't be implemented separately,
+  but may not be necessary.
+* `void clear(struct Stack *stack)` - remove everything.
+
+```
+while (! is_empty(stack)) 
+  {
+    pop(stack);
+  } // while
+```
+
 #### Optional methods
+
+* `char *concatenate(struct Stack *stack)` - build a string consisting
+  of everything on the stack.
+* `void for_each(struct Stack *stack, char *fun(char *str))` - do something
+  with each string in the stack.
+* `void remove(struct Stack *stack, char *str)` - remove all copies of the
+  `str` from the stack.
 
 Implementing our stack ADT
 --------------------------
@@ -307,8 +517,15 @@ renamed again).
 
 ### Stack arrangements
 
-*
-*
+* Arrays
+    * With newest at front 
+    * With newest at "back"
+    * With or without extra space.
+    * Requires that we store the array (char **) along with the
+      capacity (an int) and the size (another int)
+* Linked list
+    * With newest at end (keep track of the head) (and tail)
+    * With newest at front (keep track of the head)
 *
 
 ### Algorithms, Arrangement 1 (???)
