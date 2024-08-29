@@ -9,7 +9,7 @@ have asked (in the first assignment, in office hours, via email, etc.)
 
 Note that there may be some repetition on this page.
 
-_Last updated: 2024-01-21 at approximately 1:00 p.m._
+_Last updated: 2024-08-28 at approximately 8:00 p.m._
 
 About the course
 ----------------
