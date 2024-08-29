@@ -5,6 +5,28 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester._
 
+## [CSC-207 2024Fa] Reading 1 graded (partially); Token opportunities (2024-08-28)
+
+Dear CSC-207 Students,
+
+I hope you are well and that you enjoyed today's campus gathering (if you chose to participate).
+
+I've responded to all of the reading responses I've received so far and you can see them on Gradescope. My normal approach will be to give quick responses to all of the responses I receive by some time on the night before class and then to check off the remaining ones when I have a chance. Sometimes I'll just look at your questions.
+
+Since some token activities are before section 2 on Thursday, I thought I'd mention the token activities for Thursday.
+
+* Thursday, 2024-08-29, 11:00 a.m., JRC 101.
+  President Anne F. Harris -
+  _Moving Knowledge into Action: Initiatives and Actions in Year Two of the Strategic Plan_.
+* Thursday, 2024-08-09, 6:00 to 8:00 p.m., Grinnell Museum of Art and environs.
+  Student Night at the Museum.
+* Thursday, 2024-08-29, 3:00 p.m. to 7:00 p.m., Central Park.
+  _Ag Appreciation Day_.
+
+See you Thursday!
+
+ -- SamR
+
 ## [CSC-207 2024Fa] Welcome to the course! (2024-08-26)
 
 Dear CSC-207 Students,
