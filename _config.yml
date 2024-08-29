@@ -76,9 +76,9 @@ collections:
     output: true
     permalink: /handouts/:path.html
 
-  las:
+  los:
     output: true
-    permalink: /las/:path.html
+    permalink: /los/:path.html
 
   labs:
     output: true
