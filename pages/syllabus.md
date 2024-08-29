@@ -110,10 +110,7 @@ Therefore, I strive to create a fully inclusive setting so that we all can ultim
 
 ### Learning needs
 
-I welcome you to talk to me as early as possible about your distinctive learning needs.
-I particularly encourage students with disabilities to meet with me and discuss how our classroom and course activities could impact their work and what accommodations would be essential.
-I will also make adjustments for students without documented disabilities.  However, I recommend that you seek official accommodations if it is possible and appropriate to do so.
-In particular, I recommend talking to our Coordinator for Student Disability Resources for guidance and further instructions:
+I welcome you to talk to me as early as possible about your distinctive learning needs.  I particularly encourage students with disabilities to meet with me and discuss how our classroom and course activities could impact their work and what accommodations would be essential.  I will also make adjustments for students without documented disabilities.  However, I recommend that you seek official accommodations if it is possible and appropriate to do so.  In particular, I recommend talking to our Coordinator for Student Disability Resources for guidance and further instructions:
 
 + Jae Baldree, Steiner 209, x3089, baldreej@grinnell.edu
 
@@ -130,6 +127,12 @@ Our class is a community.  We should behave as such.  Among other things, that m
 ### Basic needs security
 
 Any student who has difficulty affording groceries or accessing sufficient food to eat every day, or who lacks a safe and stable place to live, should know that these difficulties are likely to affect their performance in the course. Such students are urged to contact the [Dean of Students](https://www.grinnell.edu/profiles/student-affairs/staff) or the [CRSSJ](https://www.grinnell.edu/about/offices-services/crssj) for support. You may also notify me, if you feel comfortable doing so, and I will do my best to help you identify and arrange other resources.
+
+### Title IX and Pregnancy-related conditions
+
+Grinnell College is committed to compliance with Title IX and to supporting the academic success of pregnant and parenting students and students with pregnancy-related conditions. If you are a pregnant student, have pregnancy-related conditions, or are a parenting student (child under one-year needs documented medical care) who wishes to request reasonable related supportive measures from the College under Title IX, please email the Title IX Coordinator at titleix@grinnell.edu. The Title IX Coordinator will work with Disability Resources and your professors to provide reasonable supportive measures in support of your education while pregnant or as a parent under Title IX.
+
+If you are a pregnant student, have pregnancy-related conditions, or are a parenting student (of any age child), and would prefer to work with me directly, rather than work through our Title IX office, I will do my best to support you through appropriate supportive measures. Please reach out!
 
 ### Other accommodations and adustments
 
@@ -155,10 +158,10 @@ See the notes below and in the [handouts](../handouts) for more details.
 
 I rely on six kinds of work to assess your mastery of the material.
 
-+ **Reading problems**: quick assessments of the concepts found in the daily reading in preparation for in-class activities.  _**Reading problems are generally due at {{ site.evening_due_time }} the night before class**_ (e.g., the problems associated with a reading for Wednesday's class are due Tuesday at {{ site.evening_due_time }})
-+ **Lab exercises**: practice problems worked on during class, frequently collaboratively, with a partner.  _**Lab exercises are generally due immediately before the next class**_ (e.g., the problems associated with the lab from Tuesday's class are due at the start of Thursday's class. and the problems associated with the lab from Thursday's class are due at the start of Tuesday's class).
++ **Reading problems**: quick assessments of the concepts found in the daily reading in preparation for in-class activities.  _**Reading problems are generally due at {{ site.evening_due_time }} the night before class**_ (e.g., the problems associated with a reading for Thursday's class are due Wednesday at {{ site.evening_due_time }})
++ **Lab exercises**: reflections on what you've learned in lab, frequently collaboratively, with a partner.  _**Lab exercises are generally due immediately before the next class**_ (e.g., the problems associated with the lab from Tuesday's class are due at the start of Thursday's class. and the problems associated with the lab from Thursday's class are due at the start of Tuesday's class). At this point in your career, I care less about seeing your code than making sure that you've identified key points, so your lab exercises will usually be a list of the key points from the lab.
 + **Mini-Projects**: individual and group, small-scale programming projects that apply the weekly concepts to the themes of the course.  (We may, on occasion, refer to "mini-projects" as "demos", using the terminology from the prior term.)  To earn an A, one must do an excellent job on most of the mini-projects and the group project.  (You will be able to re-do any project that earns less than excellent.)  _**Mini-Projects are generally due on Thursdays at 10:30 p.m.**_
-+ **Learning assessments**: individually completed problems that directly assess your mastery of the learning goals of the course.  To earn an A, one must pass learning assessments for N of the M learning objectives.  (You will have the opportunity to retake any of the learning assessments you do not pass.)  I'm going to try a new approach to LAs this semester. In most cases, I will simply ask you to provide evidence that you've mastered the topic, rather than having you solve a new problem. In a few cases,  I will ask you to solve a new problem.
++ **Learning assessments**: individually completed problems that directly assess your mastery of the learning goals of the course.  To earn an A, one must pass learning assessments for 46 of the 48 learning objectives.  (You will have the opportunity to retake any of the learning assessments you do not pass.)  In most cases, I will be using a _portfolio grading_ strategy. The assessment will ask you for evidence (code and commentary) that you've mastered the topic. In a few cases,  I will ask you to solve a new problem.
 + **Metacognitive reflections**: Short reflective pieces given before and after most assignments and exams.  _**Pre-task reflections are generally due a day or two after a task is assigned.  Post-task reflections are generally due a day or two after the task is due.**_
 
 *Lab exercises* are designed for you to practice and explore the concepts of the course in a supportive environment.  Consequently, you may collaborate on these problems with your classmates, consult external resources, or ask the course staff for questions, provide that you cite them in your produced deliverable.  These deliverables are checked primarily for completion and effort rather than total correctness.  
@@ -263,6 +266,7 @@ There are several software packages we use in this course both for learning how 
 + [Visual Studio Code](https://code.visualstudio.com), a general-purpose Integrated Development Environment (IDE).
 + The Java Programming Language.
 + The JUnit Testing Framework.
++ The Maven Project Management Tool.
 + Your [Grinnell Office365 account](https://office365.grinnell.edu) for email and [Microsoft Teams](https://teams.microsoft.com) for discussion and collaboration.
 + [Gradescope](https://gradescope.com) for assignment submission and feedback communication.
 
@@ -274,7 +278,7 @@ There is no required textbook for this course, as the primary material is writte
 
 Cormen, Thomas, Leiserson, Charlies, Rivest, Ron, and Stein, Cliff (2022).  _Introduction to Algorithms_, 4th edition.  Cambridge, MA: MIT Press.
 
-Our library has purchased electronic access to this text, but you may also find it useful to purchase a physical copy.  Please do not illegally download copies of this text.  Given that you have legal access, you should avail yourself of that access.
+Our library has purchased [electronic access to this text](https://ebookcentral-proquest-com.grinnell.idm.oclc.org/lib/grinnell-ebooks/detail.action?docID=6925615), but you may also find it useful to purchase a physical copy.  Please do not illegally download copies of this text.  Given that you have legal access, you should avail yourself of that access.
 
 ### Other references
 
@@ -296,10 +300,6 @@ Oracle (2016).  [_The Java Tutorials_](https://docs.oracle.com/javase/tutorial/)
 Google (n.d.).  [_Google Java Style Guide_](https://google.github.io/styleguide/javaguide.html)
 
 > The style guide you should use for your code in this course.
-
-## Practice for technical interviews
-
-It turns out that both the topics we cover (e.g., ADTs and algorithms) and the approaches we use in this course (e.g., testing and design) are often emphasized in technical interviews.  Hence, we'll spend some time on interview-like activities in the course.  Stay tuned for further details.
 
 ## Accessibility
 
@@ -356,6 +356,10 @@ Can I help a colleague by giving them my program code? I assume that reading my 
 Can I copy a colleague's code I find on the Interweb (e.g., on GitHub)?
 
 > No. Please do not copy code written by another student for a Grinnell course.
+
+Can I use GitHub Copilot or other AI programming assistant?
+
+> No (with a few exceptions). See the next section for more details.
 
 ### AI programming assistants
 
@@ -439,3 +443,6 @@ How do I book your office hours?
 
 > <https://bit.ly/book-samr>
 
+I don't see any available.
+
+> Either (a) I haven't set them up yet or (b) all of my office hours for the next two weeks are booked. Talk to me, DM me, or email me and we'll work something out.
