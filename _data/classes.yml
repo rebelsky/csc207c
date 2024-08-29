@@ -52,6 +52,7 @@
     - Git basics
   reading:
     - page: /readings/git.html
+    - page: /readings/github.html
     - page: /readings/vscode.html
   lab:
     - page: /labs/vscode.html
@@ -99,6 +100,7 @@
     behavior for classes.  We also explore how interfaces support
     one form of polymorphism, a key aspect of object-oriented programming.
   subjects:
+    - "Detour: Pair Programming, Revisited"
     - Interfaces
     - The building blocks of OOP
     - Subtype polymorphism
