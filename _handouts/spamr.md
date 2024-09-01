@@ -5,6 +5,36 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester._
 
+## [CSC-207 2024Fa] Reading responses for Tuesday (2024-08-31)
+
+Dear Stack Specifiers,
+
+I hope you are well and that your weekend is going well.
+
+I'm still working on the reading on Maven. But I can tell you in advance that there will be no double-dagger problems in that reading. So feel free to do the other readings. I hope to have the Maven reading ready tonight.
+
+As always, questions are welcome via teams and email.
+
+Regards,
+
+-- SamR
+
+## [CSC-207-02 2024Fa] The second half of Thursday's class / the start of Tuesday's class (2024-08-31)
+
+Dear CSC-207-02 Students,
+
+I hope you are well and that you have some time to enjoy the weekend.
+
+Sorry for leaving class early on Friday. We spent some time in the ER and then they admitted my wife.
+
+Since you missed the second half of the class, the best thing is probably to watch the video recording of the second half of section 1 to get a sense of the kinds of things we'd talk about in designing things. (You can also check out the eboard.)
+
+We have some doctor's appointments on Tuesday. I expect to be back in time for class, but if I'm not, you should start the lab without me. The instructions should be fairly clear and Garikai can help with the confusing parts.
+
+Regards,
+
+-- SamR
+
 ## [CSC-207 2024Fa] Reading 1 graded (partially); Token opportunities (2024-08-28)
 
 Dear CSC-207 Students,
