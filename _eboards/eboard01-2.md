@@ -1,5 +1,5 @@
 ---
-title: "Eboard 01b: Getting started"
+title: "Eboard 01 (Section 2): Getting started"
 number: 1
 section: eboards
 held: 2024-08-29
