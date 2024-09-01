@@ -409,6 +409,6 @@ Wasn't that fun?
 
 ## Some final notes
 
-You may be asking yourself, "Why don't we just have a template that we copy and change?" And that's definitely a good question. When you feel ready to set up a template, you can (and should) do so. But as you're learning, it's good to do all the steps and reflect on the rationale for each step.
+You may be asking yourself, "Why don't we just have a template that we copy and change?" And that's definitely a good question. When you feel ready to set up a template, you can (and should) do so. But as you're learning, it's good to do all the steps and reflect on the rationale for each step. I suppose at some point, someone could even create a Maven archetype to do all this.
 
 Good luck! And have fun!
