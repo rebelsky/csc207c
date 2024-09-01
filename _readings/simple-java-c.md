@@ -1,5 +1,5 @@
 ---
-title: Simple Java for C Programmers
+title: Simple Java for C programmers
 summary: |
   We take a quick tour through some imperative parts of Java and how
   they relate to what you may know from learning the C programming 

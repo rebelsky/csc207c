@@ -1,5 +1,5 @@
 ---
-title: An Introduction to Java
+title: An introduction to Java
 summary: |
   We introduce the basics of
   the Java programming language and walk through the first simple program.

@@ -16,6 +16,9 @@
     - page: /readings/oop-basics.html
     - page: /readings/designing-adts.html
     - page: /readings/designing-data-structures.html
+  eboards:
+    - page: /eboards/eboard01-1.html
+    - page: /eboards/eboard01-2.html
 
 - topic: Getting started with Java
   abbrev: java-small
