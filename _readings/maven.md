@@ -300,6 +300,14 @@ As we mentioned earlier, the `pom.xml` file contains information on the project.
 
 Isn't that exciting? And aren't you glad that you don't have to build that file by hand? As you might guess, the most important parts are the things at the top. We'll see what those are as we move forward.
 
+Unfortunately, the default `pom.xml` is not necessarily what we'll need for the class. For example, you'll see that it's using Java 1.7. We'll generally be using Java 17, so you'll need to update that portion appropriately.
+
+          <properties>
+            <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+            <maven.compiler.source>17</maven.compiler.source>
+            <maven.compiler.target>17</maven.compiler.target>
+          </properties>
+    
 ## Using Maven
 
 Now that we've set up our Maven project, we can start exploring what we can do with Maven.
