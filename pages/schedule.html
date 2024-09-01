@@ -120,6 +120,19 @@ permalink: /schedule/
                     {% if class.subjects %}
                       {{ class.subjects | join: ". "  | append: "." | replace: "?.", "." | prepend: "**Topics**: " | markdownify }}
                     {% endif %}
+                    {% if class.eboards %} 
+                      <ul class="list-inline">
+                      {% for eboard in class.eboards %}
+                        {% assign page = site.documents | where: "url", eboard.page | first %}
+                        {% unless page %}
+                          {% assign page = site.pages | where: "url", url | first %}
+                        {% endunless %}
+                        {% if page %}
+                          <ul><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></ul>
+                        {% endif %}
+                      {% endfor %}
+                      </ul>
+                    {% endif %}
                     {% if class.links %}
                       <ul class="list-inline">
                         {% for link in class.links %}
