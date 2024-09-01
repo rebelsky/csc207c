@@ -39,16 +39,15 @@ It is the programmer's responsibility to choose an appropriate name for the clas
 
 What else is in this sketch?  The outer braces enclose the contents of this class, in this case, just the main method.  You will see braces enclosing other things in future readings.  The inner braces enclose the instructions for the `main` method.  
 
-You'll notice two slashes and a note after the end-braces.  Text that begins with two slashes is a *comment* for the programmer or reader.  My experience suggests that you should always comment your end braces to indicate what you're ending.  Such comments help you make sure that your code is structured appropriately and helps the reader more quickly parse your code.  You may (and should) also insert comments to explain key parts of your code.
+You'll notice two slashes and a note after the end-braces.  Text that begins with two slashes is a *comment* for the programmer or reader.  My experience suggests that you should always comment your end braces to indicate what you're ending.  Such comments help you make sure that your code is structured appropriately and helps the reader more quickly parse your code.  Our graders will look for such comments.
+
+Of course, these are not the only comments that you should write. You may (and should) also insert comments to explain key parts of your code.
 
 You can probably guess what purpose the words that preface *NameOfClass* serve.  The `public` indicates that the class can be used by any program or user (or at least any program or user that has system permission to read the file containing the class).  The `class` indicates that we're defining a class.
 
 The slew of stuff surrounding `main` is perhaps more confusing.  If you are willing to live with "just write what you see above", you need not learn the details right now.  Feel free to skip ahead to the next section.  However, if you'd like a quick overview, read on.
 
-You might be able to guess that the `public` means that the method
-named `main` is generally accessible (again, provided the person
-or program attempting to access it has system permission to access
-the associated file).
+You might be able to guess that the `public` means that the method named `main` is generally accessible (again, provided the person or program attempting to access it has system permission to access the associated file).
 
 The `static` indicates that the method can run without having an associated object created.  You are probably used to running methods (procedures) without having associated objects.  However, in Java, one typically associates a method call with a particular object that is to execute the method call.  Hence, we must indicate that `main` is an exception to the rule.
 
