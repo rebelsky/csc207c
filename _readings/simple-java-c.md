@@ -9,7 +9,7 @@ summary: |
 Introduction
 ------------
 
-Java is a hybrid language.  While it has significant object-oriented features, it also has many imperative features.  That is, while you will be building objects and taking advantage of encapsulation, polymorphism, and inheritance, you will also write programs in which you sequence instructions and update state through assignment.  (Java also has some functional features; we'll talk about those a bit later.) You may note that Java looks a lot like C.  That's intentional.  The designers of Java thought they would attract more programmers if they started with a familiar basis.
+Java is a hybrid language.  While it has many object-oriented features, it also has many imperative features.  That is, while you will be building objects and taking advantage of encapsulation, polymorphism, and inheritance, you will also write programs in which you sequence instructions and update state through assignment.  (Java also has some functional features; we'll talk about those a bit later.) You may note that Java looks a lot like C.  That's intentional.  The designers of Java thought they would attract more programmers if they started with a familiar basis.
 
 If you're willing to ignore the object-oriented features and to put up with a bit more stuff to type, Java can be a reasonable alternative to C for imperative programming.  Why is it better?  You still have some opportunity for information hiding, and it is much stricter about types, which helps you catch errors earlier.  For example, Java distinguishes Boolean values from integers, and won't let you use one for the other.  (Yes, that's right, the Java compiler won't let you write the incorrect "`while (i = 0)`" rather than the intended "`while (i == 0)`"
 
@@ -73,6 +73,8 @@ For example,
     /** 
      * Compute the square of x.  
      *
+     * @param x
+     *   the value we wish to square.
      * @exception Exception 
      *   when the square is larger than the largest int.
      */
@@ -134,7 +136,7 @@ In C, you need two steps to import library code.  You use `#include` with a `.h`
 
 In Java, you just mention the library code and the compiler automatically figures out how to bring it in.  Traditionally, you give the full name of the library, such as `java.io.PrintWriter`.
 
-Suppose `Util.java` was declared as follows.
+Suppose `MathUtils.java` was declared as follows.
 
 ```java
 package edu.grinnell.csc207.utils;
@@ -175,7 +177,7 @@ import java.io.PrintWriter;
 Input and output
 ----------------
 
-Java provides a host of input and output mechanisms.  While you'll see a lot of sample code that uses `System.out` to print values, I prefer that you use the object-oriented ouptut mechanisms.
+Java provides a host of input and output mechanisms.  While you'll see a lot of sample code that uses `System.out` to print values, I require that you use more object-oriented ouptut mechanisms.
 
 To print output, first create an object of class `java.io.PrintWriter`.
 
