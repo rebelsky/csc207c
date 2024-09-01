@@ -65,7 +65,16 @@ or just
 Similarly, to create an array of ten objects from class `Student`, we would write,
 
 ```java
-    Student[] class = new Student[10];
+    Student[] roster = new Student[10];
+```
+
+Or, if we follow the "no magic numbers" policy, something like the following.
+
+```java
+  /** The maximum number of students permitted. */
+  private static int MAX_STUDENTS = 10;
+  ...
+  Student[] roster = new Student[MAX_STUDENTS];
 ```
 
 We can also *initialize* an array during construction by eliding the array size and following the right bracket with a sequence of values separated by commas and surrounded by curly braces.  For example, to create an array of the names Jane, Jack, Julie, and John, we would write
@@ -141,9 +150,9 @@ In the first set of instructions, you should build the array with an initializer
 
 In the second set of instructions, you should fill in the array with a for loop.
 
-### Check 2: Designing expandable arrays (‡)
+### Check 2: Designing dynamic arrays (‡)
 
-Let's suppose that Java lacked a special syntax for arrays and we were designing our own expandable arrays of strings. What basic set of methods would you provide? Please include parameter types and short (one-sentence) descriptions. For example,
+Let's suppose that Java lacked a special syntax for arrays and we were designing our own dynamic arrays of strings, arrays in which the client need not indicate the size in advance. What basic set of methods would you provide? Please include parameter types and short (one-sentence) descriptions. For example,
 
 ```java
 void set(int index, String str); // Set the value at the given index to `str`.
