@@ -4,7 +4,9 @@ summary: |
   We consider a bit about command-line build systems and explore some
   details of one such system, Maven.
 ---
-_Warning! This reading is not yet complete. Check back later!_
+_Note! This reading contains lots and lots of sample output. You do not need to read that sample output carefully._
+
+_Note: This reading is new for Fall 2024._
 
 In CSC-161, you learned the basics of Make (or at least I hope you learned the basics of Make). Make is a prototypical "build tool" or "build system". Make and its relatives make it comparatively simple to put together a project that is composed of multiple moving parts. Build tools emerge from two common software design inclinations: (a) don't do things by hand when you can do them by code and (b) generalize!
 
@@ -302,6 +304,34 @@ Isn't that exciting? And aren't you glad that you don't have to build that file 
 
 Now that we've set up our Maven project, we can start exploring what we can do with Maven.
 
+### tl;dr
+
+Most of these commands will take a `-q` flag for "quiet". Some need additional updates to your `pom.xml` file.
+
+Compiling
+
+    mvn compile
+
+Cleaning up after building
+
+    mvn clean
+
+Testing
+
+    mvn test
+
+Packaging
+
+    mvn package
+
+Running a pre-specified `main` method
+
+    mvn exec:java
+
+Syntax checking
+
+    mvn checksyntax:check
+
 ### Compiling
 
 One obvious step is to compile our code. We often compile the code in preparation for other activities. We might also compile the code to see if we have syntax errors in our program.
@@ -402,7 +432,7 @@ If we correct that error (adding a semicolon at column 45 of line 11), we should
 
     $ mvn compile -q
 
-Where do the compiled files go? In the aftorementioned `target directory.
+Where do the compiled files go? In the aforementioned `target` directory.
 
     $ ls target
     classes                 generated-sources       maven-status
@@ -418,6 +448,543 @@ As you may have learned, we typically run Java classes in the parent directory o
     Hello World!
     $ popd
 
+### Cleaning up
+
+Just as building projects in C leaves around a bunch of `.o` files, building projects in Java leaves around a bunch of `.class` files, as well as some other files. At some point, you might want to get rid of those files. With Maven, that's simple.
+
+    mvn clean
+
 ### Testing
 
-### Cleaning up
+As you learned in CSC-151 and CSC-161, regular automated testing should be part of your development practice. Why automated? One reason is that you're more likely to run automated tests. Another is that the computer is better at comparing expected and actual outputs than you are.
+
+We will explore the details of unit testing in JUnit 5 a bit later in the semester. For now, we'll see how it works in Maven.
+
+In order to run tests in Maven, you need the appropriate instructions in your `pom.xml` file. The default instructions are as follows.
+
+      <dependencies>
+        <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <version>4.11</version>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
+
+As you can see, they references an old version of JUnit. You should update that as follows. (Don't worry, we have those instructions elsewhere, too.)
+
+      <dependencies>
+        <dependency>
+          <groupId>org.junit.jupiter</groupId>
+          <artifactId>junit-jupiter-engine</artifactId>
+          <version>5.9.1</version>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
+
+The command to run tests in Maven is simple.
+
+    mvn test
+
+A newly created repository has no tests, so you'll see very little of use when you run that command.
+
+    $ mvn test
+    [INFO] Scanning for projects...
+    [INFO] 
+    [INFO] ---------------------< edu.grinnell.csc207:sample >---------------------
+    [INFO] Building sample 1.0-SNAPSHOT
+    [INFO]   from pom.xml
+    [INFO] --------------------------------[ jar ]---------------------------------
+    [INFO] 
+    [INFO] --- resources:3.3.1:resources (default-resources) @ sample ---
+    [INFO] Copying 0 resource from src/main/resources to target/classes
+    [INFO] 
+    [INFO] --- compiler:3.11.0:compile (default-compile) @ sample ---
+    [INFO] Nothing to compile - all classes are up to date
+    [INFO] 
+    [INFO] --- resources:3.3.1:testResources (default-testResources) @ sample ---
+    [INFO] skip non existing resourceDirectory /Users/rebelsky/CSC207/Projects/sample/src/test/resources
+    [INFO] 
+    [INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ sample ---
+    [INFO] Nothing to compile - all classes are up to date
+    [INFO] 
+    [INFO] --- surefire:3.2.2:test (default-test) @ sample ---
+    [INFO] ------------------------------------------------------------------------
+    [INFO] BUILD SUCCESS
+    [INFO] ------------------------------------------------------------------------
+    [INFO] Total time:  0.304 s
+    [INFO] Finished at: 2024-09-01T08:39:18-05:00
+    [INFO] ------------------------------------------------------------------------
+
+Wasn't that exciting? As you might expect, the quiet test is a bit less verbose.
+
+    $ mvn test -q
+    $
+
+What if we had actual tests? Let's see ...
+
+    $ mvn test
+    [INFO] Scanning for projects...
+    [INFO] 
+    [INFO] ---------------------< edu.grinnell.csc207:sample >---------------------
+    [INFO] Building sample 1.0-SNAPSHOT
+    [INFO]   from pom.xml
+    [INFO] --------------------------------[ jar ]---------------------------------
+    [INFO] 
+    [INFO] --- resources:3.3.1:resources (default-resources) @ sample ---
+    [INFO] Copying 0 resource from src/main/resources to target/classes
+    [INFO] 
+    [INFO] --- compiler:3.11.0:compile (default-compile) @ sample ---
+    [INFO] Changes detected - recompiling the module! :input tree
+    [INFO] Compiling 2 source files with javac [debug target 17] to target/classes
+    [WARNING] system modules path not set in conjunction with -source 17
+    [INFO] 
+    [INFO] --- resources:3.3.1:testResources (default-testResources) @ sample ---
+    [INFO] skip non existing resourceDirectory /Users/rebelsky/CSC207/Projects/sample/src/test/resources
+    [INFO] 
+    [INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ sample ---
+    [INFO] Changes detected - recompiling the module! :dependency
+    [INFO] Compiling 1 source file with javac [debug target 17] to target/test-classes
+    [WARNING] system modules path not set in conjunction with -source 17
+    [INFO] 
+    [INFO] --- surefire:3.2.2:test (default-test) @ sample ---
+    [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+    Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.2.2/surefire-junit-platform-3.2.2.pom
+    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.2.2/surefire-junit-platform-3.2.2.pom (4.5 kB at 12 kB/s)
+    Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/3.2.2/surefire-providers-3.2.2.pom
+    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/3.2.2/surefire-providers-3.2.2.pom (2.5 kB at 110 kB/s)
+    Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.2.2/common-java5-3.2.2.pom
+    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.2.2/common-java5-3.2.2.pom (2.7 kB at 109 kB/s)
+    Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.9.3/junit-platform-launcher-1.9.3.pom
+    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.9.3/junit-platform-launcher-1.9.3.pom (3.0 kB at 126 kB/s)
+    Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.9.3/junit-platform-engine-1.9.3.pom
+    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.9.3/junit-platform-engine-1.9.3.pom (3.2 kB at 139 kB/s)
+    Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.9.3/junit-platform-commons-1.9.3.pom
+    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.9.3/junit-platform-commons-1.9.3.pom (2.8 kB at 118 kB/s)
+    Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.2.2/surefire-junit-platform-3.2.2.jar
+    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.2.2/surefire-junit-platform-3.2.2.jar (27 kB at 803 kB/s)
+    Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.2.2/common-java5-3.2.2.jar
+    Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.9.3/junit-platform-launcher-1.9.3.jar
+    Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.9.3/junit-platform-engine-1.9.3.jar
+    Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.9.3/junit-platform-commons-1.9.3.jar
+    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.2.2/common-java5-3.2.2.jar (18 kB at 650 kB/s)
+    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.9.3/junit-platform-engine-1.9.3.jar (189 kB at 475 kB/s)
+    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.9.3/junit-platform-launcher-1.9.3.jar (169 kB at 418 kB/s)
+    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.9.3/junit-platform-commons-1.9.3.jar (103 kB at 170 kB/s)
+    Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.9.1/junit-platform-launcher-1.9.1.pom
+    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.9.1/junit-platform-launcher-1.9.1.pom (3.0 kB at 112 kB/s)
+    Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.9.1/junit-platform-launcher-1.9.1.jar
+    Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.9.1/junit-platform-launcher-1.9.1.jar (169 kB at 627 kB/s)
+    [INFO] 
+    [INFO] -------------------------------------------------------
+    [INFO]  T E S T S
+    [INFO] -------------------------------------------------------
+    [INFO] Running edu.grinnell.csc207.C2FTests
+    [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in edu.grinnell.csc207.C2FTests
+    [INFO] 
+    [INFO] Results:
+    [INFO] 
+    [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+    [INFO] 
+    [INFO] ------------------------------------------------------------------------
+    [INFO] BUILD SUCCESS
+    [INFO] ------------------------------------------------------------------------
+    [INFO] Total time:  2.548 s
+    [INFO] Finished at: 2024-09-01T09:10:05-05:00
+    [INFO] ------------------------------------------------------------------------
+    
+As you may have noticed, Maven realized that we didn't have all the JUnit 5 resources installed and installed them for us. We also saw that the tests worked successfully.
+
+What happens if we test and some of the tests fail? Let's see. 
+
+    [INFO] Scanning for projects...
+    [INFO]
+    [INFO] ---------------------< edu.grinnell.csc207:sample >---------------------
+    [INFO] Building sample 1.0-SNAPSHOT
+    [INFO]   from pom.xml
+    [INFO] --------------------------------[ jar ]---------------------------------
+    [INFO]
+    [INFO] --- resources:3.3.1:resources (default-resources) @ sample ---
+    [INFO] Copying 0 resource from src/main/resources to target/classes
+    [INFO]
+    [INFO] --- compiler:3.11.0:compile (default-compile) @ sample ---
+    [INFO] Nothing to compile - all classes are up to date
+    [INFO]
+    [INFO] --- resources:3.3.1:testResources (default-testResources) @ sample ---
+    [INFO] skip non existing resourceDirectory /Users/rebelsky/CSC207/Projects/sample/src/test/resources
+    [INFO]
+    [INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ sample ---
+    [INFO] Nothing to compile - all classes are up to date
+    [INFO]
+    [INFO] --- surefire:3.2.2:test (default-test) @ sample ---
+    [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+    [INFO]
+    [INFO] -------------------------------------------------------
+    [INFO]  T E S T S
+    [INFO] -------------------------------------------------------
+    [INFO] Running edu.grinnell.csc207.FailingTests
+    [ERROR] Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.018 s <<< FAILURE! -- in edu.grinnell.csc207.FailingTests
+    [ERROR] edu.grinnell.csc207.FailingTests.justFail -- Time elapsed: 0.007 s <<< FAILURE!
+    org.opentest4j.AssertionFailedError
+    	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:34)
+    	at org.junit.jupiter.api.Assertions.fail(Assertions.java:116)
+    	at edu.grinnell.csc207.FailingTests.justFail(FailingTests.java:25)
+    	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+    	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+            ...
+    	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+    	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+    
+    [ERROR] edu.grinnell.csc207.FailingTests.notReallyEqual -- Time elapsed: 0.001 s <<< FAILURE!
+    org.opentest4j.AssertionFailedError: One equals two ==> expected: <1> but was: <2>
+    	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+    	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+    	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+    	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+    	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:560)
+    	at edu.grinnell.csc207.FailingTests.notReallyEqual(FailingTests.java:17)
+    	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+            ...
+    	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+    
+    [INFO] Running edu.grinnell.csc207.C2FTests
+    [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in edu.grinnell.csc207.C2FTests
+    [INFO]
+    [INFO] Results:
+    [INFO]
+    [ERROR] Failures:
+    [ERROR]   FailingTests.justFail:25
+    [ERROR]   FailingTests.notReallyEqual:17 One equals two ==> expected: <1> but was: <2>
+    [INFO]
+    [ERROR] Tests run: 4, Failures: 2, Errors: 0, Skipped: 0
+    [INFO]
+    [INFO] ------------------------------------------------------------------------
+    [INFO] BUILD FAILURE
+    [INFO] ------------------------------------------------------------------------
+    [INFO] Total time:  0.589 s
+    [INFO] Finished at: 2024-09-01T09:30:11-05:00
+    [INFO] ------------------------------------------------------------------------
+    [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.2.2:test (default-test) on project sample: There are test failures.
+    [ERROR]
+    [ERROR] Please refer to /Users/rebelsky/CSC207/Projects/sample/target/surefire-reports for the individual test results.
+    [ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+    [ERROR] -> [Help 1]
+    [ERROR]
+    [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+    [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+    [ERROR]
+    [ERROR] For more information about the errors and possible solutions, please read the following articles:
+    [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+
+Once again, we get much more information than we can use. The most important ones are those that start with `[ERROR]`, particularly these.
+
+    [ERROR] Failures:
+    [ERROR]   FailingTests.justFail:25
+    [ERROR]   FailingTests.notReallyEqual:17 One equals two ==> expected: <1> but was: <2>
+    [ERROR] Tests run: 4, Failures: 2, Errors: 0, Skipped: 0
+
+### Packaging
+
+Most frequently, the end result of a Java project is having everything packaged together into a `.jar` (Java Archive) file. `.jar` files can serve as libraries for other programs or even as pseudo-executables. We package projects with the 
+
+    mvn package
+
+command.
+
+    $ mvn package
+    [INFO] Scanning for projects...
+    [INFO] 
+    [INFO] ---------------------< edu.grinnell.csc207:sample >---------------------
+    [INFO] Building sample 1.0-SNAPSHOT
+    [INFO]   from pom.xml
+    [INFO] --------------------------------[ jar ]---------------------------------
+    [INFO] 
+    [INFO] --- resources:3.3.1:resources (default-resources) @ sample ---
+    [INFO] Copying 0 resource from src/main/resources to target/classes
+    [INFO] 
+    [INFO] --- compiler:3.11.0:compile (default-compile) @ sample ---
+    [INFO] Nothing to compile - all classes are up to date
+    [INFO] 
+    [INFO] --- resources:3.3.1:testResources (default-testResources) @ sample ---
+    [INFO] skip non existing resourceDirectory /Users/rebelsky/CSC207/Projects/sample/src/test/resources
+    [INFO] 
+    [INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ sample ---
+    [INFO] Nothing to compile - all classes are up to date
+    [INFO] 
+    [INFO] --- surefire:3.2.2:test (default-test) @ sample ---
+    [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+    [INFO] 
+    [INFO] -------------------------------------------------------
+    [INFO]  T E S T S
+    [INFO] -------------------------------------------------------
+    [INFO] Running edu.grinnell.csc207.C2FTests
+    [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.020 s -- in edu.grinnell.csc207.C2FTests
+    [INFO] 
+    [INFO] Results:
+    [INFO] 
+    [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+    [INFO] 
+    [INFO] 
+    [INFO] --- jar:3.3.0:jar (default-jar) @ sample ---
+    [INFO] ------------------------------------------------------------------------
+    [INFO] BUILD SUCCESS
+    [INFO] ------------------------------------------------------------------------
+    [INFO] Total time:  0.714 s
+    [INFO] Finished at: 2024-09-01T10:32:25-05:00
+    [INFO] ------------------------------------------------------------------------
+
+As the output suggests, the request to package a project automatically runs all the tests. That way, if any tests fail, it refuses to build the project. Here's the output you get with a failing test.
+
+    $ mvn package
+    [INFO] Scanning for projects...
+    [INFO] 
+    [INFO] ---------------------< edu.grinnell.csc207:sample >---------------------
+    [INFO] Building sample 1.0-SNAPSHOT
+    [INFO]   from pom.xml
+    [INFO] --------------------------------[ jar ]---------------------------------
+    [INFO] 
+    [INFO] --- resources:3.3.1:resources (default-resources) @ sample ---
+    [INFO] Copying 0 resource from src/main/resources to target/classes
+    [INFO] 
+    [INFO] --- compiler:3.11.0:compile (default-compile) @ sample ---
+    [INFO] Nothing to compile - all classes are up to date
+    [INFO] 
+    [INFO] --- resources:3.3.1:testResources (default-testResources) @ sample ---
+    [INFO] skip non existing resourceDirectory /Users/rebelsky/CSC207/Projects/sample/src/test/resources
+    [INFO] 
+    [INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ sample ---
+    [INFO] Nothing to compile - all classes are up to date
+    [INFO] 
+    [INFO] --- surefire:3.2.2:test (default-test) @ sample ---
+    [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+    [INFO] 
+    [INFO] -------------------------------------------------------
+    [INFO]  T E S T S
+    [INFO] -------------------------------------------------------
+    [INFO] Running edu.grinnell.csc207.FailingTests
+    [ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.020 s <<< FAILURE! -- in edu.grinnell.csc207.FailingTests
+    [ERROR] edu.grinnell.csc207.FailingTests.notReallyEqual -- Time elapsed: 0.010 s <<< FAILURE!
+    org.opentest4j.AssertionFailedError: One equals two ==> expected: <1> but was: <2>
+    	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+    ...
+    	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+    
+    [INFO] Running edu.grinnell.csc207.C2FTests
+    [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in edu.grinnell.csc207.C2FTests
+    [INFO] 
+    [INFO] Results:
+    [INFO] 
+    [ERROR] Failures: 
+    [ERROR]   FailingTests.notReallyEqual:17 One equals two ==> expected: <1> but was: <2>
+    [INFO] 
+    [ERROR] Tests run: 3, Failures: 1, Errors: 0, Skipped: 0
+    [INFO] 
+    [INFO] ------------------------------------------------------------------------
+    [INFO] BUILD FAILURE
+    [INFO] ------------------------------------------------------------------------
+    [INFO] Total time:  0.773 s
+    [INFO] Finished at: 2024-09-01T10:34:24-05:00
+    [INFO] ------------------------------------------------------------------------
+    [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.2.2:test (default-test) on project sample: There are test failures.
+    [ERROR] 
+    [ERROR] Please refer to /Users/rebelsky/CSC207/Projects/sample/target/surefire-reports for the individual test results.
+    [ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+    [ERROR] -> [Help 1]
+    [ERROR] 
+    [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+    [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+    [ERROR] 
+    [ERROR] For more information about the errors and possible solutions, please read the following articles:
+    [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+
+If you know the name of a class with a `main` method in the project, you can run it from the jar file. (Note that we added the `Alternate.java` class in the following example.)
+
+    $ java -cp target/my-project-1.0-SNAPSHOT.jar edu.grinnell.csc207.App
+    Hello World!
+    $ java -cp target/my-project-1.0-SNAPSHOT.jar edu.grinnell.csc207.Alternate
+    Hello Alternate World!
+
+You can also make the jar runnable by specifying a main class in the `pom.xml` file. In your plugins section, add the following.
+
+          <plugin>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>3.0.2</version>
+            <configuration>
+              <archive>
+                <manifest>
+                  <addClasspath>true</addClasspath>
+                  <mainClass>edu.grinnell.csc207.App</mainClass>
+                </manifest>
+              </archive>
+            </configuration>
+          </plugin>
+
+If you don't have a plugins section, it looks something like this.
+
+      <build>
+        <pluginManagement>
+          <plugins>
+          ...
+          </plugins>
+        </pluginmanagement>
+      </build>
+
+Once you've added the plugin information, we can build and run our project.
+
+    $ mvn package -q
+    $ java -jar target/my-project-1.0-SNAPSHOT.jar
+    Hello World!
+
+### Another way to run programs
+
+Maven also provides an alternate way to run code using the target `exec:java`. To use that mechanism, you must add plugin information for that.
+
+            <plugin>
+              <groupId>org.codehaus.mojo</groupId>
+              <artifactId>exec-maven-plugin</artifactId>
+              <version>3.3.0</version>
+              <configuration>
+                <mainClass>edu.grinnell.csc207.App</mainClass>
+              </configuration>
+            </plugin>
+
+Now we can run the program.
+
+    $ mvn -q exec:java
+    Hello World!
+
+### Checking style
+
+In this class, I expect you to follow something fairly close to [the Google Java Style Guide](https://google.github.io/styleguide/javaguide.html). That means you will benefit from the option of having Maven check your style. 
+
+Once again, we need to add code to the `pom.xml` file.
+
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-checkstyle-plugin</artifactId>
+              <version>3.4.0</version>
+              <configuration>
+                <configLocation>csc207-checks.xml</configLocation>
+              </configuration>
+            </plugin>
+
+Those instructions reference [`csc-207-checks.xml`](../files/csc207-checks.xml), so you'll need to download that file, too.
+
+Once you've done so, you should be able to use the following command to check the style in your file.
+
+    mvn checkstyle:check
+
+Unfortunately, the sample `App.java` file uses very different style guidlines, so we will see a lot of errors.
+
+    $ !mvn
+    mvn checkstyle:check
+    [INFO] Scanning for projects...
+    [INFO]
+    [INFO] -------------------< edu.grinnell.csc207:my-project >-------------------
+    [INFO] Building my-project 1.0-SNAPSHOT
+    [INFO]   from pom.xml
+    [INFO] --------------------------------[ jar ]---------------------------------
+    [INFO]
+    [INFO] --- checkstyle:3.4.0:check (default-cli) @ my-project ---
+    [INFO] There are 14 errors reported by Checkstyle 9.3 with csc207-checks.xml ruleset.
+    [ERROR] src/main/java/edu/grinnell/csc207/App.java:[7] (regexp) RegexpSingleline: Line has trailing spaces.
+    [ERROR] src/main/java/edu/grinnell/csc207/App.java:[8,1] (indentation) Indentation: 'class def lcurly' has incorrect indentation level 0, expected level should be 2.
+    [ERROR] src/main/java/edu/grinnell/csc207/App.java:[8,1] (blocks) LeftCurly: '{' at column 1 should be on the previous line.
+    [ERROR] src/main/java/edu/grinnell/csc207/App.java:[9,5] (javadoc) MissingJavadocMethod: Missing a Javadoc comment.
+    [ERROR] src/main/java/edu/grinnell/csc207/App.java:[9,28] (whitespace) ParenPad: '(' is followed by whitespace.
+    [ERROR] src/main/java/edu/grinnell/csc207/App.java:[9,44] (whitespace) ParenPad: ')' is preceded with whitespace.
+    [ERROR] src/main/java/edu/grinnell/csc207/App.java:[10,5] (blocks) LeftCurly: '{' at column 5 should be on the previous line.
+    [ERROR] src/main/java/edu/grinnell/csc207/App.java:[11] (regexp) Regexp: Line matches the illegal pattern 'System.out.println'.
+    [ERROR] src/main/java/edu/grinnell/csc207/App.java:[11,9] (indentation) Indentation: 'method def' child has incorrect indentation level 8, expected level should be 6.
+    [ERROR] src/main/java/edu/grinnell/csc207/App.java:[11,27] (whitespace) ParenPad: '(' is followed by whitespace.
+    [ERROR] src/main/java/edu/grinnell/csc207/App.java:[11,44] (whitespace) ParenPad: ')' is preceded with whitespace.
+    [ERROR] src/main/java/edu/grinnell/csc207/App.java:[12] (regexp) Regexp: Line matches the illegal pattern 'end brace without comment'.
+    [ERROR] src/main/java/edu/grinnell/csc207/App.java:[13] (regexp) Regexp: Line matches the illegal pattern 'end brace without comment'.
+    [ERROR] src/main/java/edu/grinnell/csc207/App.java:[13,1] (indentation) Indentation: 'class def rcurly' has incorrect indentation level 0, expected level should be 2.
+    [INFO] ------------------------------------------------------------------------
+    [INFO] BUILD FAILURE
+    [INFO] ------------------------------------------------------------------------
+    [INFO] Total time:  0.724 s
+    [INFO] Finished at: 2024-09-01T12:55:02-05:00
+    [INFO] ------------------------------------------------------------------------
+    [ERROR] Failed to execute goal org.apache.maven.plugins:maven-checkstyle-plugin:3.4.0:check (default-cli) on project my-project: You have 14 Checkstyle violations. -> [Help 1]
+    [ERROR]
+    [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+    [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+    [ERROR]
+    [ERROR] For more information about the errors and possible solutions, please read the following articles:
+    [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+
+Isn't that sad? Here's the supplied `App.java`.
+
+    package edu.grinnell.csc207;
+    
+    /**
+     * Hello world!
+     *
+     */
+    public class App
+    {
+        public static void main( String[] args )
+        {
+            System.out.println( "Hello World!" );
+        }
+    }
+
+Here's what it should look like.
+
+    package edu.grinnell.csc207;
+    
+    import java.io.PrintWriter;
+    
+    /**
+     * Hello world!
+     */
+    public class App {
+      /**
+       * Print a message.
+       *
+       * @param args
+       *  The command-line arguments.
+       */
+      public static void main(String[] args) {
+        PrintWriter pen = new PrintWriter(System.out, true);
+        pen.println("Hello World!");
+        pen.close();
+      } // main(String[])
+    } // class App
+
+And here's what our output looks like after we make those changes.
+
+    $ mvn checkstyle:check
+    [INFO] Scanning for projects...
+    [INFO]
+    [INFO] -------------------< edu.grinnell.csc207:my-project >-------------------
+    [INFO] Building my-project 1.0-SNAPSHOT
+    [INFO]   from pom.xml
+    [INFO] --------------------------------[ jar ]---------------------------------
+    [INFO]
+    [INFO] --- checkstyle:3.4.0:check (default-cli) @ my-project ---
+    [INFO] You have 0 Checkstyle violations.
+    [INFO] ------------------------------------------------------------------------
+    [INFO] BUILD SUCCESS
+    [INFO] ------------------------------------------------------------------------
+    [INFO] Total time:  0.642 s
+    [INFO] Finished at: 2024-09-01T12:58:32-05:00
+    [INFO] ------------------------------------------------------------------------
+
+Note that not all of these changes are required by the Google Java Style Guide. For example, I'm the one who requires that you avoid `System.out.println`. I'm also the one who wants you to comment your closing brackets. But those are both good habits to get into.
+
+
+## Wrapping up
+
+That's likely all you need to know about Maven right now. As I noted at the beginning, most of the time, we'll provide you with a premade Maven file. The [project setup instructions](..handouts/project-setup) also help you set up that file.
+
+You should remember that
+
+* You use Maven on the command line, typically with `mvn COMMAND`.
+* You set up a new Maven project with `mvn archetype:generate`.
+* The most important commands are `compile`, `clean`, `test`, `package`, `exec:java`, and `checksyntax:check`.
+* You can add a `-q` flag for "quiet" to eliminate much of the output from Maven.
+* The way these commands behave is governed by a file called `pom.xml`, which is semi-human-readable. You will often extend your `pom.xml` by adding and modifying chunks of XML.
+  
