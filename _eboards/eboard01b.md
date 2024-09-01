@@ -12,10 +12,18 @@ link: true
 _Start of class instructions_
 
 * Optional: Grab a mask
+* Optional: Grab a Nutrigrain bar
 * Grab one of the business cards that have computer names and locations.
 * Identify where the corresponding computer is.
 * Return the card to the jar.
+* Navigate to the computer.
 * When both partners arrive, introduce yourselves.
+
+_Greetings_
+
+* Welcome to CSC207!
+* I'm Sam (or SamR).
+* Our class mentor is Garikai Gijima.
 
 _Approximate overview_
 
@@ -27,10 +35,9 @@ _Approximate overview_
 * Course goals
 * Course structure
 * ADTs and data structures
-* A quick intro to object-oriented design
 * Designing a stack ADT (an exercise)
-* Implementing our stack ADT (an exercise)
-* Designing an array ADT (another exercise)
+* Implementing our stack ADT (an exercise) _If time permits._
+* Designing an array ADT (another exercise) _If time permits._
 
 Preliminaries
 -------------
@@ -41,16 +48,14 @@ Preliminaries
 
 ### News / Etc.
 
-* Welcome to CSC207!
-* I'm Sam (or SamR).
-* Our class mentor is Maria Rodriguez.
 * We'll be using two "books" for this course: The readings I write (or
   wrote) and CLRS.
 * I type class notes in markdown and post to the Web site.
     * It's like magic (I hope).
+    * At least I hope it does.
 * You will find that I call on students randomly using a set of cards
   with your names on them.
-    * I use this process to give you practice "thinking on your feet",
+    * I use this process to give you practice "thinking on your seat",
       as it were.
     * I also use this process to help everyone realize that they are
       not the only one who is puzzled.
@@ -120,6 +125,15 @@ our class does not meet on Fridays, so I will pretend that we're a
 state school, and give you a Thursday PSA. If you find these
 annoying, let your class mentor know and they'll tell me to stop._
 
+* You are awesome. I would like you to remain awesome.
+* You likely have people who care about you. You should remain well
+  for their sake, too.
+* Moderation.
+* Remember that everyone has different limits.
+* Don't give in to peer pressure (or perceptions of peer behavior).
+* Consent is essential! It is also not sufficient.
+* Take care of yourselves.
+
 ### Attendance
 
 * Since it's the first day of class, I will take attendance.  
@@ -139,7 +153,110 @@ annoying, let your class mentor know and they'll tell me to stop._
 
 ### Excited about
 
+* This class
+* Helping students learn the CSC-207 material.
+* CSC-213, Operating Systems (ha ha, you folks can't take it)
+* Renfrow opening
+* Make memories
+* December 20
+* Clubs to join
+* Being forced to move to the front of the classroom.
+* No 8am classes
+* Doing great at CAing [+1]
+* Improvements to Pedal Grinnell
+* Chewing GUM
+* Being treasurer for math club
+* Writing a personal project
+* Learning new programming languages
+* Pickleball
+* Teaching little impressionable critters about math
+* Being evil
+* Earning tokens
+* Working at the rock climbing wall
+* Volleyball
+* Finishing a job
+* Playing a game
+* Film Theory
+* Halloween
+* Learning about Grinnell
+
 ### Questions
+
+How was Sam's summer?
+
+> Difficult.
+
+Can I transfer to section 1 which meets at 8:00 a.m.?
+
+> There's one spot left.
+
+Can you scroll up to the questions? [+2]
+
+> Yes.
+
+Why do we use VS Code?
+
+> Because I like torturing students.
+
+> Because I asked some folks what to use and the consensus was VS Code.
+  "Eclipse is old hat." "IntelliJ is commercial software."
+
+Does Sam have hearing loss?
+
+> Yes, particularly at the upper range. And he forgot his hearing aids today.
+
+What is Sam's favorite passtime?
+
+> Snark.
+
+> Spending time with family. (Board and card games.)
+
+What's Sam's favorite color?
+
+> Plaid.
+
+If you could make a video game, what would you make?
+
+> Something implicitly educational.  Or maybe freeform artistic.
+
+What movie about technology should everyone watch?
+
+> Real Genius
+
+What is Sam's favorite snack?
+
+> Lamejun with yogurt
+
+Favorite board/card game?
+
+> Card: Canasta
+
+> Board: Yacht Race, Carcassonne, RoboRally, Cosmic Encounter
+
+Least favorite color?
+
+> I am red-green color deficient. There are some shades of green that I
+  cannot distinguish from black. I hate those shades of green.
+
+Have you seen any good movies lately?
+
+> No.
+
+When did you first think of becoming a professor?
+
+> Possibly in college when I was TAing because it's amazing to see
+  an idea click in someone's mind and know you contributed.
+
+> Also my mom was a professor and seeing the impact she had on her
+  students was inspirational.
+
+Favorite food?
+
+> Fruit
+
+Least favorite food?
+
+> Nuts, because I'm allergic.
 
 Questions from the reading responses
 ------------------------------------
@@ -169,8 +286,9 @@ differences until I start writing the methods.
   only once we look at implementations that we start thinking about
   costs.
 
-How does the Layout of LIA affect the outcome? Is there anything
-specific to look out for when choosing the layout for ADT?
+How does the Layout of LIA (or the Arrangement in AAA) affect the
+outcome? Is there anything specific to look out for when choosing the
+layout for ADT?
 
 > Different layouts will lead to different costs. We should see
   that when we explore different implementations of stacks.
@@ -236,8 +354,27 @@ Course goals
 
 _Get started learning how to be a computer scientist / software developer._
 
+* Software development
+    * "Real" development tools
+        * IDE (VS Code)
+        * Collaborative Version Contrl System (Git)
+        * Build tools (Maven)
+        * Unit testing (JUnit)
+    * Somewhat larger projects
+        * Sometimes collaborative
+* ADTs, Algorithms, and Data Structures
+    * Some of the "Core literature"
+    * **Practice designing**
+    * Math-based analysis
+* Less/different underlying support
+
 Course structure
 ----------------
+
+* Meets two times per week. (New structure.)
+* Many classes will follow the "traditional" pair programming lab
+  structure.
+    * Different lab reports: Not "I did this" but "I learned this".
 
 ADTs and data structures
 ------------------------
