@@ -134,7 +134,7 @@ Another menu will appear at the top. Select the number 2.
 
 ### 3\.2\. Add a source encoding
 
-It's polite to indicate how the files in your project are encoded (ASCII, UTF-8, UTF-16, etc.). We'll be using UTF-8. Add the following line to the `properties` section.
+It's polite to indicate how the files in your project are encoded (ASCII, UTF-8, UTF-16, etc.). We'll be using UTF-8. Add the following line to the top of your `properties` section.
 
 ```
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -144,9 +144,9 @@ That section should now look like this.
 
 ```
   <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 ```
 
@@ -180,7 +180,7 @@ We'll be using JUnit for testing programs. You need to tell Maven about JUnit. A
           <configuration>
             <configLocation>csc207-checks.xml</configLocation>
           </configuration>
-          </plugin>
+        </plugin>
       </plugins>
     </pluginManagement>
   </build>
@@ -188,12 +188,37 @@ We'll be using JUnit for testing programs. You need to tell Maven about JUnit. A
 
 ### 3\.5\. Add information about your main class
 
-If you have classes that provide a `main` method, Maven permits you to specify which of those classes is run when someone types `mvn exec:java`. Do so by adding the following lines to the "plugins" section of `pom.xml`, substituting the name of your main class for `Main`.
+If you have classes that provide a `main` method, Maven permits you to specify which of those classes is run when someone types `mvn exec:java`. Do so by adding the following lines to the "plugins" section of `pom.xml`, substituting the name of your main class between the `mainClass` tags.
 
 ```
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>exec-maven-plugin</artifactId>
+          <version>3.3.0</version>
+          <configuration>
+            <mainClass>edu.grinnell.csc207.Sample</mainClass>
+          </configuration>
+        </plugin>
 ```
 
 ### 3\.6\. Add more information about your main class
+
+You should also add similar information for creating an executable `jar` file.
+
+```
+        <plugin>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.0.2</version>
+          <configuration>
+            <archive>
+              <manifest>
+                <addClasspath>true</addClasspath>
+                <mainClass>edu.grinnell.csc207.Sample</mainClass>
+              </manifest>
+            </archive>
+          </configuration>
+        </plugin>
+```
 
 ### 3\.7\. A sample `pom.xml`
 
@@ -211,9 +236,9 @@ Here's what `pom.xml` might look like after you've done all that.
   <version>1.0-SNAPSHOT</version>
 
   <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
   <dependencies>
@@ -228,6 +253,16 @@ Here's what `pom.xml` might look like after you've done all that.
   <build>
     <pluginManagement>
       <plugins>
+
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>exec-maven-plugin</artifactId>
+          <version>3.3.0</version>
+          <configuration>
+            <mainClass>edu.grinnell.csc207.Sample</mainClass>
+          </configuration>
+        </plugin>
+
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-checkstyle-plugin</artifactId>
@@ -235,7 +270,21 @@ Here's what `pom.xml` might look like after you've done all that.
           <configuration>
             <configLocation>csc207-checks.xml</configLocation>
           </configuration>
-          </plugin>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.0.2</version>
+          <configuration>
+            <archive>
+              <manifest>
+                <addClasspath>true</addClasspath>
+                <mainClass>edu.grinnell.csc207.Sample</mainClass>
+              </manifest>
+            </archive>
+          </configuration>
+        </plugin>
+
       </plugins>
     </pluginManagement>
   </build>
