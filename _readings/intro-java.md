@@ -135,18 +135,18 @@ Putting it all together: Your first program
 We now know all the basic components of a Java program, so we can write a typical "first program" which writes a greeting to the screen.  (This one is slightly more complex than one you may have seen previously, but it also does a better job of revealing some basic Java issues.)
 
 ```java
-public class First {
+public class HelloWorld {
   public static void main (String[] args) throws Exception {
     // Describe the two names of objects used in the program.
     java.io.PrintWriter pen;
     java.lang.String greeting;
     // Create objects and associate the names with those objects.
     pen = new java.io.PrintWriter(System.out, true);
-    greeting = "Hello";
+    greeting = "Hello, World.";
     // Tell one object to do something.
     pen.println(greeting);
   } // main(String[])
-} // class First
+} // class HelloWorld
 ```
 
 Self checks
