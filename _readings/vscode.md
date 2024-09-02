@@ -7,8 +7,6 @@ summary: |
 A brief introduction to integrated development dnvironments
 -----------------------------------------------------------
 
-_Warning! This reading is still under development (as of 2pm on 2024-01-24)._
-
 At this point in your programming career, you've probably learned that there are a variety of tasks that programmer need to consider.  Among other things, programmers must manage a variety of files, provide build instructions that combine the files, correct syntax errors in program code that the compiler identifies, find logic errors in their programs (sometimes by manual analysis, sometimes with a debugger), and remember a host of libraries.
 
 Many programmers are quite happy doing all of these things with a variety of programs and with an editor like vi or emacs.
@@ -31,10 +29,15 @@ To some of you, all of these features may sound like the return of Clippy<supers
 
 There are enough IDEs for Java that it's hard to keep track of them all. When I taught this courwse a few yeas ago, Eclipse and NetBeans were the popular IDEs for Java. These days, I'm told that VSCode is one of the more popular Java IDEs. However, some alums at Microsoft have suggested that VSCode doesn't work well with Java because Microsoft wants you to use C sharp. IntelliJ is also popular.
 
-I've decided to use VSCode for our class. It gets the job done well enough and it's almost open-source software.
+We'll be using VSCode for our class. It gets the job done well enough and it's almost open-source software.
 
 Some VSCode basics 
 -------------------
+
+We're going to let the folks at Microsoft tell you about VSCode in two videos.
+
+* [Getting started with Visual Studio Code](https://code.visualstudio.com/docs/introvideos/basics)
+* [Code editing in Visual Studio Code](https://code.visualstudio.com/docs/introvideos/codeediting)
 
 Wrapping up
 -----------
@@ -42,7 +45,6 @@ Wrapping up
 ### Important Terms
 
 * IDE
-* Java Package
 * Project
 
 ### Review Questions
@@ -53,8 +55,4 @@ Wrapping up
 
 ### Exploratory Questions
 
-* What is the "JRE System Library" in the explorer?
-* What changes if you move a file from one package to another?
-  (You may not be able to figure this out until you learn a bit 
-  more Java.)
 * How do you get VSCode to follow the Google Java coding conventions?
