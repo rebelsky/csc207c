@@ -72,11 +72,21 @@ This command will set up the name that accompanies your commits.
 
 4\. Type the following command to set up your email. Ideally, you'll use the same email address when you sign up for GitHub.
 
-   git config --global user.email USERNAME@grinnell.edu
+    git config --global user.email USERNAME@grinnell.edu
 
 5\. tach time you commit a change, Git will ask you to enter a commit message.  By default, Git uses the editor Vim.   While I like Vim, I admit that many people find it puzzling.  If you want to change the editor you use (e.g., to Emacs), type the following.
 
-   git config --global core.editor PATH_TO_EDITOR
+    git config --global core.editor PATH_TO_EDITOR
+
+If you are comfortable with Emacs in a terminal window, you might use
+
+    git config --global core.editor emacs -nw
+
+If you are comfortable with vim, you ight use
+
+    git config --global core.editor vim
+
+If you don't know any editors that work in the terminal, don't reconfigure and try to avoid commands that require an editor.
 
 Using Git: A walkthrough
 ------------------------
@@ -189,11 +199,10 @@ Wrapping up
 ### Review Questions
 
 * Why is Git useful?
-* What is forking and when would you use it?
-* What is cloning and when would you use it?
-* What is the normal sequence of working operations a programmer should use when dealing with a Git project?
 
-### Exploratory Questions
+### Double-dagger questions (‡)
+
+Pick one of the two following questions
 
 * Git allows you to undo commits (rolling your code back to a previous version).  Figure out how.
 * In addition to forks and clones, Git allows you to make variants of a repository using "branches".  Learn what a branch is, how to make one, and how to use branches.
