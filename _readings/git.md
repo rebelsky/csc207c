@@ -150,6 +150,12 @@ So far, so good.  You have a list of general changes.  But what if you want to k
 
 The `git diff` command will show you the portions of a file that are changed.  Usually added lines are prefixed with a plus sign, deleted lines a prefixed with a minus sign, and a few surrounding lines appear for context.
 
+### Git commands
+
+Typing `git help` into the terminal will bring up a list of the most common Git commands and a brief description of what they do.  You can also get help on a particular command with `git help *command*`.  Also, remember that you need to precede every Git command with `git`.  So, for example, to add something to a repository, you use `git add`, not just `add`.
+
+The Interweb can also be your friend. But it's the Interweb, so tread carefully. Consider the validity of your source. (It's unlikely that you'll end up doing something all that unsafe, but you might do something incorrect that will be hard to undo.)
+
 ### Adding files
 
 To add files into the local repository they must first exist in your working directory (the folder you made and initialized).   Once they exist, you simply use the `git add` command.  

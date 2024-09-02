@@ -125,7 +125,7 @@ In this class, I will often ask you to fork a repository I've already created, p
 
 If you want to be able to share changes to a repository that is not your own, you should often begin by creating a "fork" of the repository. (Also known as "forking" a repository.) When we fork a repository, we make a copy of the repository that we have control over. We can ask the original creator to accept changes in our forked version via a "pull request", and it’s up to their discretion whether or not to accept it. Therefore, the fork is a copy of the repository you want to work with/on.
 
-1\. Find a project you would like to contribute to on GitHub.  (Alternately, find a project we've told you to fork.) If you want to try things out, you can use <https://github.com/Grinnell-CSC207/sample.)
+1\. Find a project you would like to contribute to on GitHub.  (Alternately, find a project we've told you to fork.) If you want to try things out, you can use <https://github.com/Grinnell-CSC207/sample>.)
 
 2\. Click the button in the upper right-hand corner that says **Fork**.
 
@@ -145,10 +145,6 @@ Now the main repository will be referred to as upstream, and you can pull
 updates from it to your local repository.
 
 ### Cloning a repository
-
-*Quick notes!*
-
-Typing `git help` into the terminal will bring up a list of the most common Git commands and a brief description of what they do.  You can also get help on a particular command with `git help *command*`.  Also, remember that you need to precede every Git command with `git`.  So, for example, to add something to a repository, you use `git add`, not just `add`.
 
 1\. Navigate to the repository you will be cloning. It may be one you've forked. It may be one I've asked you to use. It may be one you've created. It may be one you've found on your own.
 
@@ -178,7 +174,7 @@ When you clone a repository, you can only contribute to it if you are the creato
 
 Frequently, you'll want to set up a project locally and then copy it to GitHub. Let's consider how to do so.
 
-First, you'll need to convert your local folder into a Git (not GitHub) repository.
+First, you'll need to convert your local folder into a Git (not GitHub) repository. You may remember how to do so from the [reading on Git](../readings/git).
 
 1\. cd to the folder (often the top-level directory of your project).
 
@@ -230,62 +226,13 @@ This command tells Git that you are committed to including the files you just ad
 
 13\. Reload the page on GitHub and you should see all of your files.
 
-### Adding files and making changes
-
-Now that you have either created your own project or joined one,
-let's begin editing.
-
-In case that wasn't clear, step away from the reading and start editing files.
-
-Are you done yet?  Good.  Now we're ready to look at getting your changes into both the local and Web repositories.
-
-If you're like most programmers, you may have forgotten what files you've created or changed and what changes you've made.  Fortunately, Git provides tools to help you figure this out.
-
-To check if there are any changes/additions to your local repository, type in `git status`.
-
-Git will then tell you a variety of things.  It will tell you how many commits are in your local repository that haven't been pushed back to GitHub.  It will tell you what files are staged for commit.  It will tell you which files that are already in the repository have been modified but not committed.  And it will tell you which new files have been created but not yet added to the repository.
-
-Once in a while, it will tell you that no changes whatsoever have been made.
-
-So far, so good.  You have a list of general changes.  But what if you want to know precisely what happened to an individual file?  Git provides a way of finding that out, too.  `git diff FILENAME`.
-
-The `git diff` command will show you the portions of a file that are changed.  Usually added lines are prefixed with a plus sign, deleted lines a prefixed with a minus sign, and a few surrounding lines appear for context.
-
-### Adding files
-
-To add files into the local repository they must first exist in your working directory (the folder you made and initialized).   Once they exist, you simply use the `git add` command.  `git add FILENAME`.  Some online tutorials tell you to use `git add .`.  **Do not use that command.**  It adds everything in the current directory, which is often more than you want to add.
-
-### Editing files
-
-Editing files under Git is like editing any file.  Open the file using some type of editor (emacs, vim, gedit, etc) make your changes, and then save.
-
-### Adding/staging changes
-
-You may recall that `git status` tells you not just about modified files and new files, but also files that are "staged" for the next commit.  You know how to stage a new file: Just use `git add`.  How do you stage a modified file?  Exactly the same way, with `git add *filename*`.
-
-Staging puts the files into the staging area, which holds all of the changes made in the working directory that will be committed to the local repository. This distinction is important because only the files that you stage will be the ones that go into the local directory when you commit changes, and only the changes in the local repository will be added to the main repository when you push. It is good practice to only "add" what is necessary, nothing more (no temporary files, no executable files that can be generated, etc). If you do, the repository will only get cluttered, and if you were planning on sending a pull request, adding more than necessary will not be in your favor.  (The student who wrote this paragraph discovered this after Sam criticized zir repeatedly for making his life more difficult.)
-
-### Deleting files
-
-Deleting files from a repository is a bit like deleting files in any Unix system.  The one difference is that you have to tell Git about it.  So, instead of `rm FILE`, you write `git rm FILE`.
-
-Deletion is automatically staged.  (It just seems a bit to contradictory to use `git add` to stage a deletion.) But you still have to use `git commit` to confirm the deletion.
-
-### Committing
-
-At this point, you are ready to incorporate some or all of your changes into the repository.  First, make your that you add the changed or new files.  Next, use Git's commit command, `git commit`.
-
-Git will open the editor you specified above and you can enter information about the change.  Custom is to use present tense in a somewhat imperative mode: "Fix bug 23a" or "Add capability to print".  Enter something that will be useful to you and to others who may see your code, then save and exit the editor.   Congratulations, you have successfully committed changes to your local repository!
-
-Note: To avoid having any text editor pop up, use the -m flag to enter a message directly in the terminal.  For example, `git commit -m "Fix bug 32b"`.  Notice the quotation marks that surround the message.
-
 ## Interacting with the GitHub server (or other Git server)
 
 ### Pushing
 
-At this point, you have changes in your local repository and you want to upload them to the primary repository.  We'll start with a repository you own.  The most basic command is `git push`.
+At this point, you know how to commit changes in your local repository.  Suppose you want to upload those changes to the primary repository.  We'll start with a repository you own.  The most basic command is `git push`.
 
-Git will then prompt you for your username and password and upload the files.
+If you have configured your account correctly (e.g., with keypairs), `git` will upload the changes to the remote repository.
 
 As you become more advanced, you may want to specify the repository and branch you are using.  In that case, you write `git push repository branch`.  By default, the repository is `origin` and the branch is your current working branch.  (If you don't use branches, it's called `master`.)
 
@@ -323,26 +270,14 @@ Wrapping up
 ### Important Terms
 
 * Push/pull
-* Commit
-* Clone
-* Fork
-* Version Control
 * GitHub
-* Repository
-* Stage
 
 ### Review Questions
 
-* Why is Git useful?
-* What is forking and when would you use it?
-* What is cloning and when would you use it?
-* What is the normal sequence of working operations a programmer should use when dealing with a Git project?
+* Why is GitHub useful?
+* How do forking and cloning differ?
+* What is the normal sequence of working operations a programmer should use when dealing with a Git project stored on GitHub?
 
-### Exploratory Questions
-
-* Git allows you to undo commits (rolling your code back to a previous version).  Figure out how.
-* In addition to forks and clones, Git allows you to make variants of a repository using "branches".  Learn what a branch is, how to make one, and how to use branches.
-  
 Selected sources
 ----------------
 
