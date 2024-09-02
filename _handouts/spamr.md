@@ -5,6 +5,14 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester._
 
+## [CSC-207 2024Fa] Maven reading posted (2024-09-01) 
+
+Dear Array-ngers
+
+The Maven reading is now posted at <https://rebelsky.cs.grinnell.edu/Courses/CSC207/2024Fa/readings/maven.html> . It has way too much output, particularly in comparison to the content. Feel free to skim.
+
+-- SamR
+
 ## [CSC-207 2024Fa] Reading responses for Tuesday (2024-08-31)
 
 Dear Stack Specifiers,
