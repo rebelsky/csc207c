@@ -318,7 +318,7 @@ Make sure that the command works as expected. Remember that tab-based autocomple
 e. We will also type a similar command to run the main method.
 
 ```
-$ javac edu.grinnell.csc207.main.HelloWorld
+$ java edu.grinnell.csc207.main.HelloWorld
 ```
 
 Make sure that that command runs as expected, too.
