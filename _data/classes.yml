@@ -41,6 +41,9 @@
   lab:
     - page: /labs/getting-started.html
     - page: /labs/maven.html
+  eboards:
+    - page: /eboards/eboard02-1.html
+    - page: /eboards/eboard02-2.html
 
 - topic: Getting started with Java development
   abbrev: java-development
@@ -57,6 +60,8 @@
     - page: /readings/git.html
     - page: /readings/github.html
     - page: /readings/vscode.html
+    - link: Getting started with Visual Studio Code (video)
+      url: https://code.visualstudio.com/docs/introvideos/basics
   lab:
     - page: /labs/vscode.html
     - page: /labs/git.html
