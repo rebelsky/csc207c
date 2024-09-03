@@ -1,5 +1,5 @@
 ---
-title: "Eboard 01 2Section 1): Getting started"
+title: "Eboard 01 (Section 1): Getting started"
 number: 2
 section: eboards
 held: 2024-09-03
@@ -42,7 +42,7 @@ Preliminaries
 * My wife has taken a turn for the worse, so I will only be on campus
   for my classes (and a few other appointments). I'd prefer asynchronous
   conversations to synchronous, but will set up synchronous appointments
-  by request.
+  by request. (Email me or DM me for those requests.)
 
 ### Upcoming work
 
@@ -51,13 +51,15 @@ Preliminaries
     * [An introduction to GitHub](../readings/github)
     * [An introduction to VSCode](../readings/vscode)
     * [Getting started with Visual Studio Code (video)](https://code.visualstudio.com/docs/introvideos/basics)
-* Submit [reading response for class 3](https://www.gradescope.com/courses/818402/assignments/4871387/) by 10:30 pm on Wednesday
+* Optional: Submit [reading questions for class 3](https://www.gradescope.com/courses/818402/assignments/4871387/) by 10:30 pm on Wednesday
 * Mini-project 1 to be distributed on Thursday.
 
 ### Tokens
 
 _If you'd like to suggest token events, please let me know in advance of 
 class._
+
+_Today is an exception._
 
 Academic/Scholarly
 
@@ -76,8 +78,41 @@ Misc
 Questions
 ---------
 
+Why are you making us create `PrintWriter` objects rather than using 
+`System.out`?
+
+> Because it makes your code more general (at least once things get more
+  complex). It takes a moment to switch your `PrintWriter` from stdout
+  to a file, while you'd have to change a lot of lines if you were
+  using `System.out`.
+
+> Start with good habits, rather than bad.
+
+Could you explain more about static keyword in java? In the reading, it says (static indicates that the method can run without having an associated object created),, but I don't quite understand.
+
+Could you make the for(String name: names) thing more clearer because I don't know exactly what name or names represent or String. For example, if String is just where the type goes then just clarify that it is the where the type of the array goes and the same for the rest.
+
+How do Maven and other build tools (like Gradle or Ant) compare in terms of features and ease of use?
+
+Is a class interchangeable with a file? In other words, can one file only contain one class?
+
+In the input and output section where you were making an object of class PrintWriter, how did you know the parameters of that class? 
+
+Is there a difference between import in Java and #include in C?
+
+Could you explain the difference between ADTs and Data Structures in a less abstract way? I'm still a bit confused about that. 
+
+Why we put static on the main class?
+
+Please explain why we need to use 'new' in Java. What's the functionality?
+
 Lab: Getting Started with Java
 ------------------------------
 
+The person closer to the screen is partner A. The person further from the 
+screen is partner B.
+
 Lab: Getting Started with Maven
 -------------------------------
+
+If you finish early, spend time configuring your partner's account.
