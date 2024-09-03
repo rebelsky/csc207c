@@ -23,7 +23,7 @@ a. Open a terminal window.
 b. Type `java --version`.
 
 If you see something like the following (using a 17 as the version),
-skip ahead to Part 1.
+skip ahead to the Background section.
 
 ```
 $ java --version
@@ -141,13 +141,15 @@ Note that when passing the `.class` file to the `java` program, you do not speci
 
 **Driver: _A_**
 
-With all the above in mind, write the "Hello World!" program in Java (taken from the reading), compile it, and run it to verify that everything works!
-
 _There is nothing to turn in for this exercise._
+
+With all the above in mind, write the "Hello World!" program in Java (taken from [the Introduction to Java reading](../readings/intro-java)), compile it, and run it to verify that everything works! You should feel free to copy and paste the code.
 
 ### Exercise 2: Exploring the negative space
 
 **Driver: _A_**
+
+_There is nothing to turn in for this exercise._
 
 When trying out a new language, you'll run into plenty of errors and mistakes.  This is helpful because while you might burn more time than you'd like fixing those problems initially, they become trivial to fix if you see them in the future ("oh, I recognize this error message from before---you just need to do this to fix it...").  However, once you've established your basic programming pipeline, it's a good idea to explore the space and intentionally try to break it in various ways.  Because you are starting from a good pipeline, you can diagnose the error immediately on top of knowing exactly what you did to cause it!
 
@@ -187,9 +189,12 @@ h. **Necessary boilerplate #2: public and static.**
 
 **Driver: _B_**
 
+_There are multiple things to turn in for this exercise._
+
 With a basic programming pipeline established, you are now in the position to begin writing real programs.  Many programmers break down what they can do in a programming language into two buckets:
 
 1. What they can do with the language itself.
+
 2. What they can do with the language's libraries.
 
 For solving more interesting problems, we'll need external libraries (either the built-in libraries or some third-party libraries), for example, to perform file I/O or create graphics.  But it is worthwhile to tackle the two buckets independently.  In particular, learning what primitive operations the language provides gives you insight into how you should model your problems and structure your solutions.
@@ -207,9 +212,9 @@ With this in mind, try writing a program that solves the FizzBuzz problem.
 
 a. In the file `FizzBuzz.java`, create a method `public static void fizzbuzz(java.io.PrintWriter pen, int n)` that takes an integer `n` and prints the integers from 0 to `n` (inclusive), one integer per line, using the specified `PrintWriter`.  However:
 
-* When `n` is a multiple of 3, print `fizz` instead of the integer,
-* When `n` is a multiple of 5, print `buzz` instead of the integer, and
-* When `n` is both a multiple of 3 and 5, print `fizzbuzz` instead of the inter.
+* When the number is a positive multiple of 3, print `fizz` instead of the integer,
+* When the number is a positive multiple of 5, print `buzz` instead of the integer, and
+* When the number is a positive multiple of both 3 and 5, print `fizzbuzz` instead of the integer.
 
 For example, if `n` is 20, you would print
 
@@ -284,6 +289,7 @@ e. Run that program, too.
 Note: The `fizzbuzz` problem is an example of one of the standard programs PM tries to write whenever he learns a new language.  It's ideal for this purpose because:
 
 1. It is a short program to write, yet is complex enough to be non-trivial.
+
 2. It tests the language's expressiveness.
    In other words, how does one express repetitive and conditional behavior?
 
@@ -297,7 +303,12 @@ Another way that Java differs from C is that Java generally expects you to put c
 
 The Java compiler expects that files in a package are stored in folders that correspond to the package. For example, if `HelloWorld.java` is in package `edu.grinnell.csc207.main` (the package we're using for classes with a main method), it should be in the folder `edu/grinnell/csc207/main`. Similarly, if `FizzBuzz.java` is in the package `edu.grinnell.csc207.util`, it should be in the folder `edu/grinnell/csc207/util`.
 
-a. Set up those folder hierarchies. I'd recommend that you put them somewhere like `/home/USERNAME/CSC207/Labs/GettingStarted`, but it's up to you how you organize your files.
+a. Set up those folder hierarchies. I'd recommend that you put them somewhere like `/home/USERNAME/CSC207/Labs/GettingStarted`, but it's up to you how you organize your files. Once you've decided where the starting folder is, you must stil make `edu/grinnell/csc207/main` and `edu/grinnell/csc207/util`. Remember that you can create these with
+
+```
+$ mkdir -p edu/grinnell/csc207/main
+$ mkdir -p edu/grinnell/csc207/util
+```
 
 b. Edit `HelloWorld.java` to add the following "package declaration" at the top of the file.
 
@@ -307,7 +318,7 @@ package edu.grinnell.csc207.main
 
 c. Put your `HelloWorld.java` in the appropriate directory.
 
-d. As you might guess, if we're in the top-level directory (above `edu`), we need a slightly different command to compile `HelloWorld.java`
+d. As you might guess, if we're in the top-level/starting directory (above `edu`), we need a slightly different command to compile `HelloWorld.java`
 
 ```
 $ javac edu/grinnell/csc207/main/HelloWorld.java
