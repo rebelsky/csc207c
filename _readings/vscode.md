@@ -2,9 +2,9 @@
 title: The VSCode IDE
 summary: |
   We consider a bit about integrated development environments (IDEs) and then
-  delve into some details of the VSCodeIDE.
+  delve into some details of the VSCode IDE.
 ---
-A brief introduction to integrated development dnvironments
+A brief introduction to integrated development environments
 -----------------------------------------------------------
 
 At this point in your programming career, you've probably learned that there are a variety of tasks that programmer need to consider.  Among other things, programmers must manage a variety of files, provide build instructions that combine the files, correct syntax errors in program code that the compiler identifies, find logic errors in their programs (sometimes by manual analysis, sometimes with a debugger), and remember a host of libraries.
