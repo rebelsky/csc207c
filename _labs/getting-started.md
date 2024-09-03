@@ -151,8 +151,6 @@ _There is nothing to turn in for this exercise._
 
 When trying out a new language, you'll run into plenty of errors and mistakes.  This is helpful because while you might burn more time than you'd like fixing those problems initially, they become trivial to fix if you see them in the future ("oh, I recognize this error message from before---you just need to do this to fix it...").  However, once you've established your basic programming pipeline, it's a good idea to explore the space and intentionally try to break it in various ways.  Because you are starting from a good pipeline, you can diagnose the error immediately on top of knowing exactly what you did to cause it!
 
----
-
 Answer this following set of questions by playing around with your working `Hello World!` program.
 
 _Note that you will not be turning in these answers. The questions are there to help you consider some of the things that go wrong when you try to build programs._
@@ -160,20 +158,27 @@ _Note that you will not be turning in these answers. The questions are there to 
 a. **File extensions.**
    Is it necessary to use .java extension for a source file?
    If not, what sort of error do you get when you use a different extension?
+
 b. **Missing files.**
    What happens if you specify a source file that does not exist or exists elsewhere on disk?
+
 c. **`.class` and the `java` program.**
    What happens if you specify the program-to-run to `java` with the `.class` extension?
+
 d. **Code formatting - whitespace.**
    Is Java whitespace-sensitive (*i.e.*, do spaces and newlines matter; if so, where)?
+
 e. **Code formatting - case sensistivity.**
    Is Java case-sensitive (*i.e.*, is `main` different from `Main`)?
+
 f. **The main method.**
    Speaking of which, what happens if the signature of `main` is not exactly as presented in the reading, *e.g.*, different function name, return type, or argument name?
+
 g. **Necessary boilerplate #1: classes.**
    The biggest visual difference between C and Java source code is that Java methods (functions in C) must be housed within a class.
    What happens if you write a free-floating function, *i.e.*, a function not declared within a class?
-h. **(Necessary boilerplate #2: public and static).**
+
+h. **Necessary boilerplate #2: public and static.**
    The other major difference is the presence of `public` and `static` on the class and function declarations.
    Which of these `public` and `static` keywords can you remove?
    For the `public` and `static` keywords you can't remove, what errors do you get?
