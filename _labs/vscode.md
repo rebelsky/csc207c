@@ -68,7 +68,7 @@ For some reason, the designers of VSCode seem to think that four spaces of inden
 
 a. Type <kbd>Shift</kbd>-<kbd>Ctrl</kbd>-<kbd>P</kbd> to open the Command Palette.
 
-b. Type "Preferencees: Open User Settings (JSON)" (without the quotation marks).  You'll note that this command is slightly different than the one we used before.  This time, we're going directly to the JSON.
+b. Type "Preferences: Open User Settings (JSON)" (without the quotation marks).  You'll note that this command is slightly different than the one we used before.  This time, we're going directly to the JSON.
 
 c. Add the following before the specification.
 
@@ -140,7 +140,7 @@ b. Check your answer experimentally.
 
 c. As you likely discovered, no output appears.  Why?  Perhaps you learned the answer when you study output in C.  If not, here's the story: Rather than sending each character to the recipient as they are output, most language implementations put the characters into a _buffer_ and then send the buffer when it fills or when they are instructed to do so (when you _flush_ the buffer).  The designers of the Java `PrintWriter` class decided not to print what is left in the buffer at the end of the program.
 
-We warn you of this primarily because you'll encounter the issue when prompting the user for input.  That is, if you use `print` (which you should)`, you'll also need to call `flush`.
+We warn you of this primarily because you'll encounter the issue when prompting the user for input.  That is, if you use `print` (which you should), you'll also need to call `flush`.
 
 d. Determine what happens if you use `println` rather than `print`.
 
