@@ -45,12 +45,14 @@ Preliminaries
 * Readings due Monday night
     * [Writing your own classes](../readings/writing-classes)
     * [Standard object methods](../readings/standard-methods)
-* Submit [reading responses for class 4](https://www.gradescope.com/courses/818402/assignments/4894859/) by 10:30 pm on Monday
+* Submit [reading responses for class 4](https://www.gradescope.com/courses/818402/assignments/4894859) by 10:30 pm on Monday
 * Submit [today's lab](https://www.gradescope.com/courses/818402/assignments/4894843) by 10:30 pm on Monday (but preferably at the end of class today)
     * A different kind of lab report.
-* Submit [mini-project 1](../mps/mp01) by next Thursday
+* Submit [Pre-reflection for MP01](https://www.gradescope.com/courses/818402/assignments/4899621) by 10:30 p.m. on Sunday, 2024-09-08
+* Submit [mini-project 1](../mps/mp01) by 10:30 p.m. next Thursday, 2024-09-12
     * Unit tests to be distributed next Tuesday.
     * Gradescope assignment to be posted next week.
+* Submit [Post-reflection for MP01](https://www.gradescope.com/courses/818402/assignments/4899624) by 10:30 p.m. on Friday, 2023-09-13.
 
 ### Tokens
 
