@@ -36,8 +36,9 @@ Preliminaries
 
 ### News / Etc.
 
-* You have a guest instructor today, so the eboard is just here ot
-  record info for you. Please be nice to the guest instructor.
+* You have a guest instructor today, so the eboard is just here to
+  present info to you (e.g., upcoming work, Q&A). 
+    * Please be nice to the guest instructor.
 
 ### Upcoming work
 
@@ -249,6 +250,12 @@ What do you mean when you say VSCode is "almost open-source software?"
 
 ### Java
 
+What’s the purpose of declaring packages in a file?
+
+> It helps organize larger collections of code. It helps with protection 
+  (and ecnapsulation). And it helps us disambiguate when multiple classes 
+  have the same name.
+
 What options do we have beyond `public` for protection levels?
 
 > There are four options: public, protected, private, and nothing 
@@ -281,8 +288,8 @@ Do we get points off on the Mini-projects if we make multiple classes?
 
 Should we submit double-dagger problems on a "Questions on the readings" day?
 
-> Nope. Questions on the readings mean the double-dagger problems are
-  optional.
+> Nope. "Questions on the readings" mean the double-dagger problems are
+  optional. "Readings for Class NN" means that they are required.
 
 ### Miscellaneous
 
