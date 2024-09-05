@@ -27,26 +27,30 @@ Exercises
 
 ### Exercise 0: Make an Account
 
-If you haven't already done so, create a GitHub account at [https://github.com/](https://github.com/)
+If you haven't already done so, create a GitHub account at [https://github.com/](https://github.com/). Since you'll be making much of your classwork public, you may want to choose an account name that does not immediately identify you. (My experience is that most employers expect that you have random class assignments on GitHub, but the College wants you to understand that you have this option.)
 
 ### Exercise 1: Prepare for ssh connections
 
-a. Create an ssh keypair following the instructions at
-   <https://mathlan.sites.grinnell.edu/ssh/fastx/2019/07/22/Public-Private-Key-Pair/>
-
-b. Import the key to GitHub following the instructions at
-   <https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account>
+Follow the instructions for preparing for ssh connection from [the GitHub reading](../readings/github).
 
 ### Exercise 2: Configure Your MathLAN account
 
 As you may recall, your life is easier if you do a bit of configuration before working with Git and GitHub.  If you haven't already done so, configure your account (name, email, editor).
 
-* First, open a new terminal window.
-* Next, type these commands
-    * `git config --global user.name YOUR_NAME`
-    * `git config --global user.email USERNAME@grinnell.edu`
-* Finally, set your editor.  You can use `emacs`, `vim` (or `vim.basic`), or even `gedit` or `geany`. At least I think you can.
-    * `git config --global core.editor EDITOR`
+First, open a new terminal window.
+
+Next, type these commands (substituting your name and username). Note that you are not required to use your Grinnell email address or your real name, although I'd recommend it.
+
+```
+git config --global user.name YOUR_NAME
+git config --global user.email USERNAME@grinnell.edu`
+```
+
+Finally, set your editor.  You can use `emacs nw`, `vim` (or `vim.basic`), or `nano`. If you've never used an in-terminal editor, I'd suggest `nano`, which is relatively straightforward
+
+```
+git config --global core.editor EDITOR
+```
 
 ### Exercise 3: Create a new repository on GitHub
 
@@ -119,6 +123,7 @@ b. Add a `main` method to the class that has the following form.
     PrintWriter pen = new PrintWriter(System.out, true);
     pen.println ("Hello, GitHub!");
     pen.flush();
+    pen.close();
   } // main(String[])
 ```
 
@@ -212,7 +217,9 @@ If you are working with a partner, your partner should configure VSCode and Git 
 For those with extra time
 -------------------------
 
-### Extra 1: Shared Repositories
+If you find that you have extra time, you should attempt one or more of the following. 
+
+### Extra 1: Shared repositories
 
 You'll need to do this exercise with a partner.
 
@@ -222,7 +229,12 @@ Next, verify that they have administrative access by having them make a change a
 
 Finally, figure out what happens if the two of you make changes.
 
-## Some Useful Git Commands
+### Extra 2: Starting the mini-project
+
+If you haven't started the mini-project yet, do so.
+
+Some Useful Git Commands
+------------------------
 
 ```text
 git config --global user.name YOUR_NAME
