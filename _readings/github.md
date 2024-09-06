@@ -83,7 +83,7 @@ You can choose to save the fingerprint and randomart or to ignore them. In most 
     $ ls
     github	github.pub
 
-12\. If you named your key anything other than `id_rsa`, you'll need to update the `config` file. Add the following lines. (You may not have a `config` file, in which case these will be the only lines in the file.)
+12\. If you named your key anything other than `id_rsa`, you'll need to update the `config` file. Add the following lines. (You may not have a `config` file, in which case you will have to create the file and then these will be the only lines in the file.)
 
     Host github.com
         HostName github.com
