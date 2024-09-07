@@ -52,7 +52,7 @@ Preliminaries
 * Submit [mini-project 1](../mps/mp01) by 10:30 p.m. next Thursday, 2024-09-12
     * Unit tests to be distributed next Tuesday.
     * Gradescope assignment to be posted next week.
-* Submit [Post-reflection for MP01](https://www.gradescope.com/courses/818402/assignments/4899624) by 10:30 p.m. on Friday, 2023-09-13.
+* Submit [Post-reflection for MP01](https://www.gradescope.com/courses/818402/assignments/4899624) by 10:30 p.m. on Friday, 2024-09-13.
 
 ### Tokens
 
