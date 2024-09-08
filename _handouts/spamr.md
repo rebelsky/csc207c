@@ -5,6 +5,28 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester._
 
+# [CSC-207 2024Fa] Some notes from SamR on MP1 (2024-09-07)
+
+Dear Decipherers (of enciphered text and CS assignments),
+
+I have a variety of things to share with you about MP1.
+
+1. I've "graded" the first few pre-reflections (preflections?) and have released the graded work on Gradescope. You can check out my comments there.
+
+2. I've posted answers to all the questions I received to the end of the mini project in the Questions and Answers section.
+
+3. If you haven't done the pre-reflections yet, for #3, I'd really like you to attempt a "brain dump". Don't just say "I'll need to write static methods and import methods from elsewhere. The goal is to actually get near-code out of your brain because it builds brain connections. What do static methods look like? What do main methods look like? What does an import statement look like?
+
+4. Don't forget that there's a mentor session on Sunday night at 7pm in 3819. You earn a token for attending mentor sessions (and reporting on them to the extra credit page).
+
+5. I should have unit tests ready for you by Tuesday. We'll be using those instead of an autograder on Gradescope.
+
+6. Also a reminder: Our class mentors are only available to you during class and at mentor sessions. If you need help at other times, you should rely on the evening tutors. If you happen to see our class mentors in our classroom or on Noyce 3rd at other times, they are likely working on their own work.
+
+Regards,
+
+-- SamR
+
 ## [CSC-207 2024Fa] Maven reading posted (2024-09-01) 
 
 Dear Array-ngers
