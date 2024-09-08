@@ -426,19 +426,17 @@ What are the expectations for the README.md file in terms of detail and format?
 
 > It should look something like this
 
-> ```
-# Mini-Project 1: Classical Encryption
-
-YOUR NAME
-
-A project for CSC-207 2024Fa.
-
-A DESCRIPTION OF THE PROJECT.
-
-CITATIONS
-
-https://github.com/YOUR_GITHUB_ACCOUNT/REPO
-```
+    # Mini-Project 1: Classical Encryption
+    
+    YOUR NAME
+    
+    A project for CSC-207 2024Fa.
+    
+    A DESCRIPTION OF THE PROJECT.
+    
+    CITATIONS
+    
+    https://github.com/YOUR_GITHUB_ACCOUNT/REPO
 
 For the stylistic part, do I just need to make sure Maven reports no stylisitic error?
 
