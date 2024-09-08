@@ -185,7 +185,7 @@ This utility class should provide the following static methods.
 
 * `private static int letter2int(char letter)`, which converts a lowercase letter to the corresponding integer.  For example, `letter2int('c')` should return `2`.
 * `private static char int2letter(int i)`, which does the reverse. That is, it should convert `0` to `'a'`, `1` to 'b', and so on and so forth.
-* `public String caesarEncrypt(String str, char letter)`, which uses the Caeser Cipher to encrypt a string consisting of only lowercase letters, using the given letter as the "key".
+* `public static String caesarEncrypt(String str, char letter)`, which uses the Caeser Cipher to encrypt a string consisting of only lowercase letters, using the given letter as the "key".
 * `public static String caesarDecrypt(String str, char letter)`, which uses the Caeser Cipher to encrypt a string consisting of only lowercase letters, using the given letter as the "key".
 * `public static String vigenereEncrypt(String str, String key)`, which uses the Vigenère Cipher to encrypt a string consisting of only lowercase letters, using the given key (which also consists of only lowercase letters).
 * `public static String vigenereDecrypt(String str, String key)`, which uses the Vigenère Cipher to decrypt a string consisting of only lowercase letters, using the given key (which also consists of only lowercase letters).
@@ -312,19 +312,19 @@ The `Cipher` program, which will also be the default program in your `.jar` file
 
 For example,
 
-* `java -jar target/cipher-1.0.jar -encode -caesar hello x` 
+* `edu.grinnell.csc207.main.Cipher -encode -caesar hello x` 
   should encode the string `hello` using a Caesar cipher and the letter `x`.
-* `java -jar target/cipher-1.0.jar -caesar -encode hello x` 
+* `edu.grinnell.csc207.main.Cipher -caesar -encode hello x` 
   should also encode the string `hello` using a Caesar cipher and the letter `x`.
-* `java -jar target/cipher-1.0.jar hello -caesar -encode x` 
+* `edu.grinnell.csc207.main.Cipher hello -caesar -encode x` 
   should also encode the string `hello` using a Caesar cipher and the letter `x`.
-* `java -jar target/cipher-1.0.jar hello -caesar x -encode` 
+* `edu.grinnell.csc207.main.Cipher hello -caesar x -encode` 
   should also encode the string `hello` using a Caesar cipher and the letter `x`.
-* `java -jar target/cipher-1.0.jar x hello -caesar -encode` 
+* `edu.grinnell.csc207.main.Cipher x hello -caesar -encode` 
   should issue an error because it appears we're using a Caesar cipher with a multi-character key.
-* `java -jar target/cipher-1.0.jar x hello -vigenere -encode` 
+* `edu.grinnell.csc207.main.Cipher x hello -vigenere -encode` 
   should encode the string `x` using a Vigenère cipher and the keyword `hello`.
-* `java -jar target/cipher-1.0.jar caesar vigenere -encode -vigenere`
+* `edu.grinnell.csc207.main.Cipher caesar vigenere -encode -vigenere`
   Should encode the string `caesar` using a Vigenère cipher and the key `vigenere`.
 
 As in the prior main class, you should print all errors using `System.err.println` (or something similar) and make sure that each starts with the string `Error:`.
@@ -392,7 +392,83 @@ Submissions that lack any of these characteristics will get an M or below.
 
 ## Questions and answers
 
-_Forthcoming_.
+### Class organization
+
+Should I do one class per file or can I put multiple classes in the same file?
+
+> We're going to do one class per file for the time being.
+
+> You can, of course, have multiple methods per class.
+
+> And for this assignment, all of the classes will be static.
+
+Do all classes only have one method, which is then in its own file?
+
+> `edu.grinnell.csc207.util.CipherUtils` will have at least six methods (as specified in the assignment). You can add more if you'd like.
+
+> `edu.grinnell.csc207.main.AllCaesar` and `edu.grinnell.csc207.main.Cipher` must have a `main` method with the normal signature. If decomposition or DRY suggest that you create other static methods in those classes (or a separate class), you may.
+
+Why do we nest so many folders? `edu.grinnell.csc207.main` and the rest.
+
+> Good coding standards suggest that we do so. If you're using a good IDE, it doesn't really make things any more complicated, and it helps us manage the complexity of large projects.
+
+### Auxiliary issues (beyond the basic code)
+
+The mini-project mentions a `.jar` file for Cipher. What/where is the `.jar` file?
+
+> The end result of a Maven project is a `.jar` file that contains all of the compiled Java code. You build it with `mvn package` or `mvn package -q`. It ends up in the `target` directory. If you've built it correctly, we should be able to run it with `java -jar JARFILE`.
+
+I can't build the `jar` file because my code won't pass some of the tests.
+
+> "Comment out" those tests by putting `//` in front of the `@TEST` for those tests.
+
+What are the expectations for the README.md file in terms of detail and format?
+
+> It should look something like this
+
+> ```
+# Mini-Project 1: Classical Encryption
+
+YOUR NAME
+
+A project for CSC-207 2024Fa.
+
+A DESCRIPTION OF THE PROJECT.
+
+CITATIONS
+
+https://github.com/YOUR_GITHUB_ACCOUNT/REPO
+```
+
+For the stylistic part, do I just need to make sure Maven reports no stylisitic error?
+
+> Yes, if you ensure that `mvn checkstyle:check -q` reports no errors, you're fine. Let me know if you don't understand some of the issues it raises.
+
+### Miscellaneous
+
+What specific requirements are there for the implementation of the encryption methods?
+
+> That they meet the parameters, the return types, and the stated algorithms.
+
+> That they pass the tests.
+
+Are there any constraints on the input strings (e.g., length, characters)?
+
+> No limit on length. All of the characters will be lowercase US letters (`'a'` through `'z'`).
+
+How should errors be handled in the program?
+
+> The main classes should check the input for correctness. If the input is not correct, they should issue an error with `System.err.println` (or something similar). The error should start with the text "Error".
+
+Are there any specific design patterns or principles we should follow in our code?
+
+> Don't Repeat Yourself. Decompose.
+
+How can I build a new string?
+
+> Option one: Create an array of characters and then call `new String(char[] value)`.
+
+> Option two: Use the [StringBuilder](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuilder.html) class.
 
 ## Credit
 
