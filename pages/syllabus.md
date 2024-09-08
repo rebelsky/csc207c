@@ -446,3 +446,23 @@ How do I book your office hours?
 I don't see any available.
 
 > Either (a) I haven't set them up yet or (b) all of my office hours for the next two weeks are booked. Talk to me, DM me, or email me and we'll work something out.
+
+How will you keep the classes in synch if you have to cancel one or leave early for an emergency?
+
+> I don't expect that to happen again. But the options will include (a) having you watch the recording of the other class, (b) asking a colleague to substitute, (c) making a new video for your class, and (d) something else I haven't thought of yet.
+
+Will we have quizzes this semester?
+
+> No.
+
+What can I consult for LAs?
+
+> You may consult your notes, any code you've written (by yourself or with others), the course Web site, and [the Java API](https://docs.oracle.com/en/java/javase/17/docs/api/java.base), and the course staff (particularly your instructor). You may not refer to other Web sites or other people.
+
+What can I do if I feel intimidated to ask questions in front of the whole class but still need help?
+
+> DM me directly. Email me. Ask questions in the daily reading assignment. Go see evening tutors.
+
+How can we have 48 LAs and only 13 SoLAs, two of which are optional?
+
+> Each SoLA is a "Set of LAs" and therefore has multiple LAs.
