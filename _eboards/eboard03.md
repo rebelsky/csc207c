@@ -61,7 +61,9 @@ class._
 
 #### Academic/Scholarly
 
-* Thursday, 2024-09-11, 11:00 a.m.--noon, JRC 101.
+* Sunday, 2024-09-08, 7:00--8:00 p.m., Noyce 3819.
+  _Mentor session_
+* Thursday, 2024-09-12, 11:00 a.m.--noon, JRC 101.
   _Scholars’ Convocation:
    Dr. Jarvis R. Givens - 
    Black Educational History for All Learners_

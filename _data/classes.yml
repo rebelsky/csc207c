@@ -65,6 +65,8 @@
   lab:
     - page: /labs/vscode.html
     - page: /labs/git.html
+  eboards:
+    - page: /eboards/eboard03.html
   
 - topic: Objects and classes
   abbrev: objects
@@ -80,6 +82,8 @@
     - page: /readings/standard-methods.html
   lab:
     - page: /labs/intro-classes.html
+  eboards:
+    - page: /eboards/eboard04.html
 
 - topic: Unit testing and debugging
   abbrev: unit-testing
