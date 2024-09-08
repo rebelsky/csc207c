@@ -264,13 +264,13 @@ Error: Incorrect number of parameters.
 $ java edu.grinnell.csc207.main.AllCaesar booboo
 Error: Incorrect number of parameters.
 
-$ java edu.grinnell.csc207.main.CaesarCipher
+$ java edu.grinnell.csc207.main.AllCaesar
 Error: Incorrect number of parameters.
 
-$ java edu.grinnell.csc207.main.CaesarCipher encode a b
+$ java edu.grinnell.csc207.main.AllCipher encode a b
 Error: Incorrect number of parameters.
 
-$ java edu.grinnell.csc207.main.CaesarCipher encode "Hello World"
+$ java edu.grinnell.csc207.main.AllCipher encode "Hello World"
 Error: String contains characters other than lowercase letters.
 ```
 
