@@ -24,48 +24,51 @@ Useful documenation:
 Preparation
 -----------
 
-a. Use VSCode to create a Java project and directory for this lab, such as `~/CSC207/Labs/intro-classes/` (aka `/home/USERNAME/CSC207/Labs/intro-classes).
+a. Fork and clone the repository at <https://github.com/Grinnell-CSC207/lab-intro-classes-maven>.
 
-b. Copies this files into your project.
+b. Read through the code to make sure that you have a sense as to what it does and what parts there are.  You don't need to know or understand all of the details, but a big-picture view will be helpful.
 
-* [`Fraction.java`](../code/labs/intro-classes/Fraction.java)
-* [`FractionExpt.java`](../code/labs/intro-classes/FractionExpt.java)
-* [`FractionSum.java`](../code/labs/intro-classes/FractionSum.java)
+c. In your Web browser, load the documentation for the three standard classes we'll be using (links above).
 
-c. Read through the code to make sure that you have a sense as to what it does and what parts there are.  You don't need to know or understand all of the details, but a big-picture view will be helpful.
+d. Compile and run the experiment (either in VSCode or on the command line). The Maven commands would be.
 
-d. In your Web browser, load the documentation for the three standard classes we'll be using (links above).
+```
+mvn clean -q
+mvn compile -q
+mvn package -q
+mvn exec:java -q
+```
 
 Exercises
 ---------
 
 ### Exercise 1: Multiplication
 
-a. Extend the `Fraction` class so that it permits multiplication of two fractions.  That is, you should add an appropriate `multiply` method to the class.
+a. Extend the `BigFraction` class so that it permits multiplication of two fractions.  That is, you should add an appropriate `multiply` method to the class.
 
-b. Write an experiment that allows you to explore the behavior of the new method.  (The experiment is simply code in `FractionExpt.java` that shows what happens when you multiply two numbers.)
+b. Write an experiment that allows you to explore the behavior of the new method.  (The experiment is simply code in `BFExperiment.java` that shows what happens when you multiply two numbers.)
 
 ### Exercise 2: Fractional portions
 
 As you may know, we can represent every non-negative rational number as a whole number plus a fractional value no smaller than 0 and strictly less than 1.
 
-a. Write a method of the `Fraction` class, `fractional`, that identifies and returns this fractional value as a `Fraction`.  Your procedure need only work for positive numbers.  
+a. Write a method of the `BigFraction` class, `fractional`, that identifies and returns this fractional value as a `BigFraction`.  Your procedure need only work for positive numbers.  
 
 Here are some examples that illustrate what it's supposed to do.
 
 ```java
-  Fraction f;
+  BigFraction f;
 
-  f = new Fraction(11,3);
+  f = new BigFraction(11,3);
   pen.println(f.fractional());  // 2/3
 
-  f = new Fraction(1,2);
+  f = new BigFraction(1,2);
   pen.println(f.fractional());  // 1/2
 
-  f = new Fraction(5,2);
+  f = new BigFraction(5,2);
   pen.println(f.fractional());  // 1/2
 
-  f = new Fraction(4,2);
+  f = new BigFraction(4,2);
   pen.println(f.fractional());  // 0/2 or 0
 ```
 
@@ -75,14 +78,14 @@ b. Check/test your procedure and correct any errors.
 
 _There is nothing to turn in for this exercise.  It simply serves to get you thinking about the code._
 
-The `FractionSum` class is intended to provide a simple command-line tool for adding fractions.  It also provides a nice way to test the not-yet-implemented "build a fraction from a string" constructor.  Read through the code and take notes to yourself as to what `main` does.
+The `BFSum` class is intended to provide a simple command-line tool for adding fractions.  It also provides a nice way to test the not-yet-implemented "build a fraction from a string" constructor.  Read through the code and take notes to yourself as to what `main` does.
 
-a. Compile `FractionSum.java`.
+a. Compile `BFSum.java`.
 
-b. What do you expect to get as output if we type the following on the command line?
+b. What do you expect to get as output if we type the following on the command line? 
 
 ```
-java FractionSum 2/7
+java -cp target/intro-classes-1.0.jar edu.grinnell.csc207.experiments.BFSum 2/7
 ```
 
 c. Check your answer experimentally.
@@ -90,7 +93,7 @@ c. Check your answer experimentally.
 d. What do you expect to get as output if we type the following on the command line?
 
 ```
-java FractionSum 1/2 1/3 1/7
+java -cp target/intro-classes-1.0.jar edu.grinnell.csc207.experiments.BFSum 1/2 1/3 1/7
 ```
 
 e. Check you answer experimentally.
@@ -98,24 +101,24 @@ e. Check you answer experimentally.
 f. What do you expect to get as output if we type the following on the command line?
 
 ```
-java FractionSum
+java -cp target/intro-classes-1.0.jar edu.grinnell.csc207.experiments.BFSum
 ```
 
 g. Check your answer experimentally.
 
 ### Exercise 4: From string to fraction
 
-Write and check/test a third constructor for the `Fraction` class.  This constructor should accept a string as a parameter, parse that string, and generate the appropriate fraction.  For example,
+Write and check/test a third constructor for the `BigFraction` class.  This constructor should accept a string as a parameter, parse that string, and generate the appropriate fraction.  For example,
 
 ```java
-  Fraction f;
-  f = new Fraction("1/4");
+  BigFraction f;
+  f = new BigFraction("1/4");
   pen.println(f.numerator());   // 1
   pen.println(f.denominator()); // 4
-  f = new Fraction("11/5");
+  f = new BigFraction("11/5");
   pen.println(f.numerator());   // 11
   pen.println(f.denominator()); // 5
-  f = new Fraction("120/3");
+  f = new BigFraction("120/3");
   pen.println(f.doubleValue()); // Approximately 40
 ```
 
@@ -159,14 +162,20 @@ c. Test (or experiment with) both updates to ensure that they work appropriately
 Submitting your work
 --------------------
 
-Please upload your updated and new `.java` files to GradeScope.
+a. Update the `README.md` file to indicate how far you got. You may also add some comments and questions.
+
+b. Commit your changes and push to your repo.
+
+c. Upload your repo to Gradescope.
+
+d. Make sure to provide your partner with the URL of your repo.
 
 For those with extra time
 -------------------------
 
 ### Extra 1: Simplifying fractions
 
-Update the fraction class so that we simplify each fraction when we create it.  In case you've forgotten, the simplified version of a fraction has a numerator and denominator with a greatest common divisor of 1; you can create the simplified version by finding the gcd and dividing both numerator and denominator by that gcd.
+Update the `BigFraction` class so that we simplify each fraction when we create it.  In case you've forgotten, the simplified version of a fraction has a numerator and denominator with a greatest common divisor of 1; you can create the simplified version by finding the gcd and dividing both numerator and denominator by that gcd.
 
 ### Extra 2: Further enhancing counters
 
