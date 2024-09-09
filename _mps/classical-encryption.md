@@ -392,6 +392,38 @@ Submissions that lack any of these characteristics will get an M or below.
 
 ## Questions and answers
 
+### Overall design
+
+**What should I spend the majority of my time on for the project?**
+
+> Hopefully, designing and implementing the various parts of the program. Try to think in terms of small, manageable pieces. The individual methods in the `CipherUtils` class are some of those pieces, but you might find that you need to decompose them a bit more.
+
+> Unfortunately, since it's your first Java project, you'll also find. yourself spending some time managing VSCode, Maven, and such.
+
+**What are examples of ways I should break up individual tasks of this project?**
+
+> In the `Cipher` program, you're going to need to find the action, cipher, word to encrypt, and key. You might want to write separate methods to do each of those.
+
+> In writing `vigenereEncrypt`, you'll likely need a way to encrypt each letter in the string.
+
+**What are opportunities for sharing code between methods?**
+
+> I hope you'll discover this as you write your program.
+
+> From my perspective, encoding and decoding are very similar processes, so it may be that you find ways to share code there.
+
+> `int2letter` and `letter2int` are two opportunities that are already incorporated in the project.
+
+**Are there any specific design patterns or principles we should follow in our code?**
+
+> Principles: Don't Repeat Yourself. Decompose.
+
+> Since we're not yet working with objects, there aren't any design patterns to use.
+
+**How little repetition is allowed?**
+
+> If you are shooting for an E, I would say that you should try to build a helper procedure each time you write four or more identical lines of code. But I've been known to write a helper for a single line of code if I am doing the same thing with slightly different values and it's clearer to have a helper.
+
 ### Characters and strings
 
 **I would like more details on how converting formats with (int) and (char) works behind the scenes.**
@@ -412,6 +444,10 @@ Submissions that lack any of these characteristics will get an M or below.
 
 ### Class organization
 
+**What is a class vs a file?**
+
+> A class is a coherent collection of related fields (variables) and methods (functions). We store classes in files, often with a one-to-one correspondence (although we will eventually put multiple classes in the file). Java requires that the name of a file match the name of the primary class.
+
 **Should I do one class per file or can I put multiple classes in the same file?**
 
 > We're going to do one class per file for the time being.
@@ -429,6 +465,22 @@ Submissions that lack any of these characteristics will get an M or below.
 **Why do we nest so many folders? `edu.grinnell.csc207.main` and the rest.**
 
 > Good coding standards suggest that we do so. If you're using a good IDE, it doesn't really make things any more complicated, and it helps us manage the complexity of large projects.
+
+**Can we make/add additional functions/methods to our files?**
+
+> Certainly. You might even find it useful to do so. The DRY principle suggests that you will often want to build additional methods when you find yourself repeating similar code.
+
+### Error handling
+
+**Should we allow the user a chance to fix their mistake if they enter the wrong information, or should we just stop the program?**
+
+> You should stop the program. Note that the program is not intended to be interactive, so there's not really a way for them to enter more information.
+
+**How should errors be handled in the program?**
+
+> The main classes should check the input for correctness. If the input is not correct, they should issue an error with `System.err.println` (or something similar). The error should start with the text "Error".
+
+> You should only call the utility methods with correct input.
 
 ### Auxiliary issues (beyond the basic code)
 
@@ -466,6 +518,14 @@ Submissions that lack any of these characteristics will get an M or below.
 
 > Unfortunately, it's software development, so an unexpected issue can take hours to fix. (You shouldn't let hours accumulate; get help.)
 
+**How large is the testing framework? How should we set up the testing framework?**
+
+> As long as you configure Maven properly, most of the testing framework will get set up automatically when you run `mvn test` or `mvn test -q`. You will need to install the testing code I distribute to you on Tuesday.
+
+**Is it okay if I do the work on my own computer?**
+
+> Certainly, as long as you're comfortable getting things set up on your own computer.
+
 ### Miscellaneous
 
 **What specific requirements are there for the implementation of the encryption methods?**
@@ -478,13 +538,11 @@ Submissions that lack any of these characteristics will get an M or below.
 
 > No limit on length. All of the characters will be lowercase US letters (`'a'` through `'z'`).
 
-**How should errors be handled in the program?**
+**It would be nice to have some guidelines to see when we should use objects in our projects.**
 
-> The main classes should check the input for correctness. If the input is not correct, they should issue an error with `System.err.println` (or something similar). The error should start with the text "Error".
+> We're not using objects in this project. Once you do Tuesday's lab, we'll start looking at the role of objects in our programs.
 
-**Are there any specific design patterns or principles we should follow in our code?**
-
-> Don't Repeat Yourself. Decompose.
+> More generally, you'll be using objects wherever you would use a struct (or any user-defined type) in a C or Scheme program.
 
 ## Credit
 
