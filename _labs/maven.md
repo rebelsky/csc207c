@@ -55,14 +55,16 @@ _We have directories set up, but no files. Fortunately, we've started a project,
 
 a. `App.java` is a placeholder. Get rid of it.
 
-b. Set up directories for your three Java packages. This will entail making subdirectories of `src/main/java/edu/grinnell/csc207/`.
+b. Get rid of `src/test/java/edu/grinnell/csc207/AppTest.java`.
 
-c. Copy the `.java` files from your previous lab over to this project.
+c. Set up directories for your three Java packages. This will entail making subdirectories of `src/main/java/edu/grinnell/csc207/`.
 
-d. Ensure that you can compile all the files with `mvn compile` or 
+d. Copy the `.java` files from your previous lab over to this project.
+
+e. Ensure that you can compile all the files with `mvn compile` or 
 `mvn compile -q`.
 
-e. Make sure that you can run at least one of the main classes. (Warning: The top level of the Maven project is not the top level of the Java package hierarchy; you may need to change your location.)
+f. Make sure that you can run at least one of the main classes. (Warning: The top level of the Maven project is not the top level of the Java package hierarchy; you may need to change your location.)
 
 ### Exercise 3: Create a jar file
 
