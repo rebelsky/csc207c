@@ -8,6 +8,12 @@ import java.util.Scanner;
  * A simple example of interaction.
  */
 public class Interact {
+  /**
+   * Demonstrate how a scanner works.
+   *
+   * @param args
+   *   Command-line arguments (ignored).
+   */
   public static void main(String[] args) {
     PrintWriter pen = new PrintWriter(System.out, true);
     Scanner eyes = new Scanner(System.in);
