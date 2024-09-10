@@ -41,6 +41,9 @@ Preliminaries
   round during our morning classes). There will be awesome folks
   here to substitute. I'll also keep working behind the scenes on
   labs and assignments and answering questions.
+    * I am happy to try to schedule quick Teams meetings, as long as you
+      understand that I may have to back out. Send me times that you would
+      be available to meet.
 * SoLA 1 should be posted today (as a few separate LAs).
 * I've done my best to put the questions from your surveys on the
   course syllabus page.
@@ -51,12 +54,17 @@ Preliminaries
     * [Unit testing](../readings/unit-testing)
     * [Debugging](../readings/debugging)
 * Submit [reading responses for class 5](https://www.gradescope.com/courses/818402/assignments/4894859) by 10:30 pm on Monday
-* Submit [today's lab](https://www.gradescope.com/courses/818402/assignments/4894843) by 10:30 pm on Wednesday (but preferably at the end of class today)
-* Submit [mini-project 1](../mps/mp01) by 10:30 p.m. on Thursday, 2024-09-12
-    * Unit tests to be distributed next Tuesday.
-    * Gradescope assignment to be posted next week.
+* Submit [today's lab](https://www.gradescope.com/courses/818402/assignments/4927648) by 10:30 pm on Wednesday (but preferably at the end of class today)
+    * Labs will remain "Do as much as you can during class."
+    * You may find it useful to complete labs outside of class because
+      they will contribute to LAs.
+* Complete [mini-project 1](../mps/mp01) by 10:30 p.m. on Thursday, 2024-09-12
+    * [Submit MP01 on Gradescope](https://www.gradescope.com/courses/818402/assignments/4927662)
+    * Unit tests to be distributed today.
 * Submit [Post-reflection for MP01](https://www.gradescope.com/courses/818402/assignments/4899624) by 10:30 p.m. on Friday, 2024-09-13.
-* Submit SoLA 1 by 10:30 p.m. on Monday, 2024-09-16.
+* Submit [SoLA 1](../los/sola01) by 10:30 p.m. on Monday, 2024-09-16.
+    * [Development #2: Build tools](https://www.gradescope.com/courses/818402/assignments/4927811)
+    * [Development #4: IDE](https://www.gradescope.com/courses/818402/assignments/4927696)
 
 ### Tokens
 
@@ -65,6 +73,8 @@ class._
 
 #### Academic/Scholarly
 
+* Tuesday, 2024-09-10, noon--1:00 p.m., JRC 224A.
+  _CS Table_
 * Thursday, 2024-09-12, 11:00 a.m.--noon, JRC 101.
   _Scholars’ Convocation:
    Dr. Jarvis R. Givens - 
@@ -159,6 +169,20 @@ Questions
 ### Questions on MP1
 
 I've put these at the end of the mini-project.
+
+### Questions on Maven
+
+**Can you explain a bit more about the reasons for the steps in Maven?**
+
+> Big picture: We want to be able to type commands to accomplish the core tasks related to a project, and do so the same way for each project. These tasks are (a) _compiling the code_ (which we often do to find some syntax errors), _testing the code_ (which we often do to find some implementation issues), _packaging the code_ (which makes it ready for others), _style checking_ (because we want good style), and _running the code_.
+
+> Almost everything else in the reading is how to set up the Maven configuration file, called `pom.xml`, to tell it what we want done for each of those steps.
+
+### Questions on the readings
+
+**Why would you choose to make your own `hashCode` method rather than relying on the built-in one?**
+
+> Because the built-in one tries to give a different hash code to each object, even if two objects are conceptually equal. For example, if I define `v1` as `new Vec2D(0,1)` and `v2` as `new Vec2D(0,1)`, those two objects will likely have different hash codes.
 
 Labs
 ----
