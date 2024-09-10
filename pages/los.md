@@ -93,6 +93,8 @@ I expect that by the end of the semester, you will be a competent beginning soft
 * responsibly incorporate code that you did not write into your own program (_Development LO #11: Ethical Reuse_); and
 * understand and explain the responsibilities of a software designer (_Development LO #12: Professional Ethics_).
 
+---
+
 ## Typical LA structure
 
 The vast majority of LAs look something like the following
