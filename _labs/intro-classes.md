@@ -24,13 +24,19 @@ Useful documentation:
 Preparation
 -----------
 
-a. Fork and clone the repository at <https://github.com/Grinnell-CSC207/lab-intro-classes-maven>.
+a. Fork and clone the repository at <https://github.com/Grinnell-CSC207/lab-intro-classes-maven>. When cloning, make sure to use the SSH link and not the HTTP link.
 
 b. Read through the code to make sure that you have a sense as to what it does and what parts there are.  You don't need to know or understand all of the details, but a big-picture view will be helpful.
 
-c. In your Web browser, load the documentation for the three standard classes we'll be using (links above).
+c. Make sure to put your name at the top of each `.java` file where it says "YOUR NAME HERE". 
 
-d. Compile and run the experiment (either in VSCode or on the command line). The Maven commands would be.
+d. Add your name to the `README.md` file.
+
+e. Add the URL of your repository to the `README.md` file.
+
+f. In your Web browser, load the documentation for the three standard classes we'll be using (links above).
+
+g. Compile and run the experiment (either in VSCode or on the command line). The Maven commands would be.
 
 ```
 mvn clean -q
