@@ -53,7 +53,7 @@ Preliminaries
 * Readings due Wednesday night
     * [Unit testing](../readings/unit-testing)
     * [Debugging](../readings/debugging)
-* Submit [reading responses for class 5](https://www.gradescope.com/courses/818402/assignments/4894859) by 10:30 pm on Monday
+* Submit [reading responses for class 5](https://www.gradescope.com/courses/818402/assignments/4894859) by 10:30 pm on Wednesday
 * Submit [today's lab](https://www.gradescope.com/courses/818402/assignments/4927648) by 10:30 pm on Wednesday (but preferably at the end of class today)
     * Labs will remain "Do as much as you can during class."
     * You may find it useful to complete labs outside of class because
@@ -99,7 +99,7 @@ class._
   _Deloitte Information Session_ (includes at least one CS major)
 * Wednesday, 2024-09-11, 7:00--8:00 p.m., HSSC S1325.
   _Saving the Planet One Page at a Time: The Carbon Almanac with Robert Gehorsam ’76_
-* Thursday, 2024-09-11, 4:00--7:00 p.m., Central Campus + Kington Plaza.
+* Thursday, 2024-09-12, 4:00--7:00 p.m., Central Campus + Kington Plaza.
   _Student Involvement Fair_
 
 ### Other good things (no tokens)
