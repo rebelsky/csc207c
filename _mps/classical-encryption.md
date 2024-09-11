@@ -192,14 +192,16 @@ This utility class should provide the following static methods.
 
 You may also choose to add other methods as appropriate.
 
-## `edu.grinnell.csc207.main.AllCaesar`
+### `edu.grinnell.csc207.main.AllCaesar`
 
 This main class should take two command-line arguments: (a) either 'encode' or 'decode', and (b) a string consisting of only lowercase letters. You will then print out all 26 encoded or decoded versions of the string, along with.
 
 Here are some example executions of the program you should create.
 
 ```
-$ java edu.grinnell.csc207.main.AllCaesar encode "helloworld"
+$ alias AllCaesar='java -cp target/classes edu.grinnell.csc207.main.AllCaesar'
+
+$ AllCaesar encode "helloworld"
 n = a: helloworld
 n = b: ifmmpxpsme
 n = c: jgnnqyqtnf
@@ -227,7 +229,7 @@ n = x: ebiiltloia
 n = y: fcjjmumpjb
 n = z: gdkknvnqkc
 
-$ java edu.grinnell.csc207.main.AllCaeser decode dahhksknhz
+$ AllCaeser decode dahhksknhz
 n = a: dahhksknhz
 n = b: czggjrjmgy
 n = c: byffiqilfx
@@ -255,28 +257,56 @@ n = x: gdkknvnqkc
 n = y: fcjjmumpjb
 n = z: ebiiltloia
 
-$ java edu.grinnell.csc207.main.AllCaesar booboo helloworld
+$ AllCaesar booboo helloworld
 Error: Invalid option: "booboo". Valid options are "encode" or "decode".
 
-$ java edu.grinnell.csc207.main.AllCaesar encode
+$ AllCaesar encode
 Error: Incorrect number of parameters.
 
-$ java edu.grinnell.csc207.main.AllCaesar booboo
+$ AllCaesar booboo
 Error: Incorrect number of parameters.
 
-$ java edu.grinnell.csc207.main.AllCaesar
+$ AllCaesar
 Error: Incorrect number of parameters.
 
-$ java edu.grinnell.csc207.main.AllCipher encode a b
+$ AllCaesar encode a b
 Error: Incorrect number of parameters.
 
-$ java edu.grinnell.csc207.main.AllCipher encode "Hello World"
+$ AllCaesar encode "Hello World"
 Error: String contains characters other than lowercase letters.
+
+$ AllCaesar encode ""
+n = a: 
+n = b: 
+n = c: 
+n = d: 
+n = e: 
+n = f: 
+n = g: 
+n = h: 
+n = i: 
+n = j: 
+n = k: 
+n = l: 
+n = m: 
+n = n: 
+n = o: 
+n = p: 
+n = q: 
+n = r: 
+n = s: 
+n = t:
+n = u: 
+n = v: 
+n = w: 
+n = x: 
+n = y: 
+n = z: 
 ```
 
 Note how the program operates:
 
-1. The `CaeserCipher` program typically takes two parameters on the command line.  An instruction, contained in `args[0]`, should be either `encode` or `decode`.  The parameter, contained in `args[1]`, should be the string to encode or decode.
+1. The `AllCaesar` program typically takes two parameters on the command line.  An instruction, contained in `args[0]`, should be either `encode` or `decode`.  The parameter, contained in `args[1]`, should be the string to encode or decode.
 
 2. If the user provides an invalid instruction, the program states that the input was invalid (using `System.err`).
 
@@ -301,7 +331,7 @@ For this program, you will need to use a handful of [String methods and construc
 * `s.length()` returns the length of the string `s`.
 * `new String(arr)` creates a new string from the given character array `arr`.
 
-## `edu.grinnell.csc207.main.Cipher`
+### `edu.grinnell.csc207.main.Cipher`
 
 The `Cipher` program, which will also be the default program in your `.jar` file, should take four command-line arguments in almost any order.
 
@@ -312,19 +342,20 @@ The `Cipher` program, which will also be the default program in your `.jar` file
 
 For example,
 
-* `edu.grinnell.csc207.main.Cipher -encode -caesar hello x` 
+* `alias Cipher='java -cp target/classes edu.grinnell.csc207.main.AllCaesar'`
+* `Cipher -encode -caesar hello x` 
   should encode the string `hello` using a Caesar cipher and the letter `x`.
-* `edu.grinnell.csc207.main.Cipher -caesar -encode hello x` 
+* `Cipher -caesar -encode hello x` 
   should also encode the string `hello` using a Caesar cipher and the letter `x`.
-* `edu.grinnell.csc207.main.Cipher hello -caesar -encode x` 
+* `Cipher hello -caesar -encode x` 
   should also encode the string `hello` using a Caesar cipher and the letter `x`.
-* `edu.grinnell.csc207.main.Cipher hello -caesar x -encode` 
+* `Cipher hello -caesar x -encode` 
   should also encode the string `hello` using a Caesar cipher and the letter `x`.
-* `edu.grinnell.csc207.main.Cipher x hello -caesar -encode` 
+* `Cipher x hello -caesar -encode` 
   should issue an error because it appears we're using a Caesar cipher with a multi-character key.
-* `edu.grinnell.csc207.main.Cipher x hello -vigenere -encode` 
+* `Cipher x hello -vigenere -encode` 
   should encode the string `x` using a Vigenère cipher and the keyword `hello`.
-* `edu.grinnell.csc207.main.Cipher caesar vigenere -encode -vigenere`
+* `Cipher caesar vigenere -encode -vigenere`
   Should encode the string `caesar` using a Vigenère cipher and the key `vigenere`.
 
 As in the prior main class, you should print all errors using `System.err.println` (or something similar) and make sure that each starts with the string `Error:`.
@@ -482,6 +513,10 @@ Submissions that lack any of these characteristics will get an M or below.
 
 > You should only call the utility methods with correct input.
 
+**Do I have to handle the case in which someone duplicates an action or cipher flag, such as `Cipher -encode -encode -caesar foo b`**
+
+> Nope. Although you might feel more of a sense of self-accomplishment if you do. And it may be the case that one of the other parameter checks ends up covering that case.
+
 ### Auxiliary issues (beyond the basic code)
 
 **The mini-project mentions a `.jar` file for Cipher. What/where is the `.jar` file?**
@@ -543,6 +578,21 @@ Submissions that lack any of these characteristics will get an M or below.
 > We're not using objects in this project. Once you do Tuesday's lab, we'll start looking at the role of objects in our programs.
 
 > More generally, you'll be using objects wherever you would use a struct (or any user-defined type) in a C or Scheme program.
+
+**How do I declare a constant so that I can avoid the stupid error about magic numbers?**
+
+> You use the `final` modifier. For example,
+
+> ```
+  /**
+   * The number of lowercase letters.
+   */
+  private static final int NUM_LETTERS = 26;
+```
+
+## Errata
+
+The original version of `CipherUtils.java` gave the wrong return type for `int2letter`. That return type should be `char`.
 
 ## Credit
 
