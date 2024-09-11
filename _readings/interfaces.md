@@ -5,6 +5,8 @@ summary: |
 prereqs: |
   Basic understanding of classes.
 ---
+_This reading is being updated for Fall 2024. PLease check back later._
+
 Introduction: Separating the *what* from the *how*
 --------------------------------------------------
 

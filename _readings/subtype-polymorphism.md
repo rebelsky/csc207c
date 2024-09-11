@@ -8,6 +8,8 @@ prereqs: |
 todo:
   - Check that the square root code works.
 ---
+_This reading is being updated for Fall 2024. Expect changes._
+
 Introduction
 ------------
 
