@@ -104,6 +104,8 @@
   lab:
     - page: /labs/unit-testing.html
     - page: /labs/debugging.html
+  eboards:
+    - page: /eboards/eboard05.html
 
 - topic: Interfaces and subtype polymorphism
   abbrev: interfaces
