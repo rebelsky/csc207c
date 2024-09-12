@@ -1,6 +1,6 @@
 --- 
 title: Debugging with VSCode
-repo: <https://github.com/Grinnell-CSC207/lab-unit-testing-vscode>
+repo: <https://github.com/Grinnell-CSC207/lab-unit-testing-maven>
 summary: |
   We begin to explore the ways in which we can use a debugger to better understand flaws in our code.
 ---
@@ -8,7 +8,7 @@ summary: |
 Preparation
 -----------
 
-In [the laboratory on unit testing](../labs/unit-testing), you forked and cloned the repository <https://github.com/Grinnell-CSC207/lab-unit-testing-vscode>.  You'll work with that same repository.  (So return to the directory if you have it, and make a new copy if you don't.)
+In [the laboratory on unit testing](../labs/unit-testing), you forked and cloned the repository <https://github.com/Grinnell-CSC207/lab-unit-testing-maven>.  You'll work with that same repository.  (So return to the directory if you have it, and make a new copy if you don't.)
 
 Exercises
 ---------
@@ -20,6 +20,9 @@ As you may have noted in the [the laboratory on unit testing](../labs/unit-testi
 If you haven't yet written your test cases, here's one.
 
 ```java
+  /**
+   * Check that removeAs works as expected.
+   */
   @Test
   public void testRemoveAs() {
     assertEquals("", 
@@ -80,7 +83,7 @@ The `removeBs` procedure has much the same goals as `removeAs` although it uses 
 
 Use JUnit and the VSCode debugger to identify and correct the errors.
 
-*Note:* Your goal is to correct the errors in this approach.  Inserting slightly modified code from `removeAs` is not an acceptable strategy.
+*Note:* Your goal is to correct the errors in _this approach_.  Inserting slightly modified code from `removeAs` is not an acceptable strategy.
 
 ### Exercise 3: Exponentiation
 
@@ -159,4 +162,4 @@ Write appropriate unit tests for this alternate version.  Then determine if your
 Acknowledgements
 ----------------
 
-The original version of this lab was written by Samuel A. Rebelsky and some student researchers many years ago.  It was updated for VSCode in Fall 2023.  Sam also added the `SampleMethodsTests` and `SampleMethodsExperiments` classes at that time.
+The original version of this lab was written by Samuel A. Rebelsky and some student researchers many years ago.  It was updated for VSCode in Fall 2023.  Sam also added the `SampleMethodsTests` (now `TestSampleMethods`) and `SampleMethodsExperiments` classes at that time.
