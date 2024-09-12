@@ -9,9 +9,11 @@ Preparation
 
 a. Fork and clone the specified repository:
 
-<https://github.com/Grinnell-CSC207/lab-polymorphism>
+<https://github.com/Grinnell-CSC207/lab-polymorphism-maven>
 
 b. Import that repository into VSCode.
+
+c. Make sure to update the `README.md` and `.java` files with your names.
 
 Exercises
 ---------
