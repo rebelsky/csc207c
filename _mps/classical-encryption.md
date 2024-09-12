@@ -624,6 +624,30 @@ Submissions that lack any of these characteristics will get an M or below.
 
 > Certainly, as long as you're comfortable getting things set up on your own computer.
 
+### Testing
+
+**Why won't my tests run?**
+
+> Make sure that `TestMP01.java` is in `src/test/java/edu/grinnell/csc207/`.
+
+> You may need to add the following to the `pom.xml` file in the `plugins` section.
+
+> ```
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>3.2.2</version>
+        </plugin>
+```
+
+> ```
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-failsafe-plugin</artifactId>
+          <version>3.2.2</version>
+        </plugin>
+```
+
 ### Miscellaneous
 
 **What specific requirements are there for the implementation of the encryption methods?**
