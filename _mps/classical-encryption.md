@@ -513,6 +513,14 @@ Submissions that lack any of these characteristics will get an M or below.
 
 > You should only call the utility methods with correct input.
 
+**How should I exit the program when I encounter an error?**
+
+> After printing the error message, you should just `return` from the method.
+
+**Should I print the error messages with `pen.println("Error: whatever");`?**
+
+> No. Since you are printing error messages, you should use `System.err.println`.
+
 **Do I have to handle the case in which someone duplicates an action or cipher flag, such as `Cipher -encode -encode -caesar foo b`**
 
 > Nope. Although you might feel more of a sense of self-accomplishment if you do. And it may be the case that one of the other parameter checks ends up covering that case.
