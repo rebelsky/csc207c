@@ -1,6 +1,6 @@
 ---
 title: Unit testing
-repo: <https://github.com/Grinnell-CSC207/lab-unit-testing-2019>
+repo: <https://github.com/Grinnell-CSC207/lab-unit-testing-maven>
 summary: |
   In this laboratory, you will explore the JUnit unit testing framework, VSCodes's facilities for using JUnit, and the basics of Unit testing.
 todo: 
@@ -12,8 +12,11 @@ Preparation
 
 a. Make sure you’ve read [the related reading](../readings/unit-testing).  You may find it helpful to have it open in a separate tab.
 
-b. Fork and clone the repository at <https://github.com/Grinnell-CSC207/lab-unit-testing-vscode> (alternately <git@github.com:Grinnell-CSC207/lab-unit-testing-vscode.git>).  Then import the project into VScode.
+b. Fork and clone the repository at <https://github.com/Grinnell-CSC207/lab-unit-testing-maven> (alternately <git@github.com:Grinnell-CSC207/lab-unit-testing-vscode.git>).  Then import the project into VScode.
 
+c. Confirm that you can run the tests with `mvn clean test`.
+
+<!--
 c. Make a copy of the JUnit jar file, [`junit-platform-console-standalone-1.10.0.jar`](https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.10.0/junit-platform-console-standalone-1.10.0.jar).
 
 d. Add the JUnit file to your classpath.
@@ -23,6 +26,7 @@ d. Add the JUnit file to your classpath.
 * Make sure that you are configuring the right project.
 * At the bottom of the window, you should see a section entitled "Referenced Libraries".  Click "Add".
 * Navigate to the `junit-platform-console-standalone-1.10.0.jar` file and click "Select Jar File".
+-->
 
 Exercises
 ---------
@@ -33,17 +37,17 @@ a. Skim through the file `TestSampleMethods.java` to see what tests we've provid
 
 b. You should see a icon on the left side of your VSCode window that looks a bit like a beaker.  Click on it.
 
-c. You should see a "Play" button (a right facing triangle) within `lab-unit-testing-vscode`.  Click it.  Observe what happens.
+c. You should see a "Play" button (a right facing triangle) within `lab-unit-testing-maven`.  Click it.  Observe what happens.
 
 d. You may have noted that the successful test succeeded and nothing happened with the failing test.  That's because there was no `@Test` annotation before the failing test.  Add it.
 
 e. Try clicking the "Play" button again.  Observe what happens.
 
-f. Remove the `@Test` annotation.
+f. Remove the `@Test` annotation from the failing test.
 
 ### Exercise 2: More experiments
 
-a. Create a new method that looks like the following:
+a. In `TestSampleMethoeds`, create a new method that looks like the following:
 
 ```java
   public void test2() {
@@ -51,19 +55,25 @@ a. Create a new method that looks like the following:
   } // test2()
 ```
 
-b. What do you expect to happen when you run your test?
+b. What do you expect to happen when you run your tests?
 
 c. Check your answer experimentally.
 
 d. Insert the annotation `@Test` before the declaration of `test2`.  Then determine what happens when you run your test code.
 
-e. Change the body of `test2` to the following.  Then observe what happens when you run your test code.
+e. Change the body of `test2` to the following.  Then observe what happens when you run your test code in VSCode.
 
 ```java
     assertEquals(10, 3*5, "stupid test");
 ```
 
 This test is supposed to fail.  It's there to demonstrate that (a) you can add a message to `assertEquals`, (b) you can include computations in the body of `assertEquals`, and (c) `assertEquals` treats the first non-message value as the expected value and the second value as the received value.
+
+f. Run your tests on the command line in Maven.
+
+```
+$ mvn clean test
+```
 
 ### Exercise 3: Temperature conversion
 
@@ -123,6 +133,11 @@ a. Create a new test class and then add a test that follows that strategy.
 b. Determine if `expt` works as advertised.  It probably won't.  But debugging the code is a task for another day.  Instead, we're going to write more tests.
 
 c. Right now, your test only uses a base of 2.  Rewrite your test so that it tries multiple bases, both positive and negative.  Strive for concise testing code.
+
+Moving on
+---------
+
+You've likely identified some bugs in the code. Move on to the [debugging lab](../labs/debugging) to try to resolve them.
 
 For those with extra time
 -------------------------
