@@ -342,23 +342,78 @@ The `Cipher` program, which will also be the default program in your `.jar` file
 
 For example,
 
-* `alias Cipher='java -cp target/classes edu.grinnell.csc207.main.AllCaesar'`
-* `Cipher -encode -caesar hello x` 
-  should encode the string `hello` using a Caesar cipher and the letter `x`.
-* `Cipher -caesar -encode hello x` 
-  should also encode the string `hello` using a Caesar cipher and the letter `x`.
-* `Cipher hello -caesar -encode x` 
-  should also encode the string `hello` using a Caesar cipher and the letter `x`.
-* `Cipher hello -caesar x -encode` 
-  should also encode the string `hello` using a Caesar cipher and the letter `x`.
-* `Cipher x hello -caesar -encode` 
-  should issue an error because it appears we're using a Caesar cipher with a multi-character key.
-* `Cipher x hello -vigenere -encode` 
-  should encode the string `x` using a Vigenère cipher and the keyword `hello`.
-* `Cipher caesar vigenere -encode -vigenere`
-  Should encode the string `caesar` using a Vigenère cipher and the key `vigenere`.
+```
+$ alias Cipher='java -cp target/classes edu.grinnell.csc207.main.Cipher'
 
-As in the prior main class, you should print all errors using `System.err.println` (or something similar) and make sure that each starts with the string `Error:`.
+$ Cipher -encode -caesar hello x
+ebiil   # encode the string hello using a Caesar cipher and the letter x
+
+$ Cipher -caesar -encode hello x
+ebiil   # also encode the string hello using a Caesar cipher and the letter x
+
+$ Cipher hello -caesar x -encode
+ebiil   # also encode the string hello using a Caesar cipher and the letter x
+
+$ Cipher x hello -caesar -encode        # Should issue an error (multi-char key)
+Error: Caesar ciphers require a one-character key
+
+$ Cipher x hello -vigenere -encode      # In contrast, this is valid
+e
+
+$ Cipher e hello -vigenere -decode      # The reverse
+x
+
+$ Cipher -vigenere -decode xikwnv vigenere
+caesar
+
+$ Cipher -caesar -encode helloworld p
+wtaadldgas
+
+$ Cipher -caesar -decode wtaadldgas x
+zwddgogjdv
+
+$ Cipher -caesar -decode wtaadldgas p
+helloworld
+
+$ Cipher -vigenere -encode helloworld alp
+hpalzlocad
+
+$ Cipher -vigenere -decode hpalzlocad alp
+helloworld
+
+$ Cipher
+Error: Expected 4 parameters, received 0
+
+$ Cipher -vigenere -decode -vigenere 
+Error: Expected 4 parameters, received 3
+
+$ Cipher -vigenere -decode -vigenere hello
+Error: strings must be only lowercase letters
+
+$ Cipher -vigenere -decode vigenere hello
+oevtzxnt
+
+$ Cipher -vigenere -deecode vigenere hello
+Error: No valid action specified.  Legal values are '-encode' and '-decode'
+
+$ Cipher -encode -caesar "" a   # Expect no output for the empty string
+
+
+$ Cipher -decode -vigenere "" hello
+
+
+$ Cipher -encde -caesar a ""
+Error: No valid action specified.  Legal values are '-encode' and '-decode'
+
+$ Cipher -encode -caesar a ""
+Error: Caesar ciphers require a one-character key
+
+$ Cipher -encode -caesar a "abc"
+Error: Caesar ciphers require a one-character key
+
+$ Cipher -encode -vigenere alphabet ""
+Error: Empty keys are not permitted
+```
 
 ## Program design and decomposition
 
