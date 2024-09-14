@@ -5,6 +5,26 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester._
 
+# [CSC-207 2024Fa] Quick notes on mini-projects (2024-09-13) 
+
+Dear Mini-Projectors,
+
+A variety of notes on mini-projects 1 and 2.
+
+0. You do not need to tell me that you're using a token for an extension; I'll charge it automatically.
+
+1. Because of the late release of the tests for mini-project 1, everyone gets a free two-day extension.
+
+2. Mini-project 2 is ready for public release.
+
+2'. I hope to have the autograder for mini-project 2 ready for you a bit more quickly.
+
+As always, feel to reach out via email or Teams. (And if I don't respond with a reasonable amount of time, such as twelve hours, reach out again.)
+
+Regards,
+
+-- SamR
+
 # [CSC-207 2024Fa] Some notes from SamR on MP1 (2024-09-07)
 
 Dear Decipherers (of enciphered text and CS assignments),
