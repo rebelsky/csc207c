@@ -580,6 +580,15 @@ Submissions that lack any of these characteristics will get an M or below.
 
 > Nope. Although you might feel more of a sense of self-accomplishment if you do. And it may be the case that one of the other parameter checks ends up covering that case.
 
+**The style checker is complaining that my error messags are more than 100 characters. What should I do?**
+
+> You can break the string up into multiple parts and add them together.
+
+> ```
+    pen.println("Error: This is the first part of a long message. " +
+        "this is the second part of that message.");
+```
+
 ### Auxiliary issues (beyond the basic code)
 
 **The mini-project mentions a `.jar` file for Cipher. What/where is the `.jar` file?**
