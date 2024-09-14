@@ -179,7 +179,7 @@ You should put all your work in a Maven project that you upload to GitHub. Make 
 
 You should use the file [**cipher.zip**](../code/cipher.zip) as your starting point. Download and unzip this file. Open it in VSCode to see what files are there. You should also try some basic Maven commands in the terminal. (You might even peruse the `pom.xml`.)
 
-### `edu.grinnell.csc207.util.CipherUtils`
+**`edu.grinnell.csc207.util.CipherUtils`**
 
 This utility class should provide the following static methods.
 
@@ -192,7 +192,7 @@ This utility class should provide the following static methods.
 
 You may also choose to add other methods as appropriate.
 
-### `edu.grinnell.csc207.main.AllCaesar`
+**`edu.grinnell.csc207.main.AllCaesar`**
 
 This main class should take two command-line arguments: (a) either 'encode' or 'decode', and (b) a string consisting of only lowercase letters. You will then print out all 26 encoded or decoded versions of the string, along with.
 
@@ -331,7 +331,7 @@ For this program, you will need to use a handful of [String methods and construc
 * `s.length()` returns the length of the string `s`.
 * `new String(arr)` creates a new string from the given character array `arr`.
 
-### `edu.grinnell.csc207.main.Cipher`
+**`edu.grinnell.csc207.main.Cipher`**
 
 The `Cipher` program, which will also be the default program in your `.jar` file, should take four command-line arguments in almost any order.
 
