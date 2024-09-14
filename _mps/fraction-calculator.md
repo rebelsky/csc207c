@@ -8,9 +8,7 @@ collaboration: |
   Each student should submit their own responses to this project. You may consult other students in the class as you develop your solution.  If you receive help from anyone, make sure to cite them in your responses. 
 link: true
 ---
-_Warning: This assignment is still being updated for Fall 2024._
-
-You goal in this project is to build a calculator (or perhaps many calculators) that (a) uses fractions as its basic numeric type and (b) includes registers. A register is a named storage area.
+You goal in this project is to build a calculator (or perhaps many calculators) that (a) uses fractions as its basic numeric type and (b) includes registers. (A register is a named storage area, much like a vriable.)
 
 ## Project setup
 
@@ -20,7 +18,7 @@ For this project, you'll need to set up Maven yourself. You could copy and modif
 
 **`edu.grinnell.csc207.util.BigFraction`**  
 
-An extended version of the `Fraction` class you worked on in lab.  You should use a `BigFraction` for the numerator and the denominator. You should make sure to reduce your fractions to the simplest form.  You should also add other constructors as appropriate.  You will also likely need to implement some other operations, such as subtraction and division.
+An extended version of the `Fraction` class you worked on in lab.  You should use a `BigInteger` for the numerator and the denominator. You should make sure to reduce your fractions to the simplest form.  You should also add other constructors as appropriate.  You will also likely need to implement some other operations, such as subtraction and division.
 
 **`edu.grinnell.csc207.util.BFCalculator`**
 
@@ -35,26 +33,28 @@ The primary workhorse.  This class should have a field that stores the last valu
 
 **`edu.grinnell.csc207.util.BFRegisterSet`**.
 
-A set of registers corresponding to the letters 'a' through 'z'. It should provide the following methods. As with the case of `BFCalculator`, these should all be object methods so that we can have multiple register sets.
+A set of registers corresponding to the letters `'a'` through `'z'`. It should provide the following methods. As with the case of `BFCalculator`, these should all be object methods so that we can have multiple register sets.
 
 * `public void store(char register, BigFraction val)` - stores the given value in the specified register.
 * `public BigFraction get(char register)` - retrieves the value from the given register.
 
+Note that `BFCalculator` does not interact directly with `BFRegisterSet`. The registers are the responsibility of the UIs (see below).
+
 **`edu.grinnell.csc207.main.InteractiveCalculator`**
 
-Here, you will provide a `main` method that will repeatedly read a line the user types, use a `BFCalculator` to compute the result, and print the result for the user.
+Here, you will provide a `main` method that will repeatedly read a line the user types, use a `BFCalculator` to compute the result, and print the result for the user. This type interaction is often called a "REPL", for "Read-Eval-Print loop".
 
 **`edu.grinnell.csc207.main.QuickCalculator`**
 
-Here, you will provide a `main` method that will take the expressions from the command line and then print out the results.
+Here, you will provide a `main` method that will take the expressions from the command line (rather than user input) and then print out the results.
 
 ## Input format
 
-What will the input strings look like? They can be expressions, store commands, or quit.
+What will the input strings for the two main programs look like? They can be expressions, store commands, or quit.
 
 * Expressions are sequence of values (either integers, fractions, or register names) separated by spaces and operators. The implicit meaning of an expression is "evaluate this expression and print the result".
 * Store commands will take the form `STORE reg`, where `reg` is a letter of the alphabet. These commands should store the last computed value in the given register.
-* We quit with `QUIT`.  (If you know how, you can also stop at the end of input.)
+* We quit with `QUIT`. If you know how, you can also stop at the end of input. For `QuickCalculator`, you should stop when you run out of command-line arguments.
 
 For example, here's a session with `InteractiveCalculator`.
 
@@ -96,7 +96,7 @@ Submissions that fail to meet any of these requirements will get an I.
 [ ] Includes a `README.md` file.
 [ ] The `README.md` file contains the appropriate information (authors, purpose, acknowledgements if appropriate)
 [ ] All files compile correctly.
-[ ] `QuickCalculator` and `InteractiveCalculator` run.
+[ ] The main methods of `QuickCalculator` and `InteractiveCalculator` run.
 [ ] All classes include the specified methods.
 [ ] Passes all the **R** tests.
 ```
@@ -126,6 +126,7 @@ previous requirements will receive an M.
 [ ] All (or most) repeated code has been factored out into individual
     methods, including common code between `QuickCalculator` and 
     `InteractiveCalculator`.
+[ ] No stylistic errors are reported by `mvn checkstyle:check -q`.
 [ ] All or most variable names are appropriate.
 [ ] Handles expressions without fractional parts, such as `2 + 123`.
 [ ] Handles expressions with no operations, such as `a`, `11/2`, or `5`.
@@ -135,7 +136,7 @@ previous requirements will receive an M.
 [ ] Provides an appropriate error message if the expression has the
     wrong form (e.g., two numbers/registers in a row or two operations
     in a row).
-[ ] Passes all the **M** tests.
+[ ] Passes all the **E** tests.
 ```
 
 Questions and answers
@@ -149,7 +150,7 @@ Questions and answers
 
 **Can I assume that input is correct?**
 
-> No. You should issue an error message if the input is incorrect.
+> No. You should issue an error message and move on to the next line (or command-line argument) if one line (command-line argument) is incorrect.
 
 **Having an example of how to ask for user input would be helpful. Does it change based on the type of input you want to take in like scanf vs gets in C? Where does it put the information when you get it?**
 
@@ -204,7 +205,7 @@ Questions and answers
 
 **Should we incorporate precedence?**
 
-> No.
+> No. The tests will assume that you have not incorporated precedence.
 
 **I'm still a little confused on the difference between the interactive calculator and the quick calculator. Do they both take the functions we've made, but the only difference is that one takes from the command line and the other has the user type the message after the command line is run?**
 
@@ -213,7 +214,7 @@ Questions and answers
 **How would we set up such an alias?**
 
 > ```
-alias qc='java edu.grinnell.csc207.main.QuickCalculator'
+alias qc='java -cp target/classes edu.grinnell.csc207.main.QuickCalculator'
 ```
 
 **How would we make a visual version of this same calculator?**
@@ -221,6 +222,10 @@ alias qc='java edu.grinnell.csc207.main.QuickCalculator'
 > There are a variety of Java toolkits for making GUIs.  Swing and JavaFX seem to be the most popular.
 
 ### Miscellaneous
+
+**Can I create more methods than those listed?**
+
+> Certainly. I'd even encourage it.
 
 **Can I create additional classes?**
 
