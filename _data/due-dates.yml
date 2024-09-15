@@ -40,7 +40,7 @@
 
 - date: 2024-09-17
   assigned:
-    - SoLA 2
+    - page: /los/sola02.html
 
 - date: 2024-09-19
   due:
@@ -58,7 +58,7 @@
 
 - date: 2024-09-23
   due:
-    - SoLA 2
+    - page: /los/sola02.html
 
 - date: 2024-09-24
   assigned:
