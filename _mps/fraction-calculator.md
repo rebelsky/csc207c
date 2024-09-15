@@ -201,11 +201,23 @@ Questions and answers
 > I also wanted you to continue thinking about the relationship between
   letters and numbers (something you explore in the prior MP).
 
+**Could you say a little bit more about registers?**
+
+> Think of a register as a variable. We can store a value in it (using the `store(char,BigFraction)` method behind the scenes and the `STORE x` command in the UI). We can retrieve a value from it (using the `get(char)` method behind the scenes and by using the name in an expression in the UI).
+
+**Should I use int variables from a to z as registers, or is there a specific variable we should use?**
+
+> I'd suggest an array rather than 26 variables. Since they are storing fractions, I'd suggest that the array store `BigFraction` objects.
+
 ### UI
 
 **Should we incorporate precedence?**
 
 > No. The tests will assume that you have not incorporated precedence.
+
+**Should `a/b / c/d` be treated as `(a / b) / (c / d)` or `(((a / b) / c) / d)`?**
+
+> It should be interpreted as "the fraction `a/b` divided by the fraction `c/d`" or `(a / b) / (c / d)`.
 
 **I'm still a little confused on the difference between the interactive calculator and the quick calculator. Do they both take the functions we've made, but the only difference is that one takes from the command line and the other has the user type the message after the command line is run?**
 
@@ -217,11 +229,49 @@ Questions and answers
 alias qc='java -cp target/classes edu.grinnell.csc207.main.QuickCalculator'
 ```
 
+> Note that this will run in the top-level folder of your project.
+
 **How would we make a visual version of this same calculator?**
 
 > There are a variety of Java toolkits for making GUIs.  Swing and JavaFX seem to be the most popular.
 
+**Is there a limit to how many times we can use the calculator in a single run?**
+
+> Nope.
+
+**How should I handle invalid user input?**
+
+> Print an error message and go on.
+
+### Maven issues
+
+**Do we need to package and have a `.jar`?**
+
+> It's nice to package, but not strictly necessary.
+
+**If we do create a package or a `exec:java` target, which program should be the main class?**
+
+> I'd use the interactive calculator as the main class.
+
+**Should we commit and push the target?**
+
+> Definitely not! We almost never push generated files.
+
+### Testing
+
+**What edge cases should I consider?**
+
+> Negative numbers. Whole numbers. Zero. No input.
+
+**Will we get tests for this or write it ourselves?**
+
+> You will get tests.
+
 ### Miscellaneous
+
+**What methods should BigFraction include?**
+
+> I'd suppose addition, subtraction, multiplication, and division. Also `toString`. You probably want some private (or at least package) methods for things like reducing to simplest form.
 
 **Can I create more methods than those listed?**
 
@@ -263,15 +313,19 @@ pen.println(calc2.get());       // Should print 0
 
 > If the files are in the same directory, you need not connect them explicitly.
 
-Is there an extension we are permitted to use for styling?
+**Is there an extension we are permitted to use for styling?**
 
-> There's a reformat command in VSCodee. Open the command palette in VSCode and enter "Format Document". (Make sure you've installed the style info from the intro lab.)
+> There's a reformat command in VSCode. Open the command palette in VSCode and enter "Format Document". (Make sure you've installed the style info from the intro lab.)
 
 > However, it does not completely cover all of the requirements of `mvn checkstyle:style`.
 
-Do you recommend building each class separately and then ensuring they work together or is building them simultaneously better?
+**Do you recommend building each class separately and then ensuring they work together or is building them simultaneously better?**
 
 > I tend to build separately and experiment/test as I go.
+
+**Can we use features we might have heard of from elsewhere (e.g. hash tables) that we have not yet learned in Java?**
+
+> You should not need hash tables. I would generally prefer that you not pull in too many things from elsewhere.
 
 ---
 
