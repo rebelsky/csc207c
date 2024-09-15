@@ -99,7 +99,7 @@ Now let's move on to something whose cost depends on the weight, such as flour o
 /**
  * Things we buy by weight.
  */
-public class BulkLiquid implements Purchase {
+public class BulkSolid implements Purchase {
   // +--------+------------------------------------------------------
   // | Fields |
   // +--------+
@@ -135,53 +135,6 @@ public class BulkLiquid implements Purchase {
   ...
 
 } // class BulkSolid
-```
-
-```java
-/**
- * Liquids, which must be stored in containers.
- */
-public class Liquid implements Purchase {
-  // +--------+------------------------------------------------------
-  // | Fields |
-  // +--------+
-
-  ...
-
-  /**
-   * The cost per fluid ounce (in cents).
-   */
-  int costPerOunce;
-
-  /**
-   * The volume, in ounces.
-   */
-  int volume;
-
-  /**
-   * The item the liquid is stored in (e.g., a glass jar or
-   * a plastic bottle).
-   */
-  Item container;
-
-  ...
-
-  // +---------+-----------------------------------------------------
-  // | Methods |
-  // +---------+
-
-  /**
-   * Determine the cost of this purchase.
-   *
-   * @return the cost in cents
-   */
-  public int cost() {
-    return this.costPerOunce * this.volume + this.container.cost();
-  } // cost()
-
-  ...
-
-} // class Liquid
 ```
 
 We can write something similar for liquids where people may buy varying amounts.
