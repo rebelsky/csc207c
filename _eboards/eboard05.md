@@ -166,6 +166,3 @@ Labs
 
 The person closer to the board is **_A_**. The person further from the board
 is **_B_**.
-
-You will not be submitting code. Rather, I ask you to reflect on three
-important things you learned.
