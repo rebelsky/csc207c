@@ -243,6 +243,30 @@ alias qc='java -cp target/classes edu.grinnell.csc207.main.QuickCalculator'
 
 > Print an error message and go on.
 
+**In the requirements for an E, you write that we must "Handle[] expressions with no operations, such as `a`, `11/2`, or `5`." Could you explain?**
+
+> Each of your programs will take those as expressions (as an input for the interactive calculator, as one of the commands on the command-line in the quick calculator).
+
+> For example,
+
+> ```
+$ java -cp target/classes edu.grinnell.csc207.main.QuickCalculator "11/2" "STORE b" "3 + 2" "b"
+11/2
+5
+11/2
+```
+
+> ```
+$ java -cp target/classes edu.grinnell.csc207.main.InteractiveCalculator 
+> 11/2
+11/2
+> 5
+5
+> STORE a
+> a
+5
+```
+
 ### Maven issues
 
 **Do we need to package and have a `.jar`?**
