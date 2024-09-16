@@ -5,7 +5,25 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester._
 
-# [CSC-207 2024Fa] Quick notes on mini-projects (2024-09-13) 
+## [CSC-207 2024Fa] MP2 Pre-Assessments and such (2024-09-15)
+
+Dear Calculating Students,
+
+1. I've responded to all the MP2 pre-assessments that I have received so far. You can find comments on Gradescope (and, in most cases, in the assignment itself). If you haven't submitted your pre-assessment, you should do so soon.
+
+2. Just in case you weren't sure, my biggest goals for this project are that (a) you get used to writing/designing classes, including the idea that many methods, such as multiplication, seem to have one fewer parameter than you might expect (the implicit "this object); and (b) you continue to get used to building multi-file projects.
+
+3. The current set of unit tests are attached. You should store the file in `src/test/java/edu/grinnell/csc207`. I may make a few additions, but I don't expect to make many.
+
+4. I've also added some "scripts" to the assignment that we'll use to check your main classes. You may want to run the scripts yourself, too.
+
+As always, let me know if you have questions.
+
+Regards,
+
+-- SamR
+
+## [CSC-207 2024Fa] Quick notes on mini-projects (2024-09-13) 
 
 Dear Mini-Projectors,
 
