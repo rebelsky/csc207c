@@ -439,6 +439,10 @@ alias qc='java -cp target/classes edu.grinnell.csc207.main.QuickCalculator'
 
 > Note that this will run in the top-level folder of your project.
 
+**What is an alias?**
+
+> An alias is a shorthand for a longer command. You set one up in the terminal window.
+
 **How would we make a visual version of this same calculator?**
 
 > There are a variety of Java toolkits for making GUIs.  Swing and JavaFX seem to be the most popular.
