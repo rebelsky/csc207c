@@ -14,6 +14,10 @@ You goal in this project is to build a calculator (or perhaps many calculators) 
 
 For this project, you'll need to set up Maven yourself. You could copy and modify an existing project or you can follow [the project setup instructions](../handouts/project-setup) to set one up for yourself.
 
+You should also make sure to upload the project to GitHub and to use good Git practices, such as regular commits.
+
+The [provided unit tests for this project](../code/calculator/TestMP02.java) should be placed in [`src/test/java/edu/grinnell/csc207/TestMP02.java`](../code/calculator/TestMP02.java). You may also wish to create your own tests.
+
 ## Required classes
 
 **`edu.grinnell.csc207.util.BigFraction`**  
@@ -82,7 +86,10 @@ a + 2 = 82/35
 
 There is no precedence; you should evaluate operations from left to right.  There may be an arbitrary number of values and operations on each line.
 
-## Grading rubric
+---
+
+Grading rubric
+--------------
 
 This rubric may evolve slightly during grading.
 
@@ -347,8 +354,20 @@ $ qc "3" "+ 2 3" "1/2 * 1/3"
 1/2 * 1/3 -> 1/6
 ```
 
+---
+
 Questions and answers
 ---------------------
+
+**Could you give a broad overview of the concepts we will practice in this MP?**
+
+> * Project development: Setting up a Maven project.
+> * Project development: GitHub.
+> * OOP basics; Setting up classes and methods.
+> * OOP basics: Creating multi-class projects.
+> * Java: Using standard classes, such as `String` and `BigInteger`. Also reading the Java documentation to understand such classes.
+> * General programming: Input, output, and parsing.
+> * General programming: Program decomposition.
 
 ### User input
 
@@ -425,7 +444,7 @@ Questions and answers
 
 **Should `a/b / c/d` be treated as `(a / b) / (c / d)` or `(((a / b) / c) / d)`?**
 
-> It should be interpreted as "the fraction `a/b` divided by the fraction `c/d`" or `(a / b) / (c / d)`.
+> It should be interpreted as "the fraction `a/b` divided by the fraction `c/d`" which is `(a / b) / (c / d)`.
 
 **I'm still a little confused on the difference between the interactive calculator and the quick calculator. Do they both take the functions we've made, but the only difference is that one takes from the command line and the other has the user type the message after the command line is run?**
 
@@ -445,15 +464,11 @@ alias qc='java -cp target/classes edu.grinnell.csc207.main.QuickCalculator'
 
 **How would we make a visual version of this same calculator?**
 
-> There are a variety of Java toolkits for making GUIs.  Swing and JavaFX seem to be the most popular.
+> There are a variety of Java toolkits for making GUIs.  Swing and JavaFX seem to be the most popular. But making such a calculator is not part of this assignment?
 
 **Is there a limit to how many times we can use the calculator in a single run?**
 
 > Nope.
-
-**How should I handle invalid user input?**
-
-> Print an error message and go on.
 
 **In the requirements for an E, you write that we must "Handle[] expressions with no operations, such as `a`, `11/2`, or `5`." Could you explain?**
 
@@ -479,13 +494,35 @@ $ java -cp target/classes edu.grinnell.csc207.main.InteractiveCalculator
 5
 ```
 
+**Do I have to report anything for the `STORE` command?**
+
+> Nope.
+
 **I see two different output formats for `QuickCalculator`, one which shows the individual input expressions and one which does not. Which should I use?**
 
 > Use whichever you'd prefer.
 
-**Do I have to report anything for the `STORE` command?**
+For the interactive calculator I need a loop. When does the loop stop? 
 
-> Nope.
+> When the user types "QUIT". Ideally, when the user ends the input (but that's a bit harder to check for).
+
+### UI Errors
+
+**Are you wanting exact error messages to what is in the tests?**
+
+> Nope. Print anything you consider reasonable.
+
+**If it's a mixed fraction do I say "error"?**
+
+> Yes. We only accept fractions in the n/d form.
+
+**How should I handle invalid user input?**
+
+> Print an error message and go on.
+
+I’m curious about how we should handle invalid input, like two operators in a row. 
+
+> Print an error message and go on to the next input (the next line for the interactive calculator and the next command-line parameter for the command-line calculator).
 
 ### Maven issues
 
@@ -501,6 +538,10 @@ $ java -cp target/classes edu.grinnell.csc207.main.InteractiveCalculator
 
 > Definitely not! We almost never push generated files.
 
+**Should we put this in a GitHub repository?**
+
+> Yes.
+
 ### Testing
 
 **What edge cases should I consider?**
@@ -509,7 +550,11 @@ $ java -cp target/classes edu.grinnell.csc207.main.InteractiveCalculator
 
 **Will we get tests for this or write it ourselves?**
 
-> You will get tests.
+> You will get unit tests (and testing scripts).
+
+**For the registers, does each letter store a fraction? or like the whole expression (1/2 + 1/1)?**
+
+> Each letter should correspond to a fraction. You will probably have lost the expression by the time you need to store something in a register.
 
 ### Miscellaneous
 
@@ -545,6 +590,26 @@ pen.println(calc2.get());       // Should print 0
 
 > Yup. You can find it in [the documentation for `BigInteger`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/math/BigInteger.html).
 
+**What kinds of helper functions will be helpful?**
+
+> Part of the goals of the assignment are for you to think about this.
+
+**Are there any additional classes you would recommend using?**
+
+> I created a class to handle the common work between the two UIs (main classes).
+
+**Could you explain constructors in more detail?**
+
+> Constructors are like methods with the explicit purpose of initializing objects. They differ from methods in that (a) they must have the same name as the class, (b) they have no explicit return type (they return a new object), and (c) they have a slightly different calling form, `new Class(arg1, arg2, …)` rather than `obj.method(arg1, arg2, …)`.
+
+**How should we store fractions? Can we use `float` values?**
+
+> Your fractions should mimic those from the first object lab and contain two `BigInteger` values. Using something like a `float` will almost certainly lead to a loss of precision.
+
+How is the Javadoc like a style comment? That has the parameters and what the thing does? Do i just search up how to do a Javadoc comment?
+
+> You should be able to follow the examples from the various sample code. If not, you can do a search.
+
 ### Beyond the project
 
 **Can constructors be static?**
@@ -573,4 +638,8 @@ pen.println(calc2.get());       // Should print 0
 
 ---
 
-_**Acknowledgements**: Parts of this assignment are inspired by assignments from past versions of CSC-207 (and perhaps even CSC-152)._
+## Acknowledgements
+
+Parts of this assignment are inspired by assignments from past versions of CSC-207 (and perhaps even CSC-152).
+
+The current version of the assignment was designed in Fall 2024.
