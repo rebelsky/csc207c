@@ -91,14 +91,18 @@ This rubric may evolve slightly during grading.
 Submissions that fail to meet any of these requirements will get an I.
 
 ```
-[ ] Includes the five specified classes, correctly named and in the appropriate packages.
-[ ] Each class has an introductory Javadoc comment that indicates the author and purpose. 
+[ ] Passes all the **R** unit tests.
+[ ] Passes all the **R** test scripts.
+[ ] Includes the five specified classes, correctly named and in the 
+    appropriate packages.
+[ ] Each class has an introductory Javadoc comment that indicates the author 
+    and purpose. 
 [ ] Includes a `README.md` file.
-[ ] The `README.md` file contains the appropriate information (authors, purpose, acknowledgements if appropriate)
+[ ] The `README.md` file contains the appropriate information (authors, 
+    purpose, URL, acknowledgements if appropriate)
 [ ] All files compile correctly.
 [ ] The main methods of `QuickCalculator` and `InteractiveCalculator` run.
 [ ] All classes include the specified methods.
-[ ] Passes all the **R** tests.
 ```
 
 ### Meets expectations or above
@@ -107,14 +111,24 @@ Submissions that fail to meet any of these requirements but meet all
 previous requirements will receive an R.
 
 ```
+[ ] Passes all the **M** unit tests.
+[ ] Passes all the **M** test scripts.
 [ ] Correct organization for a Maven project.
 [ ] Reasonable `pom.xml` file.
 [ ] No more than ten stylistic errors.
-[ ] Fractions always appear in simplest form.
 [ ] All data are stored in class fields, so that we can have two 
     `BFCalculator` objects running simultaneously and they will not 
     interfere with each other.
-[ ] Passes all the **M** tests.
+```
+
+Issues checked by the scripts.
+
+```
+[ ] Handles expressions with one operator and two numeric operands.
+[ ] Handles expressions with one operator, one numeric operand, and 
+    one register.
+[ ] Handles expressions with one operator and two registers.
+[ ] Fractions always appear in simplest form. 
 ```
 
 ### Exemplary / Exceeds expectations
@@ -123,11 +137,18 @@ Submissions that fail to meet any of these requirements but meet all
 previous requirements will receive an M.
 
 ```
+[ ] Passes all the **E** unit tests.
+[ ] Passes all the **E** test scripts.
 [ ] All (or most) repeated code has been factored out into individual
     methods, including common code between `QuickCalculator` and 
     `InteractiveCalculator`.
 [ ] No stylistic errors are reported by `mvn checkstyle:check -q`.
 [ ] All or most variable names are appropriate.
+```
+
+Issues checked by the scripts.
+
+```
 [ ] Handles expressions without fractional parts, such as `2 + 123`.
 [ ] Handles expressions with no operations, such as `a`, `11/2`, or `5`.
 [ ] Handles negative numbers. (It need not handle negative registers.)
@@ -136,7 +157,194 @@ previous requirements will receive an M.
 [ ] Provides an appropriate error message if the expression has the
     wrong form (e.g., two numbers/registers in a row or two operations
     in a row).
-[ ] Passes all the **E** tests.
+```
+
+Grading scripts
+---------------
+
+Rather than relying on unit tests for our two main programs, our graders will be relying on "testing scripts" that they will execute by hand. We're using scripts rather than unit tests because that gives you a bit more freedom in what your output looks like.
+
+Note that the graders will look at your code to ensure that you haven't just special-cased all of these scripts.
+
+### Preparation
+
+All commands should be executed in the top-level directory of the project.
+
+```
+mvn compile -q
+alias ic='java -cp target/classes edu.grinnell.csc207.main.InteractiveCalculator'
+alias qc='java -cp target/classes edu.grinnell.csc207.main.QuickCalculator'
+```
+
+### **R** script for `InteractiveCalculator`
+
+``` 
+$ ic
+> 3/2 + 1/3
+OUTPUT                  # Program reads input and prints output
+> QUIT                  # Program successfully quits
+$
+```
+
+### **R** script for `QuickCalculator`
+
+```
+$ qc "3/2 + 1/3"
+OUTPUT          # Note that any output suffices
+```
+
+### **M** script for `InteractiveCalculator`
+
+```
+$ mvn compile -q
+$ java -cp target/classes edu.grinnell.csc207.main.InteractiveCalculator
+> 3/2 + 1/3
+11/6                    # Correctly adds two fractions
+> 1/2 - 1/3
+1/6                     # Correctly subtracts two fractions
+> 2/3 * 2/5
+4/15                    # Correctly multiplies two fractions
+> 2/3 / 1/5
+10/3                    # Correctly divides two fractions
+> 1/12 + 3/12
+1/3                     # Simplifies
+> 17/12 + 9/12
+13/6                    # Simplifies for values greater than 1
+> 1/4 + 1/4
+1/2
+> STORE a
+STORED                  # No output necessary
+> 1/6 + 1/6
+1/3
+> STORE b               # No output necessary
+> 2/3 + a
+7/6                     # Register in second place
+> a * 5/3
+5/6                     # Register in first place
+> a / b
+3/2                     # Two registers
+> b * b                 
+1/9                     # The same register twice
+> STORE a
+STORED
+> a * 1/2
+1/18                    # We can change registers
+> QUIT
+$
+```
+
+### **M** script for `QuickCalculator`
+
+```
+# Can we add?
+$ qc "3/2 + 1/3"
+3/2 + 1/3 -> 11/6               # Other forms are also permissible
+
+# Can we do multiple binary operations?
+$ qc "3/2 - 1/3" "3/2 * 5/7"  "1/3 / 1/5"
+3/2 - 1/3 -> 7/6
+3/2 * 5/7 -> 15/14
+1/3 / 1/5 -> 5/3
+
+# Does it simplify?
+$ qc "5/12 + 11/12"
+5/12 + 11/12 -> 4/3
+
+# Can we store in variables?
+$ qc "1/3 + 1/3" "STORE a" "a * 4"
+1/3 + 1/3 -> 2/3
+STORE a -> STORED
+a * 4 -> 8/3
+
+# Can we write expressions with variables?
+$ qc "2/3 * 1/2" "STORE a" "1/4 + 1/4" "STORE b" "a + b" "a - b" "a * b" "a / b"
+2/3 * 1/2 -> 1/3
+STORE a -> STORED
+1/4 + 1/4 -> 1/2
+STORE b -> STORED
+a + b -> 5/6
+a - b -> -1/6
+a * b -> 1/6
+a / b -> 2/3
+```
+
+### **E** script for `InteractiveCalculator`
+
+```
+$ ic
+> 3/2 + 5/2
+4               # Whole numbers output as whole numbers
+> 1 + 2 * 3 - 4
+5               # Input only involves whole numbers
+> 3
+3               # Input is a whole number
+> STORE a
+STORED
+> a
+3               # Input is just a register
+> 1/2
+1/2             # Input is just a fraction
+> STORE b
+STORED
+> a + b * 2
+7               # Expression with two operators and three operands
+> 1/2 - 1/3 + 1/4 - 1/5 + 1/6
+23/60           # Lots of operators and operands
+> -3/5
+-3/5            # Negative inputs
+> 1 / -3/5
+-5/3            # Negative inputs
+> -1/2 * -2/3 + 5/2
+17/6            # Negative inputs
+> + 2
+*** ERROR [Invalid expression] ***
+> 2 +
+*** ERROR [Invalid expression] ***
+> 2 + 3 -
+*** ERROR [Invalid expression] ***
+> 2 x 3
+*** ERROR [Invalid expression] ***
+> STORE Q
+*** ERROR [STORE command received invalid register] ***
+> 2 * Q
+*** ERROR [Invalid expression] ***              # Could be more helpful
+```
+
+### **E** script for `QuickCalculator`
+
+```
+# Whole number output
+$ qc "3/2 + 5/2"
+3/2 + 5/2 -> 4
+
+# Singleton input
+$ qc "1/2" "STORE a" "a" "5" "-2/3" 
+1/2 -> 1/2
+STORE a -> STORED
+a -> 1/2
+5 -> 5
+-2/3 -> -2/3
+
+# Complex expressions
+$ qc "1/2" "STORE a" "STORE b" "a * b * a + b"
+1/2 -> 1/2
+STORE a -> STORED
+STORE b -> STORED
+a * b * a + b -> 5/8
+
+# Another complex expression
+$ qc "1 + 2 * 3 - 4 / -1/3"
+1 + 2 * 3 - 4 / -1/3 -> -15
+
+# Invalid inputs
+$ qc ""
+FAILED [Invalid expression]
+$ qc "1 +"
+1 +: FAILED [Invalid expression]
+$ qc "3" "+ 2 3" "1/2 * 1/3"
+3 -> 3
++ 2 3 FAILED [Invalid expression]
+1/2 * 1/3 -> 1/6
 ```
 
 Questions and answers
@@ -267,13 +475,21 @@ $ java -cp target/classes edu.grinnell.csc207.main.InteractiveCalculator
 5
 ```
 
+**I see two different output formats for `QuickCalculator`, one which shows the individual input expressions and one which does not. Which should I use?**
+
+> Use whichever you'd prefer.
+
+**Do I have to report anything for the `STORE` command?**
+
+> Nope.
+
 ### Maven issues
 
 **Do we need to package and have a `.jar`?**
 
 > It's nice to package, but not strictly necessary.
 
-**If we do create a package or a `exec:java` target, which program should be the main class?**
+**If we do create a package or an `exec:java` target, which program should be the main class?**
 
 > I'd use the interactive calculator as the main class.
 
