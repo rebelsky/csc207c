@@ -1,5 +1,5 @@
 ---
-title: "Eboard 06: Inheritance and subtype polymorphism"
+title: "Eboard 06 (Section 2): Inheritance and subtype polymorphism"
 number: 6
 section: eboards
 held: 2024-09-17
@@ -16,11 +16,10 @@ _Start of class instructions_
   and locations.
 * Identify where the corresponding computer is.
 * Return the card to the jar.
+* Grab a sheet of paper.
 * Navigate to the computer.
 * The first person at the computer logs in (and, if appropriate, forks
   and clones the repo).
-* The first person at the computer should also grab a whiteboard, marker,
-  and eraser.
 * When both partners arrive, introduce yourselves.
     * Recommended: Discuss working strengths and areas to improve
 
@@ -44,6 +43,8 @@ _Trigger Warning! Death and Cancer._
 * I am happy to try to schedule quick Teams meetings, as long as you
   understand that I may have to back out. Send me times that you would
   be available to meet.
+* The lab mentions whiteboards. But those seem to have disappeared.
+  Use a sheet of paper instead.
 
 ### Upcoming work
 
@@ -117,7 +118,8 @@ Questions
 
 ### Questions on MP2
 
-I've put these at the end of the mini-project.
+I've put the ones you've sent at the end of the mini-project. But I'll
+take new ones now if you have any.
 
 ### Questions on the readings
 

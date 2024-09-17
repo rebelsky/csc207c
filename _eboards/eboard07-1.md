@@ -29,6 +29,7 @@ _Approximate overview_
     * Notes and news
     * Upcoming work
     * Tokens
+* About MP3
 * Questions
 * Lab
 
@@ -109,6 +110,9 @@ class._
   _Volleyball vs. Loras_
 * Friday, 2024-09-20, 8:00--10:00 p.m., Darby.
   _Volleyball vs. Augustanta_ 
+
+About MP3
+---------
 
 Questions
 ---------

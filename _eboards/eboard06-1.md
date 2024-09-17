@@ -1,5 +1,5 @@
 ---
-title: "Eboard 06: Inheritance and subtype polymorphism"
+title: "Eboard 06 (Section 1): Inheritance and subtype polymorphism"
 number: 6
 section: eboards
 held: 2024-09-17
@@ -19,8 +19,7 @@ _Start of class instructions_
 * Navigate to the computer.
 * The first person at the computer logs in (and, if appropriate, forks
   and clones the repo).
-* The first person at the computer should also grab a whiteboard, marker,
-  and eraser.
+* Grab a piece of paper (one per pair should be enough).
 * When both partners arrive, introduce yourselves.
     * Recommended: Discuss working strengths and areas to improve
 
@@ -88,9 +87,15 @@ class._
 
 #### Cultural
 
+* Friday, 2024-09-20, 7:30 p.m., Sebring Lewis.
+  _Jazz Band: Hits from the 80's, 90's, and naughts._
+
 #### Multicultural
 
 #### Peer
+
+* Saturday, 2024-09-21, 2:00--3:00ish p.m., Sebring-Lewis.
+  _Grinnell Symphony Orchestra plays Hungarian dances and more._
 
 #### Wellness
 
@@ -130,6 +135,31 @@ in a high level way?**
 
 > I will try.
 
+> Literally, polymorphism means "many forms". In programming, it is often
+  the idea that we can write one piece of code that serves multiple purposes
+  (adapts nicely to different situations). We want to write such general
+  code because we believe in the DRY Principle. (Don't repeat yourself.)
+
+> In subtype polymorphism, we rely on knowledge of methods that an object
+  will provide. If I know that an object has a `cost` method, I can purchase
+  it, put it on a receipt, etc. etc.  So, the "put on a receipt method" need
+  not involve different code for different objects.
+
+> We've aleady been relying on subtype polymorphism in noting that everything
+  seems to have a `toString` method.
+
+> ```
+  public static void printCentered(PrintWriter pen, Object thing, int width) {
+    String thingString = thing.toString();
+    pen.println(" ".repeat((width - thingString.length())/2) + thingString);
+  } // printCentered(PrintWriter, Object, int)
+```
+
+> Polymorphism: `printCentered` will work for any type of object.
+
+> In general, as programmers, we will be designing our own interfaces and
+  writing polymorphic methods that take advantage of those interfaces.
+
 #### Stores (or purchases)
 
 **For the cost interface, can you give an example of what calling the cost method would look like for an object BulkSolid?**
@@ -139,6 +169,15 @@ in a high level way?**
     pen.println(threePoundsFlour + " costs " + threePoundsFlour.cost() 
         + "cents");
 ```
+
+> `BulkSolid` objects are `Purchase`s, and `Purchase`s have a `cost`
+  method.
+
+**When we implement `Purchase`, we are required to implement `cost`. Where
+do we do that?**
+
+> Java will force you to implement `cost` within any class that claims
+  to implement Purchase.
 
 #### Blocks
 
