@@ -8,9 +8,6 @@ prereqs: |
   [Classes](../readings/classes).
   [Interfaces](../readings/interfaces).
   [Subtype polymorphism](../readings/subtype-polymorphism).
-todo: 
-  - Ernest says talk about multiple type variables.
-  - Sam says start with a simpler example.
 ---
 Introduction
 ------------
@@ -24,15 +21,20 @@ And now we hit an important language design issue: How does the language allow t
 An example: Simple array-like collections
 -----------------------------------------
 
-Let's consider a simple example to ground the design.  Let's suppose we were going to evaluate expandable arrays of strings.  We'll start with the interface.
+Let's consider a simple example to ground the design.  Let's suppose we were going to implement dynamic arrays of strings, arrays whose size changes upon demand, rather than being fixed.  We'll start with the interface.
 
 ```java
 /**
- * Expandable arrays of strings.
+ * Dynamic arrays of strings.
  */
-public interface ExpandableArrayOfStrings {
+public interface DynamicArrayOfStrings {
   /**
    * Set the ith element of the array to str.
+   *
+   * @param i
+   *   The index into which we store the element.
+   * @param str
+   *   The value to store.
    *
    * @pre i >= 0
    * @post get(i) = str
@@ -40,13 +42,19 @@ public interface ExpandableArrayOfStrings {
   public void set(int i, String str);
 
   /**
-   * Get the ith element of the array.  If the ith element has not
-   * been set, returns null.
+   * Get the ith element of the array.
+   *
+   * @param i
+   *   The index to retrieve.
+   *
+   * @return
+   *   The most recent value stored using set(i, ...). If the ith
+   *   element has not been set, returns null.
    *
    * @pre i >= 0
    */
   public String get(int i);
-} // interface ExpandableArrayOfStrings
+} // interface DynamicArrayOfStrings
 ```
 
 Now, let's see how we might implement that interface.  We'll probably
@@ -65,12 +73,12 @@ When we create a new object, we'll initialize that array.
   /**
    * Create a new expandable array.
    */
-  public SimpleExpandableArrayOfStrings() {
+  public SimpleDynamicArrayOfStrings() {
     this.values = new String[16];
-  } // SimpleExpandableArrayOfStrings()
+  } // SimpleDynamicArrayOfStrings()
 ```
 
-To set the ith element of the expandable array, we make sure that
+To set the ith element of the dynamic array, we make sure that
 the underlying array is big enough.  If not, we expand it.  We can
 then set using the normal mechanism for setting values.
 
@@ -89,7 +97,7 @@ then set using the normal mechanism for setting values.
   } // set(int, String)
 ```
 
-To get the ith element of the expandable array, we make sure that `i` is not too big.  If it is too big, we just return null.
+To get the ith element of the dynamic array, we make sure that `i` is not too big.  If it is too big, we just return null.
 
 ```
   public String get(int i) {
@@ -102,14 +110,21 @@ To get the ith element of the expandable array, we make sure that `i` is not too
   } // get(int)
 ```
 
-What happens when we want to store something else, such as `BigInteger` values?  We don't really want to copy, paste, and change the code.  What do we do?  That's where generics enter the picture.
+What happens when we want to store something else, such as `BigInteger` values?  We don't really want to copy, paste, and change the code.  Why not? Because when we decide to update the code (and we will), we'll now have multiple nearly identical files to update. We'd rather write common code.
 
-In essence, we want to say that we have "an expandable array of values of some type, T".  That is, the type, T, is a parameter to the class definition.  In Java, we follow the class name with a less-than sign, the type variable, and a greater-than sign.
+What do we do?  That's where generics enter the picture.
+
+In essence, we want to say that we have "a dynamic array of values of some type, T".  That is, the type, T, is a parameter to the class definition.  In Java, we follow the class name with a less-than sign, the type variable, and a greater-than sign.
 
 ```java
-public interface ExpandableArray<T> {
+public interface DynamicArray<T> {
   /**
    * Set the ith element of the array to val.
+   *
+   * @param i
+   *   The index into which we store the element.
+   * @param str
+   *   The value to store.
    *
    * @pre i >= 0
    * @post get(i) = val
@@ -120,10 +135,17 @@ public interface ExpandableArray<T> {
    * Get the ith element of the array.  If the ith element has not
    * been set, returns null.
    *
+   * @param i
+   *   The index to retrieve.
+   *
+   * @return
+   *   The most recent value stored using set(i, ...). If the ith
+   *   element has not been set, returns null.
+   *
    * @pre i >= 0
    */
   public T get(int i);
-} // interface ExpandableArray<T>
+} // interface DynamicArray<T>
 ```
 
 Not much of a change, is it?
@@ -131,12 +153,12 @@ Not much of a change, is it?
 But what should we do with the implementation?  Essentially, we would hope that all we have to do is replace each instance of `String` with `T`.
 
 ```java
-public class SimpleExpandableArray<T> implements ExpandableArray<T> {
+public class SimpleDynamicArray<T> implements DynamicArray<T> {
   T[] values;
 
-  public SimpleExpandableArray() {
+  public SimpleDynamicArray() {
     this.values = new T[16];
-  } // SimpleExpandableArray
+  } // SimpleDynamicArray
 
   public void set(int i, T val) {
     // If the array is not big enough, expand it
@@ -159,23 +181,23 @@ public class SimpleExpandableArray<T> implements ExpandableArray<T> {
     // Get the value
     return this.values[i];
   } // get(int)
-} // class SimpleExpandableArray<T>
+} // class SimpleDynamicArray<T>
 ```
 
 Unfortunately, life isn't quite that simple.  There are some complex typing issues that correspond to making arrays of a generic type.  Instead, Java requires us to create an array of objects and cast it to the appropriate type.  But that cast is unsafe, so Java also requires us to say that we know it's unsafe.  Here's what we have to write instead.
 
 ```java
   @SuppressWarnings({"unchecked"})
-  public SimpleExpandableArray() {
+  public SimpleDynamicArray() {
     this.values = (T[]) new Object[16];
-  } // SimpleExpandableArray
+  } // SimpleDynamicArray
 ```
 
 Once we've created the generic class, we can create objects in that class as we would normally, except that we provide a type to the constructor.
 
 ```java
-  ExpandableArray<String> strings = new SimpleExpandableArray<String>();
-  ExpandableArray<BigInteger> numbers = new SimpleExpandableArray<BigInteger>();
+  DynamicArray<String> strings = new SimpleDynamicArray<String>();
+  DynamicArray<BigInteger> numbers = new SimpleDynamicArray<BigInteger>();
 ```
 
 An example: Predicates
