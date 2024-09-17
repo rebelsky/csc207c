@@ -37,6 +37,8 @@ $ mvn compile -q
 $ java -cp target/classes edu.grinnell.csc207.experiments.Store
 ```
 
+(Alternately, you could just run `Store` in VSCode.)
+
 c. Add another item to the order in the `Store` experiment. (Please use a positive price.) Then recompile and re-run that experiment.
 
 d. Right now, our order consists only of singleton items. Yet we are trying to take advantage of polymorphism. Let's add a different kind of entry to our order.
@@ -48,6 +50,8 @@ What do you expect to happen if we add the following line to the array of purcha
 ```
 
 e. Check your answer experimentally.
+
+f. Commit your changes to `Store`.
 
 ### Exercise 2: Adding a new type of purchase
 
@@ -166,6 +170,10 @@ saffron (2 ounces at $11.11 per ounce) ............... 22.22
 TOTAL:                                                $32.73
 ```
 
+g. Add and commit the new class.
+
+h. Commit the updated `Store`.
+
 ### Exercise 3: Basic and boxed AsciiBlocks
 
 _Driver: **B**_
@@ -221,6 +229,8 @@ i. What do you expect to get as output if we put a box around `b8`? Sketch your 
     AsciiBlock.print(pen, b9);
 ```
 
+j. Commit your updated `Blocks`.
+
 ### Exercise 4: Alternate boxes
 
 _Driver: **A**_
@@ -265,6 +275,8 @@ b. Add a few experiments to `Blocks` to verify that your class works. You may wa
   AsciiBlock.print(new Surrounded(new Surrounded(new Line("A"), 'B'), 'C'));
 ```
 
+c. Commit the updated `Surrounded` class and `Blocks` class.
+
 ### Exercise 5: Horizontally composing text, take one
 
 _Driver: **A**_
@@ -303,7 +315,9 @@ e. Add the following to `Blocks` to check the code and verify that the output lo
     AsciiBlock.print(new HorizontalCompositionTop(exes, exes));
 ```
 
-f. There's a bug in `HorizontalCompositionTop`. Spend no more than five minutes trying to identify it.
+f. Commit the updated `Blocks`.
+
+g. There's a bug in `HorizontalCompositionTop`. Spend no more than five minutes trying to identify it.
 
 ### Exercise 6: Horizontal Composition, revisited
 
@@ -329,6 +343,8 @@ b. It can also be helpful to box blocks to see what's happening. Let's try that.
 ```
 
 c. Fix the error in `HorizontalCompositionTop`.
+
+d. Commit the updated `HorizontalCompositionTop`.
 
 ### Exercise 7: Center-aligned horizontal composition, part one
 
@@ -373,6 +389,8 @@ c. Check your algorithm with these examples.
         new Boxed(new HorizontalCompositionCenter(fiveLeft, threeRight)));
 ```
 
+d. Commit your updated `HorizontalCompositionCenter`.
+
 ### Exercise 8: Center-aligned horizontal composition, extended
 
 
@@ -411,6 +429,7 @@ a. Determine what your code currently does with those kinds of examples.
 
 b. If your code does not behave as expected, correct it so that it does.
 
+c. Commit your updated `HorizontalCompositionCenter`.
 
 ### Exercise 9: Left-aligned vertical composition
 
