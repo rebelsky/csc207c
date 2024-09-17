@@ -62,6 +62,11 @@ _Trigger Warning! Death and Cancer._
     * I'd recommend doing the post-reflection immediately after you
       complete the mini-project.
 * Submit [SoLA 2](../los/sola02) by 10:30 p.m. on Monday, 2024-09-23.
+    * [Development #6: Code reading](https://www.gradescope.com/courses/818402/assignments/4966787)
+    * [Development #8: Documentation](https://www.gradescope.com/courses/818402/assignments/4966799)
+    * [OOP #1: Encapsulation](https://www.gradescope.com/courses/818402/assignments/4966827)
+    * Redo: [Development #2: Build tools](https://www.gradescope.com/courses/818402/assignments/4966771)
+    * Redo: [Development #4: IDE](https://www.gradescope.com/courses/818402/assignments/4966772)
 
 ### Tokens
 
