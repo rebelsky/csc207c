@@ -323,11 +323,11 @@ XXX
 XXX
 ```
 
-a. Write code for the `width` method of `HorizontalCompositionTop`. The result should depend on `left.width()` and `right.width()`.
+a. What should the `width` method of `HorizontalCompositionTop` look like? (No fair peeking.) Note that the result should depend on `left.width()` and `right.width()`.
 
-b. Write code for the `height` method of `HorizontalCompositionTop`. The result should depend on `left.height()` and `right.height()`.
+b. What should the `height` method of `HorizontalCompositionTop` look like?. Note that the result should depend on `left.height()` and `right.height()`.
 
-c. Write code for the `row` method of `HorizontalCompositionTop`. The result will likely depend on `left.row(i)`, `right.row(i)`, and perhaps other aspects of the two.
+c. What should the code for the `row` method of `HorizontalCompositionTop` look like? The result will likely depend on `left.row(i)`, `right.row(i)`, and perhaps other aspects of the two.
 
 d. Look at the code of `HorizontalCompositionTop` and see how the solution compares to yours. Make notes of any differences or concerns.
 
@@ -499,7 +499,7 @@ b. What should the height of the vertical composition be? You should be able to 
 
 c. What should the `row` method look like? You should be able to express this in terms of `above.row()`, `below.row()`, and `above.height()`.
 
-d. Compare your answers to those in `VerticalCompositionLeft`.
+d. Compare your answers to the solutions in `VerticalCompositionLeft`.
 
 Submitting
 ----------
