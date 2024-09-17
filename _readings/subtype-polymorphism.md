@@ -308,7 +308,7 @@ The simplest kind of AsciiBlock is a single line of text. We'll use these single
 /**
  * One line of text.
  */
-public class TextLine implements AsciiBlock {
+public class Line implements AsciiBlock {
   // +--------+------------------------------------------------------------
   // | Fields |
   // +--------+
@@ -328,9 +328,9 @@ public class TextLine implements AsciiBlock {
    * @param contents
    *   The contents of the line.
    */
-  public TextLine(String contents) {
+  public Line(String contents) {
     this.line = contents;
-  } // TextLine(String)
+  } // Line(String)
 
   // +---------+-----------------------------------------------------------
   // | Methods |
@@ -371,7 +371,7 @@ public class TextLine implements AsciiBlock {
     return this.line.length();
   } // width()
  
-} // class TextLine
+} // class Line
 ```
 
 Perhaps the next simplest `AsciiBlock` is a rectangle of all the same
@@ -477,7 +477,7 @@ Putting it all together, we get the following.
  *
  * @author Samuel A. Rebelsky
  */
-public class BoxedBlock implements AsciiBlock {
+public class Boxed implements AsciiBlock {
   // +-----------+---------------------------------------------------
   // | Constants |
   // +-----------+
@@ -538,9 +538,9 @@ public class BoxedBlock implements AsciiBlock {
    * @param blockContents
    *   The contents of the block.
    */
-  public BoxedBlock(AsciiBlock blockContents) {
+  public Boxed(AsciiBlock blockContents) {
     this.contents = blockContents;
-  } // BoxedBlock(AsciiBlock)
+  } // Boxed(AsciiBlock)
 
   // +---------+-----------------------------------------------------------
   // | Methods |
@@ -590,13 +590,13 @@ public class BoxedBlock implements AsciiBlock {
     return 2 + this.contents.width();
   } // width()
  
-} // class BoxedBlock
+} // class Boxed
 ```
 
-Because `BoxedBlock` objects can be created from any `AsciiBlock` objects, we can create them from lines of text or even from other text blocks. For example, consider the following instruction.
+Because `Boxed` objects can be created from any `AsciiBlock` objects, we can create them from lines of text or even from other text blocks. For example, consider the following instruction.
 
 ```java
-AsciiBlock block  = new BoxedBlock(new BoxedBlock(new TextLine("Hello")));
+AsciiBlock block  = new Boxed(new Boxed(new Line("Hello")));
 ```
 
 If we print out `block`, we get something like the following:
@@ -616,7 +616,7 @@ Self Checks
 
 ### Check 1: Horizontal composition (width & height) (‡)
 
-Suppose we are horizontally composing two `AsciiBlock` objects into a new `AsciiBlock`, which we'll call `left` and `right`? We will top-align them.
+Suppose we are horizontally composing two `AsciiBlock` objects (`left` and `right`) into a new `AsciiBlock`. We will align them at their tops.
 
 a. What is the width of the resulting object? You should express it in terms of `left.width()` and `right.width()`.
 
@@ -624,7 +624,7 @@ b. What is the height of the resulting object? You should express it in terms of
 
 ### Check 2: Horizontal composition (rows) (‡)
 
-Suppose we are horizontally composing two `AsciiBlock` objects into a new `AsciiBlock`, which we'll call `left` and `right`? We will top-align them.
+Suppose we are horizontally composing two `AsciiBlock` objects (`left` and `right`) into a new `AsciiBlock`. We will align thema t their tops.
 
 Suppose also that `left.width() is 3, `left.height()` is 1, `right.width() is 4, and `right.height()` is 2.
 
