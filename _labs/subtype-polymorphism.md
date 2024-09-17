@@ -338,11 +338,11 @@ e. Add the following to `Blocks` to check the code and verify that the output lo
     AsciiBlock ohs = new Rectangle('O', 4, 2);
 
     separator(pen);
-    AsciiBlock.print(new HorizontalCompositionTop(exes, ohs));
+    AsciiBlock.print(pen, new HorizontalCompositionTop(exes, ohs));
     separator(pen);
-    AsciiBlock.print(new HorizontalCompositionTop(ohs, exes));
+    AsciiBlock.print(pen, new HorizontalCompositionTop(ohs, exes));
     separator(pen);
-    AsciiBlock.print(new HorizontalCompositionTop(exes, exes));
+    AsciiBlock.print(pen, new HorizontalCompositionTop(exes, exes));
 ```
 
 f. Commit the updated `Blocks`.
