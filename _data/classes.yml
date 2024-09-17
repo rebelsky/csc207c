@@ -123,6 +123,9 @@
     - page: /readings/subtype-polymorphism.html
   lab:
     - page: /labs/subtype-polymorphism.html
+  eboards:
+    - page: /eboards/eboard06-1.html
+    - page: /eboards/eboard06-2.html
  
 - topic: Generics and parametric polymorphism
   abbrev: generics
