@@ -307,3 +307,39 @@ Make sure that your recovery is reasonable.
 
 Narrate both.
 
+---
+
+## Questions and answers
+
+**How much time can we spend on an LA?**
+
+> As much as you want.
+
+**How much time _should_ we spend on an LA?**
+
+> Here's my model.
+
+> (a) Hmmm ... I know I did this. But where? (5 min). 
+
+> (b) Find that thing, copy, paste, edit (5 min). 
+
+> (c) add commentary (5 min) 
+
+> (d) stuff Sam forgot (5 min)
+
+> So about twenty minutes.
+
+**Will you grade SoLA 1 before we have to turn in SoLA 2?**
+
+> That's my goal. However, life is complicated.
+
+**What code should we use for the LAs?**
+
+> You might use code from a lab. You might use code from a mini-project.
+  I would prefer code from mini-projects, since it's more "you wrote" than
+  "you adapted".
+
+**Can we use the same code for multiple LAs?**
+
+> Certainly. Thanks for asking.
+
