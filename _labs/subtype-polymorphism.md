@@ -270,9 +270,9 @@ a. Implement the `Surrounded` class. (You'll find template code already there; y
 b. Add a few experiments to `Blocks` to verify that your class works. You may want to consider mixing `Boxed` and `Surrounded` to see what happens. You may also want to try your `Surrounded` with the empty block. Here are some simplified versions of each of those experiments.
 
 ```
-  AsciiBlock.print(new Surrounded(new Line("A"), '*'));
-  AsciiBlock.print(new Surrounded(new Surrounded(new Line("A"), ' '), '*'));
-  AsciiBlock.print(new Surrounded(new Surrounded(new Line("A"), 'B'), 'C'));
+  AsciiBlock.print(pen, new Surrounded(new Line("A"), '*'));
+  AsciiBlock.print(pen, new Surrounded(new Surrounded(new Line("A"), ' '), '*'));
+  AsciiBlock.print(pen, new Surrounded(new Surrounded(new Line("A"), 'B'), 'C'));
 ```
 
 c. Commit the updated `Surrounded` class and `Blocks` class.
