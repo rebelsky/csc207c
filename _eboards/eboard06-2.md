@@ -16,7 +16,7 @@ _Start of class instructions_
   and locations.
 * Identify where the corresponding computer is.
 * Return the card to the jar.
-* Grab a sheet of paper.
+* Grab a sheet of paper. (This should be a whiteboard, but ....)
 * Navigate to the computer.
 * The first person at the computer logs in (and, if appropriate, forks
   and clones the repo).
@@ -75,8 +75,6 @@ class._
 
 #### Academic/Scholarly
 
-* Tuesday, 2024-09-17, noon--1:00 p.m., JRC 224A.
-  _CS Table_
 * Wednesday, 2024-09-18, 7:00--8:15 p.m., HSSC S1325.
   _Writers@Grinnell: 
   Jonathan Meiburg, Communicating the Harmonies of Art and Science_
@@ -88,13 +86,22 @@ class._
 * Friday, 2024-09-20, 4:15--7:00 p.m., CERA.
   _Writers@Grinnell: Bird Watching with Jonathan Meiburg_.
   (Bus leaves JRC at 4:15; you can also drive yourself.)
+* Tuesday, 2024-09-24, noon--1:00 p.m., JRC 224A.
+  _CS Table_
 * Thursday, 2024-09-26, 11:00 a.m.--noon, JRC 101.
   _Scholars' Convocation: 
   Anthony Pinn - "Thoughts on Why Music Matters for the Study of Religion"_
 
 #### Cultural
 
+* Friday, 2024-09-20, 7:30 p.m., Sebring Lewis.
+  _Jazz Band: Hits from the 80's, 90's, and naughts._
+* Saturday, 2024-09-21, 2:00--3:00ish p.m., Sebring-Lewis.
+  _Grinnell Symphony Orchestra plays Hungarian dances and more._
+
 #### Multicultural
+
+* Friday, 4:00 p.m., Middle of Everywhere
 
 #### Peer
 
@@ -103,7 +110,7 @@ class._
 * Tuesday, 2024-09-17, 4:00--5:00 p.m., HSSC S1003 - Atrium.
   _Therapy Dogs_
 * Tuesday, 2024-09-17, 6:00--7:00 p.m., Harris Concert Hall.
-  _Apple Nachos with ResLife_
+  _Apple Nachos with ResLife (Not-chos)_
     * As far as I can tell, Apple Nachos are almost completely unlike
       real nachos.  No chips. No cheese. No beans. No salsa. No guac.
 
@@ -121,14 +128,46 @@ class._
 Questions
 ---------
 
+### Questions on LAs
+
+**How much time can we spend on an LA?**
+
+> As much as you want.
+
+**How much time _should_ we spend on an LA?**
+
+> Here's my model.
+
+> (a) Hmmm ... I know I did this. But where? (5 min). 
+
+> (b) Find that thing, copy, paste, edit (5 min). 
+
+> (c) add commentary (5 min) 
+
+> (d) stuff Sam forgot (5 min)
+
+> So about twenty minutes.
+
+**Will you grade SoLA 1 before we have to turn in SoLA 2?**
+
+> That's my goal. However, life is complicated.
+
+** What code should we use for the LAs?**
+
+> You might use code from a lab. You might use code from a mini-project.
+  I would prefer code from mini-projects, since it's more "you wrote" than
+  "you adapted".
+
+**Can we use the same code for multiple LAs?**
+
+> Certainly. Thanks for asking.
+
 ### Questions on MP2
 
 I've put the ones you've sent at the end of the mini-project. But I'll
 take new ones now if you have any.
 
-### Questions on the readings
-
-#### Please describe polymorphism
+### Please describe polymorphism
 
 **This is not a question but can you go over polymorphism in class?
 Just say more things about it? I mean I believe I know what I am
@@ -136,6 +175,60 @@ supposed to do but I feel like I want to know more about the process
 in a high level way?**
 
 > I will try.
+
+> General meaning: "Many forms".
+
+> In CS, the idea that we can write code that accommodates many forms of
+  input (or something like that). We like that because we don't want to
+  copy/paste/change code. Keep your code DRY! "Don't Repeat Yourself".
+  (If you find yourself writing the same code, write something you can
+  reuse instead.)
+
+> Subtype polymorphism: Let's suppose we know that a class has a particular
+  method. E.g., "If I know something has a `cost` method, I can add it to
+  a shopping cart and compute the total expense."
+
+> We need to be able to have a way to say (a) "This class provides this 
+  method"; (b) this other method relies on that first method; (c) make
+  Java check it all for us so that we don't write broken code.
+
+> Here's one example we already knew about: Every class provides a 
+  `toString` method. That means that we can write code that takes
+  an arbitrary object and prints it out in a certain way.
+
+> Example: I want to print things right justified. In a non-polymorphic
+  world, I'd need printStringRightJustified, printIntRightJustfiied,
+  printRealRightJustfified, ...
+
+> Because I know that all values have a `toString` method, I can write
+  one method that will do right-justified printing.
+
+> ```
+    public static void rightJustify(PrintWriter pen, Object obj, int width) {
+      String str = obj.toString();
+      String result;
+      if (str.length() > width) {
+        result = str.substring(0, width);
+      } else {
+        result = " ".repeat(width - str.length()) + str;
+      }
+      pen.println(result);
+    } // rightJustify
+```
+
+> `rightJustify` is polymorphic.
+
+> The idea for today's class is that interfaces help us write polymorphic
+  procedures; we write procedures that an interface as a parameter and will
+  then work for anything that implements that interface.
+
+> The basic idea is that we can write a single function (method) that will 
+  work with a bunch of types (but not necessarily all types).
+
+### Other questions on the readings
+
+_New approach. Read through the questions and answers on the eboard. Let me 
+know if any are puzzling or if you have followup questions._
 
 #### Stores (or purchases)
 
@@ -178,7 +271,9 @@ the implementation of the classes. But then this makes me feel like
 I should write an interface first all the time because it helps me
 define my goals and what I want to achieve.**
 
-> If there's only one clear implementation, you might start with a class. But if we're designing something general, we tend to start with interfaces.
+> If there's only one clear implementation, you might start with a
+  class. But if we're designing something general, we tend to start with
+  interfaces.
 
 **With the concept of minimalist and maximalist design in mind, if
 we knew ahead of time that horizontal composition would be something
@@ -285,3 +380,23 @@ is **_B_**.
 You will not be submitting code directly (although you will be
 giving me the URL of your GitHub repo). Rather, I ask you to reflect
 on three important things you learned.
+
+### Questions and answers
+
+**What Git commands should I use?**
+
+> They are now in the lab. Reload to see.
+
+**Where does the "(at $8.99)" come from in the store output?**
+
+> It's from the `toString()` method of `Item`.
+
+**What is `String.format()`?**
+
+> It's like `sprintf`, but a little nicer. (If you don't know `sprintf`,
+  it's like `printf`, but it prints to a string rather than to a stream/fd.)
+
+**Can I just run the main programs from VSCode?**
+
+> Sure.
+

@@ -93,19 +93,10 @@ class._
 
 #### Wellness
 
-* Tuesday, 2024-09-17, 4:00--5:00 p.m., HSSC S1003 - Atrium.
-  _Therapy Dogs_
-* Tuesday, 2024-09-17, 6:00--7:00 p.m., Harris Concert Hall.
-  _Apple Nachos with ResLife_
-    * As far as I can tell, Apple Nachos are almost completely unlike
-      real nachos.  No chips. No cheese. No beans. No salsa. No guac.
-
 #### Misc
 
 ### Other good things (no tokens)
 
-* Wednesday, 2024-09-18, 6:00--8:00 p.m., Darby Gym.
-  _Volleyball vs. Simpson_
 * Friday, 2024-09-20, 4:00--6:00 p.m., Darby.
   _Volleyball vs. Loras_
 * Friday, 2024-09-20, 8:00--10:00 p.m., Darby.
@@ -114,6 +105,32 @@ class._
 About MP3
 ---------
 
+Like the second half of Tuesday's lab, but extended! Also partnered.
+Today's lab partner is your MP partner. If you are not here today, 
+Sam will assign you a partner.
+
+Notes from Tuesday's lab
+------------------------
+
+### "It looks right" vs. "I'm confident that it's right"
+
+### Code that could be improved
+
+I am stunned to see how many of you wrote the following for row 0 of
+the surrounded box.
+
+```
+    public String row(int i) {
+      if (i == 0) {
+        return boxChar + boxChar.repeat(contents.width()) + boxChar;
+      } else {
+        ...
+      } // if/else
+    } // row(int)
+```
+
+_Why would this disturb me?_ (TPS)
+
 Questions
 ---------
 
@@ -121,7 +138,7 @@ Questions
 
 **Will we have time limits on any LAs?**
 
-> Nope. I hope that you can complete most LAs in under fifteen minutes.
+> Nope. I hope that you can complete most LAs in about twenty minutes
   The model in most cases is that you should (a) check your
   notes/code/memory for something you've written, (b) find that thing,
   (c) copy/paste/edit, and (d) spend a few minutes adding narrative.
@@ -129,6 +146,9 @@ Questions
 ### Questions on MP2
 
 ### Questions on the Reading
+
+_Model: Read over these. Start the lab. At some point, I'll ask if
+anyone has questions._
 
 Lab
 ---
