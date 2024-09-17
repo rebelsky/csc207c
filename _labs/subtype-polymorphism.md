@@ -53,6 +53,13 @@ e. Check your answer experimentally.
 
 f. Commit your changes to `Store`.
 
+```
+$ git add src/main/java/edu/grinnell/csc207/experiments/Store.java
+$ git commit -m "SOME MESSSAGE"
+```
+
+You may also want to push your changes.
+
 ### Exercise 2: Adding a new type of purchase
 
 _Driver: **B**_
@@ -172,7 +179,19 @@ TOTAL:                                                $32.73
 
 g. Add and commit the new class.
 
+```
+$ git add src/main/java/edu/grinnell/csc207/store/Multiple.java
+$ git commit -m "SOME MESSSAGE"
+```
+
 h. Commit the updated `Store`.
+
+```
+$ git add src/main/java/edu/grinnell/csc207/experiments/Store.java
+$ git commit -m "SOME MESSSAGE"
+```
+
+i. Push your changes.
 
 ### Exercise 3: Basic and boxed AsciiBlocks
 
@@ -195,7 +214,7 @@ d. Let's keep nesting. Put a block around `b5` and call the result `b6`. Print i
 
 e. We also have an empty block class that creates a 0x0 block. What do you expect to get when we create and try to print one out?
 
-```
+```java
     separator(pen);
     pen.printf("b7 = new Empty()\n\n");
     AsciiBlock b7 = new Empty();
@@ -230,6 +249,11 @@ i. What do you expect to get as output if we put a box around `b8`? Sketch your 
 ```
 
 j. Commit your updated `Blocks`.
+
+```
+$ git add src/main/java/edu/grinnell/csc207/experiments/Blocks.java
+$ git commit -m "SOME MESSSAGE"
+```
 
 ### Exercise 4: Alternate boxes
 
@@ -277,6 +301,12 @@ b. Add a few experiments to `Blocks` to verify that your class works. You may wa
 
 c. Commit the updated `Surrounded` class and `Blocks` class.
 
+```
+$ git add src/main/java/edu/grinnell/csc207/experiments/Blocks.java
+$ git add src/main/java/edu/grinnell/csc207/blocks/Surround.java
+$ git commit -m "MESSAGE"
+```
+
 ### Exercise 5: Horizontally composing text, take one
 
 _Driver: **A**_
@@ -317,6 +347,8 @@ e. Add the following to `Blocks` to check the code and verify that the output lo
 
 f. Commit the updated `Blocks`.
 
+_See above._
+
 g. There's a bug in `HorizontalCompositionTop`. Spend no more than five minutes trying to identify it.
 
 ### Exercise 6: Horizontal Composition, revisited
@@ -345,6 +377,8 @@ b. It can also be helpful to box blocks to see what's happening. Let's try that.
 c. Fix the error in `HorizontalCompositionTop`.
 
 d. Commit the updated `HorizontalCompositionTop`.
+
+_See above._
 
 ### Exercise 7: Center-aligned horizontal composition, part one
 
