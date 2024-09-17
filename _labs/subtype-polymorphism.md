@@ -261,8 +261,8 @@ b. Add a few experiments to `Blocks` to verify that your class works. You may wa
 
 ```
   AsciiBlock.print(new Surrounded(new Line("A"), '*'));
-  AsciiBlock.print(new Surrounded(new Surrounded(new Line("A"), ' ')), '*');
-  AsciiBlock.print(new Surrounded(new Surrounded(new Line("A"), 'B')), 'C');
+  AsciiBlock.print(new Surrounded(new Surrounded(new Line("A"), ' '), '*'));
+  AsciiBlock.print(new Surrounded(new Surrounded(new Line("A"), 'B'), 'C'));
 ```
 
 ### Exercise 5: Horizontally composing text, take one
