@@ -1,6 +1,6 @@
 ---
 title: Java Generics
-repo: <https://github.com/Grinnell-CSC207/lab-generics>
+repo: <https://github.com/Grinnell-CSC207/lab-generics-maven>
 summary: |
   We explore some basic use of generic values in Java.
 prereqs: |
@@ -10,34 +10,53 @@ prereqs: |
 Preparation
 -----------
 
-a. Fork and clone the repository
-at <https://github.com/Grinnell-CSC207/lab-generics>
+a. Fork and clone the repository at {{ page.repo }}. When cloning, make sure to use the SSH link.
 
 b. Import the repository into VSCode.
 
-c. The partner closest to the board is **A**. The partner furthest from the board is **B**.
+c. Update the `README.md` file to add your names. (Ideally, you'd also update 
+the .java files to add your names.)
+
+d. Commit and push the updated files.
+
+```
+$ git add README.md
+$ git add src/main/java/edu/grinnell/csc207/util/*.java
+$ git add src/main/java/edu/grinnell/csc207/experiments/*.java
+$ git commit -m "Add our names to the appropriate files."
+$ git push
+```
+
+e. Grab a whiteboard and marker (or piece of paper and writing utensil).
+
+f. For reference: The partner closest to the board is **A**. The partner furthest from the board is **B**.
 
 Exercises
 ---------
 
-### Exercise 1: Simple expandable arrays
+### Exercise 1: Simple dynamic arrays
 
 _Driver: **A**_
 
-The [reading on generics](../readings/generics.html) shows how we build a generic "expandable array" class.  You'll find that generic class in the repository for this lab.
+The [reading on generics](../readings/generics.html) shows how we build a generic "dynamic array" class.  You'll find that generic class in the repository for this lab.
 
-a. Read through `SEAExperiment.java` and predict what the output will be.
+a. Read through `SimpleDynamicArrayExperiments.java` and predict what the output will be. You should write your answer on the whiteboard or piece of paper.
 
-b. Compile and run `SEAExperiment.java` to see what the output is.
+b. Compile and run `SimpleDynamicArrayExperiments.java` to see what the output is. You can use VSCode (easy) or you can copy and paste the following commands (differently easy).
 
-c. `SimpleExpandableArray` is supposed to expand the array when you set a value larger than the size.  Do you expect it to do so for this example?
+```
+mvn compile -q
+java -cp target/classes edu.grinnell.csc207.experiments.SimpleDynamicArrayExperiments
+```
 
-d.  Within the portion of the `set` method of `SimpleExandableArray` that expands the array, add a call to `System.err.println` so that you can tell when the array expands.
+c. `SimpleDynamicArray` is supposed to expand the array when you set a value larger than the size.  Do you expect it to do so for this example?
 
-e. Create an expandable array of strings, assign some values to it, and print them out.  Here's a start.
+d.  Within the portion of the `set` method of `SimpleDynamicArray` that expands the array, add a call to `System.err.println` so that you can tell when the array expands.
+
+e. Create a dynamic array of strings, assign some values to it, and print them out.  Here's a start.
 
 ```java
-  ExpandableArray<String> strings = new SimpleExpandableArray<String>();
+  DynamicArray<String> strings = new SimpleDynamicArray<String>();
   ...
   for (int i = 0; i < 10; i++) {
     pen.println("strings[" + i + "] = " + strings.get(i));
@@ -51,7 +70,7 @@ g. Check your answer experimentally.
 h. What do you expect to happen if we leave out the type when we construct `numbers`, as in the following?
 
 ```java
-  ExpandableArray<BigInteger> numbers = new SimpleExpandableArray();
+  DynamicArray<BigInteger> numbers = new SimpleDynamicArray();
 ```
 
 i. Check your answer experimentally.
@@ -59,7 +78,7 @@ i. Check your answer experimentally.
 j. What do you expect to happen if we leave out the type when we declare `strings`, as in the following?
 
 ```
-  ExpandableArray strings = new SimpleExpandableArray<String>();
+  DynamicArray strings = new SimpleDynamicArray<String>();
 ```
 
 k. Check your answer experimentally.
@@ -67,10 +86,20 @@ k. Check your answer experimentally.
 l. What do you expect to happen if we leave out the type on both sides of the declaration, as in the following?
 
 ```
-  ExpandableArray strings = new SimpleExpandableArray();
+  DynamicArray strings = new SimpleDynamicArray();
 ```
 
 m. Check your answer experimentally.
+
+n. Restore your code to working order.
+
+o. Commit your changes.
+
+```
+git add src/main/java/edu/grinnell/csc207/experiment/SimpleDynamicArrayExperiments.java
+git commit -m "Completed work from exercise 1."
+git push
+```
 
 n. Summarize what you've learned in these exercises.
 
@@ -80,7 +109,7 @@ _Driver: **B**_
 
 The [reading on generics](../readings/generics.html) shows how we build a generic search method.  You'll find that code in the repository.
 
-a. Read through `SearchExperiment.java` and predict what the output will be.
+a. Read through `SearchExperiments.java` and predict what the output will be. Record your predications on your whiteboard or piece of paper.
 
 b. Compile and run `SearchExperiment.java` to see what the output is.
 
@@ -99,8 +128,19 @@ g. Check your answer experimentally.
 h. Create a new `SmallObject` predicate whose `hold` method takes an object as a parameter, converts it to a string, and sees if that string has fewer than five characters.  Do you expect that new predicate to work with the updated `strings`?
 
 i. Check your answer experimentally.
+ 
+j. Restore your code to working order.
 
-j. Summarize what you've learned in these exercises.
+k. Commit your changes.
+
+```
+git add src/main/java/edu/grinnell/csc207/experiments/SearchExperiments.java
+git add src/main/java/edu/grinnell/csc207/util/predicates/SmallObject.java
+git commit -m "Completed work from exercise 2."
+git push
+```
+
+l. Summarize what you've learned in these exercises.
 
 ### Exercise 3: Predicates
 
@@ -166,13 +206,12 @@ Please submit all of your .java files on Gradescope.
 For those with extra time
 -------------------------
 
-Finish the following alternate implementation of
-`ExpandableArray`. You'll need to look up Java vectors.
+Finish the following alternate implementation of `DynamicArray`. You'll need to look up Java vectors.
 
 ```java
-public class VectorBasedExpandableArray {
+public class VectorBasedDynamicArray {
   Vector<T> values;
   ...
-} // class VectorBasedExpandableArray
+} // class VectorBasedDynamicArray
 ```
 
