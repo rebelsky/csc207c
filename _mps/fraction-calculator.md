@@ -610,6 +610,10 @@ How is the Javadoc like a style comment? That has the parameters and what the th
 
 > You should be able to follow the examples from the various sample code. If not, you can do a search.
 
+I worked on `BigFraction` objects in the lab. Can I use code from the lab in my mini-project?
+
+> Certainly. However, you should make sure to cite your partner.
+
 ### Beyond the project
 
 **Can constructors be static?**
