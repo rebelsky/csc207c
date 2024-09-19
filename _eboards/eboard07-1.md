@@ -38,22 +38,40 @@ Preliminaries
 
 ### News / Etc.
 
+* Writing MP3 took me far more time than it should have. I did not have
+  time to do anything else yesterday. (Other than personal stuff.) In
+  particular, I did not review all of your questions for class.
+* I am not sure whether or not I'll be here next week. If not, you'll have
+  awesome subs.
+* I've tried to rearrange the upcoming work section for clarity. Let me
+  know if you have problems with it.
+
 ### Upcoming work
 
-* Reading due Sunday night
-    * [Generics and parametric polymorphism](https://rebelsky.cs.grinnell.edu/Courses/CSC207/2024Fa/readings/generics.html)
-* Submit [reading responses for class 7](https://www.gradescope.com/courses/818402/assignments/4966887) by 10:30 pm on Wednesday
-* Submit [today's lab](https://www.gradescope.com/courses/818402/assignments/4966896/) by 10:30 pm on Wednesday (but preferably at the end of class today)
-    * Labs will remain "Do as much as you can during class."
-    * You may find it useful to complete labs outside of class because
-      they will contribute to LAs.
-    * Today's writeup uses the "what lessons did you learn" style.
-* Complete [Mini-Project 2](../mps/mp02) by 10:30 p.m. on Thursday, 2024-09-19
+* TONIGHT @ 10:30 p.m.
+    * Complete [Mini-Project 2](../mps/mp02) 
     * [Submit MP02 on Gradescope](https://www.gradescope.com/courses/818402/assignments/4979019)
-* Submit [Post-reflection for MP02](https://www.gradescope.com/courses/818402/assignments/4943647) by 10:30 p.m. on Friday, 2024-09-20.
-    * I'd recommend doing the post-reflection immediately after you
-      complete the mini-project.
-* Submit [SoLA 2](../los/sola02) by 10:30 p.m. on Monday, 2024-09-23.
+* Friday, 2024-09-20 @ 10:30 p.m.
+    * Submit [Post-reflection for MP02](https://www.gradescope.com/courses/818402/assignments/4943647) by 10:30 p.m. on Friday, 2024-09-20.
+        * I'd recommend doing the post-reflection immediately after you
+          complete the mini-project.
+* Sunday, 2024-09-22 @ 10:30 p.m.
+    * Submit [Pre-reflection for MP03](https://www.gradescope.com/courses/818402/assignments/4996560)
+* Monday, 2024-09-23 @ 10:30 p.m.
+    * Reading on [Exceptions](../readings/exceptions)
+        * Whoo! Only one reading.
+    * Submit [reading responses for class 8](https://www.gradescope.com/courses/818402/assignments/4996552) 
+    * Submit [today's lab](https://www.gradescope.com/courses/818402/assignments/4990860)
+        * Today's writeup uses the a new style. Open it up at the start of lab.
+    * Submit [SoLA 2](../los/sola02)
+* Wednesday, 2024-09-26 @ 10:30 p.m.
+    * Readings
+    * Submit reading responses on Gradescope
+* Thursday, 2024-09-26 @ 10:30 p.m.
+    * Complete [Mini-Project 3](../mps/mp03)
+    * [Submit MP3 on Gradescope](https://www.gradescope.com/courses/818402/assignments/4996582)
+* Friday, 2024-09-27 @ 10:30 p.m.
+    * Submit [Post-reflection for MP3](https://www.gradescope.com/courses/818402/assignments/4996574) on Gradescope.
 
 ### Tokens
 
@@ -62,11 +80,6 @@ class._
 
 #### Academic/Scholarly
 
-* Tuesday, 2024-09-17, noon--1:00 p.m., JRC 224A.
-  _CS Table_
-* Wednesday, 2024-09-18, 7:00--8:15 p.m., HSSC S1325.
-  _Writers@Grinnell: 
-  Jonathan Meiburg, Communicating the Harmonies of Art and Science_
 * Thursday, 2024-09-19, 4:15--??:?? p.m., Herrick Chapel.
   _Writers@Grinnell:
   Jonathan Meiburg, Readings from A Most Remarkable Creature_
@@ -75,6 +88,10 @@ class._
 * Friday, 2024-09-20, 4:15--7:00 p.m., CERA.
   _Writers@Grinnell: Bird Watching with Jonathan Meiburg_.
   (Bus leaves JRC at 4:15; you can also drive yourself.)
+* Sunday, 2024-09-22, 7:00--8:00 p.m., Noyce 3819.
+  _Mentor Session!_
+* Tuesday, 2024-09-24, noon--1:00 p.m., JRC 224A.
+  _CS Table_
 * Thursday, 2024-09-26, 11:00 a.m.--noon, JRC 101.
   _Scholars' Convocation: 
   Anthony Pinn - "Thoughts on Why Music Matters for the Study of Religion"_
@@ -82,9 +99,14 @@ class._
 #### Cultural
 
 * Friday, 2024-09-20, 7:30 p.m., Sebring Lewis.
-  _Jazz Band: Hits from the 80's, 90's, and naughts._
+  _Jazz Band: Hits from the 80's, 90's, and naughts_
+* Saturday, 2024-09-21, 7:30--8:30 p.m., Sebring Lewis.
+  _Grinnell Singers and Oratorio Society_
 
 #### Multicultural
+
+* Friday, 2024-09-20, 4:00-5:00 p.m., HSSC N1170 - Global Living Room.
+  _Middle of Everywhere_.
 
 #### Peer
 
@@ -101,6 +123,10 @@ class._
   _Volleyball vs. Loras_
 * Friday, 2024-09-20, 8:00--10:00 p.m., Darby.
   _Volleyball vs. Augustanta_ 
+* Saturday, 2024-09-21, 11:00 a.m.--1:00 p.m., Springer Field.
+  _Men's Soccer vs. Nebraska Wesleyan_
+* Saturday, 2024-09-21, 1:00 p.m.--4:00 p.m., Rosenbloom Field.
+  _Football vs. Beloit_
 
 About MP3
 ---------
@@ -109,10 +135,17 @@ Like the second half of Tuesday's lab, but extended! Also partnered.
 Today's lab partner is your MP partner. If you are not here today, 
 Sam will assign you a partner.
 
+I will reserve ten minutes at the end of class today for you to make
+plans with your partner (e.g., meeting times).
+
 Notes from Tuesday's lab
 ------------------------
 
 ### "It looks right" vs. "I'm confident that it's right"
+
+The point of the horizontal composition exercise.
+
+Also "What should be the meaning?"
 
 ### Code that could be improved
 
@@ -144,6 +177,10 @@ Questions
   (c) copy/paste/edit, and (d) spend a few minutes adding narrative.
 
 ### Questions on MP2
+
+**Can I use my code from the lab in which we worked with `BigFraction`?**
+
+> Certainly. But cite your partner.
 
 ### Questions on the Reading
 
