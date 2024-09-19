@@ -437,6 +437,14 @@ The tests are not yet available and will be distributed by Tuesday. There is a p
 
 > They should get an email invitation that they will need to accept.
 
+**Are we going to end up with merge conflicts?**
+
+> If you are working on different files, you shouldn't have merge conflicts.
+
+> If you've divided the work reasonably, the only place you will likely have
+  a merge conflict is on the experiment. You can avoid that problem by 
+  creating separate experiment files.
+
 ### General
 
 **Do we submit together or separately?**
