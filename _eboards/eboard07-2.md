@@ -1,5 +1,5 @@
 ---
-title: "Eboard 07 (Section 2): Parametric polymorphism"
+title: "Eboard 07 (Section 2): Generics and parametric polymorphism"
 number: 7
 section: eboards
 held: 2024-09-19
@@ -30,8 +30,10 @@ _Approximate overview_
     * Upcoming work
     * Tokens
 * About MP3
+* Notes from the prior lab
 * Questions
 * Lab
+* Time to meet with MP3 partner
 
 Preliminaries
 -------------
@@ -107,6 +109,8 @@ class._
 
 * Friday, 2024-09-20, 7:30 p.m., Sebring Lewis.
   _Jazz Band: Hits from the 80's, 90's, and naughts_
+* Saturday, 2024-09-21, 2:00--3:00ish p.m., Sebring-Lewis.
+  _Grinnell Symphony Orchestra plays Hungarian dances and more._
 * Saturday, 2024-09-21, 7:30--8:30 p.m., Sebring Lewis.
   _Grinnell Singers and Oratorio Society_
 
@@ -116,9 +120,6 @@ class._
   _Middle of Everywhere_.
 
 #### Peer
-
-* Saturday, 2024-09-21, 2:00--3:00ish p.m., Sebring-Lewis.
-  _Grinnell Symphony Orchestra plays Hungarian dances and more._
 
 #### Wellness
 
@@ -145,6 +146,17 @@ Sam will assign you a partner.
 I will reserve ten minutes at the end of class today for you to make
 plans with your partner (e.g., meeting times).
 
+### Questions
+
+**Do we submit one project each or one project together?**
+
+> Just one project for the two (sometimes three) of you.
+
+**Should we share one GitHub repository?**
+
+> Yes. One of my goals is that you have experience working with another
+  person in the same repository. (It gets better on the next assignment.)
+
 Notes from Tuesday's lab
 ------------------------
 
@@ -154,12 +166,14 @@ The point of the horizontal composition exercise.
 
 Also "What should be the meaning?"
 
+Good tests are important
+
 ### Code that could be improved
 
 I am stunned to see how many of you wrote the following for row 0 of
 the surrounded box.
 
-```
+```java
     public String row(int i) {
       if (i == 0) {
         return boxChar + boxChar.repeat(contents.width()) + boxChar;
@@ -171,23 +185,47 @@ the surrounded box.
 
 _Why would this disturb me?_ (TPS)
 
+* We could just write `boxChar.repeat(contents.width() + 2)`. It's more
+  concise.
+* We should use `this`. `boxChar.repeat(this.contents.width() + 2)`.
+* We should use `this`. `this.boxChar.repeat(this.contents.width() + 2)`.
+* Something people might debate: Since we have a `return` do we really
+  need an `else`? (Sam's okay with it.)
+* We should use `this`. `this.boxChar.repeat(this.width())`.
+
 Questions
 ---------
-
-### Questions on SoLAs
-
-**Will we have time limits on any LAs?**
-
-> Nope. I hope that you can complete most LAs in about twenty minutes
-  The model in most cases is that you should (a) check your
-  notes/code/memory for something you've written, (b) find that thing,
-  (c) copy/paste/edit, and (d) spend a few minutes adding narrative.
 
 ### Questions on MP2
 
 **Can I use my code from the lab in which we worked with `BigFraction`?**
 
 > Certainly. But cite your partner.
+
+**Can I have an extension?**
+
+> Sure.
+
+**Should I throw exceptions for illegal input?**
+
+> In `InteractiveCalculator` and `QuickCalculator`, the answer is no.
+  You should print an error message and go on.
+
+> In `BFCalculator`, `BFRegisterSet`, `BigFraction`, the answer is also
+  no. You should assume they have correct input. Let them fail however
+  they fail.
+
+From Sam: What are the stumbling blocks?
+
+> Basic concepts of how to solve it? (a few)
+
+> Maven setup + VSCode is taking more time than it should. (many)
+
+> I didn't start soon enough. (similar)
+
+> It's a long assignment, nothing in particular. (many more)
+
+> Some parts of the assignment are hard, such as parsing strings.
 
 ### Questions on the Reading
 
@@ -237,3 +275,18 @@ other programming languages, such as C++ templates?
 
 Lab
 ---
+
+We'll try to end at 3:35 so that you have time to meet with your partner(s).
+
+You can submit whatever you've done, whether you are at 1, 2, 3, or 4.
+
+Partner meeting
+---------------
+
+* What is your preferred working methodology for this project?
+* What is your contact information?
+* When can/should we meet? (I'd suggest at least a starting meeting and a
+  wrapup meeting.)
+* Who creates the repo?
+* What should we do before the first meeting?
+* Let's read through the project and start thinking about parts.
