@@ -118,7 +118,7 @@ b. Compile and run `SearchExperiment.java` to see what the output is. Once again
 
 ```
 mvn compile -q
-java -cp target/classes edu.grinnell.csc207.experiments.SearchExperiment
+java -cp target/classes edu.grinnell.csc207.experiments.SearchExperiments
 ```
 
 d. What do you expect to happen if you try to search `strings` with `OddInteger.PRED` or `numbers` with `SmallString.PRED`?
@@ -188,7 +188,7 @@ _Driver: **B**_
 
 As you've noted, when two variables refer to the same mutable object, we can change the object through one variable and see the effect through the other variable.  At times, that effect is undesirable, but at others it is desirable.
 
-However, if the two variables refer to the same immutable object, such as a string, we can't propagate the change to one variable to the other variable.  The typical solution to this problem is to have what is typically called a "box".  You can set the value in a box or get the value in a box. (Note that this box is unrelaed to the box from our AsciiArt exapmle.)
+However, if the two variables refer to the same immutable object, such as a string, we can't propagate the change to one variable to the other variable.  The typical solution to this problem is to have what is typically called a "box".  You can set the value in a box or get the value in a box. (Note that this box is unrelated to the box from our AsciiArt exapmle.)
 
 ```java
     Box<String> s1 = new Box<String>("Hello");
