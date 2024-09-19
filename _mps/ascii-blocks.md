@@ -34,7 +34,7 @@ The assignment repository does not include a working `Surrounded`. Please finish
 
 Implement a more general version of `Rectangle` called `Grid`. Instead of an `n`-by-`m` grid of characters, `Grid` has an `n`-by-`m` grid of `AsciiBlock` objects. 
 
-For example, `new Grid(new Line("Hello", 3, 4)` should give
+For example, `new Grid(new Line("Hello"), 3, 4)` should give
 
 ```text
 HelloHelloHello
