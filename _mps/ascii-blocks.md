@@ -352,6 +352,10 @@ How might you implement `eqv`? The best strategy we've seen is to require that e
   } // eqv(Grid)
 ```
 
+### Part 12: Make an art
+
+In `Art80x24.java` (in package `edu.grinnell.csc207.main`), make the `main` method print out an "interesting" 80x24 ASCII block created by using the various block types above.
+
 ## Collaborating on this project
 
 Students have found multiple modes of collaboration work well in CSC-207. I prefer that at least some of the collaboration involve pair programming, but you will also find that you are more efficient if you split up some of the work. 
