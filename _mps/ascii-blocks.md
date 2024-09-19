@@ -207,14 +207,14 @@ de
 ij
 ```
 
-`new Trimmed(block, HAlignment.CENTER, VAlignment.RIGHT, 3, 2)` should be
+`new Trimmed(block, HAlignment.CENTER, VAlignment.TOP, 3, 2)` should be
 
 ```text
 bcd
 ghi
 ```
 
-`new Trimmed(block, HAlignment.CENTER, VAlignment.RIGHT, 2, 2)` should be
+`new Trimmed(block, HAlignment.CENTER, VAlignment.TOP, 2, 2)` should be
 
 ```text
 bc
