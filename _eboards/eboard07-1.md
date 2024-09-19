@@ -1,5 +1,5 @@
 ---
-title: "Eboard 07 (Section 1): Parametric polymorphism"
+title: "Eboard 07 (Section 1): Generics and parametric polymorphism"
 number: 7
 section: eboards
 held: 2024-09-19
@@ -32,6 +32,7 @@ _Approximate overview_
 * About MP3
 * Questions
 * Lab
+* Meet with your MP3 partner.
 
 Preliminaries
 -------------
@@ -145,6 +146,29 @@ Sam will assign you a partner.
 I will reserve ten minutes at the end of class today for you to make
 plans with your partner (e.g., meeting times).
 
+For `eqv`. Consider the following.
+
+```text
+XXX
+XXX
+```
+
+There are many ways to create this.
+
+```
+AsciiBlock v1 = new VComp(HAlignment.LEFT, new Line("XXX"), new Line("XXX"));
+AsciiBlock v2 = new VComp(HAlignment.RIGHT, new Line("XXX"), new Line("XXX"));
+AsciiBlock x = new Line("X");
+AsciiBlock xoverx = new VComp(x,x);
+AsciiBlock v3 = new HComp(HAlignment.LEFT, xoverx, xoverx, xoverx);
+AsciiBlock v4 = new Rect('X', 3, 2);
+AsciiBlock v5 = new HFlip(v4);
+```
+
+All of the `vs` are `equal`, but none are `eqv`.
+
+However, `v3` would be equivalent to `new HComp(HAlignment.LEFT, xoverx, new VComp(x,x), xoverx)`. Even though it's built with slightly different commands, it has the same structure.
+
 Notes from Tuesday's lab
 ------------------------
 
@@ -171,6 +195,10 @@ the surrounded box.
 
 _Why would this disturb me?_ (TPS)
 
+* Math is easy: `return boxChar.repeat(contents.width() + 2)`
+* Or we could use our own width: `return boxChar(width())`
+* We should use `this` for clarity. `this.boxChar(this.width())`
+
 Questions
 ---------
 
@@ -183,11 +211,23 @@ Questions
   notes/code/memory for something you've written, (b) find that thing,
   (c) copy/paste/edit, and (d) spend a few minutes adding narrative.
 
+**When do you plan to grade LAs?**
+
+> I will try to have LAs graded by Thursday or Friday each week.
+
+**Will mini-projects always be due on Thursdays and LAs always on Mondays?**
+
+> Yes.
+
 ### Questions on MP2
 
 **Can I use my code from the lab in which we worked with `BigFraction`?**
 
 > Certainly. But cite your partner.
+
+**Will we get more unit tests?**
+
+> No.
 
 ### Questions on the Reading
 
@@ -235,5 +275,49 @@ and when they are useful in practice?
 How do generics in Java compare to mechanisms similar to those in
 other programming languages, such as C++ templates?
 
+### Other questions
+
+**Could you explain `this`?**
+
+> We assume that an object is executing each method. At times, we want
+  to refer to that object in a method. We use the word `this` to say
+  "the object that is executing the method".
+
+> `this.x` means "the field `x` of the object that is executing the
+  method."
+
+> We see a difference if we happen to create a parameter or local
+  variable that matches a field.
+
+> ```java
+public class Example {
+  int x;
+
+  void method(int x) {
+    x = 2;      // Parameter
+    this.x;     // Field
+  } // method(int
+} // class Example
+```
+
+> If we wanted to pass the current object to another method, we can
+  just treat `this` as a variable.
+
+> `pen.println(this)`.
+
 Lab
 ---
+
+We will stop lab at 9:35 so that you have time to discuss MP3 with
+your partner.
+
+If you've gotten through exercise 1, 2, or 3, you can leave the remaining
+exercises blank.
+
+Meeting with partner
+--------------------
+
+* Pick time(s) to meet. 
+* Read through the project to make sure you understand.
+* Discuss how you want to collaborate.  
+* Etc.
