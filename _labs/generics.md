@@ -1,8 +1,8 @@
 ---
-title: Java Generics
+title: Java generics
 repo: <https://github.com/Grinnell-CSC207/lab-generics-maven>
 summary: |
-  We explore some basic use of generic values in Java.
+  We explore some basic use of generic types in Java.
 prereqs: |
   Classes and interfaces.
 ---
@@ -59,7 +59,7 @@ e. Create a dynamic array of strings, assign some values to it, and print them o
 
 ```java
   DynamicArray<String> strings = new SimpleDynamicArray<String>();
-  ...
+  ... // code to put values in the array
   for (int i = 0; i < 10; i++) {
     pen.println("strings[" + i + "] = " + strings.get(i));
   } // for
