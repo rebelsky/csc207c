@@ -421,4 +421,24 @@ The tests are not yet available and will be distributed by Tuesday. There is a p
 
 ## Questions and Answers
 
-_Forthcoming._
+### GitHub
+
+**How do I let someone else push commits to my GitHub repo?**
+
+> Choose "Settings" (a gear) from along the top (usually top right).
+
+> Choose "Collaborators and Teams" from the list of settings on the left.
+
+> Click on "Add People".
+
+> Search for your partner's GitHub username.
+
+> Give them write access.
+
+> They should get an email invitation that they will need to accept.
+
+### General
+
+**Do we submit together or separately?**
+
+> Please do only one submission for the two (or three) of you.
