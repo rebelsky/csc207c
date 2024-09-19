@@ -48,7 +48,7 @@ How can one recover from such an error?  The program could use a failsafe addres
 
 However, it is rarely the case that your code should recover from an error by printing an error message for the user to read.  Think about how annoying you find the error messages you get from programs?  Wouldn't it be better if the programmer found a way to recover or to delay the issue until later?
 
-### Testing for errors
+### Checking for errors
 
 You now know what can go wrong and what you want to do about it.  What comes next?  You need to decide how you identify when something has gone wrong.  Unfortunately, there is not a clear answer.  In fact, one of the central debates in the software engineering community is when and how the code should check for problems.
 
@@ -89,7 +89,7 @@ Even more unfortunately, history suggests that many programmers are less careful
 Exceptions
 ----------
 
-Has the software engineering community developed another, perhaps better, solution?  Yes.  Does Java use it?  Yes.  Java uses a variant of the error signaling technique that (a) provides a more uniform mechanism for indicating errors and (b) makes it difficult for programmers to delay the decision of how to handle errors.  Java's error handling mechanism, the *exception*, is inherited from a number of other languages, particularly CLU.
+Has the software engineering community developed another, perhaps better, solution?  Yes.  Does Java use it?  Yes.  Java uses a variant of the error signaling technique that (a) provides a more uniform mechanism for indicating errors and (b) makes it difficult for programmers to delay the decision of how to handle errors.  Java's error handling mechanism, the *exception*, is inherited from a number of other languages, particularly CLU, which was designed by Barbara Liskov at MIT.
 
 In the exception model, when a method is unable to compute a result, instead of simply crashing or returning a special value, the method sidesteps the normal method return mechanism and instead invokes what is called an *exception handler*.  We typically say that a method "*throws* an exception" when it fails.  In the simplest exception handling form, we might write (in pseudocode)
 
@@ -106,7 +106,7 @@ software.noteSuccessfulUpdate();
 
 In some ways, this code is like the special-return-value solution.  That is, it seems that you execute the code and then check afterwards whether or not it succeeded.  However, there are subtle differences, particularly in how the program decides whether or not to use the exception handler.  If the execution of `getIPAddress` concludes with a command to return a value, then the first assignment to `ip` is executed and computation skips the handler, moving on to the next command (in this case, the command to create a connection).  If the execution of `getIPAddress` finishes by throwing an exception, then the first assignment is *not* executed and computation moves directly to the exception handler.
 
-Note that this solution does not require `getIPAddress` to return a special value to indicate failure.  Instead, `getIPAddress` uses different commands indicate successful computation (e.g., `return`) and another to indicate failure.  Similarly, the code that calls `getIPAddress` need not check the result, because it is confident that the handler gets called automatically on failure and not at all upon success.
+Note that this solution does not require `getIPAddress` to return a special value to indicate failure.  Instead, `getIPAddress` uses different commands to indicate successful computation (e.g., `return`) and another to indicate failure.  Similarly, the code that calls `getIPAddress` need not check the result, because it is confident that the handler gets called automatically on failure and not at all upon success.
 
 One particularly nice aspect of exception handling in most languages is that you can permit an exception to escape from a block of code, and not just a single method.  For example, if we decide to handle the failure of `getIPAddress` by simply skipping the download, we can write (again, in pseudocode)
 
@@ -134,7 +134,7 @@ In working with exceptions in Java, you must pay attention to three different, b
 
 We will consider each in turn.
 
-### Indicating potential For failure
+### Indicating potential for failure
 
 To indicate that a method may fail, add `throws Exception` after the parameter list and before the body of a method.  For example,
 
@@ -151,6 +151,8 @@ Within the body of the procedure, you will throw an exception when you encounter
 ```java
 throw new Exception("description of problem");
 ```
+
+You can also throw more specific exceptions. We will return to that issue later.
 
 ### Handling exceptions
 
@@ -202,7 +204,8 @@ Handling more detailed exceptions
 As you may have noted, one disadvantage of the basic exception handling mechanism is that it does not distinguish between things that go wrong.  For example, consider the problem of reading an integer.  We might express such a method as follow:
 
 ```java
-public static int promptForInt(PrintWriter pw, BufferedReader br, String prompt) throws Exception {
+public static int promptForInt(PrintWriter pw, BufferedReader br, 
+    String prompt) throws Exception {
   if (prompt != null) {
     pw.print(prompt);
     pw.flush();
@@ -232,7 +235,8 @@ try {
 It is then the custom for a method to indicate what particular kinds of exceptions it may throw.  For `promptForInt`, we might write:
 
 ```java
-public static int promptForInt(PrintWriter pw, BufferedReader br, String prompt) throws NumberFormatException, IOException {
+public static int promptForInt(PrintWriter pw, BufferedReader br, 
+    String prompt) throws NumberFormatException, IOException {
   if (prompt != null) {
     pw.print(prompt);
     pw.flush();
@@ -253,9 +257,9 @@ public static int promptForInt(PrintWriter pw, BufferedReader br, String prompt)
 } // readInt(PrintWriter, BufferedReader, String)
 ```
 
-How did I know that `parseInt` could throw a `NumberFormatException` and that `readLine` could throw an `IOException`?  I read the documentation.
+How did we know that `parseInt` could throw a `NumberFormatException` and that `readLine` could throw an `IOException`?  We read the documentation.
 
-Why haven't I worried about any other kinds of exceptions?  Because no other method I've called has indicated that it can throw an exception.
+Why haven't we worried about any other kinds of exceptions?  Because no other method we've called has indicated that it can throw an exception.
 
 Creating your own exceptions
 ----------------------------
@@ -293,3 +297,57 @@ While Java encourages programmers to use standard exceptions (and subclasses the
 
 For situations in which handlers should be optional, Java provides a class, `RuntimeException`, much like `Exception`.  You can throw objects in class `RuntimeException`.  You can catch objects in class `RuntimeException`.  However, you need not declare that you throw such objects (no `throws` clause is necessary) and you need not catch such objects (no `try/catch` block is necessary).  However, if one of these exceptions is issued and not caught, your program is likely to crash.
 
+Self checks
+-----------
+
+### Check 1: Failing programs in C
+
+Unlike Java, where the `main` method is expected to throw an exception if something go wrongs, in C, the return value from `main` is expected to indicate success or failure.
+
+In a C program, what should a `main` method return to indicate that the program terminated successfully?
+
+In a C program, what should a `main method return to indicate that the program terminated with an error? Is there a way to distinguish between errors?
+
+### Check 2: Failing functions in C (‡)
+
+In C, many functions return a special value upon failure. For each of the following, identify what value (or values) the function returns to indicate failure and given an example of how you might write code the uses that return value.
+
+* `printf`
+* `fopen`
+* `malloc`
+
+### Check 3: Failing functions in C, revisited (‡)
+
+In C, how are you supposed to check whether a call to `strcat(char \*target, const char \*src)` is safe/appropriate?  (If you learned `strncat` instead, you can answer the question for `strncat`.)
+
+### Check 4: Fun with Scanners (‡)
+
+Here's a typical input loop using a Scanner (`java.util.Scanner`, to be precise).
+
+```java
+try {
+  while (true) {
+    pen.println("> ");
+    String response = scanner.readLine();
+    pen.println(process(response));
+  } // while
+} catch (Exception e) {
+  // We're done
+} // try/catch
+```
+
+If we were trying to use explicit precondition testing, we might instead write the following.
+
+```java
+while (scanner.hasNextLine()) {
+  pen.println("> ");
+  String response = scanner.readLine();
+  pen.println(process(response));
+} // while
+```
+
+Unfortunately, that won't work.
+
+a. Explain why the alternative does not work as one might expect.
+
+b. Explain why the designers of the `Scanner` class might have made `hasNextLine` and `readLine` behave in this way.
