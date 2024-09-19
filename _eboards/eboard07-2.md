@@ -1,5 +1,5 @@
 ---
-title: "Eboard 07 (Section 1): Parametric polymorphism"
+title: "Eboard 07 (Section 2): Parametric polymorphism"
 number: 7
 section: eboards
 held: 2024-09-19
