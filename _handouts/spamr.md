@@ -5,6 +5,46 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester._
 
+## [CSC-207 2024Fa] SoLA 1 returned (2024-09-20)
+
+Dear Initially Assessed Learners,
+
+I hope that your week has wrapped up well and that you are looking forward to the excitement of family weekend. (It's family weekend, right?) Don't forget the concerts and other events that are happening this weekend!
+
+I've returned SoLA #1. Unfortunately, most of you need to do a bit more to reach "Sufficient". (Don't worry; last semester, most people missed their first LAs, too.) Here are a few quick notes to supplement the notes I've included in the individual LAs.
+
+--
+
+LA (Development #02): Build tools 
+
+This is a case in which I'd like to see some code, in particular, appropriate parts of the `pom.xml` along with some discussion of the updates you made to that file and why. 
+
+I'd also like a discussion of common Maven commands to illustrate that you know what you can do. ("Compile and Run" is not enough.) You could even copy and paste a session (and add some comments), provided you use the -q flag.
+
+--
+
+LA (Development #04): IDE
+
+This was a case in which I didn't need to see code (although I did appreciate that some of you provided a config file and a discussion of how you had configured VSCode).
+
+Many of you just gave me some Java and said "I created this in VSCode". But that doesn't really demonstrate that you know how to use an IDE or what an IDE is. You can create Java code in any editor; many editors even have a "Java mode".
+
+What do you do in an other IDE other than edit and type in a terminal window? What is "integrated" about the development?
+
+Also: If you are going to provide me with Java code, make sure it's good Java code.
+
+Many of the best answers to this problem provided me with a narrative of how the author worked with VSCode to go from assignment to working code, including issues along the way and how VSCode helped.
+
+---
+
+As this may suggest, I can be a tough grader. But don't worry, I have confidence that all of you can reach the levels I expect. Certainly, most students did in 207 last year.
+
+As always, your questions are welcome.
+
+Regards,
+
+-- SamR
+
 ## [CSC-207 2024Fa] MP2 Pre-Assessments and such (2024-09-15)
 
 Dear Calculating Students,
