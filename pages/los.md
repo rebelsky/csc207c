@@ -139,6 +139,18 @@ Do not ask me to follow links. Everything you want me to look at belongs in your
 
 ### Object-oriented Programming
 
+#### OOP 1: Encapsulation
+
+* Make sure that you describe encapsulation.
+* Make sure that the code you provide appropriately employs encapsulation.
+* Make sure to describe the code you've provided.
+
+#### OOP 3: Composition
+
+* Make sure to describe what composition is.
+* Make sure to include code that employs composition.
+* Make sure to indicate how and why your code employs composition.
+
 #### OOP 4: Parametric polymorphism (generics)
 
 Make sure that your description of parametric polymorphism does not also apply to subtype polymorphism. They are both kinds of polymorphism, but they achieve their goals in different ways.
@@ -251,16 +263,30 @@ The analysis part of data structure design means that you analyze the running ti
 
 I need more than "I wrote code with someone else". Please describe your process and why it was successful (or how you made it successful).
 
+#### Development #2: Build tools
+
+In this instance, your "code" will likely be appropriate selections from your `pom.xml` that you've written or modified. You should explain those selections.
+
+You should also explain the basic use of Maven.
+
 #### Development #3: Unit testing
   
-Too few of you include comments in your unit tests. In my experience, you will
-forget why you wrote your tests. The comments help us remember.
+I expect to see a mix of tests and explanatory text. The tests should be sensible, real tests. The text should explain what unit testing is and why we use it. It might also describe the tests. 
+ 
+Make sure to include comments in your unit tests. In my experience, you will
+forget why you wrote your tests. The comments help us remember. (These probably aren't necessary in all cases, but they are usually good and should be part of your demonstration of best practices.)
   
 * Bad: `assertEquals(Expected, Expression);`
-* Good: `assertEquals("Message", Expected, Expression)`
+* Good: `assertEquals(Expected, Expression, "Message")`
   
-I expect to see a mix of tests and explanatory text. The text should explain what unit testing is and why we use it. It might also describe the tests. The tests should be sensible, real tests.  
-  
+#### Development #4: IDEs
+
+Remember that your goal is to demonstrate that you know what an IDE is and that you are capable of using an IDE.
+
+Make sure that your answer would not apply to a more basic program editor.
+
+Do not provide Java code, unless it helps you tell a story.
+
 #### Development #5: Version control
   
 Please include a git log from a project.
@@ -269,7 +295,7 @@ Remember that the log is supposed to show collaboration. That means there should
 
 #### Development #6: Code reading
 
-ode reading is more than "there's a for loop here". You should describe the design decisions embedded in the code and the relation of the class to a larger ecosystem. (Why did someone create this class?)
+Code reading is more than "there's a for loop here". You should describe the design decisions embedded in the code and the relation of the class to a larger ecosystem. (Why did someone create this class?)
 
 The specification says "_Read, understand, **and modify** code that you did not write._" I'd like to see appropriate modifications and a description of that modification.
 
@@ -281,11 +307,7 @@ Central tips:
 * Make sure to use correct spelling.
 * Make sure to comment methods, constructors, and fields.
 * Make sure that your comments say more than "Helper method".
-
-The following things would be nice, but are not strictly necessary.
-
-* Document parameters and such. (I don't regularly do so, so I won't force you to do so.)
-* Put in section separators.
+* Document parameters, return values, and such.
 * Include internal comments to explain more confusing parts of code.
 * Do not include internal comments that simply restate what the code does.  `// Add one to x` above `x++;` does not help the reader and therefore just clogs your code.
 
