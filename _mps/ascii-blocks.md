@@ -419,6 +419,39 @@ previous requirements will receive an M.
 
 The tests are not yet available and will be distributed by Tuesday. There is a placeholder for the tests in the repository.
 
+You will pull the new tests into your repository as follows.
+
+First, type the following. (You will only do this once.)
+
+```
+git remote add https://github.com/Grinnell-CSC207/mp-blocks-maven
+```
+
+Then, each time I tell you that I've updated the tests, you will type the following.
+
+```
+git fetch upstream
+git merge upstream/main
+```
+
+For example,
+
+```
+$ git fetch upstream
+remote: Enumerating objects: 17, done.
+remote: Counting objects: 100% (17/17), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 9 (delta 2), reused 9 (delta 2), pack-reused 0 (from 0)
+Unpacking objects: 100% (9/9), 1.07 KiB | 91.00 KiB/s, done.
+From https://github.com/Grinnell-CSC207/mp-blocks-maven
+   c4f88de..e2d7ec8  main       -> upstream/main
+$ git merge upstream/main
+Updating c4f88de..e2d7ec8
+Fast-forward
+ src/test/java/edu/grinnell/csc207/TestBlocks.java | 45 ++++++++++++++++++++++-
+ 1 file changed, 44 insertions(+), 1 deletion(-)
+```
+
 ## Questions and Answers
 
 ### GitHub
