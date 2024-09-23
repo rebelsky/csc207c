@@ -1,5 +1,6 @@
 ---
 title: Inheritance
+repo: <https://github.com/Grinnell-CSC207/lab-inheritance-maven>
 summary: |
   In today's laboratory, you will explore inheritance in Java by
   building and extending some simple classes.
@@ -7,48 +8,33 @@ summary: |
 Preparation
 -----------
 
-a. Create a VSCode Java project for this lab. 
+a. Fork and clone the repository at {{ page.repo }}. Make sure to use the ssh link when cloning.
 
-b. Add the JUnit library to your project.
+b. Open the folder in Visual Studio Code.
 
-c. Create a package, `groupname.util`, substituting the name of your group for `groupname`.  (You can choose the name of your group, as long as you keep it appropriate.)
+c. Update the `README.md` file and push the changed file back to the repository.
 
-Add the following interface to package `groupname.util` (substituting
-the name of your group for `groupname`).
-
-```java
-package groupname.util;
-
-/**
- * Things that count.
- */
-public interface Counter {
-  /**
-   * Count something.
-   *
-   * @exception Exception
-   *   When the count gets too large.
-   */
-  public void increment() throws Exception;
-
-  /**
-   * Reset the counter.
-   */
-  public void reset();
-
-  /**
-   * Get the value of the counter.
-   */
-  public int get();
-} // interface Counter
 ```
+git add README.md
+git status
+git commit -m "Personalize the README"
+git push
+```
+
+d. Read `Counter.java` in package `edu.grinnell.csc207.util` to make sure that you understand what `Counter` objects are expected to do.
+
+e. Open the lab on Gradescope.
 
 Exercises
 ---------
 
+As always, the person closer to the board is **_A_** and the other person is **_B_**
+
 ### Exercise 1: Your base class
 
-Write a class, `BasicCounter`, in package `groupname.util`, that implements the `Counter` interface.  The class will allow clients to build objects that count things, starting at some value.
+_Driver: **A**_
+
+a. Write a class, `BasicCounter`, in package `edu.grinnell.csc207.util`, that implements the `Counter` interface.  The class will allow clients to build objects that count things, starting at some value.
 
 The class should contain
 
@@ -60,20 +46,12 @@ The class should contain
     * `toString()`, which returns a string of the form `"[" + this.count + "]"`.
     * `get()`, which returns the value of `count`.
 
-Here is a simple, not so systematic, test for that class.
+b. Here is a simple, not so systematic, test for that class, that you should add to `CounterTests`. Once you've added it, run the tests and make sure that your class works as expected.
 
-```java
-package groupname.util;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
-
-import org.junit.jupiter.api.Test;
-
-/**
- * Test for counters.
- */
-public class CounterTests {
+```
+  /**
+   * Some basic tests of our BasicCounter objects.
+   */
   @Test
   public void test1() throws Exception {
     Counter alpha = new BasicCounter(0);
@@ -100,17 +78,9 @@ public class CounterTests {
 } // class CounterTests
 ```
 
-And here is an equally simple experiment.
+c. Fill in the details for the main method of `CounterExperiments`, which you can find in package `edu.grinnell.csc207.experiments`.
 
 ```java
-package groupname.util;
-
-import java.io.PrintWriter;
-
-/**
- * A simple experiment to allow us to explore our counter classes.
- */
-public class CounterExpt {
   public static void main(String[] args) throws Exception {
     // Set up output
     PrintWriter pen = new PrintWriter(System.out, true);
@@ -136,17 +106,38 @@ public class CounterExpt {
     // And we're done
     pen.close();
   } // main(String[])
-} // class CounterExpt
 ```
 
-### Exercise 2: Tallys
+d. Run `CounterExperiments` (either in VSCode or by typing `mvn exec:java`.
 
-One of the key ideas of inheritance is that you can create new classes in place of old.  So let's try it.  We'll create a class, `Tally`, that behaves much like our `BasicCounter` class.
+e. Push your updated code to GitHub.
+
+```
+git add src
+git status
+git commit -m "Add BasicCounter, along with some tests and some experiments"
+git push
+```
+
+### Exercise 2: Tally objects
+
+_Driver: **B**_
+
+One of the key ideas of inheritance is that you can create new classes that can inherit behavior from old classes and can stand in for those classes.  So let's try it.  We'll create a class, `Tally`, that behaves much like our `BasicCounter` class.
 
 a. Create a new class, `Tally`, that has the following form:
 
 ```java
+/**
+ * Objects that Tally values.
+ */
 public class Tally extends BasicCounter {
+  /**
+   * Create a new Tally.
+   *
+   * @param start
+   *   The initial value of the tally.
+   */
   public Tally(int start) {
     super(start);
   } // Tally(int)
@@ -159,17 +150,19 @@ b. Change the initialization of `alpha` in the tests and experiments so that it 
   Counter alpha = new Tally(0);
 ```
 
-c. What effect to you expect this change to have on the tests or
-experiments?
+c. What effect to you expect this change to have on the tests or experiments?
 
 d. Check your answer experimentally.
 
 e. How do `Tally` objects differ from `BasicCounter` objects?  Right now, not at all.  How might they differ?  We might want to make `Tally` objects always start at 0, rather than a designated start value.  How can we do that?  With a slightly different constructor.  Replace the constructor of `Tally` with the following.
 
 ```java
-public Tally() {
-  super(0);
-} // Tally()
+  /**
+   * Create a new Tally.
+   */
+  public Tally() {
+    super(0);
+  } // Tally()
 ```
 
 f. What effect do you expect this change to have?
@@ -184,15 +177,35 @@ h. As you might have predicted, Java issues an error message because you are cal
 
 i. Check your answer experimentally.
 
-j. Summarize what you learned in this exercise.
+j. Commit and push your modified code.
+
+```
+git add src
+git status
+git commit -m "Add Tally class and corresponding experiments"
+git push
+```
+
+k. Summarize what you learned in this exercise.
 
 ### Exercise 3: Decrementable BasicCounters
+
+_Driver: **A**_
 
 a. Create a new class, `DecrementableCounter`, that has
 the following form:
 
 ```java
+/**
+ * Counters that you can decrement.
+ */
 public class DecrementableCounter extends BasicCounter {
+  /**
+   * Create a new decrementable counter.
+   *
+   * @param start
+   *   The initial value of the counter.
+   */
   public DecrementableCounter(int start) {
     super(start);
   } // DecrementableCounter(int)
@@ -212,7 +225,7 @@ d. Check your answer experimentally.
 e. Add a `decrement()` method to `DecrementableCounter`  This method should subtract one from the `count` field.
 
 f. What do you expect to happen if we add the following lines to our 
-test?
+test and experiment?
 
 ```java
     gamma.reset();
@@ -249,24 +262,49 @@ n. Restore the initialization of `gamma` to
   DecrementableCounter gamma = new DecrementableCounter(-5);
 ```
 
-o. Summarize what you learned in this exercise.
+o. Commit and push your changes.
+
+```
+git add src
+git status
+git commit -m "Add DecrementableCounter class"
+git push
+```
+
+p. Summarize what you learned in this exercise.
 
 ### Exercise 4: Naming BasicCounters
+
+_Driver: **B**_
 
 a. Create a new class, `NamedCounter`, that has the following form
 
 ```java
+/**
+ * Counters that have names.
+ */
 public class NamedCounter extends BasicCounter {
+  /**
+   * The name associated with the counter.
+   */
   String name;
-  public NamedCounter(String name, int start) {
+
+  /**
+   * Create a new named counter.
+   *
+   * @param counterName
+   *   The name of the counter.
+   * @param start
+   *   The starting value (also used for reset).
+   */
+  public NamedCounter(String counterName, int start) {
     super(start);
-    this.name = name;
+    this.name = counterName;
   } // NamedCounter(String, int)
 } // class NamedCounter 
 ```
 
-b. Update your test and experiment so that the initialization of
-`alpha` reads
+b. Update your test and experiment so that the initialization of `alpha` reads
 
 ```java
     Counter alpha = new NamedCounter("alfa", 0);
@@ -279,6 +317,9 @@ d. Check your prediction experimentally.
 e. Override the `toString` method by inserting the following code into `NamedCounter`.
 
 ```java
+  /**
+   * Convert the counter to a string (e.g., for printing).
+   */
   @Override
   public String toString() {
     return this.name + super.toString();
@@ -291,11 +332,29 @@ g. Check your prediction experimentally.
 
 h. Swap the two lines in the constructor for `NamedCounter` and determine what errors, if any, you get.  
 
+```
+  public NamedCounter(String counterName, int start) {
+    this.name = counterName;
+    super(start);
+  } // NamedCounter(String, int)
+```
+
 i. Restore the constructor.
 
-j. Summarize what you've learned from this exercise.
+j. Commit and push your changes.
+
+```
+git add src
+git status
+git commit -m "Add NamedCounter class"
+git push
+```
+
+k. Summarize what you've learned from this exercise.
 
 ### Exercise 5: Named counters, revisited
+
+_Driver: **A**_
 
 a. What effect do you expect if we have `NamedCounter` extend `DecrementableCounter` instead of `BasicCounter`?  For example, will we still be able to write the following declaration?
 
@@ -303,25 +362,37 @@ a. What effect do you expect if we have `NamedCounter` extend `DecrementableCoun
     Counter alpha = new NamedCounter("alfa", 0);
 ```
 
-b. Check your answer experimentally.
+b. Check your answer experimentally. That is, change the declaration and then run the experiments and tests again.
 
 c. Add a call to `System.err.println` to each of the constructors so that you can observe when they are called.  For example, you might change the `NamedCounter` constructor to read as follows.
 
 ```java
   public NamedCounter(String name, int start) {
     super(start);
-    System.err.println("NamedCounter(\"" + name + "\", " + start + ")");
-    this.name = name;
+    System.err.printf("NamedCounter(%s, %d)\n", name, start); 
   } // NamedCounter(String, int)
 ```
 
-What do you expect to see as output when your create `alpha`?
+What do you expect to see as output when your create `alpha`? That is, what constructors are called and in what order?
 
 d. Check your answer experimentally.
 
-e. Summarize what you learned from this exercise.
+e. Comment out the calls to `System.err.println`.
+
+f. Commit and push your code.
+
+```
+git add src
+git status
+git commit -m "Add exploratory messages (now commented out)"
+git push
+```
+
+f. Summarize what you learned from this exercise.
 
 ### Exercise 6: Double counters
+
+_Driver: **B**_
 
 a. Create a new class, `DoubleCounter`, that has the following form
 
@@ -367,9 +438,20 @@ i. What effect do you expect this change to have on your tests and experiments?
 
 j. Check your prediction experimentally.
 
-k. Summarize what you've learned from this exercise.
+k. Commit and push your changes.
+
+```
+git add src
+git status
+git commit -m "Add DoubleCounter class"
+git push
+```
+
+l. Summarize what you've learned from this exercise.
 
 ### Exercise 7: Bounded counters
+
+_Driver: **B**_
 
 a. Create a subclass of `BasicCounter` called `BoundedCounter` that includes
 
@@ -377,23 +459,37 @@ a. Create a subclass of `BasicCounter` called `BoundedCounter` that includes
 * a constructor that takes two parameters: a starting value and an upper bound (that is, a value for the `bound` field); and
 * a modified `increment` method that throws an exception when `count` exceeds the bound.
 
-b. In your test, determine the results of changing the initialization of `gamma` to
+b. In your test and experiment, determine the results of changing the initialization of `gamma` to
 
 ```java
   BasicCounter gamma = new BoundedCounter(-5,3);
 ```
 
-c. Summarize what you've learned from this exercise.
+c. Commit and push.
+
+```
+git add src
+git status
+git commit -m "Add BoundedCounter"
+git push
+```
+
+d. Summarize what you've learned from this exercise.
 
 ### Exercise 8: Double Counters, Revisited
 
-*Note that for this exercise, you probably just want to use the experiment, rather than the test.*
+_Driver: **A**_
+
+_Note that for this exercise, you probably just want to use the experiment, rather than the test._
 
 a. Add the following class to your project.
 
 ```java
-package groupname.util;
+package edu.grinnell.csc207.util;
 
+/**
+ * Things that count twice.
+ */
 public class DblCtr implements Counter {
   /**
    * The underlying counter.
@@ -402,6 +498,9 @@ public class DblCtr implements Counter {
 
   /**
    * Build a new counter that counts twice as fast as counter.
+   *
+   * @param counter
+   *   The underlying objet we use for counting.
    */
   public DblCtr(Counter counter) {
     this.base = counter;
@@ -426,6 +525,9 @@ public class DblCtr implements Counter {
 
   /**
    * Get the value.
+   *
+   * @return
+   *   The counter value.
    */
   @Override
   public int get() {
@@ -434,6 +536,9 @@ public class DblCtr implements Counter {
 
   /**
    * Convert to a string.
+   *
+   * @return
+   *   The counter as a string
    */
   @Override
   public String toString() {
@@ -445,23 +550,48 @@ public class DblCtr implements Counter {
 b. Update your experiment so that the initialization of `beta` reads
 
 ```java
-    Counter beta = new DblCtr(new BasicCounter());
+    Counter beta = new DblCtr(new BasicCounter(0));
 ```
 
 c. What effect do you expect this change to have on the output?
 
 d. Check your prediction experimentally.
 
-e. Update your experiment so that the initialization of
-`beta` reads
+e. Update your experiment so that the initialiation of `beta` reads
 
 ```java
-    Counter beta = new DblCtr(new DblCtr(new BasicCounter()));
+    Counter beta = new DblCter(new NamedCounter("dc", 0));
 ```
 
 f. What effect do you expect this change to have on the output?
 
-g. Check your prediction experimentally.
+g. Check your predication experimentally.
 
-h. Summarize what you learned from this exercise.
+h. Update your experiment so that the initialization of
+`beta` reads
+
+```java
+    Counter beta = new DblCtr(new DblCtr(new BasicCounter(0)));
+```
+
+i. What effect do you expect this change to have on the output?
+
+j. Check your prediction experimentally.
+
+k. Commit and push
+
+```
+git add src
+git status
+git commit -m "Add DblCtr."
+git push
+```
+
+l. Summarize what you learned from this exercise.
+
+---
+
+## Turning it in
+
+Hopefully, you've been filling in your answers on Gradescope as you go. So check that you've filled in the answers and click **Subit*.
 
