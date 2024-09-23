@@ -547,6 +547,8 @@ public class DblCtr implements Counter {
 } // class DblCtr
 ```
 
+Note that the technique we are using in `DblCtr` is often referred to as _Delegation_. Delegation usually involves two parts: First, we include another object, the delegate, that we will use to do most of the work. Second, for each function call, we do a corresponding call to the delegate.
+
 b. Update your experiment so that the initialization of `beta` reads
 
 ```java
@@ -588,8 +590,6 @@ git push
 ```
 
 l. Summarize what you learned from this exercise.
-
----
 
 ## Turning it in
 
