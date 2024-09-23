@@ -1,6 +1,6 @@
 ---
 title: SoLA 3
-link: false
+link: true
 ---
 # {{ page.title }}
 
