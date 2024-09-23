@@ -72,7 +72,7 @@ Preliminaries
         * [OOP #1: Encapsulation](https://www.gradescope.com/courses/818402/assignments/4966827)
         * Redo: [Development #2: Build tools](https://www.gradescope.com/courses/818402/assignments/4966771)
         * Redo: [Development #4: IDE](https://www.gradescope.com/courses/818402/assignments/4966772)
-* Wednesday, 2024-09-26 @ 10:30 p.m.
+* Wednesday, 2024-09-25 @ 10:30 p.m.
     * Readings
     * Submit reading responses on Gradescope
 * Thursday, 2024-09-26 @ 10:30 p.m.
