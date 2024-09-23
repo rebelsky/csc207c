@@ -5,6 +5,32 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester._
 
+## [CSC-207 2024Fa] Tests for MP3 are now (mostly) ready + A note on SoLA 2 (2024-09-22)
+
+Dear Collaborative Text Constructors,
+
+I've written lots of tests of the classes for your edification. I haven't completed writing the tests for `eqv`, but everything else seems to be done. (It would help if I wasn't such a completist.) I've pushed those tests to the project repository.
+
+If you've started MP3 already (and forked the original project), you should use the following terminal commands to get the tests.
+
+```
+git remote add https://github.com/Grinnell-CSC207/mp-blocks-maven
+git fetch upstream
+git merge upstream/main
+```
+
+You should only need to execute the first command once. You should do the fetch and merge each time I tell you that I've updated the tests.
+
+As always, questions are welcomed. I'll be running through your pre-assessments tomorrow morning.
+
+--
+
+There was a request that I provide you with a bit more guidance on each of the LAs. Part of my goal for the course is that you figure out what is the appropriate way for you to demonstrate knowledge of each subject, so I am reluctant to give you too many specifications. But I have added a few notes to each LA, which you can find at the bottom of the LA.
+
+Regards,
+
+-- SamR
+
 ## [CSC-207 2024Fa] SoLA 1 returned (2024-09-20)
 
 Dear Initially Assessed Learners,
