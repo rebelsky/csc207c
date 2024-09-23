@@ -5,6 +5,20 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester, with the newest email at the top and the oldest at the bottom._
 
+## [CSC-207 2024Fa] MP3 Pre-Assessments Graded (2024-09-23)
+
+Dear Pre-Assessed Pre-Assessors,
+
+I've read through and responded to all of the pre-assessments for MP3 that I've received so far. You can see my notes on Gradescope. I've also put most of the Q&A from those pre-assessments into the Q&A section of the assignment.
+
+I'm happy to take additional questions on Teams or via email or at the start of class tomorrow.
+
+Don't forget that SoLA 2 is due tonight!
+
+Regards,
+
+-- SamR
+
 ## [CSC-207 2024Fa] Re: Tests for MP3 are now (mostly) ready + A note on SoLA 2 (2024-09-22)
 
 Dear Amazing Students Constructing Intuitive Instructions,
