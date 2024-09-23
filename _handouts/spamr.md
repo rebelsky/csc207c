@@ -3,7 +3,15 @@ title: Spam from Sam
 ---
 # {{ page.title }}
 
-_Here you will find most of the email that I sent out this semester._
+_Here you will find most of the email that I sent out this semester, with the newest email at the top and the oldest at the bottom._
+
+## [CSC-207 2024Fa] Re: Tests for MP3 are now (mostly) ready + A note on SoLA 2 (2024-09-22)
+
+Dear Amazing Students Constructing Intuitive Instructions,
+
+It appears that I neglected to write tests for `Trimmed` and `Padded`. The only natural response is to make the corresponding problems completely optional. The only gains you will get for doing them are knowledge and experience. There are no penalties for skipping them.
+
+-- SamR
 
 ## [CSC-207 2024Fa] Tests for MP3 are now (mostly) ready + A note on SoLA 2 (2024-09-22)
 
