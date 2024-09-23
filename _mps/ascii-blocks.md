@@ -32,7 +32,7 @@ The assignment repository does not include a working `Surrounded`. Please finish
 
 ### Part 2: Grids
 
-Implement a more general version of `Rectangle` called `Grid`. Instead of an `n`-by-`m` grid of characters, `Grid` has an `n`-by-`m` grid of `AsciiBlock` objects. 
+Implement a more general version of `Rectangle` called `Grid`. Instead of an `n`-by-`m` grid of characters, `Grid` has an `n`-by-`m` grid of `AsciiBlock` objects. That is, it consists of `m` rows of `n` objects each.
 
 For example, `new Grid(new Line("Hello"), 3, 4)` should give
 
@@ -360,6 +360,8 @@ How might you implement `eqv`? The best strategy we've seen is to require that e
 
 In `Art80x24.java` (in package `edu.grinnell.csc207.main`), make the `main` method print out an "interesting" 80x24 ASCII block created by using the various block types above.
 
+Warning! I may demo your artworks in class.
+
 ## Collaborating on this project
 
 Students have found multiple modes of collaboration work well in CSC-207. I prefer that at least some of the collaboration involve pair programming, but you will also find that you are more efficient if you split up some of the work. 
@@ -482,12 +484,183 @@ Fast-forward
 
 > If you are working on different files, you shouldn't have merge conflicts.
 
-> If you've divided the work reasonably, the only place you will likely have
-  a merge conflict is on the experiment. You can avoid that problem by 
-  creating separate experiment files.
+> If you've divided the work reasonably, the only place you will likely have a merge conflict is on the experiment. You can avoid that problem by creating separate experiment files.
 
-### General
+**How does pushing or pulling work with a partner in mind?**
 
-**Do we submit together or separately?**
+> Don't push non-working code. (Or at least don't push code that doesn't compile.)
+
+> Always pull as soon as you sit down for a new session.
+
+**Should we only do it on one computer or use two and merge somehow?**
+
+> You should be able to work separately; that's the whole point of a system like GitHub. If you try not to work on the same file, you are unlikely to have merge conflicts. And most merge conflicts are easy to fix.
+
+### Collaboration
+
+**How do you recommend collaboration for Art80x24?**
+
+> Once you've built your blocks, experiment a bit with your partner and talk about what you might try.
+
+**Does the whole team get graded together?**
+
+> Yes, the project gets one grade.
+
+**How do we ensure that both partners learn all the aspects?**
+
+> If you want to ensure that you both learn the material, I'd suggest doing this as a pure pair programming exercise. (Perhaps you can alternate accounts so that we see pushes from both people.)
+
+> Alternately, you can sketch the main ideas of each part together, implement separately, and then come back together to discuss the unexpected complications.
+
+**Should we collaborate on a single repository with our partner?**
+
+> Yes.
+
+**I also want to understand the best way to break down responsibilities between my partner and me be most efficient.**
+
+> I'm not sure "most efficient" should be your goal (although with the amount of time some projects have taken, I sympathize). I'd shoot for "best ratio of understanding to time".
+
+### Equivalence
+
+**What does it mean to have two structurally equivalent blocks?**
+
+> They were formed in the same way. That is, they have the same outermost block and all constituent blocks are also equivalent.
+
+> For example, if the first block was formed with `HFlip`, the second block must also have been formed with `HFlip`. And the block that the first block flips must be structurally equivalent to the block that the second block flips.
+
+> Similarly, if the first block is a right-aligned horizontal composition of five blocks, the second must also be a right-aligned horizontal composition of five blocks, and each of the corresponding blocks must also be structurally equivalent.
+
+**It sounds like structural equivalence requires recursion. Is that correct?**
+
+> Yes. Although it's effectively a kind of "mutual recursion". Each object will provide its own `eqv` method and they will end up calling each-other's methods.
+
+**What mistakes should I avoid when implementing the eqv model?**
+
+> There's an amazingly large range of possible mistakes, so perhaps I'll respond with what you should do.
+
+> Make sure that you understand the examples. Ask questions if you don't.
+
+> Be sure to recurse on sub-blocks.
+
+> Use `.equals` to compare strings rather than `==`. (Okay, that's one mistake to avoid.)
+
+### Expectations
+
+**What is the minimum you expect for our own block?**
+
+> Don't worry too much about your own block. We're going to be fairly generous in the grading. But you should strive for something you'd be proud of.
+
+> Also make sure that it's something that you can test.
+
+**For the Art80x24.java, what is the E standard for "interesting"?**
+
+> Whatever satisfies you, as long as it's not a grid of identical characters.
+
+> Warning! I may be showing them off in class.
+
+**Do we submit our assignment together or separately?**
 
 > Please do only one submission for the two (or three) of you.
+
+### Theoretical
+
+**It seems this "composite pattern," in more official words, plays really well to the strengths of OOP. Is this something that can even be easily achieved in other paradigms?**
+
+> Is that the official term for this? I didn't know.
+
+> We should be able to achieve something similar in a functional paradigm (although we'd likely avoid having mutable blocks). If we think of a "block" as a function from some input to an ASCII block, we could write something that takes other block functions as input and returns a new block function.
+
+> It would be hard to implement this well in a more imperative language. Not impossible, but harder.
+
+### Mutation
+
+**I am concerned about the instructions mentioning that the functions
+should be able to "adapt to changes in the underlying block". Are
+we not passing an object that, while it is being used to make another
+object, does not change, and if we were to change that underlying
+object and make another object with the changes, would be an entirely
+new object? The created object does not update in place if changes
+to its elements are made? Or should the created objects be changed
+if their constituents are changed? Phrased differently perhaps,
+should the new object 'know' it was made from A and B(and update
+if they are changed), or simply that it was made and it is now AB?**
+
+> We are working with objects, not functions. I agree it would be
+  difficult if we were using a purely imperative model. And yes,
+  if `AB` is made from `A` and `B`, and `A` changes, then `AB`
+  should change.
+
+> However, the changes are restricted. Objects only change when
+  certain methods are called (or when their subobjects change
+  when certain methods are called). Right now, those methods
+  are the `Line` object's `update` method and the `Rect` objects
+  `wider`, `narrower`, `taller`, and `shorter` methods.
+
+> More concretely, if we set `a` to the line `"eh"` and `b` to the
+  line `"bee"`, the right-aligned vertical composition of `a` and
+  `b` will be
+
+> ```
+ eh
+bee
+```
+
+> If we then change `a` to `"alphabet"` (using `a.update("alphabet")`),
+  our vertical alignment should now be
+
+> ```
+alphabet
+     bee
+```
+
+> Note that you are only expected to support changes based on the
+  underlying objects. There is no natural way for you to tell if
+  someone reassigns a variable.
+
+**What should the `Surrounded` class do to work well with mutable blocks?**
+
+> Follow the lead of `Boxed` and only look at the underlying blocks when someone calls `row`, `width`, or `height`.
+
+### Miscellaneous
+
+**Are we allowed to create helper functions for each AsciiBlock?**
+
+> Of course. You should always feel free to create helpers.
+
+**Are there any built-in functions for reversing the strings?**
+
+> No. But you should be able to figure this out. There's also a note
+  in eboard 8.
+
+**Are there any built-in functions for centering strings?**
+
+> No. But you should be able to figure this out. For horizontal centering, you'll need to add spaces on the left and right. For vertical centering, you'll need to figure out which row to take from each block and whether to use spaces instead of a row.
+
+**Can you show us an example of Part 12: Make an Art?**
+
+> I'll add that to my "to-do" list.
+
+**Are enums in Java similar to how they work in C?**
+
+> Pretty much, except that you have to put the enum name in front of the value. You should write things like `HAlignment.LEFT`.
+
+**How do I tell what method was used to create an object?**
+
+> You can't. But you can tell whether it's a particular kind of object with the `instanceof` operator. E.g. `(block instanceof HFlip)` returns true if `block` is an `HFlip` and false otherwise.
+
+**How do I tell what method was used to modify an object?**
+
+> You can't. You can just get the characteristics of the object after the change. For what we're doing, knowing the width, height, and number of rows in the mutated object should suffice.
+
+**What do you mean by "an `n`-by-`m` grid?**
+
+> It's an arrangement in which we have `n` columns and `m` rows, each of which contains the same thing. For example, if we've managed to make an ASCII cat, `new Grid(cat, 5, 3)` would create fifteen cats, arranged in three rows of five each.
+
+**What should we do if there is an odd number for flipping? Do we just leave the middle alone?**
+
+> Yes. I think the examples show that.
+
+**What should we do if there's an odd difference in heights for a centered `HComp` or an odd difference in widths for a centered `VComp`?**
+
+> Prioritize the top for a centered `HComp`. Prioritize the left for a centered `VComp`. There are examples in the assignment. Let me know if you need more explanation after looking at them.
+
