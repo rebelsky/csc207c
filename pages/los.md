@@ -161,7 +161,7 @@ Make sure to include code that demonstrates that you understand and can use para
 
 Make sure that your description of subtype polymorphism does not also apply to parametric polymorphism. They are both kinds of polymorphism, but they achieve their goals in different ways.
 
-Make sure to include code that demonstrates that you understand and can use parametric polymorphism.
+Make sure to include code that demonstrates that you understand and can use subtype polymorphism.
 
 #### OOP 6: Data abstraction
 
@@ -271,7 +271,7 @@ You should also explain the basic use of Maven.
 
 #### Development #3: Unit testing
   
-I expect to see a mix of tests and explanatory text. The tests should be sensible, real tests. The text should explain what unit testing is and why we use it. It might also describe the tests. 
+I expect to see a mix of tests and explanatory text. The tests should be sensible, real tests. The text should explain what unit testing is and why we use it. You might also describe the tests. 
  
 Make sure to include comments in your unit tests. In my experience, you will
 forget why you wrote your tests. The comments help us remember. (These probably aren't necessary in all cases, but they are usually good and should be part of your demonstration of best practices.)
