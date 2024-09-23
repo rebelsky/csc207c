@@ -181,6 +181,8 @@ As always, make sure that `VFlip` adapts to changes in the underlying block.
 
 ### Part 7: Trimming blocks
 
+_This part is **completely optional**. Doing it provides no grade benefit. Skipping it incurs no grade penalty._
+
 Sometimes blocks get too big, and we want to make them smaller. Implement a new class `Trimmed`, that trims the underlying block to a particular width and height. Since we may want to trim from different sides (or keep different sides), the `Trimmed` constructor will also take alignments as parameters.
 
 For example, if the original block is
@@ -245,6 +247,8 @@ Make sure that your trimmed blocks adapt to changes in the underlying block.
 If, when asked for a line, you ever find that the underlying blocks is not wide or high enough, you can do whatever you'd like. (That is, we will assume that people never try to trim too much.)
 
 ### Part 8: Padding blocks
+
+_This part is **completely optional**. Doing it provides no grade benefit. Skipping it incurs no grade penalty._
 
 We may also find that our boxes are not big enough and want to "pad" them to a larger size. Implement a new class, `Padded`, that pads blocks to a given width and height.
 
@@ -378,6 +382,7 @@ Submissions that fail to meet any of these requirements will get an I.
 
 ```
 [ ] Passes all the R tests.
+    [ ] Constructors don't crash.
 [ ] Includes the specified `.java` files, correctly named.  
 [ ] Each class has an introductory Javadoc comment that indicates
     the author and purpose. 
@@ -409,8 +414,11 @@ previous requirements will receive an M.
 
 ```
 [ ] Passes all the E tests.
+    [ ] Handle empty blocks appropriately.
+    [ ] Handle mutated blocks appropriately.
 [ ] All (or most) repeated code has been factored out into individual methods.  
 [ ] All or most variable names are appropriate.
+[ ] At least six tests in `TestNewBlock.java`.
 [ ] Tests in `TestNewBlock.java` include interesting edge cases, such as 
     empty blocks.
 ```
