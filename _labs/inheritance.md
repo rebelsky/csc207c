@@ -18,6 +18,7 @@ c. Update the `README.md` file and push the changed file back to the repository.
 git add README.md
 git status
 git commit -m "Personalize the README"
+git pull
 git push
 ```
 
@@ -116,6 +117,7 @@ e. Push your updated code to GitHub.
 git add src
 git status
 git commit -m "Add BasicCounter, along with some tests and some experiments"
+git pull
 git push
 ```
 
@@ -183,6 +185,7 @@ j. Commit and push your modified code.
 git add src
 git status
 git commit -m "Add Tally class and corresponding experiments"
+git pull
 git push
 ```
 
@@ -268,6 +271,7 @@ o. Commit and push your changes.
 git add src
 git status
 git commit -m "Add DecrementableCounter class"
+git pull
 git push
 ```
 
@@ -347,6 +351,7 @@ j. Commit and push your changes.
 git add src
 git status
 git commit -m "Add NamedCounter class"
+git pull
 git push
 ```
 
@@ -385,6 +390,7 @@ f. Commit and push your code.
 git add src
 git status
 git commit -m "Add exploratory messages (now commented out)"
+git pull
 git push
 ```
 
@@ -444,6 +450,7 @@ k. Commit and push your changes.
 git add src
 git status
 git commit -m "Add DoubleCounter class"
+git pull
 git push
 ```
 
@@ -471,6 +478,7 @@ c. Commit and push.
 git add src
 git status
 git commit -m "Add BoundedCounter"
+git pull
 git push
 ```
 
@@ -586,6 +594,7 @@ k. Commit and push
 git add src
 git status
 git commit -m "Add DblCtr."
+git pull
 git push
 ```
 
