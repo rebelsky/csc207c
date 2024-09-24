@@ -37,15 +37,29 @@ Exercises
 
 _Driver: **A**_
 
-a. Remove the `throws Exception` from the `main` method in `ReadIntExperiment` and determine what, if any, error messages you get.  If VSCode permits you to do so, try running the program. 
+a. Examine `ReadIntExperiment` to determine what it does.
+
+b. Predict what it will do for each of the following cases.
+
+* The user enters a valid small positive integer, such as 4.
+* The user enters a valid negative positive integer, such as -5.
+* The user enters a real number, such as 2.8
+* The user enters a string, such as "five".
+* The user enters a large integer, such as 12345.
+* The user enters a very large integer, such as 1234567.
+* The user enters a very very large integers, such as 123456789012345.
+
+c. Check your answers experimentally.
+
+d. Remove the `throws Exception` from the `main` method in `ReadIntExperiment` and determine what, if any, error messages you get.  If VSCode permits you to do so, try running the program. 
 
 After you finish exploring the effects of that removal, reinsert the `throws` clause.
 
-b. Remove the `throws Exception` from the definition of `readInt` and determine what, if any, error messages you get.  If VSCode permits you to do so, try running the program with that warning removed.
+e. Remove the `throws Exception` from the definition of `readInt` and determine what, if any, error messages you get.  If VSCode permits you to do so, try running the program with that warning removed.
 
 Do not reinsert the `throws` clause.
 
-c. Within `readInt`, you should have a sequence of lines (or perhaps a single line) that looks something like the following:
+f. Within `readInt`, you should have a sequence of lines (or perhaps a single line) that looks something like the following:
 
 
 ```java
@@ -54,7 +68,7 @@ c. Within `readInt`, you should have a sequence of lines (or perhaps a single li
 ```
 
 
-Enclose those lines in a try/catch clause that returns 0 if an exception is thrown, as in
+Enclose those lines in a try/catch clause that returns `Integer.MIN_VALUE` if an exception is thrown, as in
 
 ```java
     try {
@@ -65,11 +79,11 @@ Enclose those lines in a try/catch clause that returns 0 if an exception is thro
     } // Reading/parsing fails.
 ```
 
-d. Verify that VSCode and Maven are no longer concerned about errors in your code.
+g. Verify that VSCode and Maven are no longer concerned about errors in your code.
 
-e. Determine what happens when the user enters an invalid value (such as `Hello`) in response to a request for an integer.
+h. Determine what happens when the user enters an invalid value (such as `Hello`) in response to a request for an integer.
 
-f. Commit and push your changes.
+i. Commit and push your changes.
 
 ```text
 git add src
@@ -319,3 +333,4 @@ Submitting your work
 --------------------
 
 Fill out the lab report on Gradescope.
+
