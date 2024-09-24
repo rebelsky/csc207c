@@ -334,3 +334,15 @@ Submitting your work
 
 Fill out the lab report on Gradescope.
 
+For those with extra time
+-------------------------
+
+### Extra 1: Handling errors, revisited
+
+Revisit the `ReadIntExperiment` class and the `IOUtils` class and arrange the program so that it prints an appropriate (and different) error message for each kind of error, including cases in which the number entered is a valid integer, but its square is not.
+
+### Extra 2: Large roots
+
+a. Write tests for the `largerRoot` method in `Quadratic`.
+
+b. Add the `largerRoot` method to `Quadratic`.
