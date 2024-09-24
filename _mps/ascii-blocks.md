@@ -556,11 +556,19 @@ Fast-forward
 > ```java
     AsciiBlock exes0 = new Rect('X', 4, 3);
     AsciiBlock exes1 = new Grid(new Line("X"), 4, 3);
-    AsciiBLock exes2a = new Rect('X', 1, 3);
+    AsciiBlock exes2a = new Rect('X', 1, 3);
     AsciiBlock exes2 =
-        new HComp(VAlignment.LEFT, new AsciiBlock[] { exes2a, exes2a, exes2a });
+        new HComp(VAlignment.LEFT,
+            new AsciiBlock[] {exes2a, exes2a, exes2a, exes2a});
     AsciiBlock exes3 =
-        new HComp(VAlignment.LEFT, new AsciiBlock[] { exes0, new Empt(), new Empty());
+        new HComp(VAlignment.LEFT,
+            new AsciiBlock[] {new Empty(), exes0, new Empty(), new Empty()});
+    AsciiBlock exes4 =
+        new HComp(VAlignment.RIGHT,
+            new AsciiBlock[] {new Empty(), exes0, new Empty(), new Empty()});
+    AsciiBlock exes5 =
+        new HComp(VAlignment.RIGHT,
+            new AsciiBlock[] {new Empty(), new Empty(), exes0, new Empty()});
 ```
 
 > ```java
@@ -572,6 +580,10 @@ Fast-forward
         "Rect vs. HComp");
     assertTrue(AsciiBlock.equals(exes2, exes3));
     assertFalse(AsciiBlock.eqv(exes2, exes3),
+        "Two HComps with different elements");
+    assertFalse(AsciiBlock.eqv(exes3, exes4), 
+        "Two HComps with different alignments");
+    assertFalse(AsciiBlock.eqv(exes4, exes5), 
         "Two HComps with different elements");
 ```
 
