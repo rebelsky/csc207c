@@ -58,12 +58,32 @@ public class ScannerProblems {
   } // revisedLoop
 
   /**
+   * Our revised input loop.
+   */
+  public static void rerevisedLoop() throws Exception {
+    PrintWriter pen = new PrintWriter(System.out, true);
+    Scanner scanner = new Scanner(System.in);
+
+    pen.print("> ");
+    pen.flush();
+    while (scanner.hasNextLine()) {
+      String response = scanner.nextLine();
+      pen.println(process(response));
+      pen.print("> ");
+      pen.flush();
+    } // while
+
+    scanner.close();
+    pen.close();
+  } // rerevisedLoop
+
+  /**
    * Do all the work.
    *
    * @param args
    *   Command-line arguments (ignored).
    */
   public static void main(String[] args) throws Exception {
-    typicalLoop();
+    rerevisedLoop();
   } // main(String[])
 } // class ScannerProblems
