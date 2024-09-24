@@ -251,7 +251,7 @@ c. Enclose your call to `smallerRoot` in a try/catch block.  For example,
     try {
       double root = qpoly.smallerRoot();
       pen.printf("The smaller root of %s is %f\n", qpoly.toString(), root);
-      pen.printf("Experimentally, %s is %f\n", qpolty.toString(root),
+      pen.printf("Experimentally, %s is %f\n", qpoly.toString(root),
           qpoly.evaluate(root));
     } catch (Exception e) {
       pen.printf("Sorry, I could not compute a root for %s.\n",
