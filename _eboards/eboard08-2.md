@@ -42,7 +42,7 @@ it exercises your brain and your recall ability and builds neural
 connections.  Our learning specialists have taught me that "recall
 practice" is one of the best ways to develop knowledge.
 
-So not "Generic types" but rather
+So not just "Generic types" but rather
 
 > A generic type looks like `public class Foo<T>`. Throughout the
   code in the class, I can use `T` as a type. When I create a new
@@ -77,6 +77,7 @@ Not "JUnit" but rather
     * [Submit reading responses on Gradescope](https://www.gradescope.com/courses/818402/assignments/5023796)
     * [Submit lab writeup for today's class on Gradescope](https://www.gradescope.com/courses/818402/assignments/5026363)
         * As always, I'd prefer that you submit at the end of class today.
+        * You need not complete lab in order to submit the writeup.
 * Thursday, 2024-09-26 @ 10:30 p.m.
     * Complete [Mini-Project 3](../mps/mp03)
     * [Submit MP3 on Gradescope](https://www.gradescope.com/courses/818402/assignments/4996582)
@@ -100,6 +101,7 @@ Not "JUnit" but rather
     * Readings
     * Submit reading response on Gradescope
     * [Submit lab writeup for class 9 on Gradescope](https://www.gradescope.com/courses/818402/assignments/5024091)
+        * Prefer that you submit at the end of class.
 
 ### Tokens
 
@@ -115,6 +117,8 @@ class._
   Anthony Pinn - "Thoughts on Why Music Matters for the Study of Religion"_
 * Thursday, 2024-09-26, 4:00--5:00 p.m., Science 3821 (I think).
   _CS Extras: Study abroad for CS majors_
+* Tuesday, 2024-10-01, noon--1:00 p.m., JRC 224A.
+  _CS Table_
 
 #### Cultural
 
@@ -174,12 +178,37 @@ Should we always do the redos on SoLA N, where N is the current SoLA number?
 
 > Yes. You shouldn't be able to access the old ones.
 
+So if I've mastered an LO, do I just ignore the corresponding LA on the 
+next SoLA?
+
+> That's correct. I don't have an easy way to release LAs to only a subset
+  of the class.
+
 ### Questions on MPs
 
 **If we don't successfully complete an MP, can we just fix the things that
 are wrong or should we start again?**
 
 > You should fix the things that are wrong.
+
+**Should we include a note in our README of what we've changed if we
+resubmit a mini-project.**
+
+> Yes. Ideally, the graders will have given you a checklist, and you'll
+  give us the checklist along with notes as to how you've fixed things.
+
+> If the graders haven't given you a checklist, you should give your own.
+
+**Can we redo MPs with an incomplete or that we didn't turn in at all?**
+
+> Of course. My goal is that you get as many chances as you need. At the
+  same time, I want to encourage you to do as much as you can on time, so
+  it costs whatever the syllabus says for a redo of an incomplete or 
+  non-existent MP.
+
+> The first redo of an R or above is free.
+
+> The first redo of an E is approximately 10,000 tokens.
 
 ### Questions on MP3
 
@@ -189,40 +218,57 @@ that came up indirectly._
 
 **Any hints on horizontally centering a line?** (TPS)
 
+5/11 4/12 5/12
+
 _Suppose our row is five units wide but we want to fit it into something
 that is eleven units wide. (E.g., centering "hello" on "abcdefghijk".)
 How many spaces do we need before "hello" and how many do we need after?_
 
+> Three on the left and three on the right.
+
 ```text
-hello
+___hello___
 abcdefghijk
 ```
 
 _How did you figure that out?_
 
+* Took the longer length, subtracted the shorter length, divided by two.
+  (11 - 5) / 2 = 3.
+
 _Suppose our row is four units wide but we want to fit it into something
 that is twelve units wide. (E.g., centering "four" on "abcdefghijkl".)
 How many spaces do we need before "four" and how many do we need after?_
 
+> Four on the left and four on the right.
+
 ```text
-four
+____four____
 abcdefghijkl
 ```
 _How did you figure that out?_
+
+* (12 - 4) / 2 = 4
 
 _Suppose our row is five units wide but we want to fit it into something
 that is twelve units wide. (E.g., centering "hello" on "abcdefghijkl".)
 How many spaces do we need before "hello" and how many do we need after?_
 
+> Three on the left and four on the right.
+
 ```text
-hello
+___hello____
 abcdefghijkl
 ```
 _How did you figure that out?_
 
-> Eyeballing is a great strategy, but probably hard to implement.
+> See above, plus figuring out that the extra space goes on the right.
 
 _Can you generalize?_
+
+> `(width - str.length()) / 2` on both sides [if it divides evenly]
+
+> `(width - str.length()) / 2` on the left, add 1 on the right.
 
 **Any hints on vertical centering?**
 
@@ -230,38 +276,48 @@ _Can you generalize?_
   within the block.
 
 > So if we're centering something five high (`hello`) on something nine high,
-  and we need row `i` of the overall thing, what shoudl we do?
+  and we need row `i` of the overall thing, what should we do for the 
+  hello part?
+
+> You can assume that `diff` stores the difference between the total height
+  and the height of `hello`.
 
 ```
-           0
-           1
-HHH        2
-EEE        3
-LLL        4
-LLL        5
-OOO        6
-           7
-           8
+   0
+   1
+HHH2
+EEE3
+LLL4
+LLL5
+OOO6
+   7
+   8
 ```
 
 
-> i = 0, 
+> i = 0, enough spaces for the width of the hello block, or 
+  `" ".repeat(hello.width())`
 
-> i = 1, 
+> i = 1, The same thing
 
-> i = 2, 
+> i = 2, `hello.row(0)` 
 
-> i = 3, 
+> How do we go from `i` to 0? `i - (diff / 2)`
 
-> i = 4, 
+> i = 3, `hello.row(1)`
 
-> i = 5, 
+> i = 4, `hello.row(2)`
 
-> i = 6, 
+> i = 5, `hello.row(3)`
 
-> i = 7, 
+> i = 6, `hello.row(4)`
 
-> i = 8, 
+> i = 7, spaces (see above), because `i - (diff / 2) >= hello.height()`.
+
+> i = 8, spaces (see above)
+
+Reminder! Sometimes playing with particular examples helps you figure out
+a general strategy.
 
 **Do we need spaces after as well as before?**
 
@@ -290,9 +346,40 @@ while (scanner.hasNextLine()) {
 
 **Why didn't that work?**
 
+> `hasNextLine` reads input in order to determine whether there
+  is a next line.
+
 **Why this design?**
 
-**Can we change our code to make it work?**
+> It needs to wait for data to make that determination. It can't tell
+  until the user types something (or ends the input).
+
+**Can we change our code to make it work the way we'd like?**
+
+```
+do {
+  pen.print("> ");
+  pen.flush();
+  String response = scanner.nextLine();
+  pen.println(process(response));
+} while (scanner.hasNextLine());
+```
+
+Nope!
+
+```
+while (scanner.hasNextLine()) {
+  pen.print("> ");
+  pen.flush();
+  if (! scanner.hasNextLine()) {
+    break;
+  } // if
+  String response = scanner.nextLine();
+  pen.println(process(response));
+} // while
+```
+
+Ugh! The exceptional version is better.
 
 ### Questions on the reading
 
