@@ -1,5 +1,5 @@
 ---
-title: "Eboard 08 (Section 1): Exceptional programming"
+title: "Eboard 08 (Section 2): Exceptional programming"
 number: 8
 section: eboards
 held: 2024-09-24
