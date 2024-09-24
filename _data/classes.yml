@@ -159,6 +159,9 @@
     - page: /readings/exceptions.html
   lab:
     - page: /labs/exceptions.html
+  eboards:
+    - page: /eboards/eboard07-1.html
+    - page: /eboards/eboard07-2.html
 
 - topic: Inheritance and composition
   abbrev: inheritance
@@ -171,15 +174,12 @@
     - Inheritance basics
     - Inheritance and polymorphism
     - Composition
-    - Mixins as an alternate to inheritance
     - Compile time vs. run time
     - References
-    - The stack and the heap
     - Representing objects
   reading:
     - page: /readings/inheritance.html
     - page: /readings/composition.html
-    - page: /readings/memory.html
     - page: /readings/mental-models.html
   lab:
     - page: /labs/inheritance.html
