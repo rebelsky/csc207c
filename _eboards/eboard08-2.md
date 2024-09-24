@@ -105,7 +105,7 @@ Not "JUnit" but rather
 
 ### Tokens
 
-_If you'd like to suggest token events, please let me know in advance of 
+_If you'd like to suggest token events, please let me know in advance of
 class._
 
 #### Academic/Scholarly
@@ -113,7 +113,7 @@ class._
 * Tuesday, 2024-09-24, noon--1:00 p.m., JRC 224A.
   _CS Table_
 * Thursday, 2024-09-26, 11:00 a.m.--noon, JRC 101.
-  _Scholars' Convocation: 
+  _Scholars' Convocation:
   Anthony Pinn - "Thoughts on Why Music Matters for the Study of Religion"_
 * Thursday, 2024-09-26, 4:00--5:00 p.m., Science 3821 (I think).
   _CS Extras: Study abroad for CS majors_
@@ -162,7 +162,7 @@ Questions
 **I am a bit confused as to how SoLA's are supposed to work. Do we
 demonstrate new mastery each week?**
 
-> Each week, you'll get new LAs as well as redos for old LAs. Any topics 
+> Each week, you'll get new LAs as well as redos for old LAs. Any topics
   you get marked Satisfactory, you're done with it. Any topics you haven't
   had marked Satisfactory, you should try again the next week.
 
@@ -178,7 +178,7 @@ Should we always do the redos on SoLA N, where N is the current SoLA number?
 
 > Yes. You shouldn't be able to access the old ones.
 
-So if I've mastered an LO, do I just ignore the corresponding LA on the 
+So if I've mastered an LO, do I just ignore the corresponding LA on the
 next SoLA?
 
 > That's correct. I don't have an easy way to release LAs to only a subset
@@ -203,7 +203,7 @@ resubmit a mini-project.**
 
 > Of course. My goal is that you get as many chances as you need. At the
   same time, I want to encourage you to do as much as you can on time, so
-  it costs whatever the syllabus says for a redo of an incomplete or 
+  it costs whatever the syllabus says for a redo of an incomplete or
   non-existent MP.
 
 > The first redo of an R or above is free.
@@ -276,7 +276,7 @@ _Can you generalize?_
   within the block.
 
 > So if we're centering something five high (`hello`) on something nine high,
-  and we need row `i` of the overall thing, what should we do for the 
+  and we need row `i` of the overall thing, what should we do for the
   hello part?
 
 > You can assume that `diff` stores the difference between the total height
@@ -295,12 +295,12 @@ OOO6
 ```
 
 
-> i = 0, enough spaces for the width of the hello block, or 
+> i = 0, enough spaces for the width of the hello block, or
   `" ".repeat(hello.width())`
 
 > i = 1, The same thing
 
-> i = 2, `hello.row(0)` 
+> i = 2, `hello.row(0)`
 
 > How do we go from `i` to 0? `i - (diff / 2)`
 
@@ -448,3 +448,44 @@ Lab
 ---
 
 Foreshortened. Sorry.
+
+Wrapup questions on MP3
+-----------------------
+
+**Can I use `AsciiBlock.equal` in defining the individual `eqv` methods?**
+
+> You can, but I wouldn't recommend it.
+
+**Aren't `equal` and `eqv` the same?**
+
+> Nope. `equal` deals with appearance, `eqv` deals with construction. For
+  example ...
+
+> ```java
+    AsciiBlock exes0 = new Rect('X', 4, 3);
+    AsciiBlock exes1 = new Grid(new Line("X"), 4, 3);
+    AsciiBLock exes2a = new Rect('X', 1, 3);
+    AsciiBlock exes2 =
+        new HComp(VAlignment.LEFT, 
+            new AsciiBlock[] {exes2a, exes2a, exes2a, exes2a});
+    AsciiBlock exes3 =
+        new HComp(VAlignment.LEFT, 
+            new AsciiBlock[] {new Empty(), exes0, new Empty(), new Empty()});
+    AsciiBlock exes4 =
+        new HComp(VAlignment.RIGHT, 
+            new AsciiBlock[] {new Empty(), exes0, new Empty(), new Empty()});
+    AsciiBlock exes5 =
+        new HComp(VAlignment.RIGHT, 
+            new AsciiBlock[] {new Empty(), new Empty(), exes0, new Empty()});
+```
+
+> ```java
+    assertTrue(AsciiBlock.equals(exes0, exes1));
+    assertFalse(AsciiBlock.eqv(exes0, exes1), "Rect vs. Grid");
+    assertTrue(AsciiBlock.equals(exes0, exes2));
+    assertFalse(AsciiBlock.eqv(exes0, exes2), "Rect vs. HComp");
+    assertTrue(AsciiBlock.equals(exes2, exes3));
+    assertFalse(AsciiBlock.eqv(exes2, exes3), "Two HComp with different elts");
+    assertFalse(AsciiBlock.eqv(exes3, exes4), "Two HComp with different align");
+    assertFalse(AsciiBlock.eqv(exes4, exes5), "Two HComp with different elts");
+```
