@@ -137,9 +137,9 @@ Implement `VComp`. Make sure that it adapts to blocks that change size.
 
 ### Part 5: Flipping horizontally
 
-Implement a new class, `HFlip`, which presents a horizontally flipped version of its parameter. That is, each line should appear in reverse order. 
+Implement a new class, `HFlip`, which presents a horizontally flipped version of its parameter. That is, each line should appear in reverse order.
 
-For example, if `block` is 
+For example, if `block` is
 
 ```text
 this
@@ -364,11 +364,11 @@ Warning! I may demo your artworks in class.
 
 ## Collaborating on this project
 
-Students have found multiple modes of collaboration work well in CSC-207. I prefer that at least some of the collaboration involve pair programming, but you will also find that you are more efficient if you split up some of the work. 
+Students have found multiple modes of collaboration work well in CSC-207. I prefer that at least some of the collaboration involve pair programming, but you will also find that you are more efficient if you split up some of the work.
 
-I would suggest that you begin by reading through the problems together and discussing strategies for each. You might implement a few things together to start with, such as `Surrounded`, `Grid`, the new text block, its tests, and eqv`. 
+I would suggest that you begin by reading through the problems together and discussing strategies for each. You might implement a few things together to start with, such as `Surrounded`, `Grid`, the new text block, its tests, and eqv`.
 
-To help ensure that everyone understands all the parts, you should also come back together to discuss what you've done. 
+To help ensure that everyone understands all the parts, you should also come back together to discuss what you've done.
 
 In between, you might assign one person to `HComp`, `HFlip`, and `Trimmed` and the other to `VComp`, `VFlip`, and `Padded`.
 
@@ -385,10 +385,10 @@ Submissions that fail to meet any of these requirements will get an I.
 ```
 [ ] Passes all the R tests.
     [ ] Constructors don't crash.
-[ ] Includes the specified `.java` files, correctly named.  
+[ ] Includes the specified `.java` files, correctly named.
 [ ] Each class has an introductory Javadoc comment that indicates
-    the author and purpose. 
-[ ] Includes a `README.md` file that contains the appropriate information 
+    the author and purpose.
+[ ] Includes a `README.md` file that contains the appropriate information
     (authors, purpose, acknowledgements if appropriate)
 [ ] All files compile correctly.
 [ ] Includes one more text block.
@@ -418,10 +418,10 @@ previous requirements will receive an M.
 [ ] Passes all the E tests.
     [ ] Handle empty blocks appropriately.
     [ ] Handle mutated blocks appropriately.
-[ ] All (or most) repeated code has been factored out into individual methods.  
+[ ] All (or most) repeated code has been factored out into individual methods.
 [ ] All or most variable names are appropriate.
 [ ] At least six tests in `TestNewBlock.java`.
-[ ] Tests in `TestNewBlock.java` include interesting edge cases, such as 
+[ ] Tests in `TestNewBlock.java` include interesting edge cases, such as
     empty blocks.
 ```
 
@@ -543,6 +543,37 @@ Fast-forward
 > Be sure to recurse on sub-blocks.
 
 > Use `.equals` to compare strings rather than `==`. (Okay, that's one mistake to avoid.)
+
+**Can I use `AsciiBlock.equal` in defining the individual `eqv` methods?**
+
+> You can, but I wouldn't recommend it.
+
+**Aren't `equal` and `eqv` the same?**
+
+> Nope. `equal` deals with appearance, `eqv` deals with construction. For
+  example ...
+
+> ```java
+    AsciiBlock exes0 = new Rect('X', 4, 3);
+    AsciiBlock exes1 = new Grid(new Line("X"), 4, 3);
+    AsciiBLock exes2a = new Rect('X', 1, 3);
+    AsciiBlock exes2 =
+        new HComp(VAlignment.LEFT, new AsciiBlock[] { exes2a, exes2a, exes2a });
+    AsciiBlock exes3 =
+        new HComp(VAlignment.LEFT, new AsciiBlock[] { exes0, new Empt(), new Empty());
+```
+
+> ```java
+    assertTrue(AsciiBlock.equals(exes0, exes1));
+    assertFalse(AsciiBlock.eqv(exes0, exes1),
+        "Rect vs. Grid");
+    assertTrue(AsciiBlock.equals(exes0, exes2));
+    assertFalse(AsciiBlock.eqv(exes0, exes2),
+        "Rect vs. HComp");
+    assertTrue(AsciiBlock.equals(exes2, exes3));
+    assertFalse(AsciiBlock.eqv(exes2, exes3),
+        "Two HComps with different elements");
+```
 
 ### Expectations
 
