@@ -15,7 +15,7 @@ _Approximate overview_
     * Notes and news
     * Upcoming work
     * Tokens
-* Notes from Tuesday's lab
+* A design challenge
 * Questions
 * Lab
 
@@ -85,21 +85,81 @@ class._
 
 ### Other good things (no tokens)
 
-Notes from Tuesday's lab
-------------------------
+Mini-project 4
+--------------
+
+TLAs
+
+* ADT:
+* SAM:
+* AAA:
+
+### The ADT (SAM)
+
+_We are designing an ADT similar to the association lists or hashes that you may have learned in CSC-151._
+
+#### Strategy
+
+Generalize arrays so that we can use "any" object as a key, rather than just integers.
+
+#### A
+
+#### M
+
+### The data structure (AAA)
+
+#### A
+
+#### A
+
+#### A
+
+### The assignment
+
+### Testing
 
 Questions
 ---------
 
 ### Qustions on SoLAs
 
+**Will you add tips for each LA so that we don't go in the wrong direction?**
+
+> Part of the broader goal of the course is that you develop skills at
+  figuring out how to describe your skills.
+
+> But yes, I will try to add tips. I may also add some verbally in class
+  (or ask you to come up with some).
+
 ### Questions on MPs
+
+**I'm spending significantly more than five hours on mini-projects. Any suggestions?**
+
+> Ask for help (preferably on the Questions channel) after you're stuck for
+  five minutes. Generally, if you can't solve it in five minutes, you also
+  won't solve it in thirty minutes.
+
+**Will the redos for the mini-projects be posted soon?**
+
+> Yes.
+
+**How many group mini-projects will there be?**
+
+> Probably between three and four.
+
+**Do both partners need to turn in a token for a late group mini-project?**
+
+> Yes.
+
+### Other administrative questions
+
+**Will we get grade reports soon?**
+
+> Yes. As soon as I finish grading SoLA 2.
 
 ### Questions on MP3
 
-### Administrative questions
-
-### Questions on the reading
+### Questions on the readings
 
 ### Other questions
 
