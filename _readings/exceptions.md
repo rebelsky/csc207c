@@ -328,7 +328,7 @@ Here's a typical input loop using a Scanner (`java.util.Scanner`, to be precise)
 try {
   while (true) {
     pen.println("> ");
-    String response = scanner.readLine();
+    String response = scanner.nextLine();
     pen.println(process(response));
   } // while
 } catch (Exception e) {
@@ -341,7 +341,7 @@ If we were trying to use explicit precondition testing, we might instead write t
 ```java
 while (scanner.hasNextLine()) {
   pen.println("> ");
-  String response = scanner.readLine();
+  String response = scanner.nextLine();
   pen.println(process(response));
 } // while
 ```
@@ -350,4 +350,4 @@ Unfortunately, that won't work.
 
 a. Explain why the alternative does not work as one might expect.
 
-b. Explain why the designers of the `Scanner` class might have made `hasNextLine` and `readLine` behave in this way.
+b. Explain why the designers of the `Scanner` class might have made `hasNextLine` and `nextLine` behave in this way.
