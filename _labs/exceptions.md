@@ -341,7 +341,11 @@ For those with extra time
 
 Revisit the `ReadIntExperiment` class and the `IOUtils` class and arrange the program so that it prints an appropriate (and different) error message for each kind of error, including cases in which the number entered is a valid integer, but its square is not.
 
-### Extra 2: Large roots
+### Extra 2: Improving `readInt`
+
+Rewrite `readInt` so that it repeatedly prompts for an integer until it receives one. If, however, `pw.print` or `br.readLine` fails, it should still throw an appropriate exception.
+
+### Extra 3: Large roots
 
 a. Write tests for the `largerRoot` method in `Quadratic`.
 
