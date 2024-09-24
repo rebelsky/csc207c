@@ -154,9 +154,12 @@ This may seem all well and good (except that we are already clogging our screen 
 ```
 public class Int {
   public int i;
-  public Int(int i) {
-    this.i = i;
+  public Int(int val) {
+    this.i = val;
   } // Int(int)
+  public void increment() {
+    ++this.i;
+  } // increment()
 } // class Int
 ```
 
