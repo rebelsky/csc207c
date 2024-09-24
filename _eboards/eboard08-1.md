@@ -25,9 +25,11 @@ Preliminaries
 ### News / Etc.
 
 * I'm still here. I'm unsure about whether I'll be here on Thursday.
+* Reminder: Take cards from outside the jar and drop them in the jar.
 * I've been doing my best to respond to questions on Teams and email.
   Please keep them coming. And please ask general questions in the
   Questions channel, rather than via DM.
+* Warning! Talk will be long and lab will be short.
 
 ### Pre-reflection #3
 
@@ -35,8 +37,10 @@ _Without looking at any resources (e.g., readings, labs, your notes),
 write down everything you know that might be useful for this
 assignment._
 
-The point of this is that you dump actual code (or pseudocode); it exercises 
-your brain and your recall ability and builds neural connections.  Our learning specialists have taught me that "recall practice" is one of the best ways to develop knowledge.
+The point of this is that you dump actual code (or pseudocode);
+it exercises your brain and your recall ability and builds neural
+connections.  Our learning specialists have taught me that "recall
+practice" is one of the best ways to develop knowledge.
 
 So not "Generic types" but rather
 
@@ -71,14 +75,15 @@ Not "JUnit" but rather
         * [Composition](../readings/composition)
         * [Mental models of Java](../readings/mental-models)
     * [Submit reading responses on Gradescope](https://www.gradescope.com/courses/818402/assignments/5023796)
-        * As always, I'd prefer that you submit at the end of class today.
     * [Submit lab writeup for today's class on Gradescope](https://www.gradescope.com/courses/818402/assignments/5026363)
+        * As always, I'd prefer that you submit at the end of class today.
 * Thursday, 2024-09-26 @ 10:30 p.m.
     * Complete [Mini-Project 3](../mps/mp03)
     * [Submit MP3 on Gradescope](https://www.gradescope.com/courses/818402/assignments/4996582)
     * Mini-Project 4 assigned
 * Friday, 2024-09-27 @ 10:30 p.m.
     * Submit [Post-reflection for MP3](https://www.gradescope.com/courses/818402/assignments/4996574) on Gradescope.
+        * Recommend that you submit immediately after submitting the MP
 * Sunday, 2024-09-29 @ 10:30 p.m.
     * Submit [Pre-Reflection for MP4](https://www.gradescope.com/courses/818402/assignments/5025090)
 * Monday, 2024-09-30 @ 10:30 pm.
@@ -150,9 +155,31 @@ Questions
 
 ### Qustions on SoLAs
 
-**I am a bit confused as to how SoLA's are supposed to work. Do we demonstrate new mastery each week?**
+**I am a bit confused as to how SoLA's are supposed to work. Do we
+demonstrate new mastery each week?**
 
-> Each week, you'll get new LAs. Any topics you get marked Satisfactory, you're done with. Any topics you haven't had marked Satisfactory, you should try again the next week.
+> Each week, you'll get new LAs as well as redos for old LAs. Any topics 
+  you get marked Satisfactory, you're done with it. Any topics you haven't
+  had marked Satisfactory, you should try again the next week.
+
+**If we don't complete an LA and the comment is "You're missing X", can
+I just add X to my LA and turn it in again?**
+
+> In general, you should just correct your answer and turn it in again.
+
+> In a few cases, I may ask you to start from scratch (or you'll be able
+  to tell that you should start from scratch).
+
+Should we always do the redos on SoLA N, where N is the current SoLA number?
+
+> Yes. You shouldn't be able to access the old ones.
+
+### Questions on MPs
+
+**If we don't successfully complete an MP, can we just fix the things that
+are wrong or should we start again?**
+
+> You should fix the things that are wrong.
 
 ### Questions on MP3
 
@@ -160,9 +187,114 @@ _All of the questions I've received now appear in MP3. This is just a
 placeholder to remind you to ask more questions. I've also included two
 that came up indirectly._
 
-**Any hints on horizontally centering a line?**
+**Any hints on horizontally centering a line?** (TPS)
+
+_Suppose our row is five units wide but we want to fit it into something
+that is eleven units wide. (E.g., centering "hello" on "abcdefghijk".)
+How many spaces do we need before "hello" and how many do we need after?_
+
+> Three before and three after.
+
+```text
+___hello___
+abcdefghijk
+```
+
+_How did you figure that out?_
+
+> Um: Use math. "The length of the longer string minus the length of the
+  shorter string, divided by 2".
+
+_Suppose our row is four units wide but we want to fit it into something
+that is twelve units wide. (E.g., centering "four" on "abcdefghijkl".)
+How many spaces do we need before "four" and how many do we need after?_
+
+```text
+____four____
+abcdefghijkl
+```
+> Four on the left, four on the right.
+
+_How did you figure that out?_
+
+> We eyeballed it.
+
+_Suppose our row is five units wide but we want to fit it into something
+that is twelve units wide. (E.g., centering "hello" on "abcdefghijkl".)
+How many spaces do we need before "hello" and how many do we need after?_
+
+> Three on the left, four on the right.
+
+```text
+___hello____
+abcdefghijkl
+```
+_How did you figure that out?_
+
+> Eyeballing is a great strategy, but probably hard to implement.
+
+_Can you generalize?_
+
+> NO: We need `str.length()/2` spaces before and after.
+
+> MAYBE: We need `(width - str.length())/2` spaces before and after.
+  Works in most cases, but not when the two sizes differ by an odd
+  number.
+
+> That formula works for the left, but not the right. So we need to
+  add `((width - str.length()) / 2) % 2` spaces at the end.
 
 **Any hints on vertical centering?**
+
+> Students decided that they don't need hints.
+
+> We calculate "blank lines" above and below, and use that to offset
+  within the block.
+
+> So if we're centering something five high (`hello`) on something eleven high,
+  and we need row `i` of the overall thing, we should get `hello.row(???)`.
+
+```
+           0
+           1
+           2
+HHH        3
+EEE        4
+LLL        5
+LLL        6
+OOO        7
+           8
+           9
+           0
+```
+
+
+> i = 0, the appropriate number of spaces `" ".repeat(hello.width())`
+
+> i = 1, ditto
+
+> i = 2, ditto
+
+> i = 3, hello.row(0);  // Take i - 3, more generally `(i - diff/2)`
+
+> i = 4, hello.row(1);
+
+> i = 5, hello.row(2);
+
+> i = 6, hello.row(3);
+
+> i = 7, hello.row(4);
+
+> i = 8, the spaces from above
+
+> i = 9, ditto
+
+> i = 10, ditto
+
+**Do we need spaces after as well as before?**
+
+> Yes! Otherwise, when you do a horizontal composition, things will
+  look wrong.
 
 ### Administrative questions
 
@@ -177,9 +309,35 @@ mini-project and the post-reflection?**
 
 ```
 while (scanner.hasNextLine()) {
-  pen.println("> ");
-  String response = scanner.readLine();
+  pen.print("> ");
+  pen.flush();
+  String response = scanner.nextLine();
   pen.println(process(response));
+} // while
+```
+
+**Why didn't that work?**
+
+It needs to check if there's a new line, which means it has to see if
+the user entered something.
+
+**Why this design?**
+
+Because you have to make sure that there is input before you answer the
+question.
+
+Perhaps it also works better from files.
+
+**Can we change our code to make it work?**
+
+```
+pen.printf("> ");
+pen.flush();
+while (scanner.hasNextLine()) {
+  String response = scanner.nextLine();
+  pen.println(process(response));
+  pen.printf("> ");
+  pen.flush();
 } // while
 ```
 
@@ -249,3 +407,9 @@ should be define by the person writing the code?**
 Lab
 ---
 
+Foreshortened. Sorry.
+
+Our server was serving an old version to some of you. I'm not sure why.
+
+In the future, make sure that lab repos end with `-maven`, which suggests
+that they are (mostly) up to date.
