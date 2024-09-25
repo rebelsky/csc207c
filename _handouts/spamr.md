@@ -36,7 +36,7 @@ I've written lots of tests of the classes for your edification. I haven't comple
 If you've started MP3 already (and forked the original project), you should use the following terminal commands to get the tests.
 
 ```
-git remote add https://github.com/Grinnell-CSC207/mp-blocks-maven
+git remote add upstream https://github.com/Grinnell-CSC207/mp-blocks-maven
 git fetch upstream
 git merge upstream/main
 ```
