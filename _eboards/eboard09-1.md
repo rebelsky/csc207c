@@ -3,7 +3,7 @@ title: "Eboard 09 (Section 1): Inheritance"
 number: 9
 section: eboards
 held: 2024-09-26
-link: false
+link: true
 ---
 # {{ page.title }}
 
@@ -15,7 +15,7 @@ _Approximate overview_
     * Notes and news
     * Upcoming work
     * Tokens
-* A design challenge
+* MP4 / Design challenges
 * Questions
 * Lab
 
@@ -24,12 +24,26 @@ Preliminaries
 
 ### News / Etc.
 
-* I'm still here. I'm unsure about whether I'll be here on Thursday.
-* Reminder: Take cards from outside the jar and drop them in the jar.
-* I've been doing my best to respond to questions on Teams and email.
-  Please keep them coming. And please ask general questions in the
-  Questions channel, rather than via DM.
-* Comment from student: "I feel like I'm struggling."
+* I'm still here. I'm unsure about whether I'll be here on Tuesday.
+* Some time today, you should receive an invitation to join a testing repository
+  on GitHub. Please make sure to accept that invitation.
+
+### Struggles
+
+Comment from student: "I feel like I'm struggling."
+
+* Many of you are. It's the nature of the beast. Semi-(un)cooperative tools
+  and a (fill-in-adjective) professor don't help.
+* Survey!
+    * I feel like I'm struggling a lot in 207 [ ]
+    * I feel like I'm struggling a bit in 207 [ ]
+    * I don't feel like I'm struggling in 207 [ ]
+* I worry that folks aren't asking enough questions. You really shouldn't
+  spend more than five or ten minutes stuck on a problem before you reach
+  out for help.
+    * For example, I hear many people had difficulty with "the parameters
+      can appear in (almost) any order on MP1". Yet I received no questions
+      on that issue.
 
 ### Upcoming work
 
@@ -54,8 +68,13 @@ Preliminaries
         * Redo: [Development #8: Documentation](https://www.gradescope.com/courses/818402/assignments/5015350)
         * Redo: [OOP #1: Encapsulation](https://www.gradescope.com/courses/818402/assignments/5015351)
     * Readings
-    * Submit reading response on Gradescope
+        * [Linear Structures](../readings/linear-structures)
+        * [Stacks](../readings/stacks)
+        * [Queues](../readings/queues)
+        * [Priority queues](../readings/priority-queues)
+    * [Submit reading response on Gradescope](https://www.gradescope.com/courses/818402/assignments/5041948)
     * [Submit lab writeup for class 9 on Gradescope](https://www.gradescope.com/courses/818402/assignments/5024091)
+        * I'd prefer that you submit it today.
 
 ### Tokens
 
@@ -79,6 +98,8 @@ class._
 
 #### Peer
 
+* Grinnellephants in Small Pop (Mini-soda) this weekend.
+
 #### Wellness
 
 #### Misc
@@ -93,6 +114,7 @@ TLAs
 * ADT:
 * SAM:
 * AAA:
+* TLA:
 
 ### The ADT (SAM)
 
@@ -155,7 +177,7 @@ Questions
 
 **Will we get grade reports soon?**
 
-> Yes. As soon as I finish grading SoLA 2.
+> Yes. Probably this weekend.
 
 ### Questions on MP3
 
@@ -166,6 +188,6 @@ Questions
 Lab
 ---
 
-Make sure that you lab uses the repo 
-<https://github.com/Grinnell-CSC207/lab-inheritance-maven>. That is, the
-name should end with `-maven`.
+Make sure that you lab uses the repo
+<https://github.com/Grinnell-CSC207/lab-inheritance-maven>.
+That is, the name should end with `-maven`.
