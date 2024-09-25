@@ -2,6 +2,7 @@
 title: Mini-Project 4
 subtitle: Associative arrays
 repo: <https://github.com/Grinnell-CSC207/mp-associative-arrays-maven>
+librepo: <https://github.com/Grinnell-CSC207/aaLibrary>
 summary: |
   We build our first data structure.  Along the way, we practice with
   generics/parametric polymorphism.
@@ -52,55 +53,207 @@ Associative arrays are most frequently used to implement the `Dictionary` or `Ma
 
 The central methods for such types include the following:
 
-`void set(K key, V value)`
+`public void set(K key, V value)`
   : Set the value associated with a given key.  If there is already another value associated with the given key, this new value replaces that value.
 
-`V get(K key)`
+`public V get(K key)`
   : Get the value associated with a given key.  If there is no such key, throws an exception.
 
-`boolean hasKey(K key)`
-  : Determines if the given key appears in the associative array.
+`public boolean hasKey(K key)`
+  : Determine if the given key appears in the associative array.
 
-`void remove(K key)`
+`public void remove(K key)`
   : Remove the key/value pair associated with the given key.  If the key does not appear in the associative array, does nothing.
 
-`int size()`
-  : Determine how many key/value pairs are currently stored in the associative array.
+`public int size()`
+  : Determine how many different key/value pairs are currently stored in the associative array.
 
-`String toString()`
-  : Return a string of the form `"{ key0: value0, key1: value1, ... keyn: valuen }"`  If the array is empty, you should return `"{}"`.
+`public String toString()`
+  : Return a string of the form `"{key0:value0, key1:value1, ... keyn:valuen}"`  If the array is empty, you should return `"{}"`.
+
+`public AssociativeArray<K,V> clone()`
+  : Make a copy of the associative array.
 
 As you might expect, the first four procedures will need to iterate the array of key/value pairs, stopping when they find a matching key or run out of pairs.  We normally use the `equals` method to determine matching keys.
 
 ## Getting ready
 
-Fork and clone the repository at {{ page.repo }}. Update the `README.md` and push the updated `README` to GitHub.
+We will be sharing test cases in this project, which means that we will have two GitHub repositories: One for your `AssociativeArray` code and one for the shared tests. Using the strategy means that we'll have to do a slightly more complex setup. _Cross your fingers that it works correctly._
 
-Make sure to accept the invitation to our testing repo. If you don't receive one, contact SamR.
+a. Fork the repository at {{ page.repo }}.
 
-Fork and clone that repository, too. The clone of the testing repo should end up as the folder `associative-arrays/tests`.
+b. Clone that repository.
 
 ```text
-cd /home/USERNAME/CSC207/MPs/MP3/associative-arrays     # Fill in dir
-git clone ... tests
+cd ~/CSC207/MPs                 # Or the directory of your choice
+git clone git@github.com:USERNAME/mp-associative-arrays-maven.git
 ```
 
-## Testing
+c. Open the project in VSCode.
+
+d. Update the `README.md` appropriately.
+
+e. Push the updated `README` to GitHub.
+
+```text
+cd ~/CSC207/MPs/                # Or the directory of your choice
+cd mp-associative-arrays-maven
+git add README.md
+git status
+git commit -m "Update README to include myself."
+git pull
+git push
+```
+
+f. Add an upstream repository just in case I make changes.
+
+```text
+cd ~/CSC207/MPs/                # Or the directory of your choice
+cd mp-associative-arrays-maven
+git remote add upstream https://github.com/Grinnell-CSC207/mp-associative-arrays-maven
+```
+
+In the future, you can grab changes using the following.
+
+```text
+git fetch upstream
+git merge upstream/main
+```
+
+You can also just click the **Sync Fork** button on your GitHub page for the fork.
+
+g. Make sure that you can run the experiment in VSCode.
+
+h. You should see two sets of testing files. Make sure that you can run the current tests in VSCode.
+
+i. Make sure that you can run the experiment in Maven.
+
+```text
+cd ~/CSC207/MPs/                # Or the directory of your choice
+cd mp-associative-arrays-maven
+mvn exec:java -q
+```
+
+j. Make sure that you can run the tests in Maven.
+
+```text
+cd ~/CSC207/MPs/                # Or the directory of your choice
+cd mp-associative-arrays-maven
+mvn tests
+```
+
+h. Add some point, you should have received an invitation to our testing repo. If you didn't receive such an invitation, contact SamR asap. **Do not fork the testing repo. You will be pushing directly to that repo.**
+
+i. Clone the testing repository using the name `shared` and place it in `src/test/java/edu/grinnell/csc207`
+
+```text
+cd ~/CSC207/MPs/                # Or the directory of your choice
+cd mp-associative-arrays-maven
+cd src/test/java/edu/grinnell/csc207
+git clone git@github.com:rebelsky/csc207-2024fa-associative-array-tests.git shared
+```
+
+j. Make sure that the new folder and test file show up in VSCode. You may have to quit and restart.
+
+k. Make sure that you can run the new tests in VSCode.
+
+l. Make sure that you can run the new tests in Maven.
 
 ## The assignment
 
-1. Add at least three tests, including one edge case, to the shared `TestAssociativeArrays.java` repository.  Please name them with a form like `lastFirstTest1()`, `lastFirstTest2()`, and `lastFirstEdge1()`.  For example, mine would be `rebelskySamuelTest1()`, `rebelskySamuelTest2()`, and `rebelskySamuelEdge1()`.
+### Part one: Write tests
 
-    _Make sure that your tests do not break the test suite!_
+As you know, good practice suggests that you should write tests before writing code. So start by writing tests. And the earlier you write tests, the better you support not just yourself, but your classmates.
 
-    Do not test the `toString` method; there are too many potential
-    orders for the K/v pairs.
+Add at least three tests, including at least two "normal" cases and at least one edge case, to `TestAssociativeArrays.java` in the shared testing repository.  Please name them with a form like `lastFirstTest1()`, `lastFirstTest2()`, and `lastFirstEdge1()`.  For example, mine would be `rebelskySamuelTest1()`, `rebelskySamuelTest2()`, and `rebelskySamuelEdge1()`.
 
-2. Implement an `AssociativeArray<K,V>` class in Java.  You may _not_ use any other Java classes that provide similar features; you must rely on an underlying plain Java array of `KVPair<K,V>` objects.
+_Make sure that your tests do not break the test suite!_
+
+Do not test the `toString` method; there are too many potential orders for the K/V pairs.
+
+You should use the following process to add your tests.
+
+a\. Open `TestAssociativeArrays.java` in VSCode.
+
+b\. Add your tests. Do your best to make sure that they are sensible. Ensure that they compile. Make sure that they are in the section of the file with your name. Your tests likely won't pass since we haven't written working code yet.
+
+c\. In the terminal, `cd` to the shared directory.
+
+```text
+cd ~/CSC207/MPs/                # Or the directory of your choice
+cd mp-associative-arrays-maven
+cd src/test/java/edu/grinnell/csc207/shared
+```
+
+d\. Verify that you've made the appropriate changes.
+
+```text
+git status
+git diff
+```
+
+e\. Commit your changes.
+
+```text
+git add TestAssociativeArrays.java
+git commit -m "Add my amazing tests."
+```
+
+f\. As you know, you can't push to a repository if it's changed since you last pulled. Hence, it's good practice to pull before pushing. Pull from the repository.
+
+```text
+git pull
+```
+
+g\. Ideally, you haven't gotten any merge conflicts and you haven't seen any problems. If you have merge conflicts and feel like you can resolve them yourself, please do so. If you have merge conflicts and can't resolve them, or find that the code is broken, please reach out to SamR on Teams. (Don't go on to the next step.)
+
+h\. You should now be able to push your changes (unless someone pushed their own changes while you were looking at the updated file).
+
+```text
+git push
+```
+
+i\. Drop me a message on teams so that I know that you've completed this step and can check your tests. (I may not check them immediately.)
+
+j\. You should make it a habit to regularly pull the updated tests.
+
+### Part two: Implement Associative Arrays
+
+Implement the `AssociativeArray<K,V>` class in Java.  You may _not_ use any other Java classes that provide similar features, such as `java.util.HashMap`; you must rely on an underlying plain Java array of `KVPair<K,V>` objects.
+
+### Part three: Make sure to test your code
+
+You have three sets of tests to run.
+
+* The tests I may provide, which appear as `TestsFromSam.java`.
+* The tests you may decide to add before sharing, which appear as `TestsFromStudent.java`.
+* The shared set of tests, which appear as `shared/TestAssociativeArrays.java`.
+
+You should make sure to update the first and last of those with some regularity.
+
+If you prefer visual interfaces, you can update my tests by visiting your repo on GitHub and clicking **Sync Fork**.
+
+If you prefer textual interfaces, you can update my tests by switching to the top level of your project and using the appropriate commands.
+
+```text
+cd ~/CSC207/MPs/                # Or the directory of your choice
+cd mp-associative-arrays-maven
+git fetch upstream
+git merge upstream/main
+```
+
+You can pull updates to the shared tests using the steps we discussed earlier.
+
+```text
+cd ~/CSC207/MPs/                # Or the directory of your choice
+cd mp-associative-arrays-maven
+cd src/test/java/edu/grinnell/csc207/shared
+git pull
+```
 
 ## Rubric
 
-_I plan to revisit this rubric._
+_I am likely to revisit this rubric._
 
 ### Redo or above
 
@@ -108,10 +261,9 @@ Submissions that fail to meet any of these requirements will get an I.
 
 ```text
 [ ] Passes all the R tests.
-[ ] Each class has an introductory Javadoc comment that indicates
-    the author and purpose.
+[ ] Each class has an introductory Javadoc comment that indicates the author and purpose.
 [ ] Includes a `README.md` file that contains the appropriate information
-    (authors, purpose, acknowledgements if appropriate)
+    (authors, purpose, acknowledgements if appropriate).
 [ ] All files compile correctly.
 ```
 
@@ -126,7 +278,7 @@ previous requirements will receive an R.
 [ ] Added three tests to the `AssociativeArrayTests.java` file.
 [ ] One of those three tests is an edge case (preferably named as such).
 [ ] The `toString()` method appears to behave correctly. (Since the ordering
-    of key/value paiss is somewhat open, we can't readily check this with
+    of key/value pairs is somewhat open, we can't readily check this with
     unit tests.)
 ```
 
@@ -138,29 +290,9 @@ previous requirements will receive an M.
 ```text
 [ ] Passes all of the E tests.
     [ ] Handles `null` keys in `set`, `get`, and `hasKey`.
-[ ] All (or most) repeated code has been factored out into individual
-    methods.
+[ ] All (or most) repeated code has been factored out into individual methods.
 [ ] All or most variable names are appropriate.
-```
-
-Testing
--------
-
-I may not provide a separate test suite for this assignment. Rather, we will rely on the collaborative tests to catch errors. (I may, however, write a test suite for the graders to use. You should try to make sure that your collaborative suite catches all reasonable errors and edge cases.
-
-You should make sure to add an upstream linke for your repository so that you can pull any changes I make (including adding tests).
-
-First, type the following. (You will only do this once in each clone.)
-
-```
-git remote add https://github.com/Grinnell-CSC207/mp-blocks-maven
-```
-
-Then, each time I tell you that I've updated the tests, you will type the following.
-
-```
-git fetch upstream
-git merge upstream/main
+[ ] No errors from `mvn checkstyle:check`.
 ```
 
 Questions and Answers
@@ -168,7 +300,3 @@ Questions and Answers
 
 _Forthcoming._
 
-Acknowledgements
-----------------
-
-I figured out the Maven setup for separate projects from this page: <https://stackoverflow.com/questions/1627211/how-to-set-up-maven-for-two-separate-projects-that-depend-on-the-same-jar>.
