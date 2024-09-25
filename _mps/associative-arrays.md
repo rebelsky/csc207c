@@ -12,8 +12,6 @@ collaboration: |
   receive help from anyone, make sure to cite them in your responses.
 link: true
 ---
-# {{ page.title }} : {{ page.subtitle }}
-
 _Please do not read over this mini-project until we have discussed it in class._
 
 ## Introduction
@@ -289,7 +287,7 @@ previous requirements will receive an M.
 
 ```text
 [ ] Passes all of the E tests.
-    [ ] Handles `null` keys in `set`, `get`, and `hasKey`.
+    [ ] Correctly handles `null` keys in `set`, `get`, and `hasKey`.
 [ ] All (or most) repeated code has been factored out into individual methods.
 [ ] All or most variable names are appropriate.
 [ ] No errors from `mvn checkstyle:check`.
@@ -298,5 +296,13 @@ previous requirements will receive an M.
 Questions and Answers
 ---------------------
 
-_Forthcoming._
+_More forthcoming._
+
+### Testing
+
+**When will you provide us with more tests (in `TestsFromSam`)?**
+
+> Since a key part of this assignment is writing tests, I may never provide you with 
+  such tests. One would hope that 40+ students working together should be able to catch
+  most errors.
 
