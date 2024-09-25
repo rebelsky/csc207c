@@ -434,7 +434,7 @@ You will pull the new tests into your repository as follows.
 First, type the following. (You will only do this once.)
 
 ```
-git remote add https://github.com/Grinnell-CSC207/mp-blocks-maven
+git remote add upstream https://github.com/Grinnell-CSC207/mp-blocks-maven
 ```
 
 Then, each time I tell you that I've updated the tests, you will type the following.
