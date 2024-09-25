@@ -5,7 +5,29 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester, with the newest email at the top and the oldest at the bottom._
 
-## [CSC-207 2024Fa] MP3 Pre-Assessments Graded (2024-09-23)
+## [CSC-207 2024Fa] More tests for MP3 (2024-09-25)
+
+Dear Partnering Producers of Pictures,
+
+I've finally written a bunch of tests for the `eqv` method. It's likely that some erroneous code can pass these tests, but they should catch a lot of issues.
+
+You should be able to pull everything into your repo on the terminal using command-line Git commands.
+
+```text
+git remote add upstream https://github.com/Grinnell-CSC207/mp-blocks-maven
+git fetch upstream
+git merge upstream/main
+```
+
+You should only need to type the first command once (provided it works).
+
+On a semi-related note, I've written a 'blog post about writing those tests. You can see it at <https://rebelsky.cs.grinnell.edu/musings/brain-fog-2024-09-25>.
+
+Let me know if you have problems or questions.
+
+Regards,
+
+-- SamR
 
 Dear Pre-Assessed Pre-Assessors,
 
