@@ -147,6 +147,7 @@ Do not ask me to follow links. Everything you want me to look at belongs in your
 
 #### OOP 3: Composition
 
+* Your example need not employ the more complicated form of encapsulation that is used as an alternative to inheritance and involves delegation. A clear instance of the _has-a_ relationship suffices.
 * Make sure to describe what composition is.
 * Make sure to include code that employs composition.
 * Make sure to indicate how and why your code employs composition.
