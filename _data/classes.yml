@@ -160,8 +160,8 @@
   lab:
     - page: /labs/exceptions.html
   eboards:
-    - page: /eboards/eboard07-1.html
-    - page: /eboards/eboard07-2.html
+    - page: /eboards/eboard08-1.html
+    - page: /eboards/eboard08-2.html
 
 - topic: Inheritance and composition
   abbrev: inheritance
@@ -183,6 +183,9 @@
     - page: /readings/mental-models.html
   lab:
     - page: /labs/inheritance.html
+  eboards:
+    - page: /eboards/eboard09-1.html
+    - page: /eboards/eboard09-2.html
   
 - topic: Lists and linear structures
   abbrev: linked-structures
