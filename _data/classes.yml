@@ -163,6 +163,20 @@
     - page: /eboards/eboard08-1.html
     - page: /eboards/eboard08-2.html
 
+
+- topic: Design day
+  abbrev: associative-arrays
+  summary:
+    We practice some design in preparation for MP4.
+  subjects:
+    - ADT design, revisited
+    - Data structure design, revisited
+    - Dictionaries
+    - Associative arrays
+  eboards:
+    - page: /eboards/eboard09-1.html
+    - page: /eboards/eboard09-2.html
+
 - topic: Inheritance and composition
   abbrev: inheritance
   summary: |
@@ -184,16 +198,14 @@
   lab:
     - page: /labs/inheritance.html
   eboards:
-    - page: /eboards/eboard09-1.html
-    - page: /eboards/eboard09-2.html
   
-- topic: Lists and linear structures
+- topic: Linear structures
   abbrev: linked-structures
   summary: |
-    We practice ADT design by considering the design of lists and
-    linear structures, such as queues and stacks.  We
-    explore ways in which arrays and simple linked objects can be used to
-    implement linear structures.
+    We consider a few basic structures, such as queues and stacks,
+    and generalize them to linear structures.  We explore ways in
+    which arrays and simple linked objects can be used to implement
+    linear structures. We practice building linked linear structures.
   subjects:
     - The design of ADTs, revisited
     - A list ADT
@@ -365,27 +377,6 @@
     - page: /labs/mergesort.html
     - page: /labs/quicksort.html
 
-- topic: Lists and list Iterators
-  abbrev: list-iterators
-  summary: |
-    We return to list ADTs, this time conceiving of lists only in
-    terms of the iterators we build for them. We implement lists
-    using arrays.
-  subjects:
-    - A simple list interface
-    - The java.util.List interface
-    - The java.util.ListIterator interace
-  reading:
-    - page: /readings/list-adts.html
-    - link: Lists with "current" considered harmful
-      url: http://csis.pace.edu/~bergin/papers/ListsWithCurrent.html
-    - link: java.util.List
-      url: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html
-    - link: java.util.ListIterator
-      url: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ListIterator.html
-  lab:
-    - page: /labs/array-based-lists.html
-
 - topic: Doubly-linked lists
   abbrev: doubly-linked-lists
   summary: |
@@ -396,6 +387,13 @@
     - Circularly-linked lists
     - Other list issues
   reading:
+    - page: /readings/list-adts.html
+    - link: Lists with "current" considered harmful
+      url: http://csis.pace.edu/~bergin/papers/ListsWithCurrent.html
+    - link: java.util.List
+      url: https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html
+    - link: java.util.ListIterator
+      url: https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ListIterator.html
     - page: /readings/list-iterators.html
     - page: /readings/doubly-linked-lists.html
   lab:
@@ -430,7 +428,7 @@
   lab:
     - page: /labs/tree-traversal.html
 
-- topic: A Dictionary ADT and some basic implementations
+- topic: A Dictionary ADT and binary search trees
   abbrev: maps
   summary: |
     We introduce the Dictionary (a.k.a. Map) abstract data type and some
@@ -577,4 +575,25 @@
   reminders:
     - Need readings
     - Need lab
+
+- topic: Lists and list Iterators
+  abbrev: list-iterators
+  summary: |
+    We return to list ADTs, this time conceiving of lists only in
+    terms of the iterators we build for them. We implement lists
+    using arrays.
+  subjects:
+    - A simple list interface
+    - The java.util.List interface
+    - The java.util.ListIterator interace
+  reading:
+    - page: /readings/list-adts.html
+    - link: Lists with "current" considered harmful
+      url: http://csis.pace.edu/~bergin/papers/ListsWithCurrent.html
+    - link: java.util.List
+      url: https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html
+    - link: java.util.ListIterator
+      url: https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ListIterator.html
+  lab:
+    - page: /labs/array-based-lists.html
 
