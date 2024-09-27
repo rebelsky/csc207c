@@ -104,13 +104,18 @@ Submissions that fail to meet any of these requirements will get an I.
     appropriate packages.
 [ ] Each class has an introductory Javadoc comment that indicates the author 
     and purpose. 
-[ ] Includes a `README.md` file.
-[ ] The `README.md` file contains the appropriate information (authors, 
-    purpose, URL, acknowledgements if appropriate)
+[ ] Includes a `README.md` file that includes that contains the appropriate 
+    information (author, purpose, instructions for running, GitHub URL, 
+    acknowledgements if appropriate)
 [ ] All files compile correctly.
 [ ] The main methods of `QuickCalculator` and `InteractiveCalculator` run.
 [ ] All classes include the specified methods.
 ```
+
+Issues checked by the scripts.
+
+* Programs start.
+* Programs generate output.
 
 ### Meets expectations or above
 
