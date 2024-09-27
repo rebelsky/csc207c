@@ -351,8 +351,8 @@ How might you implement `eqv`? The best strategy we've seen is to require that e
   } // eqv(AsciiBlock)
 
   public boolean eqv(Grid other) {
-    return (this.hreps == other.hreps) && (this.vreps == other.hreps)
-        && (this.element.eqv(other.element));
+    return (this.hreps == other.hreps) && (this.vreps == other.vreps)
+        && AsciiBlock.eqv(this.element, other.element);
   } // eqv(Grid)
 ```
 
