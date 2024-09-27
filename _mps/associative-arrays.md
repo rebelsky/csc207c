@@ -298,11 +298,15 @@ Questions and Answers
 
 _More forthcoming._
 
+### Design
+
+**Why does `set` potentially throw a `NullKeyException`?**
+
+> We want to disallow the client from calling `aa.set(null, something)`. Our options are either (a) ignore the call altogether, (b) don't check for the null, and let whatever happens happen, or (c) inform the client they've done something improper. I've chosen the last of the three.
+
 ### Testing
 
 **When will you provide us with more tests (in `TestsFromSam`)?**
 
-> Since a key part of this assignment is writing tests, I may never provide you with 
-  such tests. One would hope that 40+ students working together should be able to catch
-  most errors.
+> Since a key part of this assignment is writing tests, I may never provide you with such tests. One would hope that 40+ students working together should be able to catch most errors.
 
