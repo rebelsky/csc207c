@@ -72,6 +72,10 @@ collections:
     output: true
     permalink: /eboards/:path.html
 
+  grading:
+    output: true
+    permalink: /mps/:path.html
+
   handouts:
     output: true
     permalink: /handouts/:path.html
