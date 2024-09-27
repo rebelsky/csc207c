@@ -389,10 +389,9 @@ Submissions that fail to meet any of these requirements will get an I.
 [ ] Each class has an introductory Javadoc comment that indicates
     the author and purpose.
 [ ] Includes a `README.md` file that contains the appropriate information
-    (authors, purpose, acknowledgements if appropriate)
+    (authors, purpose, acknowledgements if appropriate, GitHub URL)
 [ ] All files compile correctly.
 [ ] Includes one more text block.
-[ ] The `README.md` includes a link to the GitHub repo.
 [ ] The GitHub repo has at least ten commits.
 ```
 
@@ -406,7 +405,7 @@ previous requirements will receive an R.
 [ ] No more than ten errors from `mvn checkstyle:check`.
 [ ] The GitHub repo has at least ten meaningful commits.
 [ ] Each commit has an appropriate commit message.
-[ ] At least three tests in `TestNewBlock.java`.
+[ ] `TestNewBlock.java` includes at least three tests of the new block.
 ```
 
 ### Exemplary / Exceeds expectations
@@ -420,9 +419,9 @@ previous requirements will receive an M.
     [ ] Handle mutated blocks appropriately.
 [ ] All (or most) repeated code has been factored out into individual methods.
 [ ] All or most variable names are appropriate.
-[ ] At least six tests in `TestNewBlock.java`.
-[ ] Tests in `TestNewBlock.java` include interesting edge cases, such as
-    empty blocks.
+[ ] `TestNewBlock.java` includes at least six tests of the new block.
+[ ] `TestNewBlock.java` include at least two interesting edge cases,
+    such as empty blocks.
 ```
 
 ## Tests
@@ -581,9 +580,9 @@ Fast-forward
     assertTrue(AsciiBlock.equals(exes2, exes3));
     assertFalse(AsciiBlock.eqv(exes2, exes3),
         "Two HComps with different elements");
-    assertFalse(AsciiBlock.eqv(exes3, exes4), 
+    assertFalse(AsciiBlock.eqv(exes3, exes4),
         "Two HComps with different alignments");
-    assertFalse(AsciiBlock.eqv(exes4, exes5), 
+    assertFalse(AsciiBlock.eqv(exes4, exes5),
         "Two HComps with different elements");
 ```
 
