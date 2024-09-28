@@ -5,6 +5,137 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester, with the newest email at the top and the oldest at the bottom._
 
+## [CSC-207 2024Fa] Notes on new LAs from SoLA 2 (2024-09-28)
+
+Dear Do-Re-Mi-Fas,
+
+I hope that you are well and that you have some fun things planned for this weekend. (Remember: Moderation in everything.)
+
+I've finished grading the new LAs from SoLA 2 and have a few notes on the various topics. (I will generally not add these to the LAs.)
+
+I should be able to get to the old LAs by this evening.
+
+### General
+
+* Remember that our policies are that for LAs, you should rely only on (a) your notes, (b) our course Web site, (c) me, and (d) the Oracle Java reference pages. It appears that some of you went beyond those resources. For example, I saw references to "setters" and "getters" in some answers, even though they aren't discussed in the course site. (Or perhaps one of our guest lecturers mentioned the.)
+
+* Please don't ask me to look at things outside of what you submit in the primary answer field. Your goal is to get the key information in that field.
+
+* Please try to keep your answers anonymous. Among other things, don't put your name in the citations field and don't include a link to a GitHub repo.
+
+* Provide good code that follows the standards we've covered, explicitly and implicitly, in the class. Soon, I will mark as "Please try again" if I see "System.out.println" in the code you provide.
+
+* I prefer to see code that you've written for class, rather than code you generate for the particular LA.
+
+* Utility code should not print error messages. Only UI code should communicate with the user.
+
+* Some of you seem to have forgotten "The Zen of Booleans".
+    * Don't write `if (TEST == true) { … }`, write `if (TEST) { … }`.
+    * Don't write `if (TEST) { return true; } else { return false; }`, write `return TEST;`.
+
+* I'm worried that some of you attempted no LAs on SoLA 2. I'll be sending academic alerts about such issues.
+
+* Since most of you are still figuring out what your LA answers should look like, I'll wait at least another week to send in academic alerts for those who haven't sucessfully completed a reasonable number.
+
+### Encapsulation
+
+* If you are unsure what encapsulation is, please revisit the appropriate reading in the section on OOP basics.
+
+* The primary aspect of encapsulation we've been considering is protecting data/state, so I generally gave credit for descriptions that focused on that issue. But encapsulation also involves bringing things together, specifically data and the methods that directly manipulate those data. (The former implies the latter, since you need to use methods to access/indirectly manipulate the data/state, but it's nice to make that explicit.)
+
+* Encapsulation is not the same as functional abstraction. Having a function that is used in multiple classes is not encapsulation.
+
+* Encapsulation is a general object-oriented concept. Private fields are one way Java helps enforce encapsulation. But private fields are not the key aspect of encapsulation, and you should not focus on them.
+
+* It is good to provide both the encapsulated code and the client code.
+
+* If you provide methods that permit the client to set the value of any field and get the value of any field, have you really achieved encapsulation.
+
+* If you return a mutable object when the client asks for information about a field, have you really encapsulated the data?
+
+### Documentation
+
+* I prefer that you don't use "side comments", where the comment is on the same line as the code you're commenting. It's better to put the comment above the code. (That helps prevent too-long lines.)
+
+* For redos, I want to see (at minimum), a class Javadoc comment, a field Javacod comment, a constructor Javadoc comment, a method Javadoc comment, and an internal comment.
+
+* Many of you are commenting end braces with things like `} // end of for loop that checks …`. You can do that if you wish. However, I'll note that (a) the `end` is implicitly given by the end brace and (b) the main purpose of these is to help us match braces. So `} // for` generally works better.
+
+* Please try to spell correctly. (I make enough spelling mistakes that I generally won't take off for it, but please try.)
+
+### Code reading
+
+* The assignment says ""Read, understand, and modify code **that you did not write**." So you need to start with code that someone else wrote. Given the context of our class, you should probably use code I wrote (although I suppose you could use code that a partner wrote).
+
+* Some of you seem to have missed the advice on what to write, so I'll repeat it here (now slightly rewritten): Code reading is more than "there's a for loop here". You should describe the design decisions embedded in the code. You should also describe the relation of the class to a larger ecosystem. (Why did someone create this class?)
+
+* As that suggests, in describing the underlying code, you should make sure to mention key points. For example, if you used the `BigFraction` class as an example, I'd expect you to say something like "We're storing fractions using `BigInteger` values for numerator and denominator. That means that we need to use the various `BigInteger` methods when we do computations." For the AsciiBlocks example, if you were discussing "Surrounded", I'd expect you to write something like "Since every AsciiBlock provides a `row` method, we can rely on the ``row` method from the block we're surrounding, as well as the `width` and `height` methods."
+
+* The "original code" that you discuss should be the original code, not your rewrite of the original code. For example, this is not the original of `BigFraction`.
+
+```
+//class
+public class BigFraction {
+  …
+  // Fields
+  BigInteger num;
+  BigInteger denom;
+```
+
+The code may look similar, but it's been modified already (in this case, in ways that violate our style/commenting guidelines.
+
+-
+
+I think that's it for now. Have a great weekend! Feel free to send along questions. I won't be online all the time, but I'll be online off and on.
+
+-- SamR
+
+## [CSC-207 2024Fa] MP4, MP3, and more (2024-09-27)
+
+Dear students who associate with arrays,
+
+I hope your weeks have wrapped up well and that you have some time to participate in the Renfrow Festivities. Ms. Renfrow is a wonder, and worth celebrating.
+
+A few notes on MP4 and MP3.
+
+--
+
+First, MP4.
+
+1. I sent everyone an invitation to the testing repo for MP4. If you included your GitHub link in the README for MP2 (which you were supposed to do), I got your GitHub username from there. If you didn't include your GitHub link in the README, I used your email address. If you'd like a new invitation, drop me a message on Teams with your GitHub username.
+
+2. Please accept that invitation soon. They do expire. If you find that you can no longer accept the invite, DM me on teams with your GitHub username.
+
+3. I see that some of you are already pushing tests. That's great! Please remember to DM me when you've done so.
+
+--
+
+Next, MP3 (since not all of you are done).
+
+4. As I mentioned in class, there's an error in `Grid.eqv` (or there was). You'll need to either fetch changes from upstream or fix it yourself.
+
+5. Note that `AsciiBlock.eqv` is not implemented. You will have to implement it. (It will likely be an appropriate call to a different `eqv` method.)
+
+6. Because of the `eqv` issues, I've extended the deadline until tonight. (The late deadline doesn't change.)
+
+7. While many teams collaborated well on this mini-project, some did not. We'll spend some time discussing appropriate behavior and brainstorming strategies before the next team mini-project.
+
+--
+
+Finally, some other stuff.
+
+8. In case it wasn't clear, THERE ARE NO ADDITIONAL READINGS FOR TUESDAY'S CLASS. Since we spent Thursday's class on design, we'll spend Tuesday's class on Inheritance.
+
+9. There is also no lab writeup to turn in before Tuesday's class. You can focus on your pre-reflection for MP4, your unit tests for MP4, and SoLA 3. (And yes, I'm in the midst of grading SoLA 2. More details on that tonight.)
+
+10. There are a few readings for Thursday, all on ADTs and their implementation. If you find that you have extra time over the weekend, you might want to start those.
+
+--
+
+Don't forget that we have a mentor session on Sunday! And I continue to answer questions I receive on Teams. (I'll probably be AFK from 6:00--8:00 p.m. tonight.)
+
+-- SamR
+
 ## [CSC-207 2024Fa] More tests for MP3 (2024-09-25)
 
 Dear Partnering Producers of Pictures,
@@ -28,6 +159,8 @@ Let me know if you have problems or questions.
 Regards,
 
 -- SamR
+
+## [CSC-207 2024Fa] MP3 Pre-Assessments Graded (2024-09-23)
 
 Dear Pre-Assessed Pre-Assessors,
 
