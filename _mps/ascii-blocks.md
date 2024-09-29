@@ -374,6 +374,10 @@ In between, you might assign one person to `HComp`, `HFlip`, and `Trimmed` and t
 
 Or you could just do everything together.
 
+## Submitting your work
+
+Please submit all of your work on the project to Gradescope by using the GitHub submission method. 
+
 ## Grading rubric
 
 The rubric is not yet fully developed. What you see below is mostly the rubric from an old assignment that helped inspire this assignment.
