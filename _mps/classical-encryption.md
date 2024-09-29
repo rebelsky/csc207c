@@ -440,6 +440,10 @@ The external correctness portion depends on the following criteria:
 
 We will generally check internal correctness using unit tests (to be provided), although we will likely use.
 
+## Submitting your work
+
+Please submit all of your work on the project to Gradescope by using the GitHub submission method. If you are unable to do so, upload all of your files to Gradescope.
+
 ## Grading rubric
 
 ### Redo or above
