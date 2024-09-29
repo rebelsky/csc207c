@@ -17,19 +17,6 @@ link: true
 ---
 Classical encryption is based on the principle of substituting letters for other letters.  These may be simple schemes like the ones we'll implement in this homework or more complicated schemes such as they employed in the [Enigma Machine](https://en.wikipedia.org/wiki/Enigma_machine).  The Enigma machine was used by Nazi Germany during World War II and was subsequently broken by the allies, in particular the researchers at the British [Government Code and Cypher School](https://en.wikipedia.org/wiki/Government_Communications_Headquarters#Government_Code_and_Cypher_School_.28GC.26CS.29), notably [Alan Turing](https://en.wikipedia.org/wiki/Alan_Turing) who led development of the [Bombe](https://en.wikipedia.org/wiki/Bombe) machines that were used to break the Enigma machines.
 
-## README.md
-
-Each of your online submissions should include a `README.md` file with the following contents:
-
-1. Your name
-
-2. A one sentence description of the content of this submission
-
-3. A list of the resources you used---organic or inorganic---to complete this assignment and how they helped you complete the assignment, one sentence per such resource.
-   Examples of resources include tutors, fellow students (within the bounds of the course's policy on collaboration), or online resources such as StackOverflow.
-
-4. A link to the GitHub repository you set up for this project.
-
 ## Encryption preliminaries
 
 The theory of encryption is a cornerstone of *[cryptography](http://en.wikipedia.org/wiki/Cryptography)* and *[computer security](http://en.wikipedia.org/wiki/Computer_security)* where we make our communication and/or data secure from adversaries.
@@ -442,7 +429,22 @@ We will generally check internal correctness using unit tests (to be provided), 
 
 ## Submitting your work
 
+Make sure your project includes a `README.md` file (see below).
+
 Please submit all of your work on the project to Gradescope by using the GitHub submission method. If you are unable to do so, upload all of your files to Gradescope.
+
+### README.md
+
+Each of your online submissions should include a `README.md` file with the following contents:
+
+1. Your name
+
+2. A one sentence description of the content of this submission
+
+3. A list of the resources you used---organic or inorganic---to complete this assignment and how they helped you complete the assignment, one sentence per such resource.
+   Examples of resources include tutors, fellow students (within the bounds of the course's policy on collaboration), or online resources such as StackOverflow.
+
+4. A link to the GitHub repository you set up for this project.
 
 ## Grading rubric
 
