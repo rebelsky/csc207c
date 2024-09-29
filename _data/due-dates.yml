@@ -62,7 +62,7 @@
 
 - date: 2024-09-24
   assigned:
-    - SoLA 3
+    - page: /los/sola03.html
 
 - date: 2024-09-26
   due:
@@ -80,11 +80,11 @@
 
 - date: 2024-09-30
   due: 
-    - SoLA 3
+    - page: /los/sola03.html
 
 - date: 2024-10-01
   assigned:
-    - SoLA 4
+    - page: /los/sola04.html 
 
 - date: 2024-10-03
   due:
@@ -102,11 +102,11 @@
 
 - date: 2024-10-07
   due:
-    - SoLA 4
+    - page: /los/sola04.html
 
 - date: 2024-10-08
   assigned:
-    - SoLA 5
+    - page: /los/sola05.html
 
 - date: 2024-10-10
   due:
@@ -124,11 +124,11 @@
 
 - date: 2024-10-14
   due:
-    - SoLA 5
+    - page: /los/sola05.html
 
 - date: 2024-10-15
   assigned:
-    - SoLA 6 (optional)
+    - page: /los/sola06.html
 
 - date: 2024-10-17
   due:
@@ -146,11 +146,11 @@
 
 - date: 2024-10-28
   due:
-    - SoLA 6 (optional) 
+    - page: /los/sola06.html
 
 - date: 2024-10-29
   assigned:
-    - SoLA 7
+    - page: /los/sola07.html
 
 - date: 2024-10-31
   due:
@@ -168,11 +168,11 @@
 
 - date: 2024-11-04
   due:
-    - SoLA 7
+    - page: /los/sola07.html
 
 - date: 2024-11-05
   assigned:
-    - SoLA 8
+    - page: /los/sola08.html
 
 - date: 2024-11-07
   due:
@@ -190,11 +190,11 @@
 
 - date: 2024-11-11
   due:
-    - SoLA 8
+    - page: /los/sola08.html
 
 - date: 2024-11-12
   assigned:
-    - SoLA 9
+    - page: /los/sola09.html
 
 - date: 2024-11-14
   due:
@@ -212,11 +212,11 @@
 
 - date: 2024-11-18
   due:
-    - SoLA 9
+    - page: /los/sola09.html
 
 - date: 2024-11-19
   assigned:
-    - SoLA 10
+    - page: /los/sola10.html
 
 - date: 2024-11-21
   due:
@@ -230,11 +230,11 @@
 
 - date: 2024-11-25
   due:
-    - SoLA 10
+    - page: /los/sola10.html
 
 - date: 2024-11-26
   assigned:
-    - SoLA 11 (optional)
+    - page: /los/sola11.html
 
 - date: 2024-12-01
   due:
@@ -242,11 +242,11 @@
 
 - date: 2024-12-02
   due:
-    - SoLA 11 (optional)
+    - page: /los/sola11.html
 
 - date: 2024-12-03
   assigned:
-    - SoLA 12
+    - page: /los/sola12.html
 
 - date: 2024-12-05
   due:
@@ -264,11 +264,11 @@
 
 - date: 2024-12-09
   due:
-    SoLA 12
+    - page: /los/sola12.html
 
 - date: 2024-12-10
   assigned:
-    - SoLA 13
+    - page: /los/sola13.html
 
 - date: 2024-12-12
   due:
@@ -280,8 +280,10 @@
 
 - date: 2024-12-16
   due:
-    - SoLA 13
+    - page: /los/sola13.html
+  assigned:
+    - page: /los/sola14.html
 
 - date: 2024-12-20
   due:
-    - SoLA 14
+    - page: /los/sola14.html
