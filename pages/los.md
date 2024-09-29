@@ -29,7 +29,7 @@ I expect that by the end of the semester, you will have mastered the basics of o
     * polymorphism, including both 
          * parametric polymorphism (_OOP LO #04: Parametric Polymorphism_) and
          * subtype polymorphism (_OOP LO #05: Subtype Polymorphism_);
-* apply object-oriented design principles to separate interface from implentation (_OOP LO #06: Data Abstraction_)
+* apply object-oriented design principles to separate interface from implentation (_OOP LO #06: Data abstraction_)
 * identify and use a variety of basic design patterns (_OOP LO: 07: Design Patterns_), such as Model-View-Controller, Factory, Singleton, Adapter, and Decorator;
 * identify objects and classes that will contribute to a program or solution, design those objects and classes, and implement those objects and classes (_OOP LO #08: Object Design_); and
 * describe a common layout of objects in memory (_OOP LO #09: Mental Models_).
@@ -81,10 +81,10 @@ I expect that by the end of the semester, you will have significantly extended y
 I expect that by the end of the semester, you will be a competent beginning software developer.  In particular, in addition to having the skills described above, I expect that you will be able to
 
 * work with one or more other students on the creation of a program (_Development LO #01: Collaboration_);
-* manage development of multi-file programs in Java using a build tool (in our case, Maven) (_Development LO #02: Build Tools_);
-* design, implement, and run unit tests (_Development LO #03: Unit Testing_);
+* manage development of multi-file programs in Java using a build tool (in our case, Maven) (_Development LO #02: Build tools_);
+* design, implement, and run unit tests (_Development LO #03: Unit testing_);
 * develop software using an integrated development environment (in our case, Visual Studio Code) (_Development LO #04: IDE_);
-* collaborate on and keep track of the development history of code using a version control system* (in our case, Git) (_Development LO #05: Version Control_);
+* collaborate on and keep track of the development history of code using a version control system (in our case, Git) (_Development LO #05: Version control_);
 * read, understand, and modify non-trivial code that you did not write (_Development LO #06: Code reading_);
 * exercise good practices in documenting code and create Javadoc documentation for Java programs (_Development LO #07: Documentation_);
 * design and develop libraries for use in other programs (_Development LO #08: Build Libraries_);
@@ -145,6 +145,10 @@ Do not ask me to follow links. Everything you want me to look at belongs in your
 * Make sure that the code you provide appropriately employs encapsulation.
 * Make sure to describe the code you've provided.
 
+#### OOP 2: Inheritance
+
+* Although you can mention the applicability of inheritance to subtype polymorphism, the focus of your example should not be on subtype polymorphism.
+
 #### OOP 3: Composition
 
 * Your example need not employ the more complicated form of encapsulation that is used as an alternative to inheritance and involves delegation. A clear instance of the _has-a_ relationship suffices.
@@ -166,13 +170,15 @@ Make sure to include code that demonstrates that you understand and can use subt
 
 #### OOP 6: Data abstraction
 
-For data abstraction, think about how we've designed ADTs and their corresponding implementations all semester.
+For data abstraction, think about how we've designed ADTs and their corresponding implementations.
 
 Make sure that you explain *why* we want to use data abstraction (why we want to separate interface from implementation). 
 
-Our textblocks are not a very good example of data abstraction, since the interface there is intentionally open-ended. Look for an interface where there is a clear expectation of what each method does; one in which all implementations should do the same thing on the same series of procedure calls.
+Emphasize the general concept of interface (what) vs. implementation (how), not the Java specifics.
 
-Your goal here is to think at the internal design level; not separating user interface from implementation, but separating the interface to a library from the underlying implementation of that library.
+Our textblocks are _not_ a good example of data abstraction, since the interface there is intentionally open-ended. Look for an interface where there is a clear expectation of what each method does; one in which all implementations should do the same thing on the same series of procedure calls.
+
+Your goal here is to think at the internal design level; not separating user interface from implementation, but separating the interface to utility code from the underlying implementation.
 
 #### OOP 8: Object design
 
@@ -263,6 +269,8 @@ The analysis part of data structure design means that you analyze the running ti
 #### Development #1: Collaboration
 
 I need more than "I wrote code with someone else". Please describe your process and why it was successful (or how you made it successful).
+
+If your first collaborations were not successful, you will have to wait until you have a successful collaboration.
 
 #### Development #2: Build tools
 
