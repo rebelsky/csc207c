@@ -73,10 +73,10 @@ public interface PriorityQueue<T> extends LinearStructure<T> {
   public void put(T val) throws Exception;
 
   /**
-   * Remove the highest-priority element that is still in the queue.
+   * Remove and return the highest-priority element that is still in the queue.
    *
    * @return
-   *   val, a value.
+   *   val, the highest-priority element in the queue
    * @pre
    *   !this.isEmpty()
    * @post
@@ -85,7 +85,7 @@ public interface PriorityQueue<T> extends LinearStructure<T> {
    *   For all values, v, in the queue,
    *     comparator().compare(val, v) <= 0
    * @exception Exception
-   *   If the structure is empty.
+   *   If the structure is empty
    */
   public T get() throws Exception;
 
@@ -93,7 +93,7 @@ public interface PriorityQueue<T> extends LinearStructure<T> {
    * Determine what element will next be removed by get.
    *
    * @return
-   *   val, a value.
+   *   val, the highest-priority element in the queue
    * @pre
    *   !this.isEmpty()
    * @post
@@ -106,11 +106,15 @@ public interface PriorityQueue<T> extends LinearStructure<T> {
 
   /**
    * Determine if the structure is empty.
+   *
+   * @return true if the structure is empty and false otherwise
    */
   public boolean isEmpty();
 
   /**
    * Determine if the structure is full.
+   *
+   * @return true if the structure is fall and false otherwise
    */
   public boolean isFull();
 
@@ -207,3 +211,5 @@ and `get` faster?  That's a topic for the future.
 
 Self Checks
 -----------
+
+_Forthcoming._

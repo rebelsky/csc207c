@@ -231,15 +231,15 @@ other terms for convenience.
 Self checks
 -----------
 
-### Check 1: Compare and contrast linked implementations (‡)
+### Check 1: Compare and contrast linked implementations 
 
 How does the approach we chose for linked queues relate to the one we chose for linked stacks? That is, how are they similar and how are they different?
 
-### Check 2: Compare and contrast array-based implementations (‡)
+### Check 2: Compare and contrast array-based implementations
 
 How does the approach we chose for array-based queues relate to the one we chose for array-based stacks? That is, how are they similar and how are they different?
 
-### Check 3: Special cases (‡)
+### Check 3: Special cases
 
 In our discussion of linked queues, we noted that "there are, of course, some 
 special situations we need to worry about." What situations might require us to write special code?
