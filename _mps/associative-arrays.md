@@ -249,7 +249,11 @@ cd src/test/java/edu/grinnell/csc207/shared
 git pull
 ```
 
-## Rubric
+## Submitting your work
+
+Please submit all of your work on the project to Gradescope by using the GitHub submission mechanism. 
+
+## Approximate rubric
 
 _I am likely to revisit this rubric._
 
@@ -312,13 +316,49 @@ _More forthcoming._
 
 **What happens if someone pushes a faulty test?**
 
-If someone pushes a faulty test, we hope that someone catches it quickly and lets me know. (Or that I catch it quickly.)
+> If someone pushes a faulty test, we hope that someone catches it quickly and lets me know. (Or that I catch it quickly.)
 
 **Since we're pushing tests before we write, how should we approach writing tests? I would imagine too complicated tests from the beginning defeat the purpose of test driven.**
 
-There are multiple perspectives on test-drive design. One is that you write a few tests, make your code pass them, write a few more, make your code pass them, and so on and so forth.
+> There are multiple perspectives on test-drive design. One is that you write a few tests, make your code pass them, write a few more, make your code pass them, and so on and so forth.
 
-I find that there are disadvantages to that strategy. Foremost among those is that once you've started to write code, you've developed a mental model of what should be happening. Writing the tests first let you think more broadly about what could go wrong. Hence, I prefer to see early tests, even if we don't pass them all.
+> I find that there are disadvantages to that strategy. Foremost among those is that once you've started to write code, you've developed a mental model of what should be happening. Writing the tests first let you think more broadly about what could go wrong. Hence, I prefer to see early tests, even if we don't pass them all.
 
-In terms of what happens, we'll want some simple tests and some more complicated tests. When using tests, our hope is that each test gets us closer to correct code. The count of remaining tests to pass gives us a sense of progress.
+> In terms of what happens, we'll want some simple tests and some more complicated tests. When using tests, our hope is that each test gets us closer to correct code. The count of remaining tests to pass gives us a sense of progress.
+
+**Is it okay to have tests similar to other peoples?**
+
+> I expect that few people will be looking at the tests, so I assume that we'll see some similar tests.
+
+**Since everyone will be uploading tests, how reasonable is it to look through everyone's before pushing our own?**
+
+> You can fill free to read or ignore other people's tests. 
+
+> If you base your test on someone else's code, you should cite them in the comment for that test.
+
+> Looking at other people's tests so that you can find something to test that they haven't would be awesome.
+
+**How do you write tests with generic variables?**
+
+> You don't really write tests with generic variables. Your tests will need to instantiate the types. For example, you might test an AssociativeArray that maps `String`s to `BigInteger`s or vice versa. We hope that different people will try to test with different types.
+
+**Can multiple people write the same tests?**
+
+> Yes, I assume it is inevitable that we will get similar tests.
+
+### Miscellaneous
+
+**Can we reuse code from this assignment on other assignments as long as we cite ourselves??**
+
+> Certainly.
+
+**Does Java have a `Pair` class?**
+
+> I don't know of a standard one, but the assignment repo comes with a `KVPair`
+  class. (If I hadn't provided one, you could also have written your own.)
+
+**What does 'git diff' do? You used it in the setting up section of MP4 instructions, but I don't think we've seen that call before.*
+
+> `git diff` compares the current state of the repository (or a file, if you write `git diff file`) to the last commit. Along with `git status`, it's an easy way to review your changes.
+
 
