@@ -85,7 +85,7 @@ I expect that by the end of the semester, you will be a competent beginning soft
 * design, implement, and run unit tests (_Development LO #03: Unit Testing_);
 * develop software using an integrated development environment (in our case, Visual Studio Code) (_Development LO #04: IDE_);
 * collaborate on and keep track of the development history of code using a version control system* (in our case, Git) (_Development LO #05: Version Control_);
-* read, understand, and modify code that you did not write (_Development LO #06: Code Reading_);
+* read, understand, and modify non-trivial code that you did not write (_Development LO #06: Code reading_);
 * exercise good practices in documenting code and create Javadoc documentation for Java programs (_Development LO #07: Documentation_);
 * design and develop libraries for use in other programs (_Development LO #08: Build Libraries_);
 * use libraries in your own programs (_Development LO #09: Use Libraries_); 
@@ -266,9 +266,11 @@ I need more than "I wrote code with someone else". Please describe your process 
 
 #### Development #2: Build tools
 
-In this instance, your "code" will likely be appropriate selections from your `pom.xml` that you've written or modified. You should explain those selections.
+You should explain the "big picture" of build tools. Why do we have them? What do they do?
 
 You should also explain the basic use of Maven.
+
+In this instance, your "code" will likely be appropriate selections from your `pom.xml` that you've written or modified. You should explain those selections.
 
 #### Development #3: Unit testing
   
@@ -296,7 +298,9 @@ Remember that the log is supposed to show collaboration. That means there should
 
 #### Development #6: Code reading
 
-Code reading is more than "there's a for loop here". You should describe the design decisions embedded in the code and the relation of the class to a larger ecosystem. (Why did someone create this class?)
+Make sure that the code that you're discussing comes from this class (e.g., code provided in a reading, lab, or mini-project template). Make sure to include that code in your discussion.
+
+Code reading is more than "there's a for loop here". You should describe the design decisions embedded in the code. You should also describe the relation of the class to a larger ecosystem. (Why did someone create this class?)
 
 The specification says "_Read, understand, **and modify** code that you did not write._" I'd like to see appropriate modifications and a description of that modification.
 
@@ -342,17 +346,17 @@ Narrate both.
 
 > Here's my model.
 
-> (a) Hmmm ... I know I did this. But where? (5 min). 
+> (a) What's the basic idea? Let me check the reading. (5 min).
 
-> (b) Find that thing, copy, paste, edit (5 min). 
+> (b) Hmmm ... I know I did this. But where? (5 min). 
 
-> (c) add commentary (5 min) 
+> (c) Find that thing, copy, paste, edit (5 min). 
 
-> (d) stuff Sam forgot (5 min)
+> (d) add commentary (5 min) 
 
 > So about twenty minutes.
 
-**Will you grade SoLA 1 before we have to turn in SoLA 2?**
+**Will you grade SoLA N before we have to turn in SoLA N+1?**
 
 > That's my goal. However, life is complicated.
 
@@ -366,3 +370,14 @@ Narrate both.
 
 > Certainly. Thanks for asking.
 
+**Will we keep getting a chance to redo an LA until we get it right?**
+
+> Yes, only until the semester ends. And there are no token chages for LA redos.
+
+**Will we have only one chance for LAs based on the last week of class?**
+
+> No. You will have at least two chances for each LA.
+
+**Do we have to do a SoLA each week?**
+
+> I expect you to try at least one LA each week.
