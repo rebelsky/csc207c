@@ -310,3 +310,15 @@ _More forthcoming._
 
 > Since a key part of this assignment is writing tests, I may never provide you with such tests. One would hope that 40+ students working together should be able to catch most errors.
 
+**What happens if someone pushes a faulty test?**
+
+If someone pushes a faulty test, we hope that someone catches it quickly and lets me know. (Or that I catch it quickly.)
+
+**Since we're pushing tests before we write, how should we approach writing tests? I would imagine too complicated tests from the beginning defeat the purpose of test driven.**
+
+There are multiple perspectives on test-drive design. One is that you write a few tests, make your code pass them, write a few more, make your code pass them, and so on and so forth.
+
+I find that there are disadvantages to that strategy. Foremost among those is that once you've started to write code, you've developed a mental model of what should be happening. Writing the tests first let you think more broadly about what could go wrong. Hence, I prefer to see early tests, even if we don't pass them all.
+
+In terms of what happens, we'll want some simple tests and some more complicated tests. When using tests, our hope is that each test gets us closer to correct code. The count of remaining tests to pass gives us a sense of progress.
+
