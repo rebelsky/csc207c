@@ -23,6 +23,13 @@ Preliminaries
 
 ### News / Etc.
 
+* Why is that I keep saying "Don't use `git add .`; add the files individually",
+  and you folks keep typing `git add .`?
+* It's been suggested that I remind you that when you submit code to Gradescope
+  from GitHub, and then update the code on GitHub, it doesn't automatically.
+  get updated on Gradescope.
+    * Also: GitHub submission is the preferred mechanism.
+
 ### Another note on pre-reflections
 
 _#4: What resources (e.g., individual procedures you've written, readings, labs) will be helpful as you work on this assignment?_
@@ -57,6 +64,16 @@ I don't want to see "labs and readings". I want to see particular labs and parti
     * Readings
     * [Submit readings on Gradescope](...)
     * [Submit today's lab on Gradescope](...)
+    * [SoLA 4](../sola04)
+        * New OOP LAs
+            * OOP #2
+            * OOP #6
+        * New Development LAs
+            *
+            *
+            *
+            *
+        * Consult [the SoLA](../sola04) for redos.
 
 ### Tokens
 
@@ -66,7 +83,7 @@ class._
 #### Academic/Scholarly
 
 * Tuesday, 2024-10-01, Noon--1:00 p.m., JRC 224A (Day PDR).
-  _CS Table: When Robots Attack_
+  _CS Table: When Robots Attack (or something like that)_
 * Sunday, 2024-10-06, 7:00--9:00 p.m., Science 3819.
   _Mentor Session_
 
@@ -112,6 +129,10 @@ Questions
 ---------
 
 ### Questions on SoLAs
+
+**Why does it take you so long to get SoLAs back to us?**
+
+> It's the nature of the beast. I probably spend five minutes on each submission. 5 x 40 x 5 = 600, or about ten hours. (I expect time to go down as you start getting used to LAs, so I can just check "Satisfactory".)
 
 ### Questions on MP4
 
