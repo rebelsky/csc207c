@@ -1,6 +1,6 @@
 ---
 title: Queues, arrays, and priority queues
-repo: <https://github.com/Grinnell-CSC207/linear-structures>
+repo: <https://github.com/Grinnell-CSC207/lab-linear-structures-maven>
 summary: |
   In this laboratory, you will have an opportunity to ground your
   understanding of queues, particularly of the array-based
@@ -19,18 +19,9 @@ a. Open the [reading on linear structures](../readings/linear-structures), the
 queues](../readings/linear), and the [reading on wrapper
 classes](../readings/wrappers) in new tabs.
 
-b. If you haven't already done so, fork and clone the repo at <https://github.com/Grinnell-CSC207/linear-structures>.
+b. If you haven't already done so, fork and clone the repo at <https://github.com/Grinnell-CSC207/linear-structures>. Make sure to use the SSH link for cloning.
 
-<!--
-
-  If you have forked and cloned that repository, pull changes from the upstream repository.
-
-<pre>
-$ git remote add upstream https://github.com/Grinnell-CSC207/linear
-$ git pull upstream master
-</pre>
-
--->
+c. If you haven't already done so, update the `README.md` file.
 
 Exercises
 ---------
@@ -49,13 +40,11 @@ not, that's okay, too; we'll work them out in the lab.
 
 _Driver: **A**_
 
-Look at `ArrayBasedQueueExpt.java`.  Take notes as to what the queue
-should look like at each step of the first series of procedure
-calls.  You may also want to revisit the `ReportingLinearStructure`
-class to recall how it works.
+Look at `ArrayBasedQueueExperiment.java`.  Take notes as to what the queue should look like at each step of the first series of procedure calls.  
 
-Run `ArrayBasedQueueExpt` and see if you get the output that you
-expect.
+You may also want to revisit the `ReportingLinearStructure` class to recall how it works.
+
+Run `ArrayBasedQueueExpt` and see if you get the output that you expect.
 
 ### Exercise 3: Squashing bugs
 
@@ -71,25 +60,35 @@ Do your best to correct the first bug: `get` and `peek` don't seem
 to return the correct value after some point.  If you need a hint
 as to where to look, ask your instructor or mentor.
 
+Once you've fixed the bug, make sure to commit and push your updated code. (You might choose a better commit message than we chose.)
+
+```text
+git add src/main/java/edu/grinnell/csc207/linear/ArrayBasedQueue.java 
+git status
+git commit -m "Squash a bug or two in ArrayBasedQueue"
+git pull
+git push
+```
+
 ### Exercise 4: Wrap-around in arrays
 
 _Driver: **B**_
 
-If you uncomment the second section of code and reduce the size of
-the queue to, say, 4, you may find that the queue fills before it
-should.  (You may also have dealt with that issue.)
+If you uncomment the second section of code in `ArrayBasedQueueExperiment.java` and reduce the size of the queue to, say, 4, you may find that the queue fills before it should.  (You may also have dealt with that issue.)
 
-How do we fix that problem?  Normally, we "wrap around", so that
-the back of the queue goes to the front of the array.  For example,
-if we have seven items in a queue, and the front is at 4, then the
-item 0 is at 4; item 1 is at 5; item 2 is at 6; item 3 is at 7;
-item 4 can't be at 8 (there is no index 8), so we wrap it around
-to index 0; item 5 is at 1, item 6 is at 2, and the back of the
-queue is at 3.
+How do we fix that problem?  Normally, we "wrap around", so that the back of the queue goes to the front of the array.  For example, if we have seven items in a queue, and the front is at 4, then the item 0 is at 4; item 1 is at 5; item 2 is at 6; item 3 is at 7; item 4 can't be at 8 (there is no index 8), so we wrap it around to index 0; item 5 is at 1, item 6 is at 2, and the back of the queue is at 3.
 
-Rewrite your code so that elements wrap in the specified way.  You'll
-need to change `back`.  You may also need to change the code for
-`isEmpty` and `isFull`.
+Rewrite your code so that elements wrap in the specified way.  You'll need to change `back`.  You may also need to change the code for `isEmpty` and `isFull`.
+
+Once you've added support for "wrap around", make sure to commit and push your updated code. (You might choose a better commit message than we chose.)
+
+```text
+git add src/main/java/edu/grinnell/csc207/linear/ArrayBasedQueue.java 
+git status
+git commit -m "Array-based queues now wrap-around"
+git pull
+git push
+```
 
 ### Exercise 5: Extending the reporter
 
@@ -227,5 +226,7 @@ queues from CSC 207
 2014F](https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/2014F/labs/priority-queues)
 
 The remaining exercises are new to this lab, which I think came from the spring 2019 section of 207.
+
+The lab was rewritten somewhat in Fall 2024 to better incorporate maven and GitHub.
 
 All of these materials were written by Samuel A. Rebelsky.
