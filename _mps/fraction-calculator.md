@@ -88,6 +88,11 @@ There is no precedence; you should evaluate operations from left to right.  Ther
 
 ---
 
+Submitting your work
+--------------------
+
+Please submit all of your work on the project to Gradescope by using the GitHub submission method. If you are unable to do so, upload all of your files to Gradescope.
+
 Grading rubric
 --------------
 
