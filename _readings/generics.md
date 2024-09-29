@@ -264,7 +264,7 @@ Parametric polymorphism
 
 You may recall that we have recently discuss *subtype polymorphism*.  In that kind of polymorphism, a variable or parameter can take on many forms (e.g., the form of any object that provides the methods specified in an interface).  Similarly, Java generics can take on many forms: When you provide a type parameter, you effectively get a new class or method or whatever.  
 
-To distinguish the two types of polymorphsm, we use *subtype polymorphism* to describe the idea that we can use an element of one type in place of another, and we use *parametric polymorphism* to describe the kind of polymorphism that we get from type parameters.
+To distinguish the two types of polymorphsm, we use the term *subtype polymorphism* to describe the idea that we can use an element of one type in place of another, and we use the term *parametric polymorphism* to describe the kind of polymorphism that we get from type parameters.
 
 Self checks
 -----------
