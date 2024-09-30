@@ -5,6 +5,49 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester, with the newest email at the top and the oldest at the bottom._
 
+## [CSC-207 2024Fa] Grade reports (2024-09-29)
+
+Dear Collaborative Testers,
+
+In the next few minutes, you should receive an email message from me that includes a grade report. I'll try to send out a grade report approximately once per week. In general, grade reports provide an opportunity for you to see how you're doing in the course, particularly what LAs you still need to work on and which mini-projects you might redo. (MP grading is going a bit slow, so only the first one is on the report. Tokens are also not on the report.)
+
+Please let me know if you see any innacuracies in your grade report.
+
+--
+
+I generally suggest that you not compare your grades with other students. However, I thought it would be useful to provide a distribution of how folks are doing on LAs. Among other things, the distribution suggests that if you are having trouble figuring out how to meet my expectations on LAs, you are not alone. I would suggest that the folks at 0/5 or 1/5 check in with me on Teams.
+
+```text
+0/5: 10
+1/5:  6
+2/5:  8
+3/5: 13
+4/5:  4
+5/5:  4
+```
+
+Some of you didn't seem to try redos on the SoLA 1 LAs. Note that the day or so after you get back a graded LA is probably the best time for your redo as the comments are fresh in your mind. You can keep trying redos on LAs until we reach the end of the semester with no token charges.
+
+I'd also recommend that you try at least one or two new LAs each week so that you can keep moving forward. (It's better if you can try all of them, but not everyone has that time.)
+
+--
+
+Since it's come up a few times: We've hit the point that I expect that you should be capable of using our basic tools in the way they are intended.
+
+* You should know what commands to type in Maven.
+* You should be able to run the debugger in VS Code. In particular, if you have a failing test, you should be able to trace the steps the program issues in the failing test to help identify the likely source of the error.
+* You should be able to push to and pull from a GitHub repository.
+
+If you are having difficulty with any of those issues, it's probably a good idea to visit with the evening tutors.
+
+--
+
+As always, questions and comments are welcome. I prefer DMs on Teams.
+
+Regards,
+
+-- SamR
+
 ## [CSC-207 2024Fa] Notes on new LAs from SoLA 2 (2024-09-28)
 
 Dear Do-Re-Mi-Fas,
