@@ -6,9 +6,11 @@ summary: |
   with fractions
 collaboration: |
   Each student should submit their own responses to this project. You may consult other students in the class as you develop your solution.  If you receive help from anyone, make sure to cite them in your responses. 
+notes: |
+  There's enough in this assignment that we may not want to force students to set up the repo themselves. Running things from the command line can also be difficult. Students should get more guidance.
 link: true
 ---
-You goal in this project is to build a calculator (or perhaps many calculators) that (a) uses fractions as its basic numeric type and (b) includes registers. (A register is a named storage area, much like a vriable.)
+You goal in this project is to build a calculator (or perhaps many calculators) that (a) uses fractions as its basic numeric type and (b) includes registers. (A register is a named storage area, much like a variable.)
 
 ## Project setup
 
