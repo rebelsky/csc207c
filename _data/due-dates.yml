@@ -133,16 +133,10 @@
 - date: 2024-10-17
   due:
     - page: /mps/mp06.html
-  assigned:
-    - page: /mps/mp07.html
 
 - date: 2024-10-18
   due:
     - MP 6 Post-reflection
-
-- date: 2024-10-27
-  due:
-    - MP 7 Pre-Reflection
 
 - date: 2024-10-28
   due:
@@ -153,18 +147,12 @@
     - page: /los/sola07.html
 
 - date: 2024-10-31
-  due:
-    - page: /mps/mp07.html
   assigned:
-    - page: /mps/mp08.html
-
-- date: 2024-11-01
-  due:
-    - MP 7 Post-reflection
+    - page: /mps/mp07.html
 
 - date: 2024-11-03
   due:
-    - MP 8 Pre-reflection
+    - MP 7 Pre-reflection
 
 - date: 2024-11-04
   due:
@@ -176,17 +164,17 @@
 
 - date: 2024-11-07
   due:
-    - page: /mps/mp08.html
+    - page: /mps/mp07.html
   assigned:
-    - page: /mps/mp09.html
+    - page: /mps/mp08.html
 
 - date: 2024-11-08
   due:
-    - MP 8 Post-reflection
+    - MP 7 Post-reflection
 
 - date: 2024-11-10
   due:
-    - MP 9 Pre-reflection
+    - MP 8 Pre-reflection
 
 - date: 2024-11-11
   due:
@@ -198,17 +186,17 @@
 
 - date: 2024-11-14
   due:
-    - page: /mps/mp09.html
+    - page: /mps/mp08.html
   assigned:
-    - page: /mps/mp10.html
+    - page: /mps/mp09.html
 
 - date: 2024-11-15
   due:
-    - MP 9 Post-reflection
+    - MP 8 Post-reflection
 
 - date: 2024-11-17
   due:
-    - MP 10 Pre-reflection
+    - MP 9 Pre-reflection
 
 - date: 2024-11-18
   due:
@@ -220,13 +208,13 @@
 
 - date: 2024-11-21
   due:
-    - page: /mps/mp10.html
+    - page: /mps/mp09.html
   assigned:
-    - page: /mps/mp11.html
+    - page: /mps/mp10.html
 
 - date: 2024-11-22
   due:
-    - MP 10 Post-reflection
+    - MP 9 Post-reflection
 
 - date: 2024-11-25
   due:
@@ -238,7 +226,7 @@
 
 - date: 2024-12-01
   due:
-    - MP 11 Pre-reflection
+    - MP 10 Pre-reflection
 
 - date: 2024-12-02
   due:
@@ -250,17 +238,17 @@
 
 - date: 2024-12-05
   due:
-    - page: /mps/mp11.html
+    - page: /mps/mp10.html
   assigned:
-    - page: /mps/mp12.html
+    - page: /mps/mp11.html
 
 - date: 2024-12-06
   due:
-    - MP 11 Post-reflection
+    - MP 10 Post-reflection
 
 - date: 2024-12-08
   due:
-    - MP 12 Pre-reflection
+    - MP 11 Pre-reflection
 
 - date: 2024-12-09
   due:
@@ -272,11 +260,11 @@
 
 - date: 2024-12-12
   due:
-    - page: /mps/mp12.html
+    - page: /mps/mp11.html
 
 - date: 2024-12-13
   due:
-    - MP 12 Post-reflection
+    - MP 11 Post-reflection
 
 - date: 2024-12-16
   due:
