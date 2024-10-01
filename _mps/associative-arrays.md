@@ -346,6 +346,14 @@ _More forthcoming._
 
 > Yes, I assume it is inevitable that we will get similar tests.
 
+**What kind of precautions are in place for the case that a student deletes the testing repo? Is that something that will be contingent on the instructor/mentor? How long would it take until the repo is restored?**
+
+> Students can't delete the repo. All they can do is remove code. And we can use Git to restore anything that is deleted.
+
+> If you find that someone has deleted code, let me know and I'll fix it. It depends on when they screw things up on how long it will take.
+
+> That said, try not to screw up the repo.
+
 ### Miscellaneous
 
 **Can we reuse code from this assignment on other assignments as long as we cite ourselves??**
@@ -361,4 +369,54 @@ _More forthcoming._
 
 > `git diff` compares the current state of the repository (or a file, if you write `git diff file`) to the last commit. Along with `git status`, it's an easy way to review your changes.
 
+**How can I efficiently resize the underlying array when it becomes full?**
 
+> In general, using `Arrays.copyOf()`. In the case of this assignment, I've already provided the code.
+
+**Could you explain the `pairs[]` array again? I was having trouble understanding whether the `[i]` indexes into each slot of the associative array or if there's just two indexes there `[0]`, `[1]` for the key and val of the pair.**
+
+>  Each element of `pairs` holds two things: the key and the value.
+
+**If I want to set a new key do I need to check if the array is already full or should I just create a set method that doesn't check for that, but just check if the key already exists?**
+
+> Both and neither. Your `set` method should first check if the key is in the array. If so, it can just update. If not, you should see if there's room and, if not, expand the array.
+
+**Can I call the `hasKey` method inside the set `method`?**
+
+> You can, but I'd recommend against it. Both methods should call `find`.
+
+**What is the difference between `hasKey` and `find`?**
+
+> `hasKey()` returns a boolean. `find` returns an index.
+
+**Are there any preconditions that we can assume? Or should we test/implement with all cases in mind (like a null index in the middle of the AssociatedArray)?**
+
+> You can assume no one else will modify the underlying array you're using (yay encapsulation). But you can't really make assumptions about parameters.
+
+**What makes a good test?**
+
+> A good test exercises some aspect of the program.
+
+> A better test exercises some aspect of the program that is not exercised by other tests. But I don't expect you to look at the other tests.
+
+> A good edge-case test considers things at the "edge" of what can happen. Things like when the array might fill or empty out or when we use null.
+
+**I’d like to know more about best practices for handling the resizing of the associative array. Should I always double the array size, or are there more efficient strategies?**
+
+> Doubling the size of the underlying array is generally a good practice. That way, we don't have to keep making new arrays each time we add a new element. If we're doubling the size, we generally won't have more than 50% wasted space.
+
+**I’m curious about how to handle null keys.**
+
+> Throw a `NullKeyException`.
+
+**What kind of error handling would be most appropriate for cases where keys don’t exist in the array**
+
+> Throw a `KeyNotFoundException` (except in `set`, where not having the key isn't an error).
+
+**How do you make arrays of arbitrary size in Java?**
+
+> There was a DynamicArray example in the reading on Generics. We've provided most of the code you need. You just need to call `expand` when you need more space.
+
+**How do I access the key and value of a pair in the array?**
+
+> `pairs[i].key` and `pairs[i].val`.
