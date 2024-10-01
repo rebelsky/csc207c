@@ -39,15 +39,17 @@ Comment from student: "I feel like I'm struggling."
 * Many of you are. It's the nature of the beast. Semi-(un)cooperative tools
   and a (fill-in-adjective) professor don't help.
 * Survey!
-    * I feel like I'm struggling a lot in 207 [ ]
-    * I feel like I'm struggling a bit in 207 [ ]
-    * I don't feel like I'm struggling in 207 [ ]
+    * I feel like I'm struggling a lot in 207 [6]
+    * I feel like I'm struggling a bit in 207 [10]
+    * I don't feel like I'm struggling in 207 [4]
 * I worry that folks aren't asking enough questions. You really shouldn't
   spend more than five or ten minutes stuck on a problem before you reach
   out for help.
     * For example, I hear many people had difficulty with "the parameters
       can appear in (almost) any order on MP1". Yet I received no questions
       on that issue.
+    * If you're struggling, someone else is also struggling, and asking on
+      the Questions channel will help them.
 
 ### Upcoming work
 
@@ -96,7 +98,7 @@ class._
 
 * Thursday, 2024-09-26, 4:00--5:00 p.m., Science 3821 (I think).
   _CS Extras: Study abroad for CS majors_
-* Sunday, 2024-09-29, 7:00--9:00 p.m., Science 3819.
+* Sunday, 2024-09-29, 7:00--8:00 p.m., Science 3819.
   _Mentor Session_
 * Tuesday, 2024-10-01, Noon--1:00 p.m., JRC 224A (Day PDR).
   _CS Table_
@@ -117,14 +119,11 @@ class._
 #### Multicultural
 
 * Friday, 2024-09-27, 4:00-5:00 p.m., HSSC N1170 - Global Living Room.
-  _Middle of Everywhere_
+  _Middle of Everywhere_ (Nicaragua)
 * Tuesday, 2024-10-01, 1:00--2:15 p.m., Steiner 205.
   _Crip SpaceTime watch party_
 
 #### Peer
-
-* Grinnellephants in Small Pop (Mini-soda) this weekend.
-    * Northfield.
 
 #### Wellness
 
@@ -140,7 +139,10 @@ class._
 * Saturday, 2024-09-27, Noon--1:00 p.m., Renfrow Hall.
   _Renfrow Hall Dedication_
 * Friday, 2024-10-04--Sunday, 2024-10-06. JRC 101.
-  _Pioneer Weekend_
+  _Pioneer Weekend_.
+     * Like a hack-a-thon. Spend the weekend developing an idea and
+       a corresponding plan. Get money. Get support for carrying
+       out your project. Get something on your re'sume'.
 
 ### Other good things (no tokens)
 
@@ -163,15 +165,15 @@ class._
 * Friday, 2024-10-04, 5:30--8:30 p.m., Natatorium.
   _Scarlet and Black_
 
-Mini-project 4
---------------
+Design Experience
+-----------------
 
 TLAs
 
-* ADT: 
-* SAM: 
-* AAA: 
-* TLA: 
+* ADT: Abstract Data Type
+* SAM: Strategy, Applications, Methods (for designing ADTs)
+* AAA: Arrangement, Algorithms, Analysis (for designing Data Structures)
+* TLA: Three letter acronym
 
 ### The ADT (SAM), which we'll call "Dictionary"
 
@@ -179,52 +181,153 @@ _We are designing an ADT similar to the association lists or hashes that you may
 
 #### Strategy
 
-Generalize arrays so that we can use "any" comparable object as a key,
-rather than just integers.
+Generalize arrays so that we can use "any" comparable object as an index
+rather than just integers. (We use the term "key" rather than "index" just
+to be confusing.)
 
-#### A
+#### Applications
+
+* A literal dictionary: We look up descriptions of words based on the word.
+* Math genius: Input expressions, get back value
+    * Maybe not. Here, we're doing calculations. We're thinking of
+      Dictionaries as storing values.
+* Phone book: Keys are names, values are phone numbers.
 
 #### Methods 
 
-### More methods (from the assignment)
+`public class Dictionary<K,V>`
+
+Think about parameter types, return types, exceptions.
+
+* `public void set(K key, V val) throws NullKeyException` - sets the value assigned to key.
+     * Question: What happens if the key doesn't already exist?
+       Design decision: Add it.
+     * Question: What happens if the key already exists?
+       Design decision: Replace the value associated with the key.
+* `public V get(K key) throws NoSuchKeyException, NullKeyException` - get the value with 
+  the given key.
+* `public void remove(K key) throws NullKeyException` - remove entry with the given key.
+  If there is no such entry, does nothing.
+* `public boolean hasKey(K key) throws NullKeyException` - determine if the key exists.
+
+#### More methods (from the assignment)
+
+* `public String toString()` - Build a string of the form
+  "{key:value, key:value, key:value, ... key:value}".
+* `public Dictionary<K,V> clone()` - Make a copy of the dictionary.
+
+#### Even more methods
+
+* `public void swap(K key1, K key2)` - swap the values associated
+  with `key1` and `key2`. (Beyond the basics.)
+* `public void um(void)` - Pauses.
+* `public void updateKey(K oldkey, K newKey)` - change a key.
+    * `set(newKey, get(oldKey))` + `remove(oldKey)`
+* `public void equals(Dictionary<K,V> other)` - check if the other
+  dictionary has exactly the same set of key/value pairs as this
+  dictionary.
+
+#### Things we don't want
+
+* `sort`
 
 #### Notes
 
 * Dictionaries are also called "Tables", "Maps", "Hashes" (even though they
   aren't always implemented as hashes), and some other things.
+* We will make our dictionaries dynamic; they can always fit another thing
+  (unless we run out of memory, but that's a `RuntimeException`).
+* We've learned about Generics, so we can use them here. Yay!
+* We will assume `key1` and `key2` are equal if `key1.equals(key2)`,
+  which is the Java standard.
 
 ### The data structure (AAA): Associative Arrays
 
-#### A
+#### Arrangement
 
 _See whiteboard or assignment._
 
-#### A
+```
+  Pair<K,V> associations;
+  int size;
+```
 
-`get` - 
+#### Algorithms
 
-`set` - 
+`get(K key)` - go through the array, and for each element, see if the key 
+in the pair is equal to the key. If so, return the value. If we run out
+of pairs, through a `NoSuchKeyException`.
 
-`set` - 
+`set(K key, V val)` - go through the array. For each elment, see if the
+keys match. If so, replace the value. If we run out of elements, add a
+new pair. (Perhaps use `hasKey` to help.) When adding a new pair, we may
+have to grow the array.
 
-`hasKey` -
+* How do we grow an array? `Arrays.copyOf(T[] original, int newLength)`
+* How do we initialize the array? I forget. But I've given you the code.
+  in the assignment. Here's an approximation of one technique.
 
-`remove` -
+```
+  public AssociativeArray<K,V> {
+    Pair<K,V> associations;
+
+    @SuppressWarnings
+    public AssociativeArray() {
+      this.associations = new (Pair<K,V>) new Object[BASE_SIZE];
+      this.size = 0;
+    } // AssociativeArray
+    
+  } // AssociativeArray<K,V>
+```
+
+`boolean hasKey(K key)` - Loop through every single value. If we find a 
+matching key, return true. If you finish looking at everything, return false.
+
+`void remove(K key)` (v1) - Loop through every value. If we find a matching
+key, you should have an index. Copy over every element but that one into
+a new array.
+
+`void remove(K key)` (v2) - Loop through every value. If we find a matching
+key, you should have an index.  Shift everything up starting at that index.
+
+`void remove(K key)` (v3) - Loop through every value. If we find a matching
+key, you should have an index. Put a null there. [Sam's year's of experience
+suggest that putting nulls in the middle may complicate our lives.]
+
+`void remove(K key)` (v4) - Loop through every value. If we find a matching
+key, you should have an index. Put the last thing there. (The last thing
+is at index `size-1`.
 
 #### Analysis
 
-If there are `n` k/v pairs in the array, how many do we have to look at
-to do each of the following? ("About `n`" or "the same number each time")
+Linear: Does this grow directly with the number of elements in the AA? 
 
-`get` - 
+Constant: Is it independent of the number of elements in the AA?
 
-`set` - 
+`get` - Linear: We have to look at the key/value pairs, and may
+potentially look at all of them.
 
-`hasKey` - 
+`set` - Linear: We have to look at the key/value pairs,  ...
 
-`remove` - 
+`hasKey` - Linear: We have to look at the key/value pairs
+
+`remove (v2)` (shift) - Linear: We have to look at the key/value pairs.
+We also have to shift potentially all the key/value pairs.
+
+`remove (v4)` (moves the last thing to the right place) - Linear: We
+have to look at all the key/value pairs. But we only have constant
+work once we've found it. 
+
+* In theory, v2 and v4 are equivalent. In practice, v4 is faster.
 
 #### Notes
+
+* Your classmate said something very important in describing `get`. 
+    * We're doing the same thing (or nearly the same thing) in each
+      of the four main methods. You shouldn't repeat the code. (DRY)
+      So .... we should write a helper.
+* Another classmate made a helpful followup when discussing remove.
+    * The helper should return the index of the matching key.
 
 ### The assignment
 
@@ -240,6 +343,13 @@ Write tests early. Pull other tests. Tell me when you add tests.
 
 > I hope not. But part of the point is to get you used to working on a
   large collaborative repository.
+
+**How are we going to work with two repositories?**
+
+> The testing repository gets cloned into the middle of the main repository.
+  GitHub + VSCode are smart enough to deal with two overlapping repos.
+
+> You will only turn in the code for AssociativeArrays.
 
 Questions
 ---------
@@ -291,6 +401,10 @@ suggestions?**
 
 > Yes. Probably this weekend.
 
+**Will we get other grades before the grade report?**
+
+> Probably.
+
 ### Questions on MP3
 
 **What is a "good commit"?**
@@ -314,6 +428,22 @@ suggestions?**
 > When you pull, you may get merge conflicts. If you do, read through
   the file that has the merge conflicts, choose which code to keep, 
   add and commit.
+
+**What is going on with the `git fetch upstream`?**
+
+> You are working with a fork of another repository.
+
+> That other repository may be updated (e.g.,when Sam realizes he screwed
+  up `Grid.eqv` or Sam adds more tests).
+
+> You need a way to upll the updates from the primary repository into your
+  fork (and then into your clone).
+
+> Two mechanisms.
+
+> Click the magic button on GitHub.
+
+> Create an upstream link and type magic commands.
 
 ### Questions on the readings
 
