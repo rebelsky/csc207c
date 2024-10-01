@@ -137,7 +137,7 @@ class._
 
 * Tuesday, 2024-10-01, Noon--1:00 p.m., JRC 224A (Day PDR).
   _CS Table: When Robots Attack (or something like that)_
-* Sunday, 2024-10-06, 7:00--9:00 p.m., Science 3819.
+* Sunday, 2024-10-06, 7:00--8:00 p.m., Science 3819.
   _Mentor Session_
 * Tuesday, 2024-10-08, Noon--1:00 p.m., JRC 224A (Day PDR).
   _CS Table_
