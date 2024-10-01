@@ -227,8 +227,17 @@ d. Check your answer experimentally.
 
 e. Add a `decrement()` method to `DecrementableCounter`  This method should subtract one from the `count` field.
 
-f. What do you expect to happen if we add the following lines to our 
-test and experiment?
+f. What do you expect to happen if we add the follownig lines to our experiment?
+
+```java
+    gamma.reset();
+    pen.println("After resetting gamma: " + gamma);
+    gamma.decrement();
+    pen.println("After decrementing gamma: " + gamma);
+```
+
+g. What do you expect to happen if we add the following lines to our 
+test?
 
 ```java
     gamma.reset();
@@ -237,35 +246,35 @@ test and experiment?
     assertEquals(-6, gamma.get(), "decremented gamma");
 ```
 
-g. Check your answer experimentally.
+h. Check your last two answers experimentally.
 
-h. Change the declaration of `gamma` to
+i. Change the declaration of `gamma` to
 
 ```java
   DecrementableCounter gamma = new DecrementableCounter(-5);
 ```
 
-i. What effect do you expect this change to have?
+j. What effect do you expect this change to have?
 
-j. Check your answer experimentally.
+k. Check your answer experimentally.
 
-k. Change the initialization of `gamma` so that it reads
+l. Change the initialization of `gamma` so that it reads
 
 ```java
   DecrementableCounter gamma = new BasicCounter(-5);
 ```
 
-l. What effect to you expect this change to have?  
+m. What effect to you expect this change to have?  
 
-m. Check your answer experimentally.
+n. Check your answer experimentally.
 
-n. Restore the initialization of `gamma` to
+o. Restore the initialization of `gamma` to
 
 ```java
   DecrementableCounter gamma = new DecrementableCounter(-5);
 ```
 
-o. Commit and push your changes.
+p. Commit and push your changes.
 
 ```
 git add src
@@ -275,7 +284,7 @@ git pull
 git push
 ```
 
-p. Summarize what you learned in this exercise.
+q. Summarize what you learned in this exercise.
 
 ### Exercise 4: Naming BasicCounters
 
