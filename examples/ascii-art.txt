@@ -1,0 +1,496 @@
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+
+/------------------------------------------------------------------------------\
+|########* -                                                                   |
+|########* /                         _    ___                                  |
+|#######*_\                        _( )__(   )_                                |
+|####* _\                        _(            o__                             |
+|/ \/                           o_________________)                            |
+|                                                       (\/\)                  |
+|                                                   (*)  \_/  (*)              |
+|                                                     \   |  /                 |
+|                      *  *  *                         \  | |                  |
+|                      |  |  |                        +-------+                |
+|                    -----------                      |       |                |
+|                    |~~~~~~~~~|                     {         }               |
+|                    |\/\/\/\/\|                      \       /                |
+|                    |_________|                       \_____/                 |
+|///   ///   ///   ///   ///   ///   ///   ///   ///   ///   ///   ///   ///   |
+|///   ///   ///   ///   ///   ///   ///   ///   ///   ///   ///   ///   ///   |
+|   ///   ///   ///   ///   ///   ///   ///   ///   ///   ///   ///   ///   ///|
+|   ///   ///   ///   ///   ///   ///   ///   ///   ///   ///   ///   ///   ///|
+|///   ///   ///   ///   ///   ///   ///   ///   ///   ///   ///   ///   ///   |
+|///   ///   ///   ///   ///   ///   ///   ///   ///   ///   ///   ///   ///   |
+|   ///   ///   ///   ///   ///   ///   ///   ///   ///   ///   ///   ///   ///|
+|   ///   ///   ///   ///   ///   ///   ///   ///   ///   ///   ///   ///   ///|
+\------------------------------------------------------------------------------/
+
+                                                                                
+                   /****************************************\                   
+                  /                                          \                  
+                 /                                            \                 
+                /                                              \                
+               /                                                \               
+        /--------------------------------------------------------------\        
+        |############   /------------------------------\   ############|        
+        |############   |%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|   ############|        
+        |               |%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|               |        
+        |############   |%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|   ############|        
+        |############   |%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|   ############|        
+        |               |%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%|               |        
+        |               \------------------------------/               |        
+        \--------------------------------------------------------------/        
+      ********************************************************************      
+      &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&      
+                                                                                
+          &&&&                                                    &&&&          
+          &&&&                                                    &&&&          
+          &&&&                                                    &&&&          
+          &&&&                                                    &&&&          
+                                                                                
+                                                                                
+$%$$*%$&*$*%#@%%#@#$@%$*$$*#@@&%@*#&*@@&#%%*%#*@$%#@%*#&**&%&&$&$*%@@#&$@@*$#&*%
+%$$$&&*@%@%$*&#@%&*$*#@#&@@*&%##$$@&%&@*&%*$##@%*#####*#%&@#$%*@@#%*#$&*%%$%%$*%
+$$$$$&&*@%@%$*&#@%&*$*#@#&@@*&%##$$@&%&@*&%*$##@%*#####*#%&@#$%*@@#%*#$&*%%$%%$#
+$$$#&#*%*$@#@**#*@*#&%#$*@*&$#%%$#*#*%@@*#%&#$*&$%&@%%*%#*##*%#$**#@@@@&###&&$#*
+*&$&$%$$*%$&*$*%#@%%#@#$@%$*$$*#@@&%@*#&*@@&#%%*%#*@$%#@%*#&**&%&&$&$*%@@#&$%*%@
+%&&#%#&#*%*$@#@**#*@*#&%#$*@*&$#%%$#*#*%@@*#%&#$*&$%&@%%*%#*##*%#$**#@@@@&#@%$@*
+$*&*$&$%$$*%$&*$*%#@%%#@#$@%$*$$*#@@&%@*#&*@@&#%%*%#*@$%#@%*#&**&%&&$&$*%@#@@#%@
+&@*%$#%                                                                  @#*@%*@
+*%@***$    HOUCKHOUCKHOUCKHOUCKHOUCKHOUCKHOUCKHOUCKHOUCKHOUCKHOUCKHOU    #&$&@#%
+$@%$%%$    O|\   __  \|\   __  \|\   ___ \|\  ___ \  |\   ___  \    C    &&#%%&%
+*%@@$**    U\ \  \|\  \ \  \|\  \ \  \_|\ \ \   __/|\  \  \\ \  \   K    $%&%**&
+%$%#&$%    C \ \   ____\ \   __  \ \  \ \\ \ \  \_|/_\  \  \\ \  \  H    @%*%###
+#*$@*@$    K  \ \  \___|\ \  \ \  \ \  \_\\ \ \  \_|\ \  \  \\ \  \ O    @@%$&%*
+@&**$#&    H   \ \__\    \ \__\ \__\ \_______\ \_______\  \__\\ \__\U    *@%#***
+%#&**@*    O    \|__|     \|__|\|__|\|_______|\|_______| \|__| \|__|C    $&#*#&$
+%@##%*$    UCKHOUCKHOUCKHOUCKHOUCKHOUCKHOUCKHOUCKHOUCKHOUCKHOUCKHOUCK    #%**%@@
+#%@*#**                                                                  &%@%*&#
+@&%@@#%#@%%#@#$@%$*$$*#@@&%@*#&*@@&#%%*%#*@$%#@%*#&**&%&&$&$*%@@#&$@@*$#&*%*@&*%
+#*&*%*@*#&%#$*@*&$#%%$#*#*%@@*#%&#$*&$%&@%%*%#*##*%#$**#@@@@&###&&%%@@&%%%$@&@@&
+$$*#%#@#$@%$*$$*#@@&%@*#&*@@&#%%*%#*@$%#@%*#&**&%&&$&$*%@@#&$@@*$#&*%%#*@*@@*&&$
+@*$&%#$*@*&$#%%$#*#*%@@*#%&#$*&$%&@%%*%#*##*%#$**#@@@@&###&&%%@@&%%%$#**%@&*$*&$
+%#*#@#&@@*&%##$$@&%&@*&%*$##@%*#####*#%&@#$%*@@#%*#$&*%%$%%$*$#%@%*#&*#%*&@&*@@$
+$@#&@@*&%##$$@&%&@*&%*$##@%*#####*#%&@#$%*@@#%*#$&*%%$%%$*$#%@%*#&*#%*&@&*@&&@&%
+*$$*#@@&%@*#&*@@&#%%*%#*@$%#@%*#&**&%&&$&$*%@@#&$@@*$#&*%%#*@*@@%%&#**$@#%&$$$%$
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+********************************************************************************
+********************************************************************************
+                                                                                
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx | xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxx  Hello  xxxxxxxxxxxxxxxx | xxxxxxxxxxxxxxx  Hello  xxxxxxxxxxxxxx
+xxxxxxxxxxxxxx  It is  xxxxxxxxxxxxxxxx | xxxxxxxxxxxxxxx  It is  xxxxxxxxxxxxxx
+xxxxxxxxxxxxxxvEry niCexxxxxxxxxxxxxxxx | xxxxxxxxxxxxxxxvEry niCexxxxxxxxxxxxxx
+xxxxxxxxxxxxxxT0 m33T Uxxxxxxxxxxxxxxxx | xxxxxxxxxxxxxxxT0 m33T Uxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx | xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                                                                                
+********************************************************************************
+********************************************************************************
+********************************************************************************
+********************************************************************************
+********************************************************************************
+
+                                     /--\
+                              /--\   |12|#  /--\
+                              |11|#  \--/#  | 1|#
+                              \--/#   ####  \--/#
+                               ####          ####
+                        /--\                      /--\
+                        |10|#                     | 2|#
+                        \--/#                     \--/#
+                         ####                      ####
+                   /--\                                /--\
+                   | 9|#                               | 3|#
+                   \--/#                               \--/#
+                    ####                                ####
+
+                        /--\                      /--\
+                        | 8|#                     | 5|#
+                        \--/#                     \--/#
+                         #### /--\          /--\   ####
+                              | 7|#         | 5|#
+                              \--/#  /--\   \--/#
+                               ####  | 6|#   ####
+                                     \--/#
+                                      ####
+
+--------------------------------------------------------------------------------
+-   -    --...-....--ooo-oooo--OOO-OOOO--OOOO-OOO--oooo-ooo--....-...--    -   -
+-   -    --...-....--ooo-oooo--OOO-OOOO--OOOO-OOO--oooo-ooo--....-...--    -   -
+--------------------------------------------------------------------------------
+-   -    --...-....--ooo-oooo--OOO-OOOO--OOOO-OOO--oooo-ooo--....-...--    -   -
+-   -    --...-....--ooo-oooo--OOO-OOOO--OOOO-OOO--oooo-ooo--....-...--    -   -
+--------------------------------------------------------------------------------
+                            <<<<****88888888****>>>>                            
+                        <<<<****8888888888888888****>>>>                        
+                    <<<<****888888888888888888888888****>>>>                    
+                <<<<****88888888888888888888888888888888****>>>>                
+            <<<<****8888888888888888888888888888888888888888****>>>>            
+            <<<<****8888888888888888888888888888888888888888****>>>>            
+                <<<<****88888888888888888888888888888888****>>>>                
+                    <<<<****888888888888888888888888****>>>>                    
+                        <<<<****8888888888888888****>>>>                        
+                            <<<<****88888888****>>>>                            
+--------------------------------------------------------------------------------
+-   -    --...-....--ooo-oooo--OOO-OOOO--OOOO-OOO--oooo-ooo--....-...--    -   -
+-   -    --...-....--ooo-oooo--OOO-OOOO--OOOO-OOO--oooo-ooo--....-...--    -   -
+--------------------------------------------------------------------------------
+-   -    --...-....--ooo-oooo--OOO-OOOO--OOOO-OOO--oooo-ooo--....-...--    -   -
+-   -    --...-....--ooo-oooo--OOO-OOOO--OOOO-OOO--oooo-ooo--....-...--    -   -
+--------------------------------------------------------------------------------
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^                              ^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^        ^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^     ^^^^^^^^^^^^^^
+^^^^^^^^^      ^^^^^^^^^^^^^^    ^^^^^^^^^^^^^^    ^^^^^^^^^^^^^^      ^^^^^^^^^
+^^^^^^^^  ^^^^^^^^^^^^^^^^^^  ^^ ^^^^^^^^^^^^^^ ^^  ^^^^^^^^^^^^^^^^^^  ^^^^^^^^
+^^^^^^  ^^^^^^^^^^^^^^^^^^^^^  ^ ^^^^^^^^^^^^^^ ^  ^^^^^^^^^^^^^^^^^^^^^  ^^^^^^
+^^^^^ ^^^^^^^^^^^^^^^^^^^^^^^^   ^^^^^^^^^^^^^^   ^^^^^^^^^^^^^^^^^^^^^^^^ ^^^^^
+^^^^ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ ^^^^
+^^^^ ^^^^^^^^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^^^^^^^^ ^^^^
+^^^^ ^^^^^^^^^^^^^^^^^^^^    ^^       ^^^^       ^^    ^^^^^^^^^^^^^^^^^^^^ ^^^^
+^^^^^ ^^^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^    ^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^^^ ^^^^^
+^^^^^^  ^^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^^  ^^^^^^
+^^^^^^^^  ^^^^^^^^^^^^^^^^^   ^^^^^^^^^^^^^^^^^^^^   ^^^^^^^^^^^^^^^^^  ^^^^^^^^
+^^^^^^^^^    ^^^^^^^^^^^^^^^^^    ^^^^^^^^^^^^    ^^^^^^^^^^^^^^^^^    ^^^^^^^^^
+^^^^^^^^^^^^       ^^^^^^^^^^^^^^^            ^^^^^^^^^^^^^^^       ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^         ^^^^^^^^^^^^^^^^^^^^^^^^^^         ^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+bbbbbbbbbbccccccccccddddddddddeeeeeeeeeeccccccccccddddddddddeeeeeeeeeeffffffffff
+bƧƧǴǴǴǴƧƧbcƨƨǵǵǵǵƨƨcdƩƩǶǶǶǶƩƩdeƪƪǷǷǷǷƪƪecƨƨǵǵǵǵƨƨcdƩƩǶǶǶǶƩƩdeƪƪǷǷǷǷƪƪefƫƫǸǸǸǸƫƫf
+bƧǴƧƧƧƧǴƧbcƨǵƨƨƨƨǵƨcdƩǶƩƩƩƩǶƩdeƪǷƪƪƪƪǷƪecƨǵƨƨƨƨǵƨcdƩǶƩƩƩƩǶƩdeƪǷƪƪƪƪǷƪefƫǸƫƫƫƫǸƫf
+bǴƧƧƧƧƧƧǴbcǵƨƨƨƨƨƨǵcdǶƩƩƩƩƩƩǶdeǷƪƪƪƪƪƪǷecǵƨƨƨƨƨƨǵcdǶƩƩƩƩƩƩǶdeǷƪƪƪƪƪƪǷefǸƫƫƫƫƫƫǸf
+bǴƧƧƧƧƧƧǴbcǵƨƨƨƨƨƨǵcdǶƩƩƩƩƩƩǶdeǷƪƪƪƪƪƪǷecǵƨƨƨƨƨƨǵcdǶƩƩƩƩƩƩǶdeǷƪƪƪƪƪƪǷefǸƫƫƫƫƫƫǸf
+bƧǴƧƧƧƧǴƧbcƨǵƨƨƨƨǵƨcdƩǶƩƩƩƩǶƩdeƪǷƪƪƪƪǷƪecƨǵƨƨƨƨǵƨcdƩǶƩƩƩƩǶƩdeƪǷƪƪƪƪǷƪefƫǸƫƫƫƫǸƫf
+bƧƧǴǴǴǴƧƧbcƨƨǵǵǵǵƨƨcdƩƩǶǶǶǶƩƩdeƪƪǷǷǷǷƪƪecƨƨǵǵǵǵƨƨcdƩƩǶǶǶǶƩƩdeƪƪǷǷǷǷƪƪefƫƫǸǸǸǸƫƫf
+bbbbbbbbbbccccccccccddddddddddeeeeeeeeeeccccccccccddddddddddeeeeeeeeeeffffffffff
+ɐɐɐɐɐɐɐɐɐɐɑɑɑɑɑɑɑɑɑɑɒɒɒɒɒɒɒɒɒɒɓɓɓɓɓɓɓɓɓɓɑɑɑɑɑɑɑɑɑɑɒɒɒɒɒɒɒɒɒɒɓɓɓɓɓɓɓɓɓɓɔɔɔɔɔɔɔɔɔɔ
+ɐΕΕϢϢϢϢΕΕɐɑΖΖϣϣϣϣΖΖɑɒΗΗϤϤϤϤΗΗɒɓΘΘϥϥϥϥΘΘɓɑΖΖϣϣϣϣΖΖɑɒΗΗϤϤϤϤΗΗɒɓΘΘϥϥϥϥΘΘɓɔΙΙϦϦϦϦΙΙɔ
+ɐΕϢΕΕΕΕϢΕɐɑΖϣΖΖΖΖϣΖɑɒΗϤΗΗΗΗϤΗɒɓΘϥΘΘΘΘϥΘɓɑΖϣΖΖΖΖϣΖɑɒΗϤΗΗΗΗϤΗɒɓΘϥΘΘΘΘϥΘɓɔΙϦΙΙΙΙϦΙɔ
+ɐϢΕΕΕΕΕΕϢɐɑϣΖΖΖΖΖΖϣɑɒϤΗΗΗΗΗΗϤɒɓϥΘΘΘΘΘΘϥɓɑϣΖΖΖΖΖΖϣɑɒϤΗΗΗΗΗΗϤɒɓϥΘΘΘΘΘΘϥɓɔϦΙΙΙΙΙΙϦɔ
+ɐϢΕΕΕΕΕΕϢɐɑϣΖΖΖΖΖΖϣɑɒϤΗΗΗΗΗΗϤɒɓϥΘΘΘΘΘΘϥɓɑϣΖΖΖΖΖΖϣɑɒϤΗΗΗΗΗΗϤɒɓϥΘΘΘΘΘΘϥɓɔϦΙΙΙΙΙΙϦɔ
+ɐΕϢΕΕΕΕϢΕɐɑΖϣΖΖΖΖϣΖɑɒΗϤΗΗΗΗϤΗɒɓΘϥΘΘΘΘϥΘɓɑΖϣΖΖΖΖϣΖɑɒΗϤΗΗΗΗϤΗɒɓΘϥΘΘΘΘϥΘɓɔΙϦΙΙΙΙϦΙɔ
+ɐΕΕϢϢϢϢΕΕɐɑΖΖϣϣϣϣΖΖɑɒΗΗϤϤϤϤΗΗɒɓΘΘϥϥϥϥΘΘɓɑΖΖϣϣϣϣΖΖɑɒΗΗϤϤϤϤΗΗɒɓΘΘϥϥϥϥΘΘɓɔΙΙϦϦϦϦΙΙɔ
+ɐɐɐɐɐɐɐɐɐɐɑɑɑɑɑɑɑɑɑɑɒɒɒɒɒɒɒɒɒɒɓɓɓɓɓɓɓɓɓɓɑɑɑɑɑɑɑɑɑɑɒɒɒɒɒɒɒɒɒɒɓɓɓɓɓɓɓɓɓɓɔɔɔɔɔɔɔɔɔɔ
+ccccccccccddddddddddeeeeeeeeeeffffffffffddddddddddeeeeeeeeeeffffffffffgggggggggg
+cƨƨǵǵǵǵƨƨcdƩƩǶǶǶǶƩƩdeƪƪǷǷǷǷƪƪefƫƫǸǸǸǸƫƫfdƩƩǶǶǶǶƩƩdeƪƪǷǷǷǷƪƪefƫƫǸǸǸǸƫƫfgƬƬǹǹǹǹƬƬg
+cƨǵƨƨƨƨǵƨcdƩǶƩƩƩƩǶƩdeƪǷƪƪƪƪǷƪefƫǸƫƫƫƫǸƫfdƩǶƩƩƩƩǶƩdeƪǷƪƪƪƪǷƪefƫǸƫƫƫƫǸƫfgƬǹƬƬƬƬǹƬg
+cǵƨƨƨƨƨƨǵcdǶƩƩƩƩƩƩǶdeǷƪƪƪƪƪƪǷefǸƫƫƫƫƫƫǸfdǶƩƩƩƩƩƩǶdeǷƪƪƪƪƪƪǷefǸƫƫƫƫƫƫǸfgǹƬƬƬƬƬƬǹg
+cǵƨƨƨƨƨƨǵcdǶƩƩƩƩƩƩǶdeǷƪƪƪƪƪƪǷefǸƫƫƫƫƫƫǸfdǶƩƩƩƩƩƩǶdeǷƪƪƪƪƪƪǷefǸƫƫƫƫƫƫǸfgǹƬƬƬƬƬƬǹg
+cƨǵƨƨƨƨǵƨcdƩǶƩƩƩƩǶƩdeƪǷƪƪƪƪǷƪefƫǸƫƫƫƫǸƫfdƩǶƩƩƩƩǶƩdeƪǷƪƪƪƪǷƪefƫǸƫƫƫƫǸƫfgƬǹƬƬƬƬǹƬg
+cƨƨǵǵǵǵƨƨcdƩƩǶǶǶǶƩƩdeƪƪǷǷǷǷƪƪefƫƫǸǸǸǸƫƫfdƩƩǶǶǶǶƩƩdeƪƪǷǷǷǷƪƪefƫƫǸǸǸǸƫƫfgƬƬǹǹǹǹƬƬg
+ccccccccccddddddddddeeeeeeeeeeffffffffffddddddddddeeeeeeeeeeffffffffffgggggggggg
+
+HHH    HHH     EEEEEEEEEE     LLL            LLL            OOOOOOOO
+HHH    HHH     EEEEEEEEEE     LLL            LLL            OOOOOOOO
+HHH    HHH     EEEEEEEEEE     LLL            LLL            OOOOOOOO
+HHH    HHH     EEEEEEEEEE     LLL            LLL            OOO  OOO
+HHH    HHH     EEE            LLL            LLL            OOO  OOO
+HHH    HHH     EEE            LLL            LLL            OOO  OOO
+HHH    HHH     EEE            LLL            LLL            OOO  OOO
+HHH    HHH     EEE            LLL            LLL            OOO  OOO
+HHH    HHH     EEE            LLL            LLL            OOO  OOO
+HHH    HHH     EEE            LLL            LLL            OOO  OOO
+HHHHHHHHHH     EEEEEEEEEE     LLL            LLL            OOO  OOO
+HHHHHHHHHH     EEEEEEEEEE     LLL            LLL            OOO  OOO
+HHHHHHHHHH     EEEEEEEEEE     LLL            LLL            OOO  OOO
+HHHHHHHHHH     EEEEEEEEEE     LLL            LLL            OOO  OOO
+HHH    HHH     EEE            LLL            LLL            OOO  OOO
+HHH    HHH     EEE            LLL            LLL            OOO  OOO
+HHH    HHH     EEE            LLL            LLL            OOO  OOO
+HHH    HHH     EEE            LLL            LLL            OOO  OOO
+HHH    HHH     EEE            LLL            LLL            OOO  OOO
+HHH    HHH     EEE            LLL            LLL            OOO  OOO
+HHH    HHH     EEEEEEEEEE     LLLLLLLLLL     LLLLLLLLLL     OOO  OOO
+HHH    HHH     EEEEEEEEEE     LLLLLLLLLL     LLLLLLLLLL     OOOOOOOO
+HHH    HHH     EEEEEEEEEE     LLLLLLLLLL     LLLLLLLLLL     OOOOOOOO
+HHH    HHH     EEEEEEEEEE     LLLLLLLLLL     LLLLLLLLLL     OOOOOOOO
+
+
+################################################################################
+################################################################################
+################################################################################
+##########                                                            ##########
+##########                                                            ##########
+##########                                                            ##########
+
+
+
+          /--------\##########                    ##########\--------/
+          |        |##########                    ##########|        |
+          \--------/##########                    ##########/--------\
+                              ____________________
+                              ____________________
+                              ____________________
+                    ##########                    ##########
+                    ##########                    ##########
+                    ##########                    ##########
+                    ########################################
+                    ########################################
+                    ########################################
+
+
+xxxxx
+xCCCx
+xCCCx
+xCCCx
+xxxxx
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                 *                                                    
+                ***                                                   
+               *****                                                  
+               *****          *                                       
+              *******        ***                     *                
+              *******       *****                   ***               
+             *********      *****                  *****         *    
+              ||||||       *******                 *****        ***   
+              ||||||       *******                  ||         *****  
+              ||||||        ||||          *         ||         *****  
+              ||||||        ||||         ***        ||        ******* 
+              ||||||        ||||        *****       ||        ******* 
+      *       ||||||        ||||        *****       ||       *********
+     ***      ||||||        ||||       *******      ||        ||||||  
+      |       ||||||        ||||       *******      ||        ||||||  
+      |       ||||||        ||||        |||||       ||        ||||||  
+      |       ||||||        ||||        |||||       ||        ||||||  
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/------------------------------------------------\
+|     **************          **************     |
+|       ###    ###              %%%    %%%       |
+|  ###  ###    ###  ###    %%%  %%%    %%%  %%%  |
+| ####  ###    ###  ####   %%%  %%%    %%%  %%%  |
+|#####  ###    ###  #####%%%%%  %%%    %%%  %%%%%|
+|#####  ###    ###  #####%%%%%  %%%    %%%  %%%%%|
+|#####  ###    ###  #####%%%%%  %%%    %%%  %%%%%|
+|  ###  ###    ###  ###   %%%%  %%%    %%%  %%%% |
+|  ###  ###    ###  ###    %%%  %%%    %%%  %%%  |
+|       ###    ###              %%%    %%%       |
+|     **************          **************     |
+|     **************          **************     |
+|       %%%    %%%              ###    ###       |
+|  %%%  %%%    %%%  %%%    ###  ###    ###  ###  |
+| %%%%  %%%    %%%  %%%%   ###  ###    ###  ###  |
+|%%%%%  %%%    %%%  %%%%%#####  ###    ###  #####|
+|%%%%%  %%%    %%%  %%%%%#####  ###    ###  #####|
+|%%%%%  %%%    %%%  %%%%%#####  ###    ###  #####|
+|  %%%  %%%    %%%  %%%   ####  ###    ###  #### |
+|  %%%  %%%    %%%  %%%    ###  ###    ###  ###  |
+|       %%%    %%%              ###    ###       |
+|     **************          **************     |
+\------------------------------------------------/
+
+
+**********************************************************************
+**********************************************************************
+**                               Woah                               **
+**                         Woah  Woah  Woah                         **
+**                   Woah  Woah  Woah  Woah  Woah                   **
+**             Woah  Woah  Woah  Woah  Woah  Woah  Woah             **
+**       Woah  Woah  Woah  Woah  Woah  Woah  Woah  Woah  Woah       **
+** Woah  Woah  Woah  Woah  Woah  Woah  Woah  Woah  Woah  Woah  Woah **
+**********************************************************************
+**********************************************************************
+**********************************************************************
+**********************************************************************
+** Woah  Woah  Woah  Woah  Woah  Woah  Woah  Woah  Woah  Woah  Woah **
+**       Woah  Woah  Woah  Woah  Woah  Woah  Woah  Woah  Woah       **
+**             Woah  Woah  Woah  Woah  Woah  Woah  Woah             **
+**                   Woah  Woah  Woah  Woah  Woah                   **
+**                         Woah  Woah  Woah                         **
+**                               Woah                               **
+**********************************************************************
+**********************************************************************
+
+
+********************************************************************************
+*                                                                              *
+*                                                                              *
+*                                                                              *
+*                                                                              *
+*                                                                              *
+*                                                                              *
+*                                                                              *
+*                                                                              *
+*                                                                              *
+*                                                                              *
+*                                                                              *
+*                                                                              *
+*                   ##############################                             *
+*                   ##############################                             *
+*                   ########################################                   *
+*                   ########################################                   *
+*                   ########################################                   *
+*                       OOOOOO                    OOOOOO                       *
+*                       O    O                    O    O                       *
+*                       OOOOOO                    OOOOOO                       *
+*------------------------------------------------------------------------------*
+*------------------------------------------------------------------------------*
+********************************************************************************
+
+********************************************************************************
+********************************************************************************
+********************************************************************************
+********************************************************************************
+********************************************************************************
+********************************************************************************
+********************************************************************************
+********************************************************************************
+********************************************************************************
+********************************************************************************
+********************************************************************************
+********************************************************************************
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+                               **                    
+                               **##                  
+                               ***************       
+                               ***************       
+                               **********************
+                               **********************
+***                            ******                
+***                            ******                
+***                            ******                
+*************************************                
+*************************************                
+*************************************                
+*************************************                
+*************************************                
+*************************************                
+*************************************                
+*************************************                
+*****####                   *****####                
+*****####                   *****####                
+*****####                   *****####                
+*****                       *****                    
+
+/-\/-\/-\/-\/-\RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+|*||*||*||*||*|RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+\-/\-/\-/\-/\-/RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+/-\/-\/-\/-\/-\WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+|*||*||*||*||*|WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+\-/\-/\-/\-/\-/WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+/-\/-\/-\/-\/-\RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+|*||*||*||*||*|RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+\-/\-/\-/\-/\-/RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+
+HHHHHHHHHHEEEEEEEEEELLLLLLLLLLPPPPPPPPPPHHHHHHHHHHEEEEEEEEEELLLLLLLLLLPPPPPPPPPP
+HHHHHHHHHHEEEEEEEEEELLLLLLLLLLPPPPPPPPPPHHHHHHHHHHEEEEEEEEEELLLLLLLLLLPPPPPPPPPP
+HHHHHHHHHHEEEEEEEEEELLLLLLLLLLPPPPPPPPPPHHHHHHHHHHEEEEEEEEEELLLLLLLLLLPPPPPPPPPP
+HHHHHHHHHHEEEEEEEEEELLLLLLLLLLPPPPPPPPPPHHHHHHHHHHEEEEEEEEEELLLLLLLLLLPPPPPPPPPP
+MMMMMMMMMMEEEEEEEEEEHHHHHHHHHHEEEEEEEEEEMMMMMMMMMMEEEEEEEEEEHHHHHHHHHHEEEEEEEEEE
+MMMMMMMMMMEEEEEEEEEEHHHHHHHHHHEEEEEEEEEEMMMMMMMMMMEEEEEEEEEEHHHHHHHHHHEEEEEEEEEE
+MMMMMMMMMMEEEEEEEEEEHHHHHHHHHHEEEEEEEEEEMMMMMMMMMMEEEEEEEEEEHHHHHHHHHHEEEEEEEEEE
+MMMMMMMMMMEEEEEEEEEEHHHHHHHHHHEEEEEEEEEEMMMMMMMMMMEEEEEEEEEEHHHHHHHHHHEEEEEEEEEE
+HHHHHHHHHHEEEEEEEEEELLLLLLLLLLPPPPPPPPPPHHHHHHHHHHEEEEEEEEEELLLLLLLLLLPPPPPPPPPP
+HHHHHHHHHHEEEEEEEEEELLLLLLLLLLPPPPPPPPPPHHHHHHHHHHEEEEEEEEEELLLLLLLLLLPPPPPPPPPP
+HHHHHHHHHHEEEEEEEEEELLLLLLLLLLPPPPPPPPPPHHHHHHHHHHEEEEEEEEEELLLLLLLLLLPPPPPPPPPP
+HHHHHHHHHHEEEEEEEEEELLLLLLLLLLPPPPPPPPPPHHHHHHHHHHEEEEEEEEEELLLLLLLLLLPPPPPPPPPP
+MMMMMMMMMMEEEEEEEEEEHHHHHHHHHHEEEEEEEEEEMMMMMMMMMMEEEEEEEEEEHHHHHHHHHHEEEEEEEEEE
+MMMMMMMMMMEEEEEEEEEEHHHHHHHHHHEEEEEEEEEEMMMMMMMMMMEEEEEEEEEEHHHHHHHHHHEEEEEEEEEE
+MMMMMMMMMMEEEEEEEEEEHHHHHHHHHHEEEEEEEEEEMMMMMMMMMMEEEEEEEEEEHHHHHHHHHHEEEEEEEEEE
+MMMMMMMMMMEEEEEEEEEEHHHHHHHHHHEEEEEEEEEEMMMMMMMMMMEEEEEEEEEEHHHHHHHHHHEEEEEEEEEE
+HHHHHHHHHHEEEEEEEEEELLLLLLLLLLPPPPPPPPPPHHHHHHHHHHEEEEEEEEEELLLLLLLLLLPPPPPPPPPP
+HHHHHHHHHHEEEEEEEEEELLLLLLLLLLPPPPPPPPPPHHHHHHHHHHEEEEEEEEEELLLLLLLLLLPPPPPPPPPP
+HHHHHHHHHHEEEEEEEEEELLLLLLLLLLPPPPPPPPPPHHHHHHHHHHEEEEEEEEEELLLLLLLLLLPPPPPPPPPP
+HHHHHHHHHHEEEEEEEEEELLLLLLLLLLPPPPPPPPPPHHHHHHHHHHEEEEEEEEEELLLLLLLLLLPPPPPPPPPP
+MMMMMMMMMMEEEEEEEEEEHHHHHHHHHHEEEEEEEEEEMMMMMMMMMMEEEEEEEEEEHHHHHHHHHHEEEEEEEEEE
+MMMMMMMMMMEEEEEEEEEEHHHHHHHHHHEEEEEEEEEEMMMMMMMMMMEEEEEEEEEEHHHHHHHHHHEEEEEEEEEE
+MMMMMMMMMMEEEEEEEEEEHHHHHHHHHHEEEEEEEEEEMMMMMMMMMMEEEEEEEEEEHHHHHHHHHHEEEEEEEEEE
+MMMMMMMMMMEEEEEEEEEEHHHHHHHHHHEEEEEEEEEEMMMMMMMMMMEEEEEEEEEEHHHHHHHHHHEEEEEEEEEE
+
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+ //  \\\|///  \\\|///  \\\|///  \\\|///  \\\|///  \\\|///  \\\|///  \\\|///  \\ 
+//    \\|//    \\|//    \\|//    \\|//    \\|//    \\|//    \\|//    \\|//    \\
+/      \|/      \|/      \|/      \|/      \|/      \|/      \|/      \|/      \
+        |        |        |        |        |        |        |        |        
+        |        |        |        |        |        |        |        |        
+        |        |        |        |        |        |        |        |        
+      / | \      |        |      / | \      |        |        |      / | \      
+    \_\(_)/_/    |        |    \_\(_)/_/    |        |        |    \_\(_)/_/    
+     _//^\\_     |        |     _//^\\_     |        |        |     _//^\\_     
+      /   \      |      / | \    /   \      |      / | \      |      /   \      
+                 |    \_\(_)/_/             |    \_\(_)/_/    |                 
+                 |     _//o\\_              |     _//o\\_     |                 
+                 |      /   \               |      /   \      |                 
+                 |                          |                 |                 
+               / | \                      / | \             / | \               
+             \_\(_)/_/                  \_\(_)/_/         \_\(_)/_/             
+              _//"\\_                    _//"\\_           _//"\\_              
+               /   \                      /   \             /   \               
+                              \_o_/                                             
+                                 )                                              
+                                /\__                                            
+                       ________ \ _______________________                       
+
