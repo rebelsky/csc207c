@@ -16,7 +16,6 @@ _Approximate overview_
     * Upcoming work
     * Tokens
 * Questions
-* MP3
 * MP5
 * Lab
 
@@ -51,7 +50,7 @@ _So much stuff to discuss. Feel free to ask questions as we go._
 
 * I put this in my last email, but I'll remind you again. At this point
   in the semester, you should know our core tools.
-    * You should be able to compile and test code in Maven (and read output).
+    * You should be able to compile and test code in Maven.
     * You should be able to run and test code in VSCode.
     * You should be able to debug code in VSCode, particularly failed tests.
     * You should be able to push changes to your code to GitHub.
@@ -96,7 +95,6 @@ _So much stuff to discuss. Feel free to ask questions as we go._
         * [Queues](../readings/queues)
         * [Priority queues](../readings/priority-queues)
     * [Submit reading response on Gradescope](https://www.gradescope.com/courses/818402/assignments/5041948)
-        * Warning! Code reading.
     * [Submit lab writeup for class 10 on Gradescope](https://www.gradescope.com/courses/818402/assignments/5024091)
         * I'd prefer that you submit after the lab.
 * Thursday, 2024-10-03
@@ -107,7 +105,7 @@ _So much stuff to discuss. Feel free to ask questions as we go._
     * Consider submitting [post-reflection for MP4](https://www.gradescope.com/courses/818402/assignments/5025144).
 * Friday, 2024-10-04
     * [Submit post-reflection for MP4](https://www.gradescope.com/courses/818402/assignments/5025144)
-* Sunday, 2024-10-06
+* sunday, 2024-10-06
     * [Submit pre-reflection for MP5](https://www.gradescope.com/courses/818402/assignments/5066323)
 * Monday, 2024-10-07
     * Readings
@@ -121,12 +119,11 @@ _So much stuff to discuss. Feel free to ask questions as we go._
         * New Development LAs
             * [Development #01: Collaboration](https://www.gradescope.com/courses/818402/assignments/5066311)
             * [Development #05: Version control](https://www.gradescope.com/courses/818402/assignments/5066313)
-            * [Development #10: Exceptions](https://www.gradescope.com/courses/818402/assignments/5066317)
+            *
         * Consult [the SoLA](../sola04) for links to LA redos.
 * Tuesday, 2024-10-08
     * [Redo of MP1](https://www.gradescope.com/courses/818402/assignments/5066068)
         * Include the file `CHANGES.md` that indicates what changes you made.
-          Our graders have limited time. Don't make them regrade from scratch.
 
 ### Tokens
 
@@ -152,7 +149,7 @@ class._
 * Tuesday, 2024-10-01, 1:00--2:15 p.m., Steiner 205.
   _Crip SpaceTime watch party_
 * Friday, 2024-10-04, 4:00-5:00 p.m., HSSC N1170 - Global Living Room.
-  _Middle of Everywhere_ (Uganda?)
+  _Middle of Everywhere_
 
 #### Peer
 
@@ -174,12 +171,10 @@ class._
 
 * Friday, 2024-10-04--Sunday, 2024-10-06. JRC 101.
   _Pioneer Weekend_
-* Frdiay, 2024-10-04, Merrill Park West (about 11th and Main).
-  _CS Picnic_
 
 ### Other good things (no tokens)
 
-* Tuesday, 2024-10-01, 4:00--6:00 p.m., Springer Field.
+* Tuesday, 2024-10-01, 4:30--6:30 p.m., Springer Field.
   _Men's Soccer vs. Knox_
 * Tuesday, 2024-10-01, 7:00--9:00 p.m., Darby.
   _Volleyball vs. Beloit_
@@ -212,25 +207,9 @@ _See [the assignment](../mps/mp04) for most of the Q&A. This section is here to 
 > If you find what seems to be an incorrect test before I do, please 
   let me know.
 
-**Do we need to write more tests than our three?**
-
-> It's up to you, but it's not required. If you do write them, I'd
-  encourage you to put them in the shared repo.
-
 ### Other administrative questions
 
-Why do you set up a 10:30 p.m. deadline?
-
-> To remind you that you should try to get to bed at a reasonable hour,
-  particularly given that you have my class at 8:00 a.m.
-
-When will we hear about tokens?
-
-> Someday.
-
-What happens when we go negative?
-
-> You lose grades. But you can catch up by the end of the semester.
+#### New
 
 ### Other questions
 
@@ -250,6 +229,9 @@ MP3
 `Circle`
   : A filled circle.
 
+`DiagonalFlip`
+  : Diagonally "flip" a block.
+
 `Ladder`
   : A ladder of a character side with vertical repetions.
 
@@ -264,9 +246,6 @@ MP3
 
 `Checkerboard`
   : Create a checkerboard of two blocks.
-
-`DiagonalFlip`
-  : Diagonally "flip" a block.
 
 `DropShadow`
   : Another block with a drop shadow added.
@@ -304,11 +283,7 @@ MP3
 MP5
 ---
 
-_Implement a basic Assistive and Augmentive Communication Device (AAC)_
-
-Fortunately, the UI is built already. You are building the back end.
-
-### Goals
+Goals:
 
 * Get you to think about accessibility.
 * Write code that fits into a larger project (even more so than in the
@@ -316,34 +291,10 @@ Fortunately, the UI is built already. You are building the back end.
 * Reuse your `AssociativeArray`s.
 * See a different model of project and assignment design.
 
-### Notes
+Note:
 
 * No Maven!
 * Not yet much of a testing infrastructure (hopefully forthcoming).
-
-Questions:
-
-**What have prior students found challenging?**
-
-> It takes a while to understand all that's expected of you, but once
-  you do, it feels surprisingly straightforward.
-
-> You will need to add at least one method to your associative arrays,
-  either `K[] getKeys()` or `String[] getKeysAsStrings()`.
-
-> At least one method has a weird design, and in addition to returning
-  a value changes the state of the system. (Probably `select`, but
-  perhaps others.)
-
-> `AACMappings` must understand that the category `""` means "go to the
-  top level.
-
-**Will we have style guidelines?**
-
-> We will not grade you on style on this project, not least because
-  Dr. Baker uses a very different style than Google Style.
-
-> Please try to write readable code in any case.
 
 Lab
 ---
@@ -352,17 +303,3 @@ The person closer to the board is Driver A. The person further from the board is
 
 Make sure that the name of the repo ends with `-maven`.
 
-**Can you explain the `DecrementableCounter` example?**
-
-> We have `Counter gamma = new DecrementableCounter(-5);`
-
-> While we can call `gamma.increment();`, we can't call `gamma.decrement()`,
-  when though we know `gamma` has a `decrement` method.
-
-> The issue is that we've told Java that `gamma` is a `Counter`, so it
-  doesn't know that it has a `decrement` method (not all `Counter` objects
-  have such a method).
-
-> The solution is to declare `gamma` as a `DecrementableCounter`.
-
-> `DecrementableCounter gamma = new DecrementableCounter(-5);`
