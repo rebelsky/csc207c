@@ -24,7 +24,7 @@ git push
 
 d. Read `Counter.java` in package `edu.grinnell.csc207.util` to make sure that you understand what `Counter` objects are expected to do.
 
-e. Open the lab on Gradescope.
+e. Open the lab on Gradescope; you should fill in answers as you go.
 
 Exercises
 ---------
@@ -227,7 +227,7 @@ d. Check your answer experimentally.
 
 e. Add a `decrement()` method to `DecrementableCounter`  This method should subtract one from the `count` field.
 
-f. What do you expect to happen if we add the follownig lines to our experiment?
+f. What do you expect to happen if we add the following lines to the end of our experiment (before the call to `pen.close()`)?
 
 ```java
     gamma.reset();
@@ -236,7 +236,7 @@ f. What do you expect to happen if we add the follownig lines to our experiment?
     pen.println("After decrementing gamma: " + gamma);
 ```
 
-g. What do you expect to happen if we add the following lines to our 
+g. What do you expect to happen if we add the following lines to the end of our 
 test?
 
 ```java
