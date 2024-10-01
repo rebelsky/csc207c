@@ -276,7 +276,7 @@ previous requirements will receive an R.
 
 ```text
 [ ] Passes all the M tests.
-[ ] No more than ten errors from `mvn checkstyle:check`.
+[ ] No more than twenty errors from `mvn checkstyle:check`.
 [ ] Added three tests to the `AssociativeArrayTests.java` file.
 [ ] One of those three tests is an edge case (preferably named as such).
 [ ] The `toString()` method appears to behave correctly. (Since the ordering
@@ -294,7 +294,7 @@ previous requirements will receive an M.
     [ ] Correctly handles `null` keys in `set`, `get`, and `hasKey`.
 [ ] All (or most) repeated code has been factored out into individual methods.
 [ ] All or most variable names are appropriate.
-[ ] No errors from `mvn checkstyle:check`.
+[ ] No more than ten errors from `mvn checkstyle:check`.
 ```
 
 Questions and Answers
