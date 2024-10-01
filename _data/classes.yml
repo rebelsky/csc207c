@@ -198,6 +198,8 @@
   lab:
     - page: /labs/inheritance.html
   eboards:
+    - page: /eboards/eboard10-1.html
+    - page: /eboards/eboard10-2.html
   
 - topic: Linear structures
   abbrev: linked-structures
