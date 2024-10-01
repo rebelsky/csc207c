@@ -1,5 +1,5 @@
 ---
-title: "Eboard 10 (Section 1): Inheritance"
+title: "Eboard 10 (Section 2): Inheritance"
 number: 10
 section: eboards
 held: 2024-10-01
@@ -16,6 +16,7 @@ _Approximate overview_
     * Upcoming work
     * Tokens
 * Questions
+* MP3
 * MP5
 * Lab
 
@@ -66,8 +67,8 @@ _So much stuff to discuss. Feel free to ask questions as we go._
     * To give you more practice writing tests.
 * The potential chaos of the shared testing repo is just a pleasant
   additional outcome.
-* Because there were style issues in the original repo, I'm increasing the
-  number of style issues permitted for M to 20 and E to 10.
+* Because there were style issues in the original repo for MP4, I'm 
+  increasing the number of style issues permitted for M to 20 and E to 10.
 * We've already had issues with the shared testing repo. I've been cleaning
   them up as we go.
     * Incorrect code was pushed (at least twice). Please make sure to
@@ -95,17 +96,19 @@ _So much stuff to discuss. Feel free to ask questions as we go._
         * [Queues](../readings/queues)
         * [Priority queues](../readings/priority-queues)
     * [Submit reading response on Gradescope](https://www.gradescope.com/courses/818402/assignments/5041948)
+        * Read and report on code.
     * [Submit lab writeup for class 10 on Gradescope](https://www.gradescope.com/courses/818402/assignments/5024091)
         * I'd prefer that you submit after the lab.
 * Thursday, 2024-10-03
     * [Mini-project 5](../mps/mp05) assigned.
     * Consider submitting [lab writeup for class 11](https://www.gradescope.com/courses/818402/assignments/5066251)
     * [Mini-project 4](../mps/mp04) due (including tests).
+        * Please try to get tests in earlier.
     * [Submit MP4 on Gradescope](https://www.gradescope.com/courses/818402/assignments/5025153)
     * Consider submitting [post-reflection for MP4](https://www.gradescope.com/courses/818402/assignments/5025144).
 * Friday, 2024-10-04
     * [Submit post-reflection for MP4](https://www.gradescope.com/courses/818402/assignments/5025144)
-* sunday, 2024-10-06
+* Sunday, 2024-10-06
     * [Submit pre-reflection for MP5](https://www.gradescope.com/courses/818402/assignments/5066323)
 * Monday, 2024-10-07
     * Readings
@@ -118,12 +121,13 @@ _So much stuff to discuss. Feel free to ask questions as we go._
             * [OOP #6: Data Abstraction](https://www.gradescope.com/courses/818402/assignments/5066257)
         * New Development LAs
             * [Development #01: Collaboration](https://www.gradescope.com/courses/818402/assignments/5066311)
-            * [Development #05: Version control](https://www.gradescope.com/courses/818402/assignments/5066313)
-            *
+            * [Development #04: Version control](https://www.gradescope.com/courses/818402/assignments/5066313)
+            * [Development #10: Exceptions](https://www.gradescope.com/courses/818402/assignments/5066317)
         * Consult [the SoLA](../sola04) for links to LA redos.
 * Tuesday, 2024-10-08
     * [Redo of MP1](https://www.gradescope.com/courses/818402/assignments/5066068)
         * Include the file `CHANGES.md` that indicates what changes you made.
+        * If you got an R or above, the first redo is free.
 
 ### Tokens
 
@@ -132,29 +136,22 @@ class._
 
 #### Academic/Scholarly
 
-* Tuesday, 2024-10-01, Noon--1:00 p.m., JRC 224A (Day PDR).
-  _CS Table: When Robots Attack (or something like that)_
-* Sunday, 2024-10-06, 7:00--9:00 p.m., Science 3819.
+* Thursday, 2024-10-04, 4:00-5:00 p.m., Science 3821.
+  _Welcome to Computer Science at Grinnell_
+* Sunday, 2024-10-06, 7:00--8:00 p.m., Science 3819.
   _Mentor Session_
 * Tuesday, 2024-10-08, Noon--1:00 p.m., JRC 224A (Day PDR).
   _CS Table_
 
 #### Cultural
 
-* Tuesday, 2024-10-01, 11:00a.m.--Noon, Bucksbaum 131.
-  _Royce Wolf Recital_
-
 #### Multicultural
 
-* Tuesday, 2024-10-01, 1:00--2:15 p.m., Steiner 205.
-  _Crip SpaceTime watch party_
 * Friday, 2024-10-04, 4:00-5:00 p.m., HSSC N1170 - Global Living Room.
-  _Middle of Everywhere_
+  _Middle of Everywhere_.
 
 #### Peer
 
-* Friday, 2024-10-04, 5:30--8:30 p.m., Natatorium.
-  _Scarlet and Black_
 
 #### Wellness
 
@@ -169,6 +166,8 @@ class._
 
 #### Misc
 
+* Friday, 2024-10-04, 5:00 p.m.-6:00 p.m., Merrill Park West.
+  _CS Picnic!_
 * Friday, 2024-10-04--Sunday, 2024-10-06. JRC 101.
   _Pioneer Weekend_
 
@@ -180,6 +179,8 @@ class._
   _Volleyball vs. Beloit_
 * Wednesday, 2024-10-02, 4:00--6:00 p.m., Springer Field.
   _Women's Soccer vs. Knox_
+* Friday, 2024-10-04, 5:30--8:30 p.m., Natatorium.
+  _Scarlet and Black_
 
 Questions
 ---------
@@ -209,8 +210,6 @@ _See [the assignment](../mps/mp04) for most of the Q&A. This section is here to 
 
 ### Other administrative questions
 
-#### New
-
 ### Other questions
 
 MP3
@@ -229,9 +228,6 @@ MP3
 `Circle`
   : A filled circle.
 
-`DiagonalFlip`
-  : Diagonally "flip" a block.
-
 `Ladder`
   : A ladder of a character side with vertical repetions.
 
@@ -246,6 +242,9 @@ MP3
 
 `Checkerboard`
   : Create a checkerboard of two blocks.
+
+`DiagonalFlip`
+  : Diagonally "flip" a block.
 
 `DropShadow`
   : Another block with a drop shadow added.
@@ -283,7 +282,9 @@ MP3
 MP5
 ---
 
-Goals:
+Build the back end for a AAC.
+
+### Goals
 
 * Get you to think about accessibility.
 * Write code that fits into a larger project (even more so than in the
@@ -291,15 +292,22 @@ Goals:
 * Reuse your `AssociativeArray`s.
 * See a different model of project and assignment design.
 
-Note:
+### Notes:
 
 * No Maven!
+* Dr. Baker uses a very different coding style than Google Style Guide for
+  Java.
+    * No style requirements in assignment.
+    * Please try to write readable code.
 * Not yet much of a testing infrastructure (hopefully forthcoming).
+
+### Questions
 
 Lab
 ---
 
-The person closer to the board is Driver A. The person further from the board is Driver B.
+The person closer to the board is Driver A. The person further from the 
+board is Driver B.
 
 Make sure that the name of the repo ends with `-maven`.
 
