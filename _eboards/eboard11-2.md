@@ -1,5 +1,5 @@
 ---
-title: "Eboard 11 (Section 1): Linear structures"
+title: "Eboard 11 (Section 2): Linear structures"
 number: 11
 section: eboards
 held: 2024-10-03
@@ -88,9 +88,6 @@ class._
 
 #### Peer
 
-* Friday, 2024-10-04, 5:30--8:30 p.m., Natatorium.
-  _Scarlet and Black_
-
 #### Wellness
 
 * Tuesday, 2024-10-08, 4:30--6:30 p.m., BRAC P103 (Dance Studio).
@@ -106,6 +103,9 @@ class._
   _Pioneer Weekend_
 
 ### Other good things (no tokens)
+
+* Friday, 2024-10-04, 5:30--8:30 p.m., Natatorium.
+  _Scarlet and Black_
 
 Questions
 ---------

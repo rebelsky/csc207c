@@ -225,6 +225,9 @@
     - page: /readings/priority-queues.html
   lab:
     - page: /labs/linear-structures.html
+  eboards:
+    - page: /eboards/eboard11-1.html
+    - page: /eboards/eboard11-2.html
   
 - topic: Array-based linear structures
   abbrev: array-based-structures
