@@ -5,6 +5,68 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester, with the newest email at the top and the oldest at the bottom._
 
+Dear Ti-Dos (a deer, a female deer),
+
+I have finished grading all the new questions on SoLA 3 as well as a few LA redos. I have a few more to go. A few more notes.
+
+## [CSC-207 2024Fa] Notes on SoLA 3 (2024-10-02)
+
+**Important!**
+
+* Don't worry if you're getting LAs wrong on the first try! Last semester, many students went from missing their first attempts at most of the LAs to getting an overall A on LAs.
+
+* Some of you have been asking about tokens and LAs. Retaking LAs is free. No tokens charged, whether you retake an LA one time or ten times (or any number in the middle).
+
+**General**
+
+* Please make sure to keep your LA submissions anonymous!
+
+* Please try to avoid introducing blank lines when you copy and paste code.
+
+* Please make sure that you've written a nontrivial portion of the sample code you provide. It's okay to include something I wrote/supplied that fits into a broader structure, but some of the code must be yours.
+
+* Please consider code excerpts rather than copying and pasting full files. For example, there's no reason the Subtype Polymorphism LA needed the full AsciiBlock code. Focusing on the three methods we need to implement (plus, perhaps, one polymorphic method) would suffice.
+
+* Please be careful about your terminology
+
+* Please use real examples, based on what we've done in class, not contrived ones. Last semester, we encountered enough issues with students borrowing code from the InterWeb and not citing it properly that I'd like to avoid such problems this semester. For example, what should I do when five of you use `BankAccount` as an example for encapsulation? Requiring that you rely on work you've done for the class helps ensure that there aren't appearances of miseuse of other code. Also, most contrived examples end up being code that no one would ever write. (In the BankAccount example, many people used a `double` for the balance. But `double` values round. You should not round the amount of money someone has.)
+
+* Please cite the original source of any of my code that you use.
+
+* Please follow our Java style guidelinese when writing code.
+
+* The people who work with your code are "client programmers", not "users".
+
+**Subtype Polymorphism**
+
+* There's more to subtype polymorphism than "I can write a class that implements an interface" or "I can subclass another class" or even "I can make multiple classes that all have methods with the same name and broad semantics". *Why* do we care about the ability to do so?
+
+* Make sure to include code that demonstrates subtype polymorphism.
+
+* There's no reason to discuss parametric polymorphism in your answer to the question on subtype polymorphism. Focus on what subtype polymorphism is, rather than what it is not.
+
+**Parametric Polymorphism**
+
+* Make sure you include an example in which you instantiate a parametric-polymorphic class with different specific types and then use the resulting object (i.e., call a method). Then explain what's going on in the method call.
+
+* There's no need to compare/contrast parameteric to subtype. Just focus on how and why we achieve and use parametric polymorphism.
+
+**Composition**
+
+* Make sure that your composition example is used in the construction of objects that include other objects; don't use a Main class to show composition.
+
+* Make sure to describe the benefits of composition other than just "I can have these fields". Your code should demonstrate you making use of the fields.
+
+**Unit Testing**
+
+* Make sure that your comments match the test you are conducting.
+
+--
+
+I think that's it. Let me know via DM if you have questions.
+
+-- SamR
+
 ## [CSC-207 2024Fa] Grade reports (2024-09-29)
 
 Dear Collaborative Testers,
