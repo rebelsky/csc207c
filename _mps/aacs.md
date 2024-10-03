@@ -9,7 +9,7 @@ collaboration: |
   Each student should submit their own responses to this project. You may
   consult other students in the class as you develop your solution.  If you
   receive help from anyone, make sure to cite them in your responses. 
-link: false
+link: true
 ---
 
 In this mini-project, you will explore (a) the use of associative arrays and other kinds of maps, (b) programming to specifications in support of a larger project, (c) dealing with conflicting approaches to Java programming (and homework assignments in CS), and (d) considering some of the issues at play in designing software for people with disabilities (as well as using software as a disabled person).
@@ -61,7 +61,11 @@ Note that you will likely need to update `AssociativeArray` to support methods l
 
 Upload your code to Gradescope using the GitHub approach. (Note that doing so takes the *current* version of your GitHub repo. If you make further changes to your repo, you will need to upload more.)
 
-## Rubric
+## Testing
+
+I may provide a test suite and instructions for using it in VSCode without Maven. Stay tuned.
+
+## Grading rubric
 
 ### Redo or above
 
@@ -113,9 +117,15 @@ previous requirements will receive an M.
 
 ### Script for **R**
 
+_Forthcoming._
+
 ### Script for **M**
 
+_Forthcoming._
+
 ### Script for **E**
+
+_Forthcoming._
 
 ## Q&A
 
