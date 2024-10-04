@@ -10,6 +10,8 @@ collaboration: |
   Each student should submit their own responses to this project. You may
   consult other students in the class as you develop your solution.  If you
   receive help from anyone, make sure to cite them in your responses.
+note: |
+  In the future, set a much earlier due date for tests.
 link: true
 ---
 _Please do not read over this mini-project until we have discussed it in class._
@@ -265,7 +267,7 @@ Submissions that fail to meet any of these requirements will get an I.
 [ ] Passes all the R tests.
 [ ] Each class has an introductory Javadoc comment that indicates the author and purpose.
 [ ] Includes a `README.md` file that contains the appropriate information
-    (authors, purpose, acknowledgements if appropriate).
+    (authors, purpose, link to GitHub repo, acknowledgements if appropriate).
 [ ] All files compile correctly.
 ```
 
