@@ -96,7 +96,7 @@ To make things even easier, the designers of Java added a special syntax
 for this type of situation, the for-each loop. 
 
 ```java
-  for String val : stuff {
+  for (String val : stuff) {
     process(val);
   } // for
 ```
@@ -323,6 +323,8 @@ public class ArrayBasedStack<T> implements Iterable<T> {
 } // class Stack<T>
 ```
 
+It will take you awhile to get used to this syntax, but it's worth getting used to; it's much easier than creating separate classes.
+
 Concluding remarks
 ------------------
 
@@ -337,7 +339,7 @@ In Java, iterables are objects that have/return iterators.
 Self Checks
 -----------
 
-### Check 1: Iterating array-based queues (‡)
+### Check 1: Iterating array-based queues
 
 Sketch or write an iterator for the array-based queue class we recently studied in lab.
 
