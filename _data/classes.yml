@@ -245,6 +245,9 @@
   note:
     - Cut out iterators
     - May need to rewrite to deal with priority queues (sorted arrays?, sorted linked structures?)
+  eboards:
+    - page: /eboards/eboard12-1.html
+    - page: /eboards/eboard12-2.html
   
 - topic: Iterators and Comparators
   abbrev: ators
@@ -274,8 +277,6 @@
     - page: /labs/iterators.html
     - page: /labs/comparators.html
   reminders:
-    - Need to rewrite the anonymous inner class reading to focus on iterators
-    - May need to write an iterator reading (don't I have one)
     - For lab, may have them implement iterators
     - Note that there are some good questions about iterators at the start
       of the array-based-lists lab.
