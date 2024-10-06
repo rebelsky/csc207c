@@ -22,7 +22,7 @@ Useful documentation
 Preparation
 -----------
 
-If you have not done so already, fork and clone the repo at <https://github.com/Grinnell-CSC207/linear-structures>.
+If you have not done so already, fork and clone the repo at <https://github.com/Grinnell-CSC207/linear-structures-maven>.
 
 Exercises
 ---------
@@ -126,9 +126,3 @@ back to the associated array-based queue.
 Implement the `remove` method for the iterator for `LinkedQueue`.  
 
 _Note_: This is a pain in the neck and may involve special cases.
-
-Acknowledgements
-----------------
-
-This lab was newly written in spring 2019.  It was revised somewhat in 
-Fall 2023 and Spring 2024.
