@@ -311,7 +311,7 @@ Make sure that the code that you're discussing comes from this class (e.g., code
 
 Code reading is more than "there's a for loop here". You should describe the design decisions embedded in the code. You should also describe the relation of the class to a larger ecosystem. (Why did someone create this class?)
 
-The specification says "_Read, understand, **and modify** code that you did not write._" I'd like to see appropriate modifications and a description of that modification.
+The specification says "_Read, understand, **and modify** code that you did not write._" I'd like to see appropriate modifications and descriptions of those modifications. (Make sure to include the modified code.)
 
 #### Development #7: Documentation
 
