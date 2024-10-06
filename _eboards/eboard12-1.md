@@ -38,7 +38,7 @@ Preliminaries
     * Readings
         *
     * [Submit readings for class 13 on Gradescope]()
-* Monday, 2024-10-15
+* Monday, 2024-10-14
     * Readings
         * 
     * [Submit readings for class 14 on Gradescope]()
@@ -47,6 +47,10 @@ Preliminaries
         * New OOP LAs
         * New Development LAs
         * Consult [the SoLA](../sola05) for links to LA redos.
+* Tuesday, 2024-10-15
+    * [Redo of MP2](https://www.gradescope.com/courses/818402/assignments/5109213)
+        * Include the file `CHANGES.md` that indicates what changes you made.
+          Our graders have limited time. Don't make them regrade from scratch.
 
 ### Tokens
 
