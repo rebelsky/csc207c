@@ -61,10 +61,19 @@ That seems straightfoward, doesn't it? But let's make our ADT a bit more complex
 `void deleteCol(int col)`
   : Delete the specified column.
 
+An extended example that demonstrates the effects of these methods can be found toward the end of the mini-project.
+
+We might also want to fill portions of the matrix.
+
+`void fillRegion(int startRow, int startCol, int endRow, int endCol, T val)`
+  : Fill the region with top boundary `startRow` (inclusive), left
+    boundary `startCol` (inclusive), bottom boundary `endRow` (exclusive),
+    and right boundary `endCol` (exclusive).
+
 `void fillLine(int startRow, int startCol, int deltaRow, int deltaCol, int endRow, int endCol, T val)`
   : Fill the elements at `(startRow, startCol)`, `(startRow + deltaRow, startCol + deltaCol)`, `(startRow + 2 * deltaRow, startCol + 2 * deltaCol)`, ... with `val`. Stop when the current row or column equals or exceeds `endRow` or `endCol`, repectively.
 
-An extended example that demonstrates the effects of these methods can be found toward the end of the mini-project.
+These methods also appear in the extended example.
 
 We should also include a few more standard methods.
 
@@ -100,7 +109,7 @@ rows: *
     +---+                    +---+---+---+
 ```
 
-Although this approach is straightforward, experience shows that it's easy to let the individual element arrays get out of synch. So we might consider other approaches.
+Although this approach is straightforward, two-dimensional arrays are a pain to manage, particularly two-dimensional arrays of values with generic types.
 
 ### Implementing matrices with single arrays
 
@@ -231,6 +240,10 @@ Note that your concrete class is `MatrixV0<T>` rather than `Matrix<T>`.
 
 In the repository, you will find a `Matrix<T>` interface and a `MatrixV0<T>` class that is intended to implements that interface.
 
+### Part three: Make a simple game
+
+As you might expect, matrices make reasonable platforms for board games, such as Othello or checkers. Create a game, which you will store in a new class in package `edu.grinnell.csc207.main`. You can find sample games in the classes `SampleGame1p` and `SampleGame2p`. 
+
 ## Submitting your work
 
 Please submit all of your work on the project to Gradescope by using the GitHub submission mechanism. 
@@ -314,7 +327,7 @@ A call to `insertCol(2)` should update the matrix to this form.  (Remember that 
     +---+---+---+---+---+---+
 ```
 
-A call to `insertCol(6, new String[] { "A", "B", "C", "D", "E", "F" })` should update the array to this form. Note that althought there was no column 6, since column 6 comes immediately after the last column, inserting at that location is permitted.
+A call to `insertCol(6, new String[] {"A", "B", "C", "D", "E", "F"})` should update the array to this form. Note that althought there was no column 6, since column 6 comes immediately after the last column, inserting at that location is permitted.
 
 ```text
       0   1   2   3   4   5   6
@@ -333,11 +346,11 @@ A call to `insertCol(6, new String[] { "A", "B", "C", "D", "E", "F" })` should u
     +---+---+---+---+---+---+---+
 ```
 
-A call to `insertCol(8, new String[] { "A", "B", "C", "D", "E", "F" })` should fail, since we are inserting beyond the bounds of the array. (Immediately after the last column or row is a special case.)
+A call to `insertCol(8, new String[] {"A", "B", "C", "D", "E", "F"})` should fail, since we are inserting beyond the bounds of the array. (Immediately after the last column or row is a special case.)
 
-A call to `insertCol(0, new String[] { "A", "B" })` should fail because we are not providing  the appropriate number of values.
+A call to `insertCol(0, new String[] {"A", "B"})` should fail because we are not providing  the appropriate number of values.
 
-A call to `insertRow(0, new String[] { "P", "Q", "R", "S", T", "U", "V" })` should update the array as follows.
+A call to `insertRow(0, new String[] {"P", "Q", "R", "S", T", "U", "V"})` should update the array as follows.
 
 ```text
       0   1   2   3   4   5   6
@@ -358,7 +371,7 @@ A call to `insertRow(0, new String[] { "P", "Q", "R", "S", T", "U", "V" })` shou
     +---+---+---+---+---+---+---+
 ```
 
-A call to `removeCol(1)` should update the array as follows.
+A call to `deleteCol(1)` should update the array as follows.
 
 ```text
       0   1   2   3   4   5   
@@ -379,7 +392,7 @@ A call to `removeCol(1)` should update the array as follows.
     +---+---+---+---+---+---+
 ```
 
-A call to `removeRow(2)` should result in the following.
+A call to `deleteRow(2)` should result in the following.
 
 ```text
       0   1   2   3   4   5   
@@ -425,13 +438,13 @@ A call to `fillLine(0, 1, 2, 1, 6, 6, " ")` should fill the cells at (0,1), (2, 
     +---+---+---+---+---+---+
  0  | Z |   | S | T | U | V |
     +---+---+---+---+---+---+
- 1  | X | Z | X |   | X | A |
+ 1  | X | Z | X | X | X | A |
     +---+---+---+---+---+---+
- 2  | X | O | Z | X | X |   |
+ 2  | X | O |   | X | X | C |
     +---+---+---+---+---+---+
  3  | X | O | X | Z | X | D |
     +---+---+---+---+---+---+
- 4  | X | O | X | X | X | E |
+ 4  | X | O | X |   | X | E |
     +---+---+---+---+---+---+
  5  | X | O | X | X | X | F |
     +---+---+---+---+---+---+
@@ -445,43 +458,101 @@ A call to `fillLine(3, 0, 0, 1, 6, 6, "-")` should fill the cells at (3,0), (3,1
     +---+---+---+---+---+---+
  0  | Z |   | S | T | U | V |
     +---+---+---+---+---+---+
- 1  | X | Z | X |   | X | A |
+ 1  | X | Z | X | X | X | A |
     +---+---+---+---+---+---+
- 2  | X | O | Z | X | X |   |
+ 2  | X | O |   | X | X | C |
     +---+---+---+---+---+---+
  3  | - | - | - | - | - | - |
     +---+---+---+---+---+---+
- 4  | X | O | X | X | X | E |
+ 4  | X | O | X |   | X | E |
     +---+---+---+---+---+---+
  5  | X | O | X | X | X | F |
     +---+---+---+---+---+---+
 ```
 
-A call to `fillLine(1, 4, 1, 0, 5, 6, "/")` should fill the cells at (1,4), (2,4), (3,4), and (4,4) with a question mark.
+
+A call to `fillLine(1, 4, 1, 0, 5, 6, "?")` should fill the cells at (1,4), (2,4), (3,4), and (4,4) with a question mark.
 
 ```text
       0   1   2   3   4   5   
     +---+---+---+---+---+---+
  0  | Z |   | S | T | U | V |
     +---+---+---+---+---+---+
- 1  | X | Z | X |   | ? | A |
+ 1  | X | Z | X | X | ? | A |
     +---+---+---+---+---+---+
- 2  | X | O | Z | X | ? |   |
+ 2  | X | O |   | X | ? | C |
     +---+---+---+---+---+---+
  3  | - | - | - | - | ? | - |
     +---+---+---+---+---+---+
- 4  | X | O | X | X | ? | E |
+ 4  | X | O | X |   | ? | E |
     +---+---+---+---+---+---+
  5  | X | O | X | X | X | F |
     +---+---+---+---+---+---+
 ```
 
-Wasn't that exciting?
+A call to `fillRegion(1, 1, 5, 4, "@")` should fill the specified region with at signs.
+
+```text
+      0   1   2   3   4   5   
+    +---+---+---+---+---+---+
+ 0  | Z |   | S | T | U | V |
+    +---+---+---+---+---+---+
+ 1  | X | @ | @ | @ | ? | A |
+    +---+---+---+---+---+---+
+ 2  | X | @ | @ | @ | ? | C |
+    +---+---+---+---+---+---+
+ 3  | - | @ | @ | @ | ? | - |
+    +---+---+---+---+---+---+
+ 4  | X | @ | @ | @ | ? | E |
+    +---+---+---+---+---+---+
+ 5  | X | O | X | X | X | F |
+    +---+---+---+---+---+---+
+```
+
+A call to `fillRegion(4, 2, 6, 6, ".")` should fill the last four cells on each of the last two rows.
+
+```text
+      0   1   2   3   4   5   
+    +---+---+---+---+---+---+
+ 0  | Z |   | S | T | U | V |
+    +---+---+---+---+---+---+
+ 1  | X | @ | @ | @ | ? | A |
+    +---+---+---+---+---+---+
+ 2  | X | @ | @ | @ | ? | C |
+    +---+---+---+---+---+---+
+ 3  | - | @ | @ | @ | ? | - |
+    +---+---+---+---+---+---+
+ 4  | X | @ | . | . | . | . |
+    +---+---+---+---+---+---+
+ 5  | X | O | . | . | . | . |
+    +---+---+---+---+---+---+
+```
+
+Wasn't that exciting? Once your class works, you should be able to replicate these figures by using `MatrixExperiments`. (However, I created them by hand.)
 
 Questions and Answers
 ---------------------
 
 _Forthcoming._
+
+### Two-dimensional arrays.
+
+**How would I declare a two-dimensional array?**
+
+> I've used `T[][] contents`.
+
+**How would I initialize that array?**
+
+> The strategy I prefer is to build the outer array of rows and then fill
+  it in with the rows.
+
+> First, `contents = T[][] = (T[][]) new Object[height][];`
+
+> Next, a for loop fills in the individual values. Here's a typical line
+  from the body. `contents[i] = (T[]) new Object[width];`
+
+> You can also write `contents = new Object[height][width];`, which
+  achieves the same goal.
 
 Citations
 ---------
