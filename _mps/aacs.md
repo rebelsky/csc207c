@@ -158,12 +158,16 @@ _Forthcoming._
 
 > I'd switch over and do the same thing in `AACMappings.java`, although that has some things that will be a bit harder to stub (such as the constructor).
 
+**Are there general themes/tips you have?**
+
+> In my experience, implementing both `AACCategory.java` and `AACMappings` is primarily an exercise in appropriate delegation. If you have an Associative Array in `AACCategory`, almost all of the method calls can be directly delegated to that Associative Array. `AACMappings` is a bit more complicated, as you will likely have both an Associative Array (that maps images to categories) and a "current" `AACCategory`. When you're at the top level, you will likely delegate to the associative array. When you're in a category, you'll delegate to the current `AACCategory`.
+
 ### Adding data
 
 **How do we add new categories?**
 
 > It seemed from the specs that categories are only created when
-  you load the file upon creating a new `AACMapppings`.  However,
+  you load the file upon creating a new `AACMappings`.  However,
   upon looking at the underlying code, I determined that any images
   on the default screen are considered categories.
 
