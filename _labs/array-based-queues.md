@@ -14,14 +14,11 @@ javadoc:
 Preparation
 -----------
 
-a. Open the [reading on linear structures](../readings/linear-structures), the
-[reading on queues](../readings/queues), the [reading on priority
-queues](../readings/linear), and the [reading on wrapper
-classes](../readings/wrappers) in new tabs.
+a. Open the [reading on linear structures](../readings/linear-structures), the [reading on queues](../readings/queues), the [reading on priority queues](../readings/linear), and the [reading on wrapper classes](../readings/wrappers) in new tabs.
 
-b. If you haven't already done so, fork and clone the repo at <https://github.com/Grinnell-CSC207/linear-structures>. Make sure to use the SSH link for cloning.
+b. If you haven't already done so, fork and clone the repo at {{ page.repo }}. Make sure to use the SSH link for cloning.
 
-c. If you haven't already done so, update the `README.md` file.
+c. If you haven't already done so, update the `README.md` file and push the updated `README.md`. (You will likely need to add a new partner to the repo.)
 
 Exercises
 ---------
@@ -30,11 +27,7 @@ Exercises
 
 _Driver: **A**_
 
-Read through `ArrayBasedQueue.java`.  You will note that the iterator
-is not yet implemented.  That's okay; we'll talk about iterators
-in the near future.  More importantly, you may also note a few
-subtle (or not so subtle) bugs.  If you do, write them down.  If
-not, that's okay, too; we'll work them out in the lab.
+Read through `ArrayBasedQueue.java`.  You will note that the iterator is not yet implemented.  That's okay; we'll talk about iterators in the near future.  More importantly, you may also note a few subtle (or not so subtle) bugs.  If you do, write them down.  If not, that's okay, too; we'll work them out in the lab.
 
 ### Exercise 2: Some basic experiments
 
@@ -50,15 +43,11 @@ Run `ArrayBasedQueueExpt` and see if you get the output that you expect.
 
 _Driver: **A**_
 
-You've probably determined that there seem to be some significant
-bugs in the queue implementation.  Can you tell where they are?
+You've probably determined that there seem to be some significant bugs in the queue implementation.  Can you tell where they are?
 
-You might learn a bit more about the bug by adding a call to
-`expt.put("d")` before the first call to `expt.get()`.
+You might learn a bit more about the bug by adding a call to `expt.put("d")` before the first call to `expt.get()`.
 
-Do your best to correct the first bug: `get` and `peek` don't seem
-to return the correct value after some point.  If you need a hint
-as to where to look, ask your instructor or mentor.
+Do your best to correct the first bug: `get` and `peek` don't seem to return the correct value after some point.  If you need a hint as to where to look, ask your instructor or mentor.
 
 Once you've fixed the bug, make sure to commit and push your updated code. (You might choose a better commit message than we chose.)
 
@@ -94,38 +83,33 @@ git push
 
 _Driver: **B**_
 
-The [reading on wrapper classes](../readings/wrappers) suggested that
-we could make a one-parameter constructor for something liked
-`ReportingLinkedStructure` that (a) sets `pen` to a `PrintWriter`
-that prints to stderr, and (b) sets `name` to the class name of
-the wrapped class and what appears to be a useful identifier.
+The [reading on wrapper classes](../readings/wrappers) suggested that we could make a one-parameter constructor for something liked `ReportingLinearStructure` that (a) sets `pen` to a `PrintWriter` that prints to stderr, and (b) sets `name` to the class name of the wrapped class and what appears to be a useful identifier.
 
-Add that code and verify that it works as advertised.  If not, figure
-out how to correct it.
+Add that constructor and verify that it works as advertised.  If not, figure out how to correct it.
+
+Commit and push your changes.
+
+```text
+git add src/main/java/edu/grinnell/csc207/linear/ReportingLinearStructure.java 
+git status
+git commit -m "Add new constructor for ReportingLinearStructure"
+git pull
+git push
+```
 
 ### Exercise 6: Testing
 
 _Driver: **B**_
 
-Up to now, we've been exploring our linear structures by manually
-comparing actual output to expected output.  As we've learned,
-computers are much better than humans at identifying trouble spots.
+Up to now, we've been exploring our linear structures by manually comparing actual output to expected output.  As we've learned, computers are much better than humans at identifying trouble spots.
 
-a. Read through the `PriorityQueue` interface we've provided
-to refresh your understanding of how priority queues are supposed
-to behave.
+a. Read through the `PriorityQueue` interface we've provided to refresh your understanding of how priority queues are supposed to behave.
 
-b. Unfortunately (or perhaps fortunately), it is difficult to write
-a test suite for an interface.  So you will instead write a test suite
-for `BuiltinPriorityQueue`, which is similar to the `JUPQadapter`
-from [the reading on wrapper classes](../readings/wrappers).  
+b. Unfortunately (or perhaps fortunately), it is difficult to write a test suite for an interface.  So you will instead write a test suite for `BuiltinPriorityQueue`, which is similar to the `JUPQadapter` from [the reading on wrapper classes](../readings/wrappers).  
 
-Your test suite should be sufficiently sophisticated that you can
-be relatively confident that it will catch appropriate errors.
+Your test suite should be sufficiently sophisticated that you can be relatively confident that it will catch appropriate errors.
 
-The `PriorityQueue` interface tells you how they should behave, so
-the only additional information you need is the constructor, which
-has the following form.
+The `PriorityQueue` interface tells you how they should behave, so the only additional information you need is the constructor, which has the following form.
 
 ```java
   /**
@@ -137,9 +121,7 @@ has the following form.
   } // BuiltinPriorityQueue(int capacity, Comparator<T>)
 ```
 
-Here are a few comparators you may find useful.  (In the future,
-we'll learn how to write these more concisely using lambdas or
-anonymous inner classes.)
+Here are a few comparators you may find useful.  (In the future, we'll learn how to write these more concisely using lambdas or anonymous inner classes.)
 
 ```java
 class StringComparator implements Comparator<String> {
@@ -169,12 +151,13 @@ class IntComparator implements Comparator<Integer> {
 } // IntegerComparator
 ```
 
+Add, commit, and push your test suite.
+
 ### Exercise 7: Adapting classes
 
 _Driver: **B**_
 
-a. Remind yourself of the methods specified by our `LinearStructure`
-interface.
+a. Remind yourself of the methods specified by our `LinearStructure` interface.
 
 b. Skim through the documentation on the standard Java implementation of priority queues, available at <{{ site.java_api }}/java/util/PriorityQueue.html>.
 
@@ -192,27 +175,17 @@ consider doing any of the following.
 
 ### Extra 1: Linked queues
 
-If you did not finish implementing linked queues in [the previous
-lab](../labs/linear-structures), do so now.
+If you did not finish implementing linked queues in [the previous lab](../labs/linear-structures), do so now.
 
 ### Extra 2: Array-based priority queues
 
-a. Read through ArrayBasedPriorityQueue.java. You will note that
-the iterator is not yet implemented and that prioritization is not
-yet implemented.
+a. Read through ArrayBasedPriorityQueue.java. You will note that the iterator is not yet implemented and that prioritization is not yet implemented.
 
-b. Make some notes to yourself as to how you might finish implementing
-the `put` and `get` methods.
+b. Make some notes to yourself as to how you might finish implementing the `put` and `get` methods.
 
-c. As [the reading](../readings/priority-queues) noted, there are
-two basic strategies for implementing priority queues in arrays.
+c. As [the reading](../readings/priority-queues) noted, there are two basic strategies for implementing priority queues in arrays.
 
-* You can keep the values in order from lowest priority to highest
-  priority. In this case, the put method must ensure that the elements
-  in the array are stored in order. (You can probably use a variant
-  of the insert method from insertion sort to achieve that goal.) 
-* You can keep the values in arbitrary order and search for the
-  highest-priorty element whenever we call get or peek.
+* You can keep the values in order from lowest priority to highest priority. In this case, the put method must ensure that the elements in the array are stored in order. (You can probably use a variant of the insert method from insertion sort to achieve that goal.) * You can keep the values in arbitrary order and search for the highest-priorty element whenever we call get or peek.
 
 Pick one and finish the implementation.
 
