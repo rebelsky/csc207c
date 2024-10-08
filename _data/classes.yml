@@ -270,17 +270,11 @@
     - page: /readings/anonymous-inner-classes.html
     - page: /readings/iterators.html
     - page: /readings/comparators.html
-    - page: /readings/priority-queues.html
     - link: "The Java Tutorial: Lambda Expressions"
       url: https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html
   lab:
-    - page: /labs/iterators.html
     - page: /labs/comparators.html
-  reminders:
-    - For lab, may have them implement iterators
-    - Note that there are some good questions about iterators at the start
-      of the array-based-lists lab.
-    - Need to write the comparators lab. Use the PQ reading?
+    - page: /labs/iterators.html
 
 - topic: Analyzing algorithms
   abbrev: analysis
