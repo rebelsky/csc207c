@@ -5,7 +5,7 @@ summary: |
   are objects that are used to compare other objects for their order,
   generalizing notions like "less than" and "greater than".
 ---
-_This reading was newly written in Fall 2024 and may have infelicities._
+_This reading was newly written in Fall 2024 and may have infelicities. Please let SamR know if you find any._
 
 As we've seen in our initial exploration of priority queues, if a priority queue is to order elements by priority, it needs a way to compare them by priority. In a functional language, like Scheme, we could have a procedure, `higherPriority?`, that takes two values as parameters and determines if the first is higher priority than the second.
 
