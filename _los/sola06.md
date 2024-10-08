@@ -32,6 +32,6 @@ _Note_
 * [Development #4: IDE]()
 * [Development #5: Version control]()
 * [Development #6: Code reading]()
-* [Development #8: Documentation]()
+* [Development #7: Documentation]()
 * [Development #10: Exceptions]()
 

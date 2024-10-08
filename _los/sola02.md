@@ -9,7 +9,7 @@ In this SoLA, we continue to emphasize fundamental aspects of software developme
 **More development LAs**
 
 * [Development #6: Code reading](https://www.gradescope.com/courses/818402/assignments/4966787)
-* [Development #8: Documentation](https://www.gradescope.com/courses/818402/assignments/4966799)
+* [Development #7: Documentation](https://www.gradescope.com/courses/818402/assignments/4966799)
 
 **OOP LAS**
 

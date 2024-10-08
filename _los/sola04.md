@@ -32,5 +32,5 @@ _In this SoLA, we explore your growth as a collaborative object-oriented program
 * [Development #3: Unit testing](https://www.gradescope.com/courses/818402/assignments/5065425)
 * [Development #4: IDE](https://www.gradescope.com/courses/818402/assignments/5065426)
 * [Development #6: Code reading](https://www.gradescope.com/courses/818402/assignments/5065427)
-* [Development #8: Documentation](https://www.gradescope.com/courses/818402/assignments/5065428)
+* [Development #7: Documentation](https://www.gradescope.com/courses/818402/assignments/5065428)
 

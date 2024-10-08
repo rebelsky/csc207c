@@ -21,6 +21,6 @@ In this SoLA, we continue to branch out into oop issues while still seeing some 
 * [Development #2: Build tools](https://www.gradescope.com/courses/818402/assignments/5015347)
 * [Development #4: IDE](https://www.gradescope.com/courses/818402/assignments/5015348)
 * [Development #6: Code reading](https://www.gradescope.com/courses/818402/assignments/5015349)
-* [Development #8: Documentation](https://www.gradescope.com/courses/818402/assignments/5015350)
+* [Development #7: Documentation](https://www.gradescope.com/courses/818402/assignments/5015350)
 * [OOP #1: Encapsulation](https://www.gradescope.com/courses/818402/assignments/5015351)
 
