@@ -1,6 +1,6 @@
 ---
 title: Iterators
-repo: <https://github.com/Grinnell-CSC207/linear-structures>
+repo: <https://github.com/Grinnell-CSC207/lab-linear-structures-maven>
 summary: |
   We explore mechanisms for constructing iterators in Java.  We
   also touch a bit on anonymous inner classes.
@@ -22,59 +22,38 @@ Useful documentation
 Preparation
 -----------
 
-If you have not done so already, fork and clone the repo at <https://github.com/Grinnell-CSC207/linear-structures-maven>.
+If you have not done so already, fork and clone the repo at {{ page.repo }}.
+
+Add today's lab partner to the `README.md` and push it.
 
 Exercises
 ---------
 
-### Exercise 1: Anonymous comparators
+### Exercise 1: Iterating array-based structures
 
 _Driver: **A**_
 
-Write a new class with a `main` method that creates a priority queue
-of strings that is ordered by string length, adds a few strings,
-and then removes the strings.  
+As you may recall, the `ArrayBasedStack` class has two fields, an array called `values` and an integer called `size`.
 
-You may use either `java.util.PriorityQueue` or `BuiltinPriorityQueue`
-for your priority queue.
-
-You should use an anonymous inner class to build the comparator for the
-priority queue.  If your `compare` method is presented with two 
-equal-length strings, it should compare them alphabetically.
-
-### Exercise 2: Iterating array-based structures
-
-_Driver: **A**_
-
-As you may recall, the `ArrayBasedStack` class has two fields, an
-array called `values` and an integer called `size`.
-
-a. Sketch (that is, make notes on but do not write the Java code for)
-an iterator for the `ArrayBasedStack` class. (You do not need to turn
-in your notes._
+a. Sketch (that is, make take notes on a whiteboard or piece of paper) an iterator for the `ArrayBasedStack` class. (You do not need to turn in your notes.)
 
 b. Compare your answer to the iterator presented in `ArrayBasedStack.java`.
 
-### Exercise 3: Iterating linked structures
+### Exercise 2: Iterating linked structures
 
 _Driver: **B**_
 
-As you may recall, the `LinkedQueue` class has two fields,
-`front` and `back`, each of which reference a node.
+As you may recall, the `LinkedQueue` class has two fields, `front` and `back`, each of which reference a node.
 
-a. Sketch (that is, make notes on but do not write the Java code for)
-an iterator for the `LinkedQueue` class. (Once again, you do not need
-to turn in your notes.)
+a. Sketch (that is, take notes on a piece of paper or whiteboard) an iterator for the `LinkedQueue` class. (Once again, you do not need to turn in your notes.)
 
 b. Compare your answer to the iterator presented in `LinkedQueue.java`.
 
-### Exercise 4: Iterating array-based queues
+### Exercise 3: Iterating array-based queues
 
-_Driver: **B**_
+_Driver: **A**_
 
-You may have noted that the `ArrayBasedQueue` class lacks an iterator.
-**Write one**.  Your iterator should present the elements starting and
-the front of the queue and ending at the back.
+You may have noted that the `ArrayBasedQueue` class lacks an iterator.  **Write one**.  Your iterator should present the elements starting and the front of the queue and ending at the back. You should implement only the `next` and `hasNext` methods.
 
 Your code will likely look something like the following.
 
@@ -100,28 +79,48 @@ private ArrayBasedQueueIterator<T> implements Iterator<T> {
 } // ArrayBasedQueueIterator<T>
 ```
 
-What to submit
---------------
+Commit and push your changes.
 
-Upload your answers to exercises 1 and 4. That is, upload the new file you created in exercise 1 and the modified version of `ArrayBasedQueue`.
+```text
+git add src/main/java/edu/grinnell/csc207/linear/ArrayBasedQueue.java
+git status
+git commit -m "Add an interator for array-based queues."
+git pull
+git push
+```
+
+### Exercise 4: Implementing `remove` in array-based queues
+
+_Driver: **B**_
+
+You may have noted that `java.util.Iterator` provides a `remove` method.  Implement that method for your iterator for `ArrayBasedQueue`.
+
+Commit and push your code.
+
+```text
+git add src/main/java/edu/grinnell/csc207/linear/ArrayBasedQueue.java
+git status
+git commit -m "Add remove to the iterator for ArrayBasedQueue."
+git pull
+git push
+```
+
+
+Submitting your work
+--------------------
+
+Answer questions on Gradescope.
 
 For those with extra time 
 -------------------------
 
 If you find that you have extra time, you should attempt the following.
 
-### Extra 1: Implementing `remove` in array-based queues
+### Extra 1: Anonymous iterators
 
-You may have noted that `java.util.Iterator` provides a `remove` method.
-Implement that method for your iterator for `ArrayBasedQueue`.
+Convert your iterator for array-based queues to an anonymous inner class.  You should now be able to do without the field that refers back to the associated array-based queue.
 
-### Extra 2: Anonymous iterators
-
-Convert your iterator for array-based queues to an anonymous inner
-class.  You should now be able to do without the field that refers
-back to the associated array-based queue.
-
-### Extra 3: Implementing `remove` in linked queues
+### Extra 2: Implementing `remove` in linked queues
 
 Implement the `remove` method for the iterator for `LinkedQueue`.  
 
