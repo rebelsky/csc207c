@@ -11,6 +11,8 @@ collaboration: |
   receive help from anyone, make sure to cite them in your responses.
 link: false
 ---
+_This project is still under development._
+
 ## Introduction
 
 We've explored Java's one-dimensional arrays and even used them to implement our own data structures, including _dynamic arrays_ and _associative arrays_. But what if we want two-dimensional arrays (sometimes referred to as "matrices")?
@@ -239,10 +241,6 @@ Note that your concrete class is `MatrixV0<T>` rather than `Matrix<T>`.
 ### Part two: Implement Matrices
 
 In the repository, you will find a `Matrix<T>` interface and a `MatrixV0<T>` class that is intended to implements that interface.
-
-### Part three: Make a simple game
-
-As you might expect, matrices make reasonable platforms for board games, such as Othello or checkers. Create a game, which you will store in a new class in package `edu.grinnell.csc207.main`. You can find sample games in the classes `SampleGame1p` and `SampleGame2p`. 
 
 ## Submitting your work
 
@@ -557,4 +555,4 @@ _Forthcoming._
 Citations
 ---------
 
-This assignment is based on [an assignment from CSC-152 1998Sp](https://rebelsky.cs.grinnell.edu/Courses/CS152/98S/Assignments/assignment.03.html).
+This assignment is loosely based on [an assignment from CSC-152 1998Sp](https://rebelsky.cs.grinnell.edu/Courses/CS152/98S/Assignments/assignment.03.html).
