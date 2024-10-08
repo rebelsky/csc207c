@@ -6,11 +6,19 @@ link: false
 
 _Note_
 
-**OOP LAs**
+**ADT/DS LAs**
 
+* [ADT/DS #02: Stacks](https://www.gradescope.com/courses/818402/assignments/5120057)
+* [ADT/DS #03: Queues](https://www.gradescope.com/courses/818402/assignments/5120063)
+* [ADT/DS #10: Array-based structures](https://www.gradescope.com/courses/818402/assignments/5120076)
 
 **Development LAs**
 
+* [Development #08: Build libraries](https://www.gradescope.com/courses/818402/assignments/5120138)
+
+**OOP LAs**
+
+* [OOP #09: Mental models](https://www.gradescope.com/courses/818402/assignments/5120088)
 
 ---
 
@@ -31,6 +39,6 @@ _Note_
 * [Development #4: IDE]()
 * [Development #5: Version control]()
 * [Development #6: Code reading]()
-* [Development #8: Documentation]()
+* [Development #7: Documentation]()
 * [Development #10: Exceptions]()
 
