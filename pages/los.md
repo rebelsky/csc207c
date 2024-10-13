@@ -29,7 +29,7 @@ I expect that by the end of the semester, you will have mastered the basics of o
     * polymorphism, including both 
          * parametric polymorphism (_OOP LO #04: Parametric Polymorphism_) and
          * subtype polymorphism (_OOP LO #05: Subtype Polymorphism_);
-* apply object-oriented design principles to separate interface from implentation (_OOP LO #06: Data abstraction_)
+* apply object-oriented design principles to separate interface from implementation (_OOP LO #06: Data abstraction_)
 * identify and use a variety of basic design patterns (_OOP LO: 07: Design Patterns_), such as Model-View-Controller, Factory, Singleton, Adapter, and Decorator;
 * identify objects and classes that will contribute to a program or solution, design those objects and classes, and implement those objects and classes (_OOP LO #08: Object Design_); and
 * describe a common layout of objects in memory (_OOP LO #09: Mental models_).
