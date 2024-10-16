@@ -11,8 +11,6 @@ collaboration: |
   receive help from anyone, make sure to cite them in your responses.
 link: true
 ---
-_This project is still under development._
-
 ## Introduction
 
 We've explored Java's one-dimensional arrays and even used them to implement our own data structures, including _dynamic arrays_ and _associative arrays_. But what if we want two-dimensional arrays (sometimes referred to as "matrices")?
@@ -79,12 +77,12 @@ These methods also appear in the extended example.
 
 We should also include a few more standard methods.
 
-`Array2D clone()`
+`Matrix clone()`
   : Make a clone of the object. (May share references to the
     underlying values.)
 
 `equals(Object other)`
-  : Determine if another object is the same as this two-dimensional array.
+  : Determine if another object is the same as this matrix.
 
 That seems like enough for now.
 
@@ -531,7 +529,65 @@ Wasn't that exciting? Once your class works, you should be able to replicate the
 Questions and Answers
 ---------------------
 
-_Forthcoming._
+### Big picture
+
+**Do we need to edit the `Matrix<T>` interface at all, or is that something we should leave alone?**
+
+> You should leave it alone.
+
+**Which implementation would you recommend to improve our coding ability?**
+
+> I'd suggest trying all three. But if you could only do one, I'd suggest doing the 2D array version to get used to multi-dimenisional arrays. It may also be the most straightforward.
+
+**Which implementation would you choose if you were implementing it yourself?**
+
+> I'd implement all three and then see which one best fitted my situation. (Of course, I'd use a hash table or something similar, rather than an associative array for the sparse matrix.)
+
+> Given a short time, I did the two-dimensional array version.
+
+**Are we expected to use a specific implementation of matrices for this mini project (1D array, 2D array, associativeArray, some other dynamically sized array)?**
+
+> You should use one of those three implementations.
+
+**Out of the three approaches, which do you recommend us do?**
+
+> I'm not sure that I have a single recommendation. It depends on your skills and your goals for the assignment.
+
+> I'd encourage you to sketch out each and then decide which is easiest for you to implement.
+
+**Will time/space complexity matter for our code now?**
+
+> I will not grade this assignment based on time or space complexity.
+
+** Are there specific performance considerations I should keep in mind when implementing the matrix?**
+
+> There are no performance constraints you must consider (other than you should try to avoid code that is observably slow).
+
+**How should I structure my tests to cover all edge cases effectively?**
+
+> I'd suggest that you strive for no more than a few assertions per test case.
+
+### Conceptual
+
+**How are interfaces used by other files and what is the reason behind creating an interface separately from them?**
+
+> We use interfaces to specify *what* we want something to do without specifying how. By using interfaces, we make it easier to swap out implementations (e.g., we might start by using matrices implemented by 2D arrays, but then realize that our code will run better if we use a different implementation).
+
+**How different would our code be if we had to generalize the structure for an array of `n` dimensions? Is it even possible?**
+
+> I suppose it's possible. We'd have to think about how to generalize many of the methods. We might also need to reconsider the design of some methods. For example, should `get` take a single parameter and return an `n`-1 dimensional matrix, or should it take an array of indices?
+
+**In this mini-project we specify that `get()` receives two parameters row and col. What strategy could we use so that `get()` can handle more parameters?**
+
+> I'd suggest passing in an array of indices (one per dimension). Java also has a "varargs" approach which, behind the scenes, is just an array.
+
+**Should I prioritize memory efficiency (associative arrays) or ease of access (array of arrays)?**
+
+> I'd prioritize ease of implementation.
+
+**Besides reassigning the indexes for every elements if we want to remove the whole row or column, what is a more efficient way for deleting so many elements?**
+
+> Unfortunately, there aren't many straightforward mechanisms for efficiently deleting large numbers of elements.
 
 ### Two-dimensional arrays.
 
@@ -551,6 +607,74 @@ _Forthcoming._
 
 > You can also write `contents = new Object[height][width];`, which
   achieves the same goal.
+
+**Are there already 2D arrays in Java? Can you initialize `String[][] = new String[10][10]`, for instance? If so, are we allowed to do that?**
+
+> That is something you could determine experimentally. But yes, you can create arrays that way.
+
+> And yes, you are allowed to do so.
+
+### Associative Arrays
+
+**How would you change existing coordinates in an Associative Array when adding a row or column? I imagine a loop inside of set() that checks if the address is already assigned, and if so calls set again with an updated address for that existing pair value, again checking if that new address exists and resetting that one, and so on, which doesn't feel like the best way to do that.**
+
+> Unfortunately, that's probably the best way to do so if we're using an associative array.
+
+### Miscellaneous
+
+**Can I assume that `deltaRow` and `deltaCol` in `fillLine` are non-negative?**
+
+> Yes.
+
+**How should we handle returning null? Will it be a problem if we are expected to return a string (or something similar)?**
+
+> `null` can serve as any type of object: a string, a `BigInteger`, even a `Matrix`, I suppose. So just return `null` as you would return any other value.
+
+**Do we need to shift all the values whenever we insert or delete columns and rows or do we have a better solution in 2D array?**
+
+> If you are using a 2D array, you'll need to shift the array. If you are using the 1D array, you'll also need to shift the array. If you're using the associative array, you'll need to update all of the keys.
+
+**What will happen when `insertRow(int row, T[] vals)` and the `vals` are more than the available column number? Do we throw error, exception, or ignore?**
+
+> As the `Matrix.java` file suggests, you will throw an `ArraySizeException` exception.
+
+**Does `fillLine` just let you make a line where you tell it where to start and how much to skip by in the x and y directions?**
+
+> Yes.
+
+**The only question I would have is whether we want this array to be dynamic (since it doesn't mention it in the instructions, I'm assuming the answer is no). If not, do we want to shift all the elements in the matrix when we remove and element?**
+
+> I'm not sure that I completely understand the question. Matrices are not dynamic in the same way that, say, Dynamic Arrays are; we don't automatically expand or contract them. However, matrices do change their size when we delete or add rows or columns. So they are dynamic in that sense.
+
+> Yes, you will have to shift elements.
+
+**When deleting rows/columns, would we just have to null the values?**
+
+You probably can't just "null" the values because you won't be able to tell the difference between nulls stored in the array and nulls used to represent "deleted". You'll need to build new arrays and shift values.
+
+**Any tips on how to efficiently handle wrap-around indexing when the matrix grows or shrinks, especially when rows and columns are deleted or inserted?**
+
+> I would not attempt wrap-around indexing!
+
+**What should happen if I try to use an index that has not been defined in the matrix?**
+
+> In general, you should throw an `IndexOutOfBoundsException`, which is a runtime exception.
+
+**How should we determine if two matrices are equal?**
+
+> They should be equal if they have the same width, height, and elements.
+
+**Could you explain more about why we may want two different constructors?**
+
+> We may not want to specify the default value (or, in other words, to have a "default" default value).
+
+**Which approach for matrix implementations would YOU choose?**
+
+> I started with 2D arrays because they seemed the most straighforward.
+
+**Are there any specific edge cases I should keep in mind for sparse matrices?**
+
+> None that come to mind.
 
 Citations
 ---------
