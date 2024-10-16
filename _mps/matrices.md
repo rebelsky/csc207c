@@ -664,6 +664,10 @@ You probably can't just "null" the values because you won't be able to tell the 
 
 > They should be equal if they have the same width, height, and elements.
 
+**In writing `equals`, I'm having trouble casting an `Object` to a `Matrix<T>`. Any suggestions?**
+
+> Java doesn't like you to cast to generic types. So you have to cast to `Matrix` rather than `Matrix<T>`. If you write `equals` correctly, it shouldn't make a difference, since you'll just be relying on `width`, `height`, and `get().equals()`.
+
 **Could you explain more about why we may want two different constructors?**
 
 > We may not want to specify the default value (or, in other words, to have a "default" default value).
