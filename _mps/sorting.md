@@ -1,5 +1,5 @@
 ---
-title: Mini-Project 6
+title: Mini-Project 8
 subtitle: Sorting out sorting
 summary: |
   In this assignment, you will further explore the implementation 

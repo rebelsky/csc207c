@@ -1,5 +1,5 @@
 ---
-title: Mini-Project 7
+title: Mini-Project 9
 subtitle: Blockchains
 summary: |
   In this assignment, you will practice working with linked structures
