@@ -301,7 +301,9 @@ Do not provide Java code, unless it helps you tell a story.
 
 #### Development #5: Version control
   
-Please include a git log from a project.
+Please include a git log from a project. You should be able to obtain the log with `git log` or `git log > FILENAME.txt`.
+
+Please explain what key aspects of that log demonstrate.
 
 Remember that the log is supposed to show collaboration. That means there should be more than one committer (or an explanation as to why there's only one committer).
 
