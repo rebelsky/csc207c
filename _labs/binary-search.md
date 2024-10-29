@@ -7,6 +7,8 @@ summary: |
   search algorithms, but explore some program design issues
   in Java.
 ---
+_Warning! This lab was newly rewritten in Fall 2024. There may be infelicities. Please send corrections to SamR._
+
 Preparation
 -----------
 
@@ -121,7 +123,7 @@ we have repeated here.
  *   A sorted array of integers
  * @param val
  *   An integer we're searching for
- * @returns
+ * @return
  *   index, an index of val (if one exists)
  * @throws Exception
  *   If there is no i s.t. values[i] == val
@@ -144,13 +146,33 @@ d. Check your answer experimentally.
 
 e. Add a few tests of your own.
 
+f. Commit your changes.
+
+```text
+git add src/test/java/edu/grinnell/csc207/TestSearch.java
+git status
+git commit -m "Add a few more tests."
+git pull
+git push
+```
+
 ### Exercise 3: Implementing binary search
 
 _Driver: **A**_
 
 Although the reading introduced a variety of techniques for designing generalized binary search algorithms, it's probably easiest to start by focusing on a single type.
 
-Implement the `binarySearch(int[], int)` method and verify that it passes the tests we've written so far. If your last name starts with a letter between A and M (inclusive) you should implement binary search iteratively. If your last name starts with a letter between N and Z (inclusive), you should implement binary search recursively.
+a. Implement the `binarySearch(int[], int)` method and verify that it passes the tests we've written so far. If your last name starts with a letter between A and M (inclusive) you should implement binary search iteratively. If your last name starts with a letter between N and Z (inclusive), you should implement binary search recursively.
+
+b. Commit and save your changes.
+
+```text
+git add src/main/java/edu/grinnell/csc207/util/SearchUtils.java
+git status
+git commit -m "Implement binary search."
+git pull
+git push
+```
 
 ### Exercise 4: Testing binary search, phase two
 
@@ -169,13 +191,23 @@ For each s from 1 to 32
   assertException(binarySearch(-1, array))
 ```
 
-Implement this test.  
+I've found this test very useful.  A surprising number of pieces of code fail just one or two of the many assertions in this test.
 
 Note also that `assert` and `assertException` are not intended to be real procedures. Rather, they indicate what you should be checking. You should call `assertBinarySearchFinds` and `assertBinarySearchFails` instead.
 
-If the test finds any bugs in your implementation of binary search, repair those bugs.
+a. Implement this test.  
 
-Note that I've found this test very useful.  A surprising number of pieces of code fail just one or two of the many assertions in this test.
+b. If the test finds any bugs in your implementation of binary search, repair those bugs.
+
+c. Commit your changes.
+
+```text
+git add src/test/java/edu/grinnell/csc207/TestSearch.java
+git status
+git commit -m "Add systematic tests of binary search."
+git pull
+git push
+```
 
 *Citation:* This test is closely based on one suggested by Jon Bentley in a _Programming Pearls_ column.
 
