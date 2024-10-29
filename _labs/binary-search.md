@@ -1,5 +1,6 @@
 ---
-title: Linear and binary Search in Java
+title: Linear and binary search in Java
+repo: <https://github.com/Grinnell-CSC207/lab-search-maven>
 summary: |
   In today's laboratory, you will explore issues pertaining to
   search in Java.  Along the way, you will not only consider the
@@ -11,34 +12,25 @@ Preparation
 
 _Driver for preparation: **A**_
 
-a. You are likely to find it useful to have <ulink
-url='../readings/search.html'>the corresponding reading</ulink>
-open in another window.
+a. Open [the corresponding reading](../readings/search.html) in another window.
 
-b. Create a new VSCode project and Java package for this lab.
-(I'd recommend that you also create a Git repository, but it's up
-to you.)
+b. Open [the documentation for `Predicate`]({{ site.java_api }}/java/util/function/Predicate.html)
 
-c. Create a new class, `Utils`, that will hold much of the library
-code that you will write today.
+c. Fork and clone the starter code for this lab from {{ page.repo }}.
 
-d. Create a new class, `Experiments`, that will hold your experiments
-for today's class.  As you might expect, `Experiments` should include
-a `main` method.
+d. Update the `README.md` file to include your name and the URL of your fork.
 
-e. Add the following declaration to the `main` method of
-`Experiments`.
+e. Commit and push your changes.
 
-```java
-    String[] tmp = 
-        new String[] { "alpha", "bravo", "charlie", "delta", "echo",
-                       "foxtrot", "golf", "hotel", "india",
-                       "juliett", "kilo", "lima", "mike", 
-                       "november", "oscar", "papa", "quebec",
-                       "romeo", "sierra", "tango", "uniform",
-                       "victor", "whiskey", "xray", "yankee", "zulu" };
-    ArrayList<String> strings = new ArrayList<String>(Arrays.asList(tmp));
+```text
+git add README.md
+git status
+git commit -m "Add our names to the README."
+git pull
+git push
 ```
+
+f. Open the repository in VSCode.
 
 Exercises
 ---------
@@ -47,49 +39,79 @@ Exercises
 
 _Driver: **B**_
 
-You may recall from the reading that we often search arrays for
-values (or just the first value) that meets some predicate.  At
-the end of the discussion, we noted that it would be even more general
-to implement a linear search for arbitrary iterable objects.
+You may recall from the reading that we often search arrays for values (or just the first value) that meets some predicate.  At the end of the discussion, we noted that it would be even more general to implement a linear search for arbitrary iterable objects.
 
-a. Write a procedure that searches an iterable for the first value
-for which a predicate holds.
+a. Open `edu.grinnell.csc207.util.SearchUtils.java` and `edu.grinnell.csc207.experiments.SearchExperiments`.
 
-```java
-/**
- * Search values for the first value for which pred holds.
- */
-public static <T> T search(Iterable<T> values, Predicate<? super T> pred) throws Exception {
-  // ...
-} // search(Iterable<T>, Predicate<? super T>)
-```
+b. Read the documentation for `search` in `SearchUtils.java`.
 
-b. What string do you think the following expression will find?
+c. You will note that `SearchExperiments.java` has an array called `tmp` and an `ArrayList` xcalled `strings`. We convert the array to an `ArrayList` because `ArrayList` objects are iterable while arrays are not. (Don't ask; I don't know the reason.)
+
+Add to the `main` method a command to search `strings` for the first element that is fewer than five letters. (You should not take advantage of your knowledge of what the word is.) It should look something like
 
 ```java
-    String ex1b = Utils.search(strings, (s) -> s.length() == 6);
+    String ex1c = SearchUtils.search(strings, ...);
 ```
 
-c. Confirm your answer experimentally.
+or, if you feel like being a bit more thorough,
 
-d. Write an expression to find the first element of `strings` that
-contains a `u`.  (You may find the `contains` method in the
-`String` class useful.)
+```java
+    try {
+      String ex1c = SearchUtils.search(strings, ...);
+      pen.println("The first string of fewer than five letters is " + ex1c);
+    } catch (Exception e) {
+      pen.println("There are no strings of fewer than five letters.");
+    } // try/catch
+```
 
-e. Do you expect to be able to use search with `tmp`?  Why or why
+d. Compile and run your code to make sure that you got the syntax right. Since you haven't implemented `search` yet, you will likely see an exception (or a report of an exception).
+
+```text
+mvn compile -q
+mvn exec:java -q
+```
+
+e. Implement the `search` procedure.
+
+f. Recompile and run your code to see if it runs as expected.
+
+g. What string do you think the following expression will find?
+
+```java
+    try {
+      String ex1g = SearchUtils.search(strings, (s) -> s.length() == 6);
+      pen.println("The first string of exactly six letters is " + ex1g);
+    } catch (Exception e) {
+      pen.println("There are no strings of exactly six letters.");
+    } // try/catch
+```
+
+h. Confirm your answer experimentally.
+
+i. Write an expression to find the first element of `strings` that contains a `u`.  (You may find the `contains` method in the `String` class useful.)
+
+j. Do you expect to be able to use search with `tmp`?  Why or why
 not.
 
-f. Check your answer experimentally.
+k. Check your answer experimentally.
 
-### Exercise 2: Binary Search in arrays of integers
+l. Save and push your changes. Make sure to add your names to these files if you haven't done so already.
+
+```text
+git add src/main/java/edu/grinnell/csc207/util/SearchUtils.java 
+git add src/main/java/edu/grinnell/csc207/experiments/SearchExperiments.java 
+git status
+git commit -m "Implement search method for iterables."
+git pull
+git push
+```
+
+### Exercise 2: Testing binary search, phase one
 
 _Driver: **A**_
 
-Although the reading introduced a variety of techniques for designing
-generalized search algorithms, it's probably easiest to start by
-focusing on a single type.
-
-Implement the following procedure.
+a. Consider the specification of `binarySearch` in `SearchUtils.java`, which
+we have repeated here.
 
 ```java
 /**
@@ -99,8 +121,8 @@ Implement the following procedure.
  *   A sorted array of integers
  * @param val
  *   An integer we're searching for
- * @result
- *   index, an integer
+ * @returns
+ *   index, an index of val (if one exists)
  * @throws Exception
  *   If there is no i s.t. values[i] == val
  * @pre
@@ -109,19 +131,32 @@ Implement the following procedure.
  * @post
  *   values[index] == val
  */
-public static int binarySearch (int[] vals, int i) throws Exception {
-  return 0;   // STUB
+public static int binarySearch(int[] vals, int i) throws Exception {
+  return 0;     // STUB
 } // binarySearch
 ```
 
-### Exercise 3: Testing our algorithm
+b. Open `TestSearch.java` (in the obvious place) and review the code.
+
+c. What do you expect to happen when we run the tests? Will the tests succeed or fail? If they fail, which part of each test will fail?
+
+d. Check your answer experimentally.
+
+e. Add a few tests of your own.
+
+### Exercise 3: Implementing binary search
+
+_Driver: **A**_
+
+Although the reading introduced a variety of techniques for designing generalized binary search algorithms, it's probably easiest to start by focusing on a single type.
+
+Implement the `binarySearch(int[], int)` method and verify that it passes the tests we've written so far. If your last name starts with a letter between A and M (inclusive) you should implement binary search iteratively. If your last name starts with a letter between N and Z (inclusive), you should implement binary search recursively.
+
+### Exercise 4: Testing binary search, phase two
 
 _Driver: **B**_
 
-Evidence suggests that (a) many programmers have difficulty implementing
-binary search coorectly and (b) many programmers do only casual testing
-of their binary search algorithm.  But it's really easy to write a
-relatively comprehensive test suit for binary search. 
+Evidence suggests that (a) many programmers have difficulty implementing binary search correctly and (b) many programmers do only casual testing of their binary search algorithm.  However, it's really easy to write a relatively comprehensive test suit for binary search. Here's one I learned by reading Jon Bentley's _Programming Pearls_.
 
 ```java
 For each s from 1 to 32
@@ -134,105 +169,37 @@ For each s from 1 to 32
   assertException(binarySearch(-1, array))
 ```
 
-Implement this test.  Note that you need not use JUnit for the testing;
-you can just write code that prints error messages if any of the assertions
-fail. 
+Implement this test.  
 
-Note also that `assert` and `assertException` are not intended to be real 
-procedures. Rather, they indicate what you should be checking. 
+Note also that `assert` and `assertException` are not intended to be real procedures. Rather, they indicate what you should be checking. You should call `assertBinarySearchFinds` and `assertBinarySearchFails` instead.
 
-For example, `assert(binarySearch(2*i, array) == i)` could be rendered
-as
+If the test finds any bugs in your implementation of binary search, repair those bugs.
 
-```
-try {
-  int result = binarySearch(2*i, array);
-  if (result != i) {
-    System.err.println("binarySearch(" + 2*i + ") returned " + result);
-  } // if
-} catch (Exception e) {
-  System.err.println("binarySearch(" + 2*i + ") threw an unexpected exception");
-} // try/catch
-```
+Note that I've found this test very useful.  A surprising number of pieces of code fail just one or two of the many assertions in this test.
 
-Similarly, `assertException(binarySearch(2*i+1, array))` could be rendered as
+*Citation:* This test is closely based on one suggested by Jon Bentley in a _Programming Pearls_ column.
 
-try {
-  int result = binarySearch(2*i + 1, array);
-  System.err.println("binarySearch(" + (2*i+1) + ") failed to throw an exception");
-} catch (Exception e) {
-} // try/catch
-
-```
-```
-
-If the test finds any bugs in your implementation of binary search, repair 
-those bugs.
-
-Note that I've found this test very useful.  A surprising number of
-pieces of code fail just one or two of the many assertions in this test.
-
-*Citation:* This test is closely based on one suggested
-by Jon Bentley in a _Programming Pearls_ column.
-
-### Exercise 4: Care In checking midpoints
+### Exercise 5: Care In checking midpoints
 
 _Driver: **A**
 
-As binary search is phrased in the reading, when we note that the
-middle element is not equal to the target value, we either set `ub`
-to `mid-1` or `lb` to `mid+1` (perhaps both).  But programmers often
-get confused by the need for the `+1` and `-1`.
+As binary search is phrased in the reading, when we note that the middle element is not equal to the target value, we either set `ub` to `mid-1` or `lb` to `mid+1` (perhaps both).  But programmers often get confused by the need for the `+1` and `-1`.
 
-Determine experimentally what happens if you leave out the `+1` and
-`-1`.  Explain why that result happens.
+Determine experimentally what happens if you leave out the `+1` and `-1`.  Explain why that result happens.
 
-### Exercise 5: An alternate approach
+### Exercise 6: An alternate approach
 
 _Driver: **B**_
 
-In implementing binary search, you either wrote a loop or a
-recursive procedure.  Write a second version of binary search
-that uses the other approach.
+In implementing binary search, you either wrote a loop or a recursive procedure.  Write a second version of binary search that uses the other approach.
 
-### Exercise 6: "Timing" search
-
-_Driver: **B**_
-
-In theory, binary search should take $$O(log_2n)$$ steps.  Does it
-really?  Augment each of your methods so that it counts the number
-of repetitions (loop) or calls (recursive procedure).  It's probably
-easiest to create global variables that you set to 0, and then
-increment at the top of the loop body or at the start of the
-procedure.
-
-Build some moderately large arrays (at least 1000 elements) to verify
-that you get the expected running times.
-
-### Exercise 7: Searching for the smallest value
+### Exercise 7: "Timing" search
 
 _Driver: **A**_
 
-a. Implement the following procedure:
+In theory, binary search should take $$O(log_2n)$$ steps.  Does it really?  Augment each of your methods so that it counts the number of repetitions (loop) or calls (recursive procedure).  It's probably easiest to create global variables that you set to 0, and then increment at the top of the loop body or at the start of the procedure.
 
-```java
-/**
- * Find the "smallest" integer in an array of integers
- */
-public static Integer smallest(Integer[] values, Comparator<Integer> compare) {
-   return null; // STUB
-} // smallest(Integer[])
-```
-
-b. Run your procedure with a comparator that does the standard
-integer comparison.
-
-c. Run your procedure with a comparator that does reverse integer
-comparison (e.g., if x < y, `compareTo(x,y)` should 
-return a positive number.
-
-d. Run your procedure with a comparator that does closest-to-zero
-comparisons.
+Build some moderately large arrays (at least 1000 elements) to verify that you get the expected running times. (I would recommend doing so in the experiments, rather than the tests.)
 
 For those with extra time
 -------------------------
@@ -242,10 +209,7 @@ exercises._
 
 ### Extra 1: Generic binary search
 
-Implement a generic binary search that takes a comparator as
-a parameter.  Once again, it should return the index of a value that
-we've found (or should throw an exception if no such character
-exists).
+Implement a generic binary search that takes a comparator as a parameter.  Once again, it should return the index of a value that we've found (or should throw an exception if no such character exists).
 
 ```java
 public static <T> int binarySearch(T[] values, T value, Comparator<T> compare) throws Exception {
@@ -255,18 +219,13 @@ public static <T> int binarySearch(T[] values, T value, Comparator<T> compare) t
 
 ### Extra 2: Testing generic binary search
 
-How could we test our generic binary search?  We could rewrite our
-tests.  Alternately, we could rewrite our integer `binarySearch`
-method to call this method.  Try the latter.
+How could we test our generic binary search?  We could rewrite our tests.  Alternately, we could rewrite our integer `binarySearch` method to call this method.  Try the latter.
 
 ### Extra 3: Searching arrays of strings.
 
-Use the generic `binarySearch` procedure to search the array of strings
-you created at the start of this lab.
+Use the generic `binarySearch` procedure to search the array of strings you created at the start of this lab.
 
 Citations
 ---------
 
-This lab is closely based on [a similar lab from the Fall 2014 section
-of 207](https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/2014F/labs/search.html).  
-
+This lab is based on [a similar lab from the Spring 2024 section of CSC-207]((https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/2014F/labs/binary-search.html). That lab, in turn, is closely based on [a similar lab from the Fall 2014 section of 207](https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/2014F/labs/search.html).  
