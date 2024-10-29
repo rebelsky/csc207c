@@ -6,6 +6,8 @@ summary: |
   search in Java.  Along the way, you will not only consider the
   search algorithms, but explore some program design issues
   in Java.
+todo: |
+  Rewrite so that we throw a specific exception for "not found".
 ---
 _Warning! This lab was newly rewritten in Fall 2024. There may be infelicities. Please send corrections to SamR._
 
