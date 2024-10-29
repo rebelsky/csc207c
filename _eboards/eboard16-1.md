@@ -24,26 +24,27 @@ Preliminaries
 ### News / Notes / Etc.
 
 * Welcome back from break!
+* Grab an official class pen.
 * It's good to be back in the class.
 * I'm struggling to catch up on everything, but I'm trying. Please DM me
   with questions.
+* I'll be leaving class a few minutes early today.
 
 ### Upcoming work
 
-* TODAY: Tuesday, 2024-10-28
-    * Consider submitting [Writeup from lab 16: Array-based structures]()
+* TODAY: Tuesday, 2024-10-29
+    * Consider submitting [Writeup from lab 16: Searching](https://www.gradescope.com/courses/818402/assignments/5237052)
+* Wednesday, 2024-10-30
+   * Submit [Writeup from lab 16: Searching](https://www.gradescope.com/courses/818402/assignments/5237052)
+   * Read [Sorting basics](../readings/sorting)
+   * Submit [Reading responses for class 17](https://www.gradescope.com/courses/818402/assignments/5237054)
 * Thursday, 2024-10-31
     * [Mini-project 7](../mps/mp07) assigned.
 * Sunday, 2024-11-03
     * [Submit pre-reflection for MP7]()
 * Monday, 2024-11-04
 * Tuesday, 2024-11-05
-    * [SoLA 6]
-    * [MP6](../mps/mp06) due
-    * [Submit MP6 on Gradescope](https://www.gradescope.com/courses/818402/assignments/5119986)
-    * [Consider submitting post-reflection for MP6](https://www.gradescope.com/courses/818402/assignments/5119978)
-* Friday, 2024-10-18
-    * [Submit post-reflection for MP6](https://www.gradescope.com/courses/818402/assignments/5119978)
+    * SoLA 7 (forthcoming)
 
 ### Tokens
 
