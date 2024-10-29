@@ -70,9 +70,10 @@ class._
 
 #### Multicultural
 
-* ???, ????-??-??, Day of the Dead Event
-* Friday, 2024-11-01, 4:00-5:00 p.m., HSSC N1170 - Global Living Room.
-  _Middle of Everywhere_ 
+* Friday, 2024-11-01, 4:00-6:00 p.m., HSSC N1170 - Global Living Room.
+  _Middle of Everywhere: Day of the Dead_ 
+* Friday, 2024-11-08, 4:00-5:00 p.m., HSSC N1170 - Global Living Room.
+  _Middle of Everywhere_
 
 #### Peer
 
@@ -80,6 +81,12 @@ class._
 
 * Friday, 2024-11-01, Noon--1:00 p.m., BRAC P103 - Multipurpose Dance Studio.
   _Yoga_.
+* Tuesday, 2024-11-05, 4:00--5:00 p.m., HSSC S1003 - Atrium.
+  _Therapy Dogs_.
+* Tuesday, 2024-11-05, 4:30--6:30 p.m., BRAC P103 - Multipurpose Dance Studio.
+  _Wellness Yoga_.
+* Tuesday, 2024-11-05, 4:30--6:30 p.m., Secret Place.
+  _Forest Bathing_.
 
 #### Misc
 
@@ -112,6 +119,8 @@ Questions
 > Yes. But I prefer if you remind me so that they get on the list (so that
   I can remind others).
 
+> Probably Nov. 5.
+
 **Do yoga and forest bathing count for tokens?**
 
 > Yes. But I prefer if you remind me so that they get on the list (so that
@@ -134,10 +143,24 @@ Make sure that the name of the repo ends with `-maven`.
 
 > Most people use `(lb + ub) / 2`.
 
-> I prefer `lb + (ub - lb) / 2`.
+> I tend to prefer `lb + (ub - lb) / 2`.
 
 > You could also use `lb / 2 + ub / 2 + ...`, where the ellipses handle the
   issue that both might be odd. This one is probably safest.
 
+**If we're writing the recursive binary search, can we write a helper?**
+
+> Of course. That's why we provided a template for one.
+
 ### Oh no! It's storytime with Sam!
 
+* On writing a correct binary search: Even professional programmers get
+  it wrong.
+* On testing binary search: There are weird points where binary search
+  goes wrong; we're not good at thinking of them. We should write a
+  comprehensive test.
+* On computing the midpoint: Even "correct" code can be incorrect if you
+  don't pay attention to all the details.
+* On bounds: It's good practice to do `lb` inclusive and `ub` exclusive.
+  Then when you do recursion, you can write `recurse(lb, mid)` combined
+  with `recurse(mid, ub)`.

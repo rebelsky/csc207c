@@ -72,9 +72,10 @@ class._
 
 #### Multicultural
 
-* ???, ????-??-??, Day of the Dead Event
-* Friday, 2024-11-01, 4:00-5:00 p.m., HSSC N1170 - Global Living Room.
-  _Middle of Everywhere_ 
+* Friday, 2024-11-01, 4:00-6:00 p.m., HSSC N1170 - Global Living Room.
+  _Middle of Everywhere: Day of the Dead_ 
+* Friday, 2024-11-08, 4:00-5:00 p.m., HSSC N1170 - Global Living Room.
+  _Middle of Everywhere_
 
 #### Peer
 
@@ -82,6 +83,12 @@ class._
 
 * Friday, 2024-11-01, Noon--1:00 p.m., BRAC P103 - Multipurpose Dance Studio.
   _Yoga_.
+* Tuesday, 2024-11-05, 4:00--5:00 p.m., HSSC S1003 - Atrium.
+  _Therapy Dogs_.
+* Tuesday, 2024-11-05, 4:30--6:30 p.m., BRAC P103 - Multipurpose Dance Studio.
+  _Wellness Yoga_.
+* Tuesday, 2024-11-05, 4:30--6:30 p.m., Secret Place.
+  _Forest Bathing_.
 
 #### Misc
 
