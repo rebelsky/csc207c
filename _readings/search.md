@@ -197,7 +197,7 @@ binarySearch(value, values, lb, ub)
   mid = midpoint(lb, ub);
   If values[mid] equals value
     return mid;
-  Else if values[mid] *lt; value
+  Else if values[mid] < value
     return binarySearch(value, values, mid+1, ub);
   Else
     return binarySearch(value, values, lb, mid-1);
