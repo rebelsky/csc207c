@@ -66,6 +66,20 @@ or, if you feel like being a bit more thorough,
     } // try/catch
 ```
 
+You have at least three mechanisms for implementing the predicate. You can use a lambda, you can use an anonymous inner class, or you can use a named class.
+
+The lambda will look like `(str) -> ...`.
+
+The anonymous inner class will look something like the following.
+
+```java
+    Predicate<String> lessThanFiveChars = new Predicate<String>() {
+      public boolean test(String str) {
+        ...
+      } // test(String)
+    };
+```
+
 d. Compile and run your code to make sure that you got the syntax right. Since you haven't implemented `search` yet, you will likely see an exception (or a report of an exception).
 
 ```text
@@ -73,7 +87,13 @@ mvn compile -q
 mvn exec:java -q
 ```
 
-e. Implement the `search` procedure.
+e. Implement the `search` procedure. You will likely need a for-each loop, which looks like this.
+
+```java
+   for (TYPE VAR : ITERABLE) {
+     ...
+   } // for
+```
 
 f. Recompile and run your code to see if it runs as expected.
 
