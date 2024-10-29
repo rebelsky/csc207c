@@ -47,7 +47,7 @@ a. Open `edu.grinnell.csc207.util.SearchUtils.java` and `edu.grinnell.csc207.exp
 
 b. Read the documentation for `search` in `SearchUtils.java`.
 
-c. You will note that `SearchExperiments.java` has an array called `tmp` and an `ArrayList` xcalled `strings`. We convert the array to an `ArrayList` because `ArrayList` objects are iterable while arrays are not. (Don't ask; I don't know the reason.)
+c. You will note that `SearchExperiments.java` has an array called `tmp` and an `ArrayList` called `strings`. We convert the array to an `ArrayList` because `ArrayList` objects are iterable while arrays are not. (Don't ask; I don't know the reason.)
 
 Add to the `main` method a command to search `strings` for the first element that is fewer than five letters. (You should not take advantage of your knowledge of what the word is.) It should look something like
 
@@ -133,7 +133,7 @@ we have repeated here.
  * @post
  *   values[index] == val
  */
-public static int binarySearch(int[] vals, int i) throws Exception {
+public static int binarySearch(int[] vals, int val) throws Exception {
   return 0;     // STUB
 } // binarySearch
 ```
