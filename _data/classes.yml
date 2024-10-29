@@ -339,12 +339,16 @@
     - page: /readings/loop-invariants.html
   lab:
     - page: /labs/binary-search.html
+  eboards:
+    - page: /eboards/eboard16-1.html
+    - page: /eboards/eboard16-2.html
 
 - topic: Sorting
   abbrev: sorting
   summary: |
     We return to the problem of sorting a list or array.
   subjects:
+    - Invariants (a slight detour)
     - The problem of sorting
     - Testing sorting algorithms
     - Insertion sort
