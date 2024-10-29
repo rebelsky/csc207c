@@ -311,12 +311,6 @@
     - Need to write the lab (or find one in PM).  Did I do so?
     - Find a reading?
 
-  lab:
-    - page: /labs/anonymous-functions.html
-  reminders:
-    - May want to rewrite the lab to use priority queues or sorted lists.
-    - May want to add a reading on sorted lists.  Or should that be an exercise?
-
 - topic: Searching
   abbrev: searching
   summary: |
