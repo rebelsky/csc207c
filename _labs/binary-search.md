@@ -182,7 +182,10 @@ _Driver: **A**_
 
 Although the reading introduced a variety of techniques for designing generalized binary search algorithms, it's probably easiest to start by focusing on a single type.
 
-a. Implement the `binarySearch(int[], int)` method and verify that it passes the tests we've written so far. If your last name starts with a letter between A and M (inclusive) you should implement binary search iteratively. If your last name starts with a letter between N and Z (inclusive), you should implement binary search recursively.
+a. Implement the `binarySearch(int[], int)` method and verify that it passes the tests we've written so far. Make sure to read the bullets below before starting your implementation.
+
+* If your last name starts with a letter between A and M (inclusive) you should implement binary search iteratively. That is, you should implement `iterativeBinarySearch` and uncomment the call to that method in `binarySearch`.
+* If your last name starts with a letter between N and Z (inclusive), you should implement binary search recursively. That is, you should implement `recursiveBinarySearch` and uncomment the call to that method in `binarySearch`.
 
 b. Commit and save your changes.
 
