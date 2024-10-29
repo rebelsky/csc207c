@@ -171,20 +171,17 @@ While elements remain
 If no elements remain, report failure
 ```
 
-But how do we "throw away" elements in an array?  Traditionally,
-we keep track of the lower and upper bounds of the portion of the
-array of interest.  So, initially, the lower bound is 0 and the
-upper bound is length - 1.
+But how do we "throw away" elements in an array?  Traditionally, we keep track of the lower and upper bounds of the portion of the array of interest. Custom suggests that when dealing with ranges, the lower-bound should be inclusive and the upper bound should be exclusive. Hence, the lower bound shold initially be 0 and the upper bound should initially be the length of the array.
 
 ```text
-While lb <= ub
+While lb < ub
   mid = midpoint(lb, ub);
   If values[mid] equals value
     return mid;
   Else if values[mid] < value
     lb = mid + 1;
   Else
-    ub = mid - 1;
+    ub = mid;
 Report Failure
 ```
 
@@ -192,7 +189,7 @@ We can also express this algorithm recursively.
 
 ```text
 binarySearch(value, values, lb, ub)
-  If (lb > ub)
+  If (lb >= ub)
     Report Failure
   mid = midpoint(lb, ub);
   If values[mid] equals value
@@ -200,12 +197,10 @@ binarySearch(value, values, lb, ub)
   Else if values[mid] < value
     return binarySearch(value, values, mid+1, ub);
   Else
-    return binarySearch(value, values, lb, mid-1);
+    return binarySearch(value, values, lb, mid);
 ```
 
-Why prefer one over the other?  I find the recursive version easier
-to analyze.  However, unless your compiler optimizes tail calls,
-the iterative version is likely to be slightly faster.
+Why prefer one over the other?  I find the recursive version easier to analyze.  However, unless your compiler optimizes tail calls, the iterative version is likely to be slightly faster. (It is unlikely that you'll have so many calls that the stack overflows.)
 
 Analyzing binary search
 -----------------------
