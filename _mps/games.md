@@ -201,10 +201,29 @@ Questions and Answers
 
 > You may do either.
 
-**Do we have to use matrices as the underlying implementatoin of our board?**
+**Do we have to use matrices as the underlying implementation of our board?**
 
 > Yes. However, you don't have to rely on all the methods. Few games allow
   you to insert/remove rows/cols.
+
+**Can our game suck as much as yours does?**
+
+> Yes. However, remember that this could be something that you show to 
+  prospective employers. Sucky games are not all that interesting.
+
+**Who is our partner?**
+
+> Your partner for today's class is your assignment partner.
+
+**Do you have suggestions on making a GUI?**
+
+> Nope. It's been about ten years since I wrote a GUI in Java.
+
+**How long should this take?**
+
+> My goal is that you should be able to write an E-level project in two-hours
+  per person. That assumes a relatively simple UI and relatively straightforward
+  game logic. You may want to shoot higher.
 
 Citations
 ---------
