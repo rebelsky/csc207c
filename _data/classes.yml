@@ -362,6 +362,7 @@
   summary: |
     We consider the classic merge sort and Quicksort algorithm.
   subjects:
+    - More on invariants
     - Lower bounds on sorting
     - Divide-and-conquer algorithms
     - An introduction to merge sort
@@ -374,9 +375,6 @@
     - page: /readings/sorting.html
     - page: /readings/mergesort.html
     - page: /readings/quicksort.html
-  lab:
-    - page: /labs/mergesort.html
-    - page: /labs/quicksort.html
 
 - topic: Doubly-linked lists
   abbrev: doubly-linked-lists
@@ -400,14 +398,12 @@
   lab:
     - page: /labs/doubly-linked-lists.html
 
-- topic: Ethical considerations (+ sorting competition)
+- topic: Ethical considerations
   abbrev: ethics
   summary: |
     We consider our responsibilities as programming professionals.
-    We also compare sorting algorithms from the latest mini-project.
   subjects:
     - Professional ethics.
-    - Sorting competition
   reading:
     - link: ACM Code of Ethics and Professional Conduct
       url: https://www.acm.org/code-of-ethics
