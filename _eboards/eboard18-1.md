@@ -1,8 +1,8 @@
 ---
-title: "Eboard 17 (Section 1): Sorting"
-number: 17
+title: "Eboard 18 (Section 1): Sorting, continued"
+number: 18
 section: eboards
-held: 2024-10-31
+held: 2024-11-05
 link: true
 ---
 # {{ page.title }}
@@ -15,61 +15,24 @@ _Approximate overview_
     * Notes and news
     * Upcoming work
     * Tokens
-* About MP7
-* Questions
-* About loop invariants
-* A exercise in writing loop invariants: Exponentiation, revisited
+* A exercise in writing loop invariants: Dutch national flag
+* Insertion sort and its analysis
+* Selection sort and its analysis
+* Divide and conquer as an algorithm design strategy
+* Merge sort
+* Quicksort
+* Can we do better?
 
 Preliminaries
 -------------
 
 ### News / Notes / Etc.
 
-* Happy halloween!
-* Grab some candy (or not, as you desire).
-* I will not charge tokens for a late reading for class 16 (provided
-  you have it in by now), since we were just getting back from break.
-* Don't forget to stop your clock for an hour at 1am on Sunday.
-* Planning for CS next semester
-    * If you don't have the "8" math requirement (208 or 218), you should
-      probably take it in the spring.
-    * CSC-211 (Organization and Architecture) is the natural next class 
-      for second-year students. (Alternative in the fall: CSC-213, operating
-      systems)
-    * CSC-324 Software Design - An extension of the "build a project"
-      stuff we've doing.
-    * CSC-301 Algorithm Analysis.
-    * CSC-261 Artificial Intelligence.
-* Requirements for the CS major
-    * CSC-151, CSC-161, and CSC-207 (you should have after this class)
-    * Math appropriate for the discpline
-        * MAT/CSC-208 (requires CSC-151 and MAT-131) or 
-          MAT-218 (requires MAT-215)
-        * One more math or statistics class above 131 creditable to
-          the math major. Typically MAT-133 or STA-209.
-    * Systems ("under the hood class"): CSC-211 or CSC-213
-    * Algorithm Analysis: CSC-301
-    * Software Design: CSC-324
-    * Theory of Computation: CSC-341
-    * Elective (could be the other CSC-211/CSC-213, CSC-261, CSC-262,
-      CSC-395, ...)
-* Can we double up?
-    * Second years are unlikely to get two CS classes.
-    * Third years may get two CS classes, particularly if they are behind
-      in the major.
-    * Seniors will likely get two CS classes if they need them.
-    * General recommendations:
-        * Don't take CSC-301 and CSC-341 in the same semester
-        * Don't take CSC-211/213 and CSC-324 in the same semester
-    * 208 is a math class. It doesn't count toward those comments.
+* We're doing another talk day. Sometimes talk days are better than
+  lab days.
 
 ### Upcoming work
 
-* Thursday, 2024-10-31
-    * No lab writeup! It's a talk day.
-    * [Mini-project 7](../mps/mp07) assigned. (Details soon.)
-* Sunday, 2024-11-03
-    * [Submit pre-reflection for MP7](https://www.gradescope.com/courses/818402/assignments/5247569)
 * Monday, 2024-11-04
     * [Merge sort](../readings/mergesort)
     * [Quicksort](../readings/quicksort)
@@ -496,10 +459,16 @@ This algorithm is better because it divides the exponent by two at least
 every-other time through the loop, which suggests that it's an $$O(logn)$$
 algorithm.
 
-_side note while analyzing above_
-
 Example: Suppose x is 5 and n is 3
 
 * 5^3 =? 2*5*(5^2) Nope
 * 5^3 =? 5*5*(5^2) Nope
 
+Loop invariants exercise: Dutch national flag
+---------------------------------------------
+
+Insertion sort and its runtime
+------------------------------
+
+Selection sort and its runtime
+------------------------------
