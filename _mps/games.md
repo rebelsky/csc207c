@@ -11,7 +11,7 @@ collaboration: |
   receive help from anyone, make sure to cite them in your responses.
 link: true
 ---
-_Warning! This assignment is in a very early draft form!_
+_Warning! This assignment is newly written for Fall 2024. There may be some infelicities._
 
 ## Introduction
 
@@ -19,19 +19,62 @@ In [a recent assignment](../mps/mp06), we explored the construction of mutable t
 
 In this intentionally open-ended assignment, you will create a new game, implemewnting both game logic and the user interface (or user interfaces). You should feel free to implement textual UI (after all, there's a convenient mechanism to print out games). However, you may find it more rewarding to explore how to create a graphical UI.
 
-## Sample games
+## A sample game
 
-The repository for this project includes two sample games, a one-player game (perhaps a "puzzle") and a two-player game that can also be played by multiple players.
+The repository for this project includes a one-player sample game that does not conform to this assignment, but may give you a sense of how a solution may look. A two-player game may follow in a few days.
 
-...
+The game is mostly intended to show off the matrix operations (e.g., inserting and removing rows and columns). 
+
+* Cells are either empty, contain an X, contain an O, or contain an asterisk. 
+    * X's are harmful elements. 
+    * O's are good elements. 
+    * Asterisks are mindless actors that consume one X or O in a neighboring 
+      cell according to a strange algorithm..
+* Your goal is to keep as many O's as possible while removing as many X's
+  as possible.
+
+The asterisk's algorithm is to look at cells in the order given by the following grid. 
+
+    1|6|7
+    -+-+-
+    5|*|4
+    -+-+-
+    8|3|2
+
+That is, it looks up and left, then down and right, then directly down, etc. etc.
+
+For example, given the following setup, it would consume the O directly below it rather than the X's to the left and right.
+
+    +-+-+-+
+    | | | |
+    +-+-+-+
+    |X|*|X|
+    +-+-+-+
+    | |O| |
+    +-+-+-+
+
+Asterisks are processed row by row, left to right (at least I think they are).
+
+You should be able to run the program once you've added working matrix code.
+
+```text
+mvn clean compile package -q
+mvn exec:java
+```
+
+You can also run the jar file if you want to use command-line parameters. For example,
+
+```text
+java -jar target/games-1.0.jar -w 10 -h 5 -s 0
+```
 
 ## The assignment
 
 This assignment has a few basic requirements:
 
-* You must use the `Matrix<T>` class from the previous assignment to represent the game board. You must also use the `set` and `get` methods from that class. (I'd also like you to consider how to use the other methods, such as inserting or removing rows.)
-* You should have separate classes for the game logic and the user interface.
-* You should implement at least one additional class (e.g., for the game pieces).
+* You must use the `Matrix<T>` interface and the `MatrixV0<T>` class from the previous assignment to represent the game board. You must also use the `set` and `get` methods from that class. (I'd also like you to consider how to use the other methods, such as inserting or removing rows.)
+* You should have separate classes for the game logic and the user interface. (The sample game does not.)
+* You should implement at least one additional class (e.g., for the game pieces or the game board). (The sample game does not.)
 
 ## Getting ready
 
@@ -79,7 +122,7 @@ You can also just click the **Sync Fork** button on your GitHub page for the for
 
 g. Add your matrices code in `src/main/java/edu/grinnell/csc207/util/`.
 
-h. Commit that codee.
+h. Commit that code.
 
 ```text
 git add src/main/java/edu/grinnell/csc207/util
@@ -95,14 +138,13 @@ i. Make sure that you can run the first sample game from the command line.
 mvn exec:java
 ```
 
-j. Update the `pom.xml` file to replace the game.
-
-```
-```
+j. Create a new package for your game (e.g., `edu.grinnell.csc207.othello`) and start working.
 
 ## Submitting your work
 
 Make sure to update the `pom.xml` file so that it starts your game, not the sample games.
+
+Make sure to update the `README.md` file to provide appropriate instructions for someone to run your game.
 
 Please submit all of your work on the project to Gradescope by using the GitHub submission mechanism. 
 
@@ -119,7 +161,7 @@ Submissions that fail to meet any of these requirements will get an I.
 [ ] Includes a `README.md` file that contains the appropriate information
     (authors, purpose, link to GitHub repo, acknowledgements if appropriate).
 [ ] All files compile correctly.
-[ ] `mvn exec:java` starts a game (other than the supplied ones).
+[ ] `mvn exec:java` starts a game (other than one of the supplied ones).
 ```
 
 ### Meets expectations or above
@@ -130,6 +172,10 @@ previous requirements will receive an R.
 ```text
 [ ] No more than fifteen errors from `mvn checkstyle:check`.
 [ ] The game appears to run through to completion.
+[ ] Includes at least three Java files in the game 
+    [ ] The game logic
+    [ ] A user interface (an ASCII UI is fine)
+    [ ] Something else (the board, pieces, etc.)
 ```
 
 ### Exemplary / Exceeds expectations
@@ -141,10 +187,14 @@ previous requirements will receive an M.
 [ ] All (or most) repeated code has been factored out into individual methods.
 [ ] All or most variable names are appropriate.
 [ ] No more than five errors from `mvn checkstyle:check`.
+[ ] Permits configuration of the game (e.g., on the command line or 
+    by prompting the user).
 ```
 
 Questions and Answers
 ---------------------
+
+_Forthcoming._
 
 Citations
 ---------
