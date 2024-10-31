@@ -353,6 +353,9 @@
   reminders:
     - Some class time talking about unit tests
     - Some class time talking about invariants
+  eboards:
+    - page: /eboards/eboard17-1.html
+    - page: /eboards/eboard17-2.html
 
 - topic: "Divide-and-conquer sorting mechanisms: Merge sort and Quicksort"
   abbrev: divide-and-conquer-sort
