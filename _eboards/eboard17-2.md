@@ -26,6 +26,7 @@ Preliminaries
 ### News / Notes / Etc.
 
 * Happy halloween!
+* Philosophical costume puzzle.
 * Grab some candy (or not, as you desire).
 * I will not charge tokens for a late reading for class 16 (provided
   you have it in by now), since we were just getting back from break.
@@ -36,30 +37,54 @@ Preliminaries
 #### Background: Grinnell's CS Major Requirements
 
 * CSC-151, CSC-161, and CSC-207 (you should have after this class)
-* Math appropriate for the discpline
+* Math appropriate for the discipline
     * MAT/CSC-208 (requires CSC-151 and MAT-131) or 
       MAT-218 (requires MAT-215)
-    * One more math or statistics class above 131 creditable to
+    * One more math or statistics class above MAT-131 creditable to
       the math major. Typically MAT-133 or STA-209.
 * Systems ("under the hood class"): CSC-211 or CSC-213
-* Algorithm Analysis: CSC-301
+* Algorithm Analysis: CSC-301 (requires 208/218)
 * Software Design: CSC-324
-* Theory of Computation: CSC-341
+* Theory of Computation: CSC-341 (requires 208/218)
 * Elective (could be the other CSC-211/CSC-213, CSC-261, CSC-262,
   CSC-395, ...)
+* At least 32 credits in CS, not counting 208 and MAPs/MIPs/Independents
 
 #### Recommendations
 
 * If you don't have the "8" math requirement (208 or 218), you should
   probably take it in the spring.
-* CSCC-211 (Organization and Architecture) is the natural next class 
+* CSC-211 (Organization and Architecture) is the natural next class 
   for second-year students. 
 * CSC-324 Software Design - An extension of the "build a project"
   stuff we've doing.
 * CSC-301 Algorithm Analysis.
 * CSC-261 Artificial Intelligence.
 
-#### Questions
+#### Notes
+
+* We expect that every student who wants a course beyond CSC-207 will get 
+  a course.
+* Our priority system says "We prioritize everyone getting one class over
+  anyone (except graduating seniors) getting two courses." How the Registrar
+  implements that is unknown.
+* IGNORE THIS. There's nothing to hear/see.
+* Will networks and security ever be offered? I don't know. Probably not in 
+  the 2-credit form. The department is (hopefully) hiring four faculty for
+  next year: two new tenure-line faculty (one to replace Prof. Perlmutter, one
+  expansion) and two visiting faculty (one to replace Rebelsky on leave and
+  one to replace a combination of five course on leave), so it will depend
+  a bit on their interests.
+* We would prefer that you preregister for the one CS course you want. Sam
+  will re-verify with Chair Osera.
+* How do we indicate "any section"? Sam will check with the Registrar. You
+  can't. Watch the enrollments and on Friday, switch to the one with the
+  smallest enrollments. And then switch again. And again. And again.
+    * Take game theory in economics to learn how to win the registration game
+* Will taking CSC-105 count against a major class? It shouldn't. Sam will
+  check with Chairsera.
+* 208 does not count as a CS class in the "everyone gets at least one CS
+  class". You help ensure that by registering for it at MAT-208.
 
 ### Upcoming work
 
@@ -117,9 +142,6 @@ class._
 
 #### Peer
 
-* Thursday, 2024-10-31, 4:00-6:00 p.m., CRSSJ.
-  _Lending Library Trick or Treat Event_.
-
 #### Wellness
 
 * Friday, 2024-11-01, Noon--1:00 p.m., BRAC P103 - Multipurpose Dance Studio.
@@ -139,15 +161,13 @@ About Mini-Project 7
 --------------------
 
 Write a game. Use a matrix as the board. Use good OO-design. Make it
-configurable.
+configurable. Don't spend too much time. Work with a partner.
 
 Your partner is your partner from today's class. (Yes, we will eventually 
 partner up.)
 
 Questions
 ---------
-
-### Administrative
 
 ### Readings
 
@@ -156,7 +176,81 @@ Questions
 **Can you go over the running time/analysis for the linear and binary 
   searches again?**
 
-> Yup.
+> Linear search, really informal. Linear search looks at the elements
+  one by one until it finds one that matches some criteria. We will
+  assume that looking at the next element is a contant-time operation
+  (for arrays, array indexing is a constant-time operation; for most
+  iterators, we pretend that getting the next element is a constant-time
+  operation). At worst, we look at every element. So we spend $$O(nc)$$
+  where $$c$$ is the constant-time per "look at element" and $$n$$ is the
+  number of elements. Big-O says "throw away constant multipliers (and
+  lower-order terms), so this is just $$O(n)$$.
+
+> Binary search, a bit more formal. At worst, each time through binary
+  the main loop (recursion), the middle element doesn't match, so we
+  throw away exactly half the elements.
+
+> Tne time to search an array of N elements is a constant (to compute and
+  look at the middle elements) plus the time to search one half.
+
+> When there's only one element left, it's also constant time. We'll pretend
+  it's the same constant.
+
+> $$T(n) = c + T(n/2)$$
+
+> $$T(1) = c$$
+
+> We want to put the two equations in closed form (not recursive). We
+  should now about four techniques for doing so.
+
+> 1. Bottom-up. We start with the $$T(1)$$, then figure $$T(2)$$, etc.
+
+> > $$T(1) = c$$ [1 is $$2^0$$]
+
+> > $$T(2) = c + T(2/2) = c + T(1) = c + c = 2c$$ [2 is $$2^1$$]
+
+> > $$T(3) = c + T(3/2) = c + T(2) = c + 2c = 3c$$ (or maybe 2c; optional)
+
+> > $$T(4) = c + T(4/2) = c + T(2) = c + 2c = 3c$$ [4 is $$2^2$$]
+
+> > $$T(8) = c + T(8/2) = c + T(4) = c + 3c = 4c$$ [8 is $$2^3$$]
+
+> > $$T(16) = c + T(16/2) = c + T(8) = c + 4c = 5c$$ 
+
+> > We should see a patten (I hope).
+
+> > $$T(2^k) = c + kc = (k + 1)c$$
+
+> > Let $$n = 2^k$$, which means $$k = log2(n)$$
+
+> > $$T(n) = (log2(n) + 1)c$$
+
+> > $$T(n) \in O(log2(n))$$ 
+    (throw away constant multipliers and lower-order terms)
+
+> 2. Top-down
+
+> > $$T(n) = c + T(n/2)$$
+
+> > $$T(n) = c + c + T((n/2)/2) = 2c + T(n/4)$$
+
+> > $$T(n) = 2c + c + T((n/4)/2) = 3c + T(n/8)$$
+
+> > $$T(n) = 3c + c + T((n/8)/2) = 4c + T(n/16)$$
+
+> > $$T(n) = ic + T(n/2^i)$$ "It's so obvious" - BS
+
+> > Let n = 2^k.
+
+> > $$T(n) = kc + T(n/n) = kc + c = (k + 1)c.$$
+
+> > $$T(n) = (log2(n) + 1)c$$
+
+> > $$T(n) \in O(log2(n))$$
+
+> 3. Draw a recursion tree
+
+> 4. Use the master theorem.
 
 **When is it worth the time spent sorting the array in order to make binary 
   search possible vs when should we just use linear search?**
@@ -173,11 +267,19 @@ Questions
 
 #### Big-O
 
+**Why does Sam write $$T(n) \in O(f(n))$$ instead of $$T(n) = O(f(n))$$?
+
+> $$T(n)$$ is a function.  $$O(f(n))$$ is a set of functions. Rarely is
+  a function equal to a set of functions.
+
+> Most computer scientists (and even mathematicians) are nonetheless casual
+  about big-O notation and write things like $$T(n) = O(f(n))$$.
+
 **Should we understand the formal definition of Big-O?**
 
 > Yes. The formal definition lets us reason about various aspects of
-  Big-O, such as "we can ignore constants" and "we can ignore lower-order
-  terms".
+  Big-O, such as "we can ignore constant multiplers" and "we can ignore 
+  lower-order terms".
 
 **Is it better to be able to analyze algorithms or should we memorize?**
 
@@ -185,13 +287,27 @@ Questions
   interviews (or just don't want to embarrass yourself in front of your
   faculty) you should memorize the running times of key algorithms.
 
-**Should we be able to do space analsis?**
+**Should we be able to do space analysis?**
 
 > It would be nice. But it's the same concept.
 
 **Can you go over tight Big-O again?**
 
-> Yup. 
+> Suppose $$f(n) = 3n + 17$$.  
+
+> $$f(n) \in O(n)$$. 
+
+> We also know that $$f(n) \in O(3n^3 + 17)$$
+
+> We also know that $$f(n) \in O(n^100)$$ (as long as n is bigger than 1.2 or
+  so)
+
+> The first is the only useful one, because the curves "match", as it were.
+
+> That's what we mean by a tight bound.
+
+> Why not to use $$$=$$$ revisited. $$$f(n) = O(n)$$$.  $$$f(n) = O(n^3)$$$.
+  If we believe in transitivity of equality, $$O(n) = O(n^3)$$. Whoops.
 
 **Can we use the master theorm in the SoLA because it was in the textbook?**
 
@@ -326,19 +442,63 @@ element is? (This seems wrong and very inneficient.)**
 
 ### Miscellaneous
 
+### Administrative
+
 About loop invariants
 ---------------------
 
 Concept: Think carefully about the state of the system 
 
-Benefits: 
+Benefits: More likely to write correct code. More likely to find an
+algorithm.
+
+Methodology: Try to find a correct and useful statement about the state
+of the system, try to ensure that it remains correct. Ensure that the
+loop terminates.
 
 Loop invariants exercise: Exponentiation, revisited
 ---------------------------------------------------
 
 We had an exponentiation algorithm using repeated multiplication. 
+We did $$n$$ multiplications. Each multiplication is a constant-time
+operation. So that algorithm is in $$O(n)$$.
 
-To compute $$x^n$$, that algorithm required .... 
+Can we do better?
+
+If $$n$$ is even, $$x^n = (x^2)^(n/2)$$. For example, $3^8 = 9^4 = 81^2 = 6561^1$
+
+Repeated division of the exponent by 2 can make a very fast algorithm.
+
+```
+/**
+ * Compute x^n.
+ */
+public static BigInteger expt(BigInteger x, int n) {
+  BigInteger base = x;
+  int exponent = n;
+  BigInteger muliplier = BigInteger.one;        
+     // Intended to hold the multiplication from the odd exponents
+                                        
+  // Let's try to write an invariant that relates base, exponent,
+  // x, and n. 
+  // multiplier * (base^exponent) = x^n
+  while (exponent > 0) {
+    if ((exponent % 2) == 0) {
+      // b^e = (b^2)^(e/2) if e is even.
+      base = base.multiply(base);
+      exponent = exponent / 2;
+    } else {
+      // b^e = b*(b^(e-1)) if e is odd.
+      multipler = multiplier.multiply(base);
+      exponent = exponent - 1;
+    } // while
+  } //
+
+  return muliplier;
+} // expt
+```
+
+To compute $$x^n$$, that algorithm required $$O(logn)$$
 
 A computer scientist should always ask "Can we do better?"
 
