@@ -300,7 +300,9 @@ Make sure that your answer would not apply to a more basic program editor.
 Do not provide Java code, unless it helps you tell a story.
 
 #### Development #5: Version control
-  
+ 
+Make sure to explain what version control is / what version control software helps you do.
+
 Please include a git log from a project. You should be able to obtain the log with `git log` or `git log > FILENAME.txt`.
 
 Please explain what key aspects of that log demonstrate.
