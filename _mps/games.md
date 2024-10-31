@@ -194,7 +194,17 @@ previous requirements will receive an M.
 Questions and Answers
 ---------------------
 
-_Forthcoming._
+### Big picture
+
+**Do we have to invent our own game or can we use an existing game like
+  Othello or Sudoku?**
+
+> You may do either.
+
+**Do we have to use matrices as the underlying implementatoin of our board?**
+
+> Yes. However, you don't have to rely on all the methods. Few games allow
+  you to insert/remove rows/cols.
 
 Citations
 ---------
