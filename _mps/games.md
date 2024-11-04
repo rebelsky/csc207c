@@ -196,34 +196,91 @@ Questions and Answers
 
 ### Big picture
 
-**Do we have to invent our own game or can we use an existing game like
-  Othello or Sudoku?**
+### Game choice/design
+
+**Do we have to invent our own game or can we use an existing game like Othello or Sudoku?**
 
 > You may do either.
 
 **Do we have to use matrices as the underlying implementation of our board?**
 
-> Yes. However, you don't have to rely on all the methods. Few games allow
-  you to insert/remove rows/cols.
+> Yes. However, you don't have to rely on all the methods. Few games allow you to insert/remove rows/cols.
 
 **Can our game suck as much as yours does?**
 
-> Yes. However, remember that this could be something that you show to 
-  prospective employers. Sucky games are not all that interesting.
+> Yes. However, remember that this could be something that you show to prospective employers. Sucky games are not all that interesting.
 
-**Who is our partner?**
+**Can we implement a card or casino game?**
 
-> Your partner for today's class is your assignment partner.
+> Most card games don't use a matrix/grid, so that wouldn't follow the requirement that you use a matrix as the game board. Card games are also a bit more complex because this will likely be a "complete knowledge" situation (that is, everyone sees all the pieces). However, if you can identify a card game that uses a grid, you can feel free to implement it. 
+
+**Can we implement a "zero-player" game, like Conway's game of life?**
+
+> Sure. ALife is an okay approach.
+
+**Can we implement chess or checkers?**
+
+> Sure.
+
+**Can we implement something like Wordle, using cells to show letters?**
+
+> I suppose it meets the requirements.
+
+### GUIs
 
 **Do you have suggestions on making a GUI?**
 
 > Nope. It's been about ten years since I wrote a GUI in Java.
 
+**To what extent can we incorporate code that we find as long as we cite it (i.e. for graphics)?**
+
+> As long as you cite it? As much as you want.
+
+**A demo of using some native java library, like swing, to animate some object would be insightful.**
+
+> I'm sure it would. Unfortunately, I don't have time for that. That's why I've said that an ASCII interface will be fine.
+
+### Miscellaneous
+
+**Who is our partner?**
+
+> Your partner for today's class is your assignment partner.
+
 **How long should this take?**
 
-> My goal is that you should be able to write an E-level project in two-hours
-  per person. That assumes a relatively simple UI and relatively straightforward
-  game logic. You may want to shoot higher.
+> My goal is that you should be able to write an E-level project in two-hours per person. That assumes a relatively simple UI and relatively straightforward game logic. You may want to shoot higher.
+
+**How were you able to represent a 8x8 grid by a simple number? There are 64 spots and each spot could have 4 possibilities ( Nothing, X, O, *).**
+
+> It's the number I use to initialize the random number generator. Once the RNG is initialized, it produces a predictable sequence of outputs. I generate a random number for each square and, depending on the value, decide on what to put in the square.
+
+**If there is a game we want to recreate that involves expanding the dimensions of the board (like the grid that we would display to users) to no limit, would it be harmful at a certain point to have the board expand without any set limit?**
+
+> I think it should be okay to keep expanding the board. I suppose we'll find out if we're not.
+
+**If we are making a multiplayer game where players have 'hands' that should be kept hidden from other players, is there a good way to represent this in Java with what we have used thus far (Text IO, Windowed environment)?**
+
+> I don't know of a good way to keep things hidden. This may have to be a "complete information" game like chess or checkers.
+
+**What resources would you recommend us to go over to create the GUI for this assignment? Would you say it's something we can learn from the scratch today and be able to implement a decent one in a few days?**
+
+> Yes, I think you can learn how to build a simple grid-base GUI in a few hours. Unfortunately, I don't have a good recommendation. I might look and see what's going on in the AAC code. But I'd start with text.
+
+**How do you make sure you've thought of all the edge cases for your own code?**
+
+> Practice. Look at common edge cases.
+
+**Are there tips for counting lines of four efficiently?**
+
+> I don't have one, and it may not be worth your time even if there is one, since it's likely to be non-trivial. Start with the naive code and see where you go from there.
+
+**How should I check if the game is a draw?**
+
+> It depends on the game rules. If neither player can play, it's an obvious draw.
+
+**Can the game's difficulty (choose between easy, medium or hard) be considered a configuration for the E requirement?**
+
+> Yes.
 
 Citations
 ---------
