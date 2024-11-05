@@ -375,6 +375,9 @@
     - page: /readings/sorting.html
     - page: /readings/mergesort.html
     - page: /readings/quicksort.html
+  eboards:
+    - page: /eboards/eboard18-1.html
+    - page: /eboards/eboard18-2.html
 
 - topic: Doubly-linked lists
   abbrev: doubly-linked-lists
