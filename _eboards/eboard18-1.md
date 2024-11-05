@@ -335,7 +335,7 @@ for (i = 1; i < n; i = i*2) {
 
 > So this algorithm is actually $$O(n)$$. That is our tight bound.
 
-What process should we use for finding the big-O bound?
+**What process should we use for finding the big-O bound?**
 
 > For recursive algorithms, write a recurrence relation and then solve it.
 
