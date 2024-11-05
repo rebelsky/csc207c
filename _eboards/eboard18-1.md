@@ -503,6 +503,7 @@ Key idea: Divide the array into two parts, one of which is sorted and the
 other of which is unprocessed. We then repeatedly move elements from the
 unprocessed part into the sorted part.
 
+```text
 +-----------------+-------------------------------+
 |    Sorted       |     Unprocessed               |
 +-----------------+-------------------------------+

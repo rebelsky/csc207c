@@ -45,7 +45,7 @@ _Adapted from my colleague, Nicole Eikmeier._
 
 * Consider limiting your screen time.
 * Engage in activities that nourish you: podcasts (non-political), music 
-  (listen or make), journal, read, spend time in nature, etc.
+  (listen or make), journal, read, spend time in nature, hang with friends, etc.
 * Take care of yourself: Prioritize sleep, eat nutritious food, move
   your body, etc.
 * Reach out to your emotional supports: family, friends, mentors,
@@ -82,12 +82,12 @@ class._
 
 #### Academic/Scholarly
 
-* Tuesday, 2024-11-05, Noon--1:00 p.m., JRC 224A (Day PDR).
-  _CS Table: AI for Archaeology_
 * Thursday, 2024-11-07, 4:00--5:00 p.m., Science 3821.
-  _CS Extras: ???_
+  _CS Extras: Decisions Diagrams_
 * Sunday, 2024-11-10, 7:00--8:00 p.m., Science 3819.
   _Mentor Session_
+* Tuesday, 2024-11-12, Noon--1:00 p.m., JRC 224A (Day PDR).
+  _CS Table: TBD_
 
 #### Cultural
 
@@ -99,7 +99,7 @@ class._
 
 #### Multicultural
 
-* Friday, 2024-11-08, Global Living Room.
+* Friday, 2024-11-08, 4:00--5:00 p.m., Global Living Room.
   _Middle of Everywhere_
 
 #### Peer
@@ -129,7 +129,8 @@ Questions
 
 ### Registration and related stuff
 
-**Will preregistering for two CS courses increase our chance of getting one CS class?**
+**Will preregistering for two CS courses increase our chance of getting 
+  one CS class?**
 
 > Probably not. But we haven't done the full game-theoretical analysis.
   PM suggests that you should only preregister for two CS classes if you
@@ -196,14 +197,18 @@ amazing reports?**
 
 > Perl.
 
-**Snarky comment on Sam.**
-
-> -10 tokens to someone.
-
 **Can SoLA 8 appear today so that I can stress about SoLA problems rather 
 than about the election?**
 
 > Yes. When I find a free hour. Probably by 7pm or so.
+
+**Do you know when mini-projects will be graded?**
+
+> No.
+
+**Do you know when mini-project redos will be posted?**
+
+> No.
 
 ### Sorting
 
@@ -216,8 +221,8 @@ than about the election?**
 > Note also that it doesn't use merge sort; it uses a variant of merge sort.
 
 > Remember that there are constant multipliers that Big-O ignores. So
-  another $$O(nlogn)$$ algorithm might be better. Also, as I noted, insertion
-  sort can be much faster on a mostly-sorted array.
+  another $$O(nlogn)$$ algorithm might be better. Also, as I noted, 
+  insertion sort can be much faster on a mostly-sorted array.
 
 > Also: `Arrays.sort` uses Quicksort for many types.
 
@@ -258,6 +263,30 @@ sorting algorithm?**
   last name, our elements will be in order by the complete name (provided
   the sorting algorithm is stable).
 
+> Sorted by first name
+
+> ```
+    Audry Smith
+    Bishop Jones
+    Charlie Davidson
+    Devon Jones
+    Echo Jones
+    Fern Davidson
+    Gabe Smith
+```
+
+> Sort by last name, preserving order
+
+> ```
+    Charlie Davidson
+    Fern Davidson
+    Bishop Jones
+    Devon Jones
+    Echo Jones
+    Audry Smith
+    Gabe Smith
+```
+
 **What are some specific strategies to ensure stability?**
 
 > It depends on the sorting algorithm. In general, when you are swapping
@@ -272,7 +301,8 @@ sorting algorithm?**
 > In merge sort, if you have equal elements in the two subarrays, take
   an element from the left subarray before the right subarray.
 
-> In Quicksort, you're generally screwed. Quicksort is not stable.
+> In Quicksort, you're generally screwed. In-place Quicksort is not 
+  stable.
 
 > At times, stability is something we have to analyze after we've
   completed the algorithm. That is, we check if the algorithm is stable
@@ -351,6 +381,43 @@ for (i = 1; i < n; i = i*2) {
 
 > Sure.
 
+> Loose bound technique: Count the number of times the outer loop runs;
+  Count the worst case of number of times the inner loop runs for each 
+  instance of the outer loop. Multiply.
+
+> Outer loop is O(logn)
+
+> Inner loop is O(n)
+
+> Loose upper bound is O(nlogn).
+
+> Tight bound technique: Do much more careful counting.
+
+> Think of the inner loop as just computing `count += i`.
+
+> When i is 1, the inner loop runs one time.
+  The total cost for n of 1 is therefore 1.
+
+> When i is 2, the inner loop runs 2 times.
+  The total cost for n of 2 is therefore 1 + 2 = 3.
+
+> When i is 4, the inner loop runs 4 times.
+  The total cost for n of 4 is therefore 3 + 4 = 7.
+
+> When i is 8, the inner loop runs 8 times.
+  The total cost for n of 8 is therefore 7 + 8 = 15.
+
+> When i is 16, the inner loop runs 16 times.
+  The total cost for n of 16 is therefore 15 + 16 = 31.
+
+> The pattern (based on n): 2n-1.
+
+> $$2n-1 \in O(nlogn)$$. But we have a tighter bound (not $$O(n^2logn)$$.
+
+> Central things for tight bounds: Drop constant multipliers; drop
+  lower-order terms. The constant multipler is 2, the lower-order
+  term is -1, so it's in $$O(n)$$.
+  
 **What process should we use for finding the big-O bound?**
 
 > For recursive algorithms, write a recurrence relation and then solve it.
@@ -366,56 +433,297 @@ for (i = 1; i < n; i = i*2) {
 
 > Practice.
 
-Invariants review
------------------
+**Why is the outer loop O(logn)?**
+
+> Pattern of outer loop. i = 1. i = 2. i = 4. i = 8. ... i = n/2. i = n.
+
+> We want to count how many times we doubled i.
+
+> Fortunately, there's a mathematical formula for "the number of times you
+  have to double 1 to get n" (alernately, the number of times you have to
+  divide n by 2 to get 1). It's log2(n).  
+
+> log2(n) and log(n) are equivalent
+  in Big-O terms.
+
+Loop invariants review
+-----------------------
+
+A loop invariant is a statement about the state of the program.
+
+If they are true before the execution of the body of a loop, they should
+be true at the end of the body of the loop.  
+
+Ideally, the invariant is a *useful* statement. In fact, if we know the
+loop terminates, the invariant should tell us that the loop has achieved
+its goal.
+
+We can write invariants as text, as drawings, as mathematical statements.
 
 Insertion sort and its analysis
 -------------------------------
 
-Key idea: 
+Key idea of in-place insertion sort: Split the array into two parts.
+The first part is a sorted version of the first `i` elements; the
+other part contains the remaining (unprocessed) elements.
 
 Invariant:
 
 ```text
-+-------------------------------------------------+
-|                                                 |
-+-------------------------------------------------+
++-------------------+-----------------------------+
+|     Sorted        |     Unprocessed             |
++-------------------+-----------------------------+
+                    |
+                    i
 ```
 
-Code using invariants:
+We want to write insertion sort using this invariant.
 
-```java
 ```
+public static void insertionSort(int[] ints) {
+  // +-------------------+-----------------------------+
+  // |     Sorted        |     Unprocessed             |
+  // +-------------------+-----------------------------+
+  //                     |
+  //                     i
+  for (i = 1; i < n; ++) {
+    // +-------------------+-----------------------------+
+    // |     Sorted        |X    Unprocessed             |
+    // +-------------------+-----------------------------+
+    //                     |
+    //                     i
+      
+    // Insert X into the appropriate place in Sorted
+    //   ...
+
+    // +---------------------+---------------------------+
+    // |     Sorted (inc. X) |   Unprocessed             |
+    // +---------------------+---------------------------+
+    //                       |
+    //                       i+1
+  } // for
+} // insertionSort
+```
+
+Is the invariant true throughout the body of the loop? While we're looking
+for the correct place to put the element, the sorted portion may become
+unsorted.
 
 Example:
 
 ```text
-+---+---+---+---+---+---+---+---+---+---+---+---+
-|   |   |   |   |   |   |   |   |   |   |   |   |
-+---+---+---+---+---+---+---+---+---+---+---+---+
++---+---+---+---+---+---+---+
+| 8 | 1 | 2 | 7 | 7 | 0 | 7 |
++---+---+---+---+---+---+---+
 ```
+
+Initially
+
+```text
++---+---+---+---+---+---+---+
+| 8 | 1 | 7 | 2 | 7 | 0 | 7 |
++---+---+---+---+---+---+---+
+    |
+    i=1
+```
+
+Insert the 1
+
+1 is less than 8, so we swap with the 8.
+
+```text
++---+---+---+---+---+---+---+
+| 1 | 8 | 7 | 2 | 7 | 0 | 7 |
++---+---+---+---+---+---+---+
+    |
+    i=1
+```
+
+1 is at the left border, so we can't do anything else. We're done inserting.
+
+Increment i
+
+```text
++---+---+---+---+---+---+---+
+| 1 | 8 | 7 | 2 | 7 | 0 | 7 |
++---+---+---+---+---+---+---+
+        |
+        i=2
+```
+
+Insert 7
+
+7 is less than 8, so we swap
+
+```text
++---+---+---+---+---+---+---+
+| 1 | 7 | 8 | 2 | 7 | 0 | 7 |
++---+---+---+---+---+---+---+
+        |
+        i=2
+```
+
+7 is not less than 1, so we're done inserting. Increment i
+
+```text
++---+---+---+---+---+---+---+
+| 1 | 7 | 8 | 2 | 7 | 0 | 7 |
++---+---+---+---+---+---+---+
+            |
+            i=3
+```
+
+Insert the 2. Is 2 less than 8? Yes. Swap.
+
+```text
++---+---+---+---+---+---+---+
+| 1 | 7 | 2 | 8 | 7 | 0 | 7 |
++---+---+---+---+---+---+---+
+            |
+            i=3
+```
+
+Does the invariant hold? No. But that's okay.
+
+Is 2 less than 7? Yes. Swap.
+
+```text
++---+---+---+---+---+---+---+
+| 1 | 2 | 7 | 8 | 7 | 0 | 7 |
++---+---+---+---+---+---+---+
+            |
+            i=3
+```
+
+Is 2 less than 1? No. Stop. Increment i.
+
+```text
++---+---+---+---+---+---+---+
+| 1 | 2 | 7 | 8 | 7 | 0 | 7 |
++---+---+---+---+---+---+---+
+                |
+                i=4
+```
+
+Is 2 less than 1? No. Stop. Increment i.
+
+### Analysis of insertion sort
+
+Loose analysis: Outer loop runs n times; inner loop could be as bad as n-1. $$O(n^2)$$
+
+Tight analysis: The first instance of the inner loop runs 1 time. The second runs two times. The third runs three times. ... THe last one runs n-1 times.
+
+1 + 2 + 3 + ... + n-1.
+
+Formula: $$n(n-1)/2 = n^2/2 - n/2 \in O(n^2)$$. Damn.
 
 Loop invariants exercise: Dutch national flag
 ---------------------------------------------
 
+The Dutch national flag consists of three stripes, red, white, and blue.
+Suppose we have a collection of values. Each value can be red, white, or
+blue. We want to rearrange them (in place) so they are in the order
+all the reds, then all the whites, then all the blues.
+
+We're going to have a section of reds, a section of whites, a section of blues, and an unprocessed section.
 
 ```text
 +------------+-------------+-------------+-------------+
-|            |             |             |             |
+|   Red      |   White     |   Blue      |XUnprocessed |
 +------------+-------------+-------------+-------------+
-             |             |             |
-             
+             |             |             |             |
+             r             w             b             n
 ```
 
 ```text
 +------------+-------------+-------------+-------------+
-|            |             |             |             |
+|  Red       |   White     |XUnprocessed |   Blue      |
 +------------+-------------+-------------+-------------+
-             |             |             |
+             |             |             |             |
+             r             w             b             n
 ```
+
+Goal: Get the first remaining unprocessed element into the right section
+in constant time. If it's constant time, our DNF algorithm will be $$O(n)$$.
 
 What loop does this suggest? That is, what does your loop body look like
 so that you maintain the invariant?
+
+RWUB invariant
+
+```
+int r = ...;
+int w = ...;
+int b = ...;
+while (b < n) {
+  // +------------+-------------+-------------+--------------+
+  // |  Red       |   White     |   Blue      |X Unprocessed |
+  // +------------+-------------+-------------+--------------+
+  //              |             |             |              |
+  //              r             w             b              n
+  if A[b] is Red 
+    // +------------+-------------+-------------+--------------+
+    // |R Red      R|W  White    W|B  Blue     B|R Unprocessed |
+    // +------------+-------------+-------------+--------------+
+    //              |             |             |              |
+    //              r             w             b              n
+    swap(A, r, w);
+    // +------------+-------------+-------------+--------------+
+    // |R Red      R|B  White    W|W  Blue     B|R Unprocessed |
+    // +------------+-------------+-------------+--------------+
+    //              |             |             |              |
+    //              r             w             b              n
+    swap(A, r, b)
+    // +------------+-------------+-------------+--------------+
+    // |R Red      R|R  White    W|W  Blue     B|B Unprocessed |
+    // +------------+-------------+-------------+--------------+
+    //              |             |             |              |
+    //              r             w             b              n
+    r++;
+    w++;
+    b++;
+    // +--------------+-------------+-------------+------------+
+    // |R Red      R R| White    W W| Blue     B B|Unprocessed |
+    // +--------------+-------------+-------------+------------+
+    //                |             |             |            |
+    //                r             w             b            n
+  else if A[b] is White 
+    // +------------+-------------+-------------+--------------+
+    // |  Red       |   White     |B  Blue      |W Unprocessed |
+    // +------------+-------------+-------------+--------------+
+    //              |             |             |              |
+    //              r             w             b              n
+    swap(A, w, b);
+    // +------------+-------------+-------------+--------------+
+    // |  Red       |   White     |W  Blue      |B Unprocessed |
+    // +------------+-------------+-------------+--------------+
+    //              |             |             |              |
+    //              r             w             b              n
+    w++;
+    b++;
+    // +------------+---------------+-------------+------------+
+    // |  Red       |   White      W| Blue       B|Unprocessed |
+    // +------------+---------------+-------------+------------+
+    //              |               |             |            |
+    //              r               w             b            n
+  else // if A[b] is Blue
+    // +------------+-------------+-------------+--------------+
+    // |  Red       |   White     |   Blue      |B Unprocessed |
+    // +------------+-------------+-------------+--------------+
+    //              |             |             |              |
+    //              r             w             b              n
+    b++
+    // +------------+-------------+---------------+------------+
+    // |  Red       |   White     |   Blue       B|Unprocessed |
+    // +------------+-------------+---------------+------------+
+    //              |             |               |            |
+    //              r             w               b            n
+} // while
+  // +------------+-------------+-------------+
+  // |  Red       |   White     |   Blue      |
+  // +------------+-------------+-------------+
+  //              |             |             |              |
+```
 
 Selection sort and its analysis (if time)
 -----------------------------------------
@@ -429,10 +737,90 @@ Invariant:
 Divide and Conquer
 ------------------
 
+We've seen two O(n^2) sorting algorithms: insertion sort and selection sort.
+
+When faced with an algorithm, a computer scientist should ask "Can I do better?"
+
+One strategy: Divide and conquer. Divide the input into two (or more) parts. Recursively solve the problem for some or all of the parts. Combine the solutions.
+
+The combination will depend upon how we divide (and our goals).
+
+Divde-and-conquer sorts will divide the input in half, recurse on each half, and then combine.
+
+The combination will depend upon how we divide.
+
 Merge sort and its analysis
 ---------------------------
 
-Key idea: 
+Key idea: Divide and conquer, using positions to determine the middle.
+
+```text
++---+---+---+---+---+---+---+---+
+| 1 | 2 | 7 | 8 | 7 | 0 | 7 | 3 |
++---+---+---+---+---+---+---+---+
+```
+
+Magically sort both halves.
+
+```text
++---+---+---+---+---+---+---+---+
+| 1 | 2 | 7 | 8 | 0 | 3 | 7 | 7 |
++---+---+---+---+---+---+---+---+
+```
+
+Combine those into one sorted array. Create a new array. Add "pointers"
+to the current position in each subarray. Copy appropriately and advance
+pointers.
+
+```text
++---+---+---+---+---+---+---+---+
+| 1 | 2 | 7 | 8 | 0 | 3 | 7 | 7 |
++---+---+---+---+---+---+---+---+
+  *               *
+
++---+---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+---+
+```
+
+0 is smaller than 1, copy the 0, advance the right pointer.
+
+```text
++---+---+---+---+---+---+---+---+
+| 1 | 2 | 7 | 8 | 0 | 3 | 7 | 7 |
++---+---+---+---+---+---+---+---+
+  *                   *
+
++---+---+---+---+---+---+---+---+
+| 0 |   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+---+
+```
+
+1 is smaller than 3, copy the 3, advance the left pointer.
+
+```text
++---+---+---+---+---+---+---+---+
+| 1 | 2 | 7 | 8 | 0 | 3 | 7 | 7 |
++---+---+---+---+---+---+---+---+
+      *               *
+
++---+---+---+---+---+---+---+---+
+| 0 | 1 |   |   |   |   |   |   |
++---+---+---+---+---+---+---+---+
+```
+
+2 is less than 3, copy the 2, advance the left pointer.
+
+```text
++---+---+---+---+---+---+---+---+
+| 1 | 2 | 7 | 8 | 0 | 3 | 7 | 7 |
++---+---+---+---+---+---+---+---+
+          *           *
+
++---+---+---+---+---+---+---+---+
+| 0 | 1 | 2 |   |   |   |   |   |
++---+---+---+---+---+---+---+---+
+```
 
 Quicksort
 ---------
