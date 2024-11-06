@@ -266,6 +266,14 @@ This LA is also less open-ended. I will give you a particular ADT (or at least i
 
 The analysis part of data structure design means that you analyze the running time of your methods using bit-O notation (A).
 
+#### ADTs/DSs #14: Iterators
+
+Make sure to describe the basic purpose of iterators.
+
+While you may choose a data structure I implemented, make sure that you implemented the iterator.
+
+You need not implement the `remove` method.
+
 ### Software design and development
 
 #### Development #1: Collaboration
