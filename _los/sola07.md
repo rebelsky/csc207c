@@ -4,7 +4,7 @@ link: true
 ---
 # {{ page.title }}
 
-_In this SoLA, we continuebranching out into algorithms._
+_In this SoLA, we continue branching out into algorithms._
 
 **New Algorithm LAs**
 
