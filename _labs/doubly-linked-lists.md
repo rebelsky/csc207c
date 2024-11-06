@@ -1,7 +1,7 @@
 ---
-title: Doubly-linked lists and circularly-linked lists
+title: Doubly-linked lists 
 summary: |
-  We explore the implications of doubly- and circularly-linked lists.
+  We explore the implications of doubly-linked lists.
 repo: <https://github.com/Grinnell-CSC207/lab-linked-lists-maven>.
 prereqs: |
   [Interfaces](../readings/interfaces).
