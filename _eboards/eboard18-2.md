@@ -72,8 +72,15 @@ _Adapted from my colleague, Nicole Eikmeier._
 * Friday, 2024-11-08
     * [Submit post-reflection for MP7](https://www.gradescope.com/courses/818402/assignments/5247571)
 * Monday, 2024-11-11
-    * Another SoLA. Sam hopes to have grades on the prior SoLAs ready 
-      long before this is due.
+    * [SoLA 8](../los/sola08)
+        * New ADT/DS LAs
+            * [ADT/DS 11: Linked structures](https://www.gradescope.com/courses/818402/assignments/5276571)
+            * [ADT/DS 12: Design ADTs](https://www.gradescope.com/courses/818402/assignments/5276572)
+            * [ADT/DS 13: Design data structures](https://www.gradescope.com/courses/818402/assignments/5276574)
+            * [ADT/DS 14: Iterators](https://www.gradescope.com/courses/818402/assignments/5276576)
+        * New OOP LA
+             * [OOP 8: Object design](https://www.gradescope.com/courses/818402/assignments/5276578)
+        * Sam expects to be have prior SoLAs graded by the weekend.
 
 ### Tokens
 
