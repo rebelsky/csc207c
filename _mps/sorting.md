@@ -4,7 +4,7 @@ subtitle: Sorting out sorting
 summary: |
   In this assignment, you will further explore the implementation 
   of sorting algorithms.
-repository: https://github.com/Grinnell-CSC207/sorting-mini-project
+repo: https://github.com/Grinnell-CSC207/mp-sorting-maven
 collaboration: |
   Each student should submit their own responses to this project. You may
   consult other students in the class as you develop your solution.  If you
@@ -13,73 +13,130 @@ link: true
 ---
 # {{ page.title }} : {{ page.subtitle }}
 
-_This assignment is still in draft form._
+_This assignment has been significantly updated for Fall 2024. It likely contains imperfections. If you notice any, please let SamR know._
 
 Summary: {{ page.summary }}
 
-Repository: <{{ page.repository }}>
+Repository: <{{ page.repo }}>
 
 ## Background: A generic sorting interface
 
-As you might expect, we want to be able to switch sorting algorithms depending on a variety of circumstances, particularly characteristics we know about the data (e.g., that they are mostly in order or perhaps mostly reverse sorted).  Hence, rather than writing static `sort` methods, it may be more useful to define a generic `Sorter` interface and use that.  You may even recall that we wrote such an interface.  Here's a slight variant of that interface.
+As you might expect, we want to be able to switch sorting algorithms depending on a variety of circumstances, particularly characteristics we know about the data (e.g., that they are mostly in order or perhaps mostly reverse sorted).  Hence, rather than writing static `sort` methods, it may be more useful to define a generic `Sorter` interface and use that.  Here's one such interface.
 
-```
+```java
 /**
- * Things that know how to sort homogeneous collections.
+ * Things that know how to sort arrays of values.
+ *
+ * @author Samuel A. Rebelsky
+ *
+ * @param <T>
+ *   The type of value in the array.
  */
-public interface Sorter {
+public interface Sorter<T> {
   /**
    * Sort an array in place.
    *
-   * @param vals, an array to sort.
-   * @param order, the order by which to sort the values.
-   * @return
-   *    The same array, now sorted.
-   * @pre
-   *    order can be applied to any two values in vals.
-   * @pre
-   *    VALS = vals.
+   * @param values
+   *   an array to sort.
+   *
    * @post
-   *    vals is a permutation of VALS.
+   *   The array has been sorted according to some order (often
+   *   one given to the constructor).
    * @post
-   *    For all i, 0 < i < vals.length,
-   *      order.compare(vals[i-1], vals[i]) <= 0
+   *   For all i, 0 < i < vals.length,
+   *     order.compare(vals[i-1], vals[i]) <= 0
    */
-  public <T> void sort(T[] values, Comparator<? super T> order);
-} // interface Sorter
+  public void sort(T[] values);
+} // interface Sorter<T>
 ```
+
+## Preparation
+
+a. Fork the repository at {{ page.repo }}.
+
+b. Clone that repository.
+
+```text
+cd ~/CSC207/MPs                 # Or the directory of your choice
+git clone git@github.com:USERNAME/mp-sorting-maven.git
+```
+
+c. Open the project in VSCode.
+
+d. Update the `README.md` appropriately.
+
+e. Push the updated `README` to GitHub.
+
+```text
+cd ~/CSC207/MPs/                # Or the directory of your choice
+cd mp-sorting-maven
+git add README.md
+git status
+git commit -m "Update README."
+git pull
+git push
+```
+
+f. Add an upstream repository just in case I make changes.
+
+```text
+cd ~/CSC207/MPs/                # Or the directory of your choice
+cd mp-sorting-maven
+git remote add upstream https://github.com/Grinnell-CSC207/mp-sorting-maven
+```
+
+In the future, you can grab changes using the following.
+
+```text
+git fetch upstream
+git merge upstream/main
+```
+
+You can also just click the **Sync Fork** button on your GitHub page for the fork.
 
 ## Part one: Testing
 
 As I hope you know by now, when writing a small or medium-sized function or class, we should begin by writing test cases for the function or class.
 
-In the file `SortTester.java`, add at least five test cases for `Sorter<T>` objects.
+In the file `SortTester.java`, add at least five test cases for `Sorter<T>` objects. (The system is designed so that every test you put in `SortTester` is now available to test all four sorting algorithms.)
 
-## Part two: Insertion sort
+## Part two: Implement common sorts
+
+### Insertion sort
 
 Create a new class, `InsertionSort`, that implements insertion sort.  The repo should include a framework for the class.
 
-## Part three: Merge sort
+### Selection sort
 
-In class, you implemented (or started to implement) merge sort.  Create a new class, `MergeSort`, that implements merge sort.  The repo should include a framework for the class.
+Create a new class, `SelectionSort`, that implements insertion sort.  The repo should include a framework for the class.
 
-## Part four: Quicksort
+### Merge sort
 
-In class, you implemented (or started to implement) Quicksort.  Create a new class, `QuickSort`, that implements Quicksort.  The repo should include a framework for the class. (We'll be doing some of this in class immediately after break.)
+Create a new class, `MergeSort`, that implements merge sort.  The repo should include a framework for the class.
 
-## Part five: Your own sort
+### Quicksort
 
-In practice, one of the most popular sorting algorithms in TimSort.  You should read [the original documentation for TimSort](https://github.com/python/cpython/blob/main/Objects/listsort.txt) as a starting point in understanding it (it's good practice to read the documentation that programmers write for other programmers), but you might find the [Wikipedia page](https://en.wikipedia.org/wiki/Timsort) a bit more comprehensible.
+Create a new class, `QuickSort`, that implements Quicksort.  The repo should include a framework for the class.
 
-Using the ideas from TimSort or anything else you find, implement the fastest (in practice) sorting algorithm you can come up with.
+Once you've identified a pivot, I would recommend that you use the Dutch National Flag algorithm to partition the subarray into (a) things less than the pivot, (b) things equal to the pivot, and (c) things greater than the pivot.
 
-We will hold a competition in class to see whose sorting algorithm wins on different kinds of inputs.  Winners will receive acclaim from their instructor, mentors, and classmates.
+## Part three: Your own sort
 
-Please name your class `LastFirstSort`.  For example, mine would be `RebelskySamuelSort`.
+In practice, the best sorting algorithms do something a bit more clever. For example, it may be good to switch from merge sort to insertion sort once you reach a small enough subarray, or one that is mostly ordered.
 
-On this part of the mini-project, _and **only** on this part of the mini-project, you may use ChatGPT or other LLM as a programming assistant.  If you do so, make sure to provide appropriate citations.  I'd appreciate it if you'd also add a short note about the experience of using ChatGPT.
+Write your own sorting algorithm that attempts to do better than all of the prior $$O(nlogn)$$ sorting algorithms. You might pre-scan the input to look for patterns that suggest a particular algorithm, you might switch algorithms for small enough arrays, you might find something else clever to do.
 
-Note that your sorting mechanism is expected to be efficient in most cases. You should strive for no worse than O(n^2).
+Please name your class `LastFirstSort`.  For example, mine would be `RebelskySamuelSort`. Please do not reference methods in your other classes.
+
+Include a description of your approach in your README file.
+
+You should also add a tester for your sort to make sure that it works correctly. (The pattern of the other testers should make that straightforward.)
+
+I will hold a competition to see whose sorting algorithm wins on different kinds of inputs. Winners will receive acclaim as well as an extra token or two.
+
+On this part of the mini-project, _and **only** on this part of the mini-project_, you may use Copilot or other LLM as a programming assistant.  If you do so, make sure to provide appropriate citations.  I'd also appreciate it if you'd also add a short note about the experience of using CoPilot.
+
+Note that your sorting mechanism is expected to be efficient in most cases. You should strive for no worse than $$O(n^2)$$.
 
 ## Rubric
 
@@ -103,14 +160,17 @@ Submissions that fail to meet any of these requirements but meet all
 previous requirements will receive an R.
 
 ```
+[ ] Added new tests to `SortTests.java`.
+[ ] No more than fifteen errors from `mvn checkstyle:check`.
 [ ] Appears to follow Google Java style guidelines for indentation and such.
 [ ] All sorting routines pass Sam's tests (conveniently available in
-    examples/sorting/SortTools.java).
+    `SortTools.java`.
     [ ] Insertion sort
+    [ ] Selection sort
     [ ] Merge sort
     [ ] Quicksort
     [ ] Your own sort
-[ ] Added new tests to `SortTests.java`.
+[ ] `README.md` includes a description of the new sorting algorithm.
 ```
 
 ### Exceeds expectations
@@ -118,26 +178,40 @@ previous requirements will receive an R.
 ```
 [ ] All (or most) repeated code has been factored out into individual methods.
 [ ] All or most variable names are appropriate.
-[ ] `SortTester.java` algorithmically generates multiple tests.
-[ ] Particularly good/clever individual sorting method.  (Basically,
-    anything that's expected O(nlogn).
+[ ] No more than five errors from `mvn checkstyle:check`.
+[ ] One or more of the new tests in `SortTester.java` algorithmically 
+    generates multiple tests.
+[ ] Appropriately decomposes each sorting algorithm.
+    [ ] Insertion sort has a separate `insert` method.
+    [ ] Selection sort has a separate `select` method.
+    [ ] Merge sort has a separate `merge` method.
+    [ ] Quicksort has a separate `partition` method.
 [ ] All sorts work with the empty array.
 [ ] Only makes one helper array in `MergeSort`.
 ```
 
 ## Questions and answers
 
-Does my sort have to be stable?
+**Does my sort have to be stable?**
 
 > Nope.
 
-Can I use ChatGPT on this assignment?
+**Can I use ChatGPT, Copilot, or similar AI tool on this assignment?**
 
-> As per class policies, you may NOT use ChatGPT on parts 1--4.  I have,
-  however, made an exemption to class policies for Part 5.  You may
-  use ChatGPT on Part 5 provided you cite it and provide a short 
-  narrative about your experience doing so.
+> As per class policies, you may NOT use ChatGPT on parts one and two. I have, however, made an exemption to class policies for Part three.  You may use ChatGPT on Part three provided you cite it and provide a short narrative about your experience doing so.
 
-Can I talk to my peers about the assignment?
+**Can I talk to my peers about the assignment?**
 
 > Of course.
+
+## Additional notes
+
+The project also includes an (untested and still under development) version of a `SortTools` class. That class can be used to find arrays large enough that sorting is worth timing. It can also be used to run simple competitions between different sorters.
+
+Here's a typical session (to be updated once Sam implements some sorting algorithms).
+
+```text
+$ mvn compile -q
+$ java -cp target/classes edu.grinnell.csc207.main.SortTools time edu.grinnell.csc207.sorting.Quicksorter
+```
+
