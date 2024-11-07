@@ -400,6 +400,9 @@
     - page: /readings/doubly-linked-lists.html
   lab:
     - page: /labs/doubly-linked-lists.html
+  eboards:
+    - page: /eboards/eboard19-1.html
+    - page: /eboards/eboard19-2.html
 
 - topic: Ethical considerations
   abbrev: ethics
