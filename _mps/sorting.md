@@ -52,7 +52,7 @@ public interface Sorter<T> {
 
 ## Preparation
 
-a. Fork the repository at {{ page.repo }}.
+a. Fork the repository at <{{ page.repo }}>.
 
 b. Clone that repository.
 
@@ -221,6 +221,10 @@ previous requirements will receive an R.
 > I implemented insertion sort in about five minutes, including documentation and running tests. I implemented selection sort in about five minutes, including documentation (there's more of it) and running tests.
 
 > Remember that (a) I first implemented each of these algorithms before any of you were born (and before many of my colleagues in the department were born) and (b) I've been teaching these algorithms since any of you were born.
+
+**If I use randomness, isn't there a chance that my algorithm will be inconsistent; sometimes fast and sometimes slow?**
+
+> Certainly. The competition has multiple rounds to help alleviate such issues.
 
 ## Additional notes
 
