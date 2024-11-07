@@ -192,6 +192,14 @@ previous requirements will receive an R.
 
 ## Questions and answers
 
+**Is this an individual or group project?**
+
+> I'd like each of you to have the experimence of writing the four key sorting algorithms, so it is an individual project.
+
+**There are lots of different Quicksorts out there. Do you care which we implement?**
+
+> You can implement whichever you want, provide it has the key aspects of Quicksort. (UM): Divide and conquer algorithm, divide by a pivot (hopefully close to median), and rely on randomness to hope that get a good pivot.
+
 **Does my sort have to be stable?**
 
 > Nope.
