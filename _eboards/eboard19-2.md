@@ -106,6 +106,9 @@ class._
 
 #### Peer
 
+* Friday, 2024-11-08, ???, Harris.
+  _Diwali events_
+
 #### Wellness
 
 * Tuesday, 2024-11-12, 4:30--6:30 p.m., BRAC P103 - Multipurpose Dance Studio.
@@ -141,6 +144,16 @@ Questions
 **Do you charge tokens for late post-reflections if we submit the MP late?**
 
 > No.
+
+### MP8 (sort of)
+
+**How does randomness work on the computer?**
+
+> Ideally: You have a real random source and can query it.
+
+> Normally: Pseudo-random-number-generators which use some fancy math
+  (that Sam forgets) to generate a sequence of numbers that has the
+  properties we'd expect of a random sequence. [What normal Java does.]
 
 ### MP7
 
@@ -222,9 +235,28 @@ public class RandomMove {
 
 Options for "What next?"
 
-Note: We've seen this kind of idea before. When?
+* Swap the thing from the end into the location, then set it to null.
+    * `swap(this.moves, pos, this.size - 1);`
+    * `this.moves[this.size - 1] = null`
+    * $$O(1)$$
+* You don't really need to set the last element to null.
+    * $$O(1)$$
+* You could assign rather than swapping.
+    * `this.moves[pos] = this.moves[this.size - 1];`
+    * `this.moves[this.size - 1]` = null;`
+    * $$O(1)$$
+* We could also shift everything down, just like they do in arraylists.
+    * $$O(n)$$
+
+Note: We've seen this kind of idea before. When? We did the same thing (or
+talked about doing the same ting) with associative arrays.
 
 Lessons:
+
+* Make sure you know the running time of the methods you use.
+* Make it a pratice to ask "can I do better"?
+* Object-oriented decomposition might involve building a new class.
+* Sometimes the side aspects of projects are also important to remember.
 
 ### Doubly linked lists
 
@@ -288,7 +320,7 @@ Lessons:
 > Iterators let us hide the internals of the class but still allow people
   to visit all of the elements.
 
-**How can I create a heterogenous linked list class by myself?**
+**Can I create a heterogenous linked list class by myself?**
 
 > Just just any of the linked-list strategies and make the value field 
   in each node hold `Object` values.
@@ -315,4 +347,13 @@ Lessons:
 Lab
 ---
 
-You know the drill. However, today's drill is a bit different.
+You know the drill. However, today's drill is a bit different. You'll be
+filling out the lab as you go. And, although I'm providing you with code,
+I don't want you to read the code until you've sketched the algorithms.
+
+Cool methods people came up with:
+
+* `boolean atFront()`
+* `boolean atEnd()`
+* `void swapWith(Node2<T> other)`
+
