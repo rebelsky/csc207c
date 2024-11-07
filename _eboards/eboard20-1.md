@@ -1,8 +1,8 @@
 ---
-title: "Eboard 19 (Section 1): Linked lists"
-number: 19
+title: "Eboard 20 (Section 1): Ethics, revisited"
+number: 20
 section: eboards
-held: 2024-11-08
+held: 2024-11-11
 link: true
 ---
 # {{ page.title }}
@@ -15,8 +15,8 @@ _Approximate overview_
     * Notes and news
     * Upcoming work
     * Tokens
-* About mini-project 8
 * Questions
+* Quicksort
 * Lab
 
 Preliminaries
@@ -24,51 +24,15 @@ Preliminaries
 
 ### News / Notes / Etc.
 
-* We're back to lab today. Tuesday will be a talk day. We'll also spend a
-  bit of time on Tuesday revisiting Quicksort.
+* We're back to talking today. Thursday should be lab.
 * New office hour approach: Use the Outlook scheduling assistant to 
   schedule 15-minute or 30-minute appointments. I'll generally say yes 
   to requests during the day for times that I'm not booked..
-* Each of us is reacting differently to the election results. If there are
-  things I can do to help you (e.g., give you extra time on something),
-  please let me know. We can also talk about class-wide adjustments.
-
-### Strategies for coping with added stress
-
-_Adapted from my colleague, Nicole Eikmeier._
-
-* Consider limiting your screen time.
-* Engage in activities that nourish you: podcasts (non-political), music 
-  (listen or make), journal, read, spend time in nature, etc.
-* Take care of yourself: Prioritize sleep, eat nutritious food, move
-  your body, etc.
-* Reach out to your emotional supports: family, friends, mentors,
-  coaches, healthcare professionals, faculty, etc.
-* Attend campus support events this week
-* Take advantage of campus wellness activities, like therapy dogs
+    * SAM WILL DEMO!
 
 ### Upcoming work
 
-* Thursday, 2024-11-07
-    * [Mini-project 8](../mps/mp08) released.
-    * [Submit Mini-project 7](https://www.gradescope.com/courses/818402/assignments/5247567)
-* Friday, 2024-11-08
-    * [Submit post-reflection for MP7](https://www.gradescope.com/courses/818402/assignments/5247571)
-* Sunday, 2024-11-10
-    * [Submit pre-reflection for MP8](https://www.gradescope.com/courses/818402/assignments/5284860)
-* Monday, 2024-11-11
-    * [Submit today's lab writeup](https://www.gradescope.com/courses/818402/assignments/5280274/outline/)
-    * Read [The ACM Code of Ethics and Professional Conduct](https://www.acm.org/code-of-ethics)
-    * [Submit reading response for class 19 on Gradescope](https://www.gradescope.com/courses/818402/assignments/5284468) (this is a real reading response)
-    * [SoLA 8](../los/sola08)
-        * New ADT/DS LAs
-            * [ADT/DS 11: Linked structures](https://www.gradescope.com/courses/818402/assignments/5276571)
-            * [ADT/DS 12: Design ADTs](https://www.gradescope.com/courses/818402/assignments/5276572)
-            * [ADT/DS 13: Design data structures](https://www.gradescope.com/courses/818402/assignments/5276574)
-            * [ADT/DS 14: Iterators](https://www.gradescope.com/courses/818402/assignments/5276576)
-        * New OOP LA
-             * [OOP 8: Object design](https://www.gradescope.com/courses/818402/assignments/5276578)
-        * Sam expects to be have prior SoLAs graded by the weekend.
+* Wednesday, 2024-11-12
 * Thursday, 2024-11-14
     * [MP8](../mps/mp08) due.
     * [Submit MP8 on Gradescope](https://www.gradescope.com/courses/818402/assignments/5284854)

@@ -1,5 +1,5 @@
 ---
-title: "Eboard 19 (Section 1): Linked lists"
+title: "Eboard 19 (Section 2): Linked lists"
 number: 19
 section: eboards
 held: 2024-11-08
@@ -91,6 +91,8 @@ class._
 
 #### Cultural
 
+* Sunday, 2024-11-10, 2:00 p.m., Sebring-Lewis.
+  _Grinnell Singers: Songs of Earth_.
 * Weekends of November 16 and November 23, Roberts Theatre.
   _Pity_ (also peer)
     * Get tickets at the box office.
@@ -103,9 +105,6 @@ class._
   _Middle of Everywhere: Alumni_
 
 #### Peer
-
-* Sunday, 2024-11-10, 2:00 p.m., Sebring-Lewis.
-  _Grinnell Singers: Songs of Earth_.
 
 #### Wellness
 
@@ -132,15 +131,6 @@ Fun with sorting!
 
 Questions
 ---------
-
-### Preregistration
-
-**Do you get to choose your CS advisor?**
-
-> Kind of.
-
-> You provide us with a ranked list, we use a program to pick from your
-  ranked list, trying to give everyone someone near the top of the list.
 
 ### Administrative
 
@@ -232,20 +222,9 @@ public class RandomMove {
 
 Options for "What next?"
 
-* Swap the move we selected with the last element. O(1)
-* Swap the last element into the place. Set the last element to null. O(1)
-* Do the same thing as ArrayList and shift evrryting. O(n)
-
-Note: We've seen this kind of idea before. We used a similar idea in
-implementing `remove` in associative arrays.
+Note: We've seen this kind of idea before. When?
 
 Lessons:
-
-* Think about the cost of the methods you call.
-* Ask yourself whether you can do better.
-* In object-oriented programs, decomposition can involve building new 
-  (small) classes.
-* Try to remember "side" ideas from prior projects.
 
 ### Doubly linked lists
 
@@ -336,9 +315,4 @@ Lessons:
 Lab
 ---
 
-You know the drill.
-
-A different kind of lab. Write up as you go. Mostly "propose what to do and
-then compare to what we've done".
-
-
+You know the drill. However, today's drill is a bit different.
