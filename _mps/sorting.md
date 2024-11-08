@@ -98,7 +98,7 @@ You can also just click the **Sync Fork** button on your GitHub page for the for
 
 As I hope you know by now, when writing a small or medium-sized function or class, we should begin by writing test cases for the function or class.
 
-In the file `SortTester.java`, add at least five test cases for `Sorter<T>` objects. (The system is designed so that every test you put in `SortTester` is now available to test all four sorting algorithms.)
+In the file `TestSorter.java`, add at least five test cases for `Sorter<T>` objects. (The system is designed so that every test you put in `TestSorter` is now available to test all four sorting algorithms.)
 
 ## Part two: Implement common sorts
 
@@ -160,7 +160,7 @@ Submissions that fail to meet any of these requirements but meet all
 previous requirements will receive an R.
 
 ```
-[ ] Added new tests to `SortTests.java`.
+[ ] Added new tests to `TestSorter.java`.
 [ ] No more than fifteen errors from `mvn checkstyle:check`.
 [ ] Appears to follow Google Java style guidelines for indentation and such.
 [ ] All sorting routines pass Sam's tests (conveniently available in
@@ -179,7 +179,7 @@ previous requirements will receive an R.
 [ ] All (or most) repeated code has been factored out into individual methods.
 [ ] All or most variable names are appropriate.
 [ ] No more than five errors from `mvn checkstyle:check`.
-[ ] One or more of the new tests in `SortTester.java` algorithmically 
+[ ] One or more of the new tests in `TestSorter.java` algorithmically 
     generates multiple tests.
 [ ] Appropriately decomposes each sorting algorithm.
     [ ] Insertion sort has a separate `insert` method.
