@@ -198,10 +198,6 @@ previous requirements will receive an R.
 
 > You can implement whichever you want, provide it has the key aspects of Quicksort. (UM): Divide and conquer algorithm, divide by a pivot (hopefully close to median), and rely on randomness to hope that get a good pivot.
 
-**Does my sort have to be stable?**
-
-> Nope.
-
 **Can I use ChatGPT, Copilot, or similar AI tool on this assignment?**
 
 > As per class policies, you may NOT use ChatGPT on parts one and two. I have, however, made an exemption to class policies for Part three.  You may use ChatGPT on Part three provided you cite it and provide a short narrative about your experience doing so.
@@ -210,9 +206,53 @@ previous requirements will receive an R.
 
 > Of course.
 
+**I've found that one of my sorting algorithms crashes on some inputs. What now?**
+
+> You should debug. I'd suggest creating an experiment class in which you call the sorting routine on a known failing input, and step through your algorithm.
+
+> You can use `QuicksortExperiments.java` for a sample experiment.
+
+> Since we're often doing a lot of recursion in Quicksort and merge sort, you might also find it useful to insert some print statements. Make sure to print to `System.err` (as is good practice).
+
+> You could ask someone else for help looking through your code.
+
+> You can also ask Sam for help. Make sure to push your current version to GitHub and to provide the GitHub link.
+
+**What does "repo should include a framework for the class" mean?**
+
+> For example, you'll find a class called `Quicksorter.java` that is ready for you to fill in the Quicksort algorithm.
+
+**Can I assume that if `obj1` "is less than" `obj2`, then `order.compare(obj1, obj2)` is `-1`?**
+
+> **No!** If `obj1` "is less than" `obj2`, all you know is that `order.compare(obj1, obj2) < 0`. It could be `-1`. However, it could also be `-5` or `-32351` or any negative integer.
+
+### Your own sort
+
+**I don't have any good ideas on how to get started.*
+
+> "Hey ChatGPT, how can I write a fast sorting algorithm?"
+
+**Does my sort have to be stable?**
+
+> Nope.
+
+**May we take advantage of parallel processing in our sorting algorithm?**
+
+> No.
+
+**If I use randomness, isn't there a chance that my algorithm will be inconsistent; sometimes fast and sometimes slow?**
+
+> Certainly. The competition has multiple rounds to help alleviate such issues.
+
+**Do we get to know what's different rounds of testing your competition will have?**
+
+> I'm likely to do something like the `compete` aspect in `SortTools`.
+
+### Sam's implementations
+
 **Have you implemented all of these algorithms?**
 
-> I've implemented each of them many times in my career. At the time I first answered this question, I had only implemented insertion sort and selection sort.
+> I've implemented each of them many times in my career. Just to be carefuol, I implemented all of them (including two versions of Quicksort) for this assignment in Fall 2024.
 
 **How long did it take you to implement them?**
 
@@ -231,18 +271,6 @@ previous requirements will receive an R.
 > Merge sort also took about twelve minutes. That included tracking down one stupid bug.
 
 > As I said, I've been implementing these algorithms for longer than you've been alive.
-
-**If I use randomness, isn't there a chance that my algorithm will be inconsistent; sometimes fast and sometimes slow?**
-
-> Certainly. The competition has multiple rounds to help alleviate such issues.
-
-**I've found my sort crashes on some inputs. What now?**
-
-> You should debug. I'd suggest creating an experiment class in which you call the sorting routine on a known failing input, and step through your algorithm.
-
-> You can use `QuicksortExperiments.java` for a sample experiment.
-
-> Since we're often doing a lot of recursion in Quicksort and merge sort, you might also find it useful to insert some print statements. Make sure to print to `System.err` (as is good practice).
 
 ## Additional notes
 
