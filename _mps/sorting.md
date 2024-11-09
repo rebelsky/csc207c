@@ -11,8 +11,6 @@ collaboration: |
   receive help from anyone, make sure to cite them in your responses. 
 link: true
 ---
-# {{ page.title }} : {{ page.subtitle }}
-
 _This assignment has been significantly updated for Fall 2024. It likely contains imperfections. If you notice any, please let SamR know._
 
 Summary: {{ page.summary }}
