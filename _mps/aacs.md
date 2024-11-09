@@ -134,11 +134,17 @@ previous requirements will receive an M.
 
 ### Script for **R**
 
-_Forthcoming._
+* Open the project in VSCode.
+* Run AAC.java.
+* Make sure a window appears.
 
 ### Script for **M**
 
 _Forthcoming._
+
+* Open the project in VSCode.
+* Run AAC.java. Ideally, you'll see the following. <br/>
+  ![A screen that says "Home Page", has a row of icons (Home, Save, Add), an icon for food, and an icon for clothing](images/aac/aac-home.png)
 
 ### Script for **E**
 
