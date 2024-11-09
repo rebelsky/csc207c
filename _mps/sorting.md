@@ -222,13 +222,33 @@ previous requirements will receive an R.
 
 > Remember that (a) I first implemented each of these algorithms before any of you were born (and before many of my colleagues in the department were born) and (b) I've been teaching these algorithms since any of you were born.
 
+> In writing Quicksort, I decided to try our new DNF algorithm before proving it correct. That was a bad idea, since the algorithm doesn't work correctly if one of the sections is empty. (We'll talk about that in class on Tuesday.) It took me about an hour and twenty minutes to track down the bug.
+
+> When I switched to the standard DNF algorithm (the one with at most one swap per round), Quicksort took me twelve minutes.
+
+> I suppose that's a reminder that it takes much less time when you get things right the first time.
+
+> It's also a reminder that it may be better to check your algorithm by hand.
+
+> Merge sort also took about twelve minutes. That included tracking down one stupid bug.
+
+> As I said, I've been implementing these algorithms for longer than you've been alive.
+
 **If I use randomness, isn't there a chance that my algorithm will be inconsistent; sometimes fast and sometimes slow?**
 
 > Certainly. The competition has multiple rounds to help alleviate such issues.
 
+**I've found my sort crashes on some inputs. What now?**
+
+> You should debug. I'd suggest creating an experiment class in which you call the sorting routine on a known failing input, and step through your algorithm.
+
+> You can use `QuicksortExperiments.java` for a sample experiment.
+
+> Since we're often doing a lot of recursion in Quicksort and merge sort, you might also find it useful to insert some print statements. Make sure to print to `System.err` (as is good practice).
+
 ## Additional notes
 
-The project also includes an (untested and still under development) version of a `SortTools` class. That class can be used to find arrays large enough that sorting is worth timing. It can also be used to run simple competitions between different sorters.
+The project also includes an (still under development) `SortTools` class. That class can be used to find arrays large enough that sorting is worth timing. It can also be used to run simple competitions between different sorters.
 
 Here's a typical test session (to be updated once Sam implements some sorting algorithms). You'll note that we see output for the empty array and then a SUCCESSS for everything else.
 
@@ -274,59 +294,221 @@ Testing of edu.grinnell.csc207.sorting.FakeSorter
 edu.grinnell.csc207.sorting.FakeSorter FAILED
 ```
 
+You can also run it with just the name of the sorter class, provided it's in package `edu.grinnell.csc207.sorting`.
+
+```
+$ java -cp target/classes edu.grinnell.csc207.main.SortTools test MergeSorter
+Testing of edu.grinnell.csc207.sorting.MergeSorter
+  Successfully sorted empty array.
+  SUCCESS!
+
 Here's how we can run a competition between two sorting routines.
 
 ```text
-$ mvn compile -q
-$ java -cp target/classes edu.grinnell.csc207.main.SortTools compete edu.grinnell.csc207.sorting.InsertionSorter edu.grinnell.csc207.sorting.SelectionSorter
 Testing sorters
 Computing useful array sizes
 
-Round 1 (reverse sorted, size 54294)
-  edu.grinnell.csc207.sorting.InsertionSorter: 3924
-  edu.grinnell.csc207.sorting.SelectionSorter: 2527
+Round 1 (randomized, size 79402)
+  edu.grinnell.csc207.sorting.InsertionSorter: 3738
+  edu.grinnell.csc207.sorting.SelectionSorter: 4888
 
-Round 2 (reverse sorted, size 54642)
-  edu.grinnell.csc207.sorting.InsertionSorter: 3897
-  edu.grinnell.csc207.sorting.SelectionSorter: 2663
+Round 2 (slightly randomized, size 78203)
+  edu.grinnell.csc207.sorting.InsertionSorter: 1022
+  edu.grinnell.csc207.sorting.SelectionSorter: 4317
 
-Round 3 (randomized, size 64662)
-  edu.grinnell.csc207.sorting.InsertionSorter: 2820
-  edu.grinnell.csc207.sorting.SelectionSorter: 3610
+Round 3 (randomized, size 60886)
+  edu.grinnell.csc207.sorting.InsertionSorter: 2250
+  edu.grinnell.csc207.sorting.SelectionSorter: 3029
 
-Round 4 (slightly randomized reverse sorted, size 54896)
-  edu.grinnell.csc207.sorting.InsertionSorter: 3577
-  edu.grinnell.csc207.sorting.SelectionSorter: 2329
+Round 4 (slightly randomized, size 56614)
+  edu.grinnell.csc207.sorting.InsertionSorter: 479
+  edu.grinnell.csc207.sorting.SelectionSorter: 2292
 
-Round 5 (randomized, size 79816)
-  edu.grinnell.csc207.sorting.InsertionSorter: 4002
-  edu.grinnell.csc207.sorting.SelectionSorter: 5279
+Round 5 (slightly randomized reverse sorted, size 60964)
+  edu.grinnell.csc207.sorting.InsertionSorter: 4115
+  edu.grinnell.csc207.sorting.SelectionSorter: 2666
 
-Round 6 (randomized, size 57748)
-  edu.grinnell.csc207.sorting.InsertionSorter: 2093
-  edu.grinnell.csc207.sorting.SelectionSorter: 2713
+Round 6 (slightly randomized reverse sorted, size 67648)
+  edu.grinnell.csc207.sorting.InsertionSorter: 5023
+  edu.grinnell.csc207.sorting.SelectionSorter: 3076
 
-Round 7 (sorted, size 73445)
-  edu.grinnell.csc207.sorting.InsertionSorter: 0
-  edu.grinnell.csc207.sorting.SelectionSorter: 3608
+Round 7 (slightly randomized, size 78649)
+  edu.grinnell.csc207.sorting.InsertionSorter: 960
+  edu.grinnell.csc207.sorting.SelectionSorter: 4060
 
-Round 8 (slightly randomized, size 74878)
-  edu.grinnell.csc207.sorting.InsertionSorter: 852
-  edu.grinnell.csc207.sorting.SelectionSorter: 3923
+Round 8 (slightly randomized reverse sorted, size 50745)
+  edu.grinnell.csc207.sorting.InsertionSorter: 2831
+  edu.grinnell.csc207.sorting.SelectionSorter: 1733
 
-Round 9 (slightly randomized reverse sorted, size 75228)
-  edu.grinnell.csc207.sorting.InsertionSorter: 6521
-  edu.grinnell.csc207.sorting.SelectionSorter: 4034
+Round 9 (sorted, size 53293)
+  edu.grinnell.csc207.sorting.InsertionSorter: 1
+  edu.grinnell.csc207.sorting.SelectionSorter: 1794
 
-Round 10 (randomized, size 61040)
-  edu.grinnell.csc207.sorting.InsertionSorter: 2316
-  edu.grinnell.csc207.sorting.SelectionSorter: 2924
+Round 10 (randomized, size 57225)
+  edu.grinnell.csc207.sorting.InsertionSorter: 1957
+  edu.grinnell.csc207.sorting.SelectionSorter: 2454
 
 Final results
-edu.grinnell.csc207.sorting.InsertionSorter: 30002
-edu.grinnell.csc207.sorting.SelectionSorter: 33610
+edu.grinnell.csc207.sorting.InsertionSorter: 22376
+edu.grinnell.csc207.sorting.SelectionSorter: 30309
 
 The winner is edu.grinnell.csc207.sorting.InsertionSorter
 ```
 
 As you can see, it's chosen a size in which both sorting routines take a few seconds on most inputs. It then chooses a variety of types of arrays and asks each to sort the same array, reporting on the time. In this particular case, you can also see that `InsertionSorter` does particularly poorly on reverse sorted arrays and slightly randomized reverse sorted arrays, but incredibly well on already sorted or only slightly randomized arrays.
+
+Here's a competition between all of the sorting routines I've written in my solutions for this assignment. (I still have to design a faster one.)
+
+```text
+$ java -cp target/classes edu.grinnell.csc207.main.SortTools compete InsertionSorter SelectionSorter Quicksorter Quicksorter2 MergeSorter
+Testing sorters
+Computing useful array sizes
+
+Round 1 (sorted, size 73068)
+  edu.grinnell.csc207.sorting.InsertionSorter: 1
+  edu.grinnell.csc207.sorting.SelectionSorter: 3311
+  edu.grinnell.csc207.sorting.Quicksorter: 22
+  edu.grinnell.csc207.sorting.Quicksorter2: 4
+  edu.grinnell.csc207.sorting.MergeSorter: 5
+
+Round 2 (randomized, size 74513)
+  edu.grinnell.csc207.sorting.InsertionSorter: 3212
+  edu.grinnell.csc207.sorting.SelectionSorter: 4389
+  edu.grinnell.csc207.sorting.Quicksorter: 8
+  edu.grinnell.csc207.sorting.Quicksorter2: 7
+  edu.grinnell.csc207.sorting.MergeSorter: 10
+
+Round 3 (randomized, size 73558)
+  edu.grinnell.csc207.sorting.InsertionSorter: 3314
+  edu.grinnell.csc207.sorting.SelectionSorter: 4205
+  edu.grinnell.csc207.sorting.Quicksorter: 8
+  edu.grinnell.csc207.sorting.Quicksorter2: 9
+  edu.grinnell.csc207.sorting.MergeSorter: 10
+
+Round 4 (slightly randomized reverse sorted, size 76333)
+  edu.grinnell.csc207.sorting.InsertionSorter: 6118
+  edu.grinnell.csc207.sorting.SelectionSorter: 4068
+  edu.grinnell.csc207.sorting.Quicksorter: 7
+  edu.grinnell.csc207.sorting.Quicksorter2: 7
+  edu.grinnell.csc207.sorting.MergeSorter: 7
+
+Round 5 (randomized, size 51110)
+  edu.grinnell.csc207.sorting.InsertionSorter: 1489
+  edu.grinnell.csc207.sorting.SelectionSorter: 2008
+  edu.grinnell.csc207.sorting.Quicksorter: 5
+  edu.grinnell.csc207.sorting.Quicksorter2: 4
+  edu.grinnell.csc207.sorting.MergeSorter: 6
+
+Round 6 (randomized, size 54665)
+  edu.grinnell.csc207.sorting.InsertionSorter: 1700
+  edu.grinnell.csc207.sorting.SelectionSorter: 2312
+  edu.grinnell.csc207.sorting.Quicksorter: 5
+  edu.grinnell.csc207.sorting.Quicksorter2: 6
+  edu.grinnell.csc207.sorting.MergeSorter: 7
+
+Round 7 (randomized, size 55521)
+  edu.grinnell.csc207.sorting.InsertionSorter: 1802
+  edu.grinnell.csc207.sorting.SelectionSorter: 2391
+  edu.grinnell.csc207.sorting.Quicksorter: 6
+  edu.grinnell.csc207.sorting.Quicksorter2: 5
+  edu.grinnell.csc207.sorting.MergeSorter: 8
+
+Round 8 (slightly randomized, size 68808)
+  edu.grinnell.csc207.sorting.InsertionSorter: 686
+  edu.grinnell.csc207.sorting.SelectionSorter: 3176
+  edu.grinnell.csc207.sorting.Quicksorter: 25
+  edu.grinnell.csc207.sorting.Quicksorter2: 5
+  edu.grinnell.csc207.sorting.MergeSorter: 6
+
+Round 9 (slightly randomized reverse sorted, size 79731)
+  edu.grinnell.csc207.sorting.InsertionSorter: 6725
+  edu.grinnell.csc207.sorting.SelectionSorter: 4286
+  edu.grinnell.csc207.sorting.Quicksorter: 7
+  edu.grinnell.csc207.sorting.Quicksorter2: 6
+  edu.grinnell.csc207.sorting.MergeSorter: 6
+
+Round 10 (randomized, size 72730)
+  edu.grinnell.csc207.sorting.InsertionSorter: 3403
+  edu.grinnell.csc207.sorting.SelectionSorter: 4040
+  edu.grinnell.csc207.sorting.Quicksorter: 8
+  edu.grinnell.csc207.sorting.Quicksorter2: 8
+  edu.grinnell.csc207.sorting.MergeSorter: 9
+
+Final results
+edu.grinnell.csc207.sorting.InsertionSorter: 28450
+edu.grinnell.csc207.sorting.SelectionSorter: 34186
+edu.grinnell.csc207.sorting.Quicksorter: 101
+edu.grinnell.csc207.sorting.Quicksorter2: 61
+edu.grinnell.csc207.sorting.MergeSorter: 74
+
+The winner is edu.grinnell.csc207.sorting.Quicksorter2
+```
+
+Unsurprisingly, the $$O(nlogn)$$ algorithms are much faster.
+
+We'll get much bigger arrays if we only compare those three.
+
+```text
+$ java -cp target/classes edu.grinnell.csc207.main.SortTools compete Quicksorter Quicksorter2 MergeSorter
+Testing sorters
+Computing useful array sizes
+
+Round 1 (slightly randomized, size 4877090)
+  edu.grinnell.csc207.sorting.Quicksorter: 694
+  edu.grinnell.csc207.sorting.Quicksorter2: 655
+  edu.grinnell.csc207.sorting.MergeSorter: 1794
+
+Round 2 (reverse sorted, size 4414278)
+  edu.grinnell.csc207.sorting.Quicksorter: 445
+  edu.grinnell.csc207.sorting.Quicksorter2: 443
+  edu.grinnell.csc207.sorting.MergeSorter: 1913
+
+Round 3 (slightly randomized reverse sorted, size 4855630)
+  edu.grinnell.csc207.sorting.Quicksorter: 736
+  edu.grinnell.csc207.sorting.Quicksorter2: 732
+  edu.grinnell.csc207.sorting.MergeSorter: 1823
+
+Round 4 (reverse sorted, size 4390436)
+  edu.grinnell.csc207.sorting.Quicksorter: 428
+  edu.grinnell.csc207.sorting.Quicksorter2: 420
+  edu.grinnell.csc207.sorting.MergeSorter: 2174
+
+Round 5 (randomized, size 4158872)
+  edu.grinnell.csc207.sorting.Quicksorter: 953
+  edu.grinnell.csc207.sorting.Quicksorter2: 923
+  edu.grinnell.csc207.sorting.MergeSorter: 1735
+
+Round 6 (randomized, size 4129192)
+  edu.grinnell.csc207.sorting.Quicksorter: 868
+  edu.grinnell.csc207.sorting.Quicksorter2: 935
+  edu.grinnell.csc207.sorting.MergeSorter: 1958
+
+Round 7 (slightly randomized, size 3906487)
+  edu.grinnell.csc207.sorting.Quicksorter: 519
+  edu.grinnell.csc207.sorting.Quicksorter2: 505
+  edu.grinnell.csc207.sorting.MergeSorter: 1450
+
+Round 8 (randomized, size 3143312)
+  edu.grinnell.csc207.sorting.Quicksorter: 641
+  edu.grinnell.csc207.sorting.Quicksorter2: 654
+  edu.grinnell.csc207.sorting.MergeSorter: 1469
+
+Round 9 (randomized, size 4597214)
+  edu.grinnell.csc207.sorting.Quicksorter: 1067
+  edu.grinnell.csc207.sorting.Quicksorter2: 1087
+  edu.grinnell.csc207.sorting.MergeSorter: 2246
+
+Round 10 (slightly randomized reverse sorted, size 4707121)
+  edu.grinnell.csc207.sorting.Quicksorter: 809
+  edu.grinnell.csc207.sorting.Quicksorter2: 841
+  edu.grinnell.csc207.sorting.MergeSorter: 2126
+
+Final results
+edu.grinnell.csc207.sorting.Quicksorter: 7160
+edu.grinnell.csc207.sorting.Quicksorter2: 7195
+edu.grinnell.csc207.sorting.MergeSorter: 18688
+
+The winner is edu.grinnell.csc207.sorting.Quicksorter
+```
+
+Wasn't that thrilling?
