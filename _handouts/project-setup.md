@@ -75,7 +75,7 @@ This mini-project may be found at https://github.com/rebelsky/mp32
 
 ### 2\.2\. Add the `csc207-checks.xml` file
 
-I'd like you to do style checking in your projects. (If you don't, your graders will, so you might as well get things right.) We'll use the file [`csc207-checks.xml`](../files/csc207-checks.xml). Copy that into your project at the top level (the same level as `pom.xml` and `README.md`. Please don't edit that file.
+I'd like you to do style checking in your projects. (If you don't, your graders will, so you might as well get things right.) We'll use the file [`csc207-checks.xml`](../files/csc207-checks.txt). Copy that into your project at the top level (the same level as `pom.xml` and `README.md`) and make sure it's named `csc207-checks.xml`. Please don't edit that file.
 
 ### 2\.3\. Add a `.gitignore` file
 
