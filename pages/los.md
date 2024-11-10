@@ -18,6 +18,8 @@ The objectives may change slightly during the semester as the schedule shifts.
 
 In solving those problems, you should rely primarily on (a) the course Web site, (b) the standard Java reference pages, (c) your notes, (d) the code you've written, and (e) CLRS. You should not search the Web for answers, you may not use LLMs, and you definitely may not use StackOverflow or Geeks4Geeks. When a problem asks you to provide sample code, you should use code you've already written for the class (or updated version of that code).
 
+If you use resources other than your own code, such as those mentioned above and including code I've written, you should make sure to cite those resources.
+
 ## Object-Oriented Design
 
 I expect that by the end of the semester, you will have mastered the basics of object-oriented design.  In particular, I expect that you will be able to
