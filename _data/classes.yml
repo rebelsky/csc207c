@@ -409,10 +409,14 @@
   summary: |
     We consider our responsibilities as programming professionals.
   subjects:
+    - Catch up on a few topics.
     - Professional ethics.
   reading:
     - link: ACM Code of Ethics and Professional Conduct
       url: https://www.acm.org/code-of-ethics
+  eboards:
+    - page: /eboards/eboard20-1.html
+    - page: /eboards/eboard20-2.html
 
 - topic: Trees and tree traversal
   abbrev: Trees
