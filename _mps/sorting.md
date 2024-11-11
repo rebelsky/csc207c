@@ -194,10 +194,6 @@ previous requirements will receive an R.
 
 > I'd like each of you to have the experimence of writing the four key sorting algorithms, so it is an individual project.
 
-**There are lots of different Quicksorts out there. Do you care which we implement?**
-
-> You can implement whichever you want, provide it has the key aspects of Quicksort. (UM): Divide and conquer algorithm, divide by a pivot (hopefully close to median), and rely on randomness to hope that get a good pivot.
-
 **Can I use ChatGPT, Copilot, or similar AI tool on this assignment?**
 
 > As per class policies, you may NOT use ChatGPT on parts one and two. I have, however, made an exemption to class policies for Part three.  You may use ChatGPT on Part three provided you cite it and provide a short narrative about your experience doing so.
@@ -226,6 +222,40 @@ previous requirements will receive an R.
 
 > **No!** If `obj1` "is less than" `obj2`, all you know is that `order.compare(obj1, obj2) < 0`. It could be `-1`. However, it could also be `-5` or `-32351` or any negative integer.
 
+**Should we just let the FakeSorter tests fail?**
+
+> Sure. You can also remove `TestFakeSorter` if you'd like.
+
+**How long should we spend implementing each sort?**
+
+> I would hope that you could implement insertion sort and selection sort in about 30 minutes each, while merge sort and Quicksort may take closer to an hour each.
+
+> The biggest issue seems to be whether you hit bugs and how quickly you can identify those bugs.
+
+**Why were these sorting algorithms chosen? in specific, why was bubble sort not included?**
+
+**I remember learning bubble sort when I searched about sorting before this class. Do you have any opinions on this algorithm and its role in the first steps of learning sorting?**
+
+> Bubble sort is one of the worst O(n^2) algorithms in practice. No one should ever implement bubble sort. Owen Astrachan has written [a longer explanation](https://users.cs.duke.edu/~ola/bubble/bubble.html).
+
+**Are there particular data types or conditions where certain sorting algorithms tend to perform better or worse?**
+
+> Insertion sort performs much better on already sorted (or mostly sorted) arrays. In fact, it's O(n) for already sorted arrays.
+
+> Insertion sort performs much worse on reverse sorted (or mostly reverse-sorted) arrays.
+
+> Other than that, I'm not sure that order makes that much difference.
+
+### Quicksort
+
+**Regarding the pivot in Quicksort, do you want us to implement it so that the pivot is always randomly chosen? Or can we just choose a pivot (first/middle/last) and use that each time?**
+
+> I'd prefer that you choose a random pivot. It tends to give a better running time. Picking the median of three random pivots may be even better.
+
+**There are lots of different Quicksorts out there. Do you care which we implement?**
+
+> You can implement whichever you want, provide it has the key aspects of Quicksort. (UM): Divide and conquer algorithm, divide by a pivot (hopefully close to median), and rely on randomness to hope that get a good pivot.
+
 ### Your own sort
 
 **I don't have any good ideas on how to get started.*
@@ -247,6 +277,22 @@ previous requirements will receive an R.
 **Do we get to know what's different rounds of testing your competition will have?**
 
 > I'm likely to do something like the `compete` aspect in `SortTools`.
+
+**How different should our own sorting algorithm be from already existing algorithms to be considered "our own"? Can we implement an already existing algorithm that is not already included in the project?**
+
+It can be similar. I'd like you to play with what changes you can make to extant algorithms to make them work better (and/or what other ideas you can come up with).
+
+**What do you mean by creating your own sort? Does it mean that I can scan the whole array, and choose a fitting sorting technique based on the features? Or actually, create a new sorting technique similar to the ones we are implementing in part b?**
+
+> I'd suggest a combination. Yes, you can pre-assess the data. You might choose to break the array up into parts and sort different parts with different algorithms. You could even just find ways to optimize one of the basic algorithms.
+
+**Could our own algorithm use the other sorting algorithms we implemented?**
+
+> Certainly. But I'd like you to copy over any code so that I can just use your one `.java` file.
+
+**What aspects of a sorting algorithm might we consider to create a different one?**
+
+> Whatever you think is useful. You should be prepared to sort any type of values as long as we have a comparator for them, so you can't design something based on, say, how you might partition integers.
 
 ### Sam's implementations
 
