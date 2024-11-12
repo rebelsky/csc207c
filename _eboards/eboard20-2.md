@@ -38,6 +38,11 @@ Preliminaries
 * Just wondering: Many of you said you'd worked with doubly-linked lists
   in CSC-161. But many of you also only made it through Exercise 3. What
   made things difficult?
+    * Some confusion as to how nodes are built in Java. Instructions should
+      have said "Check the fields and constructor."
+    * Didn't quite understand all the methods; needed to step back and
+      look at it as a whole.
+    * Iterators (or at least ListIterators) add a level of complexity.
 
 ### SoLA stuff
 
@@ -51,6 +56,9 @@ Preliminaries
     * Original class policy was "No external resources". New class policy
       is no Geeks4Geeks, no StackOverflow, no LLMs. Cite what you looked
       at when solving the SoLA (or where parts of your code came from).
+      Textbooks are fine. Class notes from elsewhere are fine. As long
+      as it's not one of those crappy "advice from peers" sites, it's
+      fine.
     * If you don't refer to something while solving the LA, even though you
       read it to understand the concept, you do not need to cite it.
 * Unfortunately, my SoLA comments are almost always going to be "this is
@@ -107,8 +115,8 @@ Preliminaries
             * [Algorithms #4: Selection sort](https://www.gradescope.com/courses/818402/assignments/5308266)
             * [Algorithms #6: Quicksort](https://www.gradescope.com/courses/818402/assignments/5308269)
             * [Algorithms #7: Merge sort](https://www.gradescope.com/courses/818402/assignments/5308271)
-            * [Algorithms #15: Loop invariants](https://www.gradescope.com/courses/818402/assignments/5276666)
-        * Repeated LAs are in the SoLA.
+            * [Algorithms #15: Loop invariants](https://www.gradescope.com/courses/818402/assignments/5276666). This can have pseudocode.
+        * Repeated LAs will be in the SoLA this evening.
     * No reading response!
 
 ### Tokens
@@ -118,16 +126,16 @@ class._
 
 #### Academic/Scholarly
 
-* Tuesday, 2024-11-12, Noon--1:00 p.m., JRC 224A (Day PDR).
-  _CS Table: Something about AI_ 
 * Wednesday, 2024-11-13, 4:30--6:00 p.m., the Kernel (HSSC 1231).
   _CS Poster Session_
 * Thursday, 2024-11-14, 11:00 a.m.--12:00 noon, JRC 101.
-  _hazel batrezchavez - “Enacting Radical Futures: Art as a Tool for Building Collective Power”_
+  _Scholars' Convocation: hazel batrezchavez - “Enacting Radical Futures: Art as a Tool for Building Collective Power”_
 * Thursday, 2024-11-14, 4:00--5:00 p.m., Science 3821.
   _CS Extras: Securing Emerging Wireless Networks_
 * Sunday, 2024-11-17, 7:00--8:00 p.m., Science 3819.
   _Mentor Session_
+* Tuesday, 2024-11-19, Noon--1:00 p.m., JRC 224A (Day PDR).
+  _CS Table: Students reporting on cool conference_ 
 
 #### Cultural
 
@@ -286,13 +294,7 @@ while (b < n) {
 
 ### Questions!
 
-**How should we initialize `r`, `w`, and `b`?**
-
-```
-r = 0;
-w = 0;
-b = 0;
-```
+**How should we initialize `r`, `w`, and `b` to ensure the invariant?**
 
 ```
   // +------------+-------------+-------------+--------------+
@@ -304,52 +306,186 @@ b = 0;
   // +---------------------------------------------------------+
   // |                    Unprocessed                          |
   // +---------------------------------------------------------+
-  // | 
+  // |
   // r,w,b
 ```
 
-It works. Everything to the left of `r` is red (since there are no such
-elements). Everything between `r` and `w` is white (since there are no
-such elements). Etc.
+```
+r = 0;
+w = 0;
+b = 0;
+```
+
+Nothing before `r`, so everything before `r` is red.
+
+Nothing between `r` and `w`, so everything between `r` and `w` is white.
+
+Etc.
 
 **Does the algorithm work correctly if there are not yet any red elements?**
 
 ```
   // +------------------+-------------------+------------------+
-  // |      White       |      Blue         |?     Unprocessed |
+  // |W     White       |B     Blue         |?     Unprocessed |
   // +------------------+-------------------+------------------+
   // |                  |                   |                  |
   // r                  w                   b                   
 ```
 
+Yes. Analysis below.
+
+If ? is red
+
+* We swap r and w, we now have `B White W Blue R`
+* We swap r and b, we now have `R White W Blue B`
+* We advance r, w, and b, and we've achieved what we want.
+
+If ? is white
+
+* Our board work suggests it's okay.
+
+If ? is blue
+
+* We simply increment b, so we don't have to worry about the red part.
+
 **Does the algorithm work correctly if there are not yet any white elements?**
 
 ```
   // +------------------+-------------------+------------------+
-  // |      Red         |      Blue         |      Unprocessed |
+  // |R     Red        R|B     Blue        B|?     Unprocessed |
   // +------------------+-------------------+------------------+
   //                    |                   |                  |
   //                    r,w                 b                   
 ```
 
+Yes. Analysis follows.
+
+If ? is W, swap(w,b) and then increment w and b.
+
+(Alternately, `swap(w++,b++)`.
+
+If ? is B, we just advance the blue pointer.
+
+If ? is R, swap(r,w), which has no effect. And then swap(r,b) which puts
+a B after b and an R after r (and w). We then increment all three. And
+we still have the invariant.
+
+Observation: `w >= r` because whenever we increment `r` we also increment `w`.
+(There are times we increment `w` but don't increment `r`.)
+(And we always increment blue.)
+
 **Does the algorithm work correctly if there are not yet any blue elements?**
 
 ```
   // +------------------+-------------------+------------------+
-  // |      Red         |      White        |?     Unprocessed |
+  // |R     Red        R|W     White       W|?     Unprocessed |
   // +------------------+-------------------+------------------+
   //                    |                   |                  |
   //                    r                   w,b                   
 ```
 
+No. Analysis follows.
+
+If ? is B, we just increment B and everything is fine.
+
+```
+  // +------------------+-------------------+-+----------------+
+  // |R     Red        R|W     White       W|B|    Unprocessed |
+  // +------------------+-------------------+-+----------------+
+  //                    |                   | |                |
+  //                    r                   w b                   
+```
+
+If ? is W, 
+
+```
+  // +------------------+-------------------+------------------+
+  // |R     Red        R|W     White       W|W     Unprocessed |
+  // +------------------+-------------------+------------------+
+  //                    |                   |                  |
+  //                    r                   w,b                   
+```
+
+we swap elements at w and b, which has no effect, and then increment both.
+
+```
+  // +------------------+---------------------+----------------+
+  // |R     Red        R|W     White       W W|    Unprocessed |
+  // +------------------+---------------------+----------------+
+  //                    |                     |                |
+  //                    r                     w,b                   
+```
+
+If ? is R
+
+```
+  // +------------------+-------------------+------------------+
+  // |R     Red        R|W     White       W|R     Unprocessed |
+  // +------------------+-------------------+------------------+
+  //                    |                   |                  |
+  //                    r                   w,b                   
+```
+
+We swap elements at r and W
+
+```
+  // +------------------+-------------------+------------------+
+  // |R     Red        R|R     White       W|W     Unprocessed |
+  // +------------------+-------------------+------------------+
+  //                    |                   |                  |
+  //                    r                   w,b                   
+```
+
+We swap elements at r and b.
+
+```
+  // +------------------+-------------------+------------------+
+  // |R     Red        R|W     White       W|R     Unprocessed |
+  // +------------------+-------------------+------------------+
+  //                    |                   |                  |
+  //                    r                   w,b                   
+```
+
+We increment all three indices.
+
+```
+  // +--------------------+-------------------+----------------+
+  // |R     Red        R W|    White       W R|    Unprocessed |
+  // +--------------------+-------------------+----------------+
+  //                      |                   |                  |
+  //                      r                   w,b                   
+```
+
+Whoops!
+
 **If the answer to any of those is "No", how do we fix the algorithm?**
+
+The algorithm fails if we don't have any blue elements and the next element 
+is red.
+
+Solutions ...
+
+* Special case: In the red case, if `w == b`, only do one swap.
+    * Note: We haven't yet analyzed "both red and white are empty" or
+      "both red and blue are empty" or "both blue and white are empty".
+* Change the swaps: `swap(w,b)` then `swap(r,w)`.
+    * Note: We may have to do more analysis (see above) to make sure
+      it won't break on other special cases.
+
+Reminder: Pictorial invariants are our friends.
+
+Question: For the RWBU, is a three-way-rotate better than two swaps?
+
+* I haven't analyzed it carefully, but it seems to be.
+* You can try implementing it.
+* You can try showing it correct.
 
 Analyzing merge sort
 --------------------
 
 Merge sort:
 
-* Split the array in half. 
+* Split the array in half (first half / second half), using bounds. 
 * Sort the two halves. 
 * Merge 'em together.
 
@@ -364,10 +500,49 @@ Merge algorithm (high level)
   the second position.
 * When you run out of one array, copy the rest of the other array.
 
+The merge algorithm is $$O(n)$$ because we are going to go through the
+whole result array to copy elements into it.
+
 Analyzing Merge sort
 
 Let's start by writing the recurrence relation. We are defining $$T(n)$$,
 the time merge sort takes on $$n$$ elements.
+
+$$T(n)$$ =
+
+* Split the array in half: $$O(1)$$ because we're not looking at elements,
+  we're just doing simple math.
+* Sort the two halves using merge sort: $$T(n/2) + T(n/2) = 2 \times T(n/2)$$
+* Merge 'em together. $$n$$
+
+Recurrence relation
+
+$$T(n) = 2 \times T(n/2) + n + c$$
+
+$$T(1) = c$$
+
+Yay! We get to solve a recurrence relation.
+
+*  Expand it bottom up. 
+    * $$T(1) = c$$
+    * $$T(2) = 2 \times T(1) + n + c$$
+    * $$T(2) = 2c + n + c = 3c + n$$
+*  Expand it top down.
+    * $$T(n) = 2 \times T(n/2) + n + c$$
+    * $$T(n) = 2(2 \times T(n/4) + n/2 + c) + n + c$$
+* Recursion tree
+* Master theorem (no)
+
+Our recursion tree plus some extra math show us that merge sort is in
+$$O(n log_2 n)$$.
+
+Can we do better?
+
+* There is a proof that you will see in CSC-301 that a "compare-and-swap"
+  algorithm must take at least $$n log_2 n$$ steps.
+* However, for certain kinds of data, we can write O(n) algorithms.
+* (We know that we can't do better than O(n) since it takes O(n) to
+  check whether it's sorted.)
 
 Quicksort
 ---------
@@ -379,6 +554,42 @@ Three key ideas:
   smaller values and larger values (or smaller, "equal", and larger).
     * Ideally, we divide using the median.
 * And does that division using the wonder of randomness.
+
+With a real median.
+
+$$T(n) = $$
+
+* $$O(1)$$ to find the median.
+* $$O(n)$$ to DNF (rearrange to put small things at left and large things at right
+* $$2 \times T(n/2)$$ to recursively sort the two halves.
+
+IF we can find the median in O(1) (or even O(n)), this is an $$O(n log_2 n)$$ algorithm.
+
+Traditional way to find the median: Sort the array and look in the middle. Whoops!
+
+Additional key idea in Quicksort: If you pick a random element of the (sub)array, things will usually work out almost as well as if you picked the real median. (Sam does not like to do the statistical analysis.)
+
+A tip: DNF should probably return both the red and white indices (the end
+of the small section and big section).
+
+```
+public int[] dnf(T[] values, int lb, int ub, Comparator<T> order) {
+  int r = 0;
+  int w = 0;
+  int b = ...;
+
+  ...
+
+  return new int[] {r, w};
+} //
+
+public void quicksort(T[] values, int lb, int ub) {
+  ...
+  int[] bounds = dnf(values, lb, ub, ...);
+  quicksort(lb, bounds[0]);
+  quicksort(bounds[1], ub);
+} // quicksort
+```
 
 Questions
 ---------
@@ -403,13 +614,15 @@ Questions
 
 **Is there a stable version of Quicksort?** 
 
-> I don't know of a stable _in-place_ version of Quicksort. The parition
+> I don't know of a stable _in-place_ version of Quicksort. The partition
   routine rearranges things too much.
 
 **In merge sort, we'll need to make helper arrays. Where should we do that?**
 
 > I would use a helper array for the merge, but just use subarrays (given
   by `lb` and `ub`) for the recursive calls.
+
+> If you use this technique, you only need one helper array.
 
 ### Readings
 
