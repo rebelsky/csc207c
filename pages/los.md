@@ -16,7 +16,9 @@ If you do not complete the learning assessment for a learning objective the firs
 
 The objectives may change slightly during the semester as the schedule shifts.
 
-In solving those problems, you should only rely on (a) the course Web site, (b) the standard Java reference pages, (c) your notes, and (d) the code you've written. You _may not_ search the Web for answers, you may not use LLMs, and you definitely may not use StackOverflow or Geeks4Geeks or any such sites. When a problem asks you to provide sample code, you should use code you've already written for the class (or updated version of that code).
+In solving those problems, you should rely primarily on (a) the course Web site, (b) the standard Java reference pages, (c) your notes, (d) the code you've written, and (e) CLRS. You should not search the Web for answers, you may not use LLMs, and you definitely may not use StackOverflow or Geeks4Geeks. When a problem asks you to provide sample code, you should use code you've already written for the class (or updated version of that code).
+
+If you use resources other than your own code, such as those mentioned above and including code I've written, you should make sure to cite those resources.
 
 ## Object-Oriented Design
 
@@ -220,7 +222,11 @@ Make sure that you clearly explain the principle of "divide and conquer" before 
 
 #### Algorithms 12: Big-O
 
-* Make sure you understand the "is in" notation and why we use it.
+Make sure you understand the "is in" notation and why we use it.
+
+#### Algorithms 14: Analysis or recursive algorithms.
+
+You may only use the master theorem to check your work. Please solve these by bottom-up or top-down analysis.
 
 ### Abstract data types and data structures
 

@@ -1,11 +1,11 @@
 ---
-title: Linear and binary search
+title: Sequential and binary search
 summary: |
   We consider the standard problem of searching an array for a value
   or values.  That is, we consider algorithms that, given a target
   value, a collection of values, and a notion of equality, find the
   position of the target value.  We explore two common searching
-  algorithms, linear search and binary search.  We also consider
+  algorithms, sequential search and binary search.  We also consider
   ways in which object-oriented design (and its instantiation in
   the Java programming language) may lead us to think about searching
   in slightly different ways.
@@ -26,12 +26,10 @@ phrasings of the search problem: *given a value to search for
 and an array of values to search in, find the index of the value
 in that array*.
 
-Linear search
--------------
+Sequential search
+-----------------
 
-The simplest searching algorithm is often called *linear
-search*, and involves looking at each element in turn
-until we find one that matches.
+The simplest searching algorithm is often called *sequential search*, and involves looking at each element in turn until we find one that matches.
 
 ```text
 For each index, i, in values
@@ -40,10 +38,10 @@ For each index, i, in values
 If the value was never found, signal that problem
 ```
 
-Analyzing linear search
------------------------
+Analyzing sequential search
+---------------------------
 
-How long does linear search take?  Well, it depends.  If the thing
+How long does sequential search take?  Well, it depends.  If the thing
 we're searching for appears near the beginning of the array, it takes
 only a few steps.  If it appears at the end of the array, we'll need
 to look at almost all of the elements of the array.   And, if it doesn't
@@ -54,10 +52,10 @@ loop will run O(n) times.  Each repetition of the loop requires a
 constant number of steps (or so we hope - comparison *should* be
 fast), so the algorithm takes O(n) time.
 
-Linear search in Java
----------------------
+Sequential search in Java
+-------------------------
 
-Is there anything special about linear search in Java?  A few things.
+Is there anything special about sequential search in Java?  A few things.
 Let's start with the "obvious" implementation.
 
 ```java
@@ -102,7 +100,7 @@ functional programmer would just pass in a function, but we need
 objects in Java, even if they are objects that represent functions.)
 More broadly, we should probably use a predicate.
 
-With predicates, our linear search might look something like the following.
+With predicates, our sequential search might look something like the following.
 (We've ellided most of the documentation, since it's not much different.)
 
 ```java
@@ -131,7 +129,7 @@ consider how to do that in the lab.
 Random search
 -------------
 
-Some folks worry that linear search is biased toward elements that
+Some folks worry that sequential search is biased toward elements that
 appear at the start of the array and hence prefer to search arrays
 "randomly".  Here's a simple version of a random search
 algorithm.
@@ -241,7 +239,7 @@ Binary search in Java
 ---------------------
 
 In implementing binary search, one important question is how we compare
-individual elements.  In linear search, we had to compare only for
+individual elements.  In sequential search, we had to compare only for
 equality, which allowed us to use the built-in `equals`
 method (or a few alternates).  In binary search, we need to know
 if the value we're looking at should appear before or after a

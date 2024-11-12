@@ -164,6 +164,8 @@ they've finished a problem (and you can't brag about finishing a problem
 either).  At times, I may give you permission to talk to the course mentor
 about an exam, but please make sure that you have explicit permission.
 
+*Take-home learning-assessments* are also always individual work. The restrictions are similar to those of take-home examinations, except that I may further limit what resources are and are not appropriate. Please see the pages about LAs or LOs for further details.
+
 *In-class quizzes and examinations* are also always individual work.
 You may not talk during class or discuss the exam with anyone in
 class.  You may ask me questions.  My in-class examinations are

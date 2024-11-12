@@ -5,9 +5,57 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester, with the newest email at the top and the oldest at the bottom._
 
-Dear Ti-Dos (a deer, a female deer),
+## [CSC-207 2024Fa] Notes on SoLAs 6 and 7
 
-I have finished grading all the new questions on SoLA 3 as well as a few LA redos. I have a few more to go. A few more notes.
+Dear Bored Gamers,
+
+Although I've graded the new LAs on SoLAs 6 and 7, I have not yet finished grading the other LAs. I'm still plugging ahead, but thought I should send you some notes now.
+
+**Academic honesty**
+
+The course policies said the following about LAs:
+
+"In solving those problems, you should only rely on (a) the course Web site, (b) the standard Java reference pages, (c) your notes, and (d) the code you’ve written. You may not search the Web for answers, you may not use LLMs, and you definitely may not use StackOverflow or Geeks4Geeks or any such sites. When a problem asks you to provide sample code, you should use code you’ve already written for the class (or updated version of that code)." <https://rebelsky.cs.grinnell.edu/Courses/CSC207/2024Fa/los/>
+
+However, many of you seem to have missed those policies. I'll take responsibility, since I didn't restate the policies on each LA. However, from now on (including on SoLA 8), I expect you to follow a revised version of these policies.
+
+"In solving those problems, you should rely primarily on (a) the course Web site, (b) the standard Java reference pages, (c) your notes, (d) the code you've written, and (e) CLRS. You should not search the Web for answers, you may not use LLMs, and you definitely may not use StackOverflow or Geeks4Geeks. When a problem asks you to provide sample code, you should use code you've already written for the class (or updated version of that code).
+
+If you use resources other than your own code, such as those mentioned above and including code I've written, you should make sure to cite those resources."
+
+**Academic honesty, revisited**
+
+* "I searched the Internet for information on …" is not a citation. Please give the Web page or pages you used.
+
+* "My lab on X" or "Lab N" is not a sufficient citation. Make sure to cite your partner!
+
+**General notes**
+
+* Many of you need to be more careful about language use. For example, a linked structure is not necessarily a linked list. Queues and stacks are different structures. A list is not an array (and vice versa).
+
+**Big-O bounds**
+
+* At least one of you wrote something like "f(n) is in O(n^2 * logn). Since logn is a lower-order term, we can ignore it." Unfortunately, that's not the case. We can drop lower order terms when we *add* them. We cannot drop them when we *multiply by* them.
+
+**Solving recurrence relations**
+
+* As I mentioned in class, you may only use the master theorem to check your work. Please solve these by bottom-up or top-down analysis.
+
+**Binary search**
+
+* Some of you described binary search as an algorithm that works on lists. I'll admit that I don't know that there's a way to find the middle element of a (sorted) list in constant time, at least if it's implemented as a linked structure.
+
+* Some of you just said that binary search works on arrays. Binary search doesn't work on most arrays. You need some particular characteristics.
+
+**Other**
+
+As always, feel free to ask questions. As you've seen, I'll sometimes even answer parts of LAs in class.
+
+There have been a few cases in which I missed something in an answer. (That happens when I'm reaading 100's of answers.) If that's the situation, you should put in a regrade requestr.
+
+Regards,
+
+-- SamR
 
 ## [CSC-207 2024Fa] Notes on SoLA 3 (2024-10-02)
 

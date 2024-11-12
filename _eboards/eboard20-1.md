@@ -16,6 +16,7 @@ _Approximate overview_
     * Upcoming work
     * Tokens
 * Questions
+* Analyzing merge sort
 * Quicksort
 * Lab
 
@@ -25,19 +26,71 @@ Preliminaries
 ### News / Notes / Etc.
 
 * We're back to talking today. Thursday should be lab.
+* We will likely spend a bit less time on ethics today than I had originally
+  planned. I consider it ethical to make sure that you understand the
+  sorting material in order to complete the assignment.
 * New office hour approach: Use the Outlook scheduling assistant to 
   schedule 15-minute or 30-minute appointments. I'll generally say yes 
   to requests during the day for times that I'm not booked..
     * SAM WILL DEMO!
+* Just wondering: Many of you said you'd worked with doubly-linked lists
+  in CSC-161. But many of you also only made it through Exercise 3. What
+  made things difficult?
+
+### SoLA stuff
+
+* Please review the statement about academic honesty on the SoLA notes
+  I sent out yesterday.
+* Unfortunately, my SoLA comments are almost always going to be "this is
+  something you could improve". If you get it correct, you'll likely just
+  get a "sufficient".
+    * Insert anecdote.
+* My goal is that you are able to provide clear and compelling evidence
+  that you understand the stuff. When you use mushy or incorrect language,
+  or code that won't be compile, the evidence is not compelling. (It also
+  won't be compelling to potential employers/collaborators.)
+* A possible standard structure for many MPs. (I did not provide this for you
+  before now because I assumed that you learned how to form arguments in
+  Tutorial. Not all of you seemed to.)
+    * Description of concept. "Parametric polymorphism is ..."
+    * Explanation of why we care. "Parametric polymorphism permits us to ..."
+    * Library code. "Here's a polymorphic class."
+    * Client code. "Here's some code that uses that library code."
+    * Analysis. "See how that allowed us to ...."
+* For the sorting MPs, you will likely want to use this structure.
+    * Overview of the sorting algorithm. "Insertion sort works by ..."
+    * Quick dump of characteristics. "Insertion sort is an O(n^2) sorting
+      algorithm. ..."
+    * Code.
+    * Any other comments you have.
+* _You don't need to cite those structures when you use them._
+* Many of you seem to be way behind on LAs (in that you aren't submitting
+  them). I'll be sending in Academic Alerts once I finish grading the
+  current SoLA.
 
 ### Upcoming work
 
 * Wednesday, 2024-11-12
+    * [Reading on trees and tree traversal](../readings/tree-traversal)
+    * [Submit reading response on Gradescope](https://www.gradescope.com/courses/818402/assignments/5300048)
 * Thursday, 2024-11-14
+    * MP9 released.
     * [MP8](../mps/mp08) due.
     * [Submit MP8 on Gradescope](https://www.gradescope.com/courses/818402/assignments/5284854)
 * Friday, 2024-11-15
     * [Submit post-reflection for MP8](https://www.gradescope.com/courses/818402/assignments/5284861)
+* Sunday, 2024-11-17
+    * Submit pre-reflection for MP9.
+* Monday, 2024-11-18
+    * [SoLA 9](../los/sola09) due.
+        * New algorithm LAs.
+            * [Algorithms #3: Insertion sort](https://www.gradescope.com/courses/818402/assignments/5308265)
+            * [Algorithms #4: Selection sort](https://www.gradescope.com/courses/818402/assignments/5308266)
+            * [Algorithms #6: Quicksort](https://www.gradescope.com/courses/818402/assignments/5308269)
+            * [Algorithms #7: Merge sort](https://www.gradescope.com/courses/818402/assignments/5308271)
+            * [Algorithms #15: Loop invariants](https://www.gradescope.com/courses/818402/assignments/5276666)
+        * Repeated LAs are in the SoLA.
+    * No reading response!
 
 ### Tokens
 
@@ -46,12 +99,14 @@ class._
 
 #### Academic/Scholarly
 
-* Thursday, 2024-11-07, 4:00--5:00 p.m., Science 3821.
-  _CS Extras: Decision Diagrams_
-* Sunday, 2024-11-10, 7:00--8:00 p.m., Science 3819.
-  _Mentor Session_
 * Tuesday, 2024-11-12, Noon--1:00 p.m., JRC 224A (Day PDR).
   _CS Table: ???_ 
+* Wednesday, 2024-11-13, 4:30--6:00 p.m., the Kernel (HSSC 1231).
+  _CS Poster Session_
+* Thursday, 2024-11-14, 4:00--5:00 p.m., Science 3821.
+  _CS Extras: Securing Emerging Wireless Networks_
+* Sunday, 2024-11-17, 7:00--8:00 p.m., Science 3819.
+  _Mentor Session_
 
 #### Cultural
 
@@ -82,227 +137,289 @@ class._
 
 #### Misc
 
-* Thursday, 2024-11-07, ???. Harris.
-  _Blood Drive_.
-* Friday, 2024-11-08, 4:00--5:15 p.m., Somewhere.
-  _Election analysis_.
+* Monday, 2024-11-18, 7:00 p.m., The Kernel (HSSC A1321) 
+  _Considering Technical Roles: Tech Hiring Trends & Alumni in Tech Career Paths with alumni from Microsoft, Google, Intel, and more_
+* Friday, 2024-11-22, 5:00--8:00 p.m., Downtown Grinnell.
+  _Jingle Bell Holiday_.
 
 ### Other good things (no tokens)
 
-About mini-project 8
+DNF, revisited
+--------------
+
+### Review
+
+Suppose we have a collection of values. Each value can be red, white, or
+blue. We want to rearrange them (in place) so they are in the order
+all the reds, then all the whites, then all the blues.
+
+We're going to have a section of reds, a section of whites, a section of blues, and an unprocessed section.
+
+RWBU invariant
+
+```text
++------------+-------------+-------------+-------------+
+|   Red      |   White     |   Blue      |XUnprocessed |
++------------+-------------+-------------+-------------+
+             |             |             |             |
+             r             w             b             n
+```
+
+RWUB invariant
+
+```text
++------------+-------------+-------------+-------------+
+|  Red       |   White     |XUnprocessed |   Blue      |
++------------+-------------+-------------+-------------+
+             |             |             |             |
+             r             w             b             n
+```
+
+Goal: Get the first remaining unprocessed element into the right section
+in constant time. If it's constant time, our DNF algorithm will be $$O(n)$$.
+
+What loop does this suggest? That is, what does your loop body look like
+so that you maintain the invariant?
+
+Loop with RWBU invariant
+
+```
+int r = ...;
+int w = ...;
+int b = ...;
+while (b < n) {
+  // +------------+-------------+-------------+--------------+
+  // |  Red       |   White     |   Blue      |X Unprocessed |
+  // +------------+-------------+-------------+--------------+
+  //              |             |             |              |
+  //              r             w             b              n
+  if A[b] is Red 
+    // +------------+-------------+-------------+--------------+
+    // |R Red      R|W  White    W|B  Blue     B|R Unprocessed |
+    // +------------+-------------+-------------+--------------+
+    //              |             |             |              |
+    //              r             w             b              n
+    swap(A, r, w);
+    // +------------+-------------+-------------+--------------+
+    // |R Red      R|B  White    W|W  Blue     B|R Unprocessed |
+    // +------------+-------------+-------------+--------------+
+    //              |             |             |              |
+    //              r             w             b              n
+    swap(A, r, b)
+    // +------------+-------------+-------------+--------------+
+    // |R Red      R|R  White    W|W  Blue     B|B Unprocessed |
+    // +------------+-------------+-------------+--------------+
+    //              |             |             |              |
+    //              r             w             b              n
+    r++;
+    w++;
+    b++;
+    // +--------------+-------------+-------------+------------+
+    // |R Red      R R| White    W W| Blue     B B|Unprocessed |
+    // +--------------+-------------+-------------+------------+
+    //                |             |             |            |
+    //                r             w             b            n
+  else if A[b] is White 
+    // +------------+-------------+-------------+--------------+
+    // |  Red       |   White     |B  Blue      |W Unprocessed |
+    // +------------+-------------+-------------+--------------+
+    //              |             |             |              |
+    //              r             w             b              n
+    swap(A, w, b);
+    // +------------+-------------+-------------+--------------+
+    // |  Red       |   White     |W  Blue      |B Unprocessed |
+    // +------------+-------------+-------------+--------------+
+    //              |             |             |              |
+    //              r             w             b              n
+    w++;
+    b++;
+    // +------------+---------------+-------------+------------+
+    // |  Red       |   White      W| Blue       B|Unprocessed |
+    // +------------+---------------+-------------+------------+
+    //              |               |             |            |
+    //              r               w             b            n
+  else // if A[b] is Blue
+    // +------------+-------------+-------------+--------------+
+    // |  Red       |   White     |   Blue      |B Unprocessed |
+    // +------------+-------------+-------------+--------------+
+    //              |             |             |              |
+    //              r             w             b              n
+    b++
+    // +------------+-------------+---------------+------------+
+    // |  Red       |   White     |   Blue       B|Unprocessed |
+    // +------------+-------------+---------------+------------+
+    //              |             |               |            |
+    //              r             w               b            n
+} // while
+  // +------------------+-------------------+------------------+
+  // |       Red        |      White        |      Blue        |
+  // +------------------+-------------------+------------------+
+  //                    |                   |                  |
+  //                    r                   w                  b
+```
+
+### Questions!
+
+How should we initial r, w, and b?
+
+Does the algorithm work correctly if there are no red elements?
+
+```
+  // +------------------+-------------------+------------------+
+  // |      White       |      Blue         |      Unprocessed |
+  // +------------------+-------------------+------------------+
+  // |                  |                   |                  |
+  // r                  w                   b                   
+```
+
+Does the algorithm work correctly if there are no white elements?
+
+```
+  // +------------------+-------------------+------------------+
+  // |      Red         |      Blue         |      Unprocessed |
+  // +------------------+-------------------+------------------+
+  //                    |                   |                  |
+  //                    r,w                 b                   
+```
+
+Does the algorithm work correctly if there are no blue elements?
+
+```
+  // +------------------+-------------------+------------------+
+  // |      Red         |      White        |      Unprocessed |
+  // +------------------+-------------------+------------------+
+  //                    |                   |                  |
+  //                    r                   w,b                   
+```
+
+If the answer to any of those is "No", how do we fix the algorithm?
+
+Analyzing merge sort
 --------------------
 
-Fun with sorting!
+Let's start by writing the recurrence relation.
+
+High-level overview:
+
+*
+*
+*
+
+Recurrence relation ...
+
+Quicksort
+---------
+
+Three key ideas:
+
+* Quicksort is a divide-and-conquer routine
+* That attempts to divide the (sub)array into two (or three) parts:
+  smaller values and larger values (or smaller, "equal", and larger).
+* And does that division using the wonder of randomness.
 
 Questions
 ---------
 
-### Preregistration
-
-**Do you get to choose your CS advisor?**
-
-> Kind of.
-
-> You provide us with a ranked list, we use a program to pick from your
-  ranked list, trying to give everyone someone near the top of the list.
-
 ### Administrative
 
-**Will the past solas be graded before the new solas be due?**
+**Given that you have not been returning graded MPs promptly, do you 
+  anticipate changing the MP requirements for A/B/C?**
 
-> That's certainly my goal. I'm hoping to have everything done by Saturday night.
+> Yes. However, I'm still figuring that out.
 
-**Do you charge tokens for late post-reflections if we submit the MP late?**
+**Will you be gracious if we don't get our token reflections in within
+  72 hours of the event.**
 
-> No.
+> Probably.
 
-### MP7
+### Sorting
 
-**We have an AI that chooses randomly between the available moves. Can we use an `ArrayList` for that?**
+**Is there a stable version of Quicksort?** 
 
-> I'd prefer that you didn't. `ArrayList.remove` is likely to be $$O(n)$$. 
-  You should be able to design this with an array so that it's $$O(1)$$.
+> I don't know of a stable _in-place_ version of Quicksort. The parition
+  routine rearranges things too much.
 
-> In fact, let's do it "together" (TPS).
+### Readings
 
-```
-/**
- * A way to make random moves.
- */
-public class RandomMove {
-  // +-----------+---------------------------------------------------
-  // | Constants |
-  // +-----------+
+DNF, revisited
+--------------
 
-  /**
-   * The total number of possible moves.
-   */
-  public static final int NUM_TOTAL_MOVES = 100;
+Analysis of merge sort
+----------------------
 
-  // +--------+------------------------------------------------------
-  // | Fields |
-  // +--------+
+Quicksort
+---------
 
-  /**
-   * A random number generator.
-   */
-  Random rand;
+Ethics
+------
 
-  /**
-   * All possible remaining moves.
-   */
-  Move moves[];
+<https://www.acm.org/code-of-ethics>
 
-  /**
-   * Only the first size moves are still valid.
-   */
-  int size;
+We will read these aloud so that we reflect a bit more about each.
 
-  // Others as appropriate
+* 1. GENERAL ETHICAL PRINCIPLES.
+    * 1.1 Contribute to society and to human well-being, acknowledging that all people are stakeholders in computing.
+    * 1.2 Avoid harm.
+    * 1.3 Be honest and trustworthy.
+    * 1.4 Be fair and take action not to discriminate.
+    * 1.5 Respect the work required to produce new ideas, inventions, creative works, and computing artifacts.
+    * 1.6 Respect privacy.
+    * 1.7 Honor confidentiality.
+* 2. PROFESSIONAL RESPONSIBILITIES.
+    * 2.1 Strive to achieve high quality in both the processes and products of professional work.
+    * 2.2 Maintain high standards of professional competence, conduct, and ethical practice.
+    * 2.3 Know and respect existing rules pertaining to professional work.
+    * 2.4 Accept and provide appropriate professional review.
+    * 2.5 Give comprehensive and thorough evaluations of computer systems and their impacts, including analysis of possible risks.
+    * 2.6 Perform work only in areas of competence.
+    * 2.7 Foster public awareness and understanding of computing, related technologies, and their consequences.
+    * 2.8 Access computing and communication resources only when authorized or when compelled by the public good.
+    * 2.9 Design and implement systems that are robustly and usably secure.
+* 3. PROFESSIONAL LEADERSHIP PRINCIPLES.
+    * 3.1 Ensure that the public good is the central concern during all professional computing work.
+    * 3.2 Articulate, encourage acceptance of, and evaluate fulfillment of social responsibilities by members of the organization or group.
+    * 3.3 Manage personnel and resources to enhance the quality of working life.
+    * 3.4 Articulate, apply, and support policies and processes that reflect the principles of the Code.
+    * 3.5 Create opportunities for members of the organization or group to grow as professionals.
+    * 3.6 Use care when modifying or retiring systems.
+    * 3.7 Recognize and take special care of systems that become integrated into the infrastructure of society.
+* 4. COMPLIANCE WITH THE CODE.
+    * 4.1 Uphold, promote, and respect the principles of the Code.
+    * 4.2 Treat violations of the Code as inconsistent with membership in the ACM.
 
-  // +--------------+------------------------------------------------
-  // | Constructors |
-  // +--------------+
+Next, we'll move on _TPS questions_.
 
-  /**
-   * Create a new random move thingy.
-   */
-  public RandomMove() {
-    this.rand = new Random();
-    this.moves = new Move[NUM_TOTAL_MOVES];
-    for (int i = 0; i < NUM_TOTAL_MOVES; i++) {
-      this.moves[i] = ...;
-    } // for
-    this.size = NUM_TOTAL_MOVES;
-  } // RandomMove()
+### Which principles did you find surprising (or most surprising)?  Why?
 
-  // +---------+-----------------------------------------------------
-  // | Methods |
-  // +---------+
+### Which are your "favorite" principles?
 
-  /**
-   * Get and make unavailable a random move.
-   */
-  public Move nextMove() {
-    int pos = this.rand.nextInt(this.size);
-    Move m = this.moves[pos];
-    // What next? THIS IS WHAT YOU SHOULD TALK ABOUT WITH YOUR PARTNER
-    this.size--;
-    return m;
-  } // nextMove()
+### Which principles do you expect to be hardest to follow?
 
-} // class RandomMove
-```
+### What other issues came up?
 
-Options for "What next?"
+A case study
+------------
 
-* Swap the move we selected with the last element. O(1)
-* Swap the last element into the place. Set the last element to null. O(1)
-* Do the same thing as ArrayList and shift evrryting. O(n)
+_Modified from <https://ethics.acm.org/code-of-ethics/using-the-code/case-dark-ux-patterns/>.  (Please don't look there for analysis.)_
 
-Note: We've seen this kind of idea before. We used a similar idea in
-implementing `remove` in associative arrays.
+The change request Stewart received was simple enough: replace the web site’s rounded rectangle buttons with arrows and adjust the color palette to one that mixes red and green text. But when Stewart looked at the prototype, he found it confusing. The left arrow suggested that the web site would go back to a previous page or cancel some action; instead, this arrow replaced the button for accepting the company’s default product. The right arrow, on the other hand, upgraded the user to the more expensive category; it also silently added a protection warranty without asking for confirmation. Stewart suggested to his manager that this confusing design would probably trick users into more expensive options that they didn’t want. The response was that these were the changes requested by the client.
 
-Lessons:
+Shortly after the updates were released into their production system, Stewart’s team was invited to a celebration. As a result of these changes, revenues at their client had increased significantly over the previous quarter. At the celebration, Stewart overheard some of the client’s managers discussing the small increase for refunds by users who claimed that they didn’t want the protection plan, but there weren’t many. One manager noted several complaints from visually impaired users, who noted that the mixture of red and green text obscured important disclaimers about the product. “So what you’re saying, then, is that the changes worked as planned,” quipped one of the managers.
 
-* Think about the cost of the methods you call.
-* Ask yourself whether you can do better.
-* In object-oriented programs, decomposition can involve building new 
-  (small) classes.
-* Try to remember "side" ideas from prior projects.
+_TPS: What should Stewart do (or have done)? What ACM principles are relevant?_
 
-### Doubly linked lists
+Another case study
+------------------
 
-**Can you draw a doubly-linked list on the board and go through some of the operations?**
+_I doubt we'll have time to cover this one._
 
-> Certainly.
+_Modified from <https://ethics.acm.org/code-of-ethics/using-the-code/case-malware-disruption/>.  Please don't read the analysis._
 
-**Why don't I have to deallocate things when they get removed?**
+Rogue Services advertised its web hosting services as “cheap, guaranteed uptime, no matter what.” While some of Rogue’s clients were independent web-based retailers, the majority were focused on malware and spam. Several botnets used Rogue’s reliability guarantees to protect their command-and-control servers from take-down attempts. Spam and other fraudulent services leveraged Rogue for continuous delivery. Corrupted advertisements often linked to code hosted on Rogue to exploit browser vulnerabilities to infect machines with ransomware.
 
-> Welcome to the wonder of garbage collection. Java regularly looks through
-  your objects and removes any that are not referenced.
+Despite repeated requests from major ISPs and international organizations, Rogue refused to intervene with these services, citing their “no matter what” pledge to their customers. Furthermore, international pressure from other governments failed to induce national-level intervention, as Rogue was based in a country whose laws did not adequately proscribe such hosting activities.
 
-**Why don't all languages use garbage collection?**
+Ultimately, Rogue was forcibly taken offline through a coordinated effort from multiple security vendors working with several government organizations. This effort consisted of a targeted worm that spread through Rogue’s network. This denial-of-service attack successfully took Rogue’s machines offline, destroying much of the data stored with the ISP in the process. All of Rogue’s clients were affected. No other ISPs reported any impact from the worm, as it included mechanisms to limit its spread. As a result of this action, spam and botnet traffic immediately dropped significantly. In addition, new infections of several forms of ransomware ceased.
 
-> The original garbage collectors had odd behavior, which was "the program
-  runs fine until it's time to garbage collect, then it stops for five 
-  minutes".
-
-> Some programmers want finer-grained control.
-
-> Many languages (e.g., C) were invented before garbage collection was a
-  well-known technique.
-
-**What are some real-world uses for doubly-linked lists?**
-
-> Any situation in which you need a mutable list. A to-do list is one
-  common application. I believe one version of CSC-161 has students use
-  lists to represent a ticketing system.
-
-**Why would we use a circular doubly-linked list rather than a doubly-linked
-  list?**
-
-> It turns out that over the long term, cdlls are easier to implement
-  correctly.
-
-**In what scenarios would you still choose a singly linked list
-  over a doubly-linked list? Are there specific performance or memory
-  considerations that make singly linked lists preferable in certain
-  cases?**
-
-> If we don't need to move backwards in the list, a singly-linked list
-  will suffice.
-
-**How do Java’s garbage collection and memory management processes
-  handle the nodes in linked lists when elements are removed or when
-  lists are no longer needed? Would explicit nulling of node references
-  be beneficial in Java, or does garbage collection handle this
-  automatically?**
-
-> Nulling of references from nodes is beneficial primarily in that it
-  helps avoid problems in cases in which there are stray references to
-  the nodes around.
-
-> Nulling isn't necessary in most garbage collection systems. If the
-  object can't be reached, it can be garbage collected.
-
-**Is the Iterator is an easier way so that client doesn't have to
-  initialize their own pointer to `while (curr.next)` through the linked
-  list?**
-
-> Iterators let us hide the internals of the class but still allow people
-  to visit all of the elements.
-
-**How can I create a heterogenous linked list class by myself?**
-
-> Just just any of the linked-list strategies and make the value field 
-  in each node hold `Object` values.
-
-**To clarify, do list iterators in Java add elements kind of like in
-  the front of a list? Assuming next is the second element in the list.**
-
-> Iterators add elements wherever they are in the list. If an iterator
-  is between the first two elements, it would add a new element after the
-  first element but before the second element.
-
-**In the List Javadocs, why is the `List.copyOf` method unmodifiable? Is
-  it just because it is (I'm assuming) a deep copy of a List? If so,
-  why couldn't the copyOf method have been a shallow copy implementation?**
-
-> Unfortunately, I don't have deep enough knowledge of the Java design
-  decisions (and I'm too lazy to look them up). My guess is that they want
-  to make it easier/faster to make copies of unmodifiable lists (e.g.,
-  you can just return the same list). I don't think it has anything to do
-  with shallow/deep copying.
-
-### Miscellaneous
-
-Lab
----
-
-You know the drill.
-
-A different kind of lab. Write up as you go. Mostly "propose what to do and
-then compare to what we've done".
-
+_TPS: Was the response appropriate?  Ethical?  What principles would permit the security vendors and government organizations to write such software._
 
