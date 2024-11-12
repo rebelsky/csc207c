@@ -1,5 +1,5 @@
 ---
-title: "Eboard 20 (Section 1): Pause for breath"
+title: "Eboard 20 (Section 2): Pause for breath"
 number: 20
 section: eboards
 held: 2024-11-12
@@ -15,10 +15,10 @@ _Approximate overview_
     * Notes and news
     * Upcoming work
     * Tokens
-* Questions
 * DNF algorithm
 * Analyzing merge sort
 * Quicksort
+* Questions
 * Discussion
 
 Preliminaries
@@ -30,6 +30,7 @@ Preliminaries
 * We will likely spend a bit less time on ethics today than I had originally
   planned. I consider it ethical to make sure that you understand the
   sorting material in order to complete the assignment.
+    * We'll be fitting ethics discussions into some subsequent classes.
 * New office hour approach: Use the Outlook scheduling assistant to 
   schedule 15-minute or 30-minute appointments. I'll generally say yes 
   to requests during the day for times that I'm not booked..
@@ -37,14 +38,6 @@ Preliminaries
 * Just wondering: Many of you said you'd worked with doubly-linked lists
   in CSC-161. But many of you also only made it through Exercise 3. What
   made things difficult?
-    * The transition to object-oriented made our heads hurt.
-    * We are not yet at the stage that we can immediately translate ideas
-      from one language/model to another.
-    * Using the iterators was weird / required a change in umvelt.
-    * The design of the assignment made it slow. There weren't good guidelines
-      on how long to think or how long to spend comparing.
-    * Iterators are a bit more complex because of the `update` thingy.
-    * We hadn't quite mastered list iterators.
 
 ### SoLA stuff
 
@@ -56,7 +49,8 @@ Preliminaries
         * You will often say "Starter code/documentation from Sam" 
           (or be more precise)
     * Original class policy was "No external resources". New class policy
-      is no Geeks4Geeks, no StackOverflow, no LLMs. Cite it.
+      is no Geeks4Geeks, no StackOverflow, no LLMs. Cite what you looked
+      at when solving the SoLA (or where parts of your code came from).
     * If you don't refer to something while solving the LA, even though you
       read it to understand the concept, you do not need to cite it.
 * Unfortunately, my SoLA comments are almost always going to be "this is
@@ -86,11 +80,11 @@ Preliminaries
       algorithm. ..."
     * Code.
     * Any other comments you have.
-* _You don't need to cite those structures when you use them._
-* Many of you seem to be way behind on LAs (in that you aren't submitting
-  them). I'll be sending in Academic Alerts once I finish grading the
-  current SoLA. I think about 50% completion at any point is reasonable,
-  although I'd prefer.
+* _You don't need to cite those rhetorical structures when you use them._
+* Many of you seem to be way behind on LAs (mostly in that you aren't
+  submitting them). I'll be sending in Academic Alerts once I finish
+  grading the current SoLA. I think about 50% completion at any point
+  is reasonable, although I'd prefer.
 
 ### Upcoming work
 
@@ -142,7 +136,7 @@ class._
 * Thursday, 2024-11-14, 7:30--9:30 p.m., Sebring-Lewis.
   _A night of Brazillian music_
 * Weekends of November 16 and November 23, Roberts Theatre.
-  _Pity_ (also peer)
+  _Pity_ 
     * Get tickets at the box office.
     * Come for the set.
     * It's cool. 
@@ -328,12 +322,6 @@ such elements). Etc.
   // r                  w                   b                   
 ```
 
-* If the ? is blue, we don't use `r`, so we're fine.
-* If the ? is white, we don't use `r`, so we're fine.
-* If the ? is red, we swap r and w, putting a W after w and a B after r.
-  We then swap b and r, moving the B to the right place and the R to the
-  right place.
-
 **Does the algorithm work correctly if there are not yet any white elements?**
 
 ```
@@ -343,10 +331,6 @@ such elements). Etc.
   //                    |                   |                  |
   //                    r,w                 b                   
 ```
-
-* If the ? is blue, we're fine.
-* If the ? is white, we're fine. We create a space for the new W.
-* If the ? is red, we're fine. We swap the r and w in the same position.
 
 **Does the algorithm work correctly if there are not yet any blue elements?**
 
@@ -358,52 +342,7 @@ such elements). Etc.
   //                    r                   w,b                   
 ```
 
-If the ? is R, we swap the red with the white
-
-```
-  // +------------------+-------------------+------------------+
-  // |      Red         |R     White        |W     Unprocessed |
-  // +------------------+-------------------+------------------+
-  //                    |                   |                  |
-  //                    r                   w,b                   
-```
-
-and then we swap the r and the b.
-
-```
-  // +------------------+-------------------+------------------+
-  // |      Red         |W     White        |R     Unprocessed |
-  // +------------------+-------------------+------------------+
-  //                    |                   |                  |
-  //                    r                   w,b                   
-```
-
-and then we increment all the indices.
-
-```
-  // +--------------------+-------------------+----------------+
-  // |      Red          W|    White         R|    Unprocessed |
-  // +--------------------+-------------------+----------------+
-  //                      |                   |           
-  //                      r                   w,b                   
-```
-
-Whoops! Nope, it doesn't work if there are not currently any blue elements.
-
 **If the answer to any of those is "No", how do we fix the algorithm?**
-
-Suggestion.
-
-```
-   if the next value is red,
-     swap(w,b)
-     swap(r,w)
-```
-
-Other option
-
-* Check for the special case of "It's red and there are no white elements".
-  Do something different in that case.
 
 Analyzing merge sort
 --------------------
@@ -425,21 +364,10 @@ Merge algorithm (high level)
   the second position.
 * When you run out of one array, copy the rest of the other array.
 
-Since at each step, we're adding one element to the merged array and we
-add $$n$$ elements to the merged array, this is an $$O(n)$$ algorithm.
+Analyzing Merge sort
 
 Let's start by writing the recurrence relation. We are defining $$T(n)$$,
 the time merge sort takes on $$n$$ elements.
-
-* Split the array in half. $$c$$
-* Sort the two halves. $$2 \times T(n/2)$$
-* Merge 'em together. $$n$$
-
-$$T(n) = 2 \times T(n/2) + n + c$$
-$$T(1) = c$$
-
-* We could work this out by hand (top-down or bottom-up)
-* We could draw a recursion tree. 
 
 Quicksort
 ---------
@@ -449,62 +377,8 @@ Three key ideas:
 * Quicksort is a divide-and-conquer routine
 * That attempts to divide the (sub)array into two (or three) parts:
   smaller values and larger values (or smaller, "equal", and larger).
+    * Ideally, we divide using the median.
 * And does that division using the wonder of randomness.
-
-If we know the median, we can divide the (sub)array into three parts
-using DNF (things smaller than the median, things equal to the median,
-and things greater than the median) in O(n) time.
-
-After recursively sorting the left half and the right half, our whole
-array is sorted.
-
-Analysis: Exactly the same as merge sort. Instead of merging in O(n) steps,
-we rearrange in O(n) steps. Instead of splitting in O(1) time, we find
-the median in O(1) time.
-
-Except ... How do we find the median?
-
-Solution: Pick a random element and cross your fingers. This is not the
-median, so we give it a different name. Generally, we call it the pivot.
-
-In the best case, all of the elements are equal. Everything is in the
-middle section and we don't need to recurse, so it's O(n).
-
-In the best case where all the elements are different, we always pick
-the median and our analysis shows us this is O(nlogn).
-
-In the worst case, we always pick the largest or smallest element as a
-median and our recurrence relation becomes $$T(n) = T(n-1) + n + c$$, which
-is going to be $$O(n^2)$$.
-
-This is better than, say, merge sort because we don't need an additional
-array, thereby saving memory (and saving the cost of moving things back
-and forth from that additional memory).
-
-In practice, it seems to behave better.
-
-Merge sort can't be done in place, but you can write a merge sort that mutates
-the original array into a sorted array by copying back from the helper array.
-
-Note: If you use DNF to partition, you'll probably want to return a two-element array with the end of the reds and the ends of the whites as contents.
-
-```
-public int[] dnf(T[] values, int lb, int ub, Comparator<T>) {
-  int r = 0;
-  int w = 0;
-  int b = 0;
-  ...
-  return new int[] {r, w};
-} // dnf
-```
-
-Then, the recursive calls in Quicksort will look something like
-
-```
-  int[] bounds = dnf(...);
-  sort(vals, lb, bounds[0]);
-  sort(vals, bounds[1], ub);
-```
 
 Questions
 ---------
