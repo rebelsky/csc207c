@@ -222,7 +222,11 @@ Make sure that you clearly explain the principle of "divide and conquer" before 
 
 #### Algorithms 12: Big-O
 
-* Make sure you understand the "is in" notation and why we use it.
+Make sure you understand the "is in" notation and why we use it.
+
+#### Algorithms 14: Analysis or recursive algorithms.
+
+You may only use the master theorem to check your work. Please solve these by bottom-up or top-down analysis.
 
 ### Abstract data types and data structures
 
