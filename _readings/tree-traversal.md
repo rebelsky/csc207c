@@ -22,21 +22,13 @@ _root_ has no predecessors.  Every other element in a tree has
 exactly one predecessor.  (For a variety of reasons, we typically
 call the predecessor of an element its "_parent_".)
 
-In contast to lists, in which each value (other than the last element)
-has exactly one successor, in trees, each value can have an arbitrary
-number of successors: one, two, three, even one hundred.  Some elements
-have no successors.  We call those "leaves".  In a tree with one value,
-the root is a also the only leaf.  Since we call a value's predecessor
-its "parent", we refer to a value's successors as "_children_".  (The
-root/leaf terminology coexists strangely with the parent/child terminology.)
+In contast to lists, in which each value (other than the last element) has exactly one successor, in trees, each value can have an arbitrary number of successors: one, two, three, even one hundred.  Some elements have no successors.  We call those "_leaves_".  In a tree with one value, the root is also the only leaf.  Since we call a value's predecessor its "parent", we refer to a value's immediate successors as "_children_".  (The root/leaf terminology coexists strangely with the family terminology.) The family metaphor continues with other terms. We refer to the children of one parent as "_siblings_", to the children of children (and the children of children of ...) as "_descdendants_", to the parents of parents (and the parents of parents of ...) as "_ancestors_", and so on and so forth.
 
-For much of this course, we will focus primarily on "_binary trees_",
-trees in which each value has zero, one, or two children.  We name
-the children the "_left child_" and the "_right child".
+For much of this course, we will focus primarily on "_binary trees_", trees in which each value has zero, one, or two children.  We name the children the "_left child_" and the "_right child".
 
 ### A sample tree
 
-For example, consider the following illustration of a tree.
+For example, consider the following ASCII illustration of a tree.
 
 ```
      a
@@ -96,7 +88,7 @@ That gives about ten different orders. Why ten and not twelve? Because inorder b
 An example
 ----------
 
-Do these different approaches visit nodes in different orders? Certainly. Let's look at a simple binary search tree or BST.  In a BST, everything to the left of a value is less than the value and everything to the right of the value is greater than the value.
+Do these different approaches visit nodes in different orders? Certainly. Let's look at a simple _binary search tree_ or BST.  In a BST, everything to the left of a value is less than the value and everything to the right of the value is greater than the value.
 
 ```
      e
