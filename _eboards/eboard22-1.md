@@ -1,8 +1,8 @@
 ---
-title: "Eboard 21 (Section 2): Tree traversal"
-number: 21
+title: "Eboard 22 (Section 1): Binary search trees"
+number: 22
 section: eboards
-held: 2024-11-14
+held: 2024-11-19
 link: true
 ---
 # {{ page.title }}
@@ -15,10 +15,9 @@ _Approximate overview_
     * Notes and news
     * Upcoming work
     * Tokens
-* MP9 - Blockchains
 * Questions
 * The ACM Code of Ethics
-* First discussion on code of ethics
+* Second discussion on code of ethics
 * Lab
 
 Preliminaries
@@ -27,40 +26,24 @@ Preliminaries
 ### News / Notes / Etc.
 
 * We have both talking and lab today.
-* Some issues about the next few weeks.
 * If you haven't done so yet, please sign up for 
   <https://passwordreset.grinnell.edu>.
-* Feel free to take Github stickers.
+* Note that "lower-bound inclusive, upper-bound exclusive" is a common
+  approach.  Think about, say, `String.substring(lb, bu)`.
 
 ### Upcoming work
 
-* Thursday, 2024-11-14
-    * [MP9](../mps/mp09) (Blockchains) released.
-    * [MP8](../mps/mp08) due.
-    * [Submit MP8 on Gradescope](https://www.gradescope.com/courses/818402/assignments/5284854)
-* Friday, 2024-11-15
-    * [Submit post-reflection for MP8](https://www.gradescope.com/courses/818402/assignments/5284861)
-* Sunday, 2024-11-17
-    * [Submit pre-reflection for MP9](https://www.gradescope.com/courses/818402/assignments/5321060)
-    * [Submit redo of MP3](https://www.gradescope.com/courses/818402/assignments/5295648)
-    * [Submit redo of MP4](https://www.gradescope.com/courses/818402/assignments/5295649)
-* Monday, 2024-11-18
-    * [Submit lab-writeup for class 21](https://www.gradescope.com/courses/818402/assignments/5321026)
-    * [SoLA 9](../los/sola09) due.
-        * New algorithm LAs.
-            * [Algorithms #3: Insertion sort](https://www.gradescope.com/courses/818402/assignments/5308265)
-            * [Algorithms #4: Selection sort](https://www.gradescope.com/courses/818402/assignments/5308266)
-            * [Algorithms #6: Quicksort](https://www.gradescope.com/courses/818402/assignments/5308269)
-            * [Algorithms #7: Merge sort](https://www.gradescope.com/courses/818402/assignments/5308271)
-            * [Algorithms #15: Loop invariants](https://www.gradescope.com/courses/818402/assignments/5276666)
-        * Repeated LAs are in the SoLA.
-    * No reading response!
+* Wednesday, 2024-11-20
+    * [Submit lab writeup from class 22](???)
 * Thursday, 2024-11-21
     * [MP9](../mps/mp09) (Blockchains) due.
     * [Submit MP9 on Gradescope](https://www.gradescope.com/courses/818402/assignments/5321058)
     * MP10 assigned (due in two weeks)
 * Friday, 2024-11-22
     * [Submit post-reflection for MP9](https://www.gradescope.com/courses/818402/assignments/5321060)
+* Tuesday, 2024-11-26
+    * [SoLA 10](../los/sola10) due
+        * New LAs
 
 ### Tokens
 
@@ -69,19 +52,21 @@ class._
 
 #### Academic/Scholarly
 
-* Thursday, 2024-11-14, 4:00--5:00 p.m., Science 3821.
-  _CS Extras: Securing Emerging Wireless Networks_
 * Sunday, 2024-11-17, 7:00--8:00 p.m., Science 3819.
   _Mentor Session_
-* Tuesday, 2024-11-19, Noon.
+* Tuesday, 2024-11-19, noon--1:00 p.m., Day PDR.
   _CS Table_
+* Tuesday, 2024-11-19, ...
 
 #### Cultural
 
 * Thursday, 2024-11-14, 7:30--9:30 p.m., Sebring-Lewis.
   _A night of Brazillian music_
 * Weekends of November 16 and November 23, Roberts Theatre.
-  _Pity_ 
+  _Pity_ (also peer)
+    * Get tickets at the box office.
+    * Come for the set.
+    * It's cool. 
 * Saturday, 2024-11-16, 2:00--4:00 p.m. (but there's an intermission).
   _Grinnell Symphony Orchestra plays Mozart's symphony number 40._
 
@@ -119,8 +104,6 @@ See the assignment for details.
 
 Today's lab partner is your MP partner.
 
-It will be wicked fun!
-
 Questions
 ---------
 
@@ -131,7 +114,7 @@ Questions
 > I'll consider it. However, I'm unlikely to drop each category by more
   than one. Last year, most students were able to complete most LAs to
   my satisfaction by the end of the semester, and I have confidence that
-  you will be able to, too.
+  you will ber able to, too.
 
 **Can we still have one MP at redo and still get an A?**
 
@@ -170,38 +153,24 @@ How does the standard Java library pick the pivot?
 
 > One of these has to be wrong. Both could be wrong.
 
-On the part where we use LLMs, how much of the code has to be ours?
-
-> None. But it's likely that you'll have to do a bit of translation to
-  get it in the form I asked for.
-
-> You will still have to describe how the sort works (to the best of
-  your ability) and write a paragraph about the experience of having
-  the LLM write the sort for you.
-
-Is there any reason to optimize the four basic sorting algorithms?
-
-> Fun?
-
-> A sense of accomplishment?
-
-> Energy efficiency.
-
-My merge sort runs forever on some cases. Why?
-
-> Hypotheses: You aren't (correctly) checking for a one-element array, 
-  and so you keep recursing on the same one-element array.
-
-> Hypotheses: You aren't choosing a midpoint in the middle.
-  
-> Solving strategy: Insert a print statement where you print the lower bound
-  and the upper bound (but not the array).
-
-How should we pick a pivot in Quicksort?
-
-> However you'd like. I prefer "median of three randomly-selected elements".
-
 ### Readings
+
+Can you go over the different ways to traverse a tree?
+
+> Certainly. (On whiteboard.)
+
+> Question one: Do you process a node before its children (preorder),
+  between the children (inorder), after its children (postorder).
+
+> Question two: Do you process level by level (breadth-first) or do
+  you process subtree at a time (depth-first)?
+
+* Question three: When deciding between children, do you start at the
+  left and then go to the right (left-to-right) or do you start at the
+  right and go to the left (right-to-left)?
+
+> We potentially have 2x2x3 choices, except that inorder doesn't make
+  sense for breadth-first
 
 The ACM Code of Ethics
 ----------------------
@@ -245,9 +214,25 @@ TPS Questions
 
 ### Which principles did you find surprising (or most surprising)?  Why?
 
+> "I didn't find any of them surprising. All of them make sense."
+
 ### Which are your "favorite" principles?
 
+> 2.6 Perform work only in areas of competence. (This probably needs to
+  be expanded to permit learning new things.)
+
 ### Which principles do you expect to be hardest to follow?
+
+* 2.5 Give comprehensive and thorough evaluations of computer systems 
+  and their impacts, including analysis of possible risks.
+    * Sam observes that people don't like hearing about the risks of their
+      systems.
+* 3.5 Create opportunities for members of the organization or group to 
+  grow as professionals.
+    * This encourages managers to be less selfish, and it's hard to imagine
+      a non-selfish manager (person).
+    * The principles exist in part to encourage us to do things that we might
+      not otherwise do.
 
 ### What other issues came up?
 
@@ -255,25 +240,3 @@ Lab
 ---
 
 Make sure that the lab repo ends with `-maven`.
-
-How do I initialize an anonymous iterator? (Or any anonymous inner class.)
-
-> By putting the initialization code in braces.
-
-```
-return new Iterator<T>() {
-  Stack<T> stack;
-  ...
-  {
-    stack = new Stack<T>();
-    stack.push(root);
-  }
-
-  public boolean hasNext() {
-    ...
-  }
-
-  public boolean next() {
-    ...
-  }
-} 
