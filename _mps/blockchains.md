@@ -208,13 +208,13 @@ While a hash (at least the hash returned by a message digest) is just an array o
 Write a class called `Hash` with the following `public` methods:
 
 `Hash(byte[] data)`
-  : constructs a new `Hash` object that contains a copy of the given hash (still as an array of bytes). We make a copy of the data so that clients can't later mutate it.
+  : Construct a new `Hash` object that contains a copy of the given hash (still as an array of bytes). We make a copy of the data so that clients can't later mutate it.
 
-`byte[] getData()`
-  : returns a copy of the hash contained in this object. Once again, we return a copy so that clients can't change the value.
+`byte[] get()`
+  : Return a copy of the hash contained in this object. Once again, we return a copy so that clients can't change the value.
 
 `boolean isValid()`
-  : returns true if this hash meets the criteria for validity. In our case, we require that the first three bytes be 0.
+  : returns true if this hash meets the criteria for validity. In our case, we require that the first three bytes are 0.
 
 `String toString()`
   : returns the string representation of the hash as a string of hexadecimal digits, 2 digits per byte.
@@ -234,65 +234,89 @@ The `equals` method should check to see if:
 1. `other` is an instance of `Hash` using the `instanceof` operator.
 2. If so, it should *cast* `other` to type `Hash`, *e.g.*, `Hash o = (Hash) other` and then use the [`Arrays.equals` static method]({{ site.java_api }}/java/util/Arrays.html#equals-byte:A-byte:A-) to perform the appropriate equality check on the two `Hash` object's arrays.
 
+### An Entry class
+
+This class represents the data in each block. For our purposes, we only need three parts: 
+
+* The source of the transfer.
+* The target of the transfer.
+* The amount transferred.
+
+The class provides one constructor.
+
+`Entry(String source, String target, int amount)`
+  : Create a new entry.
+
+The class provides only getters.
+
+`String source()`
+  : Gets the source.
+
+`String target()`
+  : Gets the target.
+
+`int amount()`
+  : Gets the amount.
+
+It also provides the legendary `toString()` method.
+
+`String toString()`
+  : If the source is not the empty string, returns a string
+    of the form `[Source: <source>, Target: <target>, Amount: <amount>]`.
+    If the source is the empty string, returns a string of the
+    form `[Deposit, Target: <target>, Amount: <amount>]`.
+
 ### A Block class
 
 Next, you should create a separate class for the data contained in each node of the blockchain.  Recall that a block contains:
 
 * The number of the block in the blockchain.
-* The data.
+* The entry.
 * The hash of the previous block in the chain.
 * The nonce.
 * The hash of this block.
-
-For this project, the data consist of the source of a transfer, the target of the transfer, and the amount tranferred.
 
 Note that a block itself does not contain links to other blocks in the chain.  The block will be wrapped in a `Node` class that will contain the links.
 
 Write a class called `Block` with the following `public` constructors and methods:
 
 `Block(int num, String source, String target, int amount, Hash prevHash)`
-  : creates a new block from the specified parameters, performing the mining operation to discover the nonce and hash for this block given these parameters.
+  : Create a new block from the specified parameters, performing the mining operation to discover the nonce and hash for this block given these parameters.
 
 `Block(int num, String source, String target, int amount, Hash prevHash, long nonce)`
-  : creates a new block from the specified parameters, using the provided nonce and additional parameters to generate the hash for the block.  Because the nonce is provided, this constructor does not need to perform the mining operation; it can compute the hash directly.
+  : Create a new block from the specified parameters, using the provided nonce and additional parameters to generate the hash for the block.  Because the nonce is provided, this constructor does not need to perform the mining operation; it can compute the hash directly.
 
 `int getNum()` 
-  : returns the number of this block.
+  : Get the number of this block.
 
-`String getSource()`
-  : returns the source of the transfer recorded in this block (or the empty string for the Global Banking Cartel)
-
-`String getTarget()`
-  : returns the target of the transfer recorded in this block
-
-`int getAmount()`
-  : returns the amount transferred that is recorded in this block.
+`Entry getEntry()`
+  : Gets the entry.
 
 `long getNonce()` 
-  : returns the nonce of this block.
+  : Get the nonce of this block.
 
 `Hash getPrevHash()`
-  : returns the hash of the previous block in the blockchain.
+  : Get the hash of the previous block in the blockchain.
 
 `Hash getHash()`
-  : returns the hash of this block.
+  : Get the hash of this block.
 
-`String toString()`:
-  returns a string representation of the block (see below).
+`String toString()`
+  : Return a string representation of the block (see below).
 
 The string representation of a `Block` should be formatted as follows (filling in values for the things in angle brackets):
 
 ```text
-Block <num> (Source: <source>, Target <target>, Amount: <amt>, Nonce: <nonce>, prevHash: <prevHash>, hash: <hash>)
+Block <num> (Entry: [Source: <source>, Target <target>, Amount: <amt>], Nonce: <nonce>, prevHash: <prevHash>, hash: <hash>)
 ```
 
-If the source is the Global Banking Cartel, use "Deposit" instead of "Source: <source>".
+However, if the source is the Global Banking Cartel (that is, the empty string), use "Deposit" instead of "Source: <source>".
 
 For example,
 
 ```text
-Block 1 (Deposit, Target: Alexis, Amount: 300, Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
-Block 2 (Source: Alexis, Target: Blake, Amount 50, Nonce, 12312321, prevHash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a8)
+Block 1 (Entry: [Deposit, Target: Alexis, Amount: 300], Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
+Block 2 (Entry: [Source: Alexis, Target: Blake], Amount 50, Nonce, 12312321, prevHash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a8)
 ```
 
 #### Mining
@@ -362,6 +386,9 @@ Use `Block` to implement a `BlockChain` class which is a singly-linked structure
 
 `String toString()`
   : Return a string representation of the `BlockChain` which is simply the string representation of each of its blocks, earliest to latest, one per line.
+
+`Iterator<Entry> entries()`
+  : Return the entries.
 
 Note that our `Block` class only generates hashes from its arguments, so we know by construction that the hash of a block is consistent with its data and that it is valid.  However `isValid` must still ensure that the blocks of the chain represents a valid series of transactions by traversing the chain.
 
