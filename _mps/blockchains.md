@@ -15,6 +15,8 @@ Useful Javadoc:
 
 ---
 
+_Warning! This mini-project is in the process of being rewritten._
+
 Sequential structures are pervasive in all of computing.  One of the most recent innovations in sequential structures is the [*blockchain*](https://en.wikipedia.org/wiki/Blockchain_(database)) which is a sequence of records built to be highly resistant to change.  Blockchains were first used in 2008 to record transactions for the cryptocurrency [Bitcoin](https://en.wikipedia.org/wiki/Bitcoin).  In this context, the blockchain is a complete history of all Bitcoin transactions ever made, a *public ledger*, replicated, verified, and evolved by many computers a distributed network of machines connected through the Internet.  Since then, blockchains have been used in many other contexts, *e.g.*, other [cryptocurrencies](https://en.wikipedia.org/wiki/Cryptocurrency), crowd-funding and digital rights management, and supply chain management, anywhere where immutable public records of transactions are necessary.
 
 Blockchains, as a *distributed data structure*, require careful coordination between the participating computers on the network.  As this is not a distributed systems course, we will not address these issues directly.  However, the blockchain itself is simply a list with a bit of extra information to ensure its integrity.  In this project, we will develop a blockchain data structure that will allow us to understand the essential operations that blockchain-based application perform.
@@ -27,9 +29,9 @@ At its core, a blockchain is simply a linked list augmented with *cryptographic 
 
 1. *Resistance to inversion*: given a hash value, it is computationally infeasible to find the original value.
 2. *Resistance to collisions*: given a hash, it is computationally infeasible to find two values that both produce the given hash.
-2. *Sensitivity to change*: small changes to a value should result in significant changes to the resulting hash so that it is infeasible to determine an updated value given its hash coupled with the old value and the old value's hash.
+3. *Sensitivity to change*: small changes to a value should result in significant changes to the resulting hash so that it is infeasible to determine an updated value given its hash coupled with the old value and the old value's hash.
 
-Because of these properties, there is no easy way to find a value that produces a hash that meets some arbitrary property, *e.g.*, the hash begins with three zeroes, other than a brute-force search of all the possibilities.  Blockchains exploit this property of cryptographic hashes to maintain the integrity of its recorded transactions.
+Because of these properties, there is no easy way to find a value that produces a hash that meets some arbitrary property---*e.g.*, that the hash begins with three zeroes---other than a brute-force search of all the possibilities.  Blockchains exploit this property of cryptographic hashes to maintain the integrity of its recorded transactions.
 
 ### Cryptographic hashes in Java
 
@@ -44,7 +46,11 @@ A `MessageDigest` is an object that encapsulates the process of creating a hash 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-  public static byte[] calculateHash(String msg) throws NoSuchAlgorithmException {
+  /**
+   * Calculate the hash of a string.
+   */
+  public static byte[] calculateHash(String msg) 
+      throws NoSuchAlgorithmException {
     MessageDigest md = MessageDigest.getInstance("sha-256");
     // Remaining implementation below...
   } // calculateHash(String)
@@ -100,7 +106,7 @@ hash:     ??
 
 Because this is the first block in the list, it doesn't have a previous hash to refer to, so we'll ignore it for the purposes of hashing.  However, what do we fill in for the `nonce` value of this block so that we can compute its hash.  If our choice of `nonce` value was arbitrary, then our resulting hash value would also be arbitrary and thus would be of little use for verifying anything.
 
-We therefore put an arbitrary restriction on our hash value which only allows us to accept certain hashes into our blockchain.  For this homework, we place the following restriction on our hashes:
+We therefore put an arbitrary restriction on our hash value which only allows us to accept certain hashes into our blockchain.  _For this project_, we place the following restriction on our hashes:
 
 * A hash is *valid* for our block chain if it begins with three bytes that are all zeroes.
 
@@ -108,7 +114,7 @@ Thus, we cannot pick any nonce value; we must pick one such that the resulting h
 
 This process of finding a nonce that, when combined with the rest of the block, produces a valid hash, is called *mining*.  This is because finding such a nonce is very time consuming.  Cryptographic hashing tells us that the only method of doing so is:
 
-* Loop through all the possible nonce values.
+* Loop through all the possible nonce values. (We'll often do so randomly.)
 * For each candidate nonce, compute the hash of the block with the nonce.
 * If the hash is valid, then complete the block with that data.
   Otherwise, keep iterating.
@@ -158,35 +164,63 @@ However, what happens if an attacker manages re-mine the entire block chain?  Th
 
 ## The BlockChain program
 
-In this homework, we will write a program that simulates the development of a blockchain that records the transactions between two parties, call them Alexis and Blake.  Initially, Alexis starts with a non-negative amount of cash and no new cash is injected into the system.  Each transaction is represented by a single integer that represents a transfer of money between Alexis and Blake.
+In this project, we will write a program that simulates the development of a blockchain that records transfers of money between multiple parties. A transaction consists of three pieces of information:
 
-* A *negative* transaction amount corresponds to transferring money from Alexis to Blake.
-* A *positive* transaction amount corresponds to transferring money from Blake to Alexis.
+* The _source_ of the transfer. This must either be someone who already has a positive balance in the system or from the Global Banking Cartel (which will be represented by the empty string). You can assume that the Global Banking Cartel has infinite funds.
+* The _target_ of the transfer. This can either be someone already in the system or someone new.
+* The _amount_ transfered. This will be an exact integer.
 
-The first block of the chain stores the amount of money that Alexis starts with (think of it as an initial transaction from Blake to Alexis).  Subsequent blocks of the chain only store the transactions between Alexis and Blake rather than the overall amount in the system.  To tell if a new block is valid, we must not only check that its hashes are correct but also the transaction represents a legal exchange of cash given the history of blocks before it.  For example, the following transaction chain is valid:
+The first block of the system should have an empty source, empty target, and 0 transferred.
 
-```
-300 --> -150 --> -100 --> 50 --> 100 --> -150
+Subsequent blocks of the chain only store the transactions between people, rather than the overall amount in the system.  To tell if a new block is valid, we must not only check that its hashes are correct but also the transaction represents a legal exchange of cash given the history of blocks before it.  For example, the following transaction chain is valid:
+
+```text
+"","Alexis",50
+"Alexis","Blake",25
+"Alexis","Cassidy",10
+"Blake","Cassidy",5
+"Cassidy","Alexis",15
 ```
 
 However, the following transaction chain is not valid:
 
-```
-300 --> -150 -> -100 -> -100 --> 150
+```text
+"","Alexis",50
+"Alexis","Blake",25
+"Cassidy","Alexis",5
 ```
 
-Because Alexis only has 50 units of money available when she tries to transfer an additional 100 units to Blake in the fourth transaction.  In general, we must traverse the entire blockchain to determine if a new transaction is valid, checking that each transaction legally follows from the previous one.
+In this case, Cassidy does not have any money in the system, and so cannot transfer money. The following transaction chain is also invalid.
+
+```text
+"","Alexis",50
+"Alexis","Blake",25
+"Blake","Cassidy",5
+"Cassidy","Alexis",10
+```
+
+In general, we must traverse the entire blockchain to determine if a new transaction is valid, checking that each transaction legally follows from the previous one.
 
 ### A Hash class
 
-While a hash is a byte array, it is convenient to write a *wrapper class* that wraps up a byte array along with some operations we would like to perform on it.
+While a hash (at least the hash returned by a message digest) is just an array of bytes, it is convenient to write a *wrapper class* that wraps up a byte array along with some operations we would like to perform on it.
+
 Write a class called `Hash` with the following `public` methods:
 
-* `Hash(byte[] data)`: constructs a new `Hash` object that contains the given hash (as an array of bytes).
-* `byte[] getData()`: returns the hash contained in this object.
-* `boolean isValid()`: returns true if this hash meets the criteria for validity, *i.e.*, its first three indices contain zeroes.
-* `String toString()`: returns the string representation of the hash as a string of hexadecimal digits, 2 digits per byte.
-* `boolean equals(Object other)`: returns true if this hash is structurally equal to the argument.
+`Hash(byte[] data)`
+  : constructs a new `Hash` object that contains a copy of the given hash (still as an array of bytes). We make a copy of the data so that clients can't later mutate it.
+
+`byte[] getData()`
+  : returns a copy of the hash contained in this object. Once again, we return a copy so that clients can't change the value.
+
+`boolean isValid()`
+  : returns true if this hash meets the criteria for validity. In our case, we require that the first three bytes be 0.
+
+`String toString()`
+  : returns the string representation of the hash as a string of hexadecimal digits, 2 digits per byte.
+
+`boolean equals(Object other)`
+  : returns true if this hash is structurally equal to the argument. That is, it ensures that the other object is also a `Hash`.
 
 To implement `toString()`, you will find the following static methods useful:
 
@@ -205,35 +239,63 @@ The `equals` method should check to see if:
 Next, you should create a separate class for the data contained in each node of the blockchain.  Recall that a block contains:
 
 * The number of the block in the blockchain.
-* The data, *i.e.*, the amount transferred between the two parties represented as a single integer.
+* The data.
 * The hash of the previous block in the chain.
 * The nonce.
 * The hash of this block.
 
+For this project, the data consist of the source of a transfer, the target of the transfer, and the amount tranferred.
+
 Note that a block itself does not contain links to other blocks in the chain.  The block will be wrapped in a `Node` class that will contain the links.
 
-Write a class called `Block` with the following `public` methods:
+Write a class called `Block` with the following `public` constructors and methods:
 
-* `Block(int num, int amount, Hash prevHash)`: creates a new block from the specified parameters, performing the mining operation to discover the nonce and hash for this block given these parameters.
-* `Block(int num, int amount, Hash prevHash, long nonce)`: creates a new block from the specified parameters, using the provided nonce and additional parameters to generate the hash for the block.  Because the nonce is provided, this constructor does not need to perform the mining operation; it can compute the hash directly.
-* `int getNum():` returns the number of this block.
-* `int getAmount()`: returns the amount transferred that is recorded in this block.
-* `long getNonce():` returns the nonce of this block.
-* `Hash getPrevHash()`: returns the hash of the previous block in the blockchain.
-* `Hash getHash()`: returns the hash of this block.
-* `String toString()`: returns a string representation of the block (see below).
+`Block(int num, String source, String target, int amount, Hash prevHash)`
+  : creates a new block from the specified parameters, performing the mining operation to discover the nonce and hash for this block given these parameters.
+
+`Block(int num, String source, String target, int amount, Hash prevHash, long nonce)`
+  : creates a new block from the specified parameters, using the provided nonce and additional parameters to generate the hash for the block.  Because the nonce is provided, this constructor does not need to perform the mining operation; it can compute the hash directly.
+
+`int getNum()` 
+  : returns the number of this block.
+
+`String getSource()`
+  : returns the source of the transfer recorded in this block (or the empty string for the Global Banking Cartel)
+
+`String getTarget()`
+  : returns the target of the transfer recorded in this block
+
+`int getAmount()`
+  : returns the amount transferred that is recorded in this block.
+
+`long getNonce()` 
+  : returns the nonce of this block.
+
+`Hash getPrevHash()`
+  : returns the hash of the previous block in the blockchain.
+
+`Hash getHash()`
+  : returns the hash of this block.
+
+`String toString()`:
+  returns a string representation of the block (see below).
 
 The string representation of a `Block` should be formatted as follows (filling in values for the things in angle brackets):
 
 ```text
-Block <num> (Amount: <amt>, Nonce: <nonce>, prevHash: <prevHash>, hash: <hash>)
+Block <num> (Source: <source>, Target <target>, Amount: <amt>, Nonce: <nonce>, prevHash: <prevHash>, hash: <hash>)
 ```
+
+If the source is the Global Banking Cartel, use "Deposit" instead of "Source: <source>".
 
 For example,
 
 ```text
-Block 0 (Amount: 300, Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
+Block 1 (Deposit, Target: Alexis, Amount: 300, Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
+Block 2 (Source: Alexis, Target: Blake, Amount 50, Nonce, 12312321, prevHash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a8)
 ```
+
+#### Mining
 
 To mine for a given block's nonce, you will need to use the `MessageDigest` class as described in the background section of this assignment.  To convert integers and longs into byte arrays, use the [`ByteBuffer` class]({{ site.java_api }}/java/nio/ByteBuffer.html) which allows you to store data types as arrays of bytes.  You will need to use the following methods of the `ByteBuffer` class:
 
@@ -255,30 +317,59 @@ To mine a block, you should update a `MessageDigest` object with the following p
 3. The hash of the previous node's block in the list if it exists.
 4. The discovered nonce value.
 
-Note that when you mine the first block, there will be no previous hash, so you can skip adding such a value to the `MessageDigest` object.
+Note that when you mine the initial block, there will be no previous hash, so you can skip adding such a value to the `MessageDigest` object.
 
-The value of the resulting hash may be different depending on the order in which you hash values.  For consistency's sake with our testing suite, **ensure that you update the `MessageDigest`** object in the order specified above.  For the first block, you should not hash anything for the previous hash value (step 3).  Furthermore, you should also search the space of nonces by searching all possible longs in increasing order starting at zero.
+The value of the resulting hash may be different depending on the order in which you hash values.  For consistency's sake with our testing suite, **ensure that you update the `MessageDigest`** object in the order specified above.  For the first block, you should not hash anything for the previous hash value (step 3).  
+
+There are a variety of ways to search for nonces.
+
+* You could search all longs in increasing order starting at zero.
+* You could randomly choose longs.
+* You could choose some other way to sequence through the values (e.g., first looking at all multiples of 10, then one more than all multiples of 10, then two more than all multiples of 10).
+
+For this assignment, you should search the longs in increasing order starting at zero.
 
 ### The BlockChain class
 
 Use `Block` to implement a `BlockChain` class which is a singly-linked structure with a `first` and `last` pointer (*i.e.*, pointers to the first and last elements in the structure, much like in a queue).  You should use nodes as in the standard style of linked structure implementations in Java.  `BlockChain` should contain the following methods:
 
-* `BlockChain(int initial)`: creates a `BlockChain` that possess a single block the starts with the given initial amount.  Note that to create this block, the `prevHash` field should be ignored when calculating the block's own nonce and hash.
-* `Block mine(int amount)`: mines a new candidate block to be added to the end of the chain.  The returned `Block` should be valid to add onto this chain.
-* `int getSize()`: returns the size of the blockchain.
-  Note that number of the blocks provides a convenient method for quickly determining the size of the chain.
-* `void append(Block blk)`: adds this block to the list, throwing an `IllegalArgumentException` if this block cannot be added to the chain (because it has an invalid hash, because its hash is inappropriate for the contents, or because the previous hash is incorrect).
-* `boolean removeLast()`: removes the last block from the chain, returning `true`.  If the chain only contains a single block, then `removeLast` does nothing and returns `false`.
-* `Hash getHash()`: returns the hash of the last block in the chain.
-* `boolean isValidBlockChain()`: walks the blockchain and ensures that its blocks are consistent (the balances are legal) and valid (as in append).
-* `void printBalances(PrintWriter pen)`: prints Alexis's and Blake's respective balances in the form `Alexis: <amt>, Blake: <amt>` on a single line, *e.g.*, `Alexis: 300, Blake: 0`.
-* `String toString()`: returns a string representation of the `BlockChain` which is simply the string representation of each of its blocks, earliest to latest, one per line.
+`BlockChain()`
+  : Create a `BlockChain` that possess a single block with empty source, target, and amount.  Note that to create this block, the `prevHash` field should be ignored when calculating the block's own nonce and hash.
 
-Note that our `Block` class only generates hashes from its arguments, so we know by construction that the hash of a block is consistent with its data and that it is valid.  However `isValidBlockChain` must still ensure that the blocks of the chain represents a valid series of transactions by traversing the chain.
+`Block mine(String source, String target, int amount)`
+  : Mine a new candidate block to be added to the end of the chain.  The returned `Block` should be valid to add onto this block chain. (That is, not only should the nonce be correct, but the transfer should be valid.)
 
-### A BlockChainDriver class
+`int getSize()`
+  : Return the size of the blockchain. Note that number of the blocks provides a convenient method for quickly determining the size of the chain.
 
-Finally we'll create a program, `BlockChainDriver`, which allows us to interact with our `BlockChain`.  `BlockChainDriver` should contain the `main` method of your program.  Your program should take a single command-line argument that is the initial non-negative dollar amount that Alexis starts with.  It then allows the user to interactively manipulate the blockchain and mine for additional blocks through a text-driven interface.  The program creates a blockchain with the initial dollar amount and then repeatedly:
+`void append(Block blk)`
+  : Add a block to the list, throwing an `IllegalArgumentException` if this block cannot be added to the chain (because it has an invalid hash, because its hash is inappropriate for the contents, or because the previous hash is incorrect). Note that `append` does not check whether or not the data in the block are valid.
+
+`boolean removeLast()`
+  : Remove the last block from the chain, returning `true`.  If the chain only contains a single block, then `removeLast` does nothing and returns `false`.
+
+`Hash getHash()`
+  : Return the hash of the last block in the chain.
+
+`boolean isValid()`
+  : Walks he blockchain and ensure that its blocks are consistent (the balances are legal) and valid (as described in `append`).
+
+`String[] users()`
+  : Return an array of all the people who have participated in the system. (This array can be in any order.)
+
+`int balance(String user)`
+  : Find one person's balance. Returns 0 if they haven't used the system.
+
+`String toString()`
+  : Return a string representation of the `BlockChain` which is simply the string representation of each of its blocks, earliest to latest, one per line.
+
+Note that our `Block` class only generates hashes from its arguments, so we know by construction that the hash of a block is consistent with its data and that it is valid.  However `isValid` must still ensure that the blocks of the chain represents a valid series of transactions by traversing the chain.
+
+### A BlockChainUI class
+
+_To be written!_
+
+Finally we'll create a program, `BlockChainUI`, which allows us to interact with our `BlockChain`.  `BlockChainUI` should contain the `main` method of your program. Your program should permit the user to interactively manipulate the blockchain and mine for additional blocks through a text-driven interface.  The program repeatedly:
 
 1. Prints out the contents of the blockchain.
 2. Reads in a command from the user.
@@ -292,269 +383,66 @@ Valid commands:
     append: appends a new block onto the end of the chain
     remove: removes the last block from the end of the chain
     check: checks that the block chain is valid
-    report: reports the balances of Alexis and Blake
+    users: prints a list of users
+    balance: finds a user's balance
     help: prints this list of commands
     quit: quits the program
 ```
 
-The various commands map directly onto `BlockChain` operations that you already implemented.  Note that `mine` is separate from `append`---you must first mine a candidate block with `mine` to discover an appropriate nonce and then `append` that block along with the discovered nonce.  This mimics more closely how Bitcoin works in real-life: miners race to discover blocks may collectively discover several nonces that work.  However, only one such nonce is eventually appended onto the blockchain.
+In most cases, commands map directly onto `BlockChain` operations that you already implemented.  Note that `mine` is separate from `append`---you must first mine a candidate block with `mine` to discover an appropriate nonce and then `append` that block along with the discovered nonce.  This mimics more closely how Bitcoin works in real-life: miners race to discover blocks may collectively discover several nonces that work.  However, only one such nonce is eventually appended onto the blockchain.
 
 `mine` and `append` take additional arguments---the transaction amount for `mine` and the transaction amount and nonce for `append`.  Your program should prompt for these values individually.
 
+For `report`, you'll need to grab the array of users and then iterate through it to compute their balances.
+
 As in some previous projects, your program should mimic the output of the examples below.  In the case of invalid inputs, *e.g.*, invalid commands, your program should report sensible error messages and continue execution.  Note that depending on how you discover your nonce values, the nonce and hash values of your blocks may be different from these examples.
 
-**Sample execution #1**
+_Sample executions forthcoming._
+
+## Preparation
+
+a. Fork the repository. (Repository forthcoming.)
+
+b. Clone that repository.
 
 ```text
-$> java BlockChainDriver 300
-Block 0 (Amount: 300, Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
-
-Command? help
-Valid commands:
-    mine: discovers the nonce for a given transaction
-    append: appends a new block onto the end of the chain
-    remove: removes the last block from the end of the chain
-    check: checks that the block chain is valid
-    report: reports the balances of Alexis and Blake
-    help: prints this list of commands
-    quit: quits the program
-
-Block 0 (Amount: 300, Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
-
-Command? mine
-Amount transferred? -150
-amount = -150, nonce = 2016357
-
-Block 0 (Amount: 300, Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
-
-Command? append
-Amount transferred? -150
-Nonce? 2016357
-
-Block 0 (Amount: 300, Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
-Block 1 (Amount: -150, Nonce: 2016357, prevHash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7, hash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26)
-
-Command? mine
-Amount transferred? -100
-amount = -100, nonce = 9775906
-
-Block 0 (Amount: 300, Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
-Block 1 (Amount: -150, Nonce: 2016357, prevHash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7, hash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26)
-
-Command? append
-Amount transferred? -100
-Nonce? 9775906
-
-Block 0 (Amount: 300, Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
-Block 1 (Amount: -150, Nonce: 2016357, prevHash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7, hash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26)
-Block 2 (Amount: -100, Nonce: 9775906, prevHash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26, hash: 000000e6a62e93665765ae029cedac2016ac6da4be94b096c625cd1bef24a639)
-
-Command? mine
-Amount transferred? 50
-amount = 50, nonce = 18418284
-
-Block 0 (Amount: 300, Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
-Block 1 (Amount: -150, Nonce: 2016357, prevHash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7, hash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26)
-Block 2 (Amount: -100, Nonce: 9775906, prevHash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26, hash: 000000e6a62e93665765ae029cedac2016ac6da4be94b096c625cd1bef24a639)
-
-Command? append
-Amount transferred? 50
-Nonce? 18418284
-
-Block 0 (Amount: 300, Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
-Block 1 (Amount: -150, Nonce: 2016357, prevHash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7, hash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26)
-Block 2 (Amount: -100, Nonce: 9775906, prevHash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26, hash: 000000e6a62e93665765ae029cedac2016ac6da4be94b096c625cd1bef24a639)
-Block 3 (Amount: 50, Nonce: 18418284, prevHash: 000000e6a62e93665765ae029cedac2016ac6da4be94b096c625cd1bef24a639, hash: 000000b96183e5caab9534bfded11fbf022d03de1cbf2a08bbdbed24882c9d4a)
-
-Command? mine
-Amount transferred? 100
-amount = 100, nonce = 20197478
-
-Block 0 (Amount: 300, Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
-Block 1 (Amount: -150, Nonce: 2016357, prevHash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7, hash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26)
-Block 2 (Amount: -100, Nonce: 9775906, prevHash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26, hash: 000000e6a62e93665765ae029cedac2016ac6da4be94b096c625cd1bef24a639)
-Block 3 (Amount: 50, Nonce: 18418284, prevHash: 000000e6a62e93665765ae029cedac2016ac6da4be94b096c625cd1bef24a639, hash: 000000b96183e5caab9534bfded11fbf022d03de1cbf2a08bbdbed24882c9d4a)
-
-Command? append
-Amount transferred? 100
-Nonce? 20197478
-
-Block 0 (Amount: 300, Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
-Block 1 (Amount: -150, Nonce: 2016357, prevHash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7, hash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26)
-Block 2 (Amount: -100, Nonce: 9775906, prevHash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26, hash: 000000e6a62e93665765ae029cedac2016ac6da4be94b096c625cd1bef24a639)
-Block 3 (Amount: 50, Nonce: 18418284, prevHash: 000000e6a62e93665765ae029cedac2016ac6da4be94b096c625cd1bef24a639, hash: 000000b96183e5caab9534bfded11fbf022d03de1cbf2a08bbdbed24882c9d4a)
-Block 4 (Amount: 100, Nonce: 20197478, prevHash: 000000b96183e5caab9534bfded11fbf022d03de1cbf2a08bbdbed24882c9d4a, hash: 0000005092160ebaa679544c3432112e766d4b6369c77c1a23939fc887c6e6e8)
-
-Command? mine
-Amount transferred? -150
-amount = -150, nonce = 39522567
-
-Block 0 (Amount: 300, Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
-Block 1 (Amount: -150, Nonce: 2016357, prevHash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7, hash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26)
-Block 2 (Amount: -100, Nonce: 9775906, prevHash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26, hash: 000000e6a62e93665765ae029cedac2016ac6da4be94b096c625cd1bef24a639)
-Block 3 (Amount: 50, Nonce: 18418284, prevHash: 000000e6a62e93665765ae029cedac2016ac6da4be94b096c625cd1bef24a639, hash: 000000b96183e5caab9534bfded11fbf022d03de1cbf2a08bbdbed24882c9d4a)
-Block 4 (Amount: 100, Nonce: 20197478, prevHash: 000000b96183e5caab9534bfded11fbf022d03de1cbf2a08bbdbed24882c9d4a, hash: 0000005092160ebaa679544c3432112e766d4b6369c77c1a23939fc887c6e6e8)
-
-Command? append
-Amount transferred? -150
-Nonce? 39522567
-
-Block 0 (Amount: 300, Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
-Block 1 (Amount: -150, Nonce: 2016357, prevHash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7, hash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26)
-Block 2 (Amount: -100, Nonce: 9775906, prevHash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26, hash: 000000e6a62e93665765ae029cedac2016ac6da4be94b096c625cd1bef24a639)
-Block 3 (Amount: 50, Nonce: 18418284, prevHash: 000000e6a62e93665765ae029cedac2016ac6da4be94b096c625cd1bef24a639, hash: 000000b96183e5caab9534bfded11fbf022d03de1cbf2a08bbdbed24882c9d4a)
-Block 4 (Amount: 100, Nonce: 20197478, prevHash: 000000b96183e5caab9534bfded11fbf022d03de1cbf2a08bbdbed24882c9d4a, hash: 0000005092160ebaa679544c3432112e766d4b6369c77c1a23939fc887c6e6e8)
-Block 5 (Amount: -150, Nonce: 39522567, prevHash: 0000005092160ebaa679544c3432112e766d4b6369c77c1a23939fc887c6e6e8, hash: 0000008734f8ff6f20a1c49b428d7892d2f8108a103e03d53abeb01ce048ec85)
-
-Command? check
-Chain is valid!
-
-Block 0 (Amount: 300, Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
-Block 1 (Amount: -150, Nonce: 2016357, prevHash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7, hash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26)
-Block 2 (Amount: -100, Nonce: 9775906, prevHash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26, hash: 000000e6a62e93665765ae029cedac2016ac6da4be94b096c625cd1bef24a639)
-Block 3 (Amount: 50, Nonce: 18418284, prevHash: 000000e6a62e93665765ae029cedac2016ac6da4be94b096c625cd1bef24a639, hash: 000000b96183e5caab9534bfded11fbf022d03de1cbf2a08bbdbed24882c9d4a)
-Block 4 (Amount: 100, Nonce: 20197478, prevHash: 000000b96183e5caab9534bfded11fbf022d03de1cbf2a08bbdbed24882c9d4a, hash: 0000005092160ebaa679544c3432112e766d4b6369c77c1a23939fc887c6e6e8)
-Block 5 (Amount: -150, Nonce: 39522567, prevHash: 0000005092160ebaa679544c3432112e766d4b6369c77c1a23939fc887c6e6e8, hash: 0000008734f8ff6f20a1c49b428d7892d2f8108a103e03d53abeb01ce048ec85)
-
-Command? quit
+cd ~/CSC207/MPs                 # Or the directory of your choice
+git clone git@github.com:USERNAME/mp-blockchains-maven.git
 ```
 
-**Sample execution #2**
+c. Open the project in VSCode.
+
+d. Update the `README.md` appropriately.
+
+e. Push the updated `README` to GitHub.
 
 ```text
-$> java BlockChainDriver 300
-Block 0 (Amount: 300, Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
-
-Command? mine
-Amount transferred? -150
-amount = -150, nonce = 2016357
-
-Block 0 (Amount: 300, Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
-
-Command? append
-Amount transferred? -150
-Nonce? 2016357
-
-Block 0 (Amount: 300, Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
-Block 1 (Amount: -150, Nonce: 2016357, prevHash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7, hash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26)
-
-Command? mine
-Amount transferred? -100
-amount = -100, nonce = 9775906
-
-Block 0 (Amount: 300, Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
-Block 1 (Amount: -150, Nonce: 2016357, prevHash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7, hash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26)
-
-Command? append
-Amount transferred? -100
-Nonce? 9775906
-
-Block 0 (Amount: 300, Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
-Block 1 (Amount: -150, Nonce: 2016357, prevHash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7, hash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26)
-Block 2 (Amount: -100, Nonce: 9775906, prevHash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26, hash: 000000e6a62e93665765ae029cedac2016ac6da4be94b096c625cd1bef24a639)
-
-Command? report
-Alexis: 50, Blake: 250
-
-Block 0 (Amount: 300, Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
-Block 1 (Amount: -150, Nonce: 2016357, prevHash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7, hash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26)
-Block 2 (Amount: -100, Nonce: 9775906, prevHash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26, hash: 000000e6a62e93665765ae029cedac2016ac6da4be94b096c625cd1bef24a639)
-
-Command? check
-Chain is valid!
-
-Block 0 (Amount: 300, Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
-Block 1 (Amount: -150, Nonce: 2016357, prevHash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7, hash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26)
-Block 2 (Amount: -100, Nonce: 9775906, prevHash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26, hash: 000000e6a62e93665765ae029cedac2016ac6da4be94b096c625cd1bef24a639)
-
-Command? mine
-Amount transferred? -100
-amount = -100, nonce = 46114774
-
-Block 0 (Amount: 300, Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
-Block 1 (Amount: -150, Nonce: 2016357, prevHash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7, hash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26)
-Block 2 (Amount: -100, Nonce: 9775906, prevHash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26, hash: 000000e6a62e93665765ae029cedac2016ac6da4be94b096c625cd1bef24a639)
-
-Command? append
-Amount transferred? -100
-Nonce? 46114774
-
-Block 0 (Amount: 300, Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
-Block 1 (Amount: -150, Nonce: 2016357, prevHash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7, hash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26)
-Block 2 (Amount: -100, Nonce: 9775906, prevHash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26, hash: 000000e6a62e93665765ae029cedac2016ac6da4be94b096c625cd1bef24a639)
-Block 3 (Amount: -100, Nonce: 46114774, prevHash: 000000e6a62e93665765ae029cedac2016ac6da4be94b096c625cd1bef24a639, hash: 000000ebdb44ee8f76b3b9c7c4e06e1eb6e6f75a764e91defd986e1955b6c8c1)
-
-Command? report
-Alexis: -50, Blake: 350
-
-Block 0 (Amount: 300, Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
-Block 1 (Amount: -150, Nonce: 2016357, prevHash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7, hash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26)
-Block 2 (Amount: -100, Nonce: 9775906, prevHash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26, hash: 000000e6a62e93665765ae029cedac2016ac6da4be94b096c625cd1bef24a639)
-Block 3 (Amount: -100, Nonce: 46114774, prevHash: 000000e6a62e93665765ae029cedac2016ac6da4be94b096c625cd1bef24a639, hash: 000000ebdb44ee8f76b3b9c7c4e06e1eb6e6f75a764e91defd986e1955b6c8c1)
-
-Command? check
-Chain is invalid!
-
-Block 0 (Amount: 300, Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
-Block 1 (Amount: -150, Nonce: 2016357, prevHash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7, hash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26)
-Block 2 (Amount: -100, Nonce: 9775906, prevHash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26, hash: 000000e6a62e93665765ae029cedac2016ac6da4be94b096c625cd1bef24a639)
-Block 3 (Amount: -100, Nonce: 46114774, prevHash: 000000e6a62e93665765ae029cedac2016ac6da4be94b096c625cd1bef24a639, hash: 000000ebdb44ee8f76b3b9c7c4e06e1eb6e6f75a764e91defd986e1955b6c8c1)
-
-Command? remove
-
-Block 0 (Amount: 300, Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
-Block 1 (Amount: -150, Nonce: 2016357, prevHash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7, hash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26)
-Block 2 (Amount: -100, Nonce: 9775906, prevHash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26, hash: 000000e6a62e93665765ae029cedac2016ac6da4be94b096c625cd1bef24a639)
-
-Command? report
-Alexis: 50, Blake: 250
-
-Block 0 (Amount: 300, Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
-Block 1 (Amount: -150, Nonce: 2016357, prevHash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7, hash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26)
-Block 2 (Amount: -100, Nonce: 9775906, prevHash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26, hash: 000000e6a62e93665765ae029cedac2016ac6da4be94b096c625cd1bef24a639)
-
-Command? check
-Chain is valid!
-
-Block 0 (Amount: 300, Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
-Block 1 (Amount: -150, Nonce: 2016357, prevHash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7, hash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26)
-Block 2 (Amount: -100, Nonce: 9775906, prevHash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26, hash: 000000e6a62e93665765ae029cedac2016ac6da4be94b096c625cd1bef24a639)
-
-Command? mine
-Amount transferred? 150
-amount = 150, nonce = 20940595
-
-Block 0 (Amount: 300, Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
-Block 1 (Amount: -150, Nonce: 2016357, prevHash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7, hash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26)
-Block 2 (Amount: -100, Nonce: 9775906, prevHash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26, hash: 000000e6a62e93665765ae029cedac2016ac6da4be94b096c625cd1bef24a639)
-
-Command? append
-Amount transferred? 150
-Nonce? 20940595
-
-Block 0 (Amount: 300, Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
-Block 1 (Amount: -150, Nonce: 2016357, prevHash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7, hash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26)
-Block 2 (Amount: -100, Nonce: 9775906, prevHash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26, hash: 000000e6a62e93665765ae029cedac2016ac6da4be94b096c625cd1bef24a639)
-Block 3 (Amount: 150, Nonce: 20940595, prevHash: 000000e6a62e93665765ae029cedac2016ac6da4be94b096c625cd1bef24a639, hash: 000000ebae09bbc80b2aba3f924cd6fc7eb7b2662e4ca3c31cc5a373d3669657)
-
-Command? report
-Alexis: 200, Blake: 100
-
-Block 0 (Amount: 300, Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
-Block 1 (Amount: -150, Nonce: 2016357, prevHash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7, hash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26)
-Block 2 (Amount: -100, Nonce: 9775906, prevHash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26, hash: 000000e6a62e93665765ae029cedac2016ac6da4be94b096c625cd1bef24a639)
-Block 3 (Amount: 150, Nonce: 20940595, prevHash: 000000e6a62e93665765ae029cedac2016ac6da4be94b096c625cd1bef24a639, hash: 000000ebae09bbc80b2aba3f924cd6fc7eb7b2662e4ca3c31cc5a373d3669657)
-
-Command? check
-Chain is valid!
-
-Block 0 (Amount: 300, Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
-Block 1 (Amount: -150, Nonce: 2016357, prevHash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7, hash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26)
-Block 2 (Amount: -100, Nonce: 9775906, prevHash: 000000d744da56bb0f9a87737a7491b557d49f502d0e375678ca160143986c26, hash: 000000e6a62e93665765ae029cedac2016ac6da4be94b096c625cd1bef24a639)
-Block 3 (Amount: 150, Nonce: 20940595, prevHash: 000000e6a62e93665765ae029cedac2016ac6da4be94b096c625cd1bef24a639, hash: 000000ebae09bbc80b2aba3f924cd6fc7eb7b2662e4ca3c31cc5a373d3669657)
-
-Command? quit
+cd ~/CSC207/MPs/                # Or the directory of your choice
+cd mp-blockchains-maven
+git add README.md
+git status
+git commit -m "Update README."
+git pull
+git push
 ```
+
+f. Add an upstream repository just in case I make changes.
+
+```text
+cd ~/CSC207/MPs/                # Or the directory of your choice
+cd mp-blockchains-maven
+git remote add upstream https://github.com/Grinnell-CSC207/mp-blockchains-maven
+```
+
+In the future, you can grab changes using the following.
+
+```text
+git fetch upstream
+git merge upstream/main
+```
+
+You can also just click the **Sync Fork** button on your GitHub page for the fork.
+
 ## Rubric
 
 Submissions that fail to meet any of these requirements will get an I.
@@ -582,7 +470,7 @@ previous requirements will receive an R.
 [ ] The `Block(int num, int amount, Hash prevHash)` constructor generates
     an appropriate nonce.
 [ ] The `BlockChain` class includes all of the required methods.
-[ ] The `BlockChainDriver` class behaves as described.
+[ ] The `BlockChainUI` class behaves as described.
 ```
 
 ### Exceeds expectations
@@ -626,7 +514,7 @@ How many nonces should I expect to need to generate?
 
 > You will, of course, have to write `computeHash`.
 
-> `VERBOSE` is a field I turn on when I want ugly printing in my program.
+> `VERBOSE` is a field I set to true when I want ugly printing in my program.
 
 Where should I be generating nonces?
 
@@ -635,21 +523,13 @@ Where should I be generating nonces?
 > The primary place I see that being used is in the first `Block`
   constructor.
 
-How much do Alexis and Blake start out with?
-
-> Alexis starts out with however much appears on the command line.  Blake
-  starts out with 0.
-
 Where should we use `MessageDigest`?
 
-> You should only need to use `MessageDigest` in the `Block` class or
-  the `Hash` class (when you are computing a hash code).
+> You should only need to use `MessageDigest` in the `Block` class or the `Hash` class (when you are computing a hash code).
 
 Do we have to write code to compute the hash?
 
-> No. The `digest` method of `MessageDigest` is supposed to compute the
-  hash. Your job is to feed the `MessageDigest` object the data that
-  you want hashed and then ask it for the hash.
+> No. The `digest` method of `MessageDigest` is supposed to compute the hash. Your job is to feed the `MessageDigest` object the data that you want hashed and then ask it for the hash.
 
 How do I add an integer to a digest?
 
@@ -661,12 +541,9 @@ How do I add a long to a digest?
 
 The E rubric says "Avoids recreating structures, such as the `MessageDigest` and some individual arrays, that need not be recreated." However, it looks like your sample code creates a new `MessageDigest` each time we try to hash and creates a new array each time we want to put an `int` or a `long` into the digest.
 
-> Yup. We were striving for straighforward code in the examples (believe it 
-  or not). You should write better code for an E.
+> Yup. We were striving for straighforward code in the examples (believe it or not). You should write better code for an E.
 
 ## Acknowledgements
 
-This assignment comes from materials developed by Peter-Michael Osera
-and Anya Vostinar.  Samuel A. Rebelsy made a variety of updates, including
-the new Q&A section and renaming the characters from Alice/Bob to Alexis/Blake.
+This assignment comes from materials developed by Peter-Michael Osera and Anya Vostinar.  Samuel A. Rebelsy made a variety of updates, including the new Q&A section.
 
