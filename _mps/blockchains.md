@@ -234,7 +234,7 @@ The `equals` method should check to see if:
 1. `other` is an instance of `Hash` using the `instanceof` operator.
 2. If so, it should *cast* `other` to type `Hash`, *e.g.*, `Hash o = (Hash) other` and then use the [`Arrays.equals` static method]({{ site.java_api }}/java/util/Arrays.html#equals-byte:A-byte:A-) to perform the appropriate equality check on the two `Hash` object's arrays.
 
-### An Entry class
+### A Transaction class
 
 This class represents the data in each block. For our purposes, we only need three parts: 
 
@@ -244,8 +244,8 @@ This class represents the data in each block. For our purposes, we only need thr
 
 The class provides one constructor.
 
-`Entry(String source, String target, int amount)`
-  : Create a new entry.
+`Transaction(String source, String target, int amount)`
+  : Create a new transaction.
 
 The class provides only getters.
 
@@ -271,7 +271,7 @@ It also provides the legendary `toString()` method.
 Next, you should create a separate class for the data contained in each node of the blockchain.  Recall that a block contains:
 
 * The number of the block in the blockchain.
-* The entry.
+* The transaction.
 * The hash of the previous block in the chain.
 * The nonce.
 * The hash of this block.
@@ -280,16 +280,16 @@ Note that a block itself does not contain links to other blocks in the chain.  T
 
 Write a class called `Block` with the following `public` constructors and methods:
 
-`Block(int num, String source, String target, int amount, Hash prevHash)`
+`Block(int num, Transaction transaction, Hash prevHash)`
   : Create a new block from the specified parameters, performing the mining operation to discover the nonce and hash for this block given these parameters.
 
-`Block(int num, String source, String target, int amount, Hash prevHash, long nonce)`
+`Block(int num, Transaction transaction, Hash prevHash, long nonce)`
   : Create a new block from the specified parameters, using the provided nonce and additional parameters to generate the hash for the block.  Because the nonce is provided, this constructor does not need to perform the mining operation; it can compute the hash directly.
 
 `int getNum()` 
   : Get the number of this block.
 
-`Entry getEntry()`
+`Entry getTransaction()`
   : Gets the entry.
 
 `long getNonce()` 
@@ -307,7 +307,7 @@ Write a class called `Block` with the following `public` constructors and method
 The string representation of a `Block` should be formatted as follows (filling in values for the things in angle brackets):
 
 ```text
-Block <num> (Entry: [Source: <source>, Target <target>, Amount: <amt>], Nonce: <nonce>, prevHash: <prevHash>, hash: <hash>)
+Block <num> (Transaction: [Source: <source>, Target <target>, Amount: <amt>], Nonce: <nonce>, prevHash: <prevHash>, hash: <hash>)
 ```
 
 However, if the source is the Global Banking Cartel (that is, the empty string), use "Deposit" instead of "Source: <source>".
@@ -315,8 +315,8 @@ However, if the source is the Global Banking Cartel (that is, the empty string),
 For example,
 
 ```text
-Block 1 (Entry: [Deposit, Target: Alexis, Amount: 300], Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
-Block 2 (Entry: [Source: Alexis, Target: Blake], Amount 50, Nonce, 12312321, prevHash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a8)
+Block 1 (Transaction: [Deposit, Target: Alexis, Amount: 300], Nonce: 9324351, prevHash: null, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7)
+Block 2 (Transaction: [Source: Alexis, Target: Blake], Amount 50, Nonce, 12312321, prevHash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a8)
 ```
 
 #### Mining
@@ -378,8 +378,8 @@ Use `Block` to implement a `BlockChain` class which is a singly-linked structure
 `boolean isValid()`
   : Walks he blockchain and ensure that its blocks are consistent (the balances are legal) and valid (as described in `append`).
 
-`String[] users()`
-  : Return an array of all the people who have participated in the system. (This array can be in any order.)
+`Iterator<String> users()`
+  : Return an iterator of all the people who participated in the system (received money in the system). You can present this list in any order.
 
 `int balance(String user)`
   : Find one person's balance. Returns 0 if they haven't used the system.
@@ -387,7 +387,10 @@ Use `Block` to implement a `BlockChain` class which is a singly-linked structure
 `String toString()`
   : Return a string representation of the `BlockChain` which is simply the string representation of each of its blocks, earliest to latest, one per line.
 
-`Iterator<Entry> entries()`
+`Iterator<Block> blocks()`
+  : Return the entries.
+
+`Iterator<Transaction> entries()`
   : Return the entries.
 
 Note that our `Block` class only generates hashes from its arguments, so we know by construction that the hash of a block is consistent with its data and that it is valid.  However `isValid` must still ensure that the blocks of the chain represents a valid series of transactions by traversing the chain.
