@@ -434,6 +434,9 @@
     - page: /readings/tree-traversal.html
   lab:
     - page: /labs/tree-traversal.html
+  eboards:
+    - page: /eboards/eboard21-1.html
+    - page: /eboards/eboard21-2.html
 
 - topic: A Dictionary ADT and binary search trees
   abbrev: maps
