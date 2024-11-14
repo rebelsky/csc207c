@@ -570,7 +570,15 @@ The E rubric says "Avoids recreating structures, such as the `MessageDigest` and
 
 > Yup. We were striving for straighforward code in the examples (believe it or not). You should write better code for an E.
 
+Can I use a `HashMap` to store the table of users and deposits?
+
+> Sure.
+
+Can I use my `AssociativeArray` class to store the table of users and deposits?
+
+> Certainly.
+
 ## Acknowledgements
 
-This assignment comes from materials developed by Peter-Michael Osera and Anya Vostinar.  Samuel A. Rebelsy made a variety of updates, including the new Q&A section.
+This assignment comes from materials developed by Peter-Michael Osera and Anya Vostinar. Samuel A. Rebelsky made a variety of updates, including the new Q&A section.
 
