@@ -201,7 +201,7 @@ In this case, Cassidy does not have any money in the system, and so cannot trans
 
 In general, we must traverse the entire blockchain to determine if a new transaction is valid, checking that each transaction legally follows from the previous one.
 
-### A Hash class
+### Encapsulating bytes with a `Hash` class
 
 While a hash (at least the hash returned by a message digest) is just an array of bytes, it is convenient to write a *wrapper class* that wraps up a byte array along with some operations we would like to perform on it.
 
@@ -210,11 +210,11 @@ Write a class called `Hash` with the following `public` methods:
 `Hash(byte[] data)`
   : Construct a new `Hash` object that contains a copy of the given hash (still as an array of bytes). We make a copy of the data so that clients can't later mutate it.
 
-`byte[] get()`
-  : Return a copy of the hash contained in this object. Once again, we return a copy so that clients can't change the value.
+`int length()`
+  : Get the number of bytes in the hash.
 
-`boolean isValid()`
-  : returns true if this hash meets the criteria for validity. In our case, we require that the first three bytes are 0.
+`byte get(int i)`
+  : Get the ith byte of the hash.
 
 `String toString()`
   : returns the string representation of the hash as a string of hexadecimal digits, 2 digits per byte.
@@ -234,7 +234,31 @@ The `equals` method should check to see if:
 1. `other` is an instance of `Hash` using the `instanceof` operator.
 2. If so, it should *cast* `other` to type `Hash`, *e.g.*, `Hash o = (Hash) other` and then use the [`Arrays.equals` static method]({{ site.java_api }}/java/util/Arrays.html#equals-byte:A-byte:A-) to perform the appropriate equality check on the two `Hash` object's arrays.
 
-### A Transaction class
+### Checking hashes with a `HashValidator` interface
+
+As we noted in our description of the standard approach to block chains, we have a set of criteria that we apply to hashes. Our standard mining technique is to continually guess nonces until we have a hash that meets the criteria.
+
+To make our block chains more general, we'll have a separate `HashValidator` object that tells whether or not a hash is valid. `HashValidator` is a functional interface that provides one method.
+
+`boolean isValid(Hash hash)`
+  : Determine whether or not a hash is valid according to some criteria.
+
+For initial development, you might want to use the following validator.
+
+```
+HashValidator simpleValidator = 
+    (hash) -> (hash.length() >= 1) && (hash.get(0) == 0);
+```
+
+Once things seem to be working okay, you should use a validator that will normally require a bit of time to find a nonce.
+
+```
+HashValidator standardValidator =
+    (hash) -> (hash.length() >= 3) && (hash.get(0) == 0)
+        && (hash.get(1) == 0) && (hash.get(2) == 0);
+```
+
+### Storing data with a `Transaction` class
 
 This class represents the data in each block. For our purposes, we only need three parts: 
 
@@ -249,13 +273,13 @@ The class provides one constructor.
 
 The class provides only getters.
 
-`String source()`
+`String getSource()`
   : Gets the source.
 
-`String target()`
+`String getTarget()`
   : Gets the target.
 
-`int amount()`
+`int getAmount()`
   : Gets the amount.
 
 It also provides the legendary `toString()` method.
@@ -266,7 +290,7 @@ It also provides the legendary `toString()` method.
     If the source is the empty string, returns a string of the
     form `[Deposit, Target: <target>, Amount: <amount>]`.
 
-### A Block class
+### Adding meta-information in a `Block` class
 
 Next, you should create a separate class for the data contained in each node of the blockchain.  Recall that a block contains:
 
@@ -289,8 +313,8 @@ Write a class called `Block` with the following `public` constructors and method
 `int getNum()` 
   : Get the number of this block.
 
-`Entry getTransaction()`
-  : Gets the entry.
+`Transaction getTransaction()`
+  : Gets the transaction.
 
 `long getNonce()` 
   : Get the nonce of this block.
@@ -351,16 +375,14 @@ There are a variety of ways to search for nonces.
 * You could randomly choose longs.
 * You could choose some other way to sequence through the values (e.g., first looking at all multiples of 10, then one more than all multiples of 10, then two more than all multiples of 10).
 
-For this assignment, you should search the longs in increasing order starting at zero.
-
 ### The BlockChain class
 
 Use `Block` to implement a `BlockChain` class which is a singly-linked structure with a `first` and `last` pointer (*i.e.*, pointers to the first and last elements in the structure, much like in a queue).  You should use nodes as in the standard style of linked structure implementations in Java.  `BlockChain` should contain the following methods:
 
-`BlockChain()`
-  : Create a `BlockChain` that possess a single block with empty source, target, and amount.  Note that to create this block, the `prevHash` field should be ignored when calculating the block's own nonce and hash.
+`BlockChain(HashValidator check)`
+  : Create a `BlockChain` that possess a single block with empty source, target, and amount.  Note that to create this block, the `prevHash` field should be ignored when calculating the block's own nonce and hash. You will use the given `HashValidator` when generating a nonce.
 
-`Block mine(String source, String target, int amount)`
+`Block mine(Transaction t)`
   : Mine a new candidate block to be added to the end of the chain.  The returned `Block` should be valid to add onto this block chain. (That is, not only should the nonce be correct, but the transfer should be valid.)
 
 `int getSize()`
@@ -375,8 +397,8 @@ Use `Block` to implement a `BlockChain` class which is a singly-linked structure
 `Hash getHash()`
   : Return the hash of the last block in the chain.
 
-`boolean isValid()`
-  : Walks he blockchain and ensure that its blocks are consistent (the balances are legal) and valid (as described in `append`).
+`boolean isCorrect()`
+  : Walks the blockchain and ensure that its blocks are consistent (the balances at every step are legal) and valid (as described in `append`).
 
 `Iterator<String> users()`
   : Return an iterator of all the people who participated in the system (received money in the system). You can present this list in any order.
@@ -401,9 +423,8 @@ _To be written!_
 
 Finally we'll create a program, `BlockChainUI`, which allows us to interact with our `BlockChain`.  `BlockChainUI` should contain the `main` method of your program. Your program should permit the user to interactively manipulate the blockchain and mine for additional blocks through a text-driven interface.  The program repeatedly:
 
-1. Prints out the contents of the blockchain.
-2. Reads in a command from the user.
-3. Executes that command, potentially updating the blockchain and reporting back to the user.
+1. Reads in a command from the user.
+2. Executes that command, potentially updating the blockchain and reporting back to the user.
 
 The commands your program should support are:
 
