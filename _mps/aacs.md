@@ -108,11 +108,9 @@ previous requirements will receive an R.
 ```
 [ ] Passes all **M** tests.
 [ ] Passes all **M** scripts.
-    [ ] Appears to correctly load a file.
-    [ ] Appears to correctly add an image to the top-level category.
-    [ ] Appears to correctly switch to subcategories.
-    [ ] Successfully grabs words from subcategories.
-    [ ] Correctly switches to the default screen.
+    [ ] Correctly loads the configuration file.
+    [ ] Correctly switches to subcategories.
+    [ ] Appropriately identifies words associated with images.
 ```
 
 ### Exemplary / Exceeds expectations
@@ -123,6 +121,11 @@ previous requirements will receive an M.
 ```
 [ ] Passes all **E** tests.
 [ ] Passes all **E** scripts.
+    [ ] Correctly switches to the default screen.
+    [ ] Correctly adds an image to a subcategory.
+    [ ] Correctly adds an image to the top-level category.
+    [ ] Correctly add an image to a new empty category.
+    [ ] Correctly saves the updated configuration.
 [ ] All (or most) repeated code has been factored out into individual 
     methods.  
 [ ] All or most variable names are appropriate.
@@ -140,15 +143,74 @@ previous requirements will receive an M.
 
 ### Script for **M**
 
-_Forthcoming._
-
 * Open the project in VSCode.
 * Run AAC.java. Ideally, you'll see the following. <br/>
-  ![A screen that says "Home Page", has a row of icons (Home, Save, Add), an icon for food, and an icon for clothing](images/aac/aac-home.png)
+  ![A screen that says "Home Page", has a row of icons (Home, Save, Add), an icon for food, and an icon for clothing](../images/aac/aac-home.png) <br/>
+* Click on the plate icon. Ideally, you'll see the following. <br/>
+  ![A screen that says "food", has a row of Home, Save, and Add icons, then about seven food icons](../images/aac/aac-food.png)
+    * If you've made it this far, it appropriately switches to a category.
+* Click on each food icon and make sure it says the right thing. Pay particular attention to "french fries", since it's two words.
+    * If you've made it this for, it appropriately identifies words associated with images.
+* Click on the home icon. You should end up back on the home page.
+    * If you've made it this far, it correctly switches to the home page.
+    * If it doesn't get back to the home page, quit and restart to get back to the home page.
+* This time, click on the hanger icon. Ideally, you'll see the following. <br/>
+  ![A screen that says "clothing", has a row of Home, Save, and Add icons, then about eight clothing icons](../images/aac/aac-clothing.png)
+* Click on each clothing icon and make sure it says the right thing. Pay particular attention to the two-word icons, such as "collared shirt" and "swim suit".
+* Quit the program.
+
+### Second script for **M**
+
+* Rename the file `AACMappings.txt` to `AACMappingsOld.txt`
+* Put the following into the file `AACMappings.txt`
+    ```
+img/clothing/collaredshirt.png tops
+>img/clothing/collaredshirt.png collared shirt
+>img/clothing/sweater.png sweater
+>img/clothing/tshirt.png t shirt
+img/food/icons8-apple-96.png fruit
+>img/food/icons8-apple-96.png apple
+>img/food/icons8-watermelon-96.png watermelon
+>img/food/icons8-strawberry-96.png strawberry
+>img/food/plate.png strange disc-like fruit
+    ```
+* Start the program. This time, you should see the following home page. <br/>
+  ![A screen that says "Home Page", has a row of icons (Home, Save, Add), a shirt icon, and an applie icon](../images/aac/aac-home-revised.png) <br/>
+* Click on the shirt icon and make sure you switch to the tops page, which should look like this. <br/>
+  ![A screen that says "tops", has a row of Home, Save, and Add icons, then about three icons of shirts and such](../images/aac/aac-tops.png) 
+* Click on the home button to return home.
+* Click on the apple button and make sure you switch to the fruits page, which should look like this. <br/>
+  ![A screen that says "fruit", has a row of Home, Save, and Add icons, then about four icons of fruit.](../images/aac/aac-fruit.png)
+* If you've made it to here, it correctly loads the configuration file.
+* Quit the program.
+* Restore the original `AACMappings.txt`
 
 ### Script for **E**
 
-_Forthcoming._
+* Open the project in VSCode.
+* Run AAC.java.
+* Click on the hanger icon. You should end up on the clothing page.
+* Click on the Plus sign. You should be prompted for an icon. 
+* Navigate to the project's image folder and select the hanger image.
+* You should be prompted for text. Enter "Hanger".  You should now see the following. <br/>
+  ![A screen that says "clothing", has a row of Home, Save, and Add icons, then nine clothing icons, the last of which is a hanger](../images/aac/aac-clothing.png)
+* Click on the hanger icon and make sure that it says "hanger".
+    * If you've made it this far, it correctly adds an image to a subcategory.
+* Return to the home screen by clicking the home button.
+* Click on the Plus sign. You should be prompted for an icon. 
+* Navigate to the project's image folder and select the Home image.
+* You should be prompted for text. Enter "household".  You should now see the following. <br/>
+  ![A screen that says "Home Page", has a row of icons (Home, Save, Add), an icon for food, an icon for clothing, and an icon for home](../images/aac/aac-home-with-home.png)
+* Click on the new button home button (the one at the bottom of the page). You should now see the following. <br/>
+  ![A screen that says "household", has a row of icons (Home, Save, Add), and no other icons](../images/aac/aac-household-blank.png)
+* Click on the Plus sign. You should be prompted for an icon. 
+* Navigate to the project's image folder and select the hanger image.
+* You should be prompted for text. Enter "Hanger".  You should now see the following. <br/>
+  ![A screen that says "household", has a row of icons (Home, Save, Add), and an icon below that for a hanger](../images/aac/aac-household-blank.png)
+* If you've gotten this far, they've correctly added an image to a new empty category.
+* Click the Save icon (the computer disc).
+* The file `AACMappingsNew.txt` should appear in the project. 
+* Open the file and make sure it appears to include the newly-added components.
 
 ## Q&A
 
