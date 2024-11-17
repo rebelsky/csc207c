@@ -5,16 +5,16 @@ totals:
 tiers:
   - grade: A
     projects: |
-      No Is<br>At most 1 Rs<br>At least 5 Es<br>Remainder Ms
-    las:        46xS
+      No Is<br>At most 2 Rs<br>At least 4 Es<br>Remainder Ms
+    las:        45xS
   - grade: B
     projects : |
-      No Is<br>At most 2 Rs<br>At least 3 Es<br>Remainder Ms
-    las:        44xS
+      No Is<br>At most 3 Rs<br>At least 2 Es<br>Remainder Ms
+    las:        43xS
   - grade: C
     projects: |
-      At most 1 I<br>At most 4 Rs<br>At least 2 Es<br>Remainder Ms
-    las:        42xS
+      At most 1 I<br>At most 5 Rs<br>At least 1 E<br>Remainder Ms
+    las:        41xS
   - grade: D
     projects: |
       At most 2 Is<br>At most 5 Rs<br>Remainder Ms and Es
