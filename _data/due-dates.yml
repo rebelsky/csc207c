@@ -207,18 +207,17 @@
     - page: /los/sola10.html
 
 - date: 2024-11-21
-  due:
-    - page: /mps/mp09.html
   assigned:
     - page: /mps/mp10.html
 
-- date: 2024-11-22
+- date: 2024-11-24
   due:
-    - MP 9 Post-reflection
+    - page: /mps/mp09.html
 
 - date: 2024-11-25
   due:
     - page: /los/sola10.html
+    - MP 9 Post-reflection
 
 - date: 2024-11-26
   assigned:
