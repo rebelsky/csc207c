@@ -208,7 +208,10 @@ While a hash (at least the hash returned by a message digest) is just an array o
 Write a class called `Hash` with the following `public` methods:
 
 `Hash(byte[] data)`
-  : Construct a new `Hash` object that contains a copy of the given hash (still as an array of bytes). We make a copy of the data so that clients can't later mutate it.
+  : Construct a new `Hash` object that contains a copy of the given hash (still as an array of bytes). We make a copy of the data so that clients can't later chant any bytes.
+
+`byte[] getBytes()`
+  : Return a copy of the bytes in the hash. We make a copy so that the client can't change them.
 
 `int length()`
   : Get the number of bytes in the hash.
@@ -217,15 +220,16 @@ Write a class called `Hash` with the following `public` methods:
   : Get the ith byte of the hash.
 
 `String toString()`
-  : returns the string representation of the hash as a string of hexadecimal digits, 2 digits per byte.
+  : returns the string representation of the hash as a string of uppercase hexadecimal digits, 2 digits per byte. For example, the byte array `{255, 10, 1}` should be `"FF0A01"`.
 
 `boolean equals(Object other)`
   : returns true if this hash is structurally equal to the argument. That is, it ensures that the other object is also a `Hash`.
 
 To implement `toString()`, you will find the following static methods useful:
 
-* [`Byte.toUnsignedInt`]({{ site.java_api }}/java/lang/Byte.html#toUnsignedInt-byte-)
-* [`String.format`]({{ site.java_api }}/java/lang/String.html#format-java.lang.String-java.lang.Object...-)
+* [`Byte.toUnsignedInt`]({{ site.java_api }}/java/lang/Byte.html#toUnsignedInt(byte))
+* [`String.format`]({{ site.java_api }}/java/lang/String.html#format(java.lang.String,java.lang.Object...))
+* [`StringBuilder`]({{ site.java_api }}/java/lang/StringBuilder.html)
 
 The conversion method `Byte.toUnsignedInt` is necessary because all integral values in Java are signed.  We do not want values past 127 to be interpreted as negative numbers, *e.g.*, if we have the bit pattern `11111111`, we want to interpret this as the value `255` not `-128`.  `String.format` works like `sprintf` which acts like `printf` but writes its output to a string.  You should use a format specifier that prints an integer to the screen in hexadecimal using two digits; read the documentation to discover what this format specifier is.
 
@@ -304,11 +308,14 @@ Note that a block itself does not contain links to other blocks in the chain.  T
 
 Write a class called `Block` with the following `public` constructors and methods:
 
-`Block(int num, Transaction transaction, Hash prevHash)`
-  : Create a new block from the specified parameters, performing the mining operation to discover the nonce and hash for this block given these parameters.
+`Block(int num, Transaction transaction, Hash prevHash, HashValidator check)`
+  : Create a new block from the specified block number, transaction, and
+    previous hash, mining to choose a nonce that meets the requirements 
+    of the validator.
 
 `Block(int num, Transaction transaction, Hash prevHash, long nonce)`
-  : Create a new block from the specified parameters, using the provided nonce and additional parameters to generate the hash for the block.  Because the nonce is provided, this constructor does not need to perform the mining operation; it can compute the hash directly.
+  : Create a new block from the specified parameters, computing the
+    hash for the block.
 
 `int getNum()` 
   : Get the number of this block.
@@ -452,7 +459,7 @@ _Sample executions forthcoming._
 
 ## Preparation
 
-a. Fork the repository. (Repository forthcoming.)
+a. Fork the repository.
 
 b. Clone that repository.
 
@@ -554,14 +561,14 @@ How many nonces should I expect to need to generate?
         long nonce;
         do {
           nonce = rand.nextLong();
-          hash = computeHash(num, amount, prevHash, nonce);
+          hash = computeHash(num, transaction, prevHash, nonce);
           ++count;
           if (VERBOSE && (0 == (count % 100000))) {
             System.err.printf("Generated %d nonces in %d milliseconds.\n", 
                               count,
                               System.currentTimeMillis() - startTime);
           }
-        } while (! hash.isValid());
+        } while (!validator.isValid(hash));
 
 > You will, of course, have to write `computeHash`.
 
