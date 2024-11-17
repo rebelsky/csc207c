@@ -451,6 +451,9 @@
   lab:
     - page: /labs/binary-search-trees.html
     - page: /labs/binary-search-trees-continued.html
+  eboards:
+    - page: /eboards/eboard22-1.html
+    - page: /eboards/eboard22-2.html
 
 - topic: Hash tables
   abbrev: hash-tables

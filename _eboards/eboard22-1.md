@@ -16,8 +16,9 @@ _Approximate overview_
     * Upcoming work
     * Tokens
 * Questions
-* The ACM Code of Ethics
 * Second discussion on code of ethics
+* Designing a Dictionary ADT
+* Binary search trees, reviewed
 * Lab
 
 Preliminaries
@@ -29,21 +30,37 @@ Preliminaries
 * If you haven't done so yet, please sign up for 
   <https://passwordreset.grinnell.edu>.
 * Note that "lower-bound inclusive, upper-bound exclusive" is a common
-  approach.  Think about, say, `String.substring(lb, bu)`.
+  approach.  Think about, say, `String.substring(lb, bu)`. I strongly
+  ecnourage you to use it.
+* I've added a three-day extension for MP9. It's now due on Sunday to
+  give you another weekend.
+* Grading updates
+    * MPs/A: Was 5E, 5M, 1R, now 4E, 5M, 2R
+    * MPs/B: Was 3E, 6M, 2R, now 2E, 5M, 3R
+    * MPs/C: Was 2E, 5M, 4R, now 1E, 5M, 5R
+    * MPs/D: Remains 4M, 5R, 2I
+    * LAs/A: Was 46/48, now 45/48
+    * LAs/B: Was 44/48, now 43/48
+    * LAs/C: Was 42/48, now 41/48
+    * LAs/D: Remains 15/48
 
 ### Upcoming work
 
 * Wednesday, 2024-11-20
+    * Reading for class 23: 
+      [Osera 12: Hashing](https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap12.pdf)
+    * [Submit reading response for class 23 on Gradescope](???)
     * [Submit lab writeup from class 22](???)
 * Thursday, 2024-11-21
+    * MP10 assigned (due in two weeks)
+* Sunday, 2024-11-24
     * [MP9](../mps/mp09) (Blockchains) due.
     * [Submit MP9 on Gradescope](https://www.gradescope.com/courses/818402/assignments/5321058)
-    * MP10 assigned (due in two weeks)
-* Friday, 2024-11-22
-    * [Submit post-reflection for MP9](https://www.gradescope.com/courses/818402/assignments/5321060)
-* Tuesday, 2024-11-26
+* Monday, 2024-11-25
     * [SoLA 10](../los/sola10) due
         * New LAs
+    * [Submit post-reflection for MP9](https://www.gradescope.com/courses/818402/assignments/5321060)
+* Tuesday, 2024-11-26
 
 ### Tokens
 
@@ -55,20 +72,13 @@ class._
 * Sunday, 2024-11-17, 7:00--8:00 p.m., Science 3819.
   _Mentor Session_
 * Tuesday, 2024-11-19, noon--1:00 p.m., Day PDR.
-  _CS Table_
+  _CS Table: Gopher_
 * Tuesday, 2024-11-19, ...
 
 #### Cultural
 
-* Thursday, 2024-11-14, 7:30--9:30 p.m., Sebring-Lewis.
-  _A night of Brazillian music_
-* Weekends of November 16 and November 23, Roberts Theatre.
+* Weekend of November November 23, Roberts Theatre.
   _Pity_ (also peer)
-    * Get tickets at the box office.
-    * Come for the set.
-    * It's cool. 
-* Saturday, 2024-11-16, 2:00--4:00 p.m. (but there's an intermission).
-  _Grinnell Symphony Orchestra plays Mozart's symphony number 40._
 
 #### Multicultural
 
@@ -88,21 +98,10 @@ class._
 
 #### Misc
 
-* Friday, 2024-11-15, 8:30--11:30 p.m., Harris.
-  _Fall Drag Show_.
-* Monday, 2024-11-18, 7:00 p.m., The Kernel (HSSC A1321) 
-  _Considering Technical Roles: Tech Hiring Trends & Alumni in Tech Career Paths with alumni from Microsoft, Google, Intel, and more_
 * Friday, 2024-11-22, 5:00--8:00 p.m., Downtown Grinnell.
   _Jingle Bell Holiday_.
 
 ### Other good things (no tokens)
-
-MP9 - Blockchains
------------------
-
-See the assignment for details.
-
-Today's lab partner is your MP partner.
 
 Questions
 ---------
