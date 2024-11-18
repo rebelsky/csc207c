@@ -1,15 +1,27 @@
 ---
 title: Mini-Project 9
 subtitle: Blockchains
+repo: <https://github.com/Grinnell-CSC207/mp-blockchains-maven>
 summary: |
   In this assignment, you will practice working with linked structures
   by developing your own simple implementation of blockchains.
 link: true
+notes: |
+  The next time through, I should have the validator take a byte array
+    rather than a Hash.
 ---
+Repository: {{ page.repo }}
+
 Useful Javadoc:
 
 * [`java.nio.ByteBuffer`]({{ site.java_api }}/java/nio/ByteBuffer.html)
 * [`java.security.MessageDigest`]({{ site.java_api }}/java/security/MessageDigest.html)
+
+More useful Javadoc
+
+* [`Byte.toUnsignedInt`]({{ site.java_api }}/java/lang/Byte.html#toUnsignedInt(byte))
+* [`String.format`]({{ site.java_api }}/java/lang/String.html#format(java.lang.String,java.lang.Object...))
+* [`StringBuilder`]({{ site.java_api }}/java/lang/StringBuilder.html)
 
 *Collaboration*: You must work with an assigned partner on this project.  I would prefer that you use a pair-programming approach, but you may choose any approaches the two of you decide are best.
 
@@ -286,13 +298,16 @@ The class provides only getters.
 `int getAmount()`
   : Gets the amount.
 
-It also provides the legendary `toString()` method.
+It also provides the legendary `toString()` and `equals` methods.
 
 `String toString()`
   : If the source is not the empty string, returns a string
     of the form `[Source: <source>, Target: <target>, Amount: <amount>]`.
     If the source is the empty string, returns a string of the
     form `[Deposit, Target: <target>, Amount: <amount>]`.
+
+`boolean equals(Object other)`
+  : Determine if other is a Transaction with the same fields.
 
 ### Adding meta-information in a `Block` class
 
@@ -350,6 +365,17 @@ Block 1 (Transaction: [Deposit, Target: Alexis, Amount: 300], Nonce: 9324351, pr
 Block 2 (Transaction: [Source: Alexis, Target: Blake], Amount 50, Nonce, 12312321, prevHash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a7, hash: 000000201f6c32c24b52b8a5b7d664af23e7db950af8867dbe800eb5c40c30a8)
 ```
 
+Note that your `Block` class will need to compute a hash for the other data. In computing the hash, you *must* put the data in the message digest in the following order.
+
+1. The block number.
+2. The source of the transaction.
+3. The target of the transaction.
+4. The amount of the transaction.
+5. The hash of the previous block.
+6. The nonce.
+
+You will likely benefit from a local `computeHash` function within your `Block` class.
+
 #### Mining
 
 To mine for a given block's nonce, you will need to use the `MessageDigest` class as described in the background section of this assignment.  To convert integers and longs into byte arrays, use the [`ByteBuffer` class]({{ site.java_api }}/java/nio/ByteBuffer.html) which allows you to store data types as arrays of bytes.  You will need to use the following methods of the `ByteBuffer` class:
@@ -368,7 +394,7 @@ byte[] lbytes = ByteBuffer.allocate(Long.BYTES).putLong(l).array();
 To mine a block, you should update a `MessageDigest` object with the following properties of the block:
 
 1. The block's number.
-2. The data contained in the block.
+2. The data contained in the block. (That is, the source, the target, and the amount).
 3. The hash of the previous node's block in the list if it exists.
 4. The discovered nonce value.
 
@@ -387,7 +413,7 @@ There are a variety of ways to search for nonces.
 Use `Block` to implement a `BlockChain` class which is a singly-linked structure with a `first` and `last` pointer (*i.e.*, pointers to the first and last elements in the structure, much like in a queue).  You should use nodes as in the standard style of linked structure implementations in Java.  `BlockChain` should contain the following methods:
 
 `BlockChain(HashValidator check)`
-  : Create a `BlockChain` that possess a single block with empty source, target, and amount.  Note that to create this block, the `prevHash` field should be ignored when calculating the block's own nonce and hash. You will use the given `HashValidator` when generating a nonce.
+  : Create a `BlockChain` that possess a single block with empty source, target, and amount.  Note that to create this block, the `prevHash` field should be set to an empty byte array. You will use the given `HashValidator` when generating a nonce.
 
 `Block mine(Transaction t)`
   : Mine a new candidate block to be added to the end of the chain.  The returned `Block` should be valid to add onto this block chain. (That is, not only should the nonce be correct, but the transfer should be valid.)
@@ -405,7 +431,10 @@ Use `Block` to implement a `BlockChain` class which is a singly-linked structure
   : Return the hash of the last block in the chain.
 
 `boolean isCorrect()`
-  : Walks the blockchain and ensure that its blocks are consistent (the balances at every step are legal) and valid (as described in `append`).
+  : Walk the blockchain and ensure that its blocks are consistent (the balances at every step are legal) and valid (as described in `append`). If so, return true. If not, return false.
+
+`void check() throws Exception`
+  : Walk the blockchain and ensure that its blocks are consistent (the balances at every step are legal) and valid (as described in `append`). If not, throw an exception with a meaningful message at the first bad block. In a more robust system, we might throw different exceptions for the different kinds of errors. In this version, we're just going to rely on the message.
 
 `Iterator<String> users()`
   : Return an iterator of all the people who participated in the system (received money in the system). You can present this list in any order.
@@ -413,16 +442,20 @@ Use `Block` to implement a `BlockChain` class which is a singly-linked structure
 `int balance(String user)`
   : Find one person's balance. Returns 0 if they haven't used the system.
 
-`String toString()`
-  : Return a string representation of the `BlockChain` which is simply the string representation of each of its blocks, earliest to latest, one per line.
+`Iterator<Transaction> iterator()`
+  : Return an iterator of the transactions. (Ideally, you'll skip the
+    fake transaction at the beginning.)
 
 `Iterator<Block> blocks()`
-  : Return the entries.
+  : Return an iterator of the blocks. (Intended mostly for debugging.)
 
-`Iterator<Transaction> entries()`
-  : Return the entries.
+While we know that our `Block` class only generates hashes from its arguments and could seemingly believe that a hash of a block is consistent with it's data, we still check each block in case a malicious actor found a way to modify the block. Hence, `isCorrect()` should check the hash in each block.
 
-Note that our `Block` class only generates hashes from its arguments, so we know by construction that the hash of a block is consistent with its data and that it is valid.  However `isValid` must still ensure that the blocks of the chain represents a valid series of transactions by traversing the chain.
+For the initial block, you should use
+
+```java
+  new Block(0, new Transaction("", "", 0), new Hash(new byte[] {}), validator);
+```
 
 ### A BlockChainUI class
 
@@ -450,8 +483,6 @@ Valid commands:
 In most cases, commands map directly onto `BlockChain` operations that you already implemented.  Note that `mine` is separate from `append`---you must first mine a candidate block with `mine` to discover an appropriate nonce and then `append` that block along with the discovered nonce.  This mimics more closely how Bitcoin works in real-life: miners race to discover blocks may collectively discover several nonces that work.  However, only one such nonce is eventually appended onto the blockchain.
 
 `mine` and `append` take additional arguments---the transaction amount for `mine` and the transaction amount and nonce for `append`.  Your program should prompt for these values individually.
-
-For `report`, you'll need to grab the array of users and then iterate through it to compute their balances.
 
 As in some previous projects, your program should mimic the output of the examples below.  In the case of invalid inputs, *e.g.*, invalid commands, your program should report sensible error messages and continue execution.  Note that depending on how you discover your nonce values, the nonce and hash values of your blocks may be different from these examples.
 
@@ -536,8 +567,9 @@ previous requirements will receive an R.
 ```
 [ ] All (or most) repeated code has been factored out into individual methods.
 [ ] All or most variable names are appropriate.
-[ ] Avoids recreating structures, such as the `MessageDigest` and some 
-    individual arrays, that need not be recreated. 
+[ ] Avoids recreating structures---such as the `MessageDigest`, the
+    various `ByteBuffer` objects, and other individual arrays---that 
+    need not be recreated. 
 ```
 
 ## Questions and answers
@@ -553,22 +585,22 @@ How many nonces should I expect to need to generate?
   laptop.
 
 > If you want to watch what's happening, I'd suggest something like
-  the following.
+  the following (in `Block`).
 
         long count = 0;
         long startTime = System.currentTimeMillis();
-        Hash hash;
-        long nonce;
         do {
-          nonce = rand.nextLong();
-          hash = computeHash(num, transaction, prevHash, nonce);
+          // The real work
+          this.nonce = rand.nextLong();
+          this.computeHash();
+          // Observations
           ++count;
           if (VERBOSE && (0 == (count % 100000))) {
             System.err.printf("Generated %d nonces in %d milliseconds.\n", 
                               count,
                               System.currentTimeMillis() - startTime);
-          }
-        } while (!validator.isValid(hash));
+          } // if
+        } while (!check.isValid(hash));
 
 > You will, of course, have to write `computeHash`.
 
@@ -608,6 +640,10 @@ Can I use a `HashMap` to store the table of users and deposits?
 Can I use my `AssociativeArray` class to store the table of users and deposits?
 
 > Certainly.
+
+Do I need to do anything with `HashValidator` and `Transaction`?
+
+> I don't think so. They were intended as complete as is.
 
 ## Acknowledgements
 
