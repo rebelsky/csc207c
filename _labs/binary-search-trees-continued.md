@@ -1,6 +1,6 @@
 ---
 title: Binary search trees, continued
-repo: <https://github.com/Grinnell-CSC207/lab-bsts>
+repo: <https://github.com/Grinnell-CSC207/lab-bsts-maven>
 summary: |
   We continue to explore binary search trees and their use in 
   implementing the Map ADT.
@@ -9,7 +9,8 @@ Preparation
 -----------
 
 If you have not done so already, do the normal preparation.  That is,
-fork and clone the specified respository and input it into VSCode.
+fork and clone the specified respository and input it into VSCode. Then
+update the README and push.
 
 Exercises
 ---------
