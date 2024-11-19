@@ -1,5 +1,5 @@
 ---
-title: "Eboard 22 (Section 1): Binary search trees"
+title: "Eboard 22 (Section 2): Binary search trees"
 number: 22
 section: eboards
 held: 2024-11-19
@@ -30,8 +30,10 @@ Preliminaries
 * There are two labs; it's okay if you don't do much of the second one.
 * Please fill out mentor evaluation forms.
 * Note that "lower-bound inclusive, upper-bound exclusive" is a common
-  approach.  Think about, say, `String.substring(lb, bu)`. I strongly
+  approach.  Think about, say, `String.substring(lb, ub)`. I strongly
   ecnourage you to use it.
+    * Reason one: `length = ub - lb`.
+    * Reason two: `String.substring(lb, mid) + ", " + String.substring(mid, ub)`
 * I've added a three-day extension for MP9. It's now due on Sunday to
   give you another weekend.
 * Grading updates
@@ -48,10 +50,10 @@ Preliminaries
 
 * Wednesday, 2024-11-20
     * [Submit lab writeup from class 22 on Gradescope](https://www.gradescope.com/courses/818402/assignments/5346898)
-    * Reading for class 23: 
+    * Reading for class 23:
       [Osera 12: Hashing](https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap12.pdf)
-    * [Submit reading response for class 23 on Gradescope](https://www.gradescope.com/courses/818402/assignments/5346927)
-* Thursday, 2024-11-21 (Time plus questions)
+    * [Submit reading response for class 23 on Gradescope](https://www.gradescope.com/courses/818402/assignments/5346927) (Time plus questions)
+* Thursday, 2024-11-21 
     * MP10 assigned (due in two weeks)
 * Sunday, 2024-11-24
     * [MP9](../mps/mp09) (Blockchains) due.
@@ -87,7 +89,7 @@ class._
 #### Multicultural
 
 * Friday, 2024-11-22, 4:00--5:00 p.m., HSSC N1170 - Global Living Room.
-  _Middle of Everywhere: Somewhere_
+  _Middle of Everywhere: Vietnam_ (with coffee)
 
 #### Peer
 
@@ -125,11 +127,20 @@ Notes on MP9
       data in the future. If we compute a hash now and compute a hash
       later, the two hashes should be the same. (Hashes are generally
       smaller than the data.)
+* Note that you should do the mining primarily in the first `Block`
+  constructor. The `mine` operation in blockchains just calls that
+  constructor and then returns the nonce of the created block.
 
 Questions
 ---------
 
 ### Administrative
+
+**When will the MP redos be graded?**
+
+> I don't know.
+
+### MP9
 
 ### Other
 
@@ -161,6 +172,7 @@ Applications:
 * Keep track of the relationship between images and words that those
   images represent.
 * Keep track of student grades.
+* Find all the events on a certain date.
 
 Methods: (tps)
 
@@ -186,6 +198,8 @@ Binary search trees
 -------------------
 
 Let $$n$$ be the number of elements in the tree and $$h$$ be the height of the tree.
+
+Relationship between $$h$$ and $$n$$?
 
 Lab
 ---
