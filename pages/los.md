@@ -359,9 +359,9 @@ Most of the libraries you've used are from the Java API.
 
 _Signal and recover from errors using exceptions._
 
-Make sure you include an example of throwing an exception.
+Make sure you include a real example of throwing an exception.
 
-Make sure you include an example of catching an exception (or being ready to catch an exception).
+Make sure you include real example of catching an exception (or being ready to catch an exception).
 
 Make sure that your recovery is reasonable.
 
