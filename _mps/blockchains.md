@@ -652,6 +652,10 @@ the answers he develops._
 
 > Feel free to research those. For now, feel free to use brute-force methods.
 
+**Should I mine for the nonce in `Block` or `BlockChain`?**
+
+> In `Block`, for the first constructor.
+
 ### Hashes
 
 **Could you re-explain hashes/their purpose in this assignment?**
@@ -746,6 +750,10 @@ the answers he develops._
 > Sure.
 
 ### Miscellaneous
+
+**The first `Block` constructor has a `HashValidator` as a parameter. Should that be one of the fields in our `Block` objects?**
+
+> Probably not. You'll just use that `HashValidator` when you mine for a nonce in building a valid block.
 
 **The E rubric says "Avoids recreating structures, such as the `MessageDigest` and some individual arrays, that need not be recreated." However, it looks like your sample code creates a new `MessageDigest` each time we try to hash and creates a new array each time we want to put an `int` or a `long` into the digest.**
 
