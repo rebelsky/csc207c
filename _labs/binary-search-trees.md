@@ -87,7 +87,7 @@ _Driver: **A**_
 
 a. Review the documentation for `forEach`.
 
-b. Implement `forEach`.
+b. Implement `forEach`. Since the iterators are not yet implemented, you may not use any of the iterators in implementing `forEach`.
 
 ### Excercise 5: Iteration
 
