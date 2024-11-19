@@ -17,9 +17,9 @@ _Approximate overview_
     * Tokens
 * Questions
 * Applying the ACM code of ethics
-* Designing a Dictionary ADT
+* Designing a Dictionary/Map ADT
 * Binary search trees, reviewed
-* Lab
+* Lab(s)
 
 Preliminaries
 -------------
@@ -28,10 +28,12 @@ Preliminaries
 
 * We have both talking and lab(s) today. 
 * There are two labs; it's okay if you don't do much of the second one.
-* Please fill out mentor evaluation forms.
+* Please fill out peer educator evaluation forms.
 * Note that "lower-bound inclusive, upper-bound exclusive" is a common
-  approach.  Think about, say, `String.substring(lb, bu)`. I strongly
+  approach.  Think about, say, `String.substring(lb, ub)`. I strongly
   ecnourage you to use it.
+    * `String.substring(lb, mid) + "," + String.subString(mid, ub)`
+    * The length of the range is `ub - lb`.
 * I've added a three-day extension for MP9. It's now due on Sunday to
   give you another weekend.
 * Grading updates
@@ -50,8 +52,8 @@ Preliminaries
     * [Submit lab writeup from class 22 on Gradescope](https://www.gradescope.com/courses/818402/assignments/5346898)
     * Reading for class 23: 
       [Osera 12: Hashing](https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap12.pdf)
-    * [Submit reading response for class 23 on Gradescope](https://www.gradescope.com/courses/818402/assignments/5346927)
-* Thursday, 2024-11-21 (Time plus questions)
+    * [Submit reading response for class 23 on Gradescope](https://www.gradescope.com/courses/818402/assignments/5346927) (Time plus questions)
+* Thursday, 2024-11-21 
     * MP10 assigned (due in two weeks)
 * Sunday, 2024-11-24
     * [MP9](../mps/mp09) (Blockchains) due.
@@ -83,7 +85,7 @@ class._
 
 #### Cultural
 
-* Weekend of November November 23, Roberts Theatre.
+* Weekend of November 23, Roberts Theatre.
   _Pity_
 
 #### Multicultural
@@ -92,6 +94,13 @@ class._
   _Middle of Everywhere: Somewhere_
 
 #### Peer
+
+* Tuesday, 2024-11-19, 7:00--8:00 p.m., HSSC S1325.
+  _GHAMP Study Break_
+* Thursday, 2024-11-21, 7:00--8:00 p.m., HSSC S1325.
+  _GHAMP Study Break_
+* Friday, 2024-11-22, 8:00 p.m., Main Lounge.
+  _Improv Double Header_.
 
 #### Wellness
 
@@ -133,20 +142,62 @@ Questions
 
 ### Administrative
 
-### Other
+**Are you going to increase the number of missing assignments permitted?**
+
+> No
+
+**Can I treat non-missing assignments as tokens?**
+
+> No
+
+**Can I use tokens to permit more non-missing assignments?**
+
+> Probably not.
+
+### MP9
+
+### Miscellaneous
 
 Applying the ACM Code of Ethics
 -------------------------------
 
+<https://www.acm.org/code-of-ethics>
+
 _Modified from <https://ethics.acm.org/code-of-ethics/using-the-code/case-malware-disruption/>.  Please don't read the analysis._
 
-Rogue Services advertised its web hosting services as “cheap, guaranteed uptime, no matter what.” While some of Rogue’s clients were independent web-based retailers, the majority were focused on malware and spam. Several botnets used Rogue’s reliability guarantees to protect their command-and-control servers from take-down attempts. Spam and other fraudulent services leveraged Rogue for continuous delivery. Corrupted advertisements often linked to code hosted on Rogue to exploit browser vulnerabilities to infect machines with ransomware.
+Responsible Services advertised its web hosting services as “cheap, guaranteed uptime, no matter what.” While some of Responsible’s clients were independent web-based retailers, the majority were focused on malware and spam. Several botnets used Responsible’s reliability guarantees to protect their command-and-control servers from take-down attempts. Spam and other fraudulent services leveraged Responsible for continuous delivery. Corrupted advertisements often linked to code hosted on Responsible to exploit browser vulnerabilities to infect machines with ransomware.
 
-Despite repeated requests from major ISPs and international organizations, Rogue refused to intervene with these services, citing their “no matter what” pledge to their customers. Furthermore, international pressure from other governments failed to induce national-level intervention, as Rogue was based in a country whose laws did not adequately proscribe such hosting activities.
+Despite repeated requests from major ISPs and international organizations, Responsible refused to intervene with these services, citing their “no matter what” pledge to their customers. Furthermore, international pressure from other governments failed to induce national-level intervention, as Responsible was based in a country whose laws did not adequately proscribe such hosting activities.
 
-Ultimately, Rogue was forcibly taken offline through a coordinated effort from multiple security vendors working with several government organizations. This effort consisted of a targeted worm that spread through Rogue’s network. This denial-of-service attack successfully took Rogue’s machines offline, destroying much of the data stored with the ISP in the process. All of Rogue’s clients were affected. No other ISPs reported any impact from the worm, as it included mechanisms to limit its spread. As a result of this action, spam and botnet traffic immediately dropped significantly. In addition, new infections of several forms of ransomware ceased.
+Ultimately, Responsible was forcibly taken offline through a coordinated effort from multiple security vendors working with several government organizations. This effort consisted of a targeted worm that spread through Responsible’s network. This denial-of-service attack successfully took Responsible’s machines offline, destroying much of the data stored with the ISP in the process. All of Responsible’s clients were affected. No other ISPs reported any impact from the worm, as it included mechanisms to limit its spread. As a result of this action, spam and botnet traffic immediately dropped significantly. In addition, new infections of several forms of ransomware ceased.
 
-_TPS: Was the response appropriate?  Ethical?  What principles would permit the security vendors and government organizations to write such software._
+_TPS: Was the response appropriate?  Ethical?  What principles would permit the security vendors and government organizations to write such software?_
+
+* Neither Responders nor Responsible were following the ACM code of ethics.
+    * 1.2 Avoid harm
+        * Responsible was indirectly doing harm. Permitting harm from your users
+          seems to violate this policy. (DMCA has a "safe harbor" provision
+          for ISPs - you're not responsible for your users.)
+        * Responders by taking down innocent retailers also did harm.
+          Is it justified?
+              * Yes: Some may need to suffer for the greater good.
+    * 3.1 Keep the Public good in mind
+* Responsible was clearly ignoring the code.
+    * 3.7 Recognize and take special care of systems that become integrated 
+          into the infrastructure of society.
+* Maybe Responders were doing okay things
+    * 3.4 Articulate, apply, and support policies and processes that reflect the principles of the Code.
+        * Responders attempted.
+        * Responders took "appropriate action"
+    * 1.6 Respect privacy
+        * Malware doesn't.
+* Maybe not
+    * 3.6 Use care when modifying or retiring systems.
+        * Responsibility to the users of those systems.
+* More general issues
+    * Perhaps there's a question of proportion: How many "good" sites are there.
+    * Context: How was Responsible marketed?
+    * Questions of how people ended up with their sites on Resonsible.
 
 Designing a Dictionary (Map) ADT
 --------------------------------
@@ -159,12 +210,93 @@ Strategy:
 
 Applications:
 
-* Keep track of deposits in a block chain.
+* Keep track of deposits for a block chain.
 * Keep track of the relationship between images and words that those
   images represent.
 * Keep track of student grades.
+* Keep track of events that happen on different days.
 
-Methods:
+Methods: (TPS)
+
+```java
+public interface SimpleMap<K, V> {
+  /**
+   * Set the value associated with a given key. If the key is already
+   * in the map, replace the given value.
+   *
+   * @param key
+   *   The key whose value we are setting.
+   * @param value
+   *   The associated value.
+  public void set(K key, V value);
+
+  /**
+   * Get the value associated with a ke.
+   *
+   * @param key
+   *   The key used for searching
+   *
+   * @return the corresonding value.
+   *
+   * @throws IndexOutOfBoundsException
+   *   If the key is not there.
+   */
+  public V get(K key);
+
+  /**
+   * Determine whether or not a key is in the map.
+   *
+   * @param key
+   *   The key we're checking.
+   *
+   * @return true if the key is in the map and false o/w.
+   */
+  public boolean hasKey(K key);
+
+  /**
+   * Remove a key/value pair.
+   *
+   * @param key
+   *   The key we're removing.
+   *
+   * @return the correspond value that is being removed.
+   */
+  public V remove(K key);
+
+  /**
+   * Determine how many elements (key/value pairs) are in the map.
+   *
+   * @return how many elements there are.
+   */
+  int size();
+
+  /**
+   * Get an iterator.
+   */
+  Iterator<KVPair<K, V>> iterator();
+
+  /**
+   * Get an iterator of the keys.
+   */
+  Iterator<K> keys();
+
+  /**
+   * Get an iterator that produces the values in sorted order.
+   *
+   * NO!
+   */
+  Iterator<KVPair<K, V>> sortedIterator();
+
+} // SimpleMap<K, V>
+```
+
+Side note:
+
+* Regular exceptions: Must be declared with a "throws clause"; clients
+  must try/catch or throw the same exceptions.
+* Runtime exceptions: Do not need to be declared; clients do not need
+  to catch (but can). If the exceptions aren't caught, the program crashes.
+  Example: `IndexOutOfBoundsException`.
 
 Implementing the Dictionary (MAP) ADT
 -------------------------------------
@@ -173,9 +305,10 @@ Arrangements
 
 * Associative Array: An array of key/value pairs.
 * Association List: A list of key/value pairs.
+* Sorted Array of Key/Value pairs.
+* Sorted List of Key/Value pairs.
 * Binary search tree: A tree in which smaller keys fall to the left
   and larger keys fall to the right. (This holds at every node.)
-* Heap: Forthcoming.
 * Hash table: Forthcoming.
 
 Binary search trees

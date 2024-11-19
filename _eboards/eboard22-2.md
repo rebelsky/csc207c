@@ -70,8 +70,6 @@ class._
 
 #### Academic/Scholarly
 
-* Tuesday, 2024-11-19, noon--1:00 p.m., Day PDR.
-  _CS Table: Gopher_
 * Tuesday, 2024-11-19, 4:15 p.m., Burling Lounge.
   _Fernanda Eliott Harris Lecture, 
    "Can Insights from the Multi-Agent Systems’ Coordination/Cooperation 
@@ -140,11 +138,11 @@ Applying the ACM Code of Ethics
 
 _Modified from <https://ethics.acm.org/code-of-ethics/using-the-code/case-malware-disruption/>.  Please don't read the analysis._
 
-Rogue Services advertised its web hosting services as “cheap, guaranteed uptime, no matter what.” While some of Rogue’s clients were independent web-based retailers, the majority were focused on malware and spam. Several botnets used Rogue’s reliability guarantees to protect their command-and-control servers from take-down attempts. Spam and other fraudulent services leveraged Rogue for continuous delivery. Corrupted advertisements often linked to code hosted on Rogue to exploit browser vulnerabilities to infect machines with ransomware.
+Responsible Services advertised its web hosting services as “cheap, guaranteed uptime, no matter what.” While some of Responsible’s clients were independent web-based retailers, the majority were focused on malware and spam. Several botnets used Responsible’s reliability guarantees to protect their command-and-control servers from take-down attempts. Spam and other fraudulent services leveraged Responsible for continuous delivery. Corrupted advertisements often linked to code hosted on Responsible to exploit browser vulnerabilities to infect machines with ransomware.
 
-Despite repeated requests from major ISPs and international organizations, Rogue refused to intervene with these services, citing their “no matter what” pledge to their customers. Furthermore, international pressure from other governments failed to induce national-level intervention, as Rogue was based in a country whose laws did not adequately proscribe such hosting activities.
+Despite repeated requests from major ISPs and international organizations, Responsible refused to intervene with these services, citing their “no matter what” pledge to their customers. Furthermore, international pressure from other governments failed to induce national-level intervention, as Responsible was based in a country whose laws did not adequately proscribe such hosting activities.
 
-Ultimately, Rogue was forcibly taken offline through a coordinated effort from multiple security vendors working with several government organizations. This effort consisted of a targeted worm that spread through Rogue’s network. This denial-of-service attack successfully took Rogue’s machines offline, destroying much of the data stored with the ISP in the process. All of Rogue’s clients were affected. No other ISPs reported any impact from the worm, as it included mechanisms to limit its spread. As a result of this action, spam and botnet traffic immediately dropped significantly. In addition, new infections of several forms of ransomware ceased.
+Ultimately, Responsible was forcibly taken offline through a coordinated effort from multiple security vendors working with several government organizations. This effort consisted of a targeted worm that spread through Responsible’s network. This denial-of-service attack successfully took Responsible’s machines offline, destroying much of the data stored with the ISP in the process. All of Responsible’s clients were affected. No other ISPs reported any impact from the worm, as it included mechanisms to limit its spread. As a result of this action, spam and botnet traffic immediately dropped significantly. In addition, new infections of several forms of ransomware ceased.
 
 _TPS: Was the response appropriate?  Ethical?  What principles would permit the security vendors and government organizations to write such software._
 
@@ -164,7 +162,12 @@ Applications:
   images represent.
 * Keep track of student grades.
 
-Methods:
+Methods: (tps)
+
+```java
+public interface Map<K, V> {
+} // interface Map<K, V>
+```
 
 Implementing the Dictionary (MAP) ADT
 -------------------------------------
@@ -173,9 +176,10 @@ Arrangements
 
 * Associative Array: An array of key/value pairs.
 * Association List: A list of key/value pairs.
+* Sorted array of K/V pairs. (Make searching faster.)
+* Sorted list of K/V pairs. (Easier to iterate in order.)
 * Binary search tree: A tree in which smaller keys fall to the left
   and larger keys fall to the right. (This holds at every node.)
-* Heap: Forthcoming.
 * Hash table: Forthcoming.
 
 Binary search trees
