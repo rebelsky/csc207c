@@ -319,7 +319,7 @@ Next, you should create a separate class for the data contained in each node of 
 * The nonce.
 * The hash of this block.
 
-Note that a block itself does not contain links to other blocks in the chain.  The block will be wrapped in a `Node` class that will contain the links.
+Note that a block itself does not contain links to other blocks in the chain.  The block will be wrapped in a `Node` class that will contain links to nodes that contain other blocks.
 
 Write a class called `Block` with the following `public` constructors and methods:
 
@@ -577,7 +577,37 @@ previous requirements will receive an R.
 _A place for Sam to log the questions he gets about this assignment and
 the answers he develops._
 
-How many nonces should I expect to need to generate?
+### Big picture
+
+**What should our flow of finishing the assignment be?**
+
+> I'd suggest implementing `Hash` and then `Block`. After that, I might alternate between implementing a new method in `BlockChain` and adding a call to it in the UI so that you can play with it.
+
+**What should the initial block in the blockchain look like?**
+
+> The blockchain should start with a block that has an empty string for the source, an empty string for the target, and 0 for the amount.
+
+**Do I need to do anything with `HashValidator` and `Transaction`?
+
+> I don't think so. They were intended as complete as is.
+
+### Nonces (or nonce-sense)
+
+**How do I mine for a nonce?**
+
+> Generate a long.
+
+> Compute the hash of the block.
+
+> Check if the hash is valid. If so, you're done. Otherwise, generate a new long and try again.
+
+**Where should I be generating nonces?**
+
+> I wrote a `mine` method in my `Block` class.
+
+> The primary place I see that being used is in the first `Block` constructor.
+
+**How many nonces should I expect to need to generate?**
 
 > In my quick testing, my program had to generate between 1 million 
   and 150 million random nonces before it got a hash with three 
@@ -606,44 +636,134 @@ How many nonces should I expect to need to generate?
 
 > `VERBOSE` is a field I set to true when I want ugly printing in my program.
 
-Where should I be generating nonces?
+**We are also confused about looping through available nonce values. How do we get those values?**
 
-> I wrote a `mine` method in my `Block` class.
+> Option 1: `for (long nonce = 0; nonce < LONG.MAX_VALUE; nonce++)`
 
-> The primary place I see that being used is in the first `Block`
-  constructor.
+> Option 2: `while (true) { long nonce = rand.nextLong(); }`
 
-Where should we use `MessageDigest`?
+> Option 3: Some other clever technique.
 
-> You should only need to use `MessageDigest` in the `Block` class or the `Hash` class (when you are computing a hash code).
+**Does each nonce value have to be unique for each block?**
 
-Do we have to write code to compute the hash?
+> You can repeat nonce values between blocks.
+
+**What strategies can I use to optimize nonce generation and mining time? Are there alternative methods for brute-force searching?**
+
+> Feel free to research those. For now, feel free to use brute-force methods.
+
+### Hashes
+
+**Could you re-explain hashes/their purpose in this assignment?**
+
+> Hashes are generally used to validate a set of data. You compute the hash of the data and save it somewhere. Later, when you want to check if the data are still correct, you compute the hash again and see if it matches the saved hash.
+
+> In this assignment, we're primarily using them to make sure that the information in a block doesn't change.
+
+**How do I generate a hash?**
+
+> Grab an appropriate message digest.
+
+> Add each piece of data in turn. (First the block number, then the source,
+  then the target, then the amount, then the previous hash, then the nonce.)
+
+> Ask the message digest to give you the hash with `md.digest()`.
+
+**Where should we use `MessageDigest`?**
+
+> You should only need to use `MessageDigest` in the `Block` class when you create new blocks. You'll use it to compute the hash of the block.
+
+**Do we have to write code to compute the hash?**
 
 > No. The `digest` method of `MessageDigest` is supposed to compute the hash. Your job is to feed the `MessageDigest` object the data that you want hashed and then ask it for the hash.
 
-How do I add an integer to a digest?
+**How do I add an integer to a digest?**
 
-> I used `md.update(ByteBuffer.allocate(Integer.BYTES).putInt(i).array());`
+> I used something like `md.update(ByteBuffer.allocate(Integer.BYTES).putInt(i).array());`
 
-How do I add a long to a digest?
+**How do I add a long to a digest?**
 
 > It should be similar.
 
-The E rubric says "Avoids recreating structures, such as the `MessageDigest` and some individual arrays, that need not be recreated." However, it looks like your sample code creates a new `MessageDigest` each time we try to hash and creates a new array each time we want to put an `int` or a `long` into the digest.
+**How could we go about decrypting a hash? Is there a specific key we need to save, kind of like our encryption mini-project?**
 
-> Yup. We were striving for straighforward code in the examples (believe it or not). You should write better code for an E.
+> In general, you shouldn't be able to decrypt a hash. That's part of the point. Ideally, the only way to decrypt a hash is to keep generating data until you find data that hash to the same hash value.
 
-Can I use a `HashMap` to store the table of users and deposits?
+**Are these hashes the same as hash tables?**
+
+> No. In CS, we're great at reusing terms to mean related but different things.
+
+### User interface
+
+**How should errors in user input be handled gracefully in the BlockChainUI class?**
+
+> Print an error message and prompt again.
+
+**I have had my own implementation of "continuously ask for input and whatnot" by using like a boolean like if it's not valid then do what, a switch statement that maps the command, but do you have a suggested template of a way to do it?**
+
+> You'll find suggestions in `BlockChainUI.java` and `IOUtils.java`
+
+### Checking correctness
+
+**Should a blockchain only check if it is valid when the isCorrect method is called?**
+
+> The blockchain should only check overall correctness when `isCorrect` or `check` is called.
+
+**Can a block that makes a blockchain invalid be attached?**
+
+> "Invalid" is a complicated term. You can attach blocks that have incorrect transactions. However, you cannot attach blocks that have an incorrect hash, that have an invalid hash, or that have an incorrect prevHash.
+
+**Every time we add a new transaction, do we have to check the whole chain if it's valid? Or could we just check the previous block?**
+
+> You only check the previous block. When we want to check the whole chain, we call `check` or `isCorrect`.
+
+**How are edge cases for transaction validation best handled?**
+
+> One at a time? In mine, I first check that the amount is non-negative. Then I check that the source is valid. Then I check that the source has sufficient "funds".
+
+### Testing
+
+**Will we get tests for this project?**
+
+> Yes. They should be available by Wednesday night.
+
+**What testing strategies would be most effective for ensuring the correctness of the blockchain implementation?**
+
+> Make a list of possible problems and then either implement those as tests or try them withj the user interface.
+
+### Storing the balances
+
+**Can I use a `HashMap` to store the table of users and deposits?**
 
 > Sure.
 
-Can I use my `AssociativeArray` class to store the table of users and deposits?
+**Can I use my `AssociativeArray` class to store the table of users and deposits?**
 
 > Certainly.
 
-Do I need to do anything with `HashValidator` and `Transaction`?
+**Is the blockchain allowed a memory of the state of the chain outside of the blocks (for example, a dynamically sized array with all actors involved thus far and their balances)?**
 
-> I don't think so. They were intended as complete as is.
+> Sure.
+
+### Miscellaneous
+
+**The E rubric says "Avoids recreating structures, such as the `MessageDigest` and some individual arrays, that need not be recreated." However, it looks like your sample code creates a new `MessageDigest` each time we try to hash and creates a new array each time we want to put an `int` or a `long` into the digest.**
+
+> Yup. I was striving for straighforward code in the examples (believe it or not). You should write better code for an E.
+
+**For wrapping "Node" around the Block, can we use what we did from the doubly-linked lists lab, or did you have another way of implementing this in mind?**
+
+> I'd only use a singly-linked list, but I'm lazy.
+
+**The instructions say that objects of the Block class will be wrapped in a Node class that will contain links to other blocks. Is this class something we should write entirely ourselves/that isn't in the repo?**
+
+> You will need to write it yourself.
+
+### Random
+
+**I remember hearing a few years ago that block chain would change everything. Do you think it was over hyped?**
+
+> Has "everything" changed? I don't know. I don't think so. I see financial systems (including governmental financial entities) adapting to cryptocurrency. For awhile, the technology was doing a great job of using lots of energy, which changes the world for the worse.
 
 ## Acknowledgements
 
