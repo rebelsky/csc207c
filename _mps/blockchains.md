@@ -459,8 +459,6 @@ For the initial block, you should use
 
 ### A BlockChainUI class
 
-_To be written!_
-
 Finally we'll create a program, `BlockChainUI`, which allows us to interact with our `BlockChain`.  `BlockChainUI` should contain the `main` method of your program. Your program should permit the user to interactively manipulate the blockchain and mine for additional blocks through a text-driven interface.  The program repeatedly:
 
 1. Reads in a command from the user.
@@ -484,9 +482,7 @@ In most cases, commands map directly onto `BlockChain` operations that you alrea
 
 `mine` and `append` take additional arguments---the transaction amount for `mine` and the transaction amount and nonce for `append`.  Your program should prompt for these values individually.
 
-As in some previous projects, your program should mimic the output of the examples below.  In the case of invalid inputs, *e.g.*, invalid commands, your program should report sensible error messages and continue execution.  Note that depending on how you discover your nonce values, the nonce and hash values of your blocks may be different from these examples.
-
-_Sample executions forthcoming._
+As in some previous projects, your program should resemble the output of the examples at the end.  In the case of invalid inputs, *e.g.*, invalid commands, your program should report sensible error messages and continue execution.  Note that depending on how you discover your nonce values, the nonce and hash values of your blocks may be different from these examples.
 
 ## Preparation
 
@@ -572,6 +568,468 @@ previous requirements will receive an R.
     need not be recreated. 
 ```
 
+## Sample sessions
+
+### A standard sequence
+
+Our normal order of operations will be to repeatedly mine for a nonce for a transaction and then add a block for that transaction. In the sample interaction below, we'll also print out the list of blocks and list of transactions and check the list after every `append` command.
+
+```text
+$ mvn clean compile exec:java -q
+Valid commands:
+  mine: discovers the nonce for a given transaction
+  append: appends a new block onto the end of the chain
+  remove: removes the last block from the end of the chain
+  check: checks that the block chain is valid
+  users: prints a list of users
+  balance: finds a user's balance
+  transactions: prints out the chain of transactions
+  blocks: prints out the chain of blocks (for debugging only)
+  help: prints this list of commands
+  quit: quits the program
+
+Command: blocks
+Block 0 (Transaction: [Deposit, Target: , Amount: 0], Nonce: -114191972542163658, prevHash: , hash: 00000064957D1F92B89301CB26C92162FFE7B2CC0CE99FDB80485ACDC5A45CDA)
+
+Command: mine
+Source (return for deposit):
+Target: Alexis
+Amount: 50
+
+Use nonce: -1849593861095398136
+
+Command: append
+Source (return for deposit):
+Target: Alexis
+Amount: 50
+Nonce: -1849593861095398136
+Appended: Block 1 (Transaction: [Deposit, Target: Alexis, Amount: 50], Nonce: -1849593861095398136, prevHash: 00000064957D1F92B89301CB26C92162FFE7B2CC0CE99FDB80485ACDC5A45CDA, hash: 0000009CBD147007F1130AE2EB539672A42543B054B513F50A969AEBB5C5D583)
+
+Command: blocks
+Block 0 (Transaction: [Deposit, Target: , Amount: 0], Nonce: -114191972542163658, prevHash: , hash: 00000064957D1F92B89301CB26C92162FFE7B2CC0CE99FDB80485ACDC5A45CDA)
+Block 1 (Transaction: [Deposit, Target: Alexis, Amount: 50], Nonce: -1849593861095398136, prevHash: 00000064957D1F92B89301CB26C92162FFE7B2CC0CE99FDB80485ACDC5A45CDA, hash: 0000009CBD147007F1130AE2EB539672A42543B054B513F50A969AEBB5C5D583)
+
+Command: transactions
+[Deposit, Target: Alexis, Amount: 50]
+
+Command: check
+The blockchain checks out.
+
+Command: users
+Alexis
+
+Command: balance
+User: Alexis
+Alexis's balance is 50
+
+Command: balance
+User: Blake
+Blake's balance is 0
+
+Command: mine
+Source (return for deposit): Alexis
+Target: Blake
+Amount: 25
+
+Use nonce: -2442513940491814281
+
+Command: append
+Source (return for deposit): Alexis
+Target: Blake
+Amount: 25
+Nonce: -2442513940491814281
+Appended: Block 2 (Transaction: [Source: Alexis, Target: Blake, Amount: 25], Nonce: -2442513940491814281, prevHash: 0000009CBD147007F1130AE2EB539672A42543B054B513F50A969AEBB5C5D583, hash: 000000F244074FFC73706F707AE52AE94FB6F582F28F81830EE587E3CD283380)
+
+Command: blocks
+Block 0 (Transaction: [Deposit, Target: , Amount: 0], Nonce: -114191972542163658, prevHash: , hash: 00000064957D1F92B89301CB26C92162FFE7B2CC0CE99FDB80485ACDC5A45CDA)
+Block 1 (Transaction: [Deposit, Target: Alexis, Amount: 50], Nonce: -1849593861095398136, prevHash: 00000064957D1F92B89301CB26C92162FFE7B2CC0CE99FDB80485ACDC5A45CDA, hash: 0000009CBD147007F1130AE2EB539672A42543B054B513F50A969AEBB5C5D583)
+Block 2 (Transaction: [Source: Alexis, Target: Blake, Amount: 25], Nonce: -2442513940491814281, prevHash: 0000009CBD147007F1130AE2EB539672A42543B054B513F50A969AEBB5C5D583, hash: 000000F244074FFC73706F707AE52AE94FB6F582F28F81830EE587E3CD283380)
+
+Command: check
+The blockchain checks out.
+
+Command: users
+Alexis
+Blake
+
+Command: balance
+User: Alexis
+Alexis's balance is 25
+
+Command: balance
+User: Blake
+Blake's balance is 25
+
+Command: mine
+Source (return for deposit): Alexis
+Target: Cassidy
+Amount: 10
+
+Use nonce: -2236337044668048030
+
+Command: append
+Source (return for deposit): Alexis
+Target: Cassidy
+Amount: 10
+Nonce: -2236337044668048030
+Appended: Block 3 (Transaction: [Source: Alexis, Target: Cassidy, Amount: 10], Nonce: -2236337044668048030, prevHash: 000000F244074FFC73706F707AE52AE94FB6F582F28F81830EE587E3CD283380, hash: 00000075984ADE2F7C043D1B21AA31C25EF313F14C7B081F2CCB61D344812716)
+
+Command: users
+Alexis
+Blake
+Cassidy
+
+Command: balance
+User: Alexis
+Alexis's balance is 15
+
+Command: balance
+User: Blake
+Blake's balance is 25
+
+Command: balance
+User: Cassidy
+Cassidy's balance is 10
+
+Command: mine
+Source (return for deposit): Blake
+Target: Cassidy
+Amount: 5
+
+Use nonce: 1316984175485757711
+
+Command: append
+Source (return for deposit): Blake
+Target: Cassidy
+Amount: 5
+Nonce: 1316984175485757711
+Appended: Block 4 (Transaction: [Source: Blake, Target: Cassidy, Amount: 5], Nonce: 1316984175485757711, prevHash: 00000075984ADE2F7C043D1B21AA31C25EF313F14C7B081F2CCB61D344812716, hash: 0000006E6D21841EEFE912E1AD36CE0ED0263AF9C3647F5D605482105FC21C35)
+
+Command: blocks
+Block 0 (Transaction: [Deposit, Target: , Amount: 0], Nonce: -114191972542163658, prevHash: , hash: 00000064957D1F92B89301CB26C92162FFE7B2CC0CE99FDB80485ACDC5A45CDA)
+Block 1 (Transaction: [Deposit, Target: Alexis, Amount: 50], Nonce: -1849593861095398136, prevHash: 00000064957D1F92B89301CB26C92162FFE7B2CC0CE99FDB80485ACDC5A45CDA, hash: 0000009CBD147007F1130AE2EB539672A42543B054B513F50A969AEBB5C5D583)
+Block 2 (Transaction: [Source: Alexis, Target: Blake, Amount: 25], Nonce: -2442513940491814281, prevHash: 0000009CBD147007F1130AE2EB539672A42543B054B513F50A969AEBB5C5D583, hash: 000000F244074FFC73706F707AE52AE94FB6F582F28F81830EE587E3CD283380)
+Block 3 (Transaction: [Source: Alexis, Target: Cassidy, Amount: 10], Nonce: -2236337044668048030, prevHash: 000000F244074FFC73706F707AE52AE94FB6F582F28F81830EE587E3CD283380, hash: 00000075984ADE2F7C043D1B21AA31C25EF313F14C7B081F2CCB61D344812716)
+Block 4 (Transaction: [Source: Blake, Target: Cassidy, Amount: 5], Nonce: 1316984175485757711, prevHash: 00000075984ADE2F7C043D1B21AA31C25EF313F14C7B081F2CCB61D344812716, hash: 0000006E6D21841EEFE912E1AD36CE0ED0263AF9C3647F5D605482105FC21C35)
+
+Command: transactions
+[Deposit, Target: Alexis, Amount: 50]
+[Source: Alexis, Target: Blake, Amount: 25]
+[Source: Alexis, Target: Cassidy, Amount: 10]
+[Source: Blake, Target: Cassidy, Amount: 5]
+
+Command: check
+The blockchain checks out.
+
+Command: users
+Alexis
+Blake
+Cassidy
+
+Command: balance
+User: Alexis
+Alexis's balance is 15
+
+Command: balance
+User: Blake
+Blake's balance is 20
+
+Command: balance
+User: Cassidy
+Cassidy's balance is 15
+
+Command: mine
+Source (return for deposit): Cassidy
+Target: Alexis
+Amount: 15
+
+Use nonce: -3924680672452049635
+
+Command: append
+Source (return for deposit): Cassidy
+Target: Alexis
+Amount: 15
+Nonce: -3924680672452049635
+Appended: Block 5 (Transaction: [Source: Cassidy, Target: Alexis, Amount: 15], Nonce: -3924680672452049635, prevHash: 0000006E6D21841EEFE912E1AD36CE0ED0263AF9C3647F5D605482105FC21C35, hash: 0000004FE68CF2160354552EA4FA3CC5917B0AB4EF643C0E2F9CDBB6D675E174)
+
+Command: blocks
+Block 0 (Transaction: [Deposit, Target: , Amount: 0], Nonce: -114191972542163658, prevHash: , hash: 00000064957D1F92B89301CB26C92162FFE7B2CC0CE99FDB80485ACDC5A45CDA)
+Block 1 (Transaction: [Deposit, Target: Alexis, Amount: 50], Nonce: -1849593861095398136, prevHash: 00000064957D1F92B89301CB26C92162FFE7B2CC0CE99FDB80485ACDC5A45CDA, hash: 0000009CBD147007F1130AE2EB539672A42543B054B513F50A969AEBB5C5D583)
+Block 2 (Transaction: [Source: Alexis, Target: Blake, Amount: 25], Nonce: -2442513940491814281, prevHash: 0000009CBD147007F1130AE2EB539672A42543B054B513F50A969AEBB5C5D583, hash: 000000F244074FFC73706F707AE52AE94FB6F582F28F81830EE587E3CD283380)
+Block 3 (Transaction: [Source: Alexis, Target: Cassidy, Amount: 10], Nonce: -2236337044668048030, prevHash: 000000F244074FFC73706F707AE52AE94FB6F582F28F81830EE587E3CD283380, hash: 00000075984ADE2F7C043D1B21AA31C25EF313F14C7B081F2CCB61D344812716)
+Block 4 (Transaction: [Source: Blake, Target: Cassidy, Amount: 5], Nonce: 1316984175485757711, prevHash: 00000075984ADE2F7C043D1B21AA31C25EF313F14C7B081F2CCB61D344812716, hash: 0000006E6D21841EEFE912E1AD36CE0ED0263AF9C3647F5D605482105FC21C35)
+Block 5 (Transaction: [Source: Cassidy, Target: Alexis, Amount: 15], Nonce: -3924680672452049635, prevHash: 0000006E6D21841EEFE912E1AD36CE0ED0263AF9C3647F5D605482105FC21C35, hash: 0000004FE68CF2160354552EA4FA3CC5917B0AB4EF643C0E2F9CDBB6D675E174)
+
+Command: check
+The blockchain checks out.
+
+Command: balance
+User: Cassidy
+Cassidy's balance is 0
+
+Command: balance
+User: Alexis
+Alexis's balance is 30
+
+Command: quit
+
+Goodbye
+```
+
+You'll note that all of the hashes start with six 0's. Since there are two characters per byte, that corresponds to our requirement that each hash start with three 0's.
+
+### Failing to mine
+
+If we don't mine before we try to append a block, we'll likely get an error about the hash.
+
+```text
+$ mvn clean compile exec:java -q
+Valid commands:
+  mine: discovers the nonce for a given transaction
+  append: appends a new block onto the end of the chain
+  remove: removes the last block from the end of the chain
+  check: checks that the block chain is valid
+  users: prints a list of users
+  balance: finds a user's balance
+  transactions: prints out the chain of transactions
+  blocks: prints out the chain of blocks (for debugging only)
+  help: prints this list of commands
+  quit: quits the program
+
+Command: append
+Source (return for deposit):
+Target: Alexis
+Amount: 50
+Nonce: 123213123213
+Could not append: Invalid hash in appended block: 00A0CC44CD23D1994EC050F97D99A4EB103BC6836775212D6C59B8E7213B70D2
+
+Command: blocks
+Block 0 (Transaction: [Deposit, Target: , Amount: 0], Nonce: -2232360179571805138, prevHash: , hash: 000000B5EB069F18FC2ED4B22A3D92C5909BB320563D5EBC45F1EBDCE84D4045)
+
+Command: append
+Source (return for deposit):
+Target: Alexis
+Amount: 50
+Nonce: -1849593861095398136
+Could not append: Invalid hash in appended block: C334578FF1274DB423AFABFF90280F251374A161C2ECB94D0144B4E55485F626
+
+Command: mine
+Source (return for deposit):
+Target: Alexis
+Amount: 50
+
+Use nonce: -2898839831891447515
+
+Command: append
+Source (return for deposit):
+Target: Alexis
+Amount: 50
+Nonce: -2898839831891447515
+Appended: Block 1 (Transaction: [Deposit, Target: Alexis, Amount: 50], Nonce: -2898839831891447515, prevHash: 000000B5EB069F18FC2ED4B22A3D92C5909BB320563D5EBC45F1EBDCE84D4045, hash: 000000FC6952A359BCD8834467ECFD262F9D38CC8AFFC214AA356FFF1CCF6035)
+
+Command: blocks
+Block 0 (Transaction: [Deposit, Target: , Amount: 0], Nonce: -2232360179571805138, prevHash: , hash: 000000B5EB069F18FC2ED4B22A3D92C5909BB320563D5EBC45F1EBDCE84D4045)
+Block 1 (Transaction: [Deposit, Target: Alexis, Amount: 50], Nonce: -2898839831891447515, prevHash: 000000B5EB069F18FC2ED4B22A3D92C5909BB320563D5EBC45F1EBDCE84D4045, hash: 000000FC6952A359BCD8834467ECFD262F9D38CC8AFFC214AA356FFF1CCF6035)
+
+Command: quit
+```
+
+### Inconsistent data
+
+If you mine the nonce with one set of data and then use a different set of data with append, you will likely get an error because it will compute an invalid hash.
+
+```text
+$ mvn clean compile exec:java -q
+Valid commands:
+  mine: discovers the nonce for a given transaction
+  append: appends a new block onto the end of the chain
+  remove: removes the last block from the end of the chain
+  check: checks that the block chain is valid
+  users: prints a list of users
+  balance: finds a user's balance
+  transactions: prints out the chain of transactions
+  blocks: prints out the chain of blocks (for debugging only)
+  help: prints this list of commands
+  quit: quits the program
+
+Command: mine
+Source (return for deposit):
+Target: Alexis
+Amount: 50
+
+Use nonce: 1827944575962533535
+
+Command: append
+Source (return for deposit):
+Target: Alexis
+Amount: 500
+Nonce: 1827944575962533535
+Could not append: Invalid hash in appended block: D2CD9EC5F7B6DA740BA9B7C2575F91BF21F1BCF632ED09D35280A8352592241D
+
+Command: append
+Source (return for deposit):
+Target: Alex
+Amount: 50
+Nonce: 1827944575962533535
+Could not append: Invalid hash in appended block: 4F36CB278976DA3D0001AC072FBD04D513784D6ADD33A9D6F65814B5F9034A59
+
+Command: append
+Source (return for deposit):
+Target: Alexis
+Amount: 50
+Nonce: 1827944575962533535
+Appended: Block 1 (Transaction: [Deposit, Target: Alexis, Amount: 50], Nonce: 1827944575962533535, prevHash: 0000005BB197679E581F85A00ABB8DFB56B2E69C4109D7D2C67470D11789113D, hash: 0000009470A38FE21793C4B91FF88579F199BB3EBC2AD523AA8B2F0674138589)
+
+Command: check
+The blockchain checks out.
+
+Command: quit
+
+Goodbye
+```
+
+### Invalid data
+
+We can add invalid data to the chain. However, when we check the chain, we will discover that it's invalid.
+
+```text
+mvn clean compile exec:java -q
+Valid commands:
+  mine: discovers the nonce for a given transaction
+  append: appends a new block onto the end of the chain
+  remove: removes the last block from the end of the chain
+  check: checks that the block chain is valid
+  users: prints a list of users
+  balance: finds a user's balance
+  transactions: prints out the chain of transactions
+  blocks: prints out the chain of blocks (for debugging only)
+  help: prints this list of commands
+  quit: quits the program
+
+Command: mine
+Source (return for deposit):
+Target: Alexis
+Amount: 50
+
+Use nonce: -5660731459897621210
+
+Command: append
+Source (return for deposit):
+Target: Alexis
+Amount: 50
+Nonce: -5660731459897621210
+Appended: Block 1 (Transaction: [Deposit, Target: Alexis, Amount: 50], Nonce: -5660731459897621210, prevHash: 00000075D1B392DB9908681950070286ECFC2E1FF5A9031D89CBC407BAC4CFD8, hash: 000000E53D18706EBC9FC8D90D0A48E6D9F9874C25E929754F543889E15840DB)
+
+Command: mine
+Source (return for deposit): Blake
+Target: Alexis
+Amount: 50
+
+Use nonce: 8738763986400660911
+
+Command: append
+Source (return for deposit): Blake
+Target: Alexis
+Amount: 50
+Nonce: 8738763986400660911
+Appended: Block 2 (Transaction: [Source: Blake, Target: Alexis, Amount: 50], Nonce: 8738763986400660911, prevHash: 000000E53D18706EBC9FC8D90D0A48E6D9F9874C25E929754F543889E15840DB, hash: 000000300D8CF952552F1C1176459F07F58D014594894B3DAD3E244ABF4D0D3E)
+
+Command: transactions
+[Deposit, Target: Alexis, Amount: 50]
+[Source: Blake, Target: Alexis, Amount: 50]
+
+Command: check
+Unknown source in block 2: "Blake"
+
+Command: remove
+Removed last element
+
+Command: blocks
+Block 0 (Transaction: [Deposit, Target: , Amount: 0], Nonce: 6253245136681024660, prevHash: , hash: 00000075D1B392DB9908681950070286ECFC2E1FF5A9031D89CBC407BAC4CFD8)
+Block 1 (Transaction: [Deposit, Target: Alexis, Amount: 50], Nonce: -5660731459897621210, prevHash: 00000075D1B392DB9908681950070286ECFC2E1FF5A9031D89CBC407BAC4CFD8, hash: 000000E53D18706EBC9FC8D90D0A48E6D9F9874C25E929754F543889E15840DB)
+
+Command: mine
+Source (return for deposit): Alexis
+Target: Blake
+Amount: 5
+
+Use nonce: -7110822019453805820
+
+Command: append
+Source (return for deposit): Alexis
+Target: Blake
+Amount: 5
+Nonce: -7110822019453805820
+Appended: Block 2 (Transaction: [Source: Alexis, Target: Blake, Amount: 5], Nonce: -7110822019453805820, prevHash: 000000E53D18706EBC9FC8D90D0A48E6D9F9874C25E929754F543889E15840DB, hash: 00000023DFD6F052036A6E43E3BB45EAA6346A57C838D602FBBE342912201665)
+
+Command: transactions
+[Deposit, Target: Alexis, Amount: 50]
+[Source: Alexis, Target: Blake, Amount: 5]
+
+Command: check
+The blockchain checks out.
+
+Command: mine
+Source (return for deposit): Blake
+Target: Alexis
+Amount: 50
+
+Use nonce: 1454357127647259755
+
+Command: append
+Source (return for deposit): Blake
+Target: Alexis
+Amount: 50
+Nonce: 1454357127647259755
+Appended: Block 3 (Transaction: [Source: Blake, Target: Alexis, Amount: 50], Nonce: 1454357127647259755, prevHash: 00000023DFD6F052036A6E43E3BB45EAA6346A57C838D602FBBE342912201665, hash: 0000004B9B3A4F8EA5B645E5917C430018B5AD57E78E1BD6E070DE8A87B1C9CA)
+
+Command: transactions
+[Deposit, Target: Alexis, Amount: 50]
+[Source: Alexis, Target: Blake, Amount: 5]
+[Source: Blake, Target: Alexis, Amount: 50]
+
+Command: check
+Insufficient balance for Blake in block 3: Has 5, needs 50
+
+Command: remove
+Removed last element
+
+Command: check
+The blockchain checks out.
+
+Command: mine
+Source (return for deposit): Blake
+Target: Alexis
+Amount: -10
+
+Use nonce: -5472847960142378404
+
+Command: append
+Source (return for deposit): Blake
+Target: Alexis
+Amount: -10
+Nonce: -5472847960142378404
+Appended: Block 3 (Transaction: [Source: Blake, Target: Alexis, Amount: -10], Nonce: -5472847960142378404, prevHash: 00000023DFD6F052036A6E43E3BB45EAA6346A57C838D602FBBE342912201665, hash: 000000BCB532461FBAC83FFDFA7ED606DCF61AD96708332D76DE9CFB06475190)
+
+Command: transactions
+[Deposit, Target: Alexis, Amount: 50]
+[Source: Alexis, Target: Blake, Amount: 5]
+[Source: Blake, Target: Alexis, Amount: -10]
+
+Command: check
+Negative amount in block 3: -10
+
+Command: remove
+Removed last element
+
+Command: check
+The blockchain checks out.
+
+Command: quit
+
+Goodbye
+```
+
 ## Questions and answers
 
 _A place for Sam to log the questions he gets about this assignment and
@@ -589,7 +1047,7 @@ the answers he develops._
 
 **Do I need to do anything with `HashValidator` and `Transaction`?
 
-> I don't think so. They were intended as complete as is.
+> I don't think so. They were intended to be complete as is.
 
 ### Nonces (or nonce-sense)
 
