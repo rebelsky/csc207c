@@ -1135,7 +1135,7 @@ the answers he develops._
 
 **What should we do if `MessageDigest.getInstance("sha-256")` throws an exception?**
 
-> It won't throw an exception. So put the code in a `try/catch` block and do nothing in the `catch` clause.
+> It won't throw an exception. So put the code in a `try/catch` block and do nothing in the `catch` clause. Alternately, throw a `RuntimeException`, which isn't catchable.
 
 **Do we have to write code to compute the hash?**
 
