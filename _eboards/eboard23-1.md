@@ -118,6 +118,8 @@ class._
 Notes on MP10
 -------------
 
+Demo coming on Tuesday (sorry for the delay).
+
 Questions
 ---------
 
@@ -129,6 +131,26 @@ Questions
 
 ### Miscellaneous
 
+### Hash tables
+
+_I'll take hash table questions after we discuss them. I'm including them here in case you want to include them in your own discussions._
+
+**I don't understand the `hashCode` method.**
+
+**Can you explain the difference between the hash function and casting types as integers?**
+
+**What does it mean for an object to be 'hashable'? Is it related to the 'hashing' in this reading?**
+
+**It it better for a hash to be an integer, a long, or an array of bytes? Each seem to have their benefits and drawbacks (ints have a relatively small storage size but comparatively few values, longs have a good range of values but a decent size, byte arrays can be any arbitrary size but they are stored as bytes).**
+
+**Just to confirm, if you're chaining and the number of keys in a bucket surpasses the bucket's capacity, we just double the size of that bucket, right? Which means that the main array of buckets is unaffected by this?**
+
+**How is the constant hash function necessarily a problem if we have the solution of chaining where several keys can fall under the same value in the array (that is, they all are under the same sub array). If this doesn't make sense then can you re-explain the constant hash function?**
+
+**Can you explain the hash function for floats?**
+
+**I just wanted to say I don't think I understood hash functions for objects.**
+
 Hash table overview
 -------------------
 
@@ -138,7 +160,8 @@ _TPS: What are five key ideas about hash tables?_
 
 ### Hashing
 
-_TPS: How should we compute a hash value?_
+_TPS: How should we compute a hash value? How about for our `BigFraction` 
+class from the start of the semester?_
 
 Hash exercise
 -------------
@@ -157,9 +180,17 @@ For example,
 
 * Samuel -> 19 + 1 + 13 + 21 + 5 + 12 = 71
 
-We will put your names into the hash table on the board.
+We will put your names into the hash table on the board. (We'll use a probed
+hash table with an offset of 1.)
 
 _TPS: What did we discover?_
+
+Questions
+---------
+
+_Do you have remaining questions about hash tables?_
+
+**Is it better for a hash to be an integer, a long, or an array of bytes? Each seem to have their benefits and drawbacks (ints have a relatively small storage size but comparatively few values, longs have a good range of values but a decent size, byte arrays can be any arbitrary size but they are stored as bytes).**
 
 Lab
 ---
