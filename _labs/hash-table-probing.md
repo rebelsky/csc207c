@@ -1,13 +1,17 @@
 ---
 title: Probing in hash tables
-repo: <https://github.com/Grinnell-CSC207/lab-hashtables>.
+repo: <https://github.com/Grinnell-CSC207/lab-hashtables-maven>.
 summary: |
   We explore the consequences of probing in hash tables.
 ---
 Preparation
 -----------
 
-Fork and clone the repository at {{ page.repo }}.
+a. Fork the repository at {{ page.repo }}.
+
+b. Clone your copy.
+
+c. Open the copy in VSCode. Update the README. Push the modified file.
 
 Exercises
 ---------
@@ -49,8 +53,7 @@ c. If you'd like, you can start with the following simple set of experiments.
     pen.println();
 ```
 
-d. Check the end of the lab for a description of the potential bug that
-we hope you observed.
+d. Check the end of the lab for a description of the potential bug that we hope you observed.
 
 e. Correct the bug.
 
@@ -62,7 +65,7 @@ As you may have noted, the code assumes that `find` returns a cell that has a pa
 
 a. Is that the case?  Why or why not?
 
-b. In `HashTableExpt`, uncomment the call to `matchingKeysExpt` to see what happens when two keys hash to the same location.
+b. In `HashTableExperiments`, uncomment the call to `matchingKeysExpt` to see what happens when two keys hash to the same location.
 
 c. Squash that second bug by updating `get` to check whether the key in the given cell matches the expected key.
 
@@ -152,25 +155,23 @@ c. Conduct a few experiments to check your conclusion.
 
 d. Rewrite `containsKey` to use a more sensible approach.
 
-### Exercise 8: Removing elements
+For those with extra time
+-------------------------
 
-_Driver: **A**_
+### Extra 1: Removing elements
 
-Here's a potentially better mechanism for removing elements: Find the index of the key/value pair.  Set the key to null.   Decrement the size field.
+Here's a potentially better mechanism for removing elements: Find the index of the key/value pair. Set the key to null. Decrement the size field.
 
 This approach is likely to significantly affect the `find` method, which now has to skip over the cell when searching but should probably return the cell if the search fails.  Why?  Because we use `find` for two reasons: to look things up for `get` and `containsKey`, and to find an empty location for use with `set`.  For the observers, it's okay that we look until we reach the end.  However, for `set`, we really want to use the first available spot.
 
 Implement this approach, updating `find`, `set`, `get`, and anything else you deem appropriate.
 
-For those with extra time
--------------------------
+### Extra 2: Iterating
 
-If you find that you have extra time, implement the iterator.
+Implement the iterator.
 
 ### Notes on Exercise 1
 
-The bug that you should have observed is that when we use `set` to
-update the value associated with a key, the size of the table still
-increases. It should not.
+The bug that you should have observed is that when we use `set` to update the value associated with a key, the size of the table still increases. It should not.
 
 For this exercise, you need not deal with the other conflicts.
