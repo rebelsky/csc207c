@@ -41,7 +41,7 @@ Preliminaries
     * [MP9](../mps/mp09) (Blockchains) due.
     * [Submit MP9 on Gradescope](https://www.gradescope.com/courses/818402/assignments/5321058)
 * Monday, 2024-11-25
-    * No reading! We're continuing our study of hash tables.
+    * No reading for Tuesday! We're continuing our study of hash tables.
     * [Submit post-reflection for MP9](https://www.gradescope.com/courses/818402/assignments/5321060)
     * [SoLA 10](../los/sola10) due
         * New: [ADT/DS #5: Dictionaries](https://www.gradescope.com/courses/818402/assignments/5354889)
@@ -50,12 +50,17 @@ Preliminaries
         * New: [Development #12: Professional ethics](https://www.gradescope.com/courses/818402/assignments/5354912)
 * Wednesday, 2024-11-27
     * Lab writeup from class 24.
+* Sunday, 2024-12-01
+    * Pre-reflection on MP10 due.
 * Monday, 2024-12-02
-    * Reading response for class 25
+    * Reading response for class 25.
     * SoLA 11 (optional) due
-        * New: ADT/DS #6: Hash tables
+        * New: ADT/DS #4: Priority queues
         * New: Development #11: Ethical reuse
         * This SoLA is "optional" in that I won't send in AAs after it.
+* Thursday, 2024-12-05
+    * MP 10 due.
+    * MP 11 released (also a group MP).
 
 ### Tokens
 

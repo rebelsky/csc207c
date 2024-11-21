@@ -472,6 +472,8 @@
       url: https://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/osera/chap12.pdf
   reminders:
     - Have them write a hash function for our good old fraction class.
+  lab:
+    - page: /labs/hash-table-probing.html
   eboards:
     - page: /eboards/eboard23-1.html
     - page: /eboards/eboard23-2.html
