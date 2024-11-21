@@ -27,8 +27,6 @@ More useful Javadoc
 
 ---
 
-_Warning! This mini-project is in the process of being rewritten._
-
 Sequential structures are pervasive in all of computing.  One of the most recent innovations in sequential structures is the [*blockchain*](https://en.wikipedia.org/wiki/Blockchain_(database)) which is a sequence of records built to be highly resistant to change.  Blockchains were first used in 2008 to record transactions for the cryptocurrency [Bitcoin](https://en.wikipedia.org/wiki/Bitcoin).  In this context, the blockchain is a complete history of all Bitcoin transactions ever made, a *public ledger*, replicated, verified, and evolved by many computers a distributed network of machines connected through the Internet.  Since then, blockchains have been used in many other contexts, *e.g.*, other [cryptocurrencies](https://en.wikipedia.org/wiki/Cryptocurrency), crowd-funding and digital rights management, and supply chain management, anywhere where immutable public records of transactions are necessary.
 
 Blockchains, as a *distributed data structure*, require careful coordination between the participating computers on the network.  As this is not a distributed systems course, we will not address these issues directly.  However, the blockchain itself is simply a list with a bit of extra information to ensure its integrity.  In this project, we will develop a blockchain data structure that will allow us to understand the essential operations that blockchain-based application perform.
@@ -1135,6 +1133,10 @@ the answers he develops._
 
 > You should only need to use `MessageDigest` in the `Block` class when you create new blocks. You'll use it to compute the hash of the block.
 
+**What should we do if `MessageDigest.getInstance("sha-256")` throws an exception?**
+
+> It won't throw an exception. So put the code in a `try/catch` block and do nothing in the `catch` clause.
+
 **Do we have to write code to compute the hash?**
 
 > No. The `digest` method of `MessageDigest` is supposed to compute the hash. Your job is to feed the `MessageDigest` object the data that you want hashed and then ask it for the hash.
@@ -1225,6 +1227,16 @@ the answers he develops._
 
 > You will need to write it yourself.
 
+**What names should the `names` iterator return?**
+
+> All the recipients of transactions (without duplicates).
+
+**Where are we using the iterators for `Block` and `Transaction` objects?**
+
+> Primarily in the UI.
+
+> You could also use them in the `check` method.
+
 ### Random
 
 **I remember hearing a few years ago that block chain would change everything. Do you think it was over hyped?**
@@ -1233,5 +1245,5 @@ the answers he develops._
 
 ## Acknowledgements
 
-This assignment comes from materials developed by Peter-Michael Osera and Anya Vostinar. Samuel A. Rebelsky made a variety of updates, including the new Q&A section.
+This assignment comes from materials developed by Peter-Michael Osera and Anya Vostinar. Samuel A. Rebelsky made a variety of updates, including the new Q&A section, the introduction of a new `HashValidator` class, and the expansion of transactions to include names.
 
