@@ -59,10 +59,12 @@ Preliminaries
     * [MP9](../mps/mp09) (Blockchains) due.
     * [Submit MP9 on Gradescope](https://www.gradescope.com/courses/818402/assignments/5321058)
 * Monday, 2024-11-25
-    * [SoLA 10](../los/sola10) due
-        * New LAs
-            * TBD
     * [Submit post-reflection for MP9](https://www.gradescope.com/courses/818402/assignments/5321060)
+    * [SoLA 10](../los/sola10) due
+        * New: [ADT/DS #5: Dictionaries](https://www.gradescope.com/courses/818402/assignments/5354889)
+        * New: [ADT/DS #7: BSTs](https://www.gradescope.com/courses/818402/assignments/5354897)
+        * New: [Development #9: Use libraries](https://www.gradescope.com/courses/818402/assignments/5354901)
+        * New: [Development #12: Professional ethics](https://www.gradescope.com/courses/818402/assignments/5354912)
 * Tuesday, 2024-11-26
 
 ### Tokens
