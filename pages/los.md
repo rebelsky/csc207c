@@ -242,7 +242,9 @@ Here and in other ADTs/DSs, start with the SAM, or at least something like the S
 
 Bit trees are not BSTs. Neither are heaps.
 
-Please include code for `get` and `set`.
+Please include code for `get`, `set`, and either an iterator or `forEach`.
+
+You need not include code for `remove`.
 
 #### ADTs/DSs #10: Array-based structures
 
@@ -351,7 +353,11 @@ You should describe the library you built and how it might be used in other prog
 
 #### Development #9: Use libraries
 
-Please focus on libraries in which you don't know the internals.  (That is, don't say "I used Sam's X class.") You've demonstrated knowledge of using such libraries in the Code Reading LO.
+Do not use `java.lang.String` as the library.
+
+Please focus on libraries in which you don't know the internals.  (That is, don't say "I used Sam's X class.") You've already demonstrated knowledge of using such libraries in the Code Reading LA. I want you to describe the use of a library which you only understand through the documentation.
+
+Please don't use libraries that get used in your programs, but that you haven't used directly, such as the speech libraries from the AAC MP.
 
 Most of the libraries you've used are from the Java API.
 
