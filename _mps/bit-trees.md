@@ -1,6 +1,7 @@
 ---
 title: Mini-Project 10
 subtitle: Bit trees and Braille
+repo: <https://github.com/Grinnell-CSC207/mp-bit-trees-maven>
 summary: |
   We explore mechanisms for representing binary information and the
   use of such mechanisms for converting to and from Braille and
@@ -13,6 +14,8 @@ link: true
 ---
 _This assignment is adapted from the Including A11y in CS project
 entitled "[Braille Binary Tree](https://accessibilityeducation.github.io/braillebinarytree.html)"._
+
+The starter code for this project can be found on GitHub at <https://github.com/Grinnell-CSC207/mp-bit-trees-maven>.
 
 Introduction
 ------------
@@ -74,25 +77,27 @@ Since English braille uses only six bits (and always uses six bits), a binary tr
 
 In contrast, if we were using a bit tree to convert ASCII characters to braille, we might need eight (7-bit ASCII) or nine (8-bit ASCII) levels.
 
-Bit trees
----------
+Assignment
+----------
+
+### Bit trees
 
 Create a class, `BitTree`, intended to store mappings from bits to values.
 
 * A constructor, `BitTree(int n)`, that builds a tree that will store
-  mappings from strings of n bits to strings.  We'd build our tree for
+  mappings from strings of `n` bits to strings.  We'd build our tree for
   mapping braille to ASCII with `new BitTree(6)`.  We'd build our tree
   for mapping ASCII to braille with `new BitTree(7)` or `new BitTree(8)`.
   _Do not create nodes in the tree until they are needed._
 * A method, `set(String bits, String value)`, that follows the path 
   through the tree given by `bits` (adding nodes as appropriate) and
   adds or replaces the value at the end with `value`.  `set` should
-  throw an exception if `bits` is the inappropriate length or contains
-  values other than 0 or 1.
+  throw an `IndexOutOfBounds` exception if `bits` is the inappropriate 
+  length or contains values other than 0 or 1.
 * A method, `String get(String bits)`, that follows the path through the
   tree given by `bits`, returning the value at the end.  If there is
   no such path, or if `bits` is the incorrect length, `get` should
-  throw an exception.
+  throw an `IndexOutOfBounbds` exception.
 * A method, `void dump(PrintWriter pen)`, that prints out the contents
   of the tree in CSV format.  For example, one row of our braille
   tree will be "101100,M" (without the quotation marks).
@@ -105,28 +110,22 @@ also make do with a `BitTreeNode` class that has both a value (for
 when it's a leaf) and two children (for when it's an interior node),
 but the subclassing is a bit cleaner.
 
-Braille trees
--------------
+### Braille trees
 
-Create a class `BrailleASCIITables`, that provides the following
+Create a class `BrailleAsciiTables`, that provides the following
 static methods:
 
 * `String toBraille(char letter)`, which converts
   an ASCII character to a string of bits representing the
   corresponding braille character..
-* `String toASCII(String bits)`, which converts a string of bits
+* `String toAscii(String bits)`, which converts a string of bits
   representing a braille character to the corresponding ASCII character.
 * `String toUnicode(String bits)`, which converts a string of bits
   representing a braille character to the corresponding [Unicode braille character](https://en.wikipedia.org/wiki/Braille_Patterns) 
-  for those bits.  You need only support six-bit braille characters.
 
-Within the class, you must store the translation information (from
-ASCII to braille, from braille to ASCII, and from braille to Unicode)
-as bit trees.  You should put the translation information in a text
-file (or maybe I'll get those written in time).
+Within the class, you _must_ store the translation information (from ASCII to braille, from braille to ASCII, and from braille to Unicode) as bit trees.  You can find the translation tables in the starter code (or you could read them from files).
 
-Utility program
----------------
+### Utility program
 
 Create a Main class, `BrailleASCII`, that takes two command-line
 parameters, the first of which represents the target character set
@@ -142,10 +141,85 @@ $ java BrailleASCII unicode hello
 ⠓⠑⠇⠇⠕
 ```
 
-Rubric
-------
+Preparation
+-----------
 
-_Forthcoming._
+a. Fork the repository at {{ page.repo }}.
+
+b. Clone that repository.
+
+```text
+cd ~/CSC207/MPs                 # Or the directory of your choice
+git clone git@github.com:USERNAME/mp-bit-trees-maven.git
+```
+
+c. Open the project in VSCode.
+
+d. Update the `README.md` appropriately.
+
+e. Push the updated `README` to GitHub.
+
+```text
+cd ~/CSC207/MPs/                # Or the directory of your choice
+cd mp-bit-trees-maven
+git add README.md
+git status
+git commit -m "Update README."
+git pull
+git push
+```
+
+f. Add an upstream repository just in case I make changes.
+
+```text
+cd ~/CSC207/MPs/                # Or the directory of your choice
+cd mp-bit-trees-maven
+git remote add upstream https://github.com/Grinnell-CSC207/mp-bit-trees-maven
+```
+
+In the future, you can grab changes using the following.
+
+```text
+git fetch upstream
+git merge upstream/main
+```
+
+You can also just click the **Sync Fork** button on your GitHub page for the fork.
+
+Draft rubric
+------------
+
+Submissions that fail to meet any of these requirements will get an I.
+
+```
+[ ] Passes all the **R** tests.
+[ ] Includes the specified `.java` files, correctly named.  (They should
+    be in the appropriate package.)
+[ ] Each class has an introductory Javadoc comment that indicates
+    the author and purpose. 
+[ ] Includes a `README.md` file that contains the appropriate information 
+    (authors, purpose, acknowledgements if appropriate)
+[ ] All files compile correctly.
+```
+
+### Meets expectations or above
+
+Submissions that fail to meet any of these requirements but meet all
+previous requirements will receive an R.
+
+```
+[ ] Passes all the **M** tests.
+[ ] No more than fifteen style errors.
+```
+
+### Exceeds expectations
+
+```
+[ ] Passes all the **E** tests.
+[ ] No more than fifteen style errors.
+[ ] All (or most) repeated code has been factored out into individual methods.
+[ ] All or most variable names are appropriate.
+```
 
 Tables
 ------
