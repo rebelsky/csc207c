@@ -92,38 +92,31 @@ Create a class, `BitTree`, intended to store mappings from bits to values.
 * A method, `set(String bits, String value)`, that follows the path 
   through the tree given by `bits` (adding nodes as appropriate) and
   adds or replaces the value at the end with `value`.  `set` should
-  throw an `IndexOutOfBounds` exception if `bits` is the inappropriate 
+  throw an `IndexOutOfBoundsException` if `bits` is the inappropriate 
   length or contains values other than 0 or 1.
 * A method, `String get(String bits)`, that follows the path through the
   tree given by `bits`, returning the value at the end.  If there is
   no such path, or if `bits` is the incorrect length, `get` should
-  throw an `IndexOutOfBounbds` exception.
+  throw an `IndexOutOfBoundsException`.
 * A method, `void dump(PrintWriter pen)`, that prints out the contents
   of the tree in CSV format.  For example, one row of our braille
   tree will be "101100,M" (without the quotation marks).
 * A method, `void load(InputStream source)`, that reads a series of
   lines of the form `bits,value` and stores them in the tree.
 
-You will likely find it useful to create a `BitTreeNode` interface,
-a `BitTreeInteriorNode` class, and a `BitTreeLeaf` class. You might
-also make do with a `BitTreeNode` class that has both a value (for
-when it's a leaf) and two children (for when it's an interior node),
-but the subclassing is a bit cleaner.
+You will likely find it useful to create a `BitTreeNode` interface, a `BitTreeInteriorNode` class (which contains fields for the children), and a `BitTreeLeaf` class (which contains a field for the string). You might instead make do with a `BitTreeNode` class that has both a value (for when it's a leaf) and two children (for when it's an interior node), but the subclassing is a bit cleaner.
 
 ### Braille trees
 
-Create a class `BrailleAsciiTables`, that provides the following
-static methods:
+Create a class `BrailleAsciiTables`, that provides the following static methods:
 
-* `String toBraille(char letter)`, which converts
-  an ASCII character to a string of bits representing the
-  corresponding braille character..
-* `String toAscii(String bits)`, which converts a string of bits
-  representing a braille character to the corresponding ASCII character.
-* `String toUnicode(String bits)`, which converts a string of bits
-  representing a braille character to the corresponding [Unicode braille character](https://en.wikipedia.org/wiki/Braille_Patterns) 
+* `String toBraille(char letter)`, which converts an ASCII character to a string of bits representing the corresponding braille character.
+* `String toAscii(String bits)`, which converts a string of bits representing a braille character to the corresponding ASCII character.
+* `String toUnicode(String bits)`, which converts a string of bits representing a braille character to the corresponding [Unicode braille character](https://en.wikipedia.org/wiki/Braille_Patterns) 
 
 Within the class, you _must_ store the translation information (from ASCII to braille, from braille to ASCII, and from braille to Unicode) as bit trees.  You can find the translation tables in the starter code (or you could read them from files).
+
+Feel free to throw a runtime exception if you get an invalid input to any of these methods. (Since the underlying `BitTree` objects throw an `IndexOutOfBoundsException`
 
 ### Utility program
 
@@ -132,13 +125,23 @@ parameters, the first of which represents the target character set
 and the second of which represents the source characters, and that
 translates the text.  For example,
 
-```
-$ java BrailleASCII braille hello
+```text
+$ alias ba="java -cp target/classes edu.grinnell.csc207.main.BrailleASCII"
+
+$ ba braille hello
 110010100010111000111000101010
-$ java BrailleASCII ascii 110010100010111000111000101010
-hello
-$ java BrailleASCII unicode hello
+$ ba ascii 110010100010111000111000101010
+HELLO
+$ ba unicode hello
 ⠓⠑⠇⠇⠕
+$ ba unicode "hello world"
+⠓⠑⠇⠇⠕⠀⠺⠕⠗⠇⠙
+
+$ ba braille abc123
+100000110000100100
+Trouble translating because No corresponding value
+$ ba ascii 11001010001011100011100010101
+Invalid length of bit string
 ```
 
 Preparation
@@ -210,13 +213,14 @@ previous requirements will receive an R.
 ```
 [ ] Passes all the **M** tests.
 [ ] No more than fifteen style errors.
+[ ] Command-line examples work.
 ```
 
 ### Exceeds expectations
 
 ```
 [ ] Passes all the **E** tests.
-[ ] No more than fifteen style errors.
+[ ] No more than five style errors.
 [ ] All (or most) repeated code has been factored out into individual methods.
 [ ] All or most variable names are appropriate.
 ```
@@ -386,55 +390,69 @@ ASCII to Braille
 Questions and Answers
 ---------------------
 
-Do you have any hints on the `dump` method?
+### Tree nodes
+
+**Why did you suggest that we have separate classes for interior nodes and leaves?**
+
+> Sometimes having separate classes simplifies things. Your interior nodes will need to store links to the subtrees below them. Your leaves will store only the value.
+
+**Can we use the generic `TreeNode` class from the labs?**
+
+> Sure, although I would not recommend it. You're better off creating your own specialized node classes. 
+
+**If I include a `value` field in my nodes, what value should I use for the interior nodes?**
+
+> `null` seems like a good strategy.
+
+### `dump`
+
+**Do you have any hints on the `dump` method?**
 
 > Sure.  We've traversed binary trees recursively before, so you'll be doing something similar.  This time, in addition to recursing over the node, you'll also include the bit string processed so far as a parameter, and add to the string as you recurse.
 
 > For example, if we're processing the node with bit string "0101", when we recurse on the left subtree, we'll pass in "01010" and when we recurse on the right subtree, we'll pass in "01011".
 
-Why are the ASCII-to-Braille trees deeper than the braille to ASCII trees?
+### `load`
 
-> ASCII represents more characters, so we need more bits.  We're just using a subset of the characters that ASCII represents.
-
-How should I convert the unicode numbers to characters?
-
-> Take a look at the `Character` class in Java. (We might do that together.)
-
-Should I handle both lowercase and uppercase letters in converting from ASCII to braille?
-
-> It would be nice, but it's optional.  The mapping above handles both, at least if I designed it correctly.
-
-When using braille as input for traversing the tree, I'm using the bit string.  What should I do with ASCII?
-
-> You could convert it to a bit string.  You could use bitwise operations.
-
-Do I have to write an `Iterator` for my bit tree?
-
-> Nope.
-
-Why did you suggest that we have separate classes for interior nodes and leaves?
-
-> Sometimes having separate classes simplifies things. Your interior nodes will need to store links to the subtrees below them. Your leaves will store only the value.
-
-What will `load` look like?
+**What will `load` look like?**
 
 > Presumably, you'll read each line, split at the comma, and then call `set`.
 
-Can we put the translation tables you gave us into files and then load them in our `main` method?
+### `toUnicode`
 
-> Yes. I was assuming you'd do so.
+**How should I convert the unicode numbers to characters?**
 
-Can we use the generic `TreeNode` class from the labs?
+> Take a look at the `Character` class in Java. (We might do that together.)
 
-> Sure, although I would not recommend it. You're better off creating your own specialized node classes. 
+### `toBraille`
 
-If I include a `value` field in my nodes, what value should I use for the interior nodes?
+**Should I handle both lowercase and uppercase letters in converting from ASCII to braille?**
 
-> `null` seems like a good strategy.
+> It would be nice, but it's optional. The mapping above handles both, at least if I designed it correctly.
 
-Will you provide tests?
+**When using braille as input for traversing the tree, I'm using the bit string.  What should I do with ASCII?**
 
-> Forthcoming.
+> You could convert it to a bit string.  You could use bitwise operations.
+
+### Testing
+
+**Will you provide tests?**
+
+> Yes. They are forthcoming. For now, you might try the experiments.
+
+### Miscellaneous
+
+**Why are the ASCII-to-Braille trees deeper than the braille to ASCII trees?**
+
+> ASCII represents more characters, so we need more bits (historically 7 or 8).  We're just using a subset of the characters that ASCII represents.
+
+**Do I have to write an `Iterator` for my bit tree?**
+
+> Nope.
+
+**Can we put the translation tables you gave us into files and then load them in our `main` method?**
+
+> Yes.
 
 Acknowledgements
 ----------------
