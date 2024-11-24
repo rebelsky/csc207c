@@ -435,7 +435,7 @@ Use `Block` to implement a `BlockChain` class which is a singly-linked structure
   : Walk the blockchain and ensure that its blocks are consistent (the balances at every step are legal) and valid (as described in `append`). If not, throw an exception with a meaningful message at the first bad block. In a more robust system, we might throw different exceptions for the different kinds of errors. In this version, we're just going to rely on the message.
 
 `Iterator<String> users()`
-  : Return an iterator of all the people who participated in the system (received money in the system). You can present this list in any order.
+  : Return an iterator of all the people who participated in the system (received money in the system). You can present this list in any order. You should not duplicate any user.
 
 `int balance(String user)`
   : Find one person's balance. Returns 0 if they haven't used the system.
