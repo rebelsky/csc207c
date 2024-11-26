@@ -491,6 +491,9 @@
   lab:
     - page: /labs/hash-table-probing.html
     - page: /labs/hash-table-chained.html
+  eboards:
+    - page: /eboards/eboard24-1.html
+    - page: /eboards/eboard24-2.html
 
 - topic: Priority queues, heaps, and heap sort
   abbrev: heaps
