@@ -1,6 +1,6 @@
 ---
 title: Chaining in hash tables
-repo: <https://github.com/Grinnell-CSC207/lab-hashtables>.
+repo: <https://github.com/Grinnell-CSC207/lab-hashtables-maven>.
 summary: |
   We consider the implications of chaining in hash tables.
 ---
@@ -77,7 +77,7 @@ b. If you have not done so already, update the code in `set` and `get` to handle
 
 _Driver: **A**_
 
-One collision does not a solution make.  We are much better off looking at a fairly large collection of values.
+Fixing one collision does not a solution make.  We are much better off looking at a fairly large collection of values.
 
 a. Read through `multipleSetExperiment` and describe what issues it is
 trying to explore.
