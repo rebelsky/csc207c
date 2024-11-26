@@ -40,6 +40,7 @@ Preliminaries
     * [SoLA 11](../los/sola11) (optional) due
         * New: Development #11: Ethical reuse
         * This SoLA is "optional" in that I won't send in AAs after it.
+        * To be posted tonight.
 * Thursday, 2024-12-05
     * [MP 10](../mps/mp10) due.
     * [Submit MP10 on Gradescope](https://www.gradescope.com/courses/818402/assignments/5380849)
@@ -130,7 +131,7 @@ On that note: `break` is ugly and should be used sparingly.
   restored the loop invariant.
 * Break also makes it harder for your reader.
 * For the particular example, you could write something like
-  `while ((j >= 0) && (order.compare(a[j], value) >= 0))`
+  `while ((j >= 0) && (order.compare(a[j], value) > 0))`
 * If it's really really hard to write without a break, you can do so.
 
 Your insert loop should also stop as soon as you find the right
@@ -180,16 +181,16 @@ give the midpoint if both values are odd.
 * E.g., if `lb` is 3 and `ub` is 5, 3/2 = 1, 5/2 = 2, so we compute 3
   (rather than 4).
 * `(lb + ub) / 2` is more correct, but potentially dangerous if the
-  `lb` and `ub` are qire large (overflow).
+  `lb` and `ub` are quite large (overflow).
 * Most of us use `lb + (ub - lb) / 2`.
 * Some folks use `lb / 2 + ub / 2 + (lb % 2 + ub % 2) / 2`.
 
 Notes on MP10
 -------------
 
-Updates coming soon (including tests).
+Demo
 
-Demo coming on Tuesday (sorry for the delay).
+Updates coming soon (including tests).
 
 **Can we get rid of the hidden field thing in `mvn checkstyle:check`?**
 
@@ -222,13 +223,14 @@ Make sure the repo ends in `-maven`.
 
 ### Observations/Comments
 
+* Problems with `set` and `get` probably stem from issues with `find`.
 * Don't use `==` to compare keys. Use `.equals`.
 * When writing `find`, the first place you should look is the hash of
   the key.
     * More precisely, the absolute value of the hash of the key mod the
       table size. (Which gives a valid index.)
-* Make sure you check whether a KVPair is null _before_ you try to get its
-  key or value.
+* Make sure you check whether a KVPair is not null _before_ you try to get 
+  its key or value.
 * We set up the size of the table in the `clear` method.
 
 ### Questions
