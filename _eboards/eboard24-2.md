@@ -1,5 +1,5 @@
 ---
-title: "Eboard 24 (Section 1): Hash tables, continued"
+title: "Eboard 24 (Section 2): Hash tables, continued"
 number: 24
 section: eboards
 held: 2024-11-26
@@ -54,8 +54,6 @@ class._
 
 #### Academic/Scholarly
 
-* Tuesday, 2024-11-26, noon--1:00 p.m., Day PDR.
-  _CS Table: ??? _
 * Sunday, 2024-12-01, 7:00--8:00 p.m., Science 3819.
   _Mentor Session_
 * Tuesday, 2024-12-03, noon--1:00 p.m., Day PDR.
@@ -218,7 +216,7 @@ Labs
 ---
 
 Two labs today, one on chained hash tables and one on probed. Do them in
-either order. They use the same repository.
+either order or do a bit of each. They use the same repository.
 
 Make sure the repo ends in `-maven`.
 
