@@ -414,7 +414,7 @@ Use `Block` to implement a `BlockChain` class which is a singly-linked structure
   : Create a `BlockChain` that possess a single block with empty source, target, and amount.  Note that to create this block, the `prevHash` field should be set to an empty byte array. You will use the given `HashValidator` when generating a nonce.
 
 `Block mine(Transaction t)`
-  : Mine a new candidate block to be added to the end of the chain.  The returned `Block` should be valid to add onto this block chain. (That is, not only should the nonce be correct, but the transfer should be valid.)
+  : Mine a new candidate block to be added to the end of the chain.  The returned `Block` should be valid to add onto this block chain. (That is, not only should the nonce be correct, but the hash code should be valid.)
 
 `int getSize()`
   : Return the size of the blockchain. Note that number of the blocks provides a convenient method for quickly determining the size of the chain.
@@ -1204,6 +1204,10 @@ the answers he develops._
 **Can I use my `AssociativeArray` class to store the table of users and deposits?**
 
 > Certainly.
+
+**Can I use an `ArrayList` to store the names?**
+
+> That's fine.
 
 **Is the blockchain allowed a memory of the state of the chain outside of the blocks (for example, a dynamically sized array with all actors involved thus far and their balances)?**
 
