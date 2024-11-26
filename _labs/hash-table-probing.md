@@ -75,7 +75,7 @@ _Driver: **B**_
 
 As you may have noted, the code makes no attempt to deal with collisions.  Hey, it's even in the "bugs to squash" section.  (Some of you may have been tempted to fix the bug in a previous exercise.)
 
-a. Uncomment the call to `setExpt` so that you can see other potential effects of the unimplemented collision detection.
+a. Uncomment the call to `matchingSetExpt` so that you can see other potential effects of the unimplemented collision detection.
 
 b. Update `find` to use linear probing.  If the current cell is full, and the keys don't match, try the cell that is `PROBE_OFFSET` away from the current cells (modulo the capacity of the table).  For example, if the table capacity is 20, the hash code gives us position 3, and the offset is 6, you should look in positions 3, 9 (3 + 6), 15, 1 (21 mod 20), 7, ....
 
@@ -117,7 +117,7 @@ Here's a sketch of a technique some students use to expand the table.  (It's a s
 
 a. What do you think about this approach?  (Don't critique the failure to use `Arrays.copyElts`, or whatever it's called.)
 
-b. Try adding these lines to `expand` and resolve any syntax errors.  Shrink the initial capacity of the array a bit so that we know `expand` gets called.  Run the `setExpt` method to see whether this technique for expansion works successfully.
+b. Try adding these lines to `expand` and resolve any syntax errors.  Shrink the initial capacity of the array a bit so that we know `expand` gets called.  Run the `multipleSetExpt` method to see whether this technique for expansion works successfully.
 
 c. Correct any errors that you've identified.
 
