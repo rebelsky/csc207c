@@ -390,11 +390,53 @@ ASCII to Braille
 Questions and Answers
 ---------------------
 
+### Big picture
+
+**I am confused about the roles of the tables, set method, and constructor. When should I populate the tree? Should I expect its content to change?**
+
+> The `BitTree` class is designed to allow clients to make as many trees as they want.
+
+> The `set` and `load` methods are the two ways to build or extend a tree.
+
+> `BrailleAsciiTables` creates three such trees. We can assume these won't change once we've created them. We should create those as soon as we can.
+
+> The `BrailleASCII` class then uses the trees (indirectly, through the methods).
+
+**Could you give time estimates for how long you think some of the methods should take us?**
+
+> People vary significantly in how long they take to do things. But perhaps you're asking this to see how I'd break up the program. These estimates also assume you don't encounter significant problems.
+
+> `interface BitTreeNode`, `class BitTreeInteriorNode`, and `class BitTreeLeaf`: Perhaps fifteen minutes for the interface and two classes. You've created nodes before.
+
+> `BitTree.get`: Perhaps ten to fifteen minutes. You've written methods that recurse through trees before (e.g., `BST.get`), so it's mostly repurposing ideas you've done before. (Most of you also wrote `BST.get` in about this time.)
+
+> `BitTree.set`: Fifteen minutes. You've written methods that recurse through trees before (e.g., `BST.set`), so it's mostly repurposing ideas you've done before. Perhaps thirty minutes if you choose a difficult approach to start with. (Most of you also wrote `BST.set` in about this time.)
+
+> `BitTree.dump`: Fifteen to twenty minutes. You've written code to recurse through trees. This one just requires a bit of cleverness.
+
+> `BitTree.load`: Between ten and thirty minutes. The hard part is mostly figuring out how to get the data from the `InputStream`. Once you get a line, you should know how to split it and then call `set`.
+
+> `BrailleAsciiTables.toAscii`: About five to ten minutes. This should be a call to `BitTree.get`.
+
+> `BrailleAsciiTables.toBraille`: About thirty minutes. Twenty of those minutes will be figuring out how to convert the letter into a bit string.
+
+> `BrailleAsciiTables.toUnicode`: About thirty minutes. Twenty-five of those minutes will be figuring out how to convert the hex code to a unicode character.
+
+> `BrailleASCII.main`: About thirty minutes. You've written code to parse command lines before. The rest is just repeated calls to the `BrailleAsciiTables` methods.
+
 ### Tree nodes
 
 **Why did you suggest that we have separate classes for interior nodes and leaves?**
 
 > Sometimes having separate classes simplifies things. Your interior nodes will need to store links to the subtrees below them. Your leaves will store only the value.
+
+**Since we can't have fields in an interface, what is in `BitTreeNode` interface?**
+
+> It's there mostly so that the interior nodes can have two BitTreeNode fields, one for the zero subtree and one for the one subtree. In most cases, those fields will be instantiated as interior nodes, but at the end, they will be instantiated as leaves.
+
+**Should `BitTreeInteriorNode` inherit from `BitTreeNode`, or should they be completely separate classes?**
+
+> I'd make `BitTreeNode` an interface. `BitTreeInteriorNode` would then implement that interface.
 
 **Can we use the generic `TreeNode` class from the labs?**
 
@@ -404,6 +446,14 @@ Questions and Answers
 
 > `null` seems like a good strategy.
 
+**Do you care if I put these classes in separate files or can they be in the primary file?**
+
+> It's up to you.
+
+**How do we structure the `BitTreeNode` interface and its subclasses? Are there specific fields or methods we must include?**
+
+> That's one of the things I wanted you to think through. (Sorry.)
+
 ### `dump`
 
 **Do you have any hints on the `dump` method?**
@@ -412,17 +462,37 @@ Questions and Answers
 
 > For example, if we're processing the node with bit string "0101", when we recurse on the left subtree, we'll pass in "01010" and when we recurse on the right subtree, we'll pass in "01011".
 
+**How should we hold the 'bits so far' information when recursing through the tree for dump?**
+
+> I wrote a helper method with two parameters, one for the current node and one a string that gives the path to the node.
+
 ### `load`
 
 **What will `load` look like?**
 
 > Presumably, you'll read each line, split at the comma, and then call `set`.
 
+**How do I read from an `InputStream`?**
+
+> I found it easiest to convert the `InputStream` into an `InputStreamReader` and then to a `BufferedReader`.
+
+**What's the format of the `InputStream` source would look like so we know how to write `load`?**
+
+> Each line is `bits,value`, where `bits` is a sequence of 0's and 1's and `value` is a string (without quotation marks).
+
+**For the load method, should it validate the format of the input lines?**
+
+> You can assume the input lines are correctly formatted.
+
 ### `toUnicode`
 
 **How should I convert the unicode numbers to characters?**
 
-> Take a look at the `Character` class in Java. (We might do that together.)
+> Take a look at the `Character` class in Java.
+
+**How will we put unicode braille onto the terminal?**
+
+> If you build the unicode characters appropriately, they will show up in the terminal.
 
 ### `toBraille`
 
@@ -440,6 +510,11 @@ Questions and Answers
 
 > Yes. They are forthcoming. For now, you might try the experiments.
 
+**Are there any specific tests provided to validate tree traversal and Braille conversion?**
+
+> There will be.
+
+
 ### Miscellaneous
 
 **Why are the ASCII-to-Braille trees deeper than the braille to ASCII trees?**
@@ -453,6 +528,10 @@ Questions and Answers
 **Can we put the translation tables you gave us into files and then load them in our `main` method?**
 
 > Yes.
+
+**What is the best way to optimize tree expansion when the depth increases?**
+
+> The depth doesn't change.
 
 Acknowledgements
 ----------------
