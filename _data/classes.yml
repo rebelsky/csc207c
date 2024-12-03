@@ -512,6 +512,9 @@
     - Is this worth doing as a discussion or as a lab?  I like the discussion of heaps, but students also learn from practice.  
     - Maybe we need two days. Unfortunately, we don't have them.
     - Perhaps a longer day is enough
+  eboards:
+    - page: /eboards/eboard25-1.html
+    - page: /eboards/eboard25-2.html
 
 - topic: "Graphs: An ADT and basic traversal techniques"
   abbrev: graphs
