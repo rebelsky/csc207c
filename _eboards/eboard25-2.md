@@ -1,5 +1,5 @@
 ---
-title: "Eboard 25 (Section 1): Priority queues and heaps"
+title: "Eboard 25 (Section 2): Priority queues and heaps"
 number: 25
 section: eboards
 held: 2024-12-03
@@ -74,21 +74,19 @@ class._
 
 #### Cultural
 
+* Wednesday, 2024-12-04, 7:30 p.m., Herrick.
+  _Balinese: Song and Dance Ensemble_
+* Friday and Saturday, Wall Theatre.
+  _One-act festivals_
+* Tuesday, 2024-12-03, 7:00 p.m., Sebring-Lewis.
+  _Chamber Ensemble_
+
 #### Multicultural
 
 * Friday, 2024-12-06, 4:00--5:00 p.m., HSSC N1170 - Global Living Room.
   _Middle of Everywhere: ???_ 
 
 #### Peer
-
-* Friday and Saturday, Wall Theatre.
-  _One-act festivals_
-* Tuesday, 2024-12-03, 7:00 p.m., Sebring-Lewis.
-  _Chamber Ensemble_
-* Wednesday, 2024-12-04, 7:30 p.m., Herrick.
-  _Balinese: Song and Dance Ensemble_
-* Friday and Saturday, all day (1 hour suffices), Osgood Natatorium.
-  _Pioneers Swim Meet_
 
 #### Wellness
 
@@ -104,6 +102,9 @@ class._
 #### Misc
 
 ### Other good things (no tokens)
+
+* Friday and Saturday, all day (1 hour suffices), Osgood Natatorium.
+  _Pioneers Swim Meet_
 
 This week's SoLA comments
 -------------------------
@@ -142,32 +143,9 @@ Our goal: Figure out how to do that
 
 Strategy:
 
-* Convert the hex code to an integer (hope that that there's something in
-  `java.lang.Integer` to do that).
-    * You could also do this "by hand" - map each digit to an integer in
-      the range 0 .. 15. Multiply the first character by 16*16*16, the
-      next by 16*16, the next by 16, the last by 1 and then add all together.
-* Convert that integer to a unicode character. (There's probably something
-  in `java.lang.Character` to do that.)
-
 Details:
 
-* hex to integer - Integer.valueOf or Integer.parseInt
-* integer to Unicode character - Character.toChars (returns byte array)
-* Byte array to string - Use the String constructor.
-
 ### More questions
-
-**What do you mean by "don't fill in the nodes until necessary"?**
-
-> Consider the call `new BitTree(3)`.
-
-> That could be a tree with four levels (one node at level 0, two nodes at 
-  level 1, four nodes at level 2, eight nodes at level 3).
-
-> We could build all fifteen nodes at once, but that would be wasteful. And
-  we wouldn't have anything to put in the leaf nodes. So we instead only
-  add nodes when we call `set`.
 
 Questions
 ---------
@@ -273,37 +251,21 @@ Linear structures with "highest priority first" as the policy.
 _TPS_
 
 * A1: Array, unordered (assume you have a `size` field)
-    * `put`: Add at the end of the array O(1), if we have enough room.
-       O(n) if we have to expand the array. If we double the size of the
-       array, it's "amortized O(1)".
-    * `get`: O(n) because you have to look at all of the elements
-    * `peek`: O(n) ditto
+    * `get`.
 * A2: Array, ordered from highest priority to lowest
-    * `put`: O(n) you have to figure out where it goes, which means
-      searching through all the elements. (Even if we can find the spot
-      in O(logn) by using binary search, it will still be O(n) to shift
-      values to make room for it.)
-    * `get`: O(n) because you'll have to shift everything down after
-      removing the first element (or use that horrid "wrap-around"
-      strtegy we used for queues).
-    * `peek`: O(1) it's at the front
+    * `put`:
+    * `peek`: 
+    * `get`.
 * A3: Array, ordered from lowest priority to highest
-    * `put`: O(n): see aboe
-    * `get`: O(1)
-    * `peek`: O(1)
+    * `put`: 
+    * `get`:
+    * `peek`: 
 * L1: Linear singly-linked structure, unordered
-    * `put`: O(1): Update either the pointer to the first node or the
-      pointer to the last node.
-    * `get`: O(n) because you have to look through all of them
-    * `peek`: O(n) because you have to look through all of them
-* L2: Linear singly-linked structure, ordered from highest priority to lowest
-    * `put`: O(n) because you have to search through the list (at least
-      there's no shifting)
-    * `get`: O(1) you can easily move front to front.next.
-    * `peek`: O(1) it's at the front
+    * `put`:
+    * `get`.
 * L3: Linear singly-linked structure, ordered from lowest priority to highest
-    * `put`: O(n) for similar reasons
-    * `get`: O(n) because we have to go through the entire list to find
+    * `put`: 
+    * `get`:
       the predecessor of the last node
     * `peek`: O(1) if we keep a pointer to the last node
 * T1: BST using priorities. (skipped for complexity)
@@ -315,88 +277,18 @@ _TPS_
 
 * All of these have at least one operation that is O(n).
 * Can We Do Better?
-* Normal strategy: Divide and conquer (for algorithms)
-* Normal strategy: Use trees (for data structures)
+* Normal strategy: 
 
 Heaps
 -----
 
-* Trees in which
-    * Each node has a higher priority than all of its descendants
-      (or equal) - "Heap Property"
-    * Nearly complete
-        * All the levels except the last are completely full.
-        * The last level is filled from left to right.
-* The highest priority element is at the top, so `peek` is cheap.
-* Because the trees are nearly complete, if we can make `put` and
-  `get` be O(height), they will be O(log2n) operations.
-
 Heap operations
 ---------------
-
-`put`: How do we add an element to the tree and then restore the
-two properties? (The heap property and the nearly-complete property.)
-
-* Nearly-complete may be harder, because getting a particular shape
-  is difficult.
-* Hence, our first step is "put at the end of the last row" (or at
-  the beginning of the next row if the last row is filled)
-* Next, we "heap up", swapping a value with its parent as long as the
-  value is higher priority than the parent
-* Running time is O(logn), provided we have parent pointers (or
-  something similar) and we can quickly find the last space in the
-  last row.
-    * Hire a mathematician to give you the approach, which may just
-      be based on the binary representation of the size.
-
-`get`: After removing the top element, how do we restore the two properties?
-(The heap property and the nearly-complete property.)
-
-* Swap the last element to the top. That turns it back into a tree.
-* Heap down: As long as the node is lower priority than at least one
-  of its children, swap with the higher-prority child.
 
 Side note: 
 
 Heaps as array-based structures
 -------------------------------
 
-Number the nodes left-to-right, breadth first, starting at 0. That gives
-their location in a corresponding array.
-
-Given a node at position `i`, 
-
-* its left child is at:
-    * 0: 1
-    * 1: 3
-    * 2: 5
-    * 3: 7
-    * 2i + 1
-* its right child is at:
-    * 0: 2
-    * 1: 4
-    * 2: 6
-    * 3: 8
-    * 2i + 2
-* its parent is at: 
-    * 1: 0
-    * 2: 0
-    * 3: 1
-    * 4: 1
-    * 5: 2
-    * 6: 2
-    * 7: 3
-    * 8: 3
-    * Even: i/2 - 1
-    * Odd: i/2
-    * Both: (i - 1)/2
-
 Heap sort
 ---------
-
-How do we sort with a priority queue:
-
-* If you add all of the elements and then remove them one by one, you'll
-  end up with the elements (in reverse sorted order).
-* In a heap, `put` is O(logn), `get` is O(logn)
-* We put n elements, we get n elements, so O(nlogn) for heap sort
