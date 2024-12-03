@@ -424,6 +424,26 @@ Questions and Answers
 
 > `BrailleASCII.main`: About thirty minutes. You've written code to parse command lines before. The rest is just repeated calls to the `BrailleAsciiTables` methods.
 
+**What divisions would a perfect student make while writing this MP? E.g. what parts should this whole be thought of being made up out of?**
+
+> I'm not sure what a perfect student would do.
+
+> I'd start with the tree as one unit, implementing set, then get, then dump, then load.
+
+> Next up would be the tables.
+
+> And finally the UI.
+
+> See above for details.
+
+**In your opinion which class or method would be the hardest to implement and how would you break it down to make it easier?**
+
+> Probably the conversion of ASCII to braille unicode. I'd say "in the obvious way" - think about what data you have, what conversions are available, and what conversions are necessary.
+
+**As someone who is just starting this assignment, what are potential challenges that could throw me off and how can I get back on track?**
+
+> If I recall correctly from last semester, most of the problems stemmed from folks forgetting that each BitTree is a fixed-height tree.
+
 ### Tree nodes
 
 **Why did you suggest that we have separate classes for interior nodes and leaves?**
@@ -514,7 +534,6 @@ Questions and Answers
 
 > There will be.
 
-
 ### Miscellaneous
 
 **Why are the ASCII-to-Braille trees deeper than the braille to ASCII trees?**
@@ -532,6 +551,10 @@ Questions and Answers
 **What is the best way to optimize tree expansion when the depth increases?**
 
 > The depth doesn't change.
+
+**How do you recommend we go about incorporating the tables into our program?**
+
+> That's a fairly broad question. Presumably, your BrailleASCII program will rely on them in its translation.
 
 Acknowledgements
 ----------------
