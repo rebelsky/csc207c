@@ -556,6 +556,21 @@ Questions and Answers
 
 > That's a fairly broad question. Presumably, your BrailleASCII program will rely on them in its translation.
 
+
+### More questions
+
+**What do you mean by "don't fill in the nodes until necessary"?**
+
+> Consider the call `new BitTree(3)`.
+
+> That could be a tree with four levels (one node at level 0, two nodes at
+  level 1, four nodes at level 2, eight nodes at level 3).
+
+> We could build all fifteen nodes at once, but that would be wasteful. And
+  we wouldn't have anything to put in the leaf nodes. So we instead only
+  add nodes when we call `set`.
+
+
 Acknowledgements
 ----------------
 
