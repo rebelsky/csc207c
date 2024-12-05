@@ -16,6 +16,7 @@ _Approximate overview_
     * Upcoming work
     * Tokens
     * Questions
+* Tree traversal
 * The shortest path algorithm
 
 Preliminaries
@@ -29,8 +30,11 @@ Preliminaries
     * Because I have not caught up on tokens, everyone has infinitely 
       many tokens.  (You may not use tokens to make up for missing readings, 
       labs, pre-reflections, or post-reflections.)
-    * I've added redos for the mini-projects you have not submitted so that
-      you can fix things you already know are wrong.
+    * I've added redos for all the mini-projects so that you can fix things 
+      you already know are wrong (or submit them if you did not submit
+      them the first time).
+    * The graders are still working on catching up. They've been hit by
+      end-of-semester busy-ness.
 * Preregistration
     * Multiple second-years did not get a CS class in the spring. I don't
       know how many. The CS department isn't happy about this result, but
@@ -38,6 +42,7 @@ Preliminaries
     * We plan to have more faculty next year, so we hope that (a) we won't
       have the problem again and (b) those who need two courses next year
       will be able to get two courses.
+* Lots of TPS today to prepare you for lab
 
 ### Upcoming work
 
@@ -47,27 +52,29 @@ Preliminaries
 * Friday, 2024-12-06
     * [Submit post-reflection for MP10](https://www.gradescope.com/courses/818402/assignments/5380852)
 * Monday, 2024-12-09
-    * [SoLA 12](../los/sola12) due
-        * New: [ADT/DS 4: Priority queues](https://www.gradescope.com/courses/818402/assignments/5402118)
-        * New: [ADT/DS 6: Hash tables](https://www.gradescope.com/courses/818402/assignments/5402119)
-        * New: [ADT/DS 8: Heaps](https://www.gradescope.com/courses/818402/assignments/5402114)
-        * New: [Algorithms 5: Heap sort](https://www.gradescope.com/courses/818402/assignments/5402117)
-        * Dropped: OOP #07: Design Patterns
     * Reading: Two algorithms for minimum spanning trees
         * [Wikipedia: Prim's Algorithm](https://en.wikipedia.org/wiki/Prim%27s_algorithm)
         * [Wikipedia: Kruskal's Algorithm](https://en.wikipedia.org/wiki/Kruskal%27s_algorithm)
-    * [Submit reading response for class 27](https://www.gradescope.com/courses/818402/assignments/5404446)
+    * [Submit reading response for class 27](https://www.gradescope.com/courses/818402/assignments/5413491)
+    * [Submit lab writeup from class 26](https://www.gradescope.com/courses/818402/assignments/5413493)
+    * [SoLA 12](../los/sola12) due
+        * New: [ADT/DS #1: Lists](https://www.gradescope.com/courses/818402/assignments/5412255)
+        * New: [ADT/DS #4: Priority queues](https://www.gradescope.com/courses/818402/assignments/5402118)
+        * New: [ADT/DS #6: Hash tables](https://www.gradescope.com/courses/818402/assignments/5402119)
+        * New: [ADT/DS #8: Heaps](https://www.gradescope.com/courses/818402/assignments/5402114)
+        * New: [Algorithms #5: Heap sort](https://www.gradescope.com/courses/818402/assignments/5402117)
+        * Dropped: OOP #07: Design Patterns
 * Thursday, 2024-12-12
     * MP redos
 * Saturday, 2024-12-12
     * Late MP redos
 * Monday, 2024-12-16
     * [SoLA 13](../los/sola13) due
-        * New: ADT/DS 9: Graphs
-        * New: Algorithms 8: Graph and tree traversal
-        * New: Algorithms 9: Shortest path
-        * New: Algorithms 10: Greed
-        * New: Algorithms 11: Divide and conquer
+        * New: ADT/DS #9: Graphs
+        * New: Algorithms #8: Graph and tree traversal
+        * New: Algorithms #9: Shortest path
+        * New: Algorithms #10: Greed
+        * New: Algorithms #11: Divide and conquer
 * Friday, 2024-12-20
     * MP redos
     * [SoLA 14](../los/sola14) due.
@@ -132,18 +139,30 @@ Questions
 
 ### Miscellaneous
 
+Graph traversal
+---------------
+
+_TPS_
+
+Suppose you start at one vertex in the graph and want to find all the vertices
+you can reach from that vertex. What approach(es) might you take?
+
+How is graph traversal similar to tree traversal?
+
+How is graph traversal different than tree traversal?
+
 Dijkstra's shortest path algorithm
 ----------------------------------
 
-TPS
+_TPS_
 
-_What is a shortest path?_
+What is a shortest path?
 
 * Inputs:
 * Outputs:
 * Characteristics:
 
-_What are the core ideas of Dijkstra's algorithm?_
+What are the core ideas of Dijkstra's algorithm?
 
 *
 *
