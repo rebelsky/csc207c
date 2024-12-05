@@ -537,8 +537,12 @@
       url: https://en.wikipedia.org/wiki/Dijkstra's_algorithm
     - link: "Graph.java: A Java graph implementation"
       url: https://raw.githubusercontent.com/Grinnell-CSC207/graphs/main/src/Graph.java
-  reminders:
-    - Anya has a lab on graphs.  http://www.cs.grinnell.edu/~vostinar/csc-207-spring-2018-schedule/csc-207-s18-representing-graphs/
+  lab: 
+    - page: /labs/graph-traversal.html
+    - page: /labs/shortest-paths.html
+  eboards:
+    - page: /eboards/eboard26-1.html
+    - page: /eboards/eboard26-2.html
 
 - topic: Minimum spanning trees
   abbrev: mst

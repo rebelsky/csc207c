@@ -1,6 +1,6 @@
 ---
 title: Graph traversal
-repo: <https://github.com/Grinnell-CSC207/graphs>
+repo: <https://github.com/Grinnell-CSC207/lab-graphs-maven>
 summary: |
   We explore techniques for traversing graphs.
 ---
@@ -34,21 +34,17 @@ The file `GraphExperiment.java` contains a series of experiments with the `Graph
 
 a. Skim the file to make sure you understand what the experiments are exploring.
 
-b. Run the experiment to see that the correct graphs are built.
+b. Run the experiment to see that the correct graphs are built
 
-c. Add a few experiments of your own to explore the trouble spots you identified in the prior problems.
+c. Update the experiment to use `dumpWithNames`.
 
-### Exercise 2: Improved dumping
+d. Add a few experiments of your own to explore any potential trouble spots you identified in the prior problems.
+
+### Exercise 2: What can I reach?
 
 _Driver: **A**_
 
-You will note that there is a `dump` procedure in the `Graph` class.  That procedure prints out vertices and edges using vertex numbers.  Write a new version of `dump` that prints out vertices and edges using vertex names.
-
-### Exercise 3: What can I reach?
-
-_Driver: **B**_
-
-Write a procedure, `reachableFrom(PrintWriter pen, int vertex)`, that prints out a list of all the vertices reachable from a starting point.  A vertex, `v`, is reachable from a vertex, `u`, if there is a path from `u` to `v`.  
+Write a procedure, `void reachableFrom(PrintWriter pen, int vertex)`, that prints out a list of all the vertices reachable from a starting point.  A vertex, `v`, is reachable from a vertex, `u`, if there is a path from `u` to `v`.  
 
 Conduct a few experiments to see if your procedure works correctly.
 
@@ -56,9 +52,9 @@ You can use depth-first search or breadth-first search.
 
 *Note*: You will likely need to find a way to mark vertices to indicate that you've printed them out (or otherwise processed them) so that you don't process them a second time. You can use the `mark` operations provided, you can use a hash table, you can use an array or arraylist, or you can use something else of your choosing.
 
-### Exercise 4: What can I reach? revisited
+### Exercise 3: What can I reach? revisited
 
-_Driver: **A**_
+_Driver: **B**_
 
 Write a procedure, `Iterable<Integer> reachable(int vertex)`, that returns an iterable that returns an iterator of all the vertices reachable from a vertex.
 

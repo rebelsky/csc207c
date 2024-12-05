@@ -1,6 +1,6 @@
 ---
 title: Shortest paths
-repo: <https://github.com/Grinnell-CSC207/graphs>
+repo: <https://github.com/Grinnell-CSC207/lab-graphs-maven>
 summary: |
   We explore techniques for finding the shortest path in a graph.
 ---
@@ -9,12 +9,7 @@ Preparation
 
 If you haven't done so already, fork and clone the repository at {{ page.repo }} and then import it into your IDE.
 
-Exercises
----------
-
-### Exercise 1: Planning for Dijkstra's algorithm
-
-_Driver: **B**_
+### Planning for Dijkstra's algorithm
 
 As you may recall, Dijsktra's algorithm works something like the following:
 
@@ -35,32 +30,28 @@ To find the shortest path from SOURCE to SINK,
 
 a. How will you represent the path to each vertex?
 
-b. How will you represent the distance (sum of edge weights) from the
-source to each vertex?
+b. How will you represent the distance (sum of edge weights) from the source to each vertex?
 
-c. How will you "find the nearest unknown vertex", particularly
-given that the distance of vertices can change?
+c. How will you "find the nearest unknown vertex", particularly given that the distance of vertices can change?
 
 d. How will you mark vertices?
 
-### Exercise 2: Implementing Dijkstra's algorithm
+Exercises
+---------
 
-_Driver: **A**_
+### Exercise 1: Implementing Dijkstra's algorithm
+
+_Driver: **B**_
 
 Implement a method, `shortestPath(int source, int sink)`, that finds the shortest path from `source` to `sink` in the current graph.
 
 If you're unsure about how to deal with various aspects of the algorithm, you can find some notes at the end of this lab.
 
-### Exercise 3: Experiments
+### Exercise 2: Experiments
 
-_Driver: **B**_
+_Driver: **A**_
 
 Write a few experiments or tests to ensure that your implementation does, indeed, find the shortest path.  You can likely find some good graphs by doing a Web search for "shortest path example".  (Make sure to cite!)
-
-For those with extra time
--------------------------
-
-If you have extra time, go back to the tree traversal lab.
 
 Some notes on implementing Dijkstra's algorithm
 -----------------------------------------------
