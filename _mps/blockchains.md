@@ -531,13 +531,14 @@ You can also just click the **Sync Fork** button on your GitHub page for the for
 Submissions that fail to meet any of these requirements will get an I.
 
 ```
+[ ] Passes all the R tests
 [ ] Includes the specified `.java` files, correctly named.  (They should
     be in the appropriate package.)
 [ ] Each class has an introductory Javadoc comment that indicates
-    the author and purpose. 
+    the author and purpose
 [ ] Includes a `README.md` file that contains the appropriate information 
     (authors, purpose, acknowledgements if appropriate)
-[ ] All files compile correctly.
+[ ] All files compile correctly
 ```
 
 ### Meets expectations or above
@@ -546,19 +547,21 @@ Submissions that fail to meet any of these requirements but meet all
 previous requirements will receive an R.
 
 ```
-[ ] Appears to follow Google Java style guidelines for indentation and such.
-[ ] The `Hash` class includes all of the required methods (and they work
-    correctly).
-[ ] The `Block` class includes all of the required methods.
-[ ] The `Block(int num, int amount, Hash prevHash)` constructor generates
-    an appropriate nonce.
-[ ] The `BlockChain` class includes all of the required methods.
+[ ] Passes all the M tests
+    [ ] The `Hash` class includes all of the required methods (and they work
+        correctly).
+    [ ] The `Block` class includes all of the required methods.
+    [ ] The `Block(int num, int amount, Hash prevHash)` constructor generates
+        an appropriate nonce.
+    [ ] The `BlockChain` class includes all of the required methods.
+[ ] No more than fifteen errors from `mvn checkstyle:check`
 [ ] The `BlockChainUI` class behaves as described.
 ```
 
 ### Exceeds expectations
 
 ```
+[ ] Passes all the E tests
 [ ] All (or most) repeated code has been factored out into individual methods.
 [ ] All or most variable names are appropriate.
 [ ] Avoids recreating structures---such as the `MessageDigest`, the
