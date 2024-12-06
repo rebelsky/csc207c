@@ -1,5 +1,5 @@
 ---
-title: "Eboard 26 (Section 1): Graphs"
+title: "Eboard 26 (Section 2): Graphs"
 number: 26
 section: eboards
 held: 2024-12-05
@@ -17,7 +17,7 @@ _Approximate overview_
     * Tokens
     * Questions
 * Tree traversal
-* The shortest path algorithm
+* Dijskstra's shortest path algorithm
 * Lab(s)
 
 Preliminaries
@@ -26,6 +26,8 @@ Preliminaries
 ### News / Notes / Etc.
 
 * Class work
+    * The graders are still working on catching up. They've been hit by
+      end-of-semester busy-ness.
     * I have dropped MP 11.
     * I have dropped one of the LAs (design patterns).
     * Because I have not caught up on tokens, everyone has infinitely 
@@ -34,16 +36,14 @@ Preliminaries
     * I've added redos for all the mini-projects so that you can fix things 
       you already know are wrong (or submit them if you did not submit
       them the first time).
-    * The graders are still working on catching up. They've been hit by
-      end-of-semester busy-ness.
 * Preregistration
     * Multiple second-years did not get a CS class in the spring. I don't
       know how many. The CS department isn't happy about this result, but
       don't really have a way to address it.
     * We plan to have more faculty next year, so we hope that (a) we won't
-      have the problem again and (b) those who need two courses next year
-      will be able to get two courses.
-* Lots of TPS today to prepare you for lab
+      have the problem again and (b) those who need two courses in one
+      semester next year will be able to get two courses.
+* Lots of TPS today to prepare you for labs.
 
 ### Upcoming work
 
@@ -94,19 +94,17 @@ class._
 
 #### Cultural
 
+* Friday and Saturday, Wall Theatre.
+  _One-act festivals_
+* Sunday, 2:00 p.m., Sebring-Lewis.
+  _Grinnell Singers_
+
 #### Multicultural
 
 * Friday, 2024-12-06, 4:00--5:00 p.m., HSSC N1170 - Global Living Room.
   _Middle of Everywhere: ???_ 
 
 #### Peer
-
-* Friday and Saturday, Wall Theatre.
-  _One-act festivals_
-* Friday and Saturday, all day (1 hour suffices), Osgood Natatorium.
-  _Pioneers Swim Meet_
-* Sunday, 2:00 p.m., Sebring-Lewis.
-  _Grinnell Singers_
 
 #### Wellness
 
@@ -130,13 +128,17 @@ Questions
 
 **Can we get an I on an MP and still get an A?**
 
-> No.
+> No. You must get to R on all your MPs (and to E and M on some).
 
 ### MP10
 
 **Are there tests for MP10?**
 
 > Nope.
+
+**Can we ignore Sam's checkstyle issues?**
+
+> Yes.
 
 ### Graphs
 
@@ -150,60 +152,62 @@ _TPS_
 Suppose you start at one vertex in the graph and want to find all the vertices
 you can reach from that vertex. What approach(es) might you take?
 
-* Side note: We'll need to keep track of the nodes we've already visited
-  so that we don't cycle forever. (I'll call this marking.)
-* Approach one: Recurse on all the vertices you can reach from the current
-  one.
-* Approach two: Use a stack instead of recursion.
-* Approach three: Use a queue instead of recursion.
-* Note: Approaches one and two do a depth-first traversal of the graph.
-  Approach three does a breadth-first traversal
+* Note: We'll have to keep track of what we've gone through because there
+  may be loops. ("Marked" - `marked(Vertex v)` and `mark(Vertex v)`
+  and `unmark(Vertex v)`)
+* We'll want to grab all of the neighbors of a vertex and traverse them.
+* We could use a stack (or a queue) or we could use recursion.
 
 ```java
-void traverseRecursive(PrintWriter pen, Vertex v) {
-  if (!marked(v)) { // Probably not be necessary
-    mark(v);
-    pen.println(v);
-    for (Vertex neighbor : v.neighbors()) {
-      if (!marked(neighbor)) {
-        traverseRecursive(pen, neighbor);
-      } // if
-    } // for
-  } // if
-} // traverseRecursive
+void printReachable(PrintWriter pen, Vertex v) {
+  unmarkAll();
+  printReachableHelper(pen, v);
+} // void
+
+void printReachableHelper(PrintWriter pen, Vertex v) {
+  List<Vertex> neighbors = v.getNeighbors();
+  mark(v);
+  pen.println(v);
+  for (Vertex neighbor : neighbors) {
+    if (!marked(neighboard)) {
+      printReachableHelper(pen, neighbor);
+    } // if
+  } // for
+} // printReadable(PrintWriter, Vertex)
 ```
 
 How is graph traversal similar to tree traversal?
 
-* We start at one vertex and move to "children".
+* They are really similar. The same goal of going through all the nodes
+* The algorithms are essentially the same (if we ignore marking).
 
 How is graph traversal different than tree traversal?
 
-* We have to keep track of "marked" vertices so that we don't repeat
-  a vertex.
-* Trees don't have cycles.
+* In binary search trees, we have a fixed approach (we are just looking
+  for a particular value).
+* In graphs, we can have more than two neighbors, while in binary trees
+  we have at most two children (and one parent).
+* Graphs can loop back on themselves: Hence, we need to ensure that we
+  don't repeat values. (Mark needed.)
+* In graphs, we can start traversal anywhere; in trees, we start at the root.
 
 Dijkstra's shortest path algorithm
 ----------------------------------
 
 _TPS_
 
-What is a shortest path?
+What is the shortest path problem?
 
-* Inputs: Two vertices in a graph, source and sink; a (directed) weighted
-  graph with only non-negative edges
-* Outputs: A path from source to sink, if it exists
-* Characteristics: The sum of the edge weights on the path is less than
-  of equal to the sum of the edge weights on any other path from source to
-  sink.
+* Inputs: A weighted (directed) graph, a starting point and an ending point.
+* Outputs: A path from the starting point to the ending point (assuming
+  one exists)
+* Characteristics: This path is no longer than any other path ("shorter than")
 
 What are the core ideas of Dijkstra's algorithm?
 
-* Work your way out from the source
-* Keep track of the distance to every vertex we can (potentially) reach
-* NO: Choose the least weighted edge at every step
-* YES: Choose the nearest vertex
-* We'll probably have to mark nodes as we go
+* NO: Choose the shortest edge we haven't used yet
+* Keep track of the shortest distance we've found to each vertex.
+* Choose the shortest of those distances (of the unmarked vertices).
 
 ### The algorithm
 
@@ -229,32 +233,47 @@ _TPS_
 
 Assume that you have full access to the `Graph` class that I provided (e.g., that you can even look at the internals).
 
-### a. How will you represent the distance (sum of edge weights) from the source to each vertex?
+### a. How will you represent/store the distance (sum of edge weights) from the source to each vertex?
 
-* An array that maps vertex number to distance. [Good]
-* If we are storing the path, we could recalculate at each step (expensive)
-* A hash table that maps vertex to distance.
+* Add an integer field to our vertex class.
+    * Unfortunately, we have no vertex class in our Graph implementation.
+* Use a hash table or other dictionary implementation to map vertices
+  to distances.
+* In the graph implementation, vertices are generally represented as
+  small integers.
+    * We could just use an array to map vertices to distances.
 
-### b. How will you represent the (shortest) path to each vertex?
+### b. How will you represent/store the (shortest) path to each vertex?
 
-* A list of edges / vertices from start to the vertex.
-    Each time, we probably have to do something like path.clone().append(edge).
-* An array that maps vertex number to predecessor on the shortest path. [Good]
+* Array of lists, where the lists represent the paths
+* Just the prior node, because we can follow them back to the root.
 
 ### c. How will you efficiently "find the nearest unmarked vertex", particularly given that the distance of vertices can change?
 
-* Look through the array from a using the "obvious" algorithm. O(n) [Good]
-* Use a heap, where priority is shorter distance O(logn)
-    * Unfortunately, priorities changes
+* Scan through the values in distance, only paying attention to the unmarked
+* Keep a list of unmarked, scan through the values in that, looking up
+  distances in the distance table.
+* Both of those are O(n)
+* Finding the nearest unmarked vertex could be a job for a priority queue
+* We could use a heap, which gives us O(logn).
+* However, priorities change.
+* So you'll probably just scan the array of distances.
 
 ### d. How will you mark vertices?
 
-* We have a `mark` method in the Graph class.
+* Use sets
+* Use the `mark` method in the Graph class.
+
+### e. Is there a value for "box" in our example that makes it possible to
+have a shorter path from A to D?
+
+* Yes, a negative number. Hence, we restrict ourselves to graphs with
+  non-negative edge weights.
 
 Labs
 ----
 
-Two labs today!
+Two labs today! You'll probably only get one (or less) done.
 
 Make sure that your repo ends with `-maven`.
 
