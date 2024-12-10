@@ -1,5 +1,5 @@
 ---
-title: "Eboard 27 (Section 1): Minimum spanning trees"
+title: "Eboard 27 (Section 2): Minimum spanning trees"
 number: 27
 section: eboards
 held: 2024-12-10
@@ -70,10 +70,10 @@ class._
 
 #### Peer
 
+#### Wellness
+
 * Monday, December 16, 2:30--4:30pm, The HSSC Kernel.
   _FGLI Study Break (with hot cocoa and apple cider)_
-
-#### Wellness
 
 #### Misc
 
@@ -113,9 +113,9 @@ Questions
 
 **How many LAs are there?**
 
-> Whoops. There are 49. Since I miscounted, I'm not increasing the LA
-  requirements for each grade. (You should, of course, all strive for
-  49.)
+> I thought there were 47. Whoops. There are 49. Since I miscounted, 
+  I'm not increasing the LA requirements for each grade. (You should, 
+  of course, all strive for 49.)
 
 **How do I make an appointment with you?**
 
@@ -140,11 +140,11 @@ Questions
 
 ### Graphs
 
-**Does it matter where we start in Prim’s algorithm?**
+**Does it matter where we start in Prim's algorithm?**
 
 > Nope. It works with any starting vertex.
 
-**When is Kruskal’s better than Prim’s, or the other way around?**
+**When is Kruskal’s better than Prim's, or the other way around?**
 
 > Whichever we can more easily implement is better.  (Alternately, 
   whichever of our implementations generally runs faster is better.)
@@ -183,30 +183,10 @@ minimum spanning tree?**
 MSTs
 ----
 
-A spanning tree is a tree that connects all of the vertices in the graph.
-
-A minimum spanning tree is the smallest of all such trees for that graph.
-
-We normally look for MSTs in undirected weighted graphs.
-
 Prim's
 ------
 
 _TPS_
-
-```text
-Pick a random vertex
-Add the shortest edge from that vertex to the MST
-Repeatedly:
-  Add the shortest edge attached to the partial MST that doesn't create
-    a cycle
-Until all vertices are in the MST.
-```
-
-How do we (efficiently) tell if we have a cycle?
-
-* Mark nodes when we add them to the MST, so we can just check whether
-  both ends of a candidate edge are marked.
 
 Kruskal's
 ---------
@@ -215,48 +195,8 @@ _TPS_
 
 Basic algorithm?
 
-```text
-Repeat
-  add the shortest edge that won't form a cycle
-Until we've added n-1 edges
-```
-
-How do we (efficiently) tell if we have a cycle?
-
-* Does the marking algorithm work? No!
-* Use a special mark for each tree
-    * Somehow, combine those marks when we connect two trees
-    * Go through the whole combined tree, remarking: O(n)
-* Use your favorite tree traversal algorithm to see if there is a path
-  from the vertex at one side of the edge to the vertex at the other
-  side of the edge: O(n)
-* Take 301: Make the special mark take O(logn) or even expected less
-  than that. "Union Find"
-
 Greed as a design strategy
 --------------------------
-
-Problem: Find the "optimal" something (shortest)
-
-Strategy: Pick the "local" optimum
-
-For example, when making change in the US, if you want the fewest coins,
-you first take as many quarters as possible, then as many dimes, then
-as many nickles, and then the pennies.
-
-83 cents: three quarters, leaves 8 cents, one nickle, leaves three cents,
-  three pennies.
-
-Is there another situation in which we repeatedly find the smallest/largest
-in order to solve a problem?
-
-* Part of heap down: We swap with the higher-priority child.
-* Selection sort: Repeatedly find the smallest remaining value
-
-We now have two "big picture" design strategies:
-
-* Greed
-* Divide and conquer
 
 Implementing Prim's MST Algorithm
 ---------------------------------
@@ -268,7 +208,6 @@ While edges remain
   Grab the remaining edge with the lowest weight
   If either vertex is not in the minimum-spanning tree
     Add the edge to MST
-    Mark both vertices
     Add all the edges from that vertex to REMAINING
       (arguably, you should only add those that don't lead back to the MST)
 ```
@@ -277,28 +216,19 @@ _TPS_
 
 Assume that you have full access to the `Graph` class that I provided (e.g., that you can even look at the internals).
 
-a. What will you use for the priority queue? (Hint: Look at preexisting
-Java libraries.)
+a. How can we tell if a vertex is in the MST?
 
-b. What comparator will you use to order edges by weight?
+b. Prim's requires undirected graphs. How will you accommodate that issue?
 
-c. Prim's requires undirected graphs. How will you accommodate that issue?
+c. How will you represent the MST?
 
-d. How will you represent the MST?
+d. How will you pick a random starting vertex?
 
-e. How will you pick a random starting vertex?
+e. How will you grab the remaining edge with lowest weight?
 
-f. How will you grab the remaining edge with lowest weight?
-
-We have a priority queue. Duh
-
-g. How will you determine if a vertex is in the MST? 
-
-Marking.
-
-h. How will you print out the MST?
+f. How will you print out the MST?
 
 Lab
 ---
 
-Do the Dijkstra's lab first.  If you happen finish, try the MST lab.
+Do the Dijkstra's lab first.  If you happen to finish, try the MST lab.
