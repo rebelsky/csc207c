@@ -1,6 +1,6 @@
 ---
 title: Minimum spanning trees
-repo: <https://github.com/Grinnell-CSC207/graphs>
+repo: <https://github.com/Grinnell-CSC207/lab-graphs-maven>
 summary: |
   We explore techniques for building minimum spanning trees
 ---
@@ -9,10 +9,10 @@ Preparation
 
 If you have not done so already, fork and clone the repository at {{ page.repo }}.  Import it into your IDE.
 
-Exercises
----------
+Preparatory exercises
+---------------------
 
-### Exercise 1: Priority queues
+### Prep 1: Priority queues
 
 _Driver: **A**_
 
@@ -22,7 +22,7 @@ a. Identify an appropriate implementation of priority queues in Java.
 
 b. Sketch how you will use that implementation to order edges by weight.
 
-### Exercise 2: From directed to undirected
+### Prep 2: From directed to undirected
 
 _Driver: **B**_
 
@@ -30,7 +30,7 @@ As you may recall, Prim's algorithm is intended to work with undirected graphs, 
 
 How will you accommodate that issue in your code?
 
-### Exercise 3: Parts of Prim's algorithm
+### Prep 3: Parts of Prim's algorithm
 
 _Driver: **A**_
 
@@ -61,7 +61,10 @@ d. Determine if a vertex is in the MST.
 
 e. Print out the MST.
 
-### Exercise 4: Implementing Prim's algorithm
+Exercises
+---------
+
+### Exercise 1: Implementing Prim's algorithm
 
 _Driver: **B**_
 
@@ -69,7 +72,7 @@ Implement Prim's algorithm.  If you are unsure about any of the steps suggested 
 
 You'll note that we've left it explicitly unstated as to where you implement Prim's algorithm and what parameters it should take. You are at the stage of your career where you should be able to consider reasonable alternatives.
 
-### Exercise 5: Testing your implementation
+### Exercise 2: Testing your implementation
 
 _Driver: **A**_
 
