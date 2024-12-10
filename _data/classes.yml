@@ -560,8 +560,11 @@
     - link: "Wikipedia: Kruskal's Algorithm"
       url: https://en.wikipedia.org/wiki/Kruskal%27s_algorithm
   lab:
+    - page: /labs/shortest-paths.html
     - page: /labs/minimum-spanning-trees.html
-  notes: ../eboards/eboard41.html
+  eboards:
+    - page: /eboards/eboard26-1.html
+    - page: /eboards/eboard26-2.html
 
 - topic: Wrapup
   abbrev: wrapup
