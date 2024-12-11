@@ -1,23 +1,23 @@
 ---
 title: SoLA 13
-link: false
+link: true
 ---
 # {{ page.title }}
 
-_We wrap up our new LAs with a few more algorithms LAs and the last ASDT/DS LA._
+_We wrap up our new LAs with a few more algorithms LAs and the last ADT/DS LA._
 
-Note: The links to current and prior LAs are not yet available.
+Note: The links repeat LAs are not yet available (and may never be).
 
 **New ADT/DS LA**
 
-* [ADT/DS #9: Graphs]()
+* [ADT/DS #9: Graphs](https://www.gradescope.com/courses/818402/assignments/5442577)
 
 **New Algorithms LAs**
 
-* [Algorithms #8: Graph and tree traversal]()
-* [Algorithms #9: Shortest path]()
-* [Algorithms #10: Greed]()
-* [Algorithms #11: Divide and conquer]()
+* [Algorithms #8: Graph and tree traversal](https://www.gradescope.com/courses/818402/assignments/5442584)
+* [Algorithms #9: Shortest path](https://www.gradescope.com/courses/818402/assignments/5442590)
+* [Algorithms #10: Greed](https://www.gradescope.com/courses/818402/assignments/5442593)
+* [Algorithms #11: Divide and conquer](https://www.gradescope.com/courses/818402/assignments/5442594)
 
 ---
 
