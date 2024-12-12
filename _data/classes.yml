@@ -563,8 +563,8 @@
     - page: /labs/shortest-paths.html
     - page: /labs/minimum-spanning-trees.html
   eboards:
-    - page: /eboards/eboard26-1.html
-    - page: /eboards/eboard26-2.html
+    - page: /eboards/eboard27-1.html
+    - page: /eboards/eboard27-2.html
 
 - topic: Wrapup
   abbrev: wrapup
