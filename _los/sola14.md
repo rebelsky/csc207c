@@ -1,12 +1,12 @@
 ---
 title: SoLA 14
-link: false
+link: true
 ---
 # {{ page.title }}
 
 _An extra opportunity for all the LAs._
 
-Note: The links to LAs are not yet available.
+Note: The links to LAs are only available on Gradescope (sorry).
 
 **Prior ADT/DS LAs**
 

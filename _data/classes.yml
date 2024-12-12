@@ -574,6 +574,9 @@
     - The subject matter(s) of the course
     - Debrief
     - Course evaluation
+  eboards:
+    - page: /eboards/eboard28-1.html
+    - page: /eboards/eboard28-2.html
 
 - topic: All work due
   abbrev: finals
