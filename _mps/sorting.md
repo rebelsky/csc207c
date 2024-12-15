@@ -102,19 +102,19 @@ In the file `TestSorter.java`, add at least five test cases for `Sorter<T>` obje
 
 ### Insertion sort
 
-Create a new class, `InsertionSort`, that implements insertion sort.  The repo should include a framework for the class.
+Create a new class, `InsertionSorter`, that implements insertion sort.  The repo includes starter code for the class.
 
 ### Selection sort
 
-Create a new class, `SelectionSort`, that implements insertion sort.  The repo should include a framework for the class.
+Create a new class, `SelectionSorter`, that implements insertion sort.  The repo includes starter code for the class.
 
 ### Merge sort
 
-Create a new class, `MergeSort`, that implements merge sort.  The repo should include a framework for the class.
+Create a new class, `MergeSorter`, that implements merge sort.  The repo includes starter code for the class.
 
 ### Quicksort
 
-Create a new class, `QuickSort`, that implements Quicksort.  The repo should include a framework for the class.
+Create a new class, `QuickSorter`, that implements Quicksort.  The repo includes starter code for the class.
 
 Once you've identified a pivot, I would recommend that you use the Dutch National Flag algorithm to partition the subarray into (a) things less than the pivot, (b) things equal to the pivot, and (c) things greater than the pivot.
 
@@ -124,7 +124,7 @@ In practice, the best sorting algorithms do something a bit more clever. For exa
 
 Write your own sorting algorithm that attempts to do better than all of the prior $$O(nlogn)$$ sorting algorithms. You might pre-scan the input to look for patterns that suggest a particular algorithm, you might switch algorithms for small enough arrays, you might find something else clever to do.
 
-Please name your class `LastFirstSort`.  For example, mine would be `RebelskySamuelSort`. Please do not reference methods in your other classes.
+Please name your class `LastFirstSorter`.  For example, mine would be `RebelskySamuelSorter`. Please do not reference methods in your other classes.
 
 Include a description of your approach in your README file.
 
@@ -160,7 +160,6 @@ previous requirements will receive an R.
 ```
 [ ] Added new tests to `TestSorter.java`.
 [ ] No more than fifteen errors from `mvn checkstyle:check`.
-[ ] Appears to follow Google Java style guidelines for indentation and such.
 [ ] All sorting routines pass Sam's tests (conveniently available in
     `SortTools.java`.
     [ ] Insertion sort
@@ -185,7 +184,7 @@ previous requirements will receive an R.
     [ ] Merge sort has a separate `merge` method.
     [ ] Quicksort has a separate `partition` method.
 [ ] All sorts work with the empty array.
-[ ] Only makes one helper array in `MergeSort`.
+[ ] Only makes one helper array in `MergeSorter`.
 ```
 
 ## Questions and answers
@@ -214,7 +213,7 @@ previous requirements will receive an R.
 
 > You can also ask Sam for help. Make sure to push your current version to GitHub and to provide the GitHub link.
 
-**What does "repo should include a framework for the class" mean?**
+**What does "repo includes starter code for the class" mean?**
 
 > For example, you'll find a class called `Quicksorter.java` that is ready for you to fill in the Quicksort algorithm.
 
