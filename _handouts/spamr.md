@@ -5,6 +5,158 @@ title: Spam from Sam
 
 _Here you will find most of the email that I sent out this semester, with the newest email at the top and the oldest at the bottom._
 
+## [CSC-207 2024Fa] Some notes on SoLA 12 (2024-12-15)
+
+Dear Students of Liberal Arts,
+
+I've the grading of the new LAs on SoLA 12 as well as the OOP LAs, which puts me about two days behind in grading. Fingers crossed that I can catch up quickly. Unfortunately, there seem to be some academic honesty issues in SoLA 12, and dealing with those has not only slowed me down but also will continue to take time this week. There's also department business and some other professional issues on my docket.
+
+In any case, here are some notes on the most recent LAs (as well as a few more).
+
+**General**
+
+* Please anonymize your submissions.
+* It looks like many of you who get credit for LAs don't check for comments. You should.
+* Please be careful to cite correctly and well.
+* If you provide a variant of code that you received in lab, make sure to describe what changes you've made.
+* Please make sure that your code does not end up double or triple spaced.
+* Please use code you wrote for the class, not invented code. I definitely don't want to see any examples that involve vehicles or animals.
+* When providing code you've written, please try to provide only the relevant code.
+
+**Heap Sort**
+
+* Many of you used a technique to build the heap that we did not discuss in class, but did not cite it. PLEASE CITE CAREFULLY!
+* There are two major phases to heap sort. Make sure to describe both of them.
+
+**Heaps**
+
+* `heapUp` happens after we add an element to the end (and in some other situations). Do not include the addition.
+* `heapDown` happens after we've swapped the last element to the root in remove (and in some other situations). Do not include the swap.
+* If you grab ideas from elsewhere, plesae cite them.
+
+**Hash Tables**
+
+* Make sure to include a description of hash tables in addition to the implementation.
+* In the implementation, I'd like to see `set`, `get`, and any fields and methods they depend on.
+* Many of you provided an incorrect `remove` method. Since you don't need that method, I'd encourage you to skip it.
+
+**Priority Queues**
+
+* I know that I provided you with a `PriorityQueue` interface. Please don't use mine. Write your own. It need not be the same as mine.
+* In describing an implementation, make sure to give the details of how we add elements and get/remove them.
+
+**Lists**
+
+* Remember that we think about ADTs using the "strategy" (what the key idea of the type is), "applications" (which you need not include here), and "methods". Hence, you should make sure to describe the strategy and the methods (optionally as an interface).
+* I'm not sure that my doubly-linked list implementation shows that you know how to implement lists.
+* A linked queue is not a list. Lists traditionally provide broader access to elements (at the very least, to add elements in various places and to look at various elements).
+* Lists do not have to be linked structures. Lists can be implemented with arrays (hence ArrayList) and even with trees (which, when used properly, can give us a compromise been linked lists and ArrayLists).
+
+**Object design**
+
+* You need to provide broader design choices that you're responsible for. For example, the BlockChain MP would not suffice because I specified all of the methods you need to provide and gave you all but one of the classes (with the last class implied).
+* Please provide an example of a class (or classes) that you designed "from scratch" as it were.
+
+I hope to have another update tomorrow.
+
+-- SamR
+
+## [CSC-207 2024Fa] Is this the last Spam from Sam for 2024Fa? (2024-12-14)
+
+Dear Completely Special Coders in 207,
+
+Okay, this probably ISN'T the last email message from me this semester, but it's a worthwhile question. At the very least, I'll likely send out short notes when I send out new grade reports. This message mostly serves to answer a variety of questions I've received over the past few days.
+
+**When can I fill in the end-of-course evaluation?**
+
+> The end-of-course evaluation for both sections should now be available at https://grinnell.smartevals.com . Please let me know if you have difficulty reaching it. And please take the time to fill it out.
+
+**When will the graders complete grading MP7 and MP9?**
+
+> They've finished. You should be able to find your graded assignments on Gradescope.
+
+**Where does Sam stand on grading?**
+
+> Far behind where I planned. It turned out that I had no free time on Friday. (Okay, I was free from 7:00--9:30 p.m., but I was out with friends.) I got sucked into more administrative work today. So I'm trying to catch up, but it won't be as efficient as I'd expected.
+
+**Are you adjusting anything to deal with that?**
+
+> Yes. I'm skiping the "trivial incompletes" for MP8 and MP10, such as you forgetting to include your name in some files. I've moved the due dates for the MP8/10 redos to Tuesday night. It's not ideal, but it's the best I can do right now.
+
+**When are you running the sorting competition?**
+
+> After I've graded MP8, MP10, and SoLA 12.
+
+**When will I get my next grade report?**
+
+> As soon as I finish grading SoLA 12.
+
+**Can I take an incomplete in this course?**
+
+> I hope that everyone is able to complete all of their work by Friday. However, I am also willing to sign an incomplete form for anyone who would like me to do so. Incomplete forms must be turned in to the Registrar's office on Monday. I should be in my office on Monday afternoon from 1--4pm. You can also Teams Message me during the day to figure out where else I am. (I have a department meeting from 8--10 a.m., I'm proctoring an exam from 10 a.m. to 11:00 a.m., I'm probably going to lunch somewhere in the 11:00 a.m. to 1:00 p.m. range, and I'm meeting with a student in my office at 3:00 p.m.)
+
+> As our syllabus suggests, I follow the guidance of the Committee on Academic Standing and will only permit an incomplete for one mini-project.
+
+**I'm a masochist and want to take another SamR class. What are you teaching next year?**
+
+> If all goes as planned, I'll be on sabbatical next year. I have no idea what I'll be teaching the following year. The upper-level classes I sometimes teach are CSC-301 (Algorithm Analysis) and the "one-credit courses", CSC-281 (Learning from CS Alumni) and CSC-282 (Thinking in C and Unix).
+
+**I have another question. What should I do?**
+
+> Teams message me.
+
+**Will you help me debug my code?**
+
+> Teams message me.
+
+-- SamR
+
+p.s. This probably looks much better on the Web site at <https://rebelsky.cs.grinnell.edu/Courses/CSC207/2024Fa/handouts/spamr>
+
+## [CSC-207 2024Fa] MP Redos and Such (2024-12-10)
+
+Dear 'Mazing Programmers,
+
+Here are bunch of assorted notes.
+
+**MP REDOS**
+
+1. Don't forget that when you submit a mini-project redo, you should include a file called `CHANGES.md` or `CHANGES.txt` that summarizes your changes.
+
+2. For the MP5 redos, plesae submit only the following
+
+a. Your `README.md` file (which should include the URL of your GitHub repo).
+
+b. Your `CHANGES.md` or `CHANGES.txt` file.
+
+c. Your `src` directory (which should have all the `.java` files).
+
+**SOLA**
+
+SoLA 13 is now live. Here are the new LAs
+
+* [ADT/DS #9: Graphs](https://www.gradescope.com/courses/818402/assignments/5442577)
+* [Algorithms #8: Graph and tree traversal](https://www.gradescope.com/courses/818402/assignments/5442584)
+* [Algorithms #9: Shortest path](https://www.gradescope.com/courses/818402/assignments/5442590)
+* [Algorithms #10: Greed](https://www.gradescope.com/courses/818402/assignments/5442593)
+* [Algorithms #11: Divide and conquer](https://www.gradescope.com/courses/818402/assignments/5442594)
+
+Please let me know if any repeat LAs seem to be missing.
+
+**DIJKSTRA'S SHORTEST PATH ALGORITH**
+
+We'll use the last 30 minutes or so of Thursday's class to allow you to finish implementing Dijkstra's shortest path algorithm.
+
+**MISSING READINGS, LABS, METACOGNITIVE REFLECTIONS**
+
+Although the course policies suggest that more than six missing items will decrease your computed grade, I will not be applying that policy this semester. Your grade will be determined by your MPs and LAs.
+
+I should have the ungraded readings, labs, and metas graded by the middle of the day tomorrow (Wednesday).
+
+Let me know if you have questions. See you Thursday!
+
+-- SamR
+
 ## [CSC-207 2024Fa] Notes on SoLAs 6 and 7
 
 Dear Bored Gamers,
