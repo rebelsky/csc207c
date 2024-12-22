@@ -161,7 +161,7 @@ I rely on six kinds of work to assess your mastery of the material.
 + **Reading problems**: quick assessments of the concepts found in the daily reading in preparation for in-class activities.  _**Reading problems are generally due at {{ site.evening_due_time }} the night before class**_ (e.g., the problems associated with a reading for Thursday's class are due Wednesday at {{ site.evening_due_time }})
 + **Lab exercises**: reflections on what you've learned in lab, frequently collaboratively, with a partner.  _**Lab exercises are generally due immediately before the next class**_ (e.g., the problems associated with the lab from Tuesday's class are due at the start of Thursday's class. and the problems associated with the lab from Thursday's class are due at the start of Tuesday's class). At this point in your career, I care less about seeing your code than making sure that you've identified key points, so your lab exercises will usually be a list of the key points from the lab.
 + **Mini-Projects**: individual and group, small-scale programming projects that apply the weekly concepts to the themes of the course.  (We may, on occasion, refer to "mini-projects" as "demos", using the terminology from the prior term.)  To earn an A, one must do an excellent job on most of the mini-projects and the group project.  (You will be able to re-do any project that earns less than excellent.)  _**Mini-Projects are generally due on Thursdays at 10:30 p.m.**_
-+ **Learning assessments**: individually completed problems that directly assess your mastery of the learning goals of the course.  To earn an A, one must pass learning assessments for 46 of the 48 learning objectives.  (You will have the opportunity to retake any of the learning assessments you do not pass.)  In most cases, I will be using a _portfolio grading_ strategy. The assessment will ask you for evidence (code and commentary) that you've mastered the topic. In a few cases,  I will ask you to solve a new problem.
++ **Learning assessments**: individually completed problems that directly assess your mastery of the learning goals of the course.  To earn an A, one must pass learning assessments for 44 of the 49 learning objectives.  (You will have the opportunity to retake any of the learning assessments you do not pass.)  In most cases, I will be using a _portfolio grading_ strategy. The assessment will ask you for evidence (code and commentary) that you've mastered the topic. In a few cases,  I will ask you to solve a new problem.
 + **Metacognitive reflections**: Short reflective pieces given before and after most assignments and exams.  _**Pre-task reflections are generally due a day or two after a task is assigned.  Post-task reflections are generally due a day or two after the task is due.**_
 
 *Lab exercises* are designed for you to practice and explore the concepts of the course in a supportive environment.  Consequently, you may collaborate on these problems with your classmates, consult external resources, or ask the course staff for questions, provide that you cite them in your produced deliverable.  These deliverables are checked primarily for completion and effort rather than total correctness.  
@@ -457,12 +457,12 @@ Will we have quizzes this semester?
 
 What can I consult for LAs?
 
-> You may consult your notes, any code you've written (by yourself or with others), the course Web site, and [the Java API](https://docs.oracle.com/en/java/javase/17/docs/api/java.base), and the course staff (particularly your instructor). You may not refer to other Web sites or other people.
+> You may consult your notes, any code you've written (by yourself or with others), the course Web site, and [the Java API](https://docs.oracle.com/en/java/javase/17/docs/api/java.base), and the course staff (particularly your instructor). You may not refer to other people. You must cite any resources you use.
 
 What can I do if I feel intimidated to ask questions in front of the whole class but still need help?
 
 > DM me directly. Email me. Ask questions in the daily reading assignment. Go see evening tutors.
 
-How can we have 48 LAs and only 13 SoLAs, two of which are optional?
+How can we have 49 LAs and only 14 SoLAs, one of which is optional?
 
 > Each SoLA is a "Set of LAs" and therefore has multiple LAs.
