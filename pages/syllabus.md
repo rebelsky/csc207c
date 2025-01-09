@@ -205,7 +205,7 @@ Note that I reserve the right to update requirements for grades as circumstances
 
 If your two primary grades are at the same level, you will earn that letter as the base grade.  I hope that you can all demonstate learning at the A level.
 
-If your two primary grades are at different levels (e.g., projects at the B level and learning assessments at the A level), you will generally earn a grade between the two, with the particular level dependent on where in the range of each you fall.  Note that if you receive a C on one primary grade and an A on the other, your base grade will be a B-.
+If your two primary grades are at different levels (e.g., projects at the B level and learning assessments at the A level), you will generally earn a grade between the two, with the particular level dependent on where in the range of each you fall. You cannot move up more than two-thirds of a level from your lower grade; if you receive a C on one primary grade and an A on the other, your base grade will be a B-.
 
 Your grade may also be affected by reading problems, labs, metacognitive reflections, and tokens.
 
